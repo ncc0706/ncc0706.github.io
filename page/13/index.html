@@ -199,6 +199,86 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-querydsl" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/28/querydsl/">querydsl</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/28/querydsl/" class="archive-article-date">
+  	<time datetime="2019-08-28T08:08:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>使用queryDsl时需注意hibernate的版本问题,具体问题TODO…</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 自定义Q前缀</span></span><br><span class="line"><span class="meta">@EnableJpaRepositories</span>(repositoryImplementationPostfix=<span class="string">'xxx'</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 比如时间的比较</span></span><br><span class="line"><span class="function"><span class="keyword">default</span> <span class="keyword">void</span> <span class="title">customize</span><span class="params">(<span class="keyword">final</span> QuerydslBindings bindings, <span class="keyword">final</span> QFoo foo)</span> </span>&#123;</span><br><span class="line">    bindings.bind(foo.age).all((path, ageValue) -&gt; &#123;</span><br><span class="line">        Iterator&lt;? extends Long&gt; it = value.iterator();</span><br><span class="line">        <span class="keyword">return</span> path.between(it.next(), it.next());</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">default</span> <span class="keyword">void</span> <span class="title">customize</span><span class="params">(QuerydslBindings bindings, QMemberAccountDetails root)</span></span>&#123;</span><br><span class="line">    	bindings.bind(root.indate).all(<span class="keyword">new</span> MultiValueBinding&lt;DateTimePath&lt;Date&gt;, Date&gt;() &#123;</span><br><span class="line">			<span class="meta">@Override</span></span><br><span class="line">			<span class="function"><span class="keyword">public</span> Predicate <span class="title">bind</span><span class="params">(DateTimePath&lt;Date&gt; path, Collection&lt;? extends Date&gt; values)</span> </span>&#123;</span><br><span class="line">				Date startTime = values.stream().min(Date::compareTo).get();</span><br><span class="line">				Date endTime = values.stream().max(Date::compareTo).get();</span><br><span class="line">				<span class="keyword">return</span> path.between(startTime, endTime);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2019/08/28/querydsl/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">querydsl</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/28/querydsl/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-regex/lion-king" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -979,95 +1059,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-db/postgresql/02kali-linux-postgresql" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/04/db/postgresql/02kali-linux-postgresql/">Kali 安装 postgresql</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/04/db/postgresql/02kali-linux-postgresql/" class="archive-article-date">
-  	<time datetime="2019-08-04T18:48:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><code>Kali Linux</code> 默认安装了<code>postgresql</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 启动服务</span><br><span class="line">#/etc/init.d/postgresql start</span><br><span class="line"># 或者</span><br><span class="line"># service postgresql start</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># sudo -u postgres psql postgres</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">postgresql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/postgresql//" class="article-tag-list-link color1">postgresql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/04/db/postgresql/02kali-linux-postgresql/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/12/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/14/">Next &raquo;</a>
@@ -1379,11 +1370,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">validate.js</a>
+                <a href="javascript:void(0)" class="js-tag color4">vip</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vip</a>
+                <a href="javascript:void(0)" class="js-tag color2">validate.js</a>
               </li>
              
               <li class="article-tag-list-item">
