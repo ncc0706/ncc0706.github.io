@@ -199,6 +199,82 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ss-site" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/28/ss-site/">ss-site</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/28/ss-site/" class="archive-article-date">
+  	<time datetime="2019-08-28T09:36:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">http://ss.pythonic.life/</span><br><span class="line">https://www.freefq.com/free-ss/</span><br><span class="line"></span><br><span class="line">https://www.goroutine.me/freedom/2021/06/25/freedom.html</span><br><span class="line">https://github.com/Alvin9999/new-pac/wiki/ss%E5%85%8D%E8%B4%B9%E8%B4%A6%E5%8F%B7</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ss</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/28/ss-site/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-vip-parse-line" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -932,96 +1008,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-java/hibernate-json-issue" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/28/java/hibernate-json-issue/">Hibernate关联查询json递归问题</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/28/java/hibernate-json-issue/" class="archive-article-date">
-  	<time datetime="2019-08-28T08:19:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// @JsonManagedReference</span></span><br><span class="line"><span class="comment">// @JsonBackReference	</span></span><br><span class="line"><span class="meta">@OneToMany</span></span><br><span class="line"><span class="meta">@JoinTable</span>(name = <span class="string">"zj_issue_tags"</span>, </span><br><span class="line">           joinColumns = &#123; <span class="meta">@JoinColumn</span>(name = <span class="string">"issue_id"</span>) &#125;,</span><br><span class="line">           inverseJoinColumns = &#123;<span class="meta">@JoinColumn</span>(name = <span class="string">"cropno"</span>)&#125;</span><br><span class="line">          )</span><br><span class="line"><span class="keyword">private</span> List&lt;CustCrop&gt; tags;</span><br><span class="line"></span><br><span class="line"><span class="meta">@OneToMany</span>(cascade = &#123;CascadeType.ALL&#125;)</span><br><span class="line"><span class="meta">@JoinColumn</span>(name = <span class="string">"issue_id"</span>)</span><br><span class="line"><span class="meta">@JsonManagedReference</span></span><br><span class="line"><span class="keyword">private</span> List&lt;IssueImage&gt; imgs;</span><br><span class="line"></span><br><span class="line"><span class="comment">//https://github.com/liweinan/javaee/blob/master/src/main/java/net/bluedash/model/sandbox/collection/embed/Pencil.java</span></span><br><span class="line"><span class="comment">// CollectionId 仅能作用于List</span></span><br><span class="line"><span class="comment">// 需要手动指定 @GenericGenerator</span></span><br><span class="line"><span class="meta">@ManyToMany</span></span><br><span class="line"><span class="meta">@JoinTable</span>(name = <span class="string">"zj_issue_tags"</span>, joinColumns = &#123; <span class="meta">@JoinColumn</span>(name = <span class="string">"issue_id"</span>) &#125;, inverseJoinColumns = &#123;</span><br><span class="line">    <span class="meta">@JoinColumn</span>(name = <span class="string">"cropno"</span>) &#125;)</span><br><span class="line">	<span class="meta">@CollectionId</span>(columns = <span class="meta">@Column</span>(name = <span class="string">"id"</span>), generator = <span class="string">"uuid"</span>, type = <span class="meta">@Type</span>(type = <span class="string">"string"</span>))</span><br><span class="line"><span class="meta">@GenericGenerator</span>(name = <span class="string">"uuid"</span>, strategy = <span class="string">"org.hibernate.id.UUIDGenerator"</span>)</span><br><span class="line"><span class="keyword">private</span> List&lt;CustCrop&gt; tags;</span><br></pre></td></tr></table></figure>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><blockquote>
-<p><a href="https://stackoverflow.com/questions/47693110/could-not-write-json-infinite-recursion-stackoverflowerror-nested-exception" target="_blank" rel="noopener">https://stackoverflow.com/questions/47693110/could-not-write-json-infinite-recursion-stackoverflowerror-nested-exception</a></p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hibernate</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/28/java/hibernate-json-issue/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/11/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/13/">Next &raquo;</a>
@@ -1333,19 +1319,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vip</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">validate.js</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
+                <a href="javascript:void(0)" class="js-tag color4">vip</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">vsftp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1354,6 +1340,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">frida</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">模拟器</a>
               </li>
              
               <li class="article-tag-list-item">

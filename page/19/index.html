@@ -199,6 +199,95 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-git/git-tour" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/22/git/git-tour/">git 基本命令</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/22/git/git-tour/" class="archive-article-date">
+  	<time datetime="2019-03-22T09:05:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2019/03/22/dawn-3793717_1920.jpg" alt="image"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">#git 用户</span><br><span class="line">git config --global user.name &quot;ncc0706&quot;</span><br><span class="line">git config --global user.email &quot;ncc0706@gmail.com&quot;</span><br><span class="line"># 格式化提交时间</span><br><span class="line">git config --global log.date &quot;format:%Y-%m-%d %H:%M:%S&quot;</span><br><span class="line"></span><br><span class="line">git init 		# 初始化仓库</span><br><span class="line">git status 		# 仓库状态</span><br><span class="line">git add			# 添加到暂存区</span><br><span class="line">git log			#提交记录</span><br><span class="line">git commit -m &quot;输入提交注释&quot; # 提交文件</span><br><span class="line">git commit -am &quot;添加到暂存区并提交文件&quot;</span><br><span class="line"></span><br><span class="line">git branch		#查看分支</span><br><span class="line">git branch dev  #git创建分支</span><br><span class="line">git checkout dev #git切换分支</span><br><span class="line"></span><br><span class="line"># 修补错误 并创建分支</span><br><span class="line">git checkout -b iss88 # 创建iss88号分支并切换到iss88号分支</span><br><span class="line"></span><br><span class="line">git checkout master		#切换到master分支</span><br><span class="line">git merge iss53			#git合并分支</span><br><span class="line">git branch -d iss53		#删除分支</span><br><span class="line"></span><br><span class="line">git branch -a 			#查看所有分支， 如果颜色支持开启的话远程分支会用红色表示</span><br><span class="line">git branch -v			#看出来origin其实就是远程的git地址的一个别名</span><br><span class="line">origin  git@git.coding.net:ncc/angular.git (fetch)</span><br><span class="line">origin  git@git.coding.net:ncc/angular.git (push)</span><br></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/2019/03/22/git/git-tour/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/git//" class="article-tag-list-link color4">git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/22/git/git-tour/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-ssr-link" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -943,102 +1032,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-java/a-collection-with-cascade-all-delete-orphan-was-no-longer-referenced-by-the-owning-entity-instance" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/28/java/a-collection-with-cascade-all-delete-orphan-was-no-longer-referenced-by-the-owning-entity-instance/">spring data jpa一对多，save之后，子表新增了一条数据，老的数据没有删除，而是更新成为null</a>
-    </h1>
-  
-
-        
-        <a href="/2018/03/28/java/a-collection-with-cascade-all-delete-orphan-was-no-longer-referenced-by-the-owning-entity-instance/" class="archive-article-date">
-  	<time datetime="2018-03-28T12:41:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/assets/images/2018-03-28/01.jpg" alt></p>
-<blockquote>
-<p>问题：使用了jpa的@OneToMany注解，当更新子表中的数据时，子表中新增了一条新纪录，并将旧的数据的外键id设置为null，因此产生了孤儿数据，于是查找资料找到了<code>orphanRemoval</code>设置为true可以删除孤儿数据</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2018/03/28/java/a-collection-with-cascade-all-delete-orphan-was-no-longer-referenced-by-the-owning-entity-instance/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jpa</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hibernate</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/java//" class="article-tag-list-link color5">java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/28/java/a-collection-with-cascade-all-delete-orphan-was-no-longer-referenced-by-the-owning-entity-instance/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/18/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><span class="page-number current">19</span><a class="page-number" href="/page/20/">20</a><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/20/">Next &raquo;</a>
@@ -1350,19 +1343,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vip</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">validate.js</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
+                <a href="javascript:void(0)" class="js-tag color4">vip</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">vsftp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1371,6 +1364,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">frida</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">模拟器</a>
               </li>
              
               <li class="article-tag-list-item">
