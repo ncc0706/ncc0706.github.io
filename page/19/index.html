@@ -199,6 +199,93 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ffmpeg/ffmpeg" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/03/ffmpeg/ffmpeg/">ffmpeg</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/03/ffmpeg/ffmpeg/" class="archive-article-date">
+  	<time datetime="2019-04-03T13:15:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="下载m3u8视频格式"><a href="#下载m3u8视频格式" class="headerlink" title="下载m3u8视频格式"></a>下载m3u8视频格式</h2><p>ffmpeg -i <a href="https://zy.kubozy-youku-163-aiqi.com/20190330/3992_03a42fb7/1000k/hls/index.m3u8" target="_blank" rel="noopener">https://zy.kubozy-youku-163-aiqi.com/20190330/3992_03a42fb7/1000k/hls/index.m3u8</a> output.mp4</p>
+<p>将mp4<br><a href="https://blog.csdn.net/yinggehai/article/details/81089257" target="_blank" rel="noopener">https://blog.csdn.net/yinggehai/article/details/81089257</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"># 打水印</span><br><span class="line">ffmpeg -i sample.mp4 -i watermark.png -filter_complex &quot;overlay=10:10&quot; sample.watermark.mp4</span><br><span class="line"></span><br><span class="line">ffmpeg -i sample.mp4 -i logo.png -filter_complex overlay test1.mp4</span><br><span class="line"></span><br><span class="line">ffmpeg -i sample.mp4 -i logo.png -filter_complex overlay test1.mp4</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 去水印</span><br><span class="line">ffmpeg -i a.mp4 -b:v 548k -vf delogo=x=495:y=10:w=120:h=45:show=1 delogo.mp4</span><br><span class="line"></span><br><span class="line">在一些例子中，你并不会知道确切的分辨率，所以这里有一些变量，你可以更好的添加水印到你想要的任何位置：</span><br><span class="line"></span><br><span class="line">main_h – 传入的视频的高度</span><br><span class="line">main_w – 传入的视频的宽度</span><br><span class="line">overlay_h – 传入的覆盖水印的高度</span><br><span class="line">overlay_w – 传入的覆盖水印的宽度</span><br><span class="line">利用这些变量，我们可以灵活的添加水印：</span><br><span class="line"></span><br><span class="line">ffmpeg -i sample.mp4 -i watermark.png -filter_complex &quot;overlay=x=(main_w-overlay_w)/2:y=(main_h-overlay_h)/2&quot; sample.watermark2.mp4</span><br><span class="line"></span><br><span class="line"># 跑马灯广告</span><br><span class="line"></span><br><span class="line">## 从右往左滚</span><br><span class="line">ffmpeg -i sample.mp4 -vf &quot;drawtext=text=helloworld :fontfile=foo.ttf :y=h-line_h-10:x=w-(t-4.5)*w/5.5 :fontcolor=red: fontsize=40: shadowx=2: shadowy=2&quot; sample.rightToLeft.mp4</span><br><span class="line"></span><br><span class="line">## 从左往右滚</span><br><span class="line">ffmpeg -i sample.mp4 -vf &quot;drawtext=text=helloworld :expansion=normal :fontfile=foo.ttf: y=h-line_h-10:x=(mod(5*n\,w+tw)-tw): fontcolor=white: fontsize=40: shadowx=2: shadowy=2&quot; sample.leftToRight.mp4</span><br><span class="line"></span><br><span class="line">## 从右往左滚，单次滚动时长10秒，间隔30秒滚一次</span><br><span class="line">ffmpeg -i input.mp4 -filter:v drawtext=&quot;fontfile=Microsoft YaHei Mono.ttf :text=&apos;Hello World&apos; :fontcolor=white@1.0 :fontsize=36 :y=h-line_h-10 :x=w-tw-w/10*mod(t\,30) :enable=gt(mod(t\,20)\,10)&quot; -codec:v libx264 -codec:a copy -y sample.loop.mp4</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 指定时间段</span><br><span class="line">ffmpeg -i show2.mp4 -filter_complex &quot;drawtext=text=&apos;Summer Video&apos;:enable=&apos;between(t,15,20)&apos;,fade=t=in:start_time=15:d=0.5:alpha=1,fade=t=out:start_time=19.5:d=0.5:alpha=1[fg];[0][fg]overlay=format=auto,format=yuv420p&quot; -c:a copy output1.mp4</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 如何删除跑马灯</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ffmpeg -i sample.mp4 -filter_complex [0]drawtext=ft_load_flags=render:shadowcolor=0xaaaaaa66:shadowx=5:shadowy=2:fontcolor=white:fontsize=80:text=&apos;A&apos;:x=1033:y=77:enable=&apos;between(t,5.1,8.0)&apos;[aa];[aa]drawtext=ft_load_flags=render:shadowcolor=0xaaaaaa66:shadowx=5:shadowy=2:fontcolor=white:fontsize=80:text=&apos;B&apos;:x=1033:y=177:enable=&apos;between(t,5.6,8.0)&apos;[bb];[bb]drawtext=ft_load_flags=render:shadowcolor=0xaaaaaa66:shadowx=5:shadowy=2:fontcolor=white:fontsize=80:text=&apos;c&apos;:x=1033:y=277:enable=&apos;between(t,6.0,8.0)&apos;[cc];[cc]drawtext=ft_load_flags=render:shadowcolor=0xaaaaaa66:shadowx=5:shadowy=2:fontcolor=white:fontsize=80:text=&apos;d&apos;:x=1033:y=377:enable=&apos;between(t,6.4,8.0)&apos; -t 27 show2.mp4</span><br><span class="line"></span><br><span class="line">ffmpeg -i show2.mp4 -filter_complex [0]drawtext=ft_load_flags=render:shadowcolor=0xaaaaaa66:shadowx=5:shadowy=2:fontcolor=white:fontsize=80:text=&apos;A&apos;:x=1033:y=77:disable=&apos;between(t,5.1,8.0)&apos;[aa];[aa]drawtext=ft_load_flags=render:shadowcolor=0xaaaaaa66:shadowx=5:shadowy=2:fontcolor=white:fontsize=80:text=&apos;B&apos;:x=1033:y=177:enable=&apos;between(t,5.6,8.0)&apos;[bb];[bb]drawtext=ft_load_flags=render:shadowcolor=0xaaaaaa66:shadowx=5:shadowy=2:fontcolor=white:fontsize=80:text=&apos;c&apos;:x=1033:y=277:enable=&apos;between(t,6.0,8.0)&apos;[cc];[cc]drawtext=ft_load_flags=render:shadowcolor=0xaaaaaa66:shadowx=5:shadowy=2:fontcolor=white:fontsize=80:text=&apos;d&apos;:x=1033:y=377:enable=&apos;between(t,6.4,8.0)&apos; -t 27 show22.mp4</span><br></pre></td></tr></table></figure>
+<h2 id="乐视视频"><a href="#乐视视频" class="headerlink" title="乐视视频"></a>乐视视频</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i &quot;http://play1.cp21.ott.cibntv.net/play.videocache.lecloud.com/274/51/42/letv-uts/14/ver_00_22-1123062873-avc-419370-aac-48000-2725000-163326911-236f2850068d35d35be5375b349bd06c-1554800696821.mp4?crypt=19aa7f2e179&amp;b=479&amp;nlh=4096&amp;nlt=60&amp;bf=30&amp;p2p=1&amp;video_type=mp4&amp;termid=0&amp;tss=no&amp;platid=1&amp;splatid=105&amp;its=0&amp;qos=3&amp;fcheck=0&amp;amltag=6&amp;mltag=6&amp;uid=1783973100.rp&amp;keyitem=GOw_33YJAAbXYE-cnQwpfLlv_b2zAkYctFVqe5bsXQpaGNn3T1-vhw..&amp;ntm=1555004400&amp;nkey=0fc82a59141b628fd1893219a993fe6a&amp;nkey2=5ab8ce1b8b9fa4945565e38090c5fd36&amp;auth_key=1555004400-1-0-1-105-ce4c71fe6298cc12e0edb87227512d22&amp;geo=CN-22-0-1&amp;mmsid=66945842&amp;tm=1554986073&amp;key=79c5e20d95fa6dcded49e1f46b85da38&amp;playid=0&amp;vtype=13&amp;cvid=1094686198805&amp;payff=0&amp;sign=letv&amp;uidx=0&amp;errc=0&amp;gn=50047&amp;ndtype=2&amp;vrtmcd=102&amp;buss=6&amp;cips=16.85.68.236&quot; -c output.mp4</span><br><span class="line"></span><br><span class="line">## 这个命令执行比较快，生成的mp4文件较小</span><br><span class="line">ffmpeg -i &quot;http://play1.cp21.ott.cibntv.net/play.videocache.lecloud.com/274/51/42/letv-uts/14/ver_00_22-1123062873-avc-419370-aac-48000-2725000-163326911-236f2850068d35d35be5375b349bd06c-1554800696821.mp4?crypt=19aa7f2e179&amp;b=479&amp;nlh=4096&amp;nlt=60&amp;bf=30&amp;p2p=1&amp;video_type=mp4&amp;termid=0&amp;tss=no&amp;platid=1&amp;splatid=105&amp;its=0&amp;qos=3&amp;fcheck=0&amp;amltag=6&amp;mltag=6&amp;uid=1783973100.rp&amp;keyitem=GOw_33YJAAbXYE-cnQwpfLlv_b2zAkYctFVqe5bsXQpaGNn3T1-vhw..&amp;ntm=1555004400&amp;nkey=0fc82a59141b628fd1893219a993fe6a&amp;nkey2=5ab8ce1b8b9fa4945565e38090c5fd36&amp;auth_key=1555004400-1-0-1-105-ce4c71fe6298cc12e0edb87227512d22&amp;geo=CN-22-0-1&amp;mmsid=66945842&amp;tm=1554986073&amp;key=79c5e20d95fa6dcded49e1f46b85da38&amp;playid=0&amp;vtype=13&amp;cvid=1094686198805&amp;payff=0&amp;sign=letv&amp;uidx=0&amp;errc=0&amp;gn=50047&amp;ndtype=2&amp;vrtmcd=102&amp;buss=6&amp;cips=16.85.68.236&quot; output.mp4</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### 切片</span><br><span class="line"></span><br><span class="line"># 本地文件切片</span><br><span class="line">ffmpeg -i output.mp4 -codec copy -vbsf h264_mp4toannexb -map 0 -f segment -segment_list out.m3u8 -segment_time 10 output%03d.ts</span><br><span class="line"></span><br><span class="line">## 网络文件切片</span><br><span class="line">ffmpeg -i &quot;http://play1.cp21.ott.cibntv.net/play.videocache.lecloud.com/274/51/42/letv-uts/14/ver_00_22-1123062873-avc-419370-aac-48000-2725000-163326911-236f2850068d35d35be5375b349bd06c-1554800696821.mp4?crypt=19aa7f2e179&amp;b=479&amp;nlh=4096&amp;nlt=60&amp;bf=30&amp;p2p=1&amp;video_type=mp4&amp;termid=0&amp;tss=no&amp;platid=1&amp;splatid=105&amp;its=0&amp;qos=3&amp;fcheck=0&amp;amltag=6&amp;mltag=6&amp;uid=1783973100.rp&amp;keyitem=GOw_33YJAAbXYE-cnQwpfLlv_b2zAkYctFVqe5bsXQpaGNn3T1-vhw..&amp;ntm=1555004400&amp;nkey=0fc82a59141b628fd1893219a993fe6a&amp;nkey2=5ab8ce1b8b9fa4945565e38090c5fd36&amp;auth_key=1555004400-1-0-1-105-ce4c71fe6298cc12e0edb87227512d22&amp;geo=CN-22-0-1&amp;mmsid=66945842&amp;tm=1554986073&amp;key=79c5e20d95fa6dcded49e1f46b85da38&amp;playid=0&amp;vtype=13&amp;cvid=1094686198805&amp;payff=0&amp;sign=letv&amp;uidx=0&amp;errc=0&amp;gn=50047&amp;ndtype=2&amp;vrtmcd=102&amp;buss=6&amp;cips=16.85.68.236&quot; -codec copy -vbsf h264_mp4toannexb -map 0 -f segment -segment_list out.m3u8 -segment_time 10 output%03d.ts</span><br></pre></td></tr></table></figure>
+<h3 id="解析源站地址"><a href="#解析源站地址" class="headerlink" title="解析源站地址"></a>解析源站地址</h3><p><a href="http://www.le.com/ptv/vplay/31585088.html" target="_blank" rel="noopener">篮球冠军 http://www.le.com/ptv/vplay/31585088.html</a></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[&#123;</span><br><span class="line">		<span class="attr">"url"</span>: <span class="string">"http://play.g3proxy.lecloud.com/vod/v2/Mjc5LzMxLzE1L2xldHYtdXRzLzE0L3Zlcl8wMF8yMi0xMTIzMzQ3NzIyLWF2Yy0xOTg5NTYtYWFjLTQ4MDAwLTcwOTQyMDktMjI5NzQ4Mzc5LWVlOThjMGE5NmMyNTkyODY1OTQ2N2Q2NDg5Yjg1OWViLTE1NTc5ODI0MzkwMDMubXA0?b=259&amp;mmsid=66983100&amp;tm=1558329036&amp;key=e8d73975419ebd5efebf01634fcf6757&amp;platid=1&amp;splatid=105&amp;playid=0&amp;tss=no&amp;vtype=21&amp;cvid=760585452670&amp;payff=1&amp;pip=afa51e781174343ae427cddbb70b6e95"</span>,</span><br><span class="line">		<span class="attr">"name"</span>: <span class="string">"流畅"</span>,</span><br><span class="line">		<span class="attr">"type"</span>: <span class="string">"hls"</span></span><br><span class="line">	&#125;,</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="attr">"url"</span>: <span class="string">"http://play.g3proxy.lecloud.com/vod/v2/Mjc1LzIyLzEwMi9sZXR2LXV0cy8xNC92ZXJfMDBfMjItMTEyMzM0NzcyOC1hdmMtNDE5Mzc5LWFhYy00ODAwMC03MDk0MjA5LTQyNTIyMTM2My0wNTQ0MjI2MWY5NmVkMTlhYzM0MmRjODZkNjYzODRjZC0xNTU3OTg1NDU3MjQyLm1wNA==?b=479&amp;mmsid=66983100&amp;tm=1558329036&amp;key=56ef8415019d8e29d919e73002d2c1f2&amp;platid=1&amp;splatid=105&amp;playid=0&amp;tss=no&amp;vtype=13&amp;cvid=760585452670&amp;payff=1&amp;pip=afa51e781174343ae427cddbb70b6e95"</span>,</span><br><span class="line">		<span class="attr">"name"</span>: <span class="string">"高清"</span>,</span><br><span class="line">		<span class="attr">"type"</span>: <span class="string">"hls"</span></span><br><span class="line">	&#125;,</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="attr">"url"</span>: <span class="string">"http://play.g3proxy.lecloud.com/vod/v2/Mjc3LzEzLzk0L2xldHYtdXRzLzE0L3Zlcl8wMF8yMi0xMTIzMzQ3NzI0LWF2Yy0yOTkzNDUxLWFhYy0xMjgwMDAtNzA5NDIwOS0yNzc4ODkxMDEwLTI1MmFlYTExZDY0Njk4MzI3YWYyMjI2ZGVmZDc1NzgwLTE1NTgwMDY3MTY1OTkubXA0?b=3133&amp;mmsid=66983100&amp;tm=1558329036&amp;key=edfdcc914ef23da01432ab606787a6ab&amp;platid=1&amp;splatid=105&amp;playid=0&amp;tss=no&amp;vtype=52&amp;cvid=760585452670&amp;payff=1&amp;pip=afa51e781174343ae427cddbb70b6e95"</span>,</span><br><span class="line">		<span class="attr">"name"</span>: <span class="string">"1080P"</span>,</span><br><span class="line">		<span class="attr">"type"</span>: <span class="string">"hls"</span></span><br><span class="line">	&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffplay -i &quot;http://play.g3proxy.lecloud.com/vod/v2/Mjc3LzEzLzk0L2xldHYtdXRzLzE0L3Zlcl8wMF8yMi0xMTIzMzQ3NzI0LWF2Yy0yOTkzNDUxLWFhYy0xMjgwMDAtNzA5NDIwOS0yNzc4ODkxMDEwLTI1MmFlYTExZDY0Njk4MzI3YWYyMjI2ZGVmZDc1NzgwLTE1NTgwMDY3MTY1OTkubXA0?b=3133&amp;mmsid=66983100&amp;tm=1558329036&amp;key=edfdcc914ef23da01432ab606787a6ab&amp;platid=1&amp;splatid=105&amp;playid=0&amp;tss=no&amp;vtype=52&amp;cvid=760585452670&amp;payff=1&amp;pip=afa51e781174343ae427cddbb70b6e95&quot;</span><br></pre></td></tr></table></figure>
+<p><strong>在线转码</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">http://play.g3proxy.lecloud.com/vod/v2/Mjc0LzEyLzg3L2xldHYtdXRzLzE0L3Zlcl8wMF8yMi0xMTIzMjUyNDY3LWF2Yy0yOTk1NzAxLWFhYy0xMjgwMDAtNzUwMjk1OS0yOTQxMTQ0MjEwLWI4MDMyYTcyYzNjYmI1MzljZmZhMzZiM2IwNTE2NTVkLTE1NTY0NjUxMjI1ODYubXA0?b=3135&amp;mmsid=66969155&amp;tm=1558330264&amp;key=213a1e7d6e30009970e474d24cb8fee1&amp;platid=1&amp;splatid=105&amp;playid=0&amp;tss=no&amp;vtype=52&amp;cvid=760585452670&amp;payff=1&amp;pip=afa51e781174343ae427cddbb70b6e95</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ffmpeg -i &quot;http:\/\/play1.cp21.ott.cibntv.net\/play.videocache.lecloud.com\/274\/12\/87\/letv-uts\/14\/ver_00_22-1123252467-avc-2995701-aac-128000-7502959-2941144210-b8032a72c3cbb539cffa36b3b051655d-1556465122586.mp4?crypt=11aa7f2e1175&amp;b=3135&amp;nlh=4096&amp;nlt=60&amp;bf=30&amp;p2p=1&amp;video_type=mp4&amp;termid=0&amp;tss=no&amp;platid=1&amp;splatid=105&amp;its=12346168&amp;qos=3&amp;fcheck=0&amp;amltag=6&amp;mltag=6&amp;uid=2074815209.rp&amp;keyitem=GOw_33YJAAbXYE-cnQwpfLlv_b2zAkYctFVqe5bsXQpaGNn3T1-vhw..&amp;ntm=1558350600&amp;nkey=a23fe439ff072ff8f94dba877ffd3ebf&amp;nkey2=4117d4b2085522ca9c68abc83d068524&amp;auth_key=1558350600-1-0-1-105-26f27dab21a1308037aedf61391161c2&amp;geo=CN-15-187-1&amp;mmsid=66969155&amp;tm=1558330264&amp;key=213a1e7d6e30009970e474d24cb8fee1&amp;playid=0&amp;vtype=52&amp;cvid=760585452670&amp;payff=1&amp;sign=letv&amp;uidx=0&amp;errc=0&amp;gn=50047&amp;ndtype=2&amp;vrtmcd=102&amp;buss=6&amp;cips=123.171.42.233&quot; -acodec copy -vcodec copy output.mp4</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://play.g3proxy.lecloud.com/vod/v2/Mjc0LzEyLzg3L2xldHYtdXRzLzE0L3Zlcl8wMF8yMi0xMTIzMjUyNDY3LWF2Yy0yOTk1NzAxLWFhYy0xMjgwMDAtNzUwMjk1OS0yOTQxMTQ0MjEwLWI4MDMyYTcyYzNjYmI1MzljZmZhMzZiM2IwNTE2NTVkLTE1NTY0NjUxMjI1ODYubXA0?b=3135&amp;mmsid=66969155&amp;tm=1558330264&amp;key=213a1e7d6e30009970e474d24cb8fee1&amp;platid=1&amp;splatid=105&amp;playid=0&amp;tss=no&amp;vtype=52&amp;cvid=760585452670&amp;payff=1&amp;pip=afa51e781174343ae427cddbb70b6e95&amp;format=1&amp;expect=3&amp;sign=letv</span><br></pre></td></tr></table></figure>
+<h2 id="header-参数"><a href="#header-参数" class="headerlink" title="header 参数"></a>header 参数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -user_agent &quot;User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36&quot; -headers &quot;sec-ch-ua: &apos;Chromium&apos;;v=&apos;88&apos;, &apos;Google Chrome&apos;;v=&apos;88&apos;, &apos;;Not A Brand&apos;;v=&apos;99&apos;&quot;$&apos;\r\n&apos;&quot;sec-ch-ua-mobile: ?0&quot;$&quot;Upgrade-Insecure-Requests: 1&quot;  -i http://127.0.0.1:3000</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffplay -user_agent &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 11_1_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36&quot; -i &quot;https://chaxun.truechat365.com/playurl/m3u8?vid=36b1q4OEIrWrX4zC0v8fO5fgPuA3JQ8tI1SeuxCibapmWxX3bfJWbCeomfSg8nYLtiBD2073AaMk3Jv2WSP_matacBJvX2wzma-LYQ1kT8JVrOK06Q&amp;k=7452766b48312b337277504d32726d676b676c3062702f4c37464535346849794569596c32414c67416d733d&amp;s=444459453143694b7161774b53726652706c617150673d3d&quot;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ffmpeg</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/03/ffmpeg/ffmpeg/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-git/git-delete-commit-file-to-ignore" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -938,86 +1025,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-flutter/flutter00-env-on-windows" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/07/flutter/flutter00-env-on-windows/">flutter开发环境搭建</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/07/flutter/flutter00-env-on-windows/" class="archive-article-date">
-  	<time datetime="2018-11-07T15:26:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="基础环境"><a href="#基础环境" class="headerlink" title="基础环境"></a>基础环境</h2><p>1.下载flutter sdk</p>
-<p>2.解压zip包到想安装的路径，<strong>不要</strong>将flutter安装到需要一些高权限的路径</p>
-<p>3.设置环境变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">FLUTTER_HOME E:\fulter-in-action\flutter</span><br><span class="line">在Path后面追加 %FLUTTER_HOME%\bin</span><br><span class="line">export PUB_HOSTED_URL=https://pub.flutter-io.cn</span><br><span class="line">export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn</span><br></pre></td></tr></table></figure></p>
-        
-          <a class="article-more-a" href="/2018/11/07/flutter/flutter00-env-on-windows/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">flutter</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/07/flutter/flutter00-env-on-windows/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/18/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><span class="page-number current">19</span><a class="page-number" href="/page/20/">20</a><a class="page-number" href="/page/21/">21</a><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/20/">Next &raquo;</a>
@@ -1425,15 +1432,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">bigdecimal</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">jpa</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hibernate</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">bigdecimal</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1477,11 +1484,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">centos7</a>
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+                <a href="javascript:void(0)" class="js-tag color3">centos7</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1581,11 +1588,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">fedora</a>
+                <a href="javascript:void(0)" class="js-tag color5">kali</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">kali</a>
+                <a href="javascript:void(0)" class="js-tag color2">fedora</a>
               </li>
              
               <li class="article-tag-list-item">
