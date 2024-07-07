@@ -199,6 +199,187 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-regex/regex-sample-douyin" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/14/regex/regex-sample-douyin/">正则匹配抖音视频参数</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/14/regex/regex-sample-douyin/" class="archive-article-date">
+  	<time datetime="2020-05-14T14:55:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        __M.require(<span class="string">'douyin_falcon:page/reflow_user/index'</span>).init(&#123;</span><br><span class="line">            uid: <span class="string">"102064772608"</span>,</span><br><span class="line">            dytk: <span class="string">'df4a9c279a56fe0d2bca0d3d98d36320'</span></span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String regex = <span class="string">"itemId: \"(?&lt;itemId&gt;.*)\",([\\s\\S]*)dytk: \"(?&lt;dytk&gt;.*)\""</span>;</span><br><span class="line">Pattern pattern = Pattern.compile(regex);</span><br><span class="line">Matcher matcher = pattern.matcher(body);</span><br><span class="line"><span class="keyword">if</span> (matcher.find()) &#123;</span><br><span class="line">   String itemId = matcher.group(<span class="string">"itemId"</span>);</span><br><span class="line">   String dytk = matcher.group(<span class="string">"dytk"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">regex</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/regex//" class="article-tag-list-link color1">regex</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/14/regex/regex-sample-douyin/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+    <article id="post-flutter/flutter05-key" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/12/flutter/flutter05-key/">flutter中获取子组件Widget调用方法及访问属性</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/12/flutter/flutter05-key/" class="archive-article-date">
+  	<time datetime="2020-05-12T18:31:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>flutter可以通过key来实现。每个Widget都是唯一标识的。此唯一标识对应于可选的Key参数。如果省略，Flutter将为您生成一个。key主要分为四种：GlobalKey，LocalKey，UniqueKey或ObjectKey.</p>
+        
+          <a class="article-more-a" href="/2020/05/12/flutter/flutter05-key/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">flutter</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/flutter//" class="article-tag-list-link color3">flutter</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/12/flutter/flutter05-key/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-java/thymeleaf-static" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -956,190 +1137,9 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-linux/centos7.x" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/04/linux/centos7.x/">Centos7基本配置</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/04/linux/centos7.x/" class="archive-article-date">
-  	<time datetime="2020-04-04T06:28:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>修改时区</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br></pre></td></tr></table></figure>
-<p>在 centos 中 systemctl  是设置系统服务的命令即 service  ,   它融合之前service和chkconfig的功能于一体。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">## 查看已安装的服务</span><br><span class="line">systemctl list-unit-files </span><br><span class="line"></span><br><span class="line">## 查看服务列表状态</span><br><span class="line">systemctl list-units --type=service</span><br><span class="line"></span><br><span class="line">## 查看启动失败的服务列表</span><br><span class="line">systemctl --failed</span><br><span class="line"></span><br><span class="line">## 查看是否开机启动 显示结果 enable、disable或static</span><br><span class="line">## 这里的 static 它是指对应的 Unit 文件中没有定义[Install]区域，因此无法配置为开机启动服务</span><br><span class="line">systemctl is-enabled sshd.service</span><br><span class="line"></span><br><span class="line">## 查看服务状态</span><br><span class="line">systemctl status sshd.service</span><br><span class="line"></span><br><span class="line">## 启动服务</span><br><span class="line">systemctl start sshd.service</span><br><span class="line"></span><br><span class="line">## 关闭服务</span><br><span class="line">systemctl stop sshd.service</span><br><span class="line"></span><br><span class="line">## 重启服务</span><br><span class="line">systemctl restart sshd.service</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## cd /etc/systemd/system/multi-user.target.wants</span><br><span class="line">## 建立 /usr/lib/systemd/system 里面对应服务配置文件的软链接</span><br><span class="line"></span><br><span class="line">## 开机启动服务【添加服务就是添加软连接】</span><br><span class="line">systemctl enable sshd.service</span><br><span class="line"></span><br><span class="line">## 开机禁用服务 【禁用服务就是删除此软链接】</span><br><span class="line">systemctl disable sshd.service</span><br></pre></td></tr></table></figure>
-<p><strong>敏感命令不记录</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export HISTCONTROL=ignorespace</span><br><span class="line">#   service mysqld start  (注意这条命令的最前面是一个空格）</span><br><span class="line">然后我们来查看历史记录 service mysqld start 没有了</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2020/04/04/linux/centos7.x/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">centos7</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/linux//" class="article-tag-list-link color1">linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/04/linux/centos7.x/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-db/postgresql/05postgresql-calc" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/01/db/postgresql/05postgresql-calc/">postgresql 计算</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/01/db/postgresql/05postgresql-calc/" class="archive-article-date">
-  	<time datetime="2020-02-01T10:33:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">--时间间隔（INTERVAL）-&gt;间隔时间转换成秒-&gt;秒转换成分</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">round</span>(date_part(<span class="string">'epoch'</span>, <span class="string">'2018-01-31 18:48:15'</span>::<span class="built_in">timestamp</span> - <span class="string">'2018-01-31 13:49:15'</span>::<span class="built_in">timestamp</span>)::<span class="built_in">NUMERIC</span> / <span class="number">60</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 保留2位小数</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">round</span>(date_part(<span class="string">'epoch'</span>, <span class="string">'2018-01-31 18:30'</span>::<span class="built_in">timestamp</span> - <span class="string">'2018-01-31 13:00'</span>::<span class="built_in">timestamp</span>)::<span class="built_in">NUMERIC</span> / <span class="number">60</span> / <span class="number">60</span>, <span class="number">2</span>);</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">postgresql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/postgresql//" class="article-tag-list-link color1">postgresql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/01/db/postgresql/05postgresql-calc/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/10/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/10/">Next &raquo;</a>
     </nav>
   
 
@@ -1592,6 +1592,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">helm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">centos7</a>
               </li>
              
@@ -1656,11 +1660,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color5">wget</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">wget</a>
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">

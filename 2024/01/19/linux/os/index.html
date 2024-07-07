@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>操作系统 | Niu Yuxian&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="权限说明 1234567891011  7   7   7d rwx rwx rwxr4w2x1_0第一个7表示当前文件的拥有者第二个7表示当前文件的所属组第三个7表示当前文件的组外权限 端口 12# yum install net-toolsnetstat: command not found 1netstat -tunlp | grep 80">
+  <meta name="description" content="权限说明 1234567891011  7   7   7d rwx rwx rwxr4w2x1_0第一个7表示当前文件的拥有者第二个7表示当前文件的所属组第三个7表示当前文件的组外权限 端口 12345678# yum install net-tools# sudo pacman -S net-toolsnetstat: command not foundsudo pacman -S lsofl">
 <meta name="keywords" content="os">
 <meta property="og:type" content="article">
 <meta property="og:title" content="操作系统">
 <meta property="og:url" content="http://yoursite.com/2024/01/19/linux/os/index.html">
 <meta property="og:site_name" content="Niu Yuxian&#39;blog">
-<meta property="og:description" content="权限说明 1234567891011  7   7   7d rwx rwx rwxr4w2x1_0第一个7表示当前文件的拥有者第二个7表示当前文件的所属组第三个7表示当前文件的组外权限 端口 12# yum install net-toolsnetstat: command not found 1netstat -tunlp | grep 80">
+<meta property="og:description" content="权限说明 1234567891011  7   7   7d rwx rwx rwxr4w2x1_0第一个7表示当前文件的拥有者第二个7表示当前文件的所属组第三个7表示当前文件的组外权限 端口 12345678# yum install net-tools# sudo pacman -S net-toolsnetstat: command not foundsudo pacman -S lsofl">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2024-07-07T02:23:00.549Z">
+<meta property="og:updated_time" content="2024-07-07T02:24:38.877Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="操作系统">
-<meta name="twitter:description" content="权限说明 1234567891011  7   7   7d rwx rwx rwxr4w2x1_0第一个7表示当前文件的拥有者第二个7表示当前文件的所属组第三个7表示当前文件的组外权限 端口 12# yum install net-toolsnetstat: command not found 1netstat -tunlp | grep 80">
+<meta name="twitter:description" content="权限说明 1234567891011  7   7   7d rwx rwx rwxr4w2x1_0第一个7表示当前文件的拥有者第二个7表示当前文件的所属组第三个7表示当前文件的组外权限 端口 12345678# yum install net-tools# sudo pacman -S net-toolsnetstat: command not foundsudo pacman -S lsofl">
   
     <link rel="alternative" href="/atom.xml" title="Niu Yuxian&#39;blog" type="application/atom+xml">
   
@@ -225,8 +225,9 @@ var _hmt = _hmt || [];
         <p><strong>权限说明</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">  7   7   7</span><br><span class="line">d rwx rwx rwx</span><br><span class="line"></span><br><span class="line">r4</span><br><span class="line">w2</span><br><span class="line">x1</span><br><span class="line">_0</span><br><span class="line"></span><br><span class="line">第一个7表示当前文件的拥有者</span><br><span class="line">第二个7表示当前文件的所属组</span><br><span class="line">第三个7表示当前文件的组外权限</span><br></pre></td></tr></table></figure>
 <p><strong>端口</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># yum install net-tools</span></span><br><span class="line">netstat: <span class="built_in">command</span> not found</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># yum install net-tools</span></span><br><span class="line"><span class="comment"># sudo pacman -S net-tools</span></span><br><span class="line"></span><br><span class="line">netstat: <span class="built_in">command</span> not found</span><br><span class="line"></span><br><span class="line">sudo pacman -S lsof</span><br><span class="line"></span><br><span class="line">lsof -i:8081</span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -tunlp | grep 80</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman --sync --refresh</span><br><span class="line"></span><br><span class="line">sudo pacman --sync --needed archlinux-keyring</span><br></pre></td></tr></table></figure>
 
       
 
@@ -864,6 +865,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">helm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">centos7</a>
               </li>
              
@@ -928,11 +933,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color5">wget</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">wget</a>
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">

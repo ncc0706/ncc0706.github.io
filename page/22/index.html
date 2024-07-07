@@ -6,20 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>kuboard 管理 k8s 集群 | Niu Yuxian&#39;blog</title>
+  <title>Niu Yuxian&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="123456vim /etc/firewalld/firewalld.conf## 改为 allLogDenied=alldmesg | grep -i reject 开放端口 2381 端口是必须的 123456789101112firewall-cmd --list-allfirewall-cmd --permanent --add-port=30080/tcpfirewall-cmd --p">
-<meta name="keywords" content="k8s">
-<meta property="og:type" content="article">
-<meta property="og:title" content="kuboard 管理 k8s 集群">
-<meta property="og:url" content="http://yoursite.com/2021/12/04/k8s-kuboard/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Niu Yuxian&#39;blog">
+<meta property="og:url" content="http://yoursite.com/page/22/index.html">
 <meta property="og:site_name" content="Niu Yuxian&#39;blog">
-<meta property="og:description" content="123456vim /etc/firewalld/firewalld.conf## 改为 allLogDenied=alldmesg | grep -i reject 开放端口 2381 端口是必须的 123456789101112firewall-cmd --list-allfirewall-cmd --permanent --add-port=30080/tcpfirewall-cmd --p">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2024-07-07T02:23:00.549Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="kuboard 管理 k8s 集群">
-<meta name="twitter:description" content="123456vim /etc/firewalld/firewalld.conf## 改为 allLogDenied=alldmesg | grep -i reject 开放端口 2381 端口是必须的 123456789101112firewall-cmd --list-allfirewall-cmd --permanent --add-port=30080/tcpfirewall-cmd --p">
+<meta name="twitter:title" content="Niu Yuxian&#39;blog">
   
     <link rel="alternative" href="/atom.xml" title="Niu Yuxian&#39;blog" type="application/atom+xml">
   
@@ -202,75 +197,35 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-k8s-kuboard" class="article article-type-post " itemscope itemprop="blogPost">
+            
+  
+    <article id="post-hello/hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      kuboard 管理 k8s 集群
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/05/hello/hello-world/">Hello World</a>
     </h1>
   
 
         
-        <a href="/2021/12/04/k8s-kuboard/" class="archive-article-date">
-  	<time datetime="2021-12-04T19:26:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-04</time>
+        <a href="/2018/02/05/hello/hello-world/" class="archive-article-date">
+  	<time datetime="2018-02-05T22:11:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/firewalld/firewalld.conf</span><br><span class="line"></span><br><span class="line">## 改为 all</span><br><span class="line">LogDenied=all</span><br><span class="line"></span><br><span class="line">dmesg | grep -i reject</span><br></pre></td></tr></table></figure>
-<p>开放端口 2381 端口是必须的</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">firewall-cmd --list-all</span><br><span class="line"></span><br><span class="line">firewall-cmd --permanent --add-port=30080/tcp</span><br><span class="line">firewall-cmd --permanent --add-port=30081/tcp</span><br><span class="line"></span><br><span class="line">## 所有节点</span><br><span class="line">firewall-cmd --permanent --add-port=30081/udp</span><br><span class="line"></span><br><span class="line">firewall-cmd --permanent --add-port=2381/tcp</span><br><span class="line"></span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl apply -f https://addons.kuboard.cn/kuboard/kuboard-v3.yaml</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl get pods -n kuboard -o wide</span><br></pre></td></tr></table></figure>
-<h3 id="访问-Kuboard"><a href="#访问-Kuboard" class="headerlink" title="访问 Kuboard"></a>访问 Kuboard</h3><ul>
-<li>在浏览器中打开链接 <code>http://your-node-ip-address:30080</code></li>
-<li>输入初始用户名和密码，并登录<ul>
-<li>用户名： <code>admin</code></li>
-<li>密码： <code>Kuboard123</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://kuboard.cn/install/v3/install-in-k8s.html" target="_blank" rel="noopener">https://kuboard.cn/install/v3/install-in-k8s.html</a></p>
-<p><a href="https://www.bbsmax.com/A/l1dy7EAgJe/" target="_blank" rel="noopener">https://www.bbsmax.com/A/l1dy7EAgJe/</a></p>
-
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<p><img src="/assets/images/2018-02-05/2015011809285211521.jpg" alt="hello-world"></p>
+        
+          <a class="article-more-a" href="/2018/02/05/hello/hello-world/#more">more >></a>
+        
       
 
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/images/alipay.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/images/weixin.jpg">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -281,7 +236,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">k8s</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
         		</li>
       		
 		</ul>
@@ -291,97 +246,18 @@ var _hmt = _hmt || [];
         |阅读量(<span id="busuanzi_value_page_pv"></span>)
       </span>
       
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/k8s//" class="article-tag-list-link color4">k8s</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
       
-
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/02/05/hello/hello-world/">展开全文 >></a>
+        </p>
       
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
 
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/12/04/k8s-kuboard/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2021/12/05/desktop-shortcut/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Windows 系统去掉桌面快捷图标（win8.1 ~ win10）
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2021/11/26/nodejs/node-registry/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">设置 registry</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -401,28 +277,11 @@ var _hmt = _hmt || [];
 
 
 
-
-  
-    <div id="comment"></div>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-<script>
-new Valine({
-    el: '#comment' ,
-    notify:false, 
-    verify:false, 
-    appId: 'L4Rx8YJB9aGUGexlCDV6uz1r-gzGzoHsz',
-    appKey: 'VAPNJ66Hie7KpmkQLrAf01yW',
-    placeholder: 'ヾﾉ≧∀≦)o欢迎评论!',
-    path:window.location.pathname, 
-    avatar:'mm' 
-});
-</script>
-  
-
   
   
-  
-
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/21/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="page-number" href="/page/21/">21</a><span class="page-number current">22</span>
+    </nav>
   
 
 
@@ -459,8 +318,8 @@ new Valine({
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
-		isPost: true,
+		isHome: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
@@ -874,6 +733,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">helm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">centos7</a>
               </li>
              
@@ -938,11 +801,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color5">wget</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">wget</a>
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">
