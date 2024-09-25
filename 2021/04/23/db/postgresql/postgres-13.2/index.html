@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Kali 安装 postgresql | Niu Yuxian&#39;blog</title>
+  <title>Centos7 源码安装 postgresql 13.2 | Niu Yuxian&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Kali Linux 默认安装了postgresql 1234# 启动服务#/etc/init.d/postgresql start# 或者# service postgresql start 1# sudo -u postgres psql postgres">
+  <meta name="description" content="下载地址postgresql-13.2.tar.gz 官网postgresql-13.2.tar.gz 国内镜像 12345678910111213141516171819202122# 解压到指定目录tar -zxvf postgresql-13.2.tar.gz -C /opt### 方案 1./configure --prefix=/data/postgres/13.2makemake in">
 <meta name="keywords" content="postgres">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Kali 安装 postgresql">
-<meta property="og:url" content="http://yoursite.com/2019/08/04/db/postgresql/02kali-linux-postgresql/index.html">
+<meta property="og:title" content="Centos7 源码安装 postgresql 13.2">
+<meta property="og:url" content="http://yoursite.com/2021/04/23/db/postgresql/postgres-13.2/index.html">
 <meta property="og:site_name" content="Niu Yuxian&#39;blog">
-<meta property="og:description" content="Kali Linux 默认安装了postgresql 1234# 启动服务#/etc/init.d/postgresql start# 或者# service postgresql start 1# sudo -u postgres psql postgres">
+<meta property="og:description" content="下载地址postgresql-13.2.tar.gz 官网postgresql-13.2.tar.gz 国内镜像 12345678910111213141516171819202122# 解压到指定目录tar -zxvf postgresql-13.2.tar.gz -C /opt### 方案 1./configure --prefix=/data/postgres/13.2makemake in">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2024-09-25T06:20:06.305Z">
+<meta property="og:updated_time" content="2024-09-25T08:24:36.181Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Kali 安装 postgresql">
-<meta name="twitter:description" content="Kali Linux 默认安装了postgresql 1234# 启动服务#/etc/init.d/postgresql start# 或者# service postgresql start 1# sudo -u postgres psql postgres">
+<meta name="twitter:title" content="Centos7 源码安装 postgresql 13.2">
+<meta name="twitter:description" content="下载地址postgresql-13.2.tar.gz 官网postgresql-13.2.tar.gz 国内镜像 12345678910111213141516171819202122# 解压到指定目录tar -zxvf postgresql-13.2.tar.gz -C /opt### 方案 1./configure --prefix=/data/postgres/13.2makemake in">
   
     <link rel="alternative" href="/atom.xml" title="Niu Yuxian&#39;blog" type="application/atom+xml">
   
@@ -232,29 +232,73 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-db/postgresql/02kali-linux-postgresql" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-db/postgresql/postgres-13.2" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Kali 安装 postgresql
+      Centos7 源码安装 postgresql 13.2
     </h1>
   
 
         
-        <a href="/2019/08/04/db/postgresql/02kali-linux-postgresql/" class="archive-article-date">
-  	<time datetime="2019-08-04T18:48:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-04</time>
+        <a href="/2021/04/23/db/postgresql/postgres-13.2/" class="archive-article-date">
+  	<time datetime="2021-04-23T21:06:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><code>Kali Linux</code> 默认安装了<code>postgresql</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 启动服务</span><br><span class="line">#/etc/init.d/postgresql start</span><br><span class="line"># 或者</span><br><span class="line"># service postgresql start</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># sudo -u postgres psql postgres</span><br></pre></td></tr></table></figure>
+        <p>下载地址<br><a href="https://ftp.postgresql.org/pub/source/v13.2/postgresql-13.2.tar.gz" target="_blank" rel="noopener">postgresql-13.2.tar.gz 官网</a><br><a href="https://repo.huaweicloud.com/postgresql/source/v13.2/postgresql-13.2.tar.gz" target="_blank" rel="noopener">postgresql-13.2.tar.gz 国内镜像</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 解压到指定目录</span></span><br><span class="line">tar -zxvf postgresql-13.2.tar.gz -C /opt</span><br><span class="line"></span><br><span class="line"><span class="comment">### 方案 1</span></span><br><span class="line">./configure --prefix=/data/postgres/13.2</span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line"></span><br><span class="line"><span class="comment">### 方案 2</span></span><br><span class="line">./configure --prefix=/data/postgres/13.2 --with-uuid=ossp</span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> /opt/postgresql-13.2/contrib/uuid-ossp</span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line"></span><br><span class="line"><span class="comment">### 方案 3</span></span><br><span class="line"><span class="comment"># 如果你希望编译所有能编译的东西，包括文档（HTML和手册页）以及附加模块（contrib）</span></span><br><span class="line">./configure --prefix=/data/postgres/13.2 --with-uuid=ossp</span><br><span class="line">make world</span><br><span class="line">make install-world</span><br></pre></td></tr></table></figure>
+<p>segsize：段尺寸，操作系统对文件的大小限制，因此一个表的文件最大不能超过文件系统规定的大小。为解决这个问题，可以将大表的文件拆分为小文件，每个文件的大小即为段设置的大小，单位为G</p>
+<p>blocksize：块大小，数据库IO的最小单位</p>
+<p>wal-segsize：日志段大小，即日志的大小</p>
+<p>wal-blocksize：日志块大小，日志的最小IO单位</p>
+<a id="more"></a>
+<p><strong>错误</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">configure: error: readline library not found</span><br></pre></td></tr></table></figure>
+<p>方法一： yum -y install -y readline-devel</p>
+<p>方法二：./configure –without-readline</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">configure: error: zlib library not found</span><br><span class="line"></span><br><span class="line"># yum -y install zlib-devel</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">configure: error: library &apos;ossp-uuid&apos; or &apos;uuid&apos; is required for OSSP UUID</span><br><span class="line"></span><br><span class="line"># yum install uuid uuid-devel -y</span><br></pre></td></tr></table></figure>
+<p><strong>uuid</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">create extension &quot;uuid-ossp&quot;;</span><br><span class="line"></span><br><span class="line">## 测试</span><br><span class="line">select uuid_generate_v4();</span><br></pre></td></tr></table></figure>
+<p><strong>添加用户</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 添加用户组 </span></span><br><span class="line"><span class="comment"># cat /etc/group</span></span><br><span class="line"><span class="comment"># groupadd postgres</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加 postgres 用户到 postgres 用户组</span></span><br><span class="line"><span class="comment"># useradd -g postgres postgres</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># mkdir -p /data/postgres/13.2</span></span><br><span class="line"><span class="comment"># 修改文件属主</span></span><br><span class="line"><span class="comment"># chown -R postgres:postgres /data/postgres</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># mkdir -p /data/postgres/13.2/&#123;data,logs&#125;</span></span><br></pre></td></tr></table></figure>
+<p><strong>环境变量</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">vim /home/postgres/.bash_profile</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> PGPORT=5432</span><br><span class="line"><span class="built_in">export</span> PGHOME=/data/postgres/13.2</span><br><span class="line"><span class="built_in">export</span> PGDATA=<span class="variable">$PGHOME</span>/data</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PGHOME</span>/bin:<span class="variable">$PATH</span></span><br><span class="line"><span class="built_in">export</span> MANPATH=<span class="variable">$PGHOME</span>/share/man:<span class="variable">$MANPATH</span></span><br><span class="line"><span class="built_in">export</span> LANG=en_US.UTF-8</span><br><span class="line"><span class="built_in">export</span> DATE=<span class="string">'date +"%Y%m%d%H%M"'</span></span><br><span class="line"><span class="built_in">export</span> LD_LIBRARY_PATH=<span class="variable">$PGHOME</span>/lib:<span class="variable">$LD_LIBRARY_PATH</span></span><br><span class="line"><span class="built_in">export</span> PGHOST=localhost</span><br><span class="line"><span class="built_in">export</span> PGUSER=postgres</span><br><span class="line"><span class="built_in">export</span> PGDATABASE=postgres</span><br><span class="line"></span><br><span class="line">生效</span><br><span class="line"><span class="built_in">source</span> /home/postgres/.bash_profile</span><br></pre></td></tr></table></figure>
+<p><strong>初始化数据库</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 切换用户</span></span><br><span class="line"><span class="comment"># su - postgres</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 初始化数据库</span></span><br><span class="line"><span class="comment"># 初始化数据库 -D 是数据库数据存放目录，-U 是指定一个超级用户，-E是指定编码 ，-W是为这个用户设置密码</span></span><br><span class="line"><span class="comment"># 如果没有输入密码 会随机设置一个密码，也可以服务启动后修改</span></span><br><span class="line">$ initdb -D <span class="variable">$PGDATA</span> -U postgres --locale=en_US.UTF8 -E UTF8 -W</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">[root@79db]/data/postgres/13.2/data<span class="comment"># ls -l</span></span><br><span class="line">total 52</span><br><span class="line">drwx------. 5 postgres postgres    41 Apr 24 11:46 base</span><br><span class="line">drwx------. 2 postgres postgres  4096 Apr 24 11:46 global</span><br><span class="line">drwx------. 2 postgres postgres     6 Apr 24 11:46 pg_commit_ts</span><br><span class="line">drwx------. 2 postgres postgres     6 Apr 24 11:46 pg_dynshmem</span><br><span class="line">-rw-------. 1 postgres postgres  4760 Apr 24 11:46 pg_hba.conf</span><br><span class="line">-rw-------. 1 postgres postgres  1636 Apr 24 11:46 pg_ident.conf</span><br><span class="line">drwx------. 4 postgres postgres    68 Apr 24 11:46 pg_logical</span><br><span class="line">drwx------. 4 postgres postgres    36 Apr 24 11:46 pg_multixact</span><br><span class="line">drwx------. 2 postgres postgres     6 Apr 24 11:46 pg_notify</span><br><span class="line">drwx------. 2 postgres postgres     6 Apr 24 11:46 pg_replslot</span><br><span class="line">drwx------. 2 postgres postgres     6 Apr 24 11:46 pg_serial</span><br><span class="line">drwx------. 2 postgres postgres     6 Apr 24 11:46 pg_snapshots</span><br><span class="line">drwx------. 2 postgres postgres     6 Apr 24 11:46 pg_stat</span><br><span class="line">drwx------. 2 postgres postgres     6 Apr 24 11:46 pg_stat_tmp</span><br><span class="line">drwx------. 2 postgres postgres    18 Apr 24 11:46 pg_subtrans</span><br><span class="line">drwx------. 2 postgres postgres     6 Apr 24 11:46 pg_tblspc</span><br><span class="line">drwx------. 2 postgres postgres     6 Apr 24 11:46 pg_twophase</span><br><span class="line">-rw-------. 1 postgres postgres     3 Apr 24 11:46 PG_VERSION</span><br><span class="line">drwx------. 3 postgres postgres    60 Apr 24 11:46 pg_wal</span><br><span class="line">drwx------. 2 postgres postgres    18 Apr 24 11:46 pg_xact</span><br><span class="line">-rw-------. 1 postgres postgres    88 Apr 24 11:46 postgresql.auto.conf</span><br><span class="line">-rw-------. 1 postgres postgres 28007 Apr 24 11:46 postgresql.conf</span><br></pre></td></tr></table></figure>
+<p>在$PGDATA目录里面我们可以找到pg_hba.conf这个文件，这个文件主要是用来控制数据库的连接访问。我添加了host all all 0.0.0.0/0 md5 就表示我允许任何IP的任何用户通过md5这个验证方法来访问我的所有数据库，当然产品库上面大家最好做一个限制</p>
+<p><strong>启动数据库</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 默认启动</span></span><br><span class="line">$ pg_ctl start</span><br><span class="line"></span><br><span class="line"><span class="comment">## 指定参数 -D 数据目录 -l 指定日志输出位置</span></span><br><span class="line">$ pg_ctl -D /data/postgres/13.2/data -l /data/postgres/13.2/logs/postgres.log start</span><br></pre></td></tr></table></figure>
+<p><strong>停止数据库</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 默认关闭</span></span><br><span class="line">$ pg_ctl stop</span><br><span class="line"></span><br><span class="line"><span class="comment"># 指定配置文件</span></span><br><span class="line">$ pg_ctl -D /data/postgres/13.2/data -s -m fast stop</span><br></pre></td></tr></table></figure>
+<p><strong>psql 连接数据库</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># psql -h 127.0.0.1 -p 5432 -U postgres</span></span><br></pre></td></tr></table></figure>
+<p><strong>远程登录</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vim /data/postgres/13.2/data/pg_hba.conf</span><br><span class="line">host all all 0.0.0.0/0 md5 <span class="comment"># 其他用户登陆</span></span><br><span class="line"></span><br><span class="line">vim /data/postgres/13.2/data/postgresql.conf</span><br><span class="line">listen_address = <span class="string">'*'</span> <span class="comment"># 监听所有地址</span></span><br></pre></td></tr></table></figure>
+<p><strong>设置时区</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vim /data/postgres/13.2/data/postgresql.conf</span><br><span class="line"><span class="comment"># 652 行</span></span><br><span class="line">timezone = <span class="string">'America/Nebaw_York'</span></span><br><span class="line">修改为</span><br><span class="line">timezone = <span class="string">'Asia/Shanghai'</span></span><br></pre></td></tr></table></figure>
+<p><strong>修改 postgres 用户密码</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER USER postgres WITH PASSWORD &apos;postgres&apos;;</span><br></pre></td></tr></table></figure>
+<h2 id="防火墙开放端口"><a href="#防火墙开放端口" class="headerlink" title="防火墙开放端口"></a>防火墙开放端口</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --add-port=5432/tcp --permanent               #永久添加5432端口例外(全局)</span><br><span class="line">firewall-cmd --remove-port=5432/tcp --permanent            #永久删除5432端口例外(全局)</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+<p>配置系统服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /usr/lib/systemd/system/postgres13.2.service</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=PostgreSQL 13.2</span><br><span class="line"># This unit can only run after the network is up and running</span><br><span class="line"># (that is, the network target has run)</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line"># PostgreSQL is a traditional UNIX daemon that forks a child,</span><br><span class="line"># and the initial process exits</span><br><span class="line">Type=forking</span><br><span class="line"># Wait 120 seconds on startup and shutdown to consider the process</span><br><span class="line"># correctly started up or shut down.</span><br><span class="line">TimeoutSec=120</span><br><span class="line"># The UNIX user and group to execute PostgreSQL as</span><br><span class="line">User=postgres</span><br><span class="line">Group=postgres</span><br><span class="line"></span><br><span class="line"># Set the PGROOT、PGDATA、PGPORT environmental variable for PostgreSQL</span><br><span class="line">Environment=PGROOT=/data/postgres/13.2</span><br><span class="line">Environment=PGDATA=data/postgres/13.2/data</span><br><span class="line">Environment=PGPORT=5432</span><br><span class="line"></span><br><span class="line"># If StandardOutput= or StandardError= are set to syslog, journal or kmsg,</span><br><span class="line"># prefix log lines with &quot;postgres&quot;</span><br><span class="line">SyslogIdentifier=postgres</span><br><span class="line"></span><br><span class="line"># Let systemd know where PostgreSQL keeps its pid file</span><br><span class="line"># PIDFile=/data/postgres/13.2/data/postmaster.pid</span><br><span class="line"></span><br><span class="line"># Command used to start PostgreSQL</span><br><span class="line">ExecStart= /data/postgres/13.2/bin/pg_ctl -s -D $&#123;PGDATA&#125; start -l /data/postgres/13.2/logs/postgres.log -w -t 120</span><br><span class="line"></span><br><span class="line"># Command used to reload PostgreSQL</span><br><span class="line">ExecReload= /data/postgres/13.2/bin/pg_ctl -s -D $&#123;PGDATA&#125; reload</span><br><span class="line"></span><br><span class="line"># Command used to stop PostgreSQL</span><br><span class="line">ExecStop= /data/postgres/13.2/bin/pg_ctl -s -D $&#123;PGDATA&#125; stop -m fast</span><br><span class="line"></span><br><span class="line"># Use the lowest allowable setting for the OOM killer; this should</span><br><span class="line"># actually disable the OOM killer for PostgreSQL</span><br><span class="line">OOMScoreAdjust=-1000</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line"># This unit is part of target multi-user</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+<p>开机自启服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">chmod 754 /usr/lib/systemd/system/postgres13.2.service</span><br><span class="line">systemctl enable postgres13.2.service</span><br><span class="line">systemctl disable postgres13.2.service</span><br></pre></td></tr></table></figure>
+<h2 id="其它错误"><a href="#其它错误" class="headerlink" title="其它错误"></a>其它错误</h2><p>不正确关闭数据库、我的原因是配置文件参数错误</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">waiting for server to start.... stopped waiting</span><br><span class="line">pg_ctl: could not start server</span><br><span class="line">Examine the log output.</span><br></pre></td></tr></table></figure>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
+<p><a href="https://www.postgresql.org/docs/12/installation.html" target="_blank" rel="noopener">官网源码安装</a></p>
+<p>[UUID]</p>
+</blockquote>
 
       
 
@@ -369,7 +413,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/04/db/postgresql/02kali-linux-postgresql/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/04/23/db/postgresql/postgres-13.2/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -383,18 +427,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2019/08/04/linux/kali/kali-linux-mysql/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/06/27/linux/linux-systemd/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          kali-linux-mysql
+          Linux systemd
         
       </div>
     </a>
   
   
-    <a href="/2019/08/04/linux/kali/kali-linux-2019-02/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">kali-linux-2019.02</div>
+    <a href="/2021/04/10/sts/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">spring-tool-suite 4.10</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -740,6 +784,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">validate.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vip</a>
               </li>
              
@@ -749,10 +797,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">vsftp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">validate.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -844,10 +888,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">bigdecimal</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">jpa</a>
               </li>
              
@@ -856,11 +896,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">PBEWithMD5AndDES</a>
+                <a href="javascript:void(0)" class="js-tag color1">bigdecimal</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color2">PBEWithMD5AndDES</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -872,15 +912,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">qrcode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">spring-boot</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">qrcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">thymeleaf</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IIFE</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -892,10 +940,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IIFE</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">centos7</a>
               </li>
              
@@ -904,15 +948,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">manjaro</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">vm</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">lua</a>
+                <a href="javascript:void(0)" class="js-tag color3">manjaro</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -920,7 +960,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
+                <a href="javascript:void(0)" class="js-tag color4">lua</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -929,6 +969,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -960,19 +1004,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">wget</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">activiti</a>
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">activiti</a>
               </li>
              
               <li class="article-tag-list-item">

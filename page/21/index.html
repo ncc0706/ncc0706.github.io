@@ -889,19 +889,19 @@ cd nvm 执行 ./install.sh
 
 
   
-    <article id="post-db/postgresql/09run-postgres-instance-on-docker" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-db/postgresql/postgres-docker" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/07/db/postgresql/09run-postgres-instance-on-docker/">在docker上运行postgres实例</a>
+      <a class="article-title" href="/2018/02/07/db/postgresql/postgres-docker/">在docker上运行postgres实例</a>
     </h1>
   
 
         
-        <a href="/2018/02/07/db/postgresql/09run-postgres-instance-on-docker/" class="archive-article-date">
+        <a href="/2018/02/07/db/postgresql/postgres-docker/" class="archive-article-date">
   	<time datetime="2018-02-07T16:36:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-07</time>
 </a>
         
@@ -913,7 +913,7 @@ cd nvm 执行 ./install.sh
 <p>docker image直接从docker hub <a href="https://hub.docker.com/_/postgres/" target="_blank" rel="noopener">官网</a>获取，这里选用alpine的系统，image比较小<code>postgres:10.1-alpine</code></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ docker pull postgres:10.1-alpine</span><br><span class="line">➜  ~ docker run -d --name pg -p 5432:5432 -e POSTGRES_PASSWORD=pg  postgres:10.1-alpine</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> postgres:16.4</span></span><br><span class="line">➜  ~ docker run --restart unless-stopped -d --name postgres -p 5432:5432 -v ~/postgres/data/pg16:/var/lib/postgresql/data -e POSTGRES_PASSWORD=postgres ncc0706/postgres:16.4-alpine3.20</span><br></pre></td></tr></table></figure>
         
-          <a class="article-more-a" href="/2018/02/07/db/postgresql/09run-postgres-instance-on-docker/#more">more >></a>
+          <a class="article-more-a" href="/2018/02/07/db/postgresql/postgres-docker/#more">more >></a>
         
       
 
@@ -951,7 +951,7 @@ cd nvm 执行 ./install.sh
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/02/07/db/postgresql/09run-postgres-instance-on-docker/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/02/07/db/postgresql/postgres-docker/">展开全文 >></a>
         </p>
       
 
@@ -1377,6 +1377,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">validate.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vip</a>
               </li>
              
@@ -1386,10 +1390,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">vsftp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">validate.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1481,10 +1481,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">bigdecimal</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">jpa</a>
               </li>
              
@@ -1493,11 +1489,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">PBEWithMD5AndDES</a>
+                <a href="javascript:void(0)" class="js-tag color1">bigdecimal</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color2">PBEWithMD5AndDES</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1509,15 +1505,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">qrcode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">spring-boot</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">qrcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">thymeleaf</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IIFE</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1529,10 +1533,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IIFE</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">centos7</a>
               </li>
              
@@ -1541,15 +1541,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">manjaro</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">vm</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">lua</a>
+                <a href="javascript:void(0)" class="js-tag color3">manjaro</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1557,7 +1553,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
+                <a href="javascript:void(0)" class="js-tag color4">lua</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1566,6 +1562,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1597,19 +1597,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">wget</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">activiti</a>
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">activiti</a>
               </li>
              
               <li class="article-tag-list-item">
