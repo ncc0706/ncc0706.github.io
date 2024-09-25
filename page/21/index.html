@@ -889,86 +889,6 @@ cd nvm 执行 ./install.sh
 
 
   
-    <article id="post-run-postgres-instance-on-docker" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/07/run-postgres-instance-on-docker/">在docker上运行postgres实例</a>
-    </h1>
-  
-
-        
-        <a href="/2018/02/07/run-postgres-instance-on-docker/" class="archive-article-date">
-  	<time datetime="2018-02-07T16:36:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/assets/images/2018-02-07/2015011809283211487.jpg" alt="postgres"></p>
-<p>docker image直接从docker hub <a href="https://hub.docker.com/_/postgres/" target="_blank" rel="noopener">官网</a>获取，这里选用alpine的系统，image比较小<code>postgres:10.1-alpine</code></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ docker pull postgres:10.1-alpine</span><br><span class="line">➜  ~ docker run -d --name pg -p 5432:5432 -e POSTGRES_PASSWORD=pg  postgres:10.1-alpine</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2018/02/07/run-postgres-instance-on-docker/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">postgres</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/02/07/run-postgres-instance-on-docker/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
     <article id="post-db/postgresql/09run-postgres-instance-on-docker" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -991,7 +911,7 @@ cd nvm 执行 ./install.sh
       
         <p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2018/02/07/2015011809283211487.jpg" alt="postgres"></p>
 <p>docker image直接从docker hub <a href="https://hub.docker.com/_/postgres/" target="_blank" rel="noopener">官网</a>获取，这里选用alpine的系统，image比较小<code>postgres:10.1-alpine</code></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ docker pull postgres:10.1-alpine</span><br><span class="line">➜  ~ docker run -d --name pg -p 5432:5432 -e POSTGRES_PASSWORD=pg  postgres:10.1-alpine</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ docker pull postgres:10.1-alpine</span><br><span class="line">➜  ~ docker run -d --name pg -p 5432:5432 -e POSTGRES_PASSWORD=pg  postgres:10.1-alpine</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> postgres:16.4</span></span><br><span class="line">➜  ~ docker run --restart unless-stopped -d --name postgres -p 5432:5432 -v ~/postgres/data/pg16:/var/lib/postgresql/data -e POSTGRES_PASSWORD=postgres ncc0706/postgres:16.4-alpine3.20</span><br></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/2018/02/07/db/postgresql/09run-postgres-instance-on-docker/#more">more >></a>
         
@@ -1032,6 +952,100 @@ cd nvm 执行 ./install.sh
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/02/07/db/postgresql/09run-postgres-instance-on-docker/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+    <article id="post-java/spring-boot/spring-boot-thymeleaf" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/06/java/spring-boot/spring-boot-thymeleaf/">spring boot部署中一个斜杠引发的血案</a>
+    </h1>
+  
+
+        
+        <a href="/2018/02/06/java/spring-boot/spring-boot-thymeleaf/" class="archive-article-date">
+  	<time datetime="2018-02-06T23:34:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="org-thymeleaf-exceptions-TemplateInputException"><a href="#org-thymeleaf-exceptions-TemplateInputException" class="headerlink" title="org.thymeleaf.exceptions.TemplateInputException"></a>org.thymeleaf.exceptions.TemplateInputException</h3><p><img src="/assets/images/2018-02-06/2015011809154211067.jpg" alt="美丽的火烈鸟"></p>
+<p>本地开发环境没有任何问题，但是打成jar部署到服务器时，就出现异常信息了，以为没有把模板文件打入到jar中，可以通过<code>jar xvf spring-boot-thymeleaf-0.0.1-SNAPSHOT.jar</code>查询jar中的内容，可以看到我们的模板文件。</p>
+        
+          <a class="article-more-a" href="/2018/02/06/java/spring-boot/spring-boot-thymeleaf/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">spring-boot</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">thymeleaf</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/java//" class="article-tag-list-link color5">java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/02/06/java/spring-boot/spring-boot-thymeleaf/">展开全文 >></a>
         </p>
       
 
@@ -1191,7 +1205,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">cors</a>
+                <a href="javascript:void(0)" class="js-tag color5">area</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1207,11 +1221,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+                <a href="javascript:void(0)" class="js-tag color5">cors</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">area</a>
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1259,6 +1273,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">nacos</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
               </li>
              
@@ -1275,15 +1297,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nacos</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ipp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1315,6 +1329,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">原码</a>
               </li>
              
@@ -1327,19 +1345,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">querydsl</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">ruby</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">postgres</a>
+                <a href="javascript:void(0)" class="js-tag color4">querydsl</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1363,6 +1373,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">tailwindcss</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">validate.js</a>
               </li>
              
@@ -1372,10 +1386,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vscode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tailwindcss</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1539,6 +1549,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">os</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">lua</a>
               </li>
              
@@ -1548,10 +1562,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">os</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1583,11 +1593,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ab</a>
+                <a href="javascript:void(0)" class="js-tag color5">wget</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">wget</a>
+                <a href="javascript:void(0)" class="js-tag color3">ab</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1604,6 +1614,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mongo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">postgres</a>
               </li>
              
               <li class="article-tag-list-item">

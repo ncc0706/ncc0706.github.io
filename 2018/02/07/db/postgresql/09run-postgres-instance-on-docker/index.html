@@ -8,20 +8,20 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>在docker上运行postgres实例 | Niu Yuxian&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="docker image直接从docker hub 官网获取，这里选用alpine的系统，image比较小postgres:10.1-alpine 12➜  ~ docker pull postgres:10.1-alpine➜  ~ docker run -d --name pg -p 5432:5432 -e POSTGRES_PASSWORD=pg  postgres:10.1-alpin">
+  <meta name="description" content="docker image直接从docker hub 官网获取，这里选用alpine的系统，image比较小postgres:10.1-alpine 12345➜  ~ docker pull postgres:10.1-alpine➜  ~ docker run -d --name pg -p 5432:5432 -e POSTGRES_PASSWORD=pg  postgres:10.1-al">
 <meta name="keywords" content="postgres">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在docker上运行postgres实例">
 <meta property="og:url" content="http://yoursite.com/2018/02/07/db/postgresql/09run-postgres-instance-on-docker/index.html">
 <meta property="og:site_name" content="Niu Yuxian&#39;blog">
-<meta property="og:description" content="docker image直接从docker hub 官网获取，这里选用alpine的系统，image比较小postgres:10.1-alpine 12➜  ~ docker pull postgres:10.1-alpine➜  ~ docker run -d --name pg -p 5432:5432 -e POSTGRES_PASSWORD=pg  postgres:10.1-alpin">
+<meta property="og:description" content="docker image直接从docker hub 官网获取，这里选用alpine的系统，image比较小postgres:10.1-alpine 12345➜  ~ docker pull postgres:10.1-alpine➜  ~ docker run -d --name pg -p 5432:5432 -e POSTGRES_PASSWORD=pg  postgres:10.1-al">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2018/02/07/2015011809283211487.jpg">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2018/02/07/20180207165109.png">
-<meta property="og:updated_time" content="2024-09-25T03:29:40.038Z">
+<meta property="og:updated_time" content="2024-09-25T06:17:36.749Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在docker上运行postgres实例">
-<meta name="twitter:description" content="docker image直接从docker hub 官网获取，这里选用alpine的系统，image比较小postgres:10.1-alpine 12➜  ~ docker pull postgres:10.1-alpine➜  ~ docker run -d --name pg -p 5432:5432 -e POSTGRES_PASSWORD=pg  postgres:10.1-alpin">
+<meta name="twitter:description" content="docker image直接从docker hub 官网获取，这里选用alpine的系统，image比较小postgres:10.1-alpine 12345➜  ~ docker pull postgres:10.1-alpine➜  ~ docker run -d --name pg -p 5432:5432 -e POSTGRES_PASSWORD=pg  postgres:10.1-al">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2018/02/07/2015011809283211487.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Niu Yuxian&#39;blog" type="application/atom+xml">
@@ -257,7 +257,7 @@ var _hmt = _hmt || [];
       
         <p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2018/02/07/2015011809283211487.jpg" alt="postgres"></p>
 <p>docker image直接从docker hub <a href="https://hub.docker.com/_/postgres/" target="_blank" rel="noopener">官网</a>获取，这里选用alpine的系统，image比较小<code>postgres:10.1-alpine</code></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ docker pull postgres:10.1-alpine</span><br><span class="line">➜  ~ docker run -d --name pg -p 5432:5432 -e POSTGRES_PASSWORD=pg  postgres:10.1-alpine</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ docker pull postgres:10.1-alpine</span><br><span class="line">➜  ~ docker run -d --name pg -p 5432:5432 -e POSTGRES_PASSWORD=pg  postgres:10.1-alpine</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> postgres:16.4</span></span><br><span class="line">➜  ~ docker run --restart unless-stopped -d --name postgres -p 5432:5432 -v ~/postgres/data/pg16:/var/lib/postgresql/data -e POSTGRES_PASSWORD=postgres ncc0706/postgres:16.4-alpine3.20</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <p><strong>容器状态</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ docker ps</span><br><span class="line">CONTAINER ID        IMAGE                  COMMAND                  CREATED             STATUS              PORTS                    NAMES</span><br><span class="line">0c798e446cbe        postgres:10.1-alpine   &quot;docker-entrypoint...&quot;   15 minutes ago      Up 15 minutes       0.0.0.0:5432-&gt;5432/tcp   pg</span><br><span class="line">➜  ~</span><br></pre></td></tr></table></figure>
@@ -395,11 +395,11 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2018/02/07/run-postgres-instance-on-docker/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/02/07/java/multiple-databases-with-spring-boot-and-spring-data-jpa/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          在docker上运行postgres实例
+          spring boot多数据源连接
         
       </div>
     </a>
@@ -580,7 +580,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">cors</a>
+                <a href="javascript:void(0)" class="js-tag color5">area</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -596,11 +596,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+                <a href="javascript:void(0)" class="js-tag color5">cors</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">area</a>
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -648,6 +648,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">nacos</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
               </li>
              
@@ -664,15 +672,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nacos</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ipp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -704,6 +704,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">原码</a>
               </li>
              
@@ -716,19 +720,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">querydsl</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">ruby</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">postgres</a>
+                <a href="javascript:void(0)" class="js-tag color4">querydsl</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -752,6 +748,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">tailwindcss</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">validate.js</a>
               </li>
              
@@ -761,10 +761,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vscode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tailwindcss</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -928,6 +924,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">os</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">lua</a>
               </li>
              
@@ -937,10 +937,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">os</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -972,11 +968,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ab</a>
+                <a href="javascript:void(0)" class="js-tag color5">wget</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">wget</a>
+                <a href="javascript:void(0)" class="js-tag color3">ab</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -993,6 +989,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mongo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">postgres</a>
               </li>
              
               <li class="article-tag-list-item">
