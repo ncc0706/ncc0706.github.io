@@ -286,9 +286,9 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title: PostgreSQL 基础</span><br><span class="line">date: 2024-09-25 14:42:01</span><br><span class="line">tags: postgres</span><br><span class="line">categories: db</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">-- 创建 user1 用户</span><br><span class="line">=# create user user1 with password &apos;postgres_user1&apos;;</span><br><span class="line">=# alter user user1 with password &apos;user1&apos;;</span><br><span class="line"></span><br><span class="line">-- 创建 db_user1 数据库并指定拥有着</span><br><span class="line">=# create database db_user1 owner user1;</span><br><span class="line">-- 授权</span><br><span class="line">=# grant all privileges on database db_user1 to user1;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-- 创建 user2 用户</span><br><span class="line">=# create user user2 with password &apos;user2&apos;;</span><br><span class="line">=# alter user user2 with password &apos;user2&apos;;</span><br><span class="line"></span><br><span class="line">-- 创建 db_user1 数据库并指定拥有着</span><br><span class="line">=# create database db_user2 owner user2;</span><br><span class="line">-- 授权</span><br><span class="line">=# grant all privileges on database db_user2 to user2;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-- 查询所有用户</span><br><span class="line">SELECT * FROM pg_user;</span><br><span class="line"></span><br><span class="line">-- 查询所有角色</span><br><span class="line">SELECT * FROM pg_roles;</span><br><span class="line"></span><br><span class="line">-- 查看所有数据库</span><br><span class="line">SELECT * FROM pg_database;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">title: PostgreSQL 基础</span><br><span class="line">date: 2024-09-25 14:42:01</span><br><span class="line">updated: 2024-09-25</span><br><span class="line">tags: postgres</span><br><span class="line">categories: db</span><br></pre></td></tr></table></figure>
+<h3 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">-- 创建 user1 用户</span><br><span class="line">=# create user user1 with password &apos;postgres_user1&apos;;</span><br><span class="line">=# alter user user1 with password &apos;user1&apos;;</span><br><span class="line"></span><br><span class="line">-- 创建 db_user1 数据库并指定拥有着</span><br><span class="line">=# create database db_user1 owner user1;</span><br><span class="line">-- 授权</span><br><span class="line">=# grant all privileges on database db_user1 to user1;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-- 创建 user2 用户</span><br><span class="line">=# create user user2 with password &apos;user2&apos;;</span><br><span class="line">=# alter user user2 with password &apos;user2&apos;;</span><br><span class="line"></span><br><span class="line">-- 创建 db_user1 数据库并指定拥有着</span><br><span class="line">=# create database db_user2 owner user2;</span><br><span class="line">-- 授权</span><br><span class="line">=# grant all privileges on database db_user2 to user2;</span><br></pre></td></tr></table></figure>
+<h3 id="指定权限"><a href="#指定权限" class="headerlink" title="指定权限"></a>指定权限</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-- 查询所有用户</span><br><span class="line">SELECT * FROM pg_user;</span><br><span class="line"></span><br><span class="line">-- 查询所有角色</span><br><span class="line">SELECT * FROM pg_roles;</span><br><span class="line"></span><br><span class="line">-- 查看所有数据库</span><br><span class="line">SELECT * FROM pg_database;</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-- 重要</span><br><span class="line">-- 回收 postgres 数据库的 public 权限，这样只要不是该数据库的 owner 就无法访问该数据库</span><br><span class="line">revoke all on database postgres from public;</span><br><span class="line"></span><br><span class="line">-- 回收 db_user1 数据库的 public 权限，这样只要不是该数据库的 owner 就无法访问该数据库</span><br><span class="line">revoke all on database db_user1 from public;</span><br></pre></td></tr></table></figure>
 
       
@@ -1239,10 +1239,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">was</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">area</a>
               </li>
              
@@ -1299,6 +1295,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">was</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">haproxy</a>
               </li>
              
@@ -1319,6 +1319,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">zsh</a>
               </li>
              
@@ -1328,10 +1332,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">shell</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1360,6 +1360,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nuget</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1399,19 +1403,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">proxy</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sts</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">tailwindcss</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">proxy</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1435,7 +1435,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">模拟器</a>
+                <a href="javascript:void(0)" class="js-tag color1">frida</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1443,7 +1443,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">frida</a>
+                <a href="javascript:void(0)" class="js-tag color4">模拟器</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1595,15 +1595,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">mq</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1643,11 +1643,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">activiti</a>
+                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
+                <a href="javascript:void(0)" class="js-tag color4">activiti</a>
               </li>
              
               <li class="article-tag-list-item">
