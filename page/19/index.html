@@ -229,6 +229,87 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-regex/dl-weishi-video" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/16/regex/dl-weishi-video/">下载腾讯微视小视频</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/16/regex/dl-weishi-video/" class="archive-article-date">
+  	<time datetime="2019-04-16T16:07:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-16</time>
+  	更新：2024-09-29
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> parse</span><br><span class="line"></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">https://h5.weishi.qq.com/weishi/feed/71yYpleeM1HghTttk/wsfeed?_proxy=1&amp;_wv=1&amp;wxplay=1&amp;id=71yYpleeM1HghTttk&amp;spid=1555397841340472&amp;reqseq=250827838&amp;cover=http%3A%2F%2Fpic640.weishi.qq.com%2F2984899cb2ec445ab029fbdcbfc9cover.jpg&amp;bgSize=cover&amp;image=84899cb2ec445ab029fbdcbfc9cover.&amp;xflag=2130706433a156250141b1555397849</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">https://h5.weishi.qq.com/webapp/json/weishi/WSH5GetPlayPage?t=0.7532600494918984&amp;g_tk=&amp;feedid=71yYpleeM1HghTttk&amp;recommendtype=0&amp;datalvl=&amp;qua=&amp;uin=&amp;format=json&amp;inCharset=utf-8&amp;outCharset=utf-8</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line">url = <span class="string">'https://h5.weishi.qq.com/weishi/feed/71yYpleeM1HghTttk/wsfeed?_proxy=1&amp;_wv=1&amp;wxplay=1&amp;id=71yYpleeM1HghTttk&amp;spid=1555397841340472&amp;reqseq=250827838&amp;cover=http%3A%2F%2Fpic640.weishi.qq.com%2F2984899cb2ec445ab029fbdcbfc9cover.jpg&amp;bgSize=cover&amp;image=84899cb2ec445ab029fbdcbfc9cover.&amp;xflag=2130706433a156250141b1555397849'</span></span><br><span class="line"></span><br><span class="line">result = parse.urlparse(url)</span><br><span class="line"></span><br><span class="line">q_dict = parse.parse_qs(result.query)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 视频ID</span></span><br><span class="line">vid = q_dict[<span class="string">'id'</span>][<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">player_url = <span class="string">'https://h5.weishi.qq.com/webapp/json/weishi/WSH5GetPlayPage?t=0.7532600494918984&amp;g_tk=&amp;feedid=&#123;&#125;&amp;recommendtype=0&amp;datalvl=&amp;qua=&amp;uin=&amp;format=json&amp;inCharset=utf-8&amp;outCharset=utf-8'</span>.format(</span><br><span class="line">    vid)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取返回的JSON信息</span></span><br><span class="line">content = requests.get(player_url).text</span><br><span class="line">r = json.loads(content)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 视频信息</span></span><br><span class="line">video_info = r[<span class="string">'data'</span>][<span class="string">'feeds'</span>][<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 标题</span></span><br><span class="line">title = video_info[<span class="string">'feed_desc'</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 视频地址</span></span><br><span class="line">video = video_info[<span class="string">'video_url'</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 封面</span></span><br><span class="line">cover = video_info[<span class="string">'material_thumburl'</span>]</span><br><span class="line"></span><br><span class="line">print(title, cover, video)</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">requests</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/16/regex/dl-weishi-video/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-nodejs/install-nodejs-on-archlinux" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -243,7 +324,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/16/nodejs/install-nodejs-on-archlinux/" class="archive-article-date">
   	<time datetime="2019-04-16T09:01:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-16</time>
-  	更新：2024-09-27
+  	更新：2024-09-29
 </a>
         
       </header>
@@ -323,7 +404,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/03/ffmpeg/ffmpeg/" class="archive-article-date">
   	<time datetime="2019-04-03T13:15:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-03</time>
-  	更新：2024-09-27
+  	更新：2024-09-29
 </a>
         
       </header>
@@ -411,7 +492,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/03/28/git/git-delete-commit-file-to-ignore/" class="archive-article-date">
   	<time datetime="2019-03-28T10:07:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-28</time>
-  	更新：2024-09-27
+  	更新：2024-09-29
 </a>
         
       </header>
@@ -489,7 +570,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/03/22/git/git-multi-user-on-windows/" class="archive-article-date">
   	<time datetime="2019-03-22T09:06:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-22</time>
-  	更新：2024-09-27
+  	更新：2024-09-29
 </a>
         
       </header>
@@ -574,7 +655,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/03/22/git/git-tour/" class="archive-article-date">
   	<time datetime="2019-03-22T09:05:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-22</time>
-  	更新：2024-09-27
+  	更新：2024-09-29
 </a>
         
       </header>
@@ -653,7 +734,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/03/21/ssr-link/" class="archive-article-date">
   	<time datetime="2019-03-21T17:48:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-21</time>
-  	更新：2024-09-27
+  	更新：2024-09-29
 </a>
         
       </header>
@@ -731,7 +812,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/01/08/nginx/nginx-ssl/" class="archive-article-date">
   	<time datetime="2019-01-08T09:38:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-08</time>
-  	更新：2024-09-27
+  	更新：2024-09-29
 </a>
         
       </header>
@@ -809,7 +890,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/01/04/regex/dl-qq-video/" class="archive-article-date">
   	<time datetime="2019-01-04T15:41:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-04</time>
-  	更新：2024-09-27
+  	更新：2024-09-29
 </a>
         
       </header>
@@ -897,7 +978,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/01/03/ffmpeg/install-ffmpeg-on-fedora29/" class="archive-article-date">
   	<time datetime="2019-01-03T14:46:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-03</time>
-  	更新：2024-09-27
+  	更新：2024-09-29
 </a>
         
       </header>
@@ -943,85 +1024,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/01/03/ffmpeg/install-ffmpeg-on-fedora29/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-android/android-primer" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/30/android/android-primer/">android-primer</a>
-    </h1>
-  
-
-        
-        <a href="/2018/12/30/android/android-primer/" class="archive-article-date">
-  	<time datetime="2018-12-30T17:34:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-30</time>
-  	更新：2024-09-27
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h2><p><a href="https://developer.android.com/studio/" target="_blank" rel="noopener">https://developer.android.com/studio/</a></p>
-        
-          <a class="article-more-a" href="/2018/12/30/android/android-primer/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/12/30/android/android-primer/">展开全文 >></a>
         </p>
       
 
@@ -1273,11 +1275,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color4">ipp</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ipp</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1297,15 +1299,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">nuget</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nuget</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1361,11 +1363,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vsftp</a>
+                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
+                <a href="javascript:void(0)" class="js-tag color1">vsftp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1481,11 +1483,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring-boot</a>
+                <a href="javascript:void(0)" class="js-tag color4">keycloak</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">keycloak</a>
+                <a href="javascript:void(0)" class="js-tag color2">spring-boot</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1573,11 +1575,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">wget</a>
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color5">wget</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1621,11 +1623,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
+                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -229,6 +229,103 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-github/github-actions" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/07/29/github/github-actions/">Github Actions</a>
+    </h1>
+  
+
+        
+        <a href="/2023/07/29/github/github-actions/" class="archive-article-date">
+  	<time datetime="2023-07-29T21:11:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-07-29</time>
+  	更新：2024-09-29
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>弃坑 travis，开始收费了</p>
+<p><a href="https://docs.travis-ci.com/user/billing-overview/#usage---credits" target="_blank" rel="noopener">https://docs.travis-ci.com/user/billing-overview/#usage---credits</a></p>
+<h2 id="workflow-配置"><a href="#workflow-配置" class="headerlink" title="workflow 配置"></a>workflow 配置</h2><p>源码根目录创建 <code>.github/workflows/deploy.yml</code></p>
+<h2 id="生成密钥"><a href="#生成密钥" class="headerlink" title="生成密钥"></a>生成密钥</h2><p>ssh-keygen -t rsa -b 4096 -C “Hexo Deploy Key” -f github-deploy-key -N “”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">github-deploy-key —— 私钥</span><br><span class="line">github-deploy-key.pub —— 公钥</span><br></pre></td></tr></table></figure></p>
+<p>源码项目 配置私钥 Settings -&gt; Security -&gt; Actions</p>
+<p>目标项目 配置公钥 Settings -&gt; Security -&gt; Deploy keys </p>
+<p>一定要勾选 Allow write access 来打开写权限，否则无法写入会导致部署失败</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
+<p><a href="https://github.com/peaceiris/actions-gh-pages" target="_blank" rel="noopener">https://github.com/peaceiris/actions-gh-pages</a><br><a href="https://zhuanlan.zhihu.com/p/170563000" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/170563000</a><br><a href="https://www.cnblogs.com/xueyubao/p/13991935.html" target="_blank" rel="noopener">https://www.cnblogs.com/xueyubao/p/13991935.html</a><br><a href="https://cloud.tencent.com/developer/article/1953391" target="_blank" rel="noopener">https://cloud.tencent.com/developer/article/1953391</a><br><a href="https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions" target="_blank" rel="noopener">https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions</a></p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/github//" class="article-tag-list-link color2">github</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/07/29/github/github-actions/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-dotnetmvc/razor-encoding" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -243,7 +340,7 @@ var _hmt = _hmt || [];
         
         <a href="/2023/07/29/dotnetmvc/razor-encoding/" class="archive-article-date">
   	<time datetime="2023-07-29T13:12:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-07-29</time>
-  	更新：2024-09-27
+  	更新：2024-09-29
 </a>
         
       </header>
@@ -339,7 +436,7 @@ var _hmt = _hmt || [];
         
         <a href="/2023/01/14/db/mysql/mysql-left-join/" class="archive-article-date">
   	<time datetime="2023-01-14T16:41:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-14</time>
-  	更新：2024-09-27
+  	更新：2024-09-29
 </a>
         
       </header>
@@ -438,7 +535,7 @@ var _hmt = _hmt || [];
         
         <a href="/2022/11/22/db/mysql/mysql-5.7-json/" class="archive-article-date">
   	<time datetime="2022-11-22T10:54:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-22</time>
-  	更新：2024-09-27
+  	更新：2024-09-29
 </a>
         
       </header>
@@ -526,7 +623,7 @@ var _hmt = _hmt || [];
         
         <a href="/2022/10/26/extensions/" class="archive-article-date">
   	<time datetime="2022-10-26T19:26:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-26</time>
-  	更新：2024-09-27
+  	更新：2024-09-29
 </a>
         
       </header>
@@ -614,7 +711,7 @@ var _hmt = _hmt || [];
         
         <a href="/2022/10/14/deno/welcome-deno/" class="archive-article-date">
   	<time datetime="2022-10-14T12:32:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-14</time>
-  	更新：2024-09-27
+  	更新：2024-09-29
 </a>
         
       </header>
@@ -703,7 +800,7 @@ var _hmt = _hmt || [];
         
         <a href="/2022/09/15/linux/debian/debian11/" class="archive-article-date">
   	<time datetime="2022-09-15T20:09:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-15</time>
-  	更新：2024-09-27
+  	更新：2024-09-29
 </a>
         
       </header>
@@ -797,7 +894,7 @@ var _hmt = _hmt || [];
         
         <a href="/2022/07/28/java/bigdecimal-text/" class="archive-article-date">
   	<time datetime="2022-07-28T11:06:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-28</time>
-  	更新：2024-09-27
+  	更新：2024-09-29
 </a>
         
       </header>
@@ -885,7 +982,7 @@ var _hmt = _hmt || [];
         
         <a href="/2022/07/26/db/mysql/mysql-ddl/" class="archive-article-date">
   	<time datetime="2022-07-26T16:48:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-26</time>
-  	更新：2024-09-27
+  	更新：2024-09-29
 </a>
         
       </header>
@@ -973,7 +1070,7 @@ var _hmt = _hmt || [];
         
         <a href="/2022/07/03/sed01/" class="archive-article-date">
   	<time datetime="2022-07-03T12:49:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-03</time>
-  	更新：2024-09-27
+  	更新：2024-09-29
 </a>
         
       </header>
@@ -1019,97 +1116,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2022/07/03/sed01/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-gradle-application" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/06/19/gradle-application/">gradle 导出当前项目依赖的第三方jar</a>
-    </h1>
-  
-
-        
-        <a href="/2022/06/19/gradle-application/" class="archive-article-date">
-  	<time datetime="2022-06-19T19:08:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-19</time>
-  	更新：2024-09-27
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>将 gradle 项目的依赖整理出来。</p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">plugins &#123;</span><br><span class="line">    id <span class="string">'java'</span></span><br><span class="line">    id <span class="string">'application'</span> <span class="comment">// 需要添加这个插件</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gradle install</span><br></pre></td></tr></table></figure>
-<p>会在 build/install/项目名/lib 下面找到当前项目依赖的第三方依赖。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">gradle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/gradle//" class="article-tag-list-link color2">gradle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/06/19/gradle-application/">展开全文 >></a>
         </p>
       
 
@@ -1361,11 +1367,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color4">ipp</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ipp</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1385,15 +1391,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">nuget</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nuget</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1449,11 +1455,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vsftp</a>
+                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
+                <a href="javascript:void(0)" class="js-tag color1">vsftp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1569,11 +1575,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring-boot</a>
+                <a href="javascript:void(0)" class="js-tag color4">keycloak</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">keycloak</a>
+                <a href="javascript:void(0)" class="js-tag color2">spring-boot</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1661,11 +1667,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">wget</a>
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color5">wget</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1709,11 +1715,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
+                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">
