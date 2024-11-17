@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Niu Yuxian&#39;blog">
 <meta property="og:description" content="滚动更新123456## 正常更新sudo pacman -Syu## 出错时，尝试pacman -Sy archlinux-keyring &amp;amp;&amp;amp; pacman -Su 开启远程ssh服务12345678910# systemctl enable sshd.service     开机启动# systemctl start sshd.service      立即启动# syste">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2024-11-09T04:13:21.461Z">
+<meta property="og:updated_time" content="2024-11-17T11:12:22.921Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ArchLinux 安装">
 <meta name="twitter:description" content="滚动更新123456## 正常更新sudo pacman -Syu## 出错时，尝试pacman -Sy archlinux-keyring &amp;amp;&amp;amp; pacman -Su 开启远程ssh服务12345678910# systemctl enable sshd.service     开机启动# systemctl start sshd.service      立即启动# syste">
@@ -246,7 +246,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/28/archlinux/archlinux/" class="archive-article-date">
   	<time datetime="2019-08-28T08:41:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-  	更新：2024-11-09
+  	更新：2024-11-17
 </a>
         
       </header>
@@ -301,6 +301,15 @@ var _hmt = _hmt || [];
 <p>该死的</p>
 <p>whereis google-chrome-stable<br>google-chrome-stable: /usr/bin/google-chrome-stable /usr/share/man/man1/google-chrome-stable.1.gz</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vim /usr/bin/google-chrome-stable</span><br><span class="line">添加--no-sandbox</span><br><span class="line"># Launch</span><br><span class="line">exec /opt/google/chrome/google-chrome $CHROME_USER_FLAGS &quot;$@&quot; --no-sandbox</span><br></pre></td></tr></table></figure>
+<h4 id="chrome"><a href="#chrome" class="headerlink" title="chrome"></a>chrome</h4><p>第1步：安装基础开发包</p>
+<p>要从 AUR 安装软件包，您必须安装 Git 和 base-devel 组。基础开发组包含从源代码编译的所有基本工具。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S <span class="comment">--needed base-devel git</span></span><br></pre></td></tr></table></figure>
+<p>第 2 步：从 AUR 安装 Chrome</p>
+<p>从 AUR 克隆 Google Chrome 并按如下方式安装：</p>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone https://aur.archlinux.org/google-chrome.git</span><br><span class="line"><span class="built_in">cd</span> google-chrome</span><br><span class="line">makepkg -si</span><br></pre></td></tr></table></figure>
+<p>第 3 步：随后升级 Google Chrome</p>
+<p>当新版本的 Google Chrome 发布并在 AUR 中可用时，您可以像这样手动升级：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git pull</span><br><span class="line">makepkg -si</span><br></pre></td></tr></table></figure>
 <p>pacman -S neofetch</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yaourt -S screenfetch</span><br></pre></td></tr></table></figure>
 <p>pacman -S networkmanager</p>
@@ -669,15 +678,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">frp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Nord</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">idea</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">frp</a>
               </li>
              
               <li class="article-tag-list-item">
