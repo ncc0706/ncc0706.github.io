@@ -229,6 +229,99 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-java/tomcat-start-slow" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/28/java/tomcat-start-slow/">tomcat 启动慢</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/28/java/tomcat-start-slow/" class="archive-article-date">
+  	<time datetime="2019-08-28T09:06:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
+  	更新：2024-12-11
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>JAVA_OPTS=”-Djava.security.egd=file:/dev/./urandom”</p>
+<p>通常情况下，tomcat启动只要2~3秒钟，突然有一天，tomcat启动非常慢，要花5~6分钟，查了很久，终于在这篇文章找到了解决方案。</p>
+<p>Tomcat 8启动很慢，且日志上无任何错误，在日志中查看到如下信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [423,538] milliseconds.</span><br></pre></td></tr></table></figure></p>
+<p>SHA1PRNG算法是基于SHA-1算法实现且保密性较强的伪随机数生成器。</p>
+        
+          <a class="article-more-a" href="/2019/08/28/java/tomcat-start-slow/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">tomcat</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/tomcat//" class="article-tag-list-link color2">tomcat</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/28/java/tomcat-start-slow/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-vscode" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -243,7 +336,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/28/vscode/" class="archive-article-date">
   	<time datetime="2019-08-28T09:00:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-  	更新：2024-12-08
+  	更新：2024-12-11
 </a>
         
       </header>
@@ -322,7 +415,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/28/colorlib-ng/" class="archive-article-date">
   	<time datetime="2019-08-28T08:41:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-  	更新：2024-12-08
+  	更新：2024-12-11
 </a>
         
       </header>
@@ -403,7 +496,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/28/archlinux/archlinux/" class="archive-article-date">
   	<time datetime="2019-08-28T08:41:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-  	更新：2024-12-08
+  	更新：2024-12-11
 </a>
         
       </header>
@@ -483,7 +576,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/28/linux/archlinux/archlinux/" class="archive-article-date">
   	<time datetime="2019-08-28T08:41:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-  	更新：2024-12-08
+  	更新：2024-12-11
 </a>
         
       </header>
@@ -562,7 +655,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/28/java/qrcode-java/" class="archive-article-date">
   	<time datetime="2019-08-28T08:31:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-  	更新：2024-12-08
+  	更新：2024-12-11
 </a>
         
       </header>
@@ -641,7 +734,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/28/ffmpeg/ffmpeg-dl-video/" class="archive-article-date">
   	<time datetime="2019-08-28T08:26:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-  	更新：2024-12-08
+  	更新：2024-12-11
 </a>
         
       </header>
@@ -723,7 +816,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/28/java/hibernate-json-issue/" class="archive-article-date">
   	<time datetime="2019-08-28T08:19:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-  	更新：2024-12-08
+  	更新：2024-12-11
 </a>
         
       </header>
@@ -814,7 +907,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/28/querydsl/" class="archive-article-date">
   	<time datetime="2019-08-28T08:08:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-  	更新：2024-12-08
+  	更新：2024-12-11
 </a>
         
       </header>
@@ -895,7 +988,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/21/regex/lion-king/" class="archive-article-date">
   	<time datetime="2019-08-21T13:37:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-21</time>
-  	更新：2024-12-08
+  	更新：2024-12-11
 </a>
         
       </header>
@@ -934,104 +1027,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/08/21/regex/lion-king/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-golang/golang-print-detail" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/16/golang/golang-print-detail/">golang格式化输出</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/16/golang/golang-print-detail/" class="archive-article-date">
-  	<time datetime="2019-08-16T14:21:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-16</time>
-  	更新：2024-12-08
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Go语言的标准输出流在打印到屏幕时有些参数跟别的语言（比如C#和Java）不同，下面是我整理的一些常用的格式化输入操作。</p>
-<p><strong>General</strong></p>
-<ul>
-<li><code>%v</code>以默认的方式打印变量的值</li>
-<li><code>%T</code>打印变量的类型</li>
-<li><code>%q</code>打印基础类型的内容</li>
-</ul>
-<p><strong>Integer</strong></p>
-<ul>
-<li><code>%+d</code>带符号的整型，fmt.Printf(“%+d”,255)// +255</li>
-<li><code>%q</code>打印单引号</li>
-<li><code>%o</code>不带零的八进制</li>
-<li><code>%#o</code>带零的八进制</li>
-<li><code>%x</code>小写的十六进制</li>
-<li><code>%X</code>大写的十六进制</li>
-<li><code>%#x</code>带0x的十六进制</li>
-<li><code>%U</code>打印Unicode字符</li>
-<li><code>%#U</code>打印带字符的Unicode字符</li>
-<li><code>%b</code>打印整型的二进制</li>
-</ul>
-        
-          <a class="article-more-a" href="/2019/08/16/golang/golang-print-detail/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">golang</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/16/golang/golang-print-detail/">展开全文 >></a>
         </p>
       
 
@@ -1571,11 +1566,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">regex</a>
+                <a href="javascript:void(0)" class="js-tag color4">requests</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">requests</a>
+                <a href="javascript:void(0)" class="js-tag color1">regex</a>
               </li>
              
               <li class="article-tag-list-item">

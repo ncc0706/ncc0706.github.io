@@ -229,6 +229,97 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-hexo-update" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/20/hexo-update/">使用Node14 hexo 新建文章警告</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/20/hexo-update/" class="archive-article-date">
+  	<time datetime="2021-03-20T14:18:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-20</time>
+  	更新：2024-12-11
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post demo</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(node:18016) Warning: Accessing non-existent property &apos;lineno&apos; of module exports inside circular dependency</span><br><span class="line">(Use `node --trace-warnings ...` to show where the warning was created)</span><br><span class="line">(node:18016) Warning: Accessing non-existent property &apos;column&apos; of module exports inside circular dependency</span><br><span class="line">(node:18016) Warning: Accessing non-existent property &apos;filename&apos; of module exports inside circular dependency</span><br><span class="line">(node:18016) Warning: Accessing non-existent property &apos;lineno&apos; of module exports inside circular dependency</span><br><span class="line">(node:18016) Warning: Accessing non-existent property &apos;column&apos; of module exports inside circular dependency</span><br><span class="line">(node:18016) Warning: Accessing non-existent property &apos;filename&apos; of module exports inside circular dependency</span><br></pre></td></tr></table></figure>
+<p>经过一番搜索，是由于Node版本太高导致的，降低版本是不会的了，所以决定升级hexo</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 升级cli</span></span><br><span class="line">npm install hexo-cli -g</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看已经过期的安装包</span></span><br><span class="line">npm outdated</span><br><span class="line"></span><br><span class="line"><span class="comment"># npm升级插件</span></span><br><span class="line">npm install -g npm-check-updates</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看最新版本</span></span><br><span class="line">ncu</span><br><span class="line"></span><br><span class="line"><span class="comment"># 升级npm包文件</span></span><br><span class="line">ncu -u</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新安装依赖</span></span><br><span class="line">npm install</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看更新情况 </span></span><br><span class="line">git diff package.json</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/hexo//" class="article-tag-list-link color5">hexo</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/20/hexo-update/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-java-i18n" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -243,7 +334,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/03/20/java-i18n/" class="archive-article-date">
   	<time datetime="2021-03-20T13:51:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-20</time>
-  	更新：2024-12-08
+  	更新：2024-12-11
 </a>
         
       </header>
@@ -341,7 +432,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/01/08/install-tomcat-as-service-on-windows-server2012R2/" class="archive-article-date">
   	<time datetime="2021-01-08T15:07:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-08</time>
-  	更新：2024-12-08
+  	更新：2024-12-11
 </a>
         
       </header>
@@ -421,7 +512,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/11/05/math/" class="archive-article-date">
   	<time datetime="2020-11-05T19:54:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-05</time>
-  	更新：2024-12-08
+  	更新：2024-12-11
 </a>
         
       </header>
@@ -493,7 +584,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/10/20/Let-s-Encrypt-acme/" class="archive-article-date">
   	<time datetime="2020-10-20T13:25:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-20</time>
-  	更新：2024-12-08
+  	更新：2024-12-11
 </a>
         
       </header>
@@ -575,7 +666,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/10/05/linux/archlinux/archlinux-latest/" class="archive-article-date">
   	<time datetime="2020-10-05T16:41:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-05</time>
-  	更新：2024-12-08
+  	更新：2024-12-11
 </a>
         
       </header>
@@ -664,7 +755,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/08/06/javascript/javascript-IIFE/" class="archive-article-date">
   	<time datetime="2020-08-06T22:41:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-06</time>
-  	更新：2024-12-08
+  	更新：2024-12-11
 </a>
         
       </header>
@@ -758,7 +849,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/08/06/javascript/javascript-site/" class="archive-article-date">
   	<time datetime="2020-08-06T21:45:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-06</time>
-  	更新：2024-12-08
+  	更新：2024-12-11
 </a>
         
       </header>
@@ -849,7 +940,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/08/06/ffmpeg/ffmpeg-github/" class="archive-article-date">
   	<time datetime="2020-08-06T08:07:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-06</time>
-  	更新：2024-12-08
+  	更新：2024-12-11
 </a>
         
       </header>
@@ -944,7 +1035,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/07/15/sso/keycloak10/" class="archive-article-date">
   	<time datetime="2020-07-15T18:34:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-15</time>
-  	更新：2024-12-08
+  	更新：2024-12-11
 </a>
         
       </header>
@@ -996,95 +1087,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/07/15/sso/keycloak10/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-tailwindcss-on-angular" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/08/tailwindcss-on-angular/">tailwindcss_on_angular</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/08/tailwindcss-on-angular/" class="archive-article-date">
-  	<time datetime="2020-07-08T21:17:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-08</time>
-  	更新：2024-12-08
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">ng new tailwindcss-app</span><br><span class="line"></span><br><span class="line">npm i ng-tailwindcss -g</span><br><span class="line"></span><br><span class="line">npm i tailwindcss -D</span><br><span class="line"></span><br><span class="line">npx tailwind init --full</span><br><span class="line"></span><br><span class="line">ngtw configure</span><br><span class="line"></span><br><span class="line">touch src/tailwind.css</span><br><span class="line"></span><br><span class="line">Put all your tailwind imports in src/tailwind.css and run:</span><br><span class="line"></span><br><span class="line">@tailwind base;</span><br><span class="line">@tailwind components;</span><br><span class="line">@tailwind utilities;</span><br><span class="line"></span><br><span class="line">ngtw scripts</span><br></pre></td></tr></table></figure>
-<p>最后可以部署到 <a href="https://www.netlify.com" target="_blank" rel="noopener">https://www.netlify.com</a> 上面，这是我部署的服务 <a href="https://hungry-darwin.netlify.app" target="_blank" rel="noopener">https://hungry-darwin.netlify.app</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">tailwindcss</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/css//" class="article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/08/tailwindcss-on-angular/">展开全文 >></a>
         </p>
       
 
@@ -1624,11 +1626,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">regex</a>
+                <a href="javascript:void(0)" class="js-tag color4">requests</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">requests</a>
+                <a href="javascript:void(0)" class="js-tag color1">regex</a>
               </li>
              
               <li class="article-tag-list-item">

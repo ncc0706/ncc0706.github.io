@@ -229,6 +229,97 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-db/redis/01.centos7-install-redis5.0.8" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/13/db/redis/01.centos7-install-redis5.0.8/">Centos7 安装 redis5.0.8</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/13/db/redis/01.centos7-install-redis5.0.8/" class="archive-article-date">
+  	<time datetime="2020-04-13T08:02:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-13</time>
+  	更新：2024-12-11
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> <strong>源码安装</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf redis-5.0.8.tar.gz -C /opt</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> /opt/redis-5.0.8</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装到指定目录</span></span><br><span class="line">make PREFIX=/usr/<span class="built_in">local</span>/redis install</span><br><span class="line"></span><br><span class="line">mkdir /usr/loca/redis/etc</span><br><span class="line"></span><br><span class="line">cp /opt/redis-5.0.8/redis.conf /usr/loca/redis/etc</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将bin目录添加到环境变量中</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/usr/<span class="built_in">local</span>/redis/bin</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动 redis服务</span></span><br><span class="line">redis-server /usr/<span class="built_in">local</span>/redis/etc/redis.conf </span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭服务</span></span><br><span class="line">redis-cli shutdown</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2020/04/13/db/redis/01.centos7-install-redis5.0.8/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">redis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/db//" class="article-tag-list-link color3">db</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/13/db/redis/01.centos7-install-redis5.0.8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-db/postgresql/postgres-12.2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -243,7 +334,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/04/12/db/postgresql/postgres-12.2/" class="archive-article-date">
   	<time datetime="2020-04-12T15:24:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-12</time>
-  	更新：2024-12-08
+  	更新：2024-12-11
 </a>
         
       </header>
@@ -338,7 +429,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/04/11/java/sprint-boot-static-cache/" class="archive-article-date">
   	<time datetime="2020-04-11T15:37:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-11</time>
-  	更新：2024-12-08
+  	更新：2024-12-11
 </a>
         
       </header>
@@ -430,7 +521,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/04/04/java/install-jdk-on-centos7/" class="archive-article-date">
   	<time datetime="2020-04-04T07:52:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-04</time>
-  	更新：2024-12-08
+  	更新：2024-12-11
 </a>
         
       </header>
@@ -527,7 +618,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/04/04/tomcat-service/" class="archive-article-date">
   	<time datetime="2020-04-04T07:32:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-04</time>
-  	更新：2024-12-08
+  	更新：2024-12-11
 </a>
         
       </header>
@@ -623,7 +714,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/04/04/linux/centos7.x/" class="archive-article-date">
   	<time datetime="2020-04-04T06:28:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-04</time>
-  	更新：2024-12-08
+  	更新：2024-12-11
 </a>
         
       </header>
@@ -718,7 +809,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/02/01/db/postgresql/05postgresql-calc/" class="archive-article-date">
   	<time datetime="2020-02-01T10:33:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-01</time>
-  	更新：2024-12-08
+  	更新：2024-12-11
 </a>
         
       </header>
@@ -806,7 +897,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/01/26/db/postgresql/04postgresql-schema/" class="archive-article-date">
   	<time datetime="2020-01-26T17:05:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-26</time>
-  	更新：2024-12-08
+  	更新：2024-12-11
 </a>
         
       </header>
@@ -903,7 +994,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/01/26/db/postgresql/03postgresql/" class="archive-article-date">
   	<time datetime="2020-01-26T15:48:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-26</time>
-  	更新：2024-12-08
+  	更新：2024-12-11
 </a>
         
       </header>
@@ -991,7 +1082,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/01/18/db/postgresql/00postgresql/" class="archive-article-date">
   	<time datetime="2020-01-18T17:57:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-18</time>
-  	更新：2024-12-08
+  	更新：2024-12-11
 </a>
         
       </header>
@@ -1070,97 +1161,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/01/18/db/postgresql/00postgresql/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-db/postgresql/01postgresql" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/18/db/postgresql/01postgresql/">Alpine Linux 安装 postgresql</a>
-    </h1>
-  
-
-        
-        <a href="/2020/01/18/db/postgresql/01postgresql/" class="archive-article-date">
-  	<time datetime="2020-01-18T15:18:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-18</time>
-  	更新：2024-12-08
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>我使用的<code>Alpine Linux</code>发行版，安装<code>postgresql</code>很简单.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">apk add postgresql</span><br><span class="line">rc-service postgresql status</span><br><span class="line">rc-service postgresql start</span><br><span class="line"></span><br><span class="line"># 开机启动服务</span><br><span class="line">rc-update add postgresql</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2020/01/18/db/postgresql/01postgresql/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">postgres</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/db//" class="article-tag-list-link color3">db</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/18/db/postgresql/01postgresql/">展开全文 >></a>
         </p>
       
 
@@ -1700,11 +1700,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">regex</a>
+                <a href="javascript:void(0)" class="js-tag color4">requests</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">requests</a>
+                <a href="javascript:void(0)" class="js-tag color1">regex</a>
               </li>
              
               <li class="article-tag-list-item">
