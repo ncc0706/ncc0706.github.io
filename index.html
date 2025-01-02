@@ -229,6 +229,83 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-linux/linux-systemd-env" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/01/02/linux/linux-systemd-env/">Linux systemd 指定环境变量</a>
+    </h1>
+  
+
+        
+        <a href="/2025/01/02/linux/linux-systemd-env/" class="archive-article-date">
+  	<time datetime="2025-01-02T18:01:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-01-02</time>
+  	更新：2025-01-02
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Systemd-指定环境变量文件"><a href="#Systemd-指定环境变量文件" class="headerlink" title="Systemd 指定环境变量文件"></a>Systemd 指定环境变量文件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> sudo vim /usr/lib/systemd/system/dashboard.service</span></span><br><span class="line">[Unit]</span><br><span class="line">Description=dashboard service</span><br><span class="line">After=syslog.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">User=DSCCTRKangb</span><br><span class="line">WorkingDirectory=/home/user1/dashboard/jar</span><br><span class="line">EnvironmentFile=/home/user1/dashboard/jar/.shell/nacos.conf</span><br><span class="line">ExecStart=/home/user1/dashboard/jar/.shell/.startup-dashboard.sh</span><br><span class="line">SuccessExitStatus=143</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br><span class="line"><span class="meta">#</span><span class="bash"> end</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> nacos.conf</span></span><br><span class="line">NACOS_NAMESPACE=121212</span><br><span class="line">NACOS_PASSWORD=1234</span><br><span class="line">NACOS_SERVER_ADDR=127.0.0.1:8848</span><br><span class="line">NACOS_USERNAME=nacos</span><br><span class="line">NACOS_GROUP=dev</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> .startup-dashboard.sh</span></span><br><span class="line"><span class="meta">#</span><span class="bash">!/usr/bin/env bash</span></span><br><span class="line">/opt/jdk11/bin/java --add-opens java.base/java.lang=ALL-UNNAMED -Djava.security.egd=file:/dev/./urandom -Dserver.port=0 -Dfile.encoding=UTF-8 -jar /home/user1/dashboard/jar/dashboard.jar</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/linux//" class="article-tag-list-link color1">linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/01/02/linux/linux-systemd-env/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-java/jdk" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -501,7 +578,7 @@ var _hmt = _hmt || [];
         
         <a href="/2024/09/25/css/css-gray/" class="archive-article-date">
   	<time datetime="2024-09-25T11:26:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-09-25</time>
-  	更新：2025-01-01
+  	更新：2025-01-02
 </a>
         
       </header>
@@ -590,7 +667,7 @@ var _hmt = _hmt || [];
         
         <a href="/2024/07/07/db/redis/03.rocky-install-redis.7.2.4/" class="archive-article-date">
   	<time datetime="2024-07-07T10:02:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-07-07</time>
-  	更新：2025-01-01
+  	更新：2025-01-02
 </a>
         
       </header>
@@ -682,7 +759,7 @@ var _hmt = _hmt || [];
         
         <a href="/2024/07/06/adb/ldmnq/" class="archive-article-date">
   	<time datetime="2024-07-06T17:00:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-07-06</time>
-  	更新：2025-01-01
+  	更新：2025-01-02
 </a>
         
       </header>
@@ -778,7 +855,7 @@ var _hmt = _hmt || [];
         
         <a href="/2024/05/25/java-version/" class="archive-article-date">
   	<time datetime="2024-05-25T10:54:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-05-25</time>
-  	更新：2025-01-01
+  	更新：2025-01-02
 </a>
         
       </header>
@@ -866,7 +943,7 @@ var _hmt = _hmt || [];
         
         <a href="/2024/05/16/k8s/yarn/" class="archive-article-date">
   	<time datetime="2024-05-16T10:12:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-05-16</time>
-  	更新：2025-01-01
+  	更新：2025-01-02
 </a>
         
       </header>
@@ -960,7 +1037,7 @@ var _hmt = _hmt || [];
         
         <a href="/2024/02/03/k8s/helm/" class="archive-article-date">
   	<time datetime="2024-02-03T14:35:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-02-03</time>
-  	更新：2025-01-01
+  	更新：2025-01-02
 </a>
         
       </header>
@@ -1020,103 +1097,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2024/02/03/k8s/helm/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-md/rocketmq-01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2024/01/21/md/rocketmq-01/">Windows 部署 RocketMQ 5.1..4</a>
-    </h1>
-  
-
-        
-        <a href="/2024/01/21/md/rocketmq-01/" class="archive-article-date">
-  	<time datetime="2024-01-21T19:26:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-21</time>
-  	更新：2025-01-01
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>starup_nameserver.bat</strong></p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">SET JAVA_HOME=D:\develop\Java\jdk1.<span class="number">8.0</span>_181</span><br><span class="line">SET ROCKETMQ_HOME=D:\develop\mq\rocketmq<span class="literal">-all</span><span class="literal">-5</span>.<span class="number">1.4</span></span><br><span class="line"></span><br><span class="line">title Nameserver</span><br><span class="line"></span><br><span class="line">:: 内部调用 runserver.cmd</span><br><span class="line">call bin/mqnamesrv.cmd</span><br></pre></td></tr></table></figure>
-<p><strong>starup_broker.bat</strong></p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">SET JAVA_HOME=D:\develop\Java\jdk1.<span class="number">8.0</span>_181</span><br><span class="line">SET ROCKETMQ_HOME=D:\develop\mq\rocketmq<span class="literal">-all</span><span class="literal">-5</span>.<span class="number">1.4</span></span><br><span class="line"></span><br><span class="line">title broker</span><br><span class="line"></span><br><span class="line">:: 内部调用 runbroker.cmd</span><br><span class="line">call bin/mqbroker.cmd <span class="literal">-n</span> <span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">9876</span> autoCreateTopicEnable=true</span><br></pre></td></tr></table></figure>
-<p><strong>starup_dashboard.cmd</strong></p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">SET JAVA_HOME=D:\develop\Java\jdk1.<span class="number">8.0</span>_181</span><br><span class="line">SET ROCKETMQ_HOME=D:\develop\mq\rocketmq<span class="literal">-all</span><span class="literal">-5</span>.<span class="number">1.4</span></span><br><span class="line"></span><br><span class="line">title dashboard</span><br><span class="line"></span><br><span class="line">java <span class="literal">-jar</span> rocketmq<span class="literal">-dashboard</span><span class="literal">-1</span>.<span class="number">0.0</span>.jar -<span class="literal">-rocketmq</span>.config.namesrvAddr=<span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">9876</span></span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mq</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">rocketmq</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/mq//" class="article-tag-list-link color3">mq</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2024/01/21/md/rocketmq-01/">展开全文 >></a>
         </p>
       
 
@@ -1560,11 +1540,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">PBEWithMD5AndDES</a>
+                <a href="javascript:void(0)" class="js-tag color1">bigdecimal</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">bigdecimal</a>
+                <a href="javascript:void(0)" class="js-tag color2">PBEWithMD5AndDES</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1676,11 +1656,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">activiti</a>
+                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
+                <a href="javascript:void(0)" class="js-tag color4">activiti</a>
               </li>
              
               <li class="article-tag-list-item">

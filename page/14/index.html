@@ -229,6 +229,87 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-regex/lion-king" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/21/regex/lion-king/">python解析CCTV狮子王</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/21/regex/lion-king/" class="archive-article-date">
+  	<time datetime="2019-08-21T13:37:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-21</time>
+  	更新：2025-01-02
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 狮子王</span></span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> html</span><br><span class="line"></span><br><span class="line">urls = [</span><br><span class="line">    <span class="string">'http://tv.cntv.cn/index.php?action=videoset-videolistbytype&amp;class=jiemu&amp;page=&#123;page&#125;&amp;setid=C31718&amp;istiyu=0'</span>.format(</span><br><span class="line">        page=i) <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">8</span>)]</span><br><span class="line"></span><br><span class="line">url = urls[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">r = requests.get(url).text</span><br><span class="line"></span><br><span class="line">tree = html.fromstring(r)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_vinfo</span><span class="params">(api_url)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    获取hls地址</span></span><br><span class="line"><span class="string">    :param api_url:</span></span><br><span class="line"><span class="string">    :return:</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    r = requests.get(api_url).text</span><br><span class="line">    hls_url = json.loads(r)[<span class="string">'hls_url'</span>]</span><br><span class="line">    <span class="keyword">return</span> hls_url</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> a <span class="keyword">in</span> tree.xpath(<span class="string">"//h3//a"</span>):</span><br><span class="line">    title = a.text.split(<span class="string">" "</span>)[<span class="number">1</span>]</span><br><span class="line">    vid = a.attrib[<span class="string">'href'</span>].replace(<span class="string">'/video/C31718/'</span>, <span class="string">''</span>)</span><br><span class="line">    hls_url = get_vinfo(<span class="string">'http://vdn.apps.cntv.cn/api/getHttpVideoInfo.do?pid=&#123;vid&#125;'</span>.format(vid=vid))</span><br><span class="line">    print(<span class="string">'&#123;0:&#123;1&#125;&lt;10&#125; &#123;2&#125;  &#123;3&#125;'</span>.format(title, chr(<span class="number">12288</span>), vid, hls_url))</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">requests</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/21/regex/lion-king/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-golang/golang-print-detail" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -243,7 +324,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/16/golang/golang-print-detail/" class="archive-article-date">
   	<time datetime="2019-08-16T14:21:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-16</time>
-  	更新：2025-01-01
+  	更新：2025-01-02
 </a>
         
       </header>
@@ -341,7 +422,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/14/golang/golang-print/" class="archive-article-date">
   	<time datetime="2019-08-14T11:04:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-14</time>
-  	更新：2025-01-01
+  	更新：2025-01-02
 </a>
         
       </header>
@@ -440,7 +521,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/13/sqlmap-in-action-01/" class="archive-article-date">
   	<time datetime="2019-08-13T10:14:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-13</time>
-  	更新：2025-01-01
+  	更新：2025-01-02
 </a>
         
       </header>
@@ -537,7 +618,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/08/php/laravel/laravel-error/" class="archive-article-date">
   	<time datetime="2019-08-08T15:49:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-08</time>
-  	更新：2025-01-01
+  	更新：2025-01-02
 </a>
         
       </header>
@@ -625,7 +706,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/07/linux/manjaro-kde/" class="archive-article-date">
   	<time datetime="2019-08-07T10:52:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-07</time>
-  	更新：2025-01-01
+  	更新：2025-01-02
 </a>
         
       </header>
@@ -707,7 +788,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/06/regex/dl-xigua-video/" class="archive-article-date">
   	<time datetime="2019-08-06T10:58:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-06</time>
-  	更新：2025-01-01
+  	更新：2025-01-02
 </a>
         
       </header>
@@ -799,7 +880,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/05/java/java-LocalDateTime-postgres/" class="archive-article-date">
   	<time datetime="2019-08-05T13:16:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-05</time>
-  	更新：2025-01-01
+  	更新：2025-01-02
 </a>
         
       </header>
@@ -876,7 +957,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/04/linux/kali/kali-linux-mysql/" class="archive-article-date">
   	<time datetime="2019-08-04T18:51:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-04</time>
-  	更新：2025-01-01
+  	更新：2025-01-02
 </a>
         
       </header>
@@ -958,7 +1039,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/04/linux/kali/kali-linux-2019-02/" class="archive-article-date">
   	<time datetime="2019-08-04T18:09:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-04</time>
-  	更新：2025-01-01
+  	更新：2025-01-02
 </a>
         
       </header>
@@ -996,74 +1077,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/08/04/linux/kali/kali-linux-2019-02/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-passwd-sample" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/25/passwd-sample/">passwd-sample</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/25/passwd-sample/" class="archive-article-date">
-  	<time datetime="2019-07-25T17:35:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-25</time>
-  	更新：2025-01-01
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        description.
-        
-          <a class="article-more-a" href="/2019/07/25/passwd-sample/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/25/passwd-sample/">展开全文 >></a>
         </p>
       
 
@@ -1507,11 +1520,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">PBEWithMD5AndDES</a>
+                <a href="javascript:void(0)" class="js-tag color1">bigdecimal</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">bigdecimal</a>
+                <a href="javascript:void(0)" class="js-tag color2">PBEWithMD5AndDES</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1623,11 +1636,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">activiti</a>
+                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
+                <a href="javascript:void(0)" class="js-tag color4">activiti</a>
               </li>
              
               <li class="article-tag-list-item">
