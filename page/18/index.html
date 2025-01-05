@@ -229,6 +229,87 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-php/php7-fpm" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/30/php/php7-fpm/">php7-fpm</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/30/php/php7-fpm/" class="archive-article-date">
+  	<time datetime="2019-04-30T21:39:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-30</time>
+  	更新：2025-01-05
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">FROM php:7.2.10-fpm-alpine3.8</span><br><span class="line"></span><br><span class="line">LABEL maintainer=&quot;niuyuxian &lt;ncc0706@gmail.com&gt;&quot;</span><br><span class="line"></span><br><span class="line">ENV TZ=Asia/Shanghai \</span><br><span class="line">    LANG=zh_CN.UTF-8</span><br><span class="line"></span><br><span class="line"># update-ca-certificates</span><br><span class="line">RUN echo -e &quot;https://mirror.tuna.tsinghua.edu.cn/alpine/v$(head -c3 /etc/alpine-release)/main\nhttps://mirror.tuna.tsinghua.edu.cn/alpine/v$(head -c3 /etc/alpine-release)/community&quot; &gt; /etc/apk/repositories \</span><br><span class="line">    &amp;&amp; apk update \</span><br><span class="line">    &amp;&amp; apk add --no-cache wget tzdata ca-certificates \</span><br><span class="line">    &amp;&amp; cp /usr/share/zoneinfo/$TZ /etc/localtime &amp;&amp; echo $TZ &gt; /etc/timezone \</span><br><span class="line">    &amp;&amp; docker-php-ext-install mysqli pdo_mysql</span><br><span class="line"></span><br><span class="line">CMD [&quot;/usr/bin/supervisord&quot;]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker build -t registry.cn-hangzhou.aliyuncs.com/985/php:7.2.10 .</span><br><span class="line"></span><br><span class="line">docker push registry.cn-hangzhou.aliyuncs.com/985/php:7.2.10</span><br><span class="line"></span><br><span class="line">docker run -d -p 9001:9000 --name php7.2 -v /data/php/app1:/app -w /app registry.cn-hangzhou.aliyuncs.com/985/php:7.2.10 php -S 0.0.0.0:9000 -t /app</span><br></pre></td></tr></table></figure>
+<p><strong>配置文件</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/etc/php # ls -al</span><br><span class="line">total 156</span><br><span class="line">drwxr-xr-x    1 root     root          4096 Sep 15  2018 .</span><br><span class="line">drwxr-xr-x    1 root     root          4096 Sep 15  2018 ..</span><br><span class="line">drwxr-xr-x    1 root     root          4096 Apr 30 09:53 conf.d</span><br><span class="line">-rw-r--r--    1 root     root         70297 Sep 15  2018 php.ini-development</span><br><span class="line">-rw-r--r--    1 root     root         70569 Sep 15  2018 php.ini-production</span><br><span class="line">/usr/local/etc/php #</span><br></pre></td></tr></table></figure>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://qiita.com/garcons/items/0ad18319aa8cbc1676ce#dockerfilephp-fpm" target="_blank" rel="noopener">https://qiita.com/garcons/items/0ad18319aa8cbc1676ce#dockerfilephp-fpm</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/30/php/php7-fpm/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-wechat/wechat-pay" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -243,7 +324,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/30/wechat/wechat-pay/" class="archive-article-date">
   	<time datetime="2019-04-30T17:50:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-30</time>
-  	更新：2025-01-02
+  	更新：2025-01-05
 </a>
         
       </header>
@@ -321,7 +402,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/29/adb/fiddler/" class="archive-article-date">
   	<time datetime="2019-04-29T12:52:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-29</time>
-  	更新：2025-01-02
+  	更新：2025-01-05
 </a>
         
       </header>
@@ -398,7 +479,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/27/nodejs/sails-in-action/" class="archive-article-date">
   	<time datetime="2019-04-27T16:52:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-27</time>
-  	更新：2025-01-02
+  	更新：2025-01-05
 </a>
         
       </header>
@@ -492,7 +573,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/26/validatejs-sample/" class="archive-article-date">
   	<time datetime="2019-04-26T17:30:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-26</time>
-  	更新：2025-01-02
+  	更新：2025-01-05
 </a>
         
       </header>
@@ -569,7 +650,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/26/regex/regexp-sample-iqiyi/" class="archive-article-date">
   	<time datetime="2019-04-26T14:27:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-26</time>
-  	更新：2025-01-02
+  	更新：2025-01-05
 </a>
         
       </header>
@@ -661,7 +742,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/26/regex/regexp-sample-tencent/" class="archive-article-date">
   	<time datetime="2019-04-26T10:20:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-26</time>
-  	更新：2025-01-02
+  	更新：2025-01-05
 </a>
         
       </header>
@@ -753,7 +834,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/19/php/php-enable-file-get-contents/" class="archive-article-date">
   	<time datetime="2019-04-19T14:44:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-19</time>
-  	更新：2025-01-02
+  	更新：2025-01-05
 </a>
         
       </header>
@@ -831,7 +912,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/19/php/php-xdebug/" class="archive-article-date">
   	<time datetime="2019-04-19T14:40:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-19</time>
-  	更新：2025-01-02
+  	更新：2025-01-05
 </a>
         
       </header>
@@ -915,7 +996,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/17/archlinux/archlinux-install-vscode/" class="archive-article-date">
   	<time datetime="2019-04-17T11:53:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-17</time>
-  	更新：2025-01-02
+  	更新：2025-01-05
 </a>
         
       </header>
@@ -950,83 +1031,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/04/17/archlinux/archlinux-install-vscode/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-linux/archlinux/archlinux-install-vscode" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/17/linux/archlinux/archlinux-install-vscode/">archlinux安装vscode</a>
-    </h1>
-  
-
-        
-        <a href="/2019/04/17/linux/archlinux/archlinux-install-vscode/" class="archive-article-date">
-  	<time datetime="2019-04-17T11:53:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-17</time>
-  	更新：2025-01-02
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 下载安装包</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> tar -zxvf code-stable-1554971043.tar.gz -C /opt/vscode</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 加入环境变量</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> ln -s /opt/vscode/code /usr/<span class="built_in">local</span>/bin/code</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建快捷图标</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> vim /usr/share/applications/vscode.desktop</span></span><br><span class="line"></span><br><span class="line">[Desktop Entry]</span><br><span class="line"></span><br><span class="line">Name=Visual Studio Code</span><br><span class="line">Comment=Multi-platform code editor for Linux</span><br><span class="line">Exec=/opt/vscode/code</span><br><span class="line">Icon=/opt/vscode/resources/app/resources/linux/code.png</span><br><span class="line">Type=Application</span><br><span class="line">StartupNotify=true</span><br><span class="line">Categories=TextEditor;Development;Utility;</span><br><span class="line">MimeType=text/plain;</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">archlinux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/17/linux/archlinux/archlinux-install-vscode/">展开全文 >></a>
         </p>
       
 

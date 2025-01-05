@@ -229,6 +229,101 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ffmpeg/ffmpeg-github" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/06/ffmpeg/ffmpeg-github/">ffmpeg 切片 mp4 视频为 m3u8 格式</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/06/ffmpeg/ffmpeg-github/" class="archive-article-date">
+  	<time datetime="2020-08-06T08:07:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-06</time>
+  	更新：2025-01-05
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>segment_time 单位是秒</p>
+<p><strong>270</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i 01_270.mp4 -codec copy -vbsf h264_mp4toannexb -map 0 -f segment -segment_list 270/index.m3u8 -segment_time 30 270/%03d.ts</span><br><span class="line"></span><br><span class="line">https://cdn.jsdelivr.net/gh/ncc0706/30eryi@latest/01/270/index.m3u8</span><br></pre></td></tr></table></figure>
+<p><strong>480</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i 01_480.mp4 -codec copy -vbsf h264_mp4toannexb -map 0 -f segment -segment_list 480/index.m3u8 -segment_time 30 480/%03d.ts</span><br><span class="line"></span><br><span class="line">https://cdn.jsdelivr.net/gh/ncc0706/30eryi@latest/01/480/index.m3u8</span><br></pre></td></tr></table></figure>
+<p><strong>720</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i 01_720.mp4 -codec copy -vbsf h264_mp4toannexb -map 0 -f segment -segment_list 720/index.m3u8 -segment_time 30 720/%03d.ts</span><br><span class="line"></span><br><span class="line">https://cdn.jsdelivr.net/gh/ncc0706/30eryi@latest/01/720/index.m3u8</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ffmpeg</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/ffmpeg//" class="article-tag-list-link color2">ffmpeg</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/06/ffmpeg/ffmpeg-github/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-sso/keycloak10" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -243,7 +338,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/07/15/sso/keycloak10/" class="archive-article-date">
   	<time datetime="2020-07-15T18:34:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-15</time>
-  	更新：2025-01-02
+  	更新：2025-01-05
 </a>
         
       </header>
@@ -337,7 +432,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/07/08/tailwindcss-on-angular/" class="archive-article-date">
   	<time datetime="2020-07-08T21:17:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-08</time>
-  	更新：2025-01-02
+  	更新：2025-01-05
 </a>
         
       </header>
@@ -426,7 +521,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/06/21/db/mysql/mysql5.7.32/" class="archive-article-date">
   	<time datetime="2020-06-21T10:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-21</time>
-  	更新：2025-01-02
+  	更新：2025-01-05
 </a>
         
       </header>
@@ -521,7 +616,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/06/08/db/postgresql/07postgresql-privileges/" class="archive-article-date">
   	<time datetime="2020-06-08T19:42:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-08</time>
-  	更新：2025-01-02
+  	更新：2025-01-05
 </a>
         
       </header>
@@ -646,7 +741,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/05/26/gradle-in-action/" class="archive-article-date">
   	<time datetime="2020-05-26T19:30:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-26</time>
-  	更新：2025-01-02
+  	更新：2025-01-05
 </a>
         
       </header>
@@ -738,7 +833,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/05/21/db/redis/02.centos7-install-redis.6.0.3/" class="archive-article-date">
   	<time datetime="2020-05-21T20:02:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-21</time>
-  	更新：2025-01-02
+  	更新：2025-01-05
 </a>
         
       </header>
@@ -830,7 +925,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/05/14/regex/regex-sample-douyin/" class="archive-article-date">
   	<time datetime="2020-05-14T14:55:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-14</time>
-  	更新：2025-01-02
+  	更新：2025-01-05
 </a>
         
       </header>
@@ -923,7 +1018,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/05/12/flutter/flutter05-key/" class="archive-article-date">
   	<time datetime="2020-05-12T18:31:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-12</time>
-  	更新：2025-01-02
+  	更新：2025-01-05
 </a>
         
       </header>
@@ -1013,7 +1108,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/05/08/java/thymeleaf-static/" class="archive-article-date">
   	<time datetime="2020-05-08T10:06:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-08</time>
-  	更新：2025-01-02
+  	更新：2025-01-05
 </a>
         
       </header>
@@ -1062,139 +1157,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/05/08/java/thymeleaf-static/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-db/mongodb/01mongodb-on-centos7" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/26/db/mongodb/01mongodb-on-centos7/">Centos7 安装 mongodb</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/26/db/mongodb/01mongodb-on-centos7/" class="archive-article-date">
-  	<time datetime="2020-04-26T12:56:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-26</time>
-  	更新：2025-01-02
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">## 下载mongodb</span><br><span class="line">wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-rhel70-4.2.6.tgz</span><br><span class="line"></span><br><span class="line">## 解压</span><br><span class="line">tar -zxvf mongodb-linux-x86_64-rhel70-4.2.6.tgz -C /opt/</span><br><span class="line"></span><br><span class="line">mv mongodb-linux-x86_64-rhel70-4.2.6/ mongodb4.2.6</span><br><span class="line"></span><br><span class="line">ln -s /opt/mongodb4.2.6/ /opt/mongodb</span><br><span class="line"></span><br><span class="line">## 创建目录</span><br><span class="line">mkdir -p /data/mongodb/27017/ &#123;conf,logs,data&#125;</span><br></pre></td></tr></table></figure>
-<p><code>/data/mongodb/27017/mongodb.conf</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">systemLog:</span><br><span class="line">    destination: file</span><br><span class="line">    path: /data/mongodb/27017/logs/mongodb.log</span><br><span class="line">    logAppend: true</span><br><span class="line">processManagement:</span><br><span class="line">    fork: true</span><br><span class="line">    pidFilePath: /data/mongodb/27017/mongod.pid</span><br><span class="line"></span><br><span class="line">storage:</span><br><span class="line">    dbPath: /data/mongodb/27017/data</span><br><span class="line">    indexBuildRetry: true</span><br><span class="line">    # 支持事务</span><br><span class="line">    engine: wiredTiger</span><br><span class="line">    journal:</span><br><span class="line">        enabled: true</span><br><span class="line">net:</span><br><span class="line">    bindIp: 127.0.0.1</span><br><span class="line">    port: 27017</span><br></pre></td></tr></table></figure>
-<p><strong>启动服务</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/opt/mongodb4.2.6/bin/mongod -f /data/mongodb/27017/conf/mongodb.conf</span><br></pre></td></tr></table></figure>
-<h2 id="系统服务"><a href="#系统服务" class="headerlink" title="系统服务"></a>系统服务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 添加用户 不能登录，不创建家目录</span><br><span class="line">useradd mongod -s /sbin/nologin -M</span><br><span class="line"></span><br><span class="line"># 删除家目录</span><br><span class="line">userdel -r mongod</span><br><span class="line"></span><br><span class="line">chown -R mongod:mongod /data/mongodb/</span><br><span class="line">chown -R mongod:mongod /opt/mongodb/</span><br><span class="line"></span><br><span class="line">mkdir -p  /var/run/mongodb</span><br><span class="line">chown -R mongod:mongod /var/run/mongodb</span><br><span class="line">chmod 0755 /var/run/mongodb</span><br></pre></td></tr></table></figure>
-<p>服务配置文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /usr/lib/systemd/system/mongod.service</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=Mongodb 4.2.6</span><br><span class="line"># This unit can only run after the network is up and running</span><br><span class="line"># (that is, the network target has run)</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=forking</span><br><span class="line"># Wait 120 seconds on startup and shutdown to consider the process</span><br><span class="line"># correctly started up or shut down.</span><br><span class="line">TimeoutSec=120</span><br><span class="line">User=mongod</span><br><span class="line">Group=mongod</span><br><span class="line">Environment=&quot;OPTIONS= -f /opt/mongodb/conf/mongod_01.conf&quot;</span><br><span class="line">ExecStart=/opt/mongodb/bin/mongod $OPTIONS</span><br><span class="line">#ExecStartPre=/usr/bin/mkdir -p /var/run/mongodb</span><br><span class="line">#ExecStartPre=/usr/bin/chown mongod:mongod /var/run/mongodb</span><br><span class="line">#ExecStartPre=/usr/bin/chmod 0755 /var/run/mongodb</span><br><span class="line">PermissionsStartOnly=true</span><br><span class="line"># 不要指定 pid 位置</span><br><span class="line"># PIDFile=/var/run/mongodb/mongod.pid</span><br><span class="line"># file size</span><br><span class="line">LimitFSIZE=infinity</span><br><span class="line"># cpu time</span><br><span class="line">LimitCPU=infinity</span><br><span class="line"># virtual memory size</span><br><span class="line">LimitAS=infinity</span><br><span class="line"># open files</span><br><span class="line">LimitNOFILE=64000</span><br><span class="line"># processes/threads</span><br><span class="line">LimitNPROC=64000</span><br><span class="line"># locked memory</span><br><span class="line">LimitMEMLOCK=infinity</span><br><span class="line"># total threads (user+kernel)</span><br><span class="line">TasksMax=infinity</span><br><span class="line">TasksAccounting=false</span><br><span class="line"># Recommended limits for mongod as specified in</span><br><span class="line"># https://docs.mongodb.com/manual/reference/ulimit/#recommended-ulimit-settings</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
-<p><strong>开机自启</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">chmod 754 /usr/lib/systemd/system/mongod.service</span><br><span class="line">systemctl enable mongod.service</span><br><span class="line">systemctl disable mongod.service</span><br><span class="line"></span><br><span class="line"># 重新加载配置文件</span><br><span class="line">systemctl daemon-reload</span><br><span class="line"></span><br><span class="line">systemctl status mongod.service</span><br><span class="line">systemctl start mongod.service</span><br><span class="line">systemctl stop mongod.service</span><br></pre></td></tr></table></figure>
-<p><strong>防火墙开放端口</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --add-port=27017/tcp --permanent               #永久添加27017端口例外(全局)</span><br><span class="line">firewall-cmd --remove-port=27017/tcp --permanent            #永久删除27017端口例外(全局)</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
-<h2 id="开启安全认证"><a href="#开启安全认证" class="headerlink" title="开启安全认证"></a>开启安全认证</h2><p>未开启认证前先初始化管理员信息.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">## 管理员用户 相当于mysql的root用户</span><br><span class="line">## 给予userAdminAnyDatabase的权限，可以管理所有数据库的用户</span><br><span class="line">## 或者给 root 角色</span><br><span class="line">&gt; use admin</span><br><span class="line">&gt; db.createUser(&#123;user: &apos;admin&apos;, pwd: &apos;admin&apos;, roles: [</span><br><span class="line">    &#123;</span><br><span class="line">        role: &apos;root&apos;,</span><br><span class="line">        db: &apos;admin&apos;</span><br><span class="line">    &#125;</span><br><span class="line">]&#125;)</span><br><span class="line"></span><br><span class="line">## 更新指定用户的角色</span><br><span class="line">&gt; db.updateUser(&apos;admin&apos;, </span><br><span class="line">	&#123;</span><br><span class="line">		roles: [</span><br><span class="line">			&#123;role: &apos;root&apos;, db: &apos;admin&apos;&#125;</span><br><span class="line">		]</span><br><span class="line">	&#125;)</span><br><span class="line">	</span><br><span class="line">## 前提使用指定的数据库，创建业务库用户</span><br><span class="line">&gt; use hello</span><br><span class="line">&gt; db.createUser(&#123;user: &apos;dsc&apos;, pwd: &apos;dsc&apos;, roles: [&#123;role: &apos;dbOwner&apos;, db: &apos;hello&apos;&#125;]&#125;)</span><br></pre></td></tr></table></figure>
-<p>修改配置文件重启服务.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /opt/mongodb/conf/mongod_01.conf</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">security:</span><br><span class="line">    authorization: enabled</span><br></pre></td></tr></table></figure>
-<p>role里的角色可以选：</p>
-<p>Built-In Roles（内置角色分类）：</p>
-<ul>
-<li>数据库用户角色：read、readWrite;</li>
-<li>数据库管理角色：dbAdmin、dbOwner、userAdmin；</li>
-<li>集群管理角色：clusterAdmin、clusterManager、clusterMonitor、hostManager；</li>
-<li>备份恢复角色：backup、restore；</li>
-<li>所有数据库角色：readAnyDatabase、readWriteAnyDatabase、userAdminAnyDatabase、dbAdminAnyDatabase</li>
-<li>超级用户角色：root<br>// 这里还有几个角色间接或直接提供了系统超级用户的访问（dbOwner 、userAdmin、userAdminAnyDatabase）</li>
-<li>内部角色：__system</li>
-</ul>
-<p>每个角色的功能：</p>
-<ul>
-<li>Read：允许用户读取指定数据库</li>
-<li>readWrite：允许用户读写指定数据库</li>
-<li>dbAdmin：允许用户在指定数据库中执行管理函数，如索引创建、删除，查看统计或访问system.profile</li>
-<li>userAdmin：允许用户向system.users集合写入，可以找指定数据库里创建、删除和管理用户</li>
-<li>dbOwner：数据库拥有者，包含readWrite、dbAdmin、userAdmin</li>
-<li>clusterAdmin：只在admin数据库中可用，赋予用户所有分片和复制集相关函数的管理权限</li>
-<li>readAnyDatabase：只在admin数据库中可用，赋予用户所有数据库的读权限</li>
-<li>readWriteAnyDatabase：只在admin数据库中可用，赋予用户所有数据库的读写权限</li>
-<li>userAdminAnyDatabase：只在admin数据库中可用，赋予用户所有数据库的userAdmin权限</li>
-<li>dbAdminAnyDatabase：只在admin数据库中可用，赋予用户所有数据库的dbAdmin权限</li>
-<li>root：只在admin数据库中可用。超级账号，超级权限</li>
-</ul>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><blockquote>
-<p><a href="https://github.com/mongodb/mongo/blob/master/rpm/mongod.service" target="_blank" rel="noopener">https://github.com/mongodb/mongo/blob/master/rpm/mongod.service</a></p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mongo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/db//" class="article-tag-list-link color3">db</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/26/db/mongodb/01mongodb-on-centos7/">展开全文 >></a>
         </p>
       
 
