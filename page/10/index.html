@@ -229,6 +229,97 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-java/thymeleaf-static" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/08/java/thymeleaf-static/">静态资源签名及版本解决缓存问题</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/08/java/thymeleaf-static/" class="archive-article-date">
+  	<time datetime="2020-05-08T10:06:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-08</time>
+  	更新：2025-01-09
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>md5 hash 方式</strong></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span>  </span><br><span class="line">  <span class="attr">resources.chain.strategy.content:</span></span><br><span class="line">    <span class="attr">enabled:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">paths:</span> <span class="string">/js/modules/**</span></span><br></pre></td></tr></table></figure>
+<p><strong>版本方式</strong></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">resources.chain.strategy.fixed:</span></span><br><span class="line">    <span class="attr">enabled:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">paths:</span> <span class="string">/js/modules/**</span></span><br><span class="line">    <span class="attr">version:</span> <span class="string">v1.1</span></span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">spring-boot</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/java//" class="article-tag-list-link color5">java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/08/java/thymeleaf-static/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-db/mongodb/01mongodb-on-centos7" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -243,7 +334,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/04/26/db/mongodb/01mongodb-on-centos7/" class="archive-article-date">
   	<time datetime="2020-04-26T12:56:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-26</time>
-  	更新：2025-01-05
+  	更新：2025-01-09
 </a>
         
       </header>
@@ -376,7 +467,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/04/16/nodejs/install-nodejs-on-centos7/" class="archive-article-date">
   	<time datetime="2020-04-16T21:14:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-16</time>
-  	更新：2025-01-05
+  	更新：2025-01-09
 </a>
         
       </header>
@@ -457,7 +548,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/04/13/db/redis/01.centos7-install-redis5.0.8/" class="archive-article-date">
   	<time datetime="2020-04-13T08:02:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-13</time>
-  	更新：2025-01-05
+  	更新：2025-01-09
 </a>
         
       </header>
@@ -548,7 +639,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/04/12/db/postgresql/postgres-12.2/" class="archive-article-date">
   	<time datetime="2020-04-12T15:24:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-12</time>
-  	更新：2025-01-05
+  	更新：2025-01-09
 </a>
         
       </header>
@@ -643,7 +734,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/04/11/java/sprint-boot-static-cache/" class="archive-article-date">
   	<time datetime="2020-04-11T15:37:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-11</time>
-  	更新：2025-01-05
+  	更新：2025-01-09
 </a>
         
       </header>
@@ -735,7 +826,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/04/04/java/install-jdk-on-centos7/" class="archive-article-date">
   	<time datetime="2020-04-04T07:52:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-04</time>
-  	更新：2025-01-05
+  	更新：2025-01-09
 </a>
         
       </header>
@@ -832,7 +923,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/04/04/tomcat-service/" class="archive-article-date">
   	<time datetime="2020-04-04T07:32:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-04</time>
-  	更新：2025-01-05
+  	更新：2025-01-09
 </a>
         
       </header>
@@ -928,7 +1019,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/04/04/linux/centos7.x/" class="archive-article-date">
   	<time datetime="2020-04-04T06:28:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-04</time>
-  	更新：2025-01-05
+  	更新：2025-01-09
 </a>
         
       </header>
@@ -1023,7 +1114,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/02/01/db/postgresql/05postgresql-calc/" class="archive-article-date">
   	<time datetime="2020-02-01T10:33:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-01</time>
-  	更新：2025-01-05
+  	更新：2025-01-09
 </a>
         
       </header>
@@ -1069,103 +1160,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/02/01/db/postgresql/05postgresql-calc/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-db/postgresql/04postgresql-schema" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/26/db/postgresql/04postgresql-schema/">postgresql schema</a>
-    </h1>
-  
-
-        
-        <a href="/2020/01/26/db/postgresql/04postgresql-schema/" class="archive-article-date">
-  	<time datetime="2020-01-26T17:05:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-26</time>
-  	更新：2025-01-05
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>schema的特点</strong></p>
-<ul>
-<li>schema概念像命名空间</li>
-<li>schema下不能再有schema嵌套</li>
-<li>各个对象如表、函数等存放在各个schema中</li>
-<li>同一个schema下不能存在重复的对象名字，不同的schema下可以重复</li>
-</ul>
-<p>请注意，缺省时每个人都在 public 模式上有 CREATE 和 USAGE 权限。这样就允许所有可以连接到指定数据库上的用户在这里创建对象.</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">REVOKE</span> <span class="keyword">CREATE</span> <span class="keyword">ON</span> <span class="keyword">SCHEMA</span> <span class="keyword">public</span> <span class="keyword">FROM</span> <span class="keyword">PUBLIC</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 第一个"public"是模式，第二个"PUBLIC"意思是"所有用户"。第一句里它是个标识符，而第二句里是个关键字，所以有不同的大小写。</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 创建模式</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">schema</span> m1;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 删除模式</span></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">schema</span> m1;</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> m1.users(</span><br><span class="line">	<span class="keyword">id</span> <span class="built_in">serial</span>,</span><br><span class="line">    <span class="keyword">name</span> <span class="built_in">text</span>,</span><br><span class="line">    age int2, <span class="comment">-- java中的integer</span></span><br><span class="line">    salary <span class="built_in">decimal</span>(<span class="number">5</span>, <span class="number">2</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 删除模式及包含的对象</span></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">schema</span> m1 <span class="keyword">cascade</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">revoke</span> <span class="keyword">create</span> <span class="keyword">on</span> <span class="keyword">schema</span> <span class="keyword">public</span> <span class="keyword">from</span> pg;</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">postgre</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/db//" class="article-tag-list-link color3">db</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/26/db/postgresql/04postgresql-schema/">展开全文 >></a>
         </p>
       
 
@@ -1705,11 +1699,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">requests</a>
+                <a href="javascript:void(0)" class="js-tag color1">regex</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">regex</a>
+                <a href="javascript:void(0)" class="js-tag color4">requests</a>
               </li>
              
               <li class="article-tag-list-item">

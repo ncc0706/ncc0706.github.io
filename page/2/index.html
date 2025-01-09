@@ -229,6 +229,100 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-k8s/yarn" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2024/05/16/k8s/yarn/">shell 分发脚本</a>
+    </h1>
+  
+
+        
+        <a href="/2024/05/16/k8s/yarn/" class="archive-article-date">
+  	<time datetime="2024-05-16T10:12:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-05-16</time>
+  	更新：2025-01-09
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>hadoop、spark、flink 都是基于 yarn 调度资源分配的</p>
+<p><em>xcall.sh</em></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">params=<span class="variable">$@</span></span><br><span class="line">hosts=(x, y, z)</span><br><span class="line"><span class="keyword">for</span> host <span class="keyword">in</span> <span class="variable">$&#123;hosts[@]&#125;</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">	<span class="built_in">echo</span> ============ <span class="variable">$host</span> :<span class="variable">$params</span> ============</span><br><span class="line">	ssh <span class="variable">$host</span> <span class="string">"<span class="variable">$params</span>"</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">k8s</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">shell</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/shell//" class="article-tag-list-link color1">shell</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2024/05/16/k8s/yarn/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-k8s/helm" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -243,7 +337,7 @@ var _hmt = _hmt || [];
         
         <a href="/2024/02/03/k8s/helm/" class="archive-article-date">
   	<time datetime="2024-02-03T14:35:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-02-03</time>
-  	更新：2025-01-05
+  	更新：2025-01-09
 </a>
         
       </header>
@@ -345,7 +439,7 @@ var _hmt = _hmt || [];
         
         <a href="/2024/01/21/md/rocketmq-01/" class="archive-article-date">
   	<time datetime="2024-01-21T19:26:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-21</time>
-  	更新：2025-01-05
+  	更新：2025-01-09
 </a>
         
       </header>
@@ -442,7 +536,7 @@ var _hmt = _hmt || [];
         
         <a href="/2024/01/19/linux/os/" class="archive-article-date">
   	<time datetime="2024-01-19T20:33:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-19</time>
-  	更新：2025-01-05
+  	更新：2025-01-09
 </a>
         
       </header>
@@ -535,7 +629,7 @@ var _hmt = _hmt || [];
         
         <a href="/2023/11/13/vsftp-on-rocky-linux/" class="archive-article-date">
   	<time datetime="2023-11-13T16:33:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-11-13</time>
-  	更新：2025-01-05
+  	更新：2025-01-09
 </a>
         
       </header>
@@ -656,7 +750,7 @@ var _hmt = _hmt || [];
         
         <a href="/2023/10/04/docker-registry-02/" class="archive-article-date">
   	<time datetime="2023-10-04T17:25:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-10-04</time>
-  	更新：2025-01-05
+  	更新：2025-01-09
 </a>
         
       </header>
@@ -749,7 +843,7 @@ var _hmt = _hmt || [];
         
         <a href="/2023/09/24/k8s/k8s-cluster-on-rocky9/" class="archive-article-date">
   	<time datetime="2023-09-24T09:16:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-24</time>
-  	更新：2025-01-05
+  	更新：2025-01-09
 </a>
         
       </header>
@@ -877,7 +971,7 @@ var _hmt = _hmt || [];
         
         <a href="/2023/09/18/linux/archlinux/archlinux2023/" class="archive-article-date">
   	<time datetime="2023-09-18T12:33:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-18</time>
-  	更新：2025-01-05
+  	更新：2025-01-09
 </a>
         
       </header>
@@ -969,7 +1063,7 @@ var _hmt = _hmt || [];
         
         <a href="/2023/08/16/ipp/" class="archive-article-date">
   	<time datetime="2023-08-16T09:00:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-08-16</time>
-  	更新：2025-01-05
+  	更新：2025-01-09
 </a>
         
       </header>
@@ -1065,7 +1159,7 @@ var _hmt = _hmt || [];
         
         <a href="/2023/08/11/ascii-code/" class="archive-article-date">
   	<time datetime="2023-08-11T13:05:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-08-11</time>
-  	更新：2025-01-05
+  	更新：2025-01-09
 </a>
         
       </header>
@@ -2177,106 +2271,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-clion/clion-multi-project" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/08/09/clion/clion-multi-project/">Clion 中创建多项目解决方案</a>
-    </h1>
-  
-
-        
-        <a href="/2023/08/09/clion/clion-multi-project/" class="archive-article-date">
-  	<time datetime="2023-08-09T16:05:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-08-09</time>
-  	更新：2025-01-05
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/07/11/2021-07-11_161406.png" alt="效果图"></p>
-<p><strong>(BV1fZ4y1F7Vt)项目</strong></p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## cmake 最低版本</span></span><br><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.17</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 项目名称</span></span><br><span class="line"><span class="keyword">project</span>(BV1fZ4y1F7Vt)</span><br><span class="line"></span><br><span class="line"><span class="comment">## c++ 标准</span></span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_STANDARD <span class="number">14</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 主项目根据实际情况要不要加</span></span><br><span class="line"><span class="keyword">add_executable</span>(BV1fZ4y1F7Vt main.c)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 子项目</span></span><br><span class="line"><span class="comment">## 注意子项目暴露出来的 文件名不能重复</span></span><br><span class="line"><span class="keyword">add_subdirectory</span>(chapter01 hello.c)</span><br><span class="line"><span class="keyword">add_subdirectory</span>(chapter02 main.c)</span><br></pre></td></tr></table></figure>
-<p><strong>(chapter01)项目</strong></p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将该子项目下包含的内容反馈回主项目中</span></span><br><span class="line"><span class="keyword">include_directories</span>(.)</span><br><span class="line"></span><br><span class="line"><span class="keyword">add_executable</span>(chapter01 hello.c user.c user.h)</span><br></pre></td></tr></table></figure>
-<p><strong>(chapter02)项目</strong></p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将该子项目下包含的内容反馈回主项目中</span></span><br><span class="line"><span class="keyword">include_directories</span>(.)</span><br><span class="line"></span><br><span class="line"><span class="keyword">add_executable</span>(chapter02 main.c)</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2023/08/09/clion/clion-multi-project/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">c</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">cpp</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/clion//" class="article-tag-list-link color1">clion</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/08/09/clion/clion-multi-project/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -2788,11 +2782,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">requests</a>
+                <a href="javascript:void(0)" class="js-tag color1">regex</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">regex</a>
+                <a href="javascript:void(0)" class="js-tag color4">requests</a>
               </li>
              
               <li class="article-tag-list-item">
