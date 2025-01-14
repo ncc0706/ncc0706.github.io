@@ -229,6 +229,88 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ffmpeg/ffmpeg-dl-video" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/28/ffmpeg/ffmpeg-dl-video/">ffmpeg下载腾讯视频</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/28/ffmpeg/ffmpeg-dl-video/" class="archive-article-date">
+  	<time datetime="2019-08-28T08:26:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
+  	更新：2025-01-14
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="ffmpeg-命令"><a href="#ffmpeg-命令" class="headerlink" title="ffmpeg 命令"></a>ffmpeg 命令</h2><p>ffmpeg -re -i 01.mp4 -vcodec libx264 -acodec aac -f flv rtmp://192.168.18.200/live/abc</p>
+<p><strong>权限认证</strong></p>
+<p>ffmpeg -re -i 02.mp4 -vcodec libx264 -acodec aac -f flv rtmp://admin:<a href="mailto:admin@192.168.18.200" target="_blank" rel="noopener">admin@192.168.18.200</a>/live/abc</p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mp4 output.avi</span><br><span class="line"></span><br><span class="line"># 截取视频片段(10s的广告)</span><br><span class="line">ffmpeg -i https://apd-c8949b02f1a326aa5a3940a4825466c4.v.smtcdns.com/moviets.tc.qq.com/AVcM6tNF34wIequ-XF2Y3Sowf_00vFI9H9GzVXLO3c_c/uwMRJfz-r5jAYaQXGdGnC2_ppdhgmrDlPaRvaV7F2Ic/5fK36acBBYOIGYxakL9mMbA1__Q_jBTYTn_CrQ-Ubk5h9aPJolXQN1ENzt3tBnWQDBTPYvGkICGHWtOrYkS3OBMXZeXH2SDYhhHxRFSw5mjWH5bANVG7GIm32Ej1G2QcyyGUsoNdF6mtaUdRujLwgSioRWsYFIBT/c0029q2dzvv.321002.ts.m3u8?ver=4 -ss 00:01:00 -t 00:00:10 -vcodec copy -acodec copy cutad.mp4</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ffmpeg -i https://apd-c8949b02f1a326aa5a3940a4825466c4.v.smtcdns.com/moviets.tc.qq.com/AVcM6tNF34wIequ-XF2Y3Sowf_00vFI9H9GzVXLO3c_c/uwMRJfz-r5jAYaQXGdGnC2_ppdhgmrDlPaRvaV7F2Ic/5fK36acBBYOIGYxakL9mMbA1__Q_jBTYTn_CrQ-Ubk5h9aPJolXQN1ENzt3tBnWQDBTPYvGkICGHWtOrYkS3OBMXZeXH2SDYhhHxRFSw5mjWH5bANVG7GIm32Ej1G2QcyyGUsoNdF6mtaUdRujLwgSioRWsYFIBT/c0029q2dzvv.321002.ts.m3u8?ver=4 -vf trim=60:71 cutad2.mp4</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2019/08/28/ffmpeg/ffmpeg-dl-video/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ffmpeg</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/28/ffmpeg/ffmpeg-dl-video/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-java/hibernate-json-issue" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -243,7 +325,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/28/java/hibernate-json-issue/" class="archive-article-date">
   	<time datetime="2019-08-28T08:19:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-  	更新：2025-01-09
+  	更新：2025-01-14
 </a>
         
       </header>
@@ -334,7 +416,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/28/querydsl/" class="archive-article-date">
   	<time datetime="2019-08-28T08:08:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-  	更新：2025-01-09
+  	更新：2025-01-14
 </a>
         
       </header>
@@ -415,7 +497,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/21/regex/lion-king/" class="archive-article-date">
   	<time datetime="2019-08-21T13:37:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-21</time>
-  	更新：2025-01-09
+  	更新：2025-01-14
 </a>
         
       </header>
@@ -496,7 +578,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/16/golang/golang-print-detail/" class="archive-article-date">
   	<time datetime="2019-08-16T14:21:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-16</time>
-  	更新：2025-01-09
+  	更新：2025-01-14
 </a>
         
       </header>
@@ -594,7 +676,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/14/golang/golang-print/" class="archive-article-date">
   	<time datetime="2019-08-14T11:04:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-14</time>
-  	更新：2025-01-09
+  	更新：2025-01-14
 </a>
         
       </header>
@@ -693,7 +775,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/13/sqlmap-in-action-01/" class="archive-article-date">
   	<time datetime="2019-08-13T10:14:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-13</time>
-  	更新：2025-01-09
+  	更新：2025-01-14
 </a>
         
       </header>
@@ -790,7 +872,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/08/php/laravel/laravel-error/" class="archive-article-date">
   	<time datetime="2019-08-08T15:49:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-08</time>
-  	更新：2025-01-09
+  	更新：2025-01-14
 </a>
         
       </header>
@@ -878,7 +960,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/07/linux/manjaro-kde/" class="archive-article-date">
   	<time datetime="2019-08-07T10:52:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-07</time>
-  	更新：2025-01-09
+  	更新：2025-01-14
 </a>
         
       </header>
@@ -960,7 +1042,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/06/regex/dl-xigua-video/" class="archive-article-date">
   	<time datetime="2019-08-06T10:58:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-06</time>
-  	更新：2025-01-09
+  	更新：2025-01-14
 </a>
         
       </header>
@@ -1010,83 +1092,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/08/06/regex/dl-xigua-video/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-java/java-LocalDateTime-postgres" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/05/java/java-LocalDateTime-postgres/">java-LocalDateTime-postgres</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/05/java/java-LocalDateTime-postgres/" class="archive-article-date">
-  	<time datetime="2019-08-05T13:16:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-05</time>
-  	更新：2025-01-09
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>LocalDateTime 格式化</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">public class LocalDateTimeSerializerConfig &#123;</span><br><span class="line">    @Value(&quot;$&#123;spring.jackson.date-format:yyyy-MM-dd HH:mm:ss&#125;&quot;)</span><br><span class="line">    private String pattern;</span><br><span class="line"></span><br><span class="line">    @Bean</span><br><span class="line">    public LocalDateTimeSerializer localDateTimeDeserializer() &#123;</span><br><span class="line">        return new LocalDateTimeSerializer(DateTimeFormatter.ofPattern(pattern));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Bean</span><br><span class="line">    public Jackson2ObjectMapperBuilderCustomizer jackson2ObjectMapperBuilderCustomizer() &#123;</span><br><span class="line">        return builder -&gt; builder.serializerByType(LocalDateTime.class, localDateTimeDeserializer());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/05/java/java-LocalDateTime-postgres/">展开全文 >></a>
         </p>
       
 
@@ -1626,11 +1631,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">regex</a>
+                <a href="javascript:void(0)" class="js-tag color4">requests</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">requests</a>
+                <a href="javascript:void(0)" class="js-tag color1">regex</a>
               </li>
              
               <li class="article-tag-list-item">

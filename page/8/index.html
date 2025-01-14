@@ -229,6 +229,85 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-linux/linux-systemd" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/06/27/linux/linux-systemd/">Linux systemd</a>
+    </h1>
+  
+
+        
+        <a href="/2021/06/27/linux/linux-systemd/" class="archive-article-date">
+  	<time datetime="2021-06-27T20:51:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-27</time>
+  	更新：2025-01-14
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Centos7"><a href="#Centos7" class="headerlink" title="Centos7"></a>Centos7</h2><p>在 centos 中 systemctl  是设置系统服务的命令即 service  ,   它融合之前service和chkconfig的功能于一体。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">## 查看已安装的服务</span><br><span class="line">systemctl list-unit-files </span><br><span class="line"></span><br><span class="line">## 查看开机启动服务</span><br><span class="line">systemctl list-unit-files | grep enabled</span><br><span class="line"></span><br><span class="line">## 查看服务列表状态</span><br><span class="line">systemctl list-units --type=service</span><br><span class="line"></span><br><span class="line">## 查看启动失败的服务列表</span><br><span class="line">systemctl --failed</span><br><span class="line"></span><br><span class="line">## 查看是否开机启动 显示结果 enable、disable或static</span><br><span class="line">## 这里的 static 它是指对应的 Unit 文件中没有定义[Install]区域，因此无法配置为开机启动服务</span><br><span class="line">systemctl is-enabled sshd.service</span><br></pre></td></tr></table></figure>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.freedesktop.org/software/systemd/man/systemd.service.html" target="_blank" rel="noopener">官方手册</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/linux//" class="article-tag-list-link color1">linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/06/27/linux/linux-systemd/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-db/postgresql/postgres-13.2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -243,7 +322,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/04/23/db/postgresql/postgres-13.2/" class="archive-article-date">
   	<time datetime="2021-04-23T21:06:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-23</time>
-  	更新：2025-01-09
+  	更新：2025-01-14
 </a>
         
       </header>
@@ -338,7 +417,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/04/10/sts/" class="archive-article-date">
   	<time datetime="2021-04-10T21:21:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-10</time>
-  	更新：2025-01-09
+  	更新：2025-01-14
 </a>
         
       </header>
@@ -432,7 +511,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/03/31/adb/adb-frida-server/" class="archive-article-date">
   	<time datetime="2021-03-31T08:23:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-31</time>
-  	更新：2025-01-09
+  	更新：2025-01-14
 </a>
         
       </header>
@@ -533,7 +612,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/03/20/hexo-update/" class="archive-article-date">
   	<time datetime="2021-03-20T14:18:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-20</time>
-  	更新：2025-01-09
+  	更新：2025-01-14
 </a>
         
       </header>
@@ -624,7 +703,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/03/20/java-i18n/" class="archive-article-date">
   	<time datetime="2021-03-20T13:51:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-20</time>
-  	更新：2025-01-09
+  	更新：2025-01-14
 </a>
         
       </header>
@@ -722,7 +801,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/01/08/install-tomcat-as-service-on-windows-server2012R2/" class="archive-article-date">
   	<time datetime="2021-01-08T15:07:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-08</time>
-  	更新：2025-01-09
+  	更新：2025-01-14
 </a>
         
       </header>
@@ -802,7 +881,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/11/05/math/" class="archive-article-date">
   	<time datetime="2020-11-05T19:54:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-05</time>
-  	更新：2025-01-09
+  	更新：2025-01-14
 </a>
         
       </header>
@@ -874,7 +953,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/10/20/Let-s-Encrypt-acme/" class="archive-article-date">
   	<time datetime="2020-10-20T13:25:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-20</time>
-  	更新：2025-01-09
+  	更新：2025-01-14
 </a>
         
       </header>
@@ -956,7 +1035,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/10/05/linux/archlinux/archlinux-latest/" class="archive-article-date">
   	<time datetime="2020-10-05T16:41:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-05</time>
-  	更新：2025-01-09
+  	更新：2025-01-14
 </a>
         
       </header>
@@ -1003,100 +1082,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/10/05/linux/archlinux/archlinux-latest/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-javascript/javascript-IIFE" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/06/javascript/javascript-IIFE/">javascript-IIFE</a>
-    </h1>
-  
-
-        
-        <a href="/2020/08/06/javascript/javascript-IIFE/" class="archive-article-date">
-  	<time datetime="2020-08-06T22:41:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-06</time>
-  	更新：2025-01-09
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="https://www.jianshu.com/p/ca50b6d0af9b" target="_blank" rel="noopener">https://www.jianshu.com/p/ca50b6d0af9b</a></p>
-<p><a href="https://developer.mozilla.org/zh-CN/docs/Glossary/立即执行函数表达式" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Glossary/立即执行函数表达式</a></p>
-<p><a href="https://www.cnblogs.com/TomXu/archive/2011/12/29/2290308.html" target="_blank" rel="noopener">https://www.cnblogs.com/TomXu/archive/2011/12/29/2290308.html</a></p>
-<p>将 IIFE 分配给一个变量，不是存储 IIFE 本身，而是存储 IIFE 执行后返回的结果。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> result = (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'存储的是IIFE返回的结果'</span></span><br><span class="line">&#125;)();</span><br><span class="line"><span class="comment">// 存储的是IIFE返回的结果</span></span><br><span class="line"><span class="built_in">console</span>.log(result);</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2020/08/06/javascript/javascript-IIFE/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">IIFE</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/javascript//" class="article-tag-list-link color1">javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/06/javascript/javascript-IIFE/">展开全文 >></a>
         </p>
       
 
@@ -1636,11 +1621,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">regex</a>
+                <a href="javascript:void(0)" class="js-tag color4">requests</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">requests</a>
+                <a href="javascript:void(0)" class="js-tag color1">regex</a>
               </li>
              
               <li class="article-tag-list-item">

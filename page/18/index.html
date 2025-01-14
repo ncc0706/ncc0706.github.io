@@ -229,6 +229,98 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-db/redis/00.deploy-redis-by-docker" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/07/db/redis/00.deploy-redis-by-docker/">docker发布redis服务</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/07/db/redis/00.deploy-redis-by-docker/" class="archive-article-date">
+  	<time datetime="2019-05-07T21:05:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-07</time>
+  	更新：2025-01-14
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker pull redis:5.0.4-alpine3.9 </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 指定redis密码</span></span><br><span class="line">docker run  -d -p 16379:6379 -v /data/redis/r1:/data --name redis01 redis:5.0.4-alpine3.9 redis-server --appendonly yes  --requirepass "youxi"</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 指定配置文件</span></span><br><span class="line">docker run -v /myredis/conf/redis.conf:/usr/local/etc/redis/redis.conf --name myredis redis:5.0.4-alpine3.9 redis-server /usr/local/etc/redis/redis.conf</span><br></pre></td></tr></table></figure>
+<p><strong>自定义Dockerfile</strong></p>
+<p><code>Dockerfile</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">FROM redis:5.0.4-alpine3.9</span><br><span class="line"></span><br><span class="line">LABEL maintainer=&quot;niuyuxian &lt;ncc0706@gmail.com&gt;&quot;</span><br><span class="line"></span><br><span class="line">ENV TZ=Asia/Shanghai \</span><br><span class="line">    LANG=en_US.UTF-8</span><br><span class="line"></span><br><span class="line">RUN echo -e &quot;https://mirror.tuna.tsinghua.edu.cn/alpine/v$(head -c3 /etc/alpine-release)/main\nhttps://mirror.tuna.tsinghua.edu.cn/alpine/v$(head -c3 /etc/alpine-release)/community&quot; &gt; /etc/apk/repositories \</span><br><span class="line">    &amp;&amp; apk add --no-cache --update tzdata \</span><br><span class="line">    &amp;&amp; cp /usr/share/zoneinfo/$TZ /etc/localtime &amp;&amp; echo $TZ &gt; /etc/timezone \</span><br><span class="line">    &amp;&amp; rm -f /var/cache/apk/*</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker build -t registry.cn-hangzhou.aliyuncs.com/985/redis:5.0.4 .</span><br><span class="line">docker push registry.cn-hangzhou.aliyuncs.com/985/redis:5.0.4</span><br><span class="line"></span><br><span class="line">docker run -d -p 6379:6379 --name redis -v /data/redis/r1:/data  registry.cn-hangzhou.aliyuncs.com/985/redis:5.0.4 redis-server --appendonly yes  --requirepass <span class="string">"youxi"</span></span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">redis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/db//" class="article-tag-list-link color3">db</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/07/db/redis/00.deploy-redis-by-docker/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-php/laravel/laravel58" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -243,7 +335,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/05/01/php/laravel/laravel58/" class="archive-article-date">
   	<time datetime="2019-05-01T15:35:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-01</time>
-  	更新：2025-01-09
+  	更新：2025-01-14
 </a>
         
       </header>
@@ -345,7 +437,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/30/php/php7-fpm/" class="archive-article-date">
   	<time datetime="2019-04-30T21:39:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-30</time>
-  	更新：2025-01-09
+  	更新：2025-01-14
 </a>
         
       </header>
@@ -426,7 +518,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/30/wechat/wechat-pay/" class="archive-article-date">
   	<time datetime="2019-04-30T17:50:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-30</time>
-  	更新：2025-01-09
+  	更新：2025-01-14
 </a>
         
       </header>
@@ -504,7 +596,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/29/adb/fiddler/" class="archive-article-date">
   	<time datetime="2019-04-29T12:52:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-29</time>
-  	更新：2025-01-09
+  	更新：2025-01-14
 </a>
         
       </header>
@@ -581,7 +673,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/27/nodejs/sails-in-action/" class="archive-article-date">
   	<time datetime="2019-04-27T16:52:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-27</time>
-  	更新：2025-01-09
+  	更新：2025-01-14
 </a>
         
       </header>
@@ -675,7 +767,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/26/validatejs-sample/" class="archive-article-date">
   	<time datetime="2019-04-26T17:30:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-26</time>
-  	更新：2025-01-09
+  	更新：2025-01-14
 </a>
         
       </header>
@@ -752,7 +844,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/26/regex/regexp-sample-iqiyi/" class="archive-article-date">
   	<time datetime="2019-04-26T14:27:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-26</time>
-  	更新：2025-01-09
+  	更新：2025-01-14
 </a>
         
       </header>
@@ -844,7 +936,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/26/regex/regexp-sample-tencent/" class="archive-article-date">
   	<time datetime="2019-04-26T10:20:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-26</time>
-  	更新：2025-01-09
+  	更新：2025-01-14
 </a>
         
       </header>
@@ -936,7 +1028,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/19/php/php-enable-file-get-contents/" class="archive-article-date">
   	<time datetime="2019-04-19T14:44:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-19</time>
-  	更新：2025-01-09
+  	更新：2025-01-14
 </a>
         
       </header>
@@ -972,90 +1064,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/04/19/php/php-enable-file-get-contents/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-php/php-xdebug" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/19/php/php-xdebug/">php xdebug</a>
-    </h1>
-  
-
-        
-        <a href="/2019/04/19/php/php-xdebug/" class="archive-article-date">
-  	<time datetime="2019-04-19T14:40:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-19</time>
-  	更新：2025-01-09
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p><a href="https://xdebug.org/download.php" target="_blank" rel="noopener">https://xdebug.org/download.php</a></p>
-</blockquote>
-<p>下载dll时注意版本问题</p>
-<p><strong>php5</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">[XDebug]</span><br><span class="line">xdebug.profiler_output_dir=&quot;D:\phpStudy\PHPTutorial\tmp\xdebug&quot;</span><br><span class="line">xdebug.trace_output_dir=&quot;D:\phpStudy\PHPTutorial\tmp\xdebug&quot;</span><br><span class="line">zend_extension=&quot;D:\phpStudy\PHPTutorial\php\php-5.4.45\ext\php_xdebug.dll&quot;</span><br><span class="line"></span><br><span class="line">;是否允许Xdebug跟踪函数调用，跟踪信息以文件形式存储，默认值为0</span><br><span class="line">xdebug.auto_trace=1</span><br><span class="line">;是否允许Xdebug跟踪函数参数，默认值为0</span><br><span class="line">xdebug.collect_params=1</span><br><span class="line">;是否允许Xdebug跟踪函数返回值，默认值为0</span><br><span class="line">xdebug.collect_return=1</span><br><span class="line">;函数调用跟踪信息输出文件目录，默认值为/tmp</span><br><span class="line">xdebug.trace_output_dir =&quot;D:\phpStudy\tmp\xdebug&quot;</span><br><span class="line">;性能分析文件的存放位置，默认值为/tmp</span><br><span class="line">xdebug.profiler_output_dir =&quot;D:\phpStudy\tmp\xdebug&quot;</span><br><span class="line">;打开xdebug的性能分析器，以文件形式存储，这项配置是不能以ini_set()函数配置的，默认值为0</span><br><span class="line">xdebug.profiler_enable = 1</span><br><span class="line">;性能分析文件的命名规则，默认值为cachegrind.out.%p</span><br><span class="line">xdebug.profiler_output_name = &quot;cachegrind.out.%t.%p&quot;</span><br><span class="line">xdebug.remote_enable = 1</span><br><span class="line">;用于zend studio远程调试的应用层通信协议</span><br><span class="line">xdebug.remote_handler = &quot;dbgp&quot;</span><br><span class="line">xdebug.idekey = phpstorm</span><br><span class="line">xdebug.remote_host = &quot;vip.me&quot;</span><br><span class="line">xdebug.remote_port = 9000</span><br></pre></td></tr></table></figure>
-<p><strong>php7</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">[XDebug]</span><br><span class="line">xdebug.profiler_output_dir=&quot;D:\phpStudy\PHPTutorial\tmp\xdebug&quot;</span><br><span class="line">xdebug.trace_output_dir=&quot;D:\phpStudy\PHPTutorial\tmp\xdebug&quot;</span><br><span class="line">zend_extension=&quot;D:\phpStudy\PHPTutorial\php\php-7.2.1-nts\ext\php_xdebug-2.7.1-7.2-vc15-nts.dll&quot;</span><br><span class="line"></span><br><span class="line">;是否允许Xdebug跟踪函数调用，跟踪信息以文件形式存储，默认值为0</span><br><span class="line">xdebug.auto_trace=1</span><br><span class="line">;是否允许Xdebug跟踪函数参数，默认值为0</span><br><span class="line">xdebug.collect_params=1</span><br><span class="line">;是否允许Xdebug跟踪函数返回值，默认值为0</span><br><span class="line">xdebug.collect_return=1</span><br><span class="line">;函数调用跟踪信息输出文件目录，默认值为/tmp</span><br><span class="line">xdebug.trace_output_dir =&quot;D:\phpStudy\tmp\xdebug&quot;</span><br><span class="line">;性能分析文件的存放位置，默认值为/tmp</span><br><span class="line">xdebug.profiler_output_dir =&quot;D:\phpStudy\tmp\xdebug&quot;</span><br><span class="line">;打开xdebug的性能分析器，以文件形式存储，这项配置是不能以ini_set()函数配置的，默认值为0</span><br><span class="line">xdebug.profiler_enable = 1</span><br><span class="line">;性能分析文件的命名规则，默认值为cachegrind.out.%p</span><br><span class="line">xdebug.profiler_output_name = &quot;cachegrind.out.%t.%p&quot;</span><br><span class="line">xdebug.remote_enable = 1</span><br><span class="line">;用于zend studio远程调试的应用层通信协议</span><br><span class="line">xdebug.remote_handler = &quot;dbgp&quot;</span><br><span class="line">xdebug.idekey = phpstorm</span><br><span class="line">xdebug.remote_host = &quot;vip.me&quot;</span><br><span class="line">xdebug.remote_port = 9000</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/19/php/php-xdebug/">展开全文 >></a>
         </p>
       
 
@@ -1595,11 +1603,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">regex</a>
+                <a href="javascript:void(0)" class="js-tag color4">requests</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">requests</a>
+                <a href="javascript:void(0)" class="js-tag color1">regex</a>
               </li>
              
               <li class="article-tag-list-item">
