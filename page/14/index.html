@@ -229,6 +229,85 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-java/qrcode-java" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/28/java/qrcode-java/">Java生成二维码工具类</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/28/java/qrcode-java/" class="archive-article-date">
+  	<time datetime="2019-08-28T08:31:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
+  	更新：2025-01-17
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>二维码转base64</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String registerPage = lrProperties.getRegisterPage();</span><br><span class="line">ByteArrayOutputStream bout = <span class="keyword">new</span> ByteArrayOutputStream();</span><br><span class="line">QRCodeUtil.encode(registerPage + <span class="string">"?uid="</span> + uid, bout);</span><br><span class="line"><span class="keyword">byte</span>[] bytes = bout.toByteArray();</span><br><span class="line">String qrcodeStr = <span class="string">"data:image/png;base64,"</span> + Base64Utils.encodeToString(bytes);</span><br><span class="line">Map&lt;String, String&gt; result = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">result.put(<span class="string">"qrcode"</span>, qrcodeStr);</span><br></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/2019/08/28/java/qrcode-java/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">qrcode</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/28/java/qrcode-java/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-ffmpeg/ffmpeg-dl-video" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -243,7 +322,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/28/ffmpeg/ffmpeg-dl-video/" class="archive-article-date">
   	<time datetime="2019-08-28T08:26:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-  	更新：2025-01-14
+  	更新：2025-01-17
 </a>
         
       </header>
@@ -325,7 +404,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/28/java/hibernate-json-issue/" class="archive-article-date">
   	<time datetime="2019-08-28T08:19:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-  	更新：2025-01-14
+  	更新：2025-01-17
 </a>
         
       </header>
@@ -416,7 +495,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/28/querydsl/" class="archive-article-date">
   	<time datetime="2019-08-28T08:08:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-  	更新：2025-01-14
+  	更新：2025-01-17
 </a>
         
       </header>
@@ -497,7 +576,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/21/regex/lion-king/" class="archive-article-date">
   	<time datetime="2019-08-21T13:37:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-21</time>
-  	更新：2025-01-14
+  	更新：2025-01-17
 </a>
         
       </header>
@@ -578,7 +657,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/16/golang/golang-print-detail/" class="archive-article-date">
   	<time datetime="2019-08-16T14:21:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-16</time>
-  	更新：2025-01-14
+  	更新：2025-01-17
 </a>
         
       </header>
@@ -676,7 +755,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/14/golang/golang-print/" class="archive-article-date">
   	<time datetime="2019-08-14T11:04:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-14</time>
-  	更新：2025-01-14
+  	更新：2025-01-17
 </a>
         
       </header>
@@ -775,7 +854,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/13/sqlmap-in-action-01/" class="archive-article-date">
   	<time datetime="2019-08-13T10:14:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-13</time>
-  	更新：2025-01-14
+  	更新：2025-01-17
 </a>
         
       </header>
@@ -872,7 +951,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/08/php/laravel/laravel-error/" class="archive-article-date">
   	<time datetime="2019-08-08T15:49:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-08</time>
-  	更新：2025-01-14
+  	更新：2025-01-17
 </a>
         
       </header>
@@ -960,7 +1039,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/07/linux/manjaro-kde/" class="archive-article-date">
   	<time datetime="2019-08-07T10:52:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-07</time>
-  	更新：2025-01-14
+  	更新：2025-01-17
 </a>
         
       </header>
@@ -1000,98 +1079,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/08/07/linux/manjaro-kde/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-regex/dl-xigua-video" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/06/regex/dl-xigua-video/">Java正则提取西瓜视频</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/06/regex/dl-xigua-video/" class="archive-article-date">
-  	<time datetime="2019-08-06T10:58:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-06</time>
-  	更新：2025-01-14
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">HttpHeaders headers = <span class="keyword">new</span> HttpHeaders();</span><br><span class="line">headers.add(<span class="string">"User-Agent"</span>, <span class="string">"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36"</span>);</span><br><span class="line">HttpEntity entity = <span class="keyword">new</span> HttpEntity(headers);</span><br><span class="line"></span><br><span class="line"><span class="comment">// url = https://www.ixigua.com/i6704869354154118407/</span></span><br><span class="line">ResponseEntity&lt;String&gt; exchange = restTemplate.exchange(url, HttpMethod.GET, entity, String<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 正则提取数据</span></span><br><span class="line"><span class="comment">// "vid":"(.*?)",.*?,"title":"(.*?)",.*?,"encryptToken":"(.*?)","businessToken":".*?","authToken":"(.*?)","is_original"</span></span><br><span class="line"><span class="comment">// ?&lt;别名&gt;</span></span><br><span class="line">String regex = <span class="string">"\"vid\":\"(?&lt;vid&gt;.*)\",.*,\"title\":\"(?&lt;title&gt;.*?)\",.*,\"encryptToken\":\"(?&lt;token&gt;.*)\",.*,\"authToken\":\"(?&lt;authToken&gt;.*?)\",\"is_original\""</span>;</span><br><span class="line"></span><br><span class="line">Pattern pattern = Pattern.compile(regex);</span><br><span class="line">Matcher matcher = pattern.matcher(exchange.getBody());</span><br><span class="line"><span class="keyword">if</span> (matcher.find()) &#123;</span><br><span class="line">    <span class="comment">// 获取匹配内容</span></span><br><span class="line">    String content = matcher.group(<span class="number">0</span>);</span><br><span class="line">    System.out.println(content);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// vid</span></span><br><span class="line">    String vid = matcher.group(<span class="number">1</span>);</span><br><span class="line">    System.out.println(vid);</span><br><span class="line">    <span class="comment">// 通过别名获取匹配数据</span></span><br><span class="line">    System.out.println(matcher.group(<span class="string">"vid"</span>));</span><br><span class="line"></span><br><span class="line">    <span class="comment">// title</span></span><br><span class="line">    String title = matcher.group(<span class="number">2</span>);</span><br><span class="line">    System.out.println(title);</span><br><span class="line">    System.out.println(matcher.group(<span class="string">"title"</span>));</span><br><span class="line"></span><br><span class="line">    <span class="comment">// encryptToken</span></span><br><span class="line">    String token = matcher.group(<span class="number">3</span>);</span><br><span class="line">    System.out.println(token);</span><br><span class="line">    System.out.println(matcher.group(<span class="string">"token"</span>));</span><br><span class="line"></span><br><span class="line">    <span class="comment">// authToken</span></span><br><span class="line">    String authToken = matcher.group(<span class="number">4</span>);</span><br><span class="line">    System.out.println(authToken);</span><br><span class="line">    System.out.println(matcher.group(<span class="string">"authToken"</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">regex</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/regex//" class="article-tag-list-link color1">regex</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/06/regex/dl-xigua-video/">展开全文 >></a>
         </p>
       
 
@@ -1431,11 +1418,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
+                <a href="javascript:void(0)" class="js-tag color1">vsftp</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vsftp</a>
+                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1467,19 +1454,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">c</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">cpp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">d365</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">c</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">cpp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1660,6 +1647,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mongo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mongodb</a>
               </li>
              
               <li class="article-tag-list-item">

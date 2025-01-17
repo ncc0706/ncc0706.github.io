@@ -229,6 +229,88 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-linux/ubuntu/ubuntu-desktop" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/06/linux/ubuntu/ubuntu-desktop/">ubuntu 18.04 桌面美化</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/06/linux/ubuntu/ubuntu-desktop/" class="archive-article-date">
+  	<time datetime="2018-05-06T13:28:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-06</time>
+  	更新：2025-01-17
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/assets/images/2018-05-06/success.png" alt="爆照"></p>
+<p>sudo apt install build-essential</p>
+<h2 id="安装sshd"><a href="#安装sshd" class="headerlink" title="安装sshd"></a>安装sshd</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install net-tools</span><br><span class="line">sudo apt-get -y install openssh-server</span><br><span class="line">service sshd status</span><br><span class="line">systemctl status sshd</span><br></pre></td></tr></table></figure>
+<h2 id="安装chrome"><a href="#安装chrome" class="headerlink" title="安装chrome"></a>安装chrome</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Add Google Chrome Repository</span></span><br><span class="line">sudo wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -</span><br><span class="line">sudo <span class="built_in">echo</span> <span class="string">"deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"</span> | sudo tee /etc/apt/sources.list.d/google-chrome.list</span><br><span class="line"></span><br><span class="line"><span class="comment"># Install Google Chrome</span></span><br><span class="line">sudo apt-get update</span><br><span class="line"></span><br><span class="line"><span class="comment"># To Install Google Chrome Stable, use the below command.</span></span><br><span class="line">sudo apt-get -y install google-chrome-stable</span><br><span class="line"></span><br><span class="line"><span class="comment"># activities or terminal</span></span><br><span class="line">google-chrome</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2018/05/06/linux/ubuntu/ubuntu-desktop/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ubuntu</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/06/linux/ubuntu/ubuntu-desktop/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-java/a-collection-with-cascade-all-delete-orphan-was-no-longer-referenced-by-the-owning-entity-instance" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -243,7 +325,7 @@ var _hmt = _hmt || [];
         
         <a href="/2018/03/28/java/a-collection-with-cascade-all-delete-orphan-was-no-longer-referenced-by-the-owning-entity-instance/" class="archive-article-date">
   	<time datetime="2018-03-28T12:41:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-28</time>
-  	更新：2025-01-14
+  	更新：2025-01-17
 </a>
         
       </header>
@@ -340,7 +422,7 @@ var _hmt = _hmt || [];
         
         <a href="/2018/03/25/tools/ab/" class="archive-article-date">
   	<time datetime="2018-03-25T22:17:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-25</time>
-  	更新：2025-01-14
+  	更新：2025-01-17
 </a>
         
       </header>
@@ -417,7 +499,7 @@ var _hmt = _hmt || [];
         
         <a href="/2018/03/25/alpine/alpine-tools/" class="archive-article-date">
   	<time datetime="2018-03-25T20:53:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-25</time>
-  	更新：2025-01-14
+  	更新：2025-01-17
 </a>
         
       </header>
@@ -497,7 +579,7 @@ var _hmt = _hmt || [];
         
         <a href="/2018/03/25/alpine/alpine-setup-scripts/" class="archive-article-date">
   	<time datetime="2018-03-25T15:36:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-25</time>
-  	更新：2025-01-14
+  	更新：2025-01-17
 </a>
         
       </header>
@@ -583,7 +665,7 @@ var _hmt = _hmt || [];
         
         <a href="/2018/03/24/docker/install-docker-on-alpine-linux/" class="archive-article-date">
   	<time datetime="2018-03-24T19:46:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-24</time>
-  	更新：2025-01-14
+  	更新：2025-01-17
 </a>
         
       </header>
@@ -666,7 +748,7 @@ var _hmt = _hmt || [];
         
         <a href="/2018/03/24/angular/angular-primer/" class="archive-article-date">
   	<time datetime="2018-03-24T09:01:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-24</time>
-  	更新：2025-01-14
+  	更新：2025-01-17
 </a>
         
       </header>
@@ -743,7 +825,7 @@ var _hmt = _hmt || [];
         
         <a href="/2018/02/26/docker/docker-common/" class="archive-article-date">
   	<time datetime="2018-02-26T22:15:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-26</time>
-  	更新：2025-01-14
+  	更新：2025-01-17
 </a>
         
       </header>
@@ -825,7 +907,7 @@ var _hmt = _hmt || [];
         
         <a href="/2018/02/26/docker/install-docker-on-ubuntu/" class="archive-article-date">
   	<time datetime="2018-02-26T20:54:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-26</time>
-  	更新：2025-01-14
+  	更新：2025-01-17
 </a>
         
       </header>
@@ -904,7 +986,7 @@ var _hmt = _hmt || [];
         
         <a href="/2018/02/26/aws-ssr/" class="archive-article-date">
   	<time datetime="2018-02-26T20:12:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-26</time>
-  	更新：2025-01-14
+  	更新：2025-01-17
 </a>
         
       </header>
@@ -943,85 +1025,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/02/26/aws-ssr/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-git/git-command" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/26/git/git-command/">git常用命令</a>
-    </h1>
-  
-
-        
-        <a href="/2018/02/26/git/git-command/" class="archive-article-date">
-  	<time datetime="2018-02-26T19:18:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-26</time>
-  	更新：2025-01-14
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2018/02/26/elephant-3177249_1920.jpg" alt="git"></p>
-        
-          <a class="article-more-a" href="/2018/02/26/git/git-command/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/02/26/git/git-command/">展开全文 >></a>
         </p>
       
 
@@ -1361,11 +1364,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
+                <a href="javascript:void(0)" class="js-tag color1">vsftp</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vsftp</a>
+                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1397,19 +1400,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">c</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">cpp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">d365</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">c</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">cpp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1590,6 +1593,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mongo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mongodb</a>
               </li>
              
               <li class="article-tag-list-item">
