@@ -229,6 +229,96 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-original-inverse-complement-code" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/12/original-inverse-complement-code/">原码、反码、补码</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/12/original-inverse-complement-code/" class="archive-article-date">
+  	<time datetime="2019-07-12T15:56:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-12</time>
+  	更新：2025-02-15
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>由于计算机硬件决定，任何存在于计算机种的数据，其本质都是以二进制码存储的。</p>
+<p>根据<code>冯.诺依曼</code>提出的经典计算机体系结构框架。一台计算机有运算器，控制器，存储器，输入和输出设备组成，其中运算器，只有加法运算器，没有减法运算器（据说一开始是有的，后来由于减法器硬件开销太大，被废了 ）。所以计算中没法直接做减法的，它的减法是通过加法来实现的。现实世界中所有的减法也可以当成加法的，但是前提是要先有负数的概念，这就为什么不得不引入一个该死的符号为。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">而且从硬件的角度上看，只有正数加负数才算减法。</span><br><span class="line">正数与正数相加，负数与负数相加，其实都可以通过加法器直接相加。</span><br></pre></td></tr></table></figure>
+<p><strong>原码，反码，补码的产生过程，就是为了解决，计算机做减法和引入符号位（正号和负号）的问题。</strong></p>
+        
+          <a class="article-more-a" href="/2019/07/12/original-inverse-complement-code/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">原码</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">反码</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">补码</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/12/original-inverse-complement-code/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-displacement" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -989,90 +1079,9 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-ruby-http" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/23/ruby-http/">ruby-http</a>
-    </h1>
-  
-
-        
-        <a href="/2019/06/23/ruby-http/" class="archive-article-date">
-  	<time datetime="2019-06-23T15:24:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-23</time>
-  	更新：2025-02-15
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Ruby-发送HTTP请求"><a href="#Ruby-发送HTTP请求" class="headerlink" title="Ruby 发送HTTP请求"></a>Ruby 发送HTTP请求</h2><p><strong>GET</strong></p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">require</span> <span class="string">'net/http'</span></span><br><span class="line"></span><br><span class="line">puts URI(<span class="string">'https://www.mgtv.com'</span>).host</span><br><span class="line">puts URI(<span class="string">'https://www.mgtv.com'</span>).scheme</span><br><span class="line"></span><br><span class="line">puts Net::HTTP.get_response(URI(<span class="string">'https://www.mgtv.com'</span>)).body</span><br><span class="line"></span><br><span class="line">res = Net::HTTP.get_response(URI(<span class="string">'https://www.mgtv.com'</span>))</span><br><span class="line">puts res.code</span><br><span class="line">puts res.message</span><br><span class="line">puts res.body</span><br></pre></td></tr></table></figure>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><blockquote>
-<p><a href="https://docs.ruby-lang.org/en/2.6.0/Net/HTTP.html" target="_blank" rel="noopener">https://docs.ruby-lang.org/en/2.6.0/Net/HTTP.html</a></p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">ruby</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/23/ruby-http/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/15/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/17/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/15/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/17/">Next &raquo;</a>
     </nav>
   
 
