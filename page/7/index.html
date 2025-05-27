@@ -241,6 +241,98 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-install-nacos-server" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/12/05/install-nacos-server/">安装 Nacos 2.0.3</a>
+    </h1>
+  
+
+        
+        <a href="/2021/12/05/install-nacos-server/" class="archive-article-date">
+  	<time datetime="2021-12-05T16:46:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-05</time>
+  	更新：2025-05-27
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">java11 需修改startup.sh</span><br><span class="line">-------------------------------------------------------------------------------</span><br><span class="line">在Nacos-Server的 bin / startup.sh</span><br><span class="line">由JAVA_OPT_EXT_FIX 配置引起启动报错</span><br><span class="line"></span><br><span class="line">在startup.sh文件中替换下方配置</span><br><span class="line"></span><br><span class="line">x JAVA_OPT_EXT_FIX=&quot;-Djava.ext.dirs=$&#123;JAVA_HOME&#125;/jre/lib/ext:$&#123;JAVA_HOME&#125;/lib/ext&quot;</span><br><span class="line">√ JAVA_OPT=&quot;$&#123;JAVA_OPT&#125; -Djava.ext.dirs=$&#123;JAVA_HOME&#125;/jre/lib/ext:$&#123;JAVA_HOME&#125;/lib/ext&quot;</span><br><span class="line"></span><br><span class="line">x echo &quot;$JAVA $JAVA_OPT_EXT_FIX $&#123;JAVA_OPT&#125;&quot;</span><br><span class="line">√ echo &quot;$JAVA $&#123;JAVA_OPT&#125;&quot;</span><br><span class="line"></span><br><span class="line">x echo &quot;$JAVA $JAVA_OPT_EXT_FIX $&#123;JAVA_OPT&#125;&quot; &gt; $&#123;BASE_DIR&#125;/logs/start.out 2&gt;&amp;1 &amp;</span><br><span class="line">x nohup &quot;$JAVA&quot; &quot;$JAVA_OPT_EXT_FIX&quot; $&#123;JAVA_OPT&#125; nacos.nacos &gt;&gt; $&#123;BASE_DIR&#125;/logs/start.out 2&gt;&amp;1 &amp;</span><br><span class="line">√ echo &quot;$JAVA $&#123;JAVA_OPT&#125;&quot; &gt; $&#123;BASE_DIR&#125;/logs/start.out 2&gt;&amp;1 &amp;</span><br><span class="line">√ nohup $JAVA $&#123;JAVA_OPT&#125; nacos.nacos &gt;&gt; $&#123;BASE_DIR&#125;/logs/start.out 2&gt;&amp;1 &amp;</span><br><span class="line">-------------------------------------------------------------------------------</span><br></pre></td></tr></table></figure>
+<p><strong>vim /usr/lib/systemd/system/nacos.service</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=Nacos Service 2.0.3</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=forking</span><br><span class="line">Environment=&quot;JAVA_HOME=/opt/jdk11&quot;</span><br><span class="line">ExecStart=/opt/nacos/bin/startup.sh -m standalone</span><br><span class="line">ExecStop=/opt/nacos/bin/shutdown.sh</span><br><span class="line">PrivateTmp=true</span><br><span class="line">SuccessExitStatus=143</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+<p><strong>端口</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=8848/tcp --permanent</span><br><span class="line">firewall-cmd --zone=public --add-port=9848/tcp --permanent</span><br><span class="line"></span><br><span class="line">firewall-cmd --reload</span><br><span class="line">firewall-cmd --list-ports</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">nacos</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/nacos//" class="article-tag-list-link color1">nacos</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/12/05/install-nacos-server/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-desktop-shortcut" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -255,7 +347,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/12/05/desktop-shortcut/" class="archive-article-date">
   	<time datetime="2021-12-05T08:21:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-05</time>
-  	更新：2025-03-08
+  	更新：2025-05-27
 </a>
         
       </header>
@@ -344,7 +436,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/12/04/k8s/k8s-kuboard/" class="archive-article-date">
   	<time datetime="2021-12-04T19:26:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-04</time>
-  	更新：2025-03-08
+  	更新：2025-05-27
 </a>
         
       </header>
@@ -446,7 +538,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/11/26/nodejs/node-registry/" class="archive-article-date">
   	<time datetime="2021-11-26T21:59:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-26</time>
-  	更新：2025-03-08
+  	更新：2025-05-27
 </a>
         
       </header>
@@ -537,7 +629,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/11/26/lua/vs2019-build-lua/" class="archive-article-date">
   	<time datetime="2021-11-26T18:59:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-26</time>
-  	更新：2025-03-08
+  	更新：2025-05-27
 </a>
         
       </header>
@@ -636,7 +728,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/11/14/nc/" class="archive-article-date">
   	<time datetime="2021-11-14T19:09:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-14</time>
-  	更新：2025-03-08
+  	更新：2025-05-27
 </a>
         
       </header>
@@ -727,7 +819,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/10/16/install-nfs/" class="archive-article-date">
   	<time datetime="2021-10-16T21:20:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-16</time>
-  	更新：2025-03-08
+  	更新：2025-05-27
 </a>
         
       </header>
@@ -837,7 +929,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/10/16/k8s/k8s-basic/" class="archive-article-date">
   	<time datetime="2021-10-16T10:12:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-16</time>
-  	更新：2025-03-08
+  	更新：2025-05-27
 </a>
         
       </header>
@@ -929,7 +1021,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/09/25/docker-registry-01/" class="archive-article-date">
   	<time datetime="2021-09-25T16:37:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-25</time>
-  	更新：2025-03-08
+  	更新：2025-05-27
 </a>
         
       </header>
@@ -1025,7 +1117,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/09/17/vsftp/" class="archive-article-date">
   	<time datetime="2021-09-17T21:50:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-17</time>
-  	更新：2025-03-08
+  	更新：2025-05-27
 </a>
         
       </header>
@@ -1075,129 +1167,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/09/17/vsftp/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-k8s/k8s-cluster-on-centos7" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/09/05/k8s/k8s-cluster-on-centos7/">Centos7 安装 Kubernetes 集群</a>
-    </h1>
-  
-
-        
-        <a href="/2021/09/05/k8s/k8s-cluster-on-centos7/" class="archive-article-date">
-  	<time datetime="2021-09-05T20:04:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-05</time>
-  	更新：2025-03-08
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <table>
-<thead>
-<tr>
-<th>hostname</th>
-<th>ip</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>k8s-master</td>
-<td>192.168.18.160</td>
-<td></td>
-</tr>
-<tr>
-<td>k8s-node01</td>
-<td>192.168.18.161</td>
-<td></td>
-</tr>
-<tr>
-<td>k8s-node02</td>
-<td>192.168.18.162</td>
-<td></td>
-</tr>
-<tr>
-<td>k8s-node03</td>
-<td>192.168.18.163</td>
-</tr>
-</tbody>
-</table>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h4 id="Step-2-设置国内源"><a href="#Step-2-设置国内源" class="headerlink" title="Step 2: 设置国内源"></a>Step 2: 设置国内源</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># yum -y install wget</span></span><br><span class="line"><span class="comment"># cp /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak</span></span><br><span class="line"><span class="comment"># wget -O /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo</span></span><br><span class="line"><span class="comment"># sed -i -e '/mirrors.cloud.aliyuncs.com/d' -e '/mirrors.aliyuncs.com/d' /etc/yum.repos.d/CentOS-Base.repo</span></span><br></pre></td></tr></table></figure>
-<p>安装依赖</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># yum install -y vim wget curl ntpdate ntp net-tools git \</span></span><br><span class="line">conntrack jq sysstat libseccomp</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2021/09/05/k8s/k8s-cluster-on-centos7/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">k8s</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/k8s//" class="article-tag-list-link color4">k8s</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/09/05/k8s/k8s-cluster-on-centos7/">展开全文 >></a>
         </p>
       
 
@@ -1369,11 +1338,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">位移</a>
+                <a href="javascript:void(0)" class="js-tag color3">windows</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">windows</a>
+                <a href="javascript:void(0)" class="js-tag color3">位移</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1381,15 +1350,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ejs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">c#</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">dotnet.core</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ejs</a>
+                <a href="javascript:void(0)" class="js-tag color4">frp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1398,10 +1367,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">idea</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">frp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1422,6 +1387,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">shortkey</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">nacos</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1453,7 +1422,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jna</a>
+                <a href="javascript:void(0)" class="js-tag color2">dotnet.core</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1493,11 +1462,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">querydsl</a>
+                <a href="javascript:void(0)" class="js-tag color4">jna</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">ruby</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">querydsl</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1533,15 +1506,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nacos</a>
+                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">vsftp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1565,11 +1534,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">android</a>
+                <a href="javascript:void(0)" class="js-tag color5">archlinux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">archlinux</a>
+                <a href="javascript:void(0)" class="js-tag color3">android</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1633,15 +1602,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">bigdecimal</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">jpa</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hibernate</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">bigdecimal</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1657,6 +1626,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">keycloak</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">spring-boot</a>
               </li>
              
@@ -1666,10 +1639,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">thymeleaf</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">keycloak</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1746,6 +1715,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">regex</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">rust</a>
               </li>
              
               <li class="article-tag-list-item">

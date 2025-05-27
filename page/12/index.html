@@ -241,6 +241,94 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-flutter/flutter04" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/12/flutter/flutter04/">flutter 基础</a>
+    </h1>
+  
+
+        
+        <a href="/2020/01/12/flutter/flutter04/" class="archive-article-date">
+  	<time datetime="2020-01-12T10:47:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-12</time>
+  	更新：2025-05-27
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><code>去掉水波纹效果</code></p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> MaterialApp(</span><br><span class="line">      title: <span class="string">'Flutter Demo'</span>,</span><br><span class="line">      theme: ThemeData(</span><br><span class="line">        primarySwatch: Colors.blue,</span><br><span class="line">        highlightColor: Colors.transparent,</span><br><span class="line">        splashColor: Colors.transparent,</span><br><span class="line">      ),</span><br><span class="line">      home: MyHomePage(),</span><br><span class="line">    );</span><br></pre></td></tr></table></figure>
+<p><code>TabBar字号一样大</code></p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.selectedFontSize = <span class="number">14.0</span>,</span><br><span class="line"><span class="keyword">this</span>.unselectedFontSize = <span class="number">12.0</span>,</span><br><span class="line"></span><br><span class="line"><span class="comment">// 可以将 unselectedFontSize 设置的字号和 selectedFontSize 一样</span></span><br></pre></td></tr></table></figure>
+<p><code>AppBar阴影</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">appBar: AppBar(</span><br><span class="line">	elevation: 0,</span><br><span class="line">	title: Text(&apos;flutter app&apos;),</span><br><span class="line">),</span><br></pre></td></tr></table></figure>
+<p><code>debug</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">MaterialApp(</span><br><span class="line">      debugShowCheckedModeBanner: false,</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p><code>tooltip</code> 长按显示的文字内容</p>
+<p><strong><em>primarySwatch</em> 和 <em>primaryColor</em> 的区别 </strong></p>
+<p>primaryColor是其中一种阴影.确切地说,primaryColor通常等于primarySwatch [500].</p>
+<p>通常最好定义primarySwatch而不是primaryColor.因为某些材质组件可能会使用不同的primaryColor阴影来处理阴影,边框等</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">flutter</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/01/12/flutter/flutter04/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-ps01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -255,7 +343,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/12/29/ps01/" class="archive-article-date">
   	<time datetime="2019-12-29T15:48:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-29</time>
-  	更新：2025-03-08
+  	更新：2025-05-27
 </a>
         
       </header>
@@ -333,7 +421,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/12/27/heroku/heroku-deploy-spring-boot-docker/" class="archive-article-date">
   	<time datetime="2019-12-27T21:42:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-27</time>
-  	更新：2025-03-08
+  	更新：2025-05-27
 </a>
         
       </header>
@@ -425,7 +513,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/12/27/heroku/heroku-deploy-spring-boot/" class="archive-article-date">
   	<time datetime="2019-12-27T20:31:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-27</time>
-  	更新：2025-03-08
+  	更新：2025-05-27
 </a>
         
       </header>
@@ -516,7 +604,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/12/17/php/laravel/laravel-on-heroku/" class="archive-article-date">
   	<time datetime="2019-12-17T20:12:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-17</time>
-  	更新：2025-03-08
+  	更新：2025-05-27
 </a>
         
       </header>
@@ -607,7 +695,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/12/15/python-selenium/" class="archive-article-date">
   	<time datetime="2019-12-15T10:51:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-15</time>
-  	更新：2025-03-08
+  	更新：2025-05-27
 </a>
         
       </header>
@@ -697,7 +785,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/12/14/ffmpeg/ffmpeg-encryption-m3u8/" class="archive-article-date">
   	<time datetime="2019-12-14T20:32:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
-  	更新：2025-03-08
+  	更新：2025-05-27
 </a>
         
       </header>
@@ -787,7 +875,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/12/06/php/thinkphp/thinkphp/" class="archive-article-date">
   	<time datetime="2019-12-06T12:46:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-06</time>
-  	更新：2025-03-08
+  	更新：2025-05-27
 </a>
         
       </header>
@@ -852,7 +940,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/12/06/php/laravel/laravel/" class="archive-article-date">
   	<time datetime="2019-12-06T12:46:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-06</time>
-  	更新：2025-03-08
+  	更新：2025-05-27
 </a>
         
       </header>
@@ -956,7 +1044,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/11/24/flutter/flutter03-MaterialApp-title/" class="archive-article-date">
   	<time datetime="2019-11-24T12:15:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-24</time>
-  	更新：2025-03-08
+  	更新：2025-05-27
 </a>
         
       </header>
@@ -992,188 +1080,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/11/24/flutter/flutter03-MaterialApp-title/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-idea" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/23/idea/">IDEA快捷键</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/23/idea/" class="archive-article-date">
-  	<time datetime="2019-10-23T22:01:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-23</time>
-  	更新：2024-12-21
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <table>
-<thead>
-<tr>
-<th>功能</th>
-<th>Eclipse(STS)</th>
-<th>IDEA系列</th>
-<th>VS Code</th>
-<th>VS</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>查看类的结构</td>
-<td>ctrl + o</td>
-<td>ctrl + f12</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>查找类</td>
-<td>ctrl + shift + t</td>
-<td>ctrl + n</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>抽取返回值变量</td>
-<td>ctrl + shift + l</td>
-<td>ctrl + alt + v</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>实现接口</td>
-<td></td>
-<td>ctrl + i</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>查看实现类（继承树）</td>
-<td></td>
-<td>ctrl + h / ctrl + alt + b</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>搜索关键字,IDEA 需要(shift + f3)返回搜索</td>
-<td>ctrl + k</td>
-<td>ctrl + f3</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>复制行</td>
-<td>ctrl+alt+down</td>
-<td>ctrl + d</td>
-<td>shift+alt+up/down</td>
-<td>ctrl + c , ctrl + v</td>
-</tr>
-<tr>
-<td>删除行</td>
-<td>ctrl + d</td>
-<td>ctrl + y</td>
-<td>ctrl+shift+k</td>
-<td>ctrl + L</td>
-</tr>
-<tr>
-<td>跳到指定行</td>
-<td></td>
-<td></td>
-<td>ctrl + g</td>
-<td></td>
-</tr>
-<tr>
-<td>断点</td>
-<td></td>
-<td>ctrl + shift + f8</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>移动行</td>
-<td></td>
-<td></td>
-<td>alt+up/down</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><p>Spring Boot Assistant 解决社区版属性文件不提示</p>
-<p>CamelCase 转换命名</p>
-<p>Easy I18n</p>
-<p>Cool Request 查找 RequestMapping, 需自定义快捷键</p>
-<h2 id="File-header"><a href="#File-header" class="headerlink" title="File header"></a>File header</h2><p>Editor -&gt; File and Code Templates -&gt; Includes</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Created by IntelliJ IDEA. &lt;br/&gt;</span><br><span class="line"> *</span><br><span class="line"> * @author xxx &lt;br/&gt;</span><br><span class="line"> * @version 1.0</span><br><span class="line"> * @since $&#123;YEAR&#125;-$&#123;MONTH&#125;-$&#123;DAY&#125; $&#123;HOUR&#125;:$&#123;MINUTE&#125;:$&#123;SECOND&#125; &lt;br/&gt;</span><br><span class="line"> */</span><br></pre></td></tr></table></figure>
-<h2 id="Sticky-Lines"><a href="#Sticky-Lines" class="headerlink" title="Sticky Lines"></a>Sticky Lines</h2><p>Editor -&gt; General -&gt; Sticky Lines</p>
-<p>去掉右侧打勾</p>
-<h2 id="IDEA自动导入provided的依赖"><a href="#IDEA自动导入provided的依赖" class="headerlink" title="IDEA自动导入provided的依赖"></a>IDEA自动导入provided的依赖</h2><p>修改模板保证所有的都可以用</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2024/12/01.png" alt="Root权限"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">shortkey</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/23/idea/">展开全文 >></a>
         </p>
       
 
@@ -1345,11 +1251,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">位移</a>
+                <a href="javascript:void(0)" class="js-tag color3">windows</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">windows</a>
+                <a href="javascript:void(0)" class="js-tag color3">位移</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1357,15 +1263,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ejs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">c#</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">dotnet.core</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ejs</a>
+                <a href="javascript:void(0)" class="js-tag color4">frp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1374,10 +1280,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">idea</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">frp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1398,6 +1300,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">shortkey</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">nacos</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1429,7 +1335,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jna</a>
+                <a href="javascript:void(0)" class="js-tag color2">dotnet.core</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1469,11 +1375,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">querydsl</a>
+                <a href="javascript:void(0)" class="js-tag color4">jna</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">ruby</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">querydsl</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1509,15 +1419,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nacos</a>
+                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">vsftp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1541,11 +1447,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">android</a>
+                <a href="javascript:void(0)" class="js-tag color5">archlinux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">archlinux</a>
+                <a href="javascript:void(0)" class="js-tag color3">android</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1609,15 +1515,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">bigdecimal</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">jpa</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hibernate</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">bigdecimal</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1633,6 +1539,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">keycloak</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">spring-boot</a>
               </li>
              
@@ -1642,10 +1552,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">thymeleaf</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">keycloak</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1722,6 +1628,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">regex</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">rust</a>
               </li>
              
               <li class="article-tag-list-item">

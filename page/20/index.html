@@ -241,6 +241,86 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-nodejs/install-nodejs-on-archlinux" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/16/nodejs/install-nodejs-on-archlinux/">install-nodejs-on-archlinux</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/16/nodejs/install-nodejs-on-archlinux/" class="archive-article-date">
+  	<time datetime="2019-04-16T09:01:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-16</time>
+  	更新：2025-05-27
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/assets/images/2019-04-16/animals-4101126_1920.jpg" alt><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S nvm</span><br><span class="line"></span><br><span class="line">You need to source nvm before you can use it. Do one of the following</span><br><span class="line">or similar depending on your shell (and then restart your shell):</span><br><span class="line"></span><br><span class="line">  echo &apos;source /usr/share/nvm/init-nvm.sh&apos; &gt;&gt; ~/.bashrc</span><br><span class="line">  echo &apos;source /usr/share/nvm/init-nvm.sh&apos; &gt;&gt; ~/.zshrc</span><br></pre></td></tr></table></figure></p>
+<h2 id="nvm"><a href="#nvm" class="headerlink" title="nvm"></a>nvm</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">nvm list --显示已安装的nodejs版本</span><br><span class="line">nvm use version --使用指定版本的nodejs</span><br><span class="line">nvm ls --查看当前已经安装的node或者iojs版本；</span><br><span class="line">nvm ls-remote --查看当前可以安装的node或者iojs版本；</span><br><span class="line">nvm install v8.0.0 --安装制定版本的nodejs；</span><br><span class="line">nvm use v8.0.0 --切换使用的nodejs版本；</span><br><span class="line"></span><br><span class="line"># 环境变量 nvm指向国内镜像源</span><br><span class="line">export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node</span><br><span class="line"></span><br><span class="line">## usage</span><br><span class="line">nvm install v10.15.3 --安装指定的nodejs版本</span><br><span class="line">## 验证是否安装成功</span><br><span class="line">root@archlinux:~|⇒  node -v</span><br><span class="line">v10.15.3</span><br><span class="line">root@archlinux:~|⇒  npm -v</span><br><span class="line">6.4.1</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2019/04/16/nodejs/install-nodejs-on-archlinux/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">nodejs</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/16/nodejs/install-nodejs-on-archlinux/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-ffmpeg/ffmpeg" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -363,7 +443,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/03/28/git/git-delete-commit-file-to-ignore/" class="archive-article-date">
   	<time datetime="2019-03-28T10:07:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-28</time>
-  	更新：2025-03-08
+  	更新：2025-05-27
 </a>
         
       </header>
@@ -441,7 +521,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/03/22/git/git-multi-user-on-windows/" class="archive-article-date">
   	<time datetime="2019-03-22T09:06:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-22</time>
-  	更新：2025-03-08
+  	更新：2025-05-27
 </a>
         
       </header>
@@ -526,7 +606,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/03/22/git/git-tour/" class="archive-article-date">
   	<time datetime="2019-03-22T09:05:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-22</time>
-  	更新：2025-03-08
+  	更新：2025-05-27
 </a>
         
       </header>
@@ -605,7 +685,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/03/21/ssr-link/" class="archive-article-date">
   	<time datetime="2019-03-21T17:48:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-21</time>
-  	更新：2025-03-08
+  	更新：2025-05-27
 </a>
         
       </header>
@@ -683,7 +763,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/01/08/nginx/nginx-ssl/" class="archive-article-date">
   	<time datetime="2019-01-08T09:38:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-08</time>
-  	更新：2025-03-08
+  	更新：2025-05-27
 </a>
         
       </header>
@@ -761,7 +841,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/01/04/regex/dl-qq-video/" class="archive-article-date">
   	<time datetime="2019-01-04T15:41:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-04</time>
-  	更新：2025-03-08
+  	更新：2025-05-27
 </a>
         
       </header>
@@ -849,7 +929,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/01/03/ffmpeg/install-ffmpeg-on-fedora29/" class="archive-article-date">
   	<time datetime="2019-01-03T14:46:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-03</time>
-  	更新：2025-03-08
+  	更新：2025-05-27
 </a>
         
       </header>
@@ -937,7 +1017,7 @@ var _hmt = _hmt || [];
         
         <a href="/2018/12/30/android/android-primer/" class="archive-article-date">
   	<time datetime="2018-12-30T17:34:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-30</time>
-  	更新：2025-03-08
+  	更新：2025-05-27
 </a>
         
       </header>
@@ -974,90 +1054,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/12/30/android/android-primer/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-os/fedora/fedora29" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/28/os/fedora/fedora29/">fedora29</a>
-    </h1>
-  
-
-        
-        <a href="/2018/12/28/os/fedora/fedora29/" class="archive-article-date">
-  	<time datetime="2018-12-28T21:38:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-28</time>
-  	更新：2025-03-08
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/assets/images/2018-12-28/01.png" alt="最终效果"></p>
-<h2 id="ssh服务"><a href="#ssh服务" class="headerlink" title="ssh服务"></a>ssh服务</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 修改配置文件</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 默认是允许root远程登陆的</span></span><br><span class="line">sudo vi /etc/ssh/sshd_config</span><br><span class="line"><span class="meta">#</span><span class="bash"> 启动sshd服务</span></span><br><span class="line">sudo systemctl restart sshd</span><br><span class="line"><span class="meta">#</span><span class="bash">开机启动ssh服务</span></span><br><span class="line">sudo systemctl enable sshd</span><br></pre></td></tr></table></figure>
-<h2 id="国内镜像"><a href="#国内镜像" class="headerlink" title="国内镜像"></a>国内镜像</h2><blockquote>
-<p><a href="https://mirrors.tuna.tsinghua.edu.cn/help/fedora/" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/help/fedora/</a></p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 备份原始镜像</span></span><br><span class="line">sudo cp /etc/yum.repos.d/fedora.repo /etc/yum.repos.d/fedora.repo.bak</span><br><span class="line">sudo cp /etc/yum.repos.d/fedora-updates.repo /etc/yum.repos.d/fedora-updates.repo.bak</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 恢复原始镜像</span></span><br><span class="line">sudo cp /etc/yum.repos.d/fedora.repo.bak /etc/yum.repos.d/fedora.repo</span><br><span class="line">sudo cp /etc/yum.repos.d/fedora-updates.repo.bak /etc/yum.repos.d/fedora-updates.repo</span><br><span class="line"><span class="meta">#</span><span class="bash"> 更新本地缓存</span></span><br><span class="line">sudo dnf makecache</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2018/12/28/os/fedora/fedora29/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">fedora</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/12/28/os/fedora/fedora29/">展开全文 >></a>
         </p>
       
 
@@ -1229,11 +1225,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">位移</a>
+                <a href="javascript:void(0)" class="js-tag color3">windows</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">windows</a>
+                <a href="javascript:void(0)" class="js-tag color3">位移</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1241,15 +1237,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ejs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">c#</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">dotnet.core</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ejs</a>
+                <a href="javascript:void(0)" class="js-tag color4">frp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1258,10 +1254,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">idea</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">frp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1282,6 +1274,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">shortkey</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">nacos</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1313,7 +1309,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jna</a>
+                <a href="javascript:void(0)" class="js-tag color2">dotnet.core</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1353,11 +1349,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">querydsl</a>
+                <a href="javascript:void(0)" class="js-tag color4">jna</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">ruby</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">querydsl</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1393,15 +1393,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nacos</a>
+                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">vsftp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1425,11 +1421,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">android</a>
+                <a href="javascript:void(0)" class="js-tag color5">archlinux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">archlinux</a>
+                <a href="javascript:void(0)" class="js-tag color3">android</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1493,15 +1489,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">bigdecimal</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">jpa</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hibernate</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">bigdecimal</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1517,6 +1513,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">keycloak</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">spring-boot</a>
               </li>
              
@@ -1526,10 +1526,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">thymeleaf</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">keycloak</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1606,6 +1602,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">regex</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">rust</a>
               </li>
              
               <li class="article-tag-list-item">

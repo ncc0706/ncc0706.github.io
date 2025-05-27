@@ -241,6 +241,129 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-k8s/k8s-cluster-on-centos7" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/09/05/k8s/k8s-cluster-on-centos7/">Centos7 安装 Kubernetes 集群</a>
+    </h1>
+  
+
+        
+        <a href="/2021/09/05/k8s/k8s-cluster-on-centos7/" class="archive-article-date">
+  	<time datetime="2021-09-05T20:04:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-05</time>
+  	更新：2025-05-27
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <table>
+<thead>
+<tr>
+<th>hostname</th>
+<th>ip</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>k8s-master</td>
+<td>192.168.18.160</td>
+<td></td>
+</tr>
+<tr>
+<td>k8s-node01</td>
+<td>192.168.18.161</td>
+<td></td>
+</tr>
+<tr>
+<td>k8s-node02</td>
+<td>192.168.18.162</td>
+<td></td>
+</tr>
+<tr>
+<td>k8s-node03</td>
+<td>192.168.18.163</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="Step-2-设置国内源"><a href="#Step-2-设置国内源" class="headerlink" title="Step 2: 设置国内源"></a>Step 2: 设置国内源</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># yum -y install wget</span></span><br><span class="line"><span class="comment"># cp /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak</span></span><br><span class="line"><span class="comment"># wget -O /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo</span></span><br><span class="line"><span class="comment"># sed -i -e '/mirrors.cloud.aliyuncs.com/d' -e '/mirrors.aliyuncs.com/d' /etc/yum.repos.d/CentOS-Base.repo</span></span><br></pre></td></tr></table></figure>
+<p>安装依赖</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># yum install -y vim wget curl ntpdate ntp net-tools git \</span></span><br><span class="line">conntrack jq sysstat libseccomp</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2021/09/05/k8s/k8s-cluster-on-centos7/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">k8s</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/k8s//" class="article-tag-list-link color4">k8s</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/09/05/k8s/k8s-cluster-on-centos7/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-nodejs/nodejs01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -255,7 +378,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/08/14/nodejs/nodejs01/" class="archive-article-date">
   	<time datetime="2021-08-14T09:46:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-14</time>
-  	更新：2025-03-08
+  	更新：2025-05-27
 </a>
         
       </header>
@@ -350,7 +473,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/07/29/d365/merge-multiple-assemblies-into-one-dll/" class="archive-article-date">
   	<time datetime="2021-07-29T21:12:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-29</time>
-  	更新：2025-03-08
+  	更新：2025-05-27
 </a>
         
       </header>
@@ -441,7 +564,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/07/24/d365/dynamic-365-add-button-in-entity-home-grid-command-bar/" class="archive-article-date">
   	<time datetime="2021-07-24T07:28:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-24</time>
-  	更新：2025-03-08
+  	更新：2025-05-27
 </a>
         
       </header>
@@ -560,7 +683,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/06/27/os/linux-systemd/" class="archive-article-date">
   	<time datetime="2021-06-27T20:51:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-27</time>
-  	更新：2025-03-08
+  	更新：2025-05-27
 </a>
         
       </header>
@@ -639,7 +762,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/04/23/db/postgresql/postgres-13.2/" class="archive-article-date">
   	<time datetime="2021-04-23T21:06:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-23</time>
-  	更新：2025-03-08
+  	更新：2025-05-27
 </a>
         
       </header>
@@ -734,7 +857,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/04/10/sts/" class="archive-article-date">
   	<time datetime="2021-04-10T21:21:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-10</time>
-  	更新：2025-03-08
+  	更新：2025-05-27
 </a>
         
       </header>
@@ -828,7 +951,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/03/31/adb/adb-frida-server/" class="archive-article-date">
   	<time datetime="2021-03-31T08:23:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-31</time>
-  	更新：2025-03-08
+  	更新：2025-05-27
 </a>
         
       </header>
@@ -929,7 +1052,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/03/20/hexo-update/" class="archive-article-date">
   	<time datetime="2021-03-20T14:18:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-20</time>
-  	更新：2025-03-08
+  	更新：2025-05-27
 </a>
         
       </header>
@@ -1020,7 +1143,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/03/20/java-i18n/" class="archive-article-date">
   	<time datetime="2021-03-20T13:51:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-20</time>
-  	更新：2025-03-08
+  	更新：2025-05-27
 </a>
         
       </header>
@@ -1076,86 +1199,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/03/20/java-i18n/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-install-tomcat-as-service-on-windows-server2012R2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/08/install-tomcat-as-service-on-windows-server2012R2/">Windows Server2012R2 安装Tomcat9作为系统服务</a>
-    </h1>
-  
-
-        
-        <a href="/2021/01/08/install-tomcat-as-service-on-windows-server2012R2/" class="archive-article-date">
-  	<time datetime="2021-01-08T15:07:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-08</time>
-  	更新：2025-03-08
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/01/08/chapel-5878656_1920.jpg" alt></p>
-<p>下载<a href="https://tomcat.apache.org/download-90.cgi" target="_blank" rel="noopener">Tomcat9</a>,使用解压版即可 apache-tomcat-9.0.41-windows-x64.zip</p>
-        
-          <a class="article-more-a" href="/2021/01/08/install-tomcat-as-service-on-windows-server2012R2/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">tomcat</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/01/08/install-tomcat-as-service-on-windows-server2012R2/">展开全文 >></a>
         </p>
       
 
@@ -1327,11 +1370,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">位移</a>
+                <a href="javascript:void(0)" class="js-tag color3">windows</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">windows</a>
+                <a href="javascript:void(0)" class="js-tag color3">位移</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1339,15 +1382,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ejs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">c#</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">dotnet.core</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ejs</a>
+                <a href="javascript:void(0)" class="js-tag color4">frp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1356,10 +1399,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">idea</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">frp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1380,6 +1419,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">shortkey</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">nacos</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1411,7 +1454,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jna</a>
+                <a href="javascript:void(0)" class="js-tag color2">dotnet.core</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1451,11 +1494,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">querydsl</a>
+                <a href="javascript:void(0)" class="js-tag color4">jna</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">ruby</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">querydsl</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1491,15 +1538,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nacos</a>
+                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">vsftp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1523,11 +1566,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">android</a>
+                <a href="javascript:void(0)" class="js-tag color5">archlinux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">archlinux</a>
+                <a href="javascript:void(0)" class="js-tag color3">android</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1591,15 +1634,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">bigdecimal</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">jpa</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hibernate</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">bigdecimal</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1615,6 +1658,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">keycloak</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">spring-boot</a>
               </li>
              
@@ -1624,10 +1671,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">thymeleaf</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">keycloak</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1704,6 +1747,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">regex</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">rust</a>
               </li>
              
               <li class="article-tag-list-item">
