@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Niu Yuxian&#39;blog">
 <meta property="og:description" content="快捷键12345678ctrl+shift+k 删除整行shift+alt+ 上/下箭头 复制一行shift+alt + f 格式化代码ctrl + ` 打开终端ctrl + p C:\Windows\System32\wsl.exe">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2025-05-27T02:51:29.414Z">
+<meta property="og:updated_time" content="2025-06-10T07:10:12.179Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vs Code 常见配置">
 <meta name="twitter:description" content="快捷键12345678ctrl+shift+k 删除整行shift+alt+ 上/下箭头 复制一行shift+alt + f 格式化代码ctrl + ` 打开终端ctrl + p C:\Windows\System32\wsl.exe">
@@ -258,7 +258,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/28/vscode/" class="archive-article-date">
   	<time datetime="2019-08-28T09:00:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-  	更新：2025-05-27
+  	更新：2025-06-10
 </a>
         
       </header>
@@ -280,9 +280,13 @@ var _hmt = _hmt || [];
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> io</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="comment">#改变标准输出的默认编码</span></span><br><span class="line">sys.stdout=io.TextIOWrapper(sys.stdout.buffer,encoding=<span class="string">'utf8'</span>)</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Code Runner</span><br><span class="line">C/C++ Compile Run </span><br><span class="line">[f8	f8	cmd+y	Compiles and run the file in external console]</span><br></pre></td></tr></table></figure>
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><p>修改位置，使用环境变量的方式</p>
+<p>VSCODE_EXTENSIONS=D:\download\vscode\extensions</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Code Runner</span><br><span class="line">C/C++ Compile Run </span><br><span class="line">[f8	f8	cmd+y	Compiles and run the file in external console]</span><br></pre></td></tr></table></figure>
 <p><strong>Code Runner</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// terminal 打开</span><br><span class="line">&quot;code-runner.runInTerminal&quot;: false,</span><br><span class="line">&quot;code-runner.fileDirectoryAsCwd&quot;: true,</span><br><span class="line">&quot;code-runner.clearPreviousOutput&quot;: true</span><br></pre></td></tr></table></figure>
+<p><strong>settings</strong></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"git.confirmSync"</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">"code-runner.clearPreviousOutput"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"code-runner.runInTerminal"</span>: <span class="literal">true</span>, <span class="comment">// 终端打开</span></span><br><span class="line">    <span class="attr">"code-runner.ignoreSelection"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"[dart]"</span>: &#123;</span><br><span class="line">        <span class="attr">"editor.formatOnSave"</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="attr">"editor.formatOnType"</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="attr">"editor.rulers"</span>: [</span><br><span class="line">            <span class="number">80</span></span><br><span class="line">        ],</span><br><span class="line">        <span class="attr">"editor.selectionHighlight"</span>: <span class="literal">false</span>,</span><br><span class="line">        <span class="attr">"editor.suggest.snippetsPreventQuickSuggestions"</span>: <span class="literal">false</span>,</span><br><span class="line">        <span class="attr">"editor.suggestSelection"</span>: <span class="string">"first"</span>,</span><br><span class="line">        <span class="attr">"editor.tabCompletion"</span>: <span class="string">"onlySnippets"</span>,</span><br><span class="line">        <span class="attr">"editor.wordBasedSuggestions"</span>: <span class="string">"off"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">"[python]"</span>: &#123;</span><br><span class="line">        <span class="attr">"editor.formatOnType"</span>: <span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">"git.openRepositoryInParentFolders"</span>: <span class="string">"never"</span>,</span><br><span class="line">    <span class="attr">"workbench.colorTheme"</span>: <span class="string">"Nord"</span>,</span><br><span class="line">    <span class="attr">"editor.fontSize"</span>: <span class="number">30</span>,</span><br><span class="line">    <span class="attr">"editor.stickyScroll.enabled"</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">"editor.fontLigatures"</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">"terminal.integrated.automationProfile.windows"</span>: &#123;&#125;,</span><br><span class="line">    <span class="attr">"terminal.integrated.defaultProfile.windows"</span>: <span class="string">"Command Prompt"</span>,</span><br><span class="line">    <span class="attr">"workbench.colorCustomizations"</span>: &#123;</span><br><span class="line">        <span class="attr">"scrollbarSlider.background"</span>: <span class="string">"#e6d11c"</span>, <span class="comment">// 设置滑条颜色</span></span><br><span class="line">        <span class="attr">"scrollbarSlider.hoverBackground"</span>: <span class="string">"#f307e7d2"</span>, <span class="comment">// 设置鼠标悬停时滑条颜色</span></span><br><span class="line">        <span class="attr">"scrollbarSlider.activeBackground"</span>: <span class="string">"#f3bb02"</span> <span class="comment">// 设置滑条被点击时颜色</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">"explorer.confirmDelete"</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">"editor.fontFamily"</span>: <span class="string">"'Courier New', Consolas,  monospace"</span>,</span><br><span class="line">    <span class="attr">"git.enableSmartCommit"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"security.workspace.trust.untrustedFiles"</span>: <span class="string">"open"</span>,</span><br><span class="line">    <span class="attr">"extensions.allowed"</span>: <span class="string">"*"</span>,</span><br><span class="line">    <span class="attr">"code-runner.executorMap"</span>: &#123;</span><br><span class="line">        <span class="attr">"javascript"</span>: <span class="string">"node"</span>,</span><br><span class="line">        <span class="attr">"java"</span>: <span class="string">"cd $dir &amp;&amp; javac $fileName &amp;&amp; java $fileNameWithoutExt"</span>,</span><br><span class="line">        <span class="attr">"c"</span>: <span class="string">"cd $dir &amp;&amp; gcc $fileName -o $fileNameWithoutExt &amp;&amp; $dir$fileNameWithoutExt"</span>,</span><br><span class="line">        <span class="attr">"zig"</span>: <span class="string">"zig run"</span>,</span><br><span class="line">        <span class="attr">"cpp"</span>: <span class="string">"cd $dir &amp;&amp; g++ $fileName -o $fileNameWithoutExt &amp;&amp; $dir$fileNameWithoutExt"</span>,</span><br><span class="line">        <span class="attr">"objective-c"</span>: <span class="string">"cd $dir &amp;&amp; gcc -framework Cocoa $fileName -o $fileNameWithoutExt &amp;&amp; $dir$fileNameWithoutExt"</span>,</span><br><span class="line">        <span class="attr">"php"</span>: <span class="string">"php"</span>,</span><br><span class="line">        <span class="comment">//"python": "python -u",</span></span><br><span class="line">        <span class="attr">"python"</span>: <span class="string">"$pythonPath -u $fileName"</span>,</span><br><span class="line">        <span class="attr">"perl"</span>: <span class="string">"perl"</span>,</span><br><span class="line">        <span class="attr">"perl6"</span>: <span class="string">"perl6"</span>,</span><br><span class="line">        <span class="attr">"ruby"</span>: <span class="string">"ruby"</span>,</span><br><span class="line">        <span class="attr">"go"</span>: <span class="string">"go run"</span>,</span><br><span class="line">        <span class="attr">"lua"</span>: <span class="string">"lua"</span>,</span><br><span class="line">        <span class="attr">"groovy"</span>: <span class="string">"groovy"</span>,</span><br><span class="line">        <span class="attr">"powershell"</span>: <span class="string">"powershell -ExecutionPolicy ByPass -File"</span>,</span><br><span class="line">        <span class="attr">"bat"</span>: <span class="string">"cmd /c"</span>,</span><br><span class="line">        <span class="attr">"shellscript"</span>: <span class="string">"bash"</span>,</span><br><span class="line">        <span class="attr">"fsharp"</span>: <span class="string">"fsi"</span>,</span><br><span class="line">        <span class="attr">"csharp"</span>: <span class="string">"scriptcs"</span>,</span><br><span class="line">        <span class="attr">"vbscript"</span>: <span class="string">"cscript //Nologo"</span>,</span><br><span class="line">        <span class="attr">"typescript"</span>: <span class="string">"ts-node"</span>,</span><br><span class="line">        <span class="attr">"coffeescript"</span>: <span class="string">"coffee"</span>,</span><br><span class="line">        <span class="attr">"scala"</span>: <span class="string">"scala"</span>,</span><br><span class="line">        <span class="attr">"swift"</span>: <span class="string">"swift"</span>,</span><br><span class="line">        <span class="attr">"julia"</span>: <span class="string">"julia"</span>,</span><br><span class="line">        <span class="attr">"crystal"</span>: <span class="string">"crystal"</span>,</span><br><span class="line">        <span class="attr">"ocaml"</span>: <span class="string">"ocaml"</span>,</span><br><span class="line">        <span class="attr">"r"</span>: <span class="string">"Rscript"</span>,</span><br><span class="line">        <span class="attr">"applescript"</span>: <span class="string">"osascript"</span>,</span><br><span class="line">        <span class="attr">"clojure"</span>: <span class="string">"lein exec"</span>,</span><br><span class="line">        <span class="attr">"haxe"</span>: <span class="string">"haxe --cwd $dirWithoutTrailingSlash --run $fileNameWithoutExt"</span>,</span><br><span class="line">        <span class="attr">"rust"</span>: <span class="string">"cd $dir &amp;&amp; rustc $fileName &amp;&amp; $dir$fileNameWithoutExt"</span>,</span><br><span class="line">        <span class="attr">"racket"</span>: <span class="string">"racket"</span>,</span><br><span class="line">        <span class="attr">"scheme"</span>: <span class="string">"csi -script"</span>,</span><br><span class="line">        <span class="attr">"ahk"</span>: <span class="string">"autohotkey"</span>,</span><br><span class="line">        <span class="attr">"autoit"</span>: <span class="string">"autoit3"</span>,</span><br><span class="line">        <span class="attr">"dart"</span>: <span class="string">"dart"</span>,</span><br><span class="line">        <span class="attr">"pascal"</span>: <span class="string">"cd $dir &amp;&amp; fpc $fileName &amp;&amp; $dir$fileNameWithoutExt"</span>,</span><br><span class="line">        <span class="attr">"d"</span>: <span class="string">"cd $dir &amp;&amp; dmd $fileName &amp;&amp; $dir$fileNameWithoutExt"</span>,</span><br><span class="line">        <span class="attr">"haskell"</span>: <span class="string">"runghc"</span>,</span><br><span class="line">        <span class="attr">"nim"</span>: <span class="string">"nim compile --verbosity:0 --hints:off --run"</span>,</span><br><span class="line">        <span class="attr">"lisp"</span>: <span class="string">"sbcl --script"</span>,</span><br><span class="line">        <span class="attr">"kit"</span>: <span class="string">"kitc --run"</span>,</span><br><span class="line">        <span class="attr">"v"</span>: <span class="string">"v run"</span>,</span><br><span class="line">        <span class="attr">"sass"</span>: <span class="string">"sass --style expanded"</span>,</span><br><span class="line">        <span class="attr">"scss"</span>: <span class="string">"scss --style expanded"</span>,</span><br><span class="line">        <span class="attr">"less"</span>: <span class="string">"cd $dir &amp;&amp; lessc $fileName $fileNameWithoutExt.css"</span>,</span><br><span class="line">        <span class="attr">"FortranFreeForm"</span>: <span class="string">"cd $dir &amp;&amp; gfortran $fileName -o $fileNameWithoutExt &amp;&amp; $dir$fileNameWithoutExt"</span>,</span><br><span class="line">        <span class="attr">"fortran-modern"</span>: <span class="string">"cd $dir &amp;&amp; gfortran $fileName -o $fileNameWithoutExt &amp;&amp; $dir$fileNameWithoutExt"</span>,</span><br><span class="line">        <span class="attr">"fortran_fixed-form"</span>: <span class="string">"cd $dir &amp;&amp; gfortran $fileName -o $fileNameWithoutExt &amp;&amp; $dir$fileNameWithoutExt"</span>,</span><br><span class="line">        <span class="attr">"fortran"</span>: <span class="string">"cd $dir &amp;&amp; gfortran $fileName -o $fileNameWithoutExt &amp;&amp; $dir$fileNameWithoutExt"</span>,</span><br><span class="line">        <span class="attr">"sml"</span>: <span class="string">"cd $dir &amp;&amp; sml $fileName"</span>,</span><br><span class="line">        <span class="attr">"mojo"</span>: <span class="string">"mojo run"</span>,</span><br><span class="line">        <span class="attr">"erlang"</span>: <span class="string">"escript"</span>,</span><br><span class="line">        <span class="attr">"spwn"</span>: <span class="string">"spwn build"</span>,</span><br><span class="line">        <span class="attr">"pkl"</span>: <span class="string">"cd $dir &amp;&amp; pkl eval -f yaml $fileName -o $fileNameWithoutExt.yaml"</span>,</span><br><span class="line">        <span class="attr">"gleam"</span>: <span class="string">"gleam run -m $fileNameWithoutExt"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><blockquote>
 <p><a href="https://blog.csdn.net/smilejiasmile/article/details/80588546" target="_blank" rel="noopener">控制台中文乱码</a></p>
 </blockquote>
@@ -612,15 +616,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ejs</a>
+                <a href="javascript:void(0)" class="js-tag color2">dotnet.core</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">c#</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">frp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -632,7 +632,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">frp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">gradle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ejs</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -664,6 +672,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ipp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">zsh</a>
               </li>
              
@@ -676,15 +692,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ipp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">dotnet.core</a>
+                <a href="javascript:void(0)" class="js-tag color4">jna</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -724,7 +732,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jna</a>
+                <a href="javascript:void(0)" class="js-tag color4">querydsl</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -732,15 +740,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">querydsl</a>
+                <a href="javascript:void(0)" class="js-tag color2">sqlmap</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sed</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">sqlmap</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -796,11 +800,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">archlinux</a>
+                <a href="javascript:void(0)" class="js-tag color3">android</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">android</a>
+                <a href="javascript:void(0)" class="js-tag color5">archlinux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -896,11 +900,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">qrcode</a>
+                <a href="javascript:void(0)" class="js-tag color5">thymeleaf</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">thymeleaf</a>
+                <a href="javascript:void(0)" class="js-tag color2">qrcode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -936,19 +940,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">sails</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">nestjs</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">centos7</a>
+                <a href="javascript:void(0)" class="js-tag color1">sails</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">centos7</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1028,11 +1032,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">debian</a>
+                <a href="javascript:void(0)" class="js-tag color2">fedora</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">fedora</a>
+                <a href="javascript:void(0)" class="js-tag color2">debian</a>
               </li>
              
               <li class="article-tag-list-item">
