@@ -241,6 +241,231 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Restclient-RestTemplate" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">title: RestClient RestTemplate</span><br><span class="line">date: 2025-06-21 22:01:07</span><br><span class="line">updated: 2025-06-21 22:01:07</span><br><span class="line">categories: [&apos;java&apos;]</span><br><span class="line">tags: [&apos;java&apos;, &apos;httpclient&apos;, &apos;spring boot3&apos;]</span><br></pre></td></tr></table></figure>
+<p><a href="https://docs.spring.io/spring-framework/reference/integration/rest-clients.html" target="_blank" rel="noopener">https://docs.spring.io/spring-framework/reference/integration/rest-clients.html</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><code>RestTemplate</code> method</th>
+<th style="text-align:left"><code>RestClient</code> equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>getForObject(String, Class, Object…)</code></td>
+<td style="text-align:left"><code>get() .uri(String, Object…) .retrieve() .body(Class)</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>getForObject(String, Class, Map)</code></td>
+<td style="text-align:left"><code>get() .uri(String, Map) .retrieve() .body(Class)</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>getForObject(URI, Class)</code></td>
+<td style="text-align:left"><code>get() .uri(URI) .retrieve() .body(Class)</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>getForEntity(String, Class, Object…)</code></td>
+<td style="text-align:left"><code>get() .uri(String, Object…) .retrieve() .toEntity(Class)</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>getForEntity(String, Class, Map)</code></td>
+<td style="text-align:left"><code>get() .uri(String, Map) .retrieve() .toEntity(Class)</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>getForEntity(URI, Class)</code></td>
+<td style="text-align:left"><code>get() .uri(URI) .retrieve() .toEntity(Class)</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>headForHeaders(String, Object…)</code></td>
+<td style="text-align:left"><code>head() .uri(String, Object…) .retrieve() .toBodilessEntity() .getHeaders()</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>headForHeaders(String, Map)</code></td>
+<td style="text-align:left"><code>head() .uri(String, Map) .retrieve() .toBodilessEntity() .getHeaders()</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>headForHeaders(URI)</code></td>
+<td style="text-align:left"><code>head() .uri(URI) .retrieve() .toBodilessEntity() .getHeaders()</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>postForLocation(String, Object, Object…)</code></td>
+<td style="text-align:left"><code>post() .uri(String, Object…) .body(Object).retrieve() .toBodilessEntity() .getLocation()</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>postForLocation(String, Object, Map)</code></td>
+<td style="text-align:left"><code>post() .uri(String, Map) .body(Object) .retrieve() .toBodilessEntity() .getLocation()</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>postForLocation(URI, Object)</code></td>
+<td style="text-align:left"><code>post() .uri(URI) .body(Object) .retrieve() .toBodilessEntity() .getLocation()</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>postForObject(String, Object, Class, Object…)</code></td>
+<td style="text-align:left"><code>post() .uri(String, Object…) .body(Object) .retrieve() .body(Class)</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>postForObject(String, Object, Class, Map)</code></td>
+<td style="text-align:left"><code>post() .uri(String, Map) .body(Object) .retrieve() .body(Class)</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>postForObject(URI, Object, Class)</code></td>
+<td style="text-align:left"><code>post() .uri(URI) .body(Object) .retrieve() .body(Class)</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>postForEntity(String, Object, Class, Object…)</code></td>
+<td style="text-align:left"><code>post() .uri(String, Object…) .body(Object) .retrieve() .toEntity(Class)</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>postForEntity(String, Object, Class, Map)</code></td>
+<td style="text-align:left"><code>post() .uri(String, Map) .body(Object) .retrieve() .toEntity(Class)</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>postForEntity(URI, Object, Class)</code></td>
+<td style="text-align:left"><code>post() .uri(URI) .body(Object) .retrieve() .toEntity(Class)</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>put(String, Object, Object…)</code></td>
+<td style="text-align:left"><code>put() .uri(String, Object…) .body(Object) .retrieve() .toBodilessEntity()</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>put(String, Object, Map)</code></td>
+<td style="text-align:left"><code>put() .uri(String, Map) .body(Object) .retrieve() .toBodilessEntity()</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>put(URI, Object)</code></td>
+<td style="text-align:left"><code>put() .uri(URI) .body(Object) .retrieve() .toBodilessEntity()</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>patchForObject(String, Object, Class, Object…)</code></td>
+<td style="text-align:left"><code>patch() .uri(String, Object…) .body(Object) .retrieve() .body(Class)</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>patchForObject(String, Object, Class, Map)</code></td>
+<td style="text-align:left"><code>patch() .uri(String, Map) .body(Object) .retrieve() .body(Class)</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>patchForObject(URI, Object, Class)</code></td>
+<td style="text-align:left"><code>patch() .uri(URI) .body(Object) .retrieve() .body(Class)</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>delete(String, Object…)</code></td>
+<td style="text-align:left"><code>delete() .uri(String, Object…) .retrieve() .toBodilessEntity()</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>delete(String, Map)</code></td>
+<td style="text-align:left"><code>delete() .uri(String, Map) .retrieve() .toBodilessEntity()</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>delete(URI)</code></td>
+<td style="text-align:left"><code>delete() .uri(URI) .retrieve() .toBodilessEntity()</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>optionsForAllow(String, Object…)</code></td>
+<td style="text-align:left"><code>options() .uri(String, Object…) .retrieve() .toBodilessEntity() .getAllow()</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>optionsForAllow(String, Map)</code></td>
+<td style="text-align:left"><code>options() .uri(String, Map) .retrieve() .toBodilessEntity() .getAllow()</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>optionsForAllow(URI)</code></td>
+<td style="text-align:left"><code>options() .uri(URI) .retrieve() .toBodilessEntity() .getAllow()</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>exchange(String, HttpMethod, HttpEntity, Class, Object…)</code></td>
+<td style="text-align:left"><code>method(HttpMethod) .uri(String, Object…) .headers(Consumer&lt;HttpHeaders&gt;) .body(Object) .retrieve() .toEntity(Class)</code> [<a href="https://docs.spring.io/spring-framework/reference/integration/rest-clients.html#_footnotedef_1" target="_blank" rel="noopener">1</a>]</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>exchange(String, HttpMethod, HttpEntity, Class, Map)</code></td>
+<td style="text-align:left"><code>method(HttpMethod) .uri(String, Map) .headers(Consumer&lt;HttpHeaders&gt;) .body(Object) .retrieve() .toEntity(Class)</code> [<a href="https://docs.spring.io/spring-framework/reference/integration/rest-clients.html#_footnotedef_1" target="_blank" rel="noopener">1</a>]</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>exchange(URI, HttpMethod, HttpEntity, Class)</code></td>
+<td style="text-align:left"><code>method(HttpMethod) .uri(URI) .headers(Consumer&lt;HttpHeaders&gt;) .body(Object) .retrieve() .toEntity(Class)</code> [<a href="https://docs.spring.io/spring-framework/reference/integration/rest-clients.html#_footnotedef_1" target="_blank" rel="noopener">1</a>]</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>exchange(String, HttpMethod, HttpEntity, ParameterizedTypeReference, Object…)</code></td>
+<td style="text-align:left"><code>method(HttpMethod) .uri(String, Object…) .headers(Consumer&lt;HttpHeaders&gt;) .body(Object) .retrieve() .toEntity(ParameterizedTypeReference)</code> [<a href="https://docs.spring.io/spring-framework/reference/integration/rest-clients.html#_footnotedef_1" target="_blank" rel="noopener">1</a>]</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>exchange(String, HttpMethod, HttpEntity, ParameterizedTypeReference, Map)</code></td>
+<td style="text-align:left"><code>method(HttpMethod) .uri(String, Map) .headers(Consumer&lt;HttpHeaders&gt;) .body(Object) .retrieve() .toEntity(ParameterizedTypeReference)</code> [<a href="https://docs.spring.io/spring-framework/reference/integration/rest-clients.html#_footnotedef_1" target="_blank" rel="noopener">1</a>]</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>exchange(URI, HttpMethod, HttpEntity, ParameterizedTypeReference)</code></td>
+<td style="text-align:left"><code>method(HttpMethod) .uri(URI) .headers(Consumer&lt;HttpHeaders&gt;) .body(Object) .retrieve() .toEntity(ParameterizedTypeReference)</code> [<a href="https://docs.spring.io/spring-framework/reference/integration/rest-clients.html#_footnotedef_1" target="_blank" rel="noopener">1</a>]</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>exchange(RequestEntity, Class)</code></td>
+<td style="text-align:left"><code>method(HttpMethod) .uri(URI) .headers(Consumer&lt;HttpHeaders&gt;) .body(Object) .retrieve() .toEntity(Class)</code> [<a href="https://docs.spring.io/spring-framework/reference/integration/rest-clients.html#_footnotedef_2" target="_blank" rel="noopener">2</a>]</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>exchange(RequestEntity, ParameterizedTypeReference)</code></td>
+<td style="text-align:left"><code>method(HttpMethod) .uri(URI) .headers(Consumer&lt;HttpHeaders&gt;) .body(Object) .retrieve() .toEntity(ParameterizedTypeReference)</code> [<a href="https://docs.spring.io/spring-framework/reference/integration/rest-clients.html#_footnotedef_2" target="_blank" rel="noopener">2</a>]</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>execute(String, HttpMethod, RequestCallback, ResponseExtractor, Object…)</code></td>
+<td style="text-align:left"><code>method(HttpMethod) .uri(String, Object…) .exchange(ExchangeFunction)</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>execute(String, HttpMethod, RequestCallback, ResponseExtractor, Map)</code></td>
+<td style="text-align:left"><code>method(HttpMethod) .uri(String, Map) .exchange(ExchangeFunction)</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>execute(URI, HttpMethod, RequestCallback, ResponseExtractor)</code></td>
+<td style="text-align:left"><code>method(HttpMethod) .uri(URI) .exchange(ExchangeFunction)</code></td>
+</tr>
+</tbody>
+</table>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/06/21/Restclient-RestTemplate/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-rust/rust01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -439,7 +664,7 @@ var _hmt = _hmt || [];
         
         <a href="/2025/02/15/os/windows/" class="archive-article-date">
   	<time datetime="2025-02-15T10:12:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-02-15</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -1077,84 +1302,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-git/git-idea" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2024/10/29/git/git-idea/">Idea git 配色</a>
-    </h1>
-  
-
-        
-        <a href="/2024/10/29/git/git-idea/" class="archive-article-date">
-  	<time datetime="2024-10-29T10:18:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-10-29</time>
-  	更新：2024-10-29
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>IDEA 主题颜色导致 .gitingore 忽略的文件看不清，此时可以修改，IDEA git的默认配色，如下</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2024/09/29/idea-git.png" alt="git"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2024/10/29/git/git-idea/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1274,11 +1421,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jrebel</a>
+                <a href="javascript:void(0)" class="js-tag color1">ascii</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ascii</a>
+                <a href="javascript:void(0)" class="js-tag color2">jrebel</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1330,15 +1477,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">frp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">gradle</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">guqin</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">frp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1350,11 +1497,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nacos</a>
+                <a href="javascript:void(0)" class="js-tag color4">shortkey</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">shortkey</a>
+                <a href="javascript:void(0)" class="js-tag color1">nacos</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1538,11 +1685,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">flutter</a>
+                <a href="javascript:void(0)" class="js-tag color1">razor</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">razor</a>
+                <a href="javascript:void(0)" class="js-tag color3">flutter</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1578,11 +1725,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color4">jdk</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jdk</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1614,11 +1761,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">lua</a>
+                <a href="javascript:void(0)" class="js-tag color4">activemq</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">activemq</a>
+                <a href="javascript:void(0)" class="js-tag color4">lua</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1634,15 +1781,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">sails</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">nestjs</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">centos7</a>
+                <a href="javascript:void(0)" class="js-tag color1">sails</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1650,11 +1793,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vm</a>
+                <a href="javascript:void(0)" class="js-tag color3">centos7</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">manjaro</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1690,11 +1837,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">

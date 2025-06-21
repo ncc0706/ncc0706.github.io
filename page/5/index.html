@@ -241,6 +241,97 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-gradle-application" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/06/19/gradle-application/">gradle 导出当前项目依赖的第三方jar</a>
+    </h1>
+  
+
+        
+        <a href="/2022/06/19/gradle-application/" class="archive-article-date">
+  	<time datetime="2022-06-19T19:08:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-19</time>
+  	更新：2025-06-21
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>将 gradle 项目的依赖整理出来。</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">plugins &#123;</span><br><span class="line">    id <span class="string">'java'</span></span><br><span class="line">    id <span class="string">'application'</span> <span class="comment">// 需要添加这个插件</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gradle install</span><br></pre></td></tr></table></figure>
+<p>会在 build/install/项目名/lib 下面找到当前项目依赖的第三方依赖。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">gradle</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/gradle//" class="article-tag-list-link color2">gradle</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/06/19/gradle-application/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-Dynamics-365-V9-Client-API-Cheat-Sheet" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -255,7 +346,7 @@ var _hmt = _hmt || [];
         
         <a href="/2022/05/12/Dynamics-365-V9-Client-API-Cheat-Sheet/" class="archive-article-date">
   	<time datetime="2022-05-12T18:05:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-12</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -343,7 +434,7 @@ var _hmt = _hmt || [];
         
         <a href="/2022/05/11/file-status-colors/" class="archive-article-date">
   	<time datetime="2022-05-11T10:44:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-11</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -436,7 +527,7 @@ var _hmt = _hmt || [];
         
         <a href="/2022/05/09/nuget-publish/" class="archive-article-date">
   	<time datetime="2022-05-09T17:50:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-09</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -524,7 +615,7 @@ var _hmt = _hmt || [];
         
         <a href="/2022/04/29/os/ubuntu/ubuntu-source-list/" class="archive-article-date">
   	<time datetime="2022-04-29T16:11:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-29</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -639,7 +730,7 @@ var _hmt = _hmt || [];
         
         <a href="/2022/04/21/d365/dynamics365-user-roles/" class="archive-article-date">
   	<time datetime="2022-04-21T17:41:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-21</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -730,7 +821,7 @@ var _hmt = _hmt || [];
         
         <a href="/2022/04/21/javadoc-tag/" class="archive-article-date">
   	<time datetime="2022-04-21T09:25:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-21</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -818,7 +909,7 @@ var _hmt = _hmt || [];
         
         <a href="/2022/04/13/d365/dynamics365-fetchxml-link-entity/" class="archive-article-date">
   	<time datetime="2022-04-13T20:12:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-13</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -907,7 +998,7 @@ var _hmt = _hmt || [];
         
         <a href="/2022/04/06/workflow/activiti-eclipse-plugin/" class="archive-article-date">
   	<time datetime="2022-04-06T09:12:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-06</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -998,7 +1089,7 @@ var _hmt = _hmt || [];
         
         <a href="/2022/03/24/db/mysql/mysql8-0-28/" class="archive-article-date">
   	<time datetime="2022-03-24T20:28:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-24</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -1043,96 +1134,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2022/03/24/db/mysql/mysql8-0-28/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-dart/01config-dart-env" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/21/dart/01config-dart-env/">Dart 相关的环境变量</a>
-    </h1>
-  
-
-        
-        <a href="/2022/03/21/dart/01config-dart-env/" class="archive-article-date">
-  	<time datetime="2022-03-21T19:39:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-21</time>
-  	更新：2025-06-10
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="PUB-CACHE"><a href="#PUB-CACHE" class="headerlink" title="PUB_CACHE"></a>PUB_CACHE</h3><p>这个变量决定了 pub get 下载的依赖包存在到的位置，默认一般在当前用户的目录下面，可以通过环境变量修改默认位置.</p>
-<h3 id="PUB-HOSTED-URL"><a href="#PUB-HOSTED-URL" class="headerlink" title="PUB_HOSTED_URL"></a>PUB_HOSTED_URL</h3><p>这个变量了指定 pub get 从哪里下载依赖包的资源，默认为 <a href="pub.dev">pub.dev</a>，但国内经常出现无法访问的情况，因此可以通过设置环境变量指定镜像地址。</p>
-<p>国内如：<a href="https://mirrors.tuna.tsinghua.edu.cn/dart-pub/" target="_blank" rel="noopener">清华源</a>、<a href="https://pub.flutter-io.cn/" target="_blank" rel="noopener">pub.flutter-io.cn</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">dart</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/dart//" class="article-tag-list-link color5">dart</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/21/dart/01config-dart-env/">展开全文 >></a>
         </p>
       
 
@@ -1280,11 +1281,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jrebel</a>
+                <a href="javascript:void(0)" class="js-tag color1">ascii</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ascii</a>
+                <a href="javascript:void(0)" class="js-tag color2">jrebel</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1336,15 +1337,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">frp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">gradle</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">guqin</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">frp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1356,11 +1357,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nacos</a>
+                <a href="javascript:void(0)" class="js-tag color4">shortkey</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">shortkey</a>
+                <a href="javascript:void(0)" class="js-tag color1">nacos</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1544,11 +1545,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">flutter</a>
+                <a href="javascript:void(0)" class="js-tag color1">razor</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">razor</a>
+                <a href="javascript:void(0)" class="js-tag color3">flutter</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1584,11 +1585,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color4">jdk</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jdk</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1620,11 +1621,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">lua</a>
+                <a href="javascript:void(0)" class="js-tag color4">activemq</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">activemq</a>
+                <a href="javascript:void(0)" class="js-tag color4">lua</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1640,15 +1641,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">sails</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">nestjs</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">centos7</a>
+                <a href="javascript:void(0)" class="js-tag color1">sails</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1656,11 +1653,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vm</a>
+                <a href="javascript:void(0)" class="js-tag color3">centos7</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">manjaro</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1696,11 +1697,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">

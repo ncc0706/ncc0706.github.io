@@ -241,6 +241,89 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Let-s-Encrypt" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/18/Let-s-Encrypt/">Let&#39;s-Encrypt生成免费ssl证书</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/18/Let-s-Encrypt/" class="archive-article-date">
+  	<time datetime="2019-07-18T17:25:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-18</time>
+  	更新：2025-06-21
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>任何人都可以基于 ACME 协议实现一个客户端，官方推荐的客户端是<a href="https://certbot.eff.org/" target="_blank" rel="noopener">Certbot</a> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 启动nginx注意开放443端口</span><br><span class="line">docker run -d --restart unless-stopped --name nginx -p 80:80 -p 1935:1935 -p 443:443 -v /data/.nginx/letsencrypt:/etc/letsencrypt  -v /data/.nginx/conf.d:/etc/nginx/conf.d -v /var/log/nginx:/var/log/nginx registry.cn-hangzhou.aliyuncs.com/985/nginx-1.16.0:rtmp</span><br></pre></td></tr></table></figure>
+<p>您看到时，该文档可能已经过时，最新的cloudflare客户端不支持免费域名使用API，需手工加入TXT记录</p>
+<p><strong>生成ssl证书</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">~/.secrets/certbot/cloudflare.ini</span><br><span class="line"></span><br><span class="line">dns_cloudflare_email = xxxx</span><br><span class="line">dns_cloudflare_api_key = xxxx</span><br><span class="line"></span><br><span class="line"># 生成单个域名</span><br><span class="line">sudo certbot certonly \</span><br><span class="line">  --dns-cloudflare \</span><br><span class="line">  --dns-cloudflare-credentials ~/.secrets/certbot/cloudflare.ini \</span><br><span class="line">  --dns-cloudflare-propagation-seconds 60 \</span><br><span class="line">  -d ngrok.spring-cloud.tk</span><br><span class="line"></span><br><span class="line"># 通配符域名</span><br><span class="line">sudo certbot certonly \</span><br><span class="line">  --dns-cloudflare \</span><br><span class="line">  --dns-cloudflare-credentials ~/.secrets/certbot/cloudflare.ini \</span><br><span class="line">  --dns-cloudflare-propagation-seconds 60 \</span><br><span class="line">  -d *.ngrok.spring-cloud.tk</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2019/07/18/Let-s-Encrypt/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ssl</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/18/Let-s-Encrypt/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-frp" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -255,7 +338,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/07/17/frp/" class="archive-article-date">
   	<time datetime="2019-07-17T17:04:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-17</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -335,7 +418,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/07/15/active-jrebel/" class="archive-article-date">
   	<time datetime="2019-07-15T15:26:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -418,7 +501,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/07/12/original-inverse-complement-code/" class="archive-article-date">
   	<time datetime="2019-07-12T15:56:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-12</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -508,7 +591,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/07/11/displacement/" class="archive-article-date">
   	<time datetime="2019-07-11T15:20:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-11</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -594,7 +677,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/07/10/dotnet/" class="archive-article-date">
   	<time datetime="2019-07-10T09:06:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-10</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -675,7 +758,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/07/09/alpine/alpine-dockerfile/" class="archive-article-date">
   	<time datetime="2019-07-09T09:25:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-09</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -757,7 +840,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/07/06/php/php-pdo1/" class="archive-article-date">
   	<time datetime="2019-07-06T06:38:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-06</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -834,7 +917,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/07/05/lc58/" class="archive-article-date">
   	<time datetime="2019-07-05T17:27:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-05</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -911,7 +994,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/07/04/db/mongodb/00mongodb/" class="archive-article-date">
   	<time datetime="2019-07-04T11:01:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-04</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -974,83 +1057,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/07/04/db/mongodb/00mongodb/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-vs" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/30/vs/">vs快捷键</a>
-    </h1>
-  
-
-        
-        <a href="/2019/06/30/vs/" class="archive-article-date">
-  	<time datetime="2019-06-30T14:29:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-30</time>
-  	更新：2025-06-10
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">注释		先CTRL+K，然后CTRL+C</span><br><span class="line">取消注释   先CTRL+K，然后CTRL+U</span><br><span class="line"></span><br><span class="line">删除当前行 ctrl+shift+l</span><br><span class="line">格式化代码 ctrl +a 后执行 ctrl+k+f</span><br><span class="line">全变为大写 ctrl+shift+u</span><br><span class="line">全变为小写 ctrl+u</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">shortkey</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/30/vs/">展开全文 >></a>
         </p>
       
 
@@ -1198,11 +1204,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jrebel</a>
+                <a href="javascript:void(0)" class="js-tag color1">ascii</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ascii</a>
+                <a href="javascript:void(0)" class="js-tag color2">jrebel</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1254,15 +1260,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">frp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">gradle</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">guqin</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">frp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1274,11 +1280,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nacos</a>
+                <a href="javascript:void(0)" class="js-tag color4">shortkey</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">shortkey</a>
+                <a href="javascript:void(0)" class="js-tag color1">nacos</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1462,11 +1468,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">flutter</a>
+                <a href="javascript:void(0)" class="js-tag color1">razor</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">razor</a>
+                <a href="javascript:void(0)" class="js-tag color3">flutter</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1502,11 +1508,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color4">jdk</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jdk</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1538,11 +1544,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">lua</a>
+                <a href="javascript:void(0)" class="js-tag color4">activemq</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">activemq</a>
+                <a href="javascript:void(0)" class="js-tag color4">lua</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1558,15 +1564,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">sails</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">nestjs</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">centos7</a>
+                <a href="javascript:void(0)" class="js-tag color1">sails</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1574,11 +1576,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vm</a>
+                <a href="javascript:void(0)" class="js-tag color3">centos7</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">manjaro</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1614,11 +1620,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">

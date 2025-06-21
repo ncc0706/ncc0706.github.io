@@ -241,6 +241,101 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-db/mysql/mysql5.7.32" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/21/db/mysql/mysql5.7.32/">Mysql 5.7.32 源码安装</a>
+    </h1>
+  
+
+        
+        <a href="/2020/06/21/db/mysql/mysql5.7.32/" class="archive-article-date">
+  	<time datetime="2020-06-21T10:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-21</time>
+  	更新：2025-06-21
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2020/06/21/e465ca014dae48b297d4689a08bb3639.jpg" alt></p>
+<h2 id="前置准备"><a href="#前置准备" class="headerlink" title="前置准备"></a>前置准备</h2><p>下载地址 <a href="https://dev.mysql.com/downloads/mysql/5.7.html" target="_blank" rel="noopener">https://dev.mysql.com/downloads/mysql/5.7.html</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2020/06/21/2020-12-28_112428.png" alt></p>
+<p><strong>linux 版本</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">NAME=&quot;CentOS Linux&quot;</span><br><span class="line">VERSION=&quot;7 (Core)&quot;</span><br><span class="line">ID=&quot;centos&quot;</span><br><span class="line">ID_LIKE=&quot;rhel fedora&quot;</span><br><span class="line">VERSION_ID=&quot;7&quot;</span><br><span class="line">PRETTY_NAME=&quot;CentOS Linux 7 (Core)&quot;</span><br><span class="line">ANSI_COLOR=&quot;0;31&quot;</span><br><span class="line">CPE_NAME=&quot;cpe:/o:centos:centos:7&quot;</span><br><span class="line">HOME_URL=&quot;https://www.centos.org/&quot;</span><br><span class="line">BUG_REPORT_URL=&quot;https://bugs.centos.org/&quot;</span><br><span class="line"></span><br><span class="line">CENTOS_MANTISBT_PROJECT=&quot;CentOS-7&quot;</span><br><span class="line">CENTOS_MANTISBT_PROJECT_VERSION=&quot;7&quot;</span><br><span class="line">REDHAT_SUPPORT_PRODUCT=&quot;centos&quot;</span><br><span class="line">REDHAT_SUPPORT_PRODUCT_VERSION=&quot;7&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 下载安装包</span><br><span class="line">wget https://cdn.mysql.com//Downloads/MySQL-5.7/mysql-boost-5.7.32.tar.gz</span><br><span class="line"></span><br><span class="line"># 先检查有没有安装过mysql或mariadb</span><br><span class="line">rpm -qa |grep mysql</span><br><span class="line">rpm -qa |grep mariadb</span><br><span class="line"></span><br><span class="line">## 卸载上一步查到的依赖.</span><br><span class="line">rpm -e mariadb-libs-5.5.60-1.el7_5.x86_64 --nodeps</span><br><span class="line"></span><br><span class="line"># 以官方文档安装必备依赖：CMake、make 3.75或更高版本、ANSI C ++编译器、SSL库、Boost C ++库、ncurses相关、bison相关</span><br><span class="line">yum install -y cmake make gcc gcc-c++ openssl openssl-devel ncurses ncurses-devel bison bison-devel</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2020/06/21/db/mysql/mysql5.7.32/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/db//" class="article-tag-list-link color3">db</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/06/21/db/mysql/mysql5.7.32/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-db/postgresql/07postgresql-privileges" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -255,7 +350,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/06/08/db/postgresql/07postgresql-privileges/" class="archive-article-date">
   	<time datetime="2020-06-08T19:42:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-08</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -380,7 +475,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/05/26/gradle-in-action/" class="archive-article-date">
   	<time datetime="2020-05-26T19:30:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-26</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -472,7 +567,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/05/21/db/redis/02.centos7-install-redis.6.0.3/" class="archive-article-date">
   	<time datetime="2020-05-21T20:02:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-21</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -564,7 +659,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/05/14/regex/regex-sample-douyin/" class="archive-article-date">
   	<time datetime="2020-05-14T14:55:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-14</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -657,7 +752,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/05/12/flutter/flutter05-key/" class="archive-article-date">
   	<time datetime="2020-05-12T18:31:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-12</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -747,7 +842,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/05/08/java/thymeleaf-static/" class="archive-article-date">
   	<time datetime="2020-05-08T10:06:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-08</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -838,7 +933,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/04/26/db/mongodb/01mongodb-on-centos7/" class="archive-article-date">
   	<time datetime="2020-04-26T12:56:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-26</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -971,7 +1066,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/04/16/nodejs/install-nodejs-on-centos7/" class="archive-article-date">
   	<time datetime="2020-04-16T21:14:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-16</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -1052,7 +1147,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/04/13/db/redis/01.centos7-install-redis5.0.8/" class="archive-article-date">
   	<time datetime="2020-04-13T08:02:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-13</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -1101,101 +1196,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/04/13/db/redis/01.centos7-install-redis5.0.8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-db/postgresql/postgres-12.2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/12/db/postgresql/postgres-12.2/">Centos7 源码安装 postgresql 12.2</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/12/db/postgresql/postgres-12.2/" class="archive-article-date">
-  	<time datetime="2020-04-12T15:24:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-12</time>
-  	更新：2025-06-10
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>下载地址<a href="https://ftp.postgresql.org/pub/source/v12.2/postgresql-12.2.tar.gz" target="_blank" rel="noopener">postgresql-12.2.tar.gz</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"># 解压到指定目录</span><br><span class="line">tar -zxvf postgresql-12.2.tar.gz -C /opt</span><br><span class="line"></span><br><span class="line">### 方案 1</span><br><span class="line">./configure --prefix=/usr/local/pgsql</span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line"></span><br><span class="line">### 方案 2</span><br><span class="line">./configure --prefix=/usr/local/pgsql --with-uuid=ossp</span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line"></span><br><span class="line">cd /opt/postgresql-12.2/contrib/uuid-ossp</span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line"></span><br><span class="line">### 方案 3</span><br><span class="line"># 如果你希望编译所有能编译的东西，包括文档（HTML和手册页）以及附加模块（contrib）</span><br><span class="line">./configure --prefix=/usr/local/pgsql --with-uuid=ossp</span><br><span class="line">make world</span><br><span class="line">make install-world</span><br></pre></td></tr></table></figure>
-<p>segsize：段尺寸，操作系统对文件的大小限制，因此一个表的文件最大不能超过文件系统规定的大小。为解决这个问题，可以将大表的文件拆分为小文件，每个文件的大小即为段设置的大小，单位为G</p>
-<p>blocksize：块大小，数据库IO的最小单位</p>
-<p>wal-segsize：日志段大小，即日志的大小</p>
-<p>wal-blocksize：日志块大小，日志的最小IO单位</p>
-        
-          <a class="article-more-a" href="/2020/04/12/db/postgresql/postgres-12.2/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">postgres</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/db//" class="article-tag-list-link color3">db</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/12/db/postgresql/postgres-12.2/">展开全文 >></a>
         </p>
       
 
@@ -1343,11 +1343,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jrebel</a>
+                <a href="javascript:void(0)" class="js-tag color1">ascii</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ascii</a>
+                <a href="javascript:void(0)" class="js-tag color2">jrebel</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1399,15 +1399,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">frp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">gradle</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">guqin</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">frp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1419,11 +1419,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nacos</a>
+                <a href="javascript:void(0)" class="js-tag color4">shortkey</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">shortkey</a>
+                <a href="javascript:void(0)" class="js-tag color1">nacos</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1607,11 +1607,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">flutter</a>
+                <a href="javascript:void(0)" class="js-tag color1">razor</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">razor</a>
+                <a href="javascript:void(0)" class="js-tag color3">flutter</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1647,11 +1647,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color4">jdk</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jdk</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1683,11 +1683,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">lua</a>
+                <a href="javascript:void(0)" class="js-tag color4">activemq</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">activemq</a>
+                <a href="javascript:void(0)" class="js-tag color4">lua</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1703,15 +1703,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">sails</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">nestjs</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">centos7</a>
+                <a href="javascript:void(0)" class="js-tag color1">sails</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1719,11 +1715,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vm</a>
+                <a href="javascript:void(0)" class="js-tag color3">centos7</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">manjaro</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1759,11 +1759,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -241,6 +241,108 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-elk/install-elasticsearch-systemd" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/12/10/elk/install-elasticsearch-systemd/">install-elasticsearch-systemd</a>
+    </h1>
+  
+
+        
+        <a href="/2021/12/10/elk/install-elasticsearch-systemd/" class="archive-article-date">
+  	<time datetime="2021-12-10T19:07:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-10</time>
+  	更新：2025-06-21
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>国内镜像</strong></p>
+<blockquote>
+<p><a href="https://mirrors.huaweicloud.com/elasticsearch/" target="_blank" rel="noopener">https://mirrors.huaweicloud.com/elasticsearch/</a></p>
+<p><a href="https://mirrors.huaweicloud.com/kibana/" target="_blank" rel="noopener">https://mirrors.huaweicloud.com/kibana/</a></p>
+<p><a href="https://mirrors.huaweicloud.com/logstash/" target="_blank" rel="noopener">https://mirrors.huaweicloud.com/logstash/</a></p>
+</blockquote>
+<h2 id="下载安装包"><a href="#下载安装包" class="headerlink" title="下载安装包"></a>下载安装包</h2><blockquote>
+<p><a href="https://www.elastic.co/cn/downloads/elasticsearch" target="_blank" rel="noopener">https://www.elastic.co/cn/downloads/elasticsearch</a></p>
+</blockquote>
+<p><strong>elasticsearch 必须使用普通用户运行</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">useradd -M -s /sbin/nologin elastic</span><br></pre></td></tr></table></figure>
+<p><strong>解压安装包</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf elasticsearch-7.16.0-linux-x86_64.tar.gz -C /opt/elk</span><br><span class="line">chown -R elastic:elastic /opt/elk/elasticsearch-7.16.0</span><br><span class="line">ln -s /opt/elk/elasticsearch-7.16.0 /opt/elk/elasticsearch</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2021/12/10/elk/install-elasticsearch-systemd/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">elk</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/elk//" class="article-tag-list-link color4">elk</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/12/10/elk/install-elasticsearch-systemd/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-install-nacos-server" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -255,7 +357,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/12/05/install-nacos-server/" class="archive-article-date">
   	<time datetime="2021-12-05T16:46:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-05</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -347,7 +449,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/12/05/desktop-shortcut/" class="archive-article-date">
   	<time datetime="2021-12-05T08:21:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-05</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -436,7 +538,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/12/04/k8s/k8s-kuboard/" class="archive-article-date">
   	<time datetime="2021-12-04T19:26:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-04</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -538,7 +640,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/11/26/nodejs/node-registry/" class="archive-article-date">
   	<time datetime="2021-11-26T21:59:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-26</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -629,7 +731,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/11/26/lua/vs2019-build-lua/" class="archive-article-date">
   	<time datetime="2021-11-26T18:59:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-26</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -728,7 +830,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/11/14/nc/" class="archive-article-date">
   	<time datetime="2021-11-14T19:09:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-14</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -819,7 +921,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/10/16/install-nfs/" class="archive-article-date">
   	<time datetime="2021-10-16T21:20:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-16</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -929,7 +1031,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/10/16/k8s/k8s-basic/" class="archive-article-date">
   	<time datetime="2021-10-16T10:12:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-16</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -1021,7 +1123,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/09/25/docker-registry-01/" class="archive-article-date">
   	<time datetime="2021-09-25T16:37:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-25</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -1075,98 +1177,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/09/25/docker-registry-01/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-vsftp" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/09/17/vsftp/">源码安装vsftp服务</a>
-    </h1>
-  
-
-        
-        <a href="/2021/09/17/vsftp/" class="archive-article-date">
-  	<time datetime="2021-09-17T21:50:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-17</time>
-  	更新：2025-06-10
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="网络工具"><a href="#网络工具" class="headerlink" title="网络工具"></a>网络工具</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## ifconfig netstat 等命令</span></span><br><span class="line"><span class="comment"># yum -y install net-tools</span></span><br><span class="line"><span class="comment"># netstat -ntpl</span></span><br></pre></td></tr></table></figure>
-<h4 id="tcpdump"><a href="#tcpdump" class="headerlink" title="tcpdump"></a>tcpdump</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">wget http://www.tcpdump.org/release/libpcap-1.10.1.tar.gz</span><br><span class="line"></span><br><span class="line">wget http://www.tcpdump.org/release/tcpdump-4.99.1.tar.gz</span><br><span class="line"></span><br><span class="line">tar -zxvf libpcap-1.10.1.tar.gz</span><br><span class="line">cd libpcap-1.10.1</span><br><span class="line">./configure</span><br><span class="line">make &amp; make install</span><br><span class="line"></span><br><span class="line">tar -zxvf tcpdump-4.99.1.tar.gz</span><br><span class="line">cd tcpdump-4.99.1</span><br><span class="line">./configure</span><br><span class="line">make &amp; make install</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">tcpdump --version</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tcpdump -i ens33 src 192.168.18.137</span><br><span class="line"></span><br><span class="line">## 抓取 21 号端口报文</span><br><span class="line">tcpdump tcp port 21</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2021/09/17/vsftp/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">vsftp</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ftp//" class="article-tag-list-link color4">ftp</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/09/17/vsftp/">展开全文 >></a>
         </p>
       
 
@@ -1314,11 +1324,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jrebel</a>
+                <a href="javascript:void(0)" class="js-tag color1">ascii</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ascii</a>
+                <a href="javascript:void(0)" class="js-tag color2">jrebel</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1370,15 +1380,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">frp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">gradle</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">guqin</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">frp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1390,11 +1400,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nacos</a>
+                <a href="javascript:void(0)" class="js-tag color4">shortkey</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">shortkey</a>
+                <a href="javascript:void(0)" class="js-tag color1">nacos</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1578,11 +1588,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">flutter</a>
+                <a href="javascript:void(0)" class="js-tag color1">razor</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">razor</a>
+                <a href="javascript:void(0)" class="js-tag color3">flutter</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1618,11 +1628,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color4">jdk</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jdk</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1654,11 +1664,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">lua</a>
+                <a href="javascript:void(0)" class="js-tag color4">activemq</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">activemq</a>
+                <a href="javascript:void(0)" class="js-tag color4">lua</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1674,15 +1684,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">sails</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">nestjs</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">centos7</a>
+                <a href="javascript:void(0)" class="js-tag color1">sails</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1690,11 +1696,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vm</a>
+                <a href="javascript:void(0)" class="js-tag color3">centos7</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">manjaro</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1730,11 +1740,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">

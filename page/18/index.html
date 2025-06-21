@@ -241,6 +241,83 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-java/UriComponentsBuilder" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/22/java/UriComponentsBuilder/">UriComponentsBuilder</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/22/java/UriComponentsBuilder/" class="archive-article-date">
+  	<time datetime="2019-05-22T22:04:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
+  	更新：2025-06-21
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> io.arukas;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.web.util.UriComponentsBuilder;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Created by IntelliJ IDEA. &lt;br/&gt;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: 2019/3/11 11:48 &lt;br/&gt;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Email</span>: ncc0706@gmail.com &lt;br/&gt;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UriComponentsBuilderSample</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String url = <span class="string">"https://test.com/solarSystem/planets/&#123;planet&#125;/moons/&#123;moon&#125;"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// URI (URL) parameters</span></span><br><span class="line">        Map&lt;String, String&gt; uriParams = <span class="keyword">new</span> HashMap&lt;String, String&gt;();</span><br><span class="line">        uriParams.put(<span class="string">"planet"</span>, <span class="string">"Mars"</span>);</span><br><span class="line">        uriParams.put(<span class="string">"moon"</span>, <span class="string">"Phobos"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Query parameters</span></span><br><span class="line">        org.springframework.web.util.UriComponentsBuilder builder = org.springframework.web.util.UriComponentsBuilder.fromHttpUrl(url)</span><br><span class="line"><span class="comment">//        UriComponentsBuilderSample builder = UriComponentsBuilderSample.fromUriString(url);</span></span><br><span class="line">                <span class="comment">// Add query parameter</span></span><br><span class="line">                .queryParam(<span class="string">"firstName"</span>, <span class="string">"Mark"</span>)</span><br><span class="line">                .queryParam(<span class="string">"lastName"</span>, <span class="string">"Watney"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(builder.buildAndExpand(uriParams).toUri());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/22/java/UriComponentsBuilder/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-java/encryption-configuration-parameters" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -255,7 +332,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/05/22/java/encryption-configuration-parameters/" class="archive-article-date">
   	<time datetime="2019-05-22T22:01:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -343,7 +420,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/05/21/tools/wget-download-site/" class="archive-article-date">
   	<time datetime="2019-05-21T20:48:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-21</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -420,7 +497,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/05/17/git/git-multi-remote-url/" class="archive-article-date">
   	<time datetime="2019-05-17T10:03:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-17</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -498,7 +575,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/05/09/php/thinkphp/tp5/" class="archive-article-date">
   	<time datetime="2019-05-09T12:56:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-09</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -575,7 +652,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/05/07/db/redis/00.deploy-redis-by-docker/" class="archive-article-date">
   	<time datetime="2019-05-07T21:05:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-07</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -667,7 +744,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/05/01/php/laravel/laravel58/" class="archive-article-date">
   	<time datetime="2019-05-01T15:35:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-01</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -769,7 +846,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/30/php/php7-fpm/" class="archive-article-date">
   	<time datetime="2019-04-30T21:39:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-30</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -850,7 +927,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/30/wechat/wechat-pay/" class="archive-article-date">
   	<time datetime="2019-04-30T17:50:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-30</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -928,7 +1005,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/29/adb/fiddler/" class="archive-article-date">
   	<time datetime="2019-04-29T12:52:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-29</time>
-  	更新：2025-06-10
+  	更新：2025-06-21
 </a>
         
       </header>
@@ -963,100 +1040,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/04/29/adb/fiddler/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-nodejs/sails-in-action" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/27/nodejs/sails-in-action/">sails-in-action</a>
-    </h1>
-  
-
-        
-        <a href="/2019/04/27/nodejs/sails-in-action/" class="archive-article-date">
-  	<time datetime="2019-04-27T16:52:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-27</time>
-  	更新：2025-06-10
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>版本信息</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> node -v</span></span><br><span class="line">v10.13.0</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm -v</span></span><br><span class="line">6.4.1</span><br></pre></td></tr></table></figure>
-<p><strong>安装sails</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ npm install sails -g</span><br><span class="line"></span><br><span class="line">$ sails -v</span><br><span class="line">1.1.0</span><br></pre></td></tr></table></figure>
-<p><strong>创建项目</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$# 会提示创建也给webapp还是空项目，选则2就可以了</span><br><span class="line">$ sails new sails-in-action</span><br></pre></td></tr></table></figure>
-<p><strong>启动项目</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">E:\2019\nodejs\sails-in-action&gt;sails lift</span><br><span class="line"></span><br><span class="line"> info: Starting app...</span><br><span class="line"></span><br><span class="line"> info:</span><br><span class="line"> info:                .-..-.</span><br><span class="line"> info:</span><br><span class="line"> info:    Sails              &lt;|    .-..-.</span><br><span class="line"> info:    v1.1.0              |\</span><br><span class="line"> info:                       /|.\</span><br><span class="line"> info:                      / || \</span><br><span class="line"> info:                    ,&apos;  |&apos;  \</span><br><span class="line"> info:                 .-&apos;.-==|/_--&apos;</span><br><span class="line"> info:                 `--&apos;-------&apos;</span><br><span class="line"> info:    __---___--___---___--___---___--___</span><br><span class="line"> info:  ____---___--___---___--___---___--___-__</span><br><span class="line"> info:</span><br><span class="line"> info: Server lifted in `E:\2019\nodejs\sails-in-action`</span><br><span class="line"> info: To shut down Sails, press &lt;CTRL&gt; + C at any time.</span><br><span class="line"> info: Read more at https://sailsjs.com/support.</span><br><span class="line"></span><br><span class="line">debug: -------------------------------------------------------</span><br><span class="line">debug: :: Sat Apr 27 2019 17:02:10 GMT+0800 (GMT+08:00)</span><br><span class="line"></span><br><span class="line">debug: Environment : development</span><br><span class="line">debug: Port        : 1337</span><br><span class="line">debug: -------------------------------------------------------</span><br></pre></td></tr></table></figure>
-<h3 id="自动重启服务"><a href="#自动重启服务" class="headerlink" title="自动重启服务"></a>自动重启服务</h3><blockquote>
-<p><a href="https://github.com/sgress454/sails-hook-autoreload" target="_blank" rel="noopener">https://github.com/sgress454/sails-hook-autoreload</a></p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$ npm install sails-hook-autoreload --save-dev</span><br><span class="line"></span><br><span class="line">// [your-sails-app]/config/autoreload.js</span><br><span class="line">module.exports.autoreload = &#123;</span><br><span class="line">  active: true,</span><br><span class="line">  usePolling: false,</span><br><span class="line">  dirs: [</span><br><span class="line">    &quot;api/models&quot;,</span><br><span class="line">    &quot;api/controllers&quot;,</span><br><span class="line">    &quot;api/services&quot;,</span><br><span class="line">    &quot;config/locales&quot;</span><br><span class="line">  ],</span><br><span class="line">  ignored: [</span><br><span class="line">    // Ignore all files with .ts extension</span><br><span class="line">    &quot;**.ts&quot;</span><br><span class="line">  ]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p><strong>创建UserController</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ sails generate controller user</span><br><span class="line"></span><br><span class="line">[sails-in-action]/api/controllers/UserController.js</span><br><span class="line">module.exports = &#123;</span><br><span class="line">	// 测试autoreload</span><br><span class="line">	hello: function(req, res)&#123;</span><br><span class="line">		sails.log.info(&quot;sails log&quot;);</span><br><span class="line">		// return res.send(&quot;hello&quot;);</span><br><span class="line">		return res.json(&#123;title: &quot;hello world&quot;&#125;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">nodejs</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">sails</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/27/nodejs/sails-in-action/">展开全文 >></a>
         </p>
       
 
@@ -1204,11 +1187,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jrebel</a>
+                <a href="javascript:void(0)" class="js-tag color1">ascii</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ascii</a>
+                <a href="javascript:void(0)" class="js-tag color2">jrebel</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1260,15 +1243,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">frp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">gradle</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">guqin</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">frp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1280,11 +1263,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nacos</a>
+                <a href="javascript:void(0)" class="js-tag color4">shortkey</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">shortkey</a>
+                <a href="javascript:void(0)" class="js-tag color1">nacos</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1468,11 +1451,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">flutter</a>
+                <a href="javascript:void(0)" class="js-tag color1">razor</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">razor</a>
+                <a href="javascript:void(0)" class="js-tag color3">flutter</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1508,11 +1491,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color4">jdk</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jdk</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1544,11 +1527,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">lua</a>
+                <a href="javascript:void(0)" class="js-tag color4">activemq</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">activemq</a>
+                <a href="javascript:void(0)" class="js-tag color4">lua</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1564,15 +1547,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">sails</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">nestjs</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">centos7</a>
+                <a href="javascript:void(0)" class="js-tag color1">sails</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1580,11 +1559,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vm</a>
+                <a href="javascript:void(0)" class="js-tag color3">centos7</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">manjaro</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1620,11 +1603,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">
