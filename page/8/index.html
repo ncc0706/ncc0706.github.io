@@ -241,6 +241,194 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-k8s/k8s-basic" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/10/16/k8s/k8s-basic/">k8s 基础命令</a>
+    </h1>
+  
+
+        
+        <a href="/2021/10/16/k8s/k8s-basic/" class="archive-article-date">
+  	<time datetime="2021-10-16T10:12:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-16</time>
+  	更新：2025-06-21
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看有哪些资源</span></span><br><span class="line">kubectl api-resources</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看 ConfigMap 参数解释</span></span><br><span class="line">kubectl explain cm</span><br><span class="line"></span><br><span class="line">vim .bashrc</span><br><span class="line">alias k='kubectl'</span><br></pre></td></tr></table></figure>
+<h3 id="ConfigMap"><a href="#ConfigMap" class="headerlink" title="ConfigMap"></a>ConfigMap</h3><p><a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/" target="_blank" rel="noopener">https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">## 编辑 ConfigMap</span><br><span class="line">kubectl edit cm k8s-app-cm -n spring-boot</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2021/10/16/k8s/k8s-basic/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">k8s</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/k8s//" class="article-tag-list-link color4">k8s</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/10/16/k8s/k8s-basic/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+    <article id="post-docker-registry-01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/09/25/docker-registry-01/">Docker Registry (1)</a>
+    </h1>
+  
+
+        
+        <a href="/2021/09/25/docker-registry-01/" class="archive-article-date">
+  	<time datetime="2021-09-25T16:37:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-25</time>
+  	更新：2025-06-21
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>基于 harbor-offline-installer-v2.3.2.tgz 搭建私有镜像仓库。</p>
+<p>前置条件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. 安装docker</span><br><span class="line">2. 安装docker-compose</span><br><span class="line">curl -L &quot;https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose</span><br><span class="line"></span><br><span class="line">chmod +x /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
+<p>生成证书</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /data/cert &amp;&amp; chmod -R 777 /data/cert &amp;&amp; cd /data/cert</span><br><span class="line">openssl req -x509 -sha256 -nodes -days 3650 -newkey rsa:2048 -keyout harbor.key -out harbor.crt -subj &quot;/CN=hub.me.io&quot;</span><br></pre></td></tr></table></figure>
+<p>部署安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf harbor-offline-installer-v2.3.2.tgz</span><br><span class="line">harbor/harbor.v2.3.2.tar.gz</span><br><span class="line">harbor/prepare</span><br><span class="line">harbor/LICENSE</span><br><span class="line">harbor/install.sh</span><br><span class="line">harbor/common.sh</span><br><span class="line">harbor/harbor.yml.tmpl</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2021/09/25/docker-registry-01/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">docker</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/docker//" class="article-tag-list-link color2">docker</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/09/25/docker-registry-01/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-vsftp" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1029,198 +1217,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-adb/adb-frida-server" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/31/adb/adb-frida-server/">frida 环境搭建</a>
-    </h1>
-  
-
-        
-        <a href="/2021/03/31/adb/adb-frida-server/" class="archive-article-date">
-  	<time datetime="2021-03-31T08:23:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-31</time>
-  	更新：2025-06-21
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">kaime@kaime-vm:~|⇒  adb version</span><br><span class="line">Android Debug Bridge version 1.0.41</span><br><span class="line">Version 30.0.3-1</span><br><span class="line">Installed as /usr/bin/adb</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 默认只监听 127.0.0.1</span><br><span class="line"># 端口转发 注意防火墙放行</span><br><span class="line"># window 使用下面的命令，夜神模拟器第一个设备端口 62001 开始</span><br><span class="line">netsh interface portproxy add v4tov4 62001 127.0.0.1 62001</span><br><span class="line"></span><br><span class="line"># adb 连接远程模拟器</span><br><span class="line">adb connect 192.168.18.250:62001</span><br><span class="line"># 多个设备时进入shell</span><br><span class="line">adb -s 192.168.18.250:62002 shell</span><br></pre></td></tr></table></figure>
-<h2 id="服务端安装"><a href="#服务端安装" class="headerlink" title="服务端安装"></a>服务端安装</h2><p>frida-server版本要和上面安装的<code>frida</code>版本对应</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">## 查看版本</span><br><span class="line"></span><br><span class="line">adb shell</span><br><span class="line"># getprop ro.product.cpu.abi</span><br><span class="line">x86_64</span><br><span class="line"></span><br><span class="line">下载对应版本 </span><br><span class="line">https://github.com/frida/frida/releases/download/16.4.1/frida-server-16.4.1-android-x86_64.xz</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 上传到手机</span><br><span class="line">adb push frida-server-16.4.1-android-x86_64 /data/local/tmp/frida-server</span><br><span class="line"></span><br><span class="line">## 赋予执行权限</span><br><span class="line">chmod 777 frida-server</span><br><span class="line"></span><br><span class="line">## 启动服务</span><br><span class="line">./frida-server</span><br><span class="line"></span><br><span class="line">## 开启端口转发 （客户端）</span><br><span class="line">adb forward tcp:27042 tcp:27042</span><br><span class="line">adb forward tcp:27043 tcp:27043</span><br></pre></td></tr></table></figure>
-<h2 id="客户端安装"><a href="#客户端安装" class="headerlink" title="客户端安装"></a>客户端安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">pip install frida==16.4.1</span><br><span class="line">或</span><br><span class="line">pip3 install frida==16.4.1</span><br><span class="line"></span><br><span class="line">pip3 install -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com frida==16.4.1</span><br><span class="line"></span><br><span class="line">pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple frida==16.4.1</span><br><span class="line">pip3 uninstall frida</span><br><span class="line"></span><br><span class="line">这个时候frida的大多命令还是不能用的,需要安装frida-tools</span><br><span class="line">pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple frida-tools==12.4.4</span><br><span class="line"></span><br><span class="line">## 查看版本</span><br><span class="line">C:\Users\node&gt;frida --version</span><br><span class="line">16.4.1</span><br></pre></td></tr></table></figure>
-<h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><p><code>frida client</code> 有6个工具</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 连接到设备上的chrome应用进程上</span><br><span class="line">$ frida -U com.android.chrome</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">attach后名称以frida-ps -U命令中显示为准，不一定是包名，可能是应用名称。</span><br><span class="line"></span><br><span class="line">#列出设备上正在运行的进程</span><br><span class="line">frida-ps -U</span><br><span class="line"></span><br><span class="line"># 可以查看包名</span><br><span class="line">C:\Users\node&gt;frida-ps -Ua</span><br><span class="line"> PID  Name    Identifier</span><br><span class="line">----  ------  -------------------------------</span><br><span class="line">6798  泉通      com.uama.smartcommunityforjngxy</span><br><span class="line">5972  短信      com.android.messaging</span><br><span class="line">5430  设置      com.android.settings</span><br><span class="line">5912  通讯录     com.android.contacts</span><br><span class="line">5782  雷电游戏中心  com.android.flysilkworm</span><br></pre></td></tr></table></figure>
-<p>frida 连接的远程的设备，还需要做端口转发<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 默认只监听 127.0.0.1</span><br><span class="line"># 端口转发 注意防火墙放行</span><br><span class="line">netsh interface portproxy add v4tov4 62001 127.0.0.1 62001</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var cipher = Java.use(&apos;javax.crypto.Cipher&apos;);</span><br><span class="line">cipher.doFinal.overload(&quot;[B&quot;).implementation = function (x) &#123;</span><br><span class="line">    console.log(&quot;\n================ doFinal() ======================&quot;);</span><br><span class="line">    var ret = cipher.doFinal.overload(&quot;[B&quot;).call(this, x);</span><br><span class="line">    console.log(&quot;doFinal :: data to encrypt/decrypt - base64 :: &quot; + bytesToBase64(x));</span><br><span class="line">    console.log(&quot;doFinal :: data ro encrypt/decrypt - string :: &quot; + bytesToString(x));</span><br><span class="line"></span><br><span class="line">    console.log(&quot;doFinal :: data ro encrypt/decrypt - return value :: &quot; + ret);</span><br><span class="line">    return ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Frida与Frida-tools对应关系"><a href="#Frida与Frida-tools对应关系" class="headerlink" title="Frida与Frida-tools对应关系"></a>Frida与Frida-tools对应关系</h2><p><a href="https://github.com/frida/frida/releases" target="_blank" rel="noopener">https://github.com/frida/frida/releases</a></p>
-<p>在对应版本Frida中查找Frida-tools版本即可，16后貌似没有了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line">frida-tools==1.0.0 ------ 12.0.0&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==1.1.0 ------ 12.0.0&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==1.2.0 ------ 12.1.0&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==1.2.1 ------ 12.1.0&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==1.2.2 ------ 12.1.0&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==1.2.3 ------ 12.1.0&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==1.3.0 ------ 12.3.0&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==1.3.1 ------ 12.3.0&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==1.3.2 ------ 12.4.0&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==2.0.0 ------ 12.5.3&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==2.0.1 ------ 12.5.9&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==2.0.2 ------ 12.5.9&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==2.1.0 ------ 12.5.9&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==2.1.1 ------ 12.5.9&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==2.2.0 ------ 12.5.9&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==3.0.0 ------ 12.6.17&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==3.0.1 ------ 12.6.17&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==4.0.0 ------ 12.6.21&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==4.0.1 ------ 12.6.21&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==4.0.2 ------ 12.6.21&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==4.1.0 ------ 12.6.21&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==5.0.0 ------ 12.6.21&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==5.0.1 ------ 12.7.3&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==5.1.0 ------ 12.7.3&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==5.2.0 ------ 12.7.3&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==5.3.0 ------ 12.7.3&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==5.4.0 ------ 12.7.3&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==6.0.0 ------ 12.8.5&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==6.0.1 ------ 12.8.5&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==7.0.0 ------ 12.8.12&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==7.0.1 ------ 12.8.12&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==7.0.2 ------ 12.8.12&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==7.1.0 ------ 12.8.12&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==7.2.0 ------ 12.8.12&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==7.2.1 ------ 12.8.12&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==7.2.2 ------ 12.8.12&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==8.0.0 ------ 12.10.4&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==8.0.1 ------ 12.10.4&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==8.1.0 ------ 12.10.4&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==8.1.1 ------ 12.10.4&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==8.1.2 ------ 12.10.4&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==8.1.3 ------ 12.10.4&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==8.2.0 ------ 12.10.4&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==9.0.0 ------ 14.0.0&lt;=frida&lt;15.0.0</span><br><span class="line">frida-tools==9.0.1 ------ 14.0.0&lt;=frida&lt;15.0.0</span><br><span class="line">frida-tools==9.1.0 ------ 14.2.0&lt;=frida&lt;15.0.0</span><br><span class="line">frida-tools==9.2.0 ------ 14.2.9&lt;=frida&lt;15.0.0</span><br><span class="line">frida-tools==9.2.1 ------ 14.2.9&lt;=frida&lt;15.0.0</span><br><span class="line">frida-tools==9.2.2 ------ 14.2.9&lt;=frida&lt;15.0.0</span><br><span class="line">frida-tools==9.2.3 ------ 14.2.9&lt;=frida&lt;15.0.0</span><br><span class="line">frida-tools==9.2.4 ------ 14.2.9&lt;=frida&lt;15.0.0</span><br><span class="line">frida-tools==9.2.5 ------ 14.2.9&lt;=frida&lt;15.0.0</span><br><span class="line">frida-tools==10.0.0 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.1.0 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.1.1 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.2.0 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.2.1 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.2.2 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.3.0 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.4.0 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.4.1 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.5.0 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.5.1 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.5.2 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.5.3 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.5.4 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.6.0 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.6.1 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.6.2 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.7.0 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.8.0 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==11.0.0 ------ 15.2.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==12.0.0 ------ 16.0.0&lt;=frida&lt;17.0.0</span><br><span class="line">frida-tools==12.0.1 ------ 16.0.0&lt;=frida&lt;17.0.0</span><br><span class="line">frida-tools==12.0.2 ------ 16.0.0&lt;=frida&lt;17.0.0</span><br><span class="line">frida-tools==12.0.3 ------ 16.0.0&lt;=frida&lt;17.0.0</span><br><span class="line">frida-tools==12.0.4 ------ 16.0.0&lt;=frida&lt;17.0.0</span><br><span class="line">frida-tools==12.1.0 ------ 16.0.0&lt;=frida&lt;17.0.0</span><br><span class="line">frida-tools==12.1.1 ------ 16.0.9&lt;=frida&lt;17.0.0</span><br><span class="line">frida-tools==12.1.2 ------ 16.0.9&lt;=frida&lt;17.0.0</span><br><span class="line">frida-tools==12.1.3 ------ 16.0.9&lt;=frida&lt;17.0.0</span><br><span class="line">frida-tools==12.2.0 ------ 16.0.9&lt;=frida&lt;17.0.0</span><br><span class="line">frida-tools==12.2.1 ------ 16.0.9&lt;=frida&lt;17.0.0</span><br><span class="line">frida-tools==12.3.0 ------ 16.0.9&lt;=frida&lt;17.0.0</span><br></pre></td></tr></table></figure>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://github.com/frida/frida/releases" target="_blank" rel="noopener">https://github.com/frida/frida/releases</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">frida</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/adb//" class="article-tag-list-link color4">adb</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/31/adb/adb-frida-server/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-hexo-update" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/20/hexo-update/">使用Node14 hexo 新建文章警告</a>
-    </h1>
-  
-
-        
-        <a href="/2021/03/20/hexo-update/" class="archive-article-date">
-  	<time datetime="2021-03-20T14:18:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-20</time>
-  	更新：2025-06-21
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post demo</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(node:18016) Warning: Accessing non-existent property &apos;lineno&apos; of module exports inside circular dependency</span><br><span class="line">(Use `node --trace-warnings ...` to show where the warning was created)</span><br><span class="line">(node:18016) Warning: Accessing non-existent property &apos;column&apos; of module exports inside circular dependency</span><br><span class="line">(node:18016) Warning: Accessing non-existent property &apos;filename&apos; of module exports inside circular dependency</span><br><span class="line">(node:18016) Warning: Accessing non-existent property &apos;lineno&apos; of module exports inside circular dependency</span><br><span class="line">(node:18016) Warning: Accessing non-existent property &apos;column&apos; of module exports inside circular dependency</span><br><span class="line">(node:18016) Warning: Accessing non-existent property &apos;filename&apos; of module exports inside circular dependency</span><br></pre></td></tr></table></figure>
-<p>经过一番搜索，是由于Node版本太高导致的，降低版本是不会的了，所以决定升级hexo</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 升级cli</span></span><br><span class="line">npm install hexo-cli -g</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看已经过期的安装包</span></span><br><span class="line">npm outdated</span><br><span class="line"></span><br><span class="line"><span class="comment"># npm升级插件</span></span><br><span class="line">npm install -g npm-check-updates</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看最新版本</span></span><br><span class="line">ncu</span><br><span class="line"></span><br><span class="line"><span class="comment"># 升级npm包文件</span></span><br><span class="line">ncu -u</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新安装依赖</span></span><br><span class="line">npm install</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看更新情况 </span></span><br><span class="line">git diff package.json</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/hexo//" class="article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/20/hexo-update/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/7/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/9/">Next &raquo;</a>
@@ -1340,11 +1336,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ascii</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">httpclient</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">spring boot3</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">jrebel</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ascii</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1356,15 +1364,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">cors</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">angular</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">windows</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">cors</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1424,11 +1432,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
+                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
+                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1445,10 +1453,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ipp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1512,11 +1516,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">proxy</a>
+                <a href="javascript:void(0)" class="js-tag color4">sts</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">sts</a>
+                <a href="javascript:void(0)" class="js-tag color1">proxy</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1568,6 +1572,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">c</a>
               </li>
              
@@ -1596,15 +1604,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">razor</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">elk</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ffmpeg</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">razor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1680,11 +1688,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">activemq</a>
+                <a href="javascript:void(0)" class="js-tag color4">lua</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">lua</a>
+                <a href="javascript:void(0)" class="js-tag color4">activemq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1700,15 +1708,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">nestjs</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">sails</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+                <a href="javascript:void(0)" class="js-tag color2">nestjs</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1716,11 +1720,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">manjaro</a>
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">vm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">manjaro</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1729,6 +1737,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">php</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">pyenv</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1756,11 +1768,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
               </li>
              
               <li class="article-tag-list-item">
