@@ -1058,20 +1058,20 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-python-selenium" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-ffmpeg/ffmpeg-encryption-m3u8" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/15/python-selenium/">python selenium 自动化环境配置 chrom driver版本问题</a>
+      <a class="article-title" href="/2019/12/14/ffmpeg/ffmpeg-encryption-m3u8/">ffmpeg 加密 m3u8</a>
     </h1>
   
 
         
-        <a href="/2019/12/15/python-selenium/" class="archive-article-date">
-  	<time datetime="2019-12-15T10:51:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-15</time>
+        <a href="/2019/12/14/ffmpeg/ffmpeg-encryption-m3u8/" class="archive-article-date">
+  	<time datetime="2019-12-14T20:32:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
   	更新：2025-07-19
 </a>
         
@@ -1079,20 +1079,20 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>安装selenium</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install selenium</span><br></pre></td></tr></table></figure>
-<p><strong>测试使用chrome打开百度</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line">browser = webdriver.Chrome()</span><br><span class="line"></span><br><span class="line">url = <span class="string">'https://www.baidu.com'</span></span><br><span class="line">browser.get(url)</span><br><span class="line"></span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">title = browser.title</span><br><span class="line">print(title)</span><br></pre></td></tr></table></figure>
-<p><strong>报错</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">selenium.common.exceptions.SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 75</span><br></pre></td></tr></table></figure>
-<p><strong>解决错误</strong></p>
-<p>报错原因是<code>chromedriver.exe</code>版本的问题，首先查看当前系统<code>chrome</code>的版本，然后下载对应的驱动就可以了</p>
-<p>我这里使用的虚拟环境，因此将下载的驱动放到如下目录</p>
-<p><img src="/assets/images/2019-12-15/01.png" alt></p>
-<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><blockquote>
-<p><a href="https://pypi.org/project/selenium/" target="_blank" rel="noopener">https://pypi.org/project/selenium/</a></p>
-<p><a href="http://npm.taobao.org/mirrors/chromedriver/" target="_blank" rel="noopener">http://npm.taobao.org/mirrors/chromedriver/</a></p>
-</blockquote>
+        <p>生成加密key<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl rand -base64 120 &gt; enc.key</span><br></pre></td></tr></table></figure></p>
+<p>生成iv</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl rand -hex 16</span><br></pre></td></tr></table></figure>
+<p>创建keyinfo文件，将上面的内容写进文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">https://pure-sea-19495.herokuapp.com/api/key</span><br><span class="line">enc.key</span><br><span class="line">57cf5c1e976898bd436da81ec8779539</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i output.mp4 -c copy -bsf:v h264_mp4toannexb -hls_time 600 -hls_key_info_file keyinfo -hls_segment_filename data/output%03d.ts data/playlist.m3u8</span><br></pre></td></tr></table></figure>
+<p>播放</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffplay -protocol_whitelist &quot;file,https,crypto,tcp,tls&quot;  playlist.m3u8</span><br></pre></td></tr></table></figure>
+<p>修改加密文件中的key为本地文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffplay -allowed_extensions ALL new.m3u8</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">-bsf:v h264_mp4toannexb </span><br><span class="line">参数的作用是将MP4中的H.264数据转换为常见于实时传输流的H.264 AnnexB标准的编码。</span><br><span class="line"></span><br><span class="line">-hls_time （单位秒）</span><br><span class="line">此参数的作用是设置转码切片的duration为10秒左右一片（从关键帧处开始切片）</span><br><span class="line"></span><br><span class="line">-hls_segment_filename</span><br><span class="line">设置HLS的TS分片前缀名</span><br><span class="line"></span><br><span class="line">-hls_base_url</span><br><span class="line">参数设置了每个TS文件的前置基本路径</span><br></pre></td></tr></table></figure>
+<p>解码暂时没测试通过…</p>
+<p>iv 不需要加 0x</p>
+<p>k 是16进制的值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">openssl aes-128-cbc -d -in output000.ts -out output000_d.ts -nosalt -iv 57cf5c1e976898bd436da81ec8779539 -K xx</span><br><span class="line"></span><br><span class="line">ffmpeg -allowed_extensions ALL -protocol_whitelist &quot;file,http,tcp,https,tls,crypto,httpproxy&quot; -i newplay.m3u8 -c copy s.ts</span><br></pre></td></tr></table></figure>
 
       
 
@@ -1106,7 +1106,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">selenium</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ffmpeg</a>
         		</li>
       		
 		</ul>
@@ -1119,7 +1119,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/15/python-selenium/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/12/14/ffmpeg/ffmpeg-encryption-m3u8/">展开全文 >></a>
         </p>
       
 
@@ -1447,11 +1447,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">sts</a>
+                <a href="javascript:void(0)" class="js-tag color1">proxy</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">tailwindcss</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">sts</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1472,10 +1476,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">winform</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">proxy</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1655,11 +1655,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vm</a>
+                <a href="javascript:void(0)" class="js-tag color3">manjaro</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">manjaro</a>
+                <a href="javascript:void(0)" class="js-tag color3">vm</a>
               </li>
              
               <li class="article-tag-list-item">

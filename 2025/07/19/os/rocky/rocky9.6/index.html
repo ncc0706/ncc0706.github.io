@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Niu Yuxian&#39;blog">
 <meta property="og:description" content="配置静态IP、dns 跟gateway一样即可，不然没法上外网123456789101112131415161718192021222324cd /etc/NetworkManager/system-connections[root@localhost system-connections]# cat ens33.nmconnection [connection]id=ens33uuid=4d6c">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2025-07-19T03:55:11.682Z">
+<meta property="og:updated_time" content="2025-07-19T04:01:16.416Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Rocky Linux 9.6">
 <meta name="twitter:description" content="配置静态IP、dns 跟gateway一样即可，不然没法上外网123456789101112131415161718192021222324cd /etc/NetworkManager/system-connections[root@localhost system-connections]# cat ens33.nmconnection [connection]id=ens33uuid=4d6c">
@@ -268,9 +268,15 @@ var _hmt = _hmt || [];
         <h4 id="配置静态IP、dns-跟gateway一样即可，不然没法上外网"><a href="#配置静态IP、dns-跟gateway一样即可，不然没法上外网" class="headerlink" title="配置静态IP、dns 跟gateway一样即可，不然没法上外网"></a>配置静态IP、dns 跟gateway一样即可，不然没法上外网</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/NetworkManager/system-connections</span><br><span class="line"></span><br><span class="line">[root@localhost system-connections]<span class="comment"># cat ens33.nmconnection </span></span><br><span class="line">[connection]</span><br><span class="line">id=ens33</span><br><span class="line">uuid=4d6ca82b-eb68-34f6-a6c8-bad245dc86d0</span><br><span class="line"><span class="built_in">type</span>=ethernet</span><br><span class="line">autoconnect-priority=-999</span><br><span class="line">interface-name=ens33</span><br><span class="line">timestamp=1752923027</span><br><span class="line"></span><br><span class="line">[ethernet]</span><br><span class="line"></span><br><span class="line">[ipv4]</span><br><span class="line">address1=192.168.18.96/24</span><br><span class="line">gateway=192.168.18.2</span><br><span class="line">dns=192.168.18.2</span><br><span class="line">method=manual</span><br><span class="line"></span><br><span class="line">[ipv6]</span><br><span class="line">addr-gen-mode=eui64</span><br><span class="line">method=auto</span><br><span class="line"></span><br><span class="line">[proxy]</span><br></pre></td></tr></table></figure>
 <h4 id="开启-root-远程连接"><a href="#开启-root-远程连接" class="headerlink" title="开启 root 远程连接"></a>开启 root 远程连接</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看ssh状态</span></span><br><span class="line">systemctl status sshd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改配置文件</span></span><br><span class="line">vi /etc/ssh/sshd_config</span><br><span class="line"><span class="comment"># 这里去掉注释 改为 yes</span></span><br><span class="line">PermitRootLoin yes</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启服务</span></span><br><span class="line">systemctl restart sshd</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h4 id="配置国内镜像源"><a href="#配置国内镜像源" class="headerlink" title="配置国内镜像源"></a>配置国内镜像源</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">sed -e <span class="string">'s|^mirrorlist=|#mirrorlist=|g'</span> \</span><br><span class="line">    -e <span class="string">'s|^#baseurl=http://dl.rockylinux.org/$contentdir|baseurl=https://mirrors.ustc.edu.cn/rocky|g'</span> \</span><br><span class="line">    -i.bak \</span><br><span class="line">    /etc/yum.repos.d/rocky-extras.repo \</span><br><span class="line">    /etc/yum.repos.d/rocky.repo</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 查看</span></span><br><span class="line">dnf repolist</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新缓存</span></span><br><span class="line">dnf makecache</span><br></pre></td></tr></table></figure>
+<h4 id="配置国内镜像源"><a href="#配置国内镜像源" class="headerlink" title="配置国内镜像源"></a>配置国内镜像源</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">sed -e <span class="string">'s|^mirrorlist=|#mirrorlist=|g'</span> \</span><br><span class="line">    -e <span class="string">'s|^#baseurl=http://dl.rockylinux.org/$contentdir|baseurl=https://mirrors.ustc.edu.cn/rocky|g'</span> \</span><br><span class="line">    -i.bak \</span><br><span class="line">    /etc/yum.repos.d/rocky-extras.repo \</span><br><span class="line">    /etc/yum.repos.d/rocky.repo</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 查看</span></span><br><span class="line">dnf repolist</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新缓存</span></span><br><span class="line">dnf clean all</span><br><span class="line">dnf makecache</span><br></pre></td></tr></table></figure>
 <h4 id="dnf"><a href="#dnf" class="headerlink" title="dnf"></a>dnf</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#安装软件包</span></span><br><span class="line">dnf install &lt;package&gt;</span><br><span class="line"><span class="comment">#卸载软件包</span></span><br><span class="line">dnf remove &lt;package&gt;</span><br><span class="line"><span class="comment">#查找提供文件、包名或者能力的软件包</span></span><br><span class="line">dnf provides &lt;provides&gt;</span><br><span class="line"><span class="comment">#下载源码包</span></span><br><span class="line">dnf download --<span class="built_in">source</span> &lt;package&gt;</span><br></pre></td></tr></table></figure>
 <h4 id="软件包"><a href="#软件包" class="headerlink" title="软件包"></a>软件包</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dnf install vim</span><br><span class="line">dnf install git</span><br></pre></td></tr></table></figure>
+<h4 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 格式化当前时间</span></span><br><span class="line">date <span class="string">"+%Y-%m-%d %H:%M:%S"</span></span><br></pre></td></tr></table></figure>
+<h4 id="安装-k8s"><a href="#安装-k8s" class="headerlink" title="安装 k8s"></a>安装 k8s</h4><p>k8s kuboard ingress</p>
+<blockquote>
+<p><a href="https://www.cnblogs.com/Sunzz/p/15184167.html" target="_blank" rel="noopener">https://www.cnblogs.com/Sunzz/p/15184167.html</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/627310856" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/627310856</a></p>
+</blockquote>
 
       
 
@@ -743,11 +749,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">sts</a>
+                <a href="javascript:void(0)" class="js-tag color1">proxy</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">tailwindcss</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">sts</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -768,10 +778,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">winform</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">proxy</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -951,11 +957,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vm</a>
+                <a href="javascript:void(0)" class="js-tag color3">manjaro</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">manjaro</a>
+                <a href="javascript:void(0)" class="js-tag color3">vm</a>
               </li>
              
               <li class="article-tag-list-item">

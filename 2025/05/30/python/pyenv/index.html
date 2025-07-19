@@ -273,9 +273,12 @@ var _hmt = _hmt || [];
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">PYENV=D:\download\pyenv\pyenv-win</span><br><span class="line">PATH环境变量</span><br><span class="line">%PYENV%\bin</span><br><span class="line">%PYENV%\shims</span><br></pre></td></tr></table></figure>
 <p>测试版本</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyenv --version</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>设置国内源</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set PYTHON_BUILD_MIRROR_URL=https://mirrors.aliyun.com/python/</span><br></pre></td></tr></table></figure>
-<p>镜像源并没有用，通过地址 <a href="https://mirrors.huaweicloud.com/python/3.12.10/python-3.12.10-amd64.exe" target="_blank" rel="noopener">https://mirrors.huaweicloud.com/python/3.12.10/python-3.12.10-amd64.exe</a> 下载后放到 install_cache 目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set PYTHON_BUILD_MIRROR_URL=https://mirrors.huaweicloud.com/python/</span><br></pre></td></tr></table></figure>
+<p>cmd 终端执行 pyenv update，再次执行 pyenv install 3.12 即可成功安装 3.12 最新的版本或者像下面指定版本号安装。</p>
+<p>之前是没有执行 pyenv update 导致镜像没有生效</p>
+<p><del>镜像源并没有用，通过地址 <a href="https://mirrors.huaweicloud.com/python/3.12.10/python-3.12.10-amd64.exe" target="_blank" rel="noopener">https://mirrors.huaweicloud.com/python/3.12.10/python-3.12.10-amd64.exe</a> 下载后放到 install_cache 目录</del></p>
 <p>下载指定版本</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyenv install 3.12.10</span><br></pre></td></tr></table></figure>
 <p>查看已安装的版本</p>
@@ -283,6 +286,7 @@ var _hmt = _hmt || [];
 <p>设置特定python版本影响范围为全局<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyenv global 3.12.10</span><br></pre></td></tr></table></figure></p>
 <p>local仅对当前目录及子目录生效，告诉当前目录使用版本3.8.2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyenv local 3.8.2</span><br></pre></td></tr></table></figure></p>
 <p>重建环境变量，每当你增删 Python 版本或带有可执行文件的包（如 pip）以后，都应该执行一次本命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyenv rehash</span><br></pre></td></tr></table></figure></p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 查看已经按照的版本</span><br><span class="line">pyenv versions</span><br><span class="line"></span><br><span class="line">#查看当前版本</span><br><span class="line">pyenv version</span><br><span class="line"></span><br><span class="line"># 安装指定版本</span><br><span class="line">pyenv install 版本号</span><br><span class="line"></span><br><span class="line"># 设置为全局版本</span><br><span class="line">pyenv global 3.10.11</span><br></pre></td></tr></table></figure>
 
       
 
@@ -768,11 +772,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">sts</a>
+                <a href="javascript:void(0)" class="js-tag color1">proxy</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">tailwindcss</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">sts</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -793,10 +801,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">winform</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">proxy</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -976,11 +980,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vm</a>
+                <a href="javascript:void(0)" class="js-tag color3">manjaro</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">manjaro</a>
+                <a href="javascript:void(0)" class="js-tag color3">vm</a>
               </li>
              
               <li class="article-tag-list-item">
