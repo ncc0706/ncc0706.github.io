@@ -241,6 +241,87 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-querydsl" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/28/querydsl/">querydsl</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/28/querydsl/" class="archive-article-date">
+  	<time datetime="2019-08-28T08:08:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
+  	更新：2025-07-19
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>使用queryDsl时需注意hibernate的版本问题,具体问题TODO…</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 自定义Q前缀</span></span><br><span class="line"><span class="meta">@EnableJpaRepositories</span>(repositoryImplementationPostfix=<span class="string">'xxx'</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 比如时间的比较</span></span><br><span class="line"><span class="function"><span class="keyword">default</span> <span class="keyword">void</span> <span class="title">customize</span><span class="params">(<span class="keyword">final</span> QuerydslBindings bindings, <span class="keyword">final</span> QFoo foo)</span> </span>&#123;</span><br><span class="line">    bindings.bind(foo.age).all((path, ageValue) -&gt; &#123;</span><br><span class="line">        Iterator&lt;? extends Long&gt; it = value.iterator();</span><br><span class="line">        <span class="keyword">return</span> path.between(it.next(), it.next());</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">default</span> <span class="keyword">void</span> <span class="title">customize</span><span class="params">(QuerydslBindings bindings, QMemberAccountDetails root)</span></span>&#123;</span><br><span class="line">    	bindings.bind(root.indate).all(<span class="keyword">new</span> MultiValueBinding&lt;DateTimePath&lt;Date&gt;, Date&gt;() &#123;</span><br><span class="line">			<span class="meta">@Override</span></span><br><span class="line">			<span class="function"><span class="keyword">public</span> Predicate <span class="title">bind</span><span class="params">(DateTimePath&lt;Date&gt; path, Collection&lt;? extends Date&gt; values)</span> </span>&#123;</span><br><span class="line">				Date startTime = values.stream().min(Date::compareTo).get();</span><br><span class="line">				Date endTime = values.stream().max(Date::compareTo).get();</span><br><span class="line">				<span class="keyword">return</span> path.between(startTime, endTime);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2019/08/28/querydsl/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">querydsl</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/28/querydsl/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-regex/lion-king" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -255,7 +336,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/21/regex/lion-king/" class="archive-article-date">
   	<time datetime="2019-08-21T13:37:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-21</time>
-  	更新：2025-07-10
+  	更新：2025-07-19
 </a>
         
       </header>
@@ -336,7 +417,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/16/golang/golang-print-detail/" class="archive-article-date">
   	<time datetime="2019-08-16T14:21:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-16</time>
-  	更新：2025-07-10
+  	更新：2025-07-19
 </a>
         
       </header>
@@ -434,7 +515,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/14/golang/golang-print/" class="archive-article-date">
   	<time datetime="2019-08-14T11:04:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-14</time>
-  	更新：2025-07-10
+  	更新：2025-07-19
 </a>
         
       </header>
@@ -533,7 +614,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/13/sqlmap-in-action-01/" class="archive-article-date">
   	<time datetime="2019-08-13T10:14:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-13</time>
-  	更新：2025-07-10
+  	更新：2025-07-19
 </a>
         
       </header>
@@ -630,7 +711,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/08/php/laravel/laravel-error/" class="archive-article-date">
   	<time datetime="2019-08-08T15:49:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-08</time>
-  	更新：2025-07-10
+  	更新：2025-07-19
 </a>
         
       </header>
@@ -718,7 +799,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/07/os/manjaro-kde/" class="archive-article-date">
   	<time datetime="2019-08-07T10:52:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-07</time>
-  	更新：2025-07-10
+  	更新：2025-07-19
 </a>
         
       </header>
@@ -800,7 +881,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/06/regex/dl-xigua-video/" class="archive-article-date">
   	<time datetime="2019-08-06T10:58:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-06</time>
-  	更新：2025-07-10
+  	更新：2025-07-19
 </a>
         
       </header>
@@ -892,7 +973,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/05/java/java-LocalDateTime-postgres/" class="archive-article-date">
   	<time datetime="2019-08-05T13:16:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-05</time>
-  	更新：2025-07-10
+  	更新：2025-07-19
 </a>
         
       </header>
@@ -969,7 +1050,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/04/os/kali/kali-linux-mysql/" class="archive-article-date">
   	<time datetime="2019-08-04T18:51:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-04</time>
-  	更新：2025-07-10
+  	更新：2025-07-19
 </a>
         
       </header>
@@ -1009,86 +1090,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/08/04/os/kali/kali-linux-mysql/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-os/kali/kali-linux-2019-02" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/04/os/kali/kali-linux-2019-02/">kali-linux-2019.02</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/04/os/kali/kali-linux-2019-02/" class="archive-article-date">
-  	<time datetime="2019-08-04T18:09:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-04</time>
-  	更新：2025-07-10
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="VM-Tools"><a href="#VM-Tools" class="headerlink" title="VM Tools"></a>VM Tools</h2><h2 id="SSH服务"><a href="#SSH服务" class="headerlink" title="SSH服务"></a>SSH服务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">service ssh status</span><br><span class="line"></span><br><span class="line">vim /etc/ssh/sshd_config</span><br><span class="line"># 允许root远程登录</span><br><span class="line">PermitRootLogin yes</span><br><span class="line"></span><br><span class="line"># 开机启动</span><br><span class="line">update-rc.d ssh enable</span><br><span class="line"></span><br><span class="line"># 关闭开机启动</span><br><span class="line">update-rc.d ssh disabled</span><br></pre></td></tr></table></figure>
-<h2 id="分辨率"><a href="#分辨率" class="headerlink" title="分辨率"></a>分辨率</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile</span><br><span class="line">末尾追加</span><br><span class="line"></span><br><span class="line">xrandr --newmode &quot;1920x1080_60.00&quot; 173.00 1920 2048 2248 2576 1080 1083 1088 1120 -hsync +vsync</span><br><span class="line">xrandr --addmode Virtual1 &quot;1920x1080_60.00&quot;</span><br><span class="line"></span><br><span class="line">重启</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2019/08/04/os/kali/kali-linux-2019-02/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">kali</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/04/os/kali/kali-linux-2019-02/">展开全文 >></a>
         </p>
       
 
@@ -1284,11 +1285,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ejs</a>
+                <a href="javascript:void(0)" class="js-tag color2">dotnet.core</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">dotnet.core</a>
+                <a href="javascript:void(0)" class="js-tag color4">ejs</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1309,6 +1310,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">gradle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">guqin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">haproxy</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1352,15 +1361,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">guqin</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">selenium</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">haproxy</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1416,10 +1417,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">proxy</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sts</a>
               </li>
              
@@ -1429,6 +1426,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">validate.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vip</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1444,7 +1445,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vip</a>
+                <a href="javascript:void(0)" class="js-tag color1">proxy</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1564,15 +1565,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">spring-boot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">qrcode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">thymeleaf</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring-boot</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1713,6 +1714,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">kali</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">rocky</a>
               </li>
              
               <li class="article-tag-list-item">

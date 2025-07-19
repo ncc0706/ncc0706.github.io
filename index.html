@@ -241,6 +241,97 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-os/rocky/rocky9.6" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/07/19/os/rocky/rocky9.6/">Rocky Linux 9.6</a>
+    </h1>
+  
+
+        
+        <a href="/2025/07/19/os/rocky/rocky9.6/" class="archive-article-date">
+  	<time datetime="2025-07-19T11:22:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-19</time>
+  	更新：2025-07-19
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="配置静态IP、dns-跟gateway一样即可，不然没法上外网"><a href="#配置静态IP、dns-跟gateway一样即可，不然没法上外网" class="headerlink" title="配置静态IP、dns 跟gateway一样即可，不然没法上外网"></a>配置静态IP、dns 跟gateway一样即可，不然没法上外网</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/NetworkManager/system-connections</span><br><span class="line"></span><br><span class="line">[root@localhost system-connections]<span class="comment"># cat ens33.nmconnection </span></span><br><span class="line">[connection]</span><br><span class="line">id=ens33</span><br><span class="line">uuid=4d6ca82b-eb68-34f6-a6c8-bad245dc86d0</span><br><span class="line"><span class="built_in">type</span>=ethernet</span><br><span class="line">autoconnect-priority=-999</span><br><span class="line">interface-name=ens33</span><br><span class="line">timestamp=1752923027</span><br><span class="line"></span><br><span class="line">[ethernet]</span><br><span class="line"></span><br><span class="line">[ipv4]</span><br><span class="line">address1=192.168.18.96/24</span><br><span class="line">gateway=192.168.18.2</span><br><span class="line">dns=192.168.18.2</span><br><span class="line">method=manual</span><br><span class="line"></span><br><span class="line">[ipv6]</span><br><span class="line">addr-gen-mode=eui64</span><br><span class="line">method=auto</span><br><span class="line"></span><br><span class="line">[proxy]</span><br></pre></td></tr></table></figure>
+<h4 id="开启-root-远程连接"><a href="#开启-root-远程连接" class="headerlink" title="开启 root 远程连接"></a>开启 root 远程连接</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看ssh状态</span></span><br><span class="line">systemctl status sshd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改配置文件</span></span><br><span class="line">vi /etc/ssh/sshd_config</span><br><span class="line"><span class="comment"># 这里去掉注释 改为 yes</span></span><br><span class="line">PermitRootLoin yes</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启服务</span></span><br><span class="line">systemctl restart sshd</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2025/07/19/os/rocky/rocky9.6/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">rocky</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/os//" class="article-tag-list-link color3">os</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/07/19/os/rocky/rocky9.6/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-Restclient-RestTemplate" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -913,7 +1004,7 @@ var _hmt = _hmt || [];
         
         <a href="/2025/02/15/os/windows/" class="archive-article-date">
   	<time datetime="2025-02-15T10:12:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-02-15</time>
-  	更新：2025-07-10
+  	更新：2025-07-19
 </a>
         
       </header>
@@ -1234,156 +1325,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-os/os-permission" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/01/05/os/os-permission/">操作系统权限</a>
-    </h1>
-  
-
-        
-        <a href="/2025/01/05/os/os-permission/" class="archive-article-date">
-  	<time datetime="2025-01-05T17:20:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-01-05</time>
-  	更新：2025-01-05
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>权限说明</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">  7   7   7</span><br><span class="line">d rwx rwx rwx</span><br><span class="line"></span><br><span class="line">r4</span><br><span class="line">w2</span><br><span class="line">x1</span><br><span class="line">_0</span><br><span class="line"></span><br><span class="line">第一个7表示当前文件的拥有者(属主)</span><br><span class="line">第二个7表示当前文件的所属组（属组）</span><br><span class="line">第三个7表示当前文件的组外权限（组外）</span><br></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th>权限</th>
-<th>二进制值</th>
-<th>八进制值</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>---</td>
-<td>000</td>
-<td>0</td>
-<td>没有任何权限</td>
-</tr>
-<tr>
-<td>--x</td>
-<td>001</td>
-<td>1</td>
-<td>只有执行权限</td>
-</tr>
-<tr>
-<td>-w-</td>
-<td>010</td>
-<td>2</td>
-<td>只有写入权限</td>
-</tr>
-<tr>
-<td>-wx</td>
-<td>011</td>
-<td>3</td>
-<td>有写入和执行权限</td>
-</tr>
-<tr>
-<td>r--</td>
-<td>100</td>
-<td>4</td>
-<td>只有读取权限</td>
-</tr>
-<tr>
-<td>r-x</td>
-<td>101</td>
-<td>5</td>
-<td>有读取和执行权限</td>
-</tr>
-<tr>
-<td>rw-</td>
-<td>110</td>
-<td>6</td>
-<td>有读取和写入权限</td>
-</tr>
-<tr>
-<td>rwx</td>
-<td>111</td>
-<td>7</td>
-<td>有全部权限</td>
-</tr>
-</tbody>
-</table>
-<p>​                                                                                                                    作者：小行行，2025-01-05 发表</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">os</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/linux//" class="article-tag-list-link color1">linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/01/05/os/os-permission/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1551,11 +1492,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ejs</a>
+                <a href="javascript:void(0)" class="js-tag color2">dotnet.core</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">dotnet.core</a>
+                <a href="javascript:void(0)" class="js-tag color4">ejs</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1576,6 +1517,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">gradle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">guqin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">haproxy</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1619,15 +1568,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">guqin</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">selenium</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">haproxy</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1683,10 +1624,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">proxy</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sts</a>
               </li>
              
@@ -1696,6 +1633,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">validate.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vip</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1711,7 +1652,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vip</a>
+                <a href="javascript:void(0)" class="js-tag color1">proxy</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1831,15 +1772,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">spring-boot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">qrcode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">thymeleaf</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring-boot</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1980,6 +1921,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">kali</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">rocky</a>
               </li>
              
               <li class="article-tag-list-item">

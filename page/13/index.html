@@ -241,6 +241,96 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ffmpeg/ffmpeg-encryption-m3u8" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/14/ffmpeg/ffmpeg-encryption-m3u8/">ffmpeg 加密 m3u8</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/14/ffmpeg/ffmpeg-encryption-m3u8/" class="archive-article-date">
+  	<time datetime="2019-12-14T20:32:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
+  	更新：2025-07-19
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>生成加密key<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl rand -base64 120 &gt; enc.key</span><br></pre></td></tr></table></figure></p>
+<p>生成iv</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl rand -hex 16</span><br></pre></td></tr></table></figure>
+<p>创建keyinfo文件，将上面的内容写进文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">https://pure-sea-19495.herokuapp.com/api/key</span><br><span class="line">enc.key</span><br><span class="line">57cf5c1e976898bd436da81ec8779539</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i output.mp4 -c copy -bsf:v h264_mp4toannexb -hls_time 600 -hls_key_info_file keyinfo -hls_segment_filename data/output%03d.ts data/playlist.m3u8</span><br></pre></td></tr></table></figure>
+<p>播放</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffplay -protocol_whitelist &quot;file,https,crypto,tcp,tls&quot;  playlist.m3u8</span><br></pre></td></tr></table></figure>
+<p>修改加密文件中的key为本地文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffplay -allowed_extensions ALL new.m3u8</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">-bsf:v h264_mp4toannexb </span><br><span class="line">参数的作用是将MP4中的H.264数据转换为常见于实时传输流的H.264 AnnexB标准的编码。</span><br><span class="line"></span><br><span class="line">-hls_time （单位秒）</span><br><span class="line">此参数的作用是设置转码切片的duration为10秒左右一片（从关键帧处开始切片）</span><br><span class="line"></span><br><span class="line">-hls_segment_filename</span><br><span class="line">设置HLS的TS分片前缀名</span><br><span class="line"></span><br><span class="line">-hls_base_url</span><br><span class="line">参数设置了每个TS文件的前置基本路径</span><br></pre></td></tr></table></figure>
+<p>解码暂时没测试通过…</p>
+<p>iv 不需要加 0x</p>
+<p>k 是16进制的值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">openssl aes-128-cbc -d -in output000.ts -out output000_d.ts -nosalt -iv 57cf5c1e976898bd436da81ec8779539 -K xx</span><br><span class="line"></span><br><span class="line">ffmpeg -allowed_extensions ALL -protocol_whitelist &quot;file,http,tcp,https,tls,crypto,httpproxy&quot; -i newplay.m3u8 -c copy s.ts</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ffmpeg</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/14/ffmpeg/ffmpeg-encryption-m3u8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-php/thinkphp/thinkphp" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -255,7 +345,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/12/06/php/thinkphp/thinkphp/" class="archive-article-date">
   	<time datetime="2019-12-06T12:46:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-06</time>
-  	更新：2025-07-10
+  	更新：2025-07-19
 </a>
         
       </header>
@@ -320,7 +410,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/12/06/php/laravel/laravel/" class="archive-article-date">
   	<time datetime="2019-12-06T12:46:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-06</time>
-  	更新：2025-07-10
+  	更新：2025-07-19
 </a>
         
       </header>
@@ -424,7 +514,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/11/24/flutter/flutter03-MaterialApp-title/" class="archive-article-date">
   	<time datetime="2019-11-24T12:15:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-24</time>
-  	更新：2025-07-10
+  	更新：2025-07-19
 </a>
         
       </header>
@@ -684,7 +774,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/10/11/java/thymeleaf-tutorial-basic/" class="archive-article-date">
   	<time datetime="2019-10-11T10:15:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-11</time>
-  	更新：2025-07-10
+  	更新：2025-07-19
 </a>
         
       </header>
@@ -771,7 +861,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/09/12/jna-sample/" class="archive-article-date">
   	<time datetime="2019-09-12T11:27:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-12</time>
-  	更新：2025-07-10
+  	更新：2025-07-19
 </a>
         
       </header>
@@ -854,7 +944,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/30/flutter/flutter02-config-gradle/" class="archive-article-date">
   	<time datetime="2019-08-30T15:08:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-30</time>
-  	更新：2025-07-10
+  	更新：2025-07-19
 </a>
         
       </header>
@@ -938,7 +1028,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/30/flutter/flutter01-android-not-install/" class="archive-article-date">
   	<time datetime="2019-08-30T10:54:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-30</time>
-  	更新：2025-07-10
+  	更新：2025-07-19
 </a>
         
       </header>
@@ -1026,7 +1116,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/28/ss-site/" class="archive-article-date">
   	<time datetime="2019-08-28T09:36:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-  	更新：2025-07-10
+  	更新：2025-07-19
 </a>
         
       </header>
@@ -1061,96 +1151,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/08/28/ss-site/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-vip-parse-line" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/28/vip-parse-line/">全网视频解析API</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/28/vip-parse-line/" class="archive-article-date">
-  	<time datetime="2019-08-28T09:27:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-  	更新：2025-07-10
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 2025.06.22</span><br><span class="line">https://jx.xmflv.cc/?url=https://www.iqiyi.com/v_28b3s5tlqlw.html</span><br><span class="line"></span><br><span class="line">// 2021.12.23</span><br><span class="line">https://jx.xmflv.com/?url=https://v.qq.com/x/cover/mzc00200qckqxs3.html</span><br></pre></td></tr></table></figure>
-<p><del><a href="https://chaxun.truechat365.com/?url=https://www.iqiyi.com/v_16beaenwdu8.html" target="_blank" rel="noopener">https://chaxun.truechat365.com/?url=https://www.iqiyi.com/v_16beaenwdu8.html</a></del></p>
-<p><del><a href="https://vip.jx4k.com/vip/?url=https://www.mgtv.com/b/337307/9552358.html" target="_blank" rel="noopener">https://vip.jx4k.com/vip/?url=https://www.mgtv.com/b/337307/9552358.html</a></del></p>
-<p><del><a href="https://vip.bljiex.com/?url=https://v.qq.com/x/cover/mzc00200uooml0j/v0039kdo3cw.html" target="_blank" rel="noopener">https://vip.bljiex.com/?url=https://v.qq.com/x/cover/mzc00200uooml0j/v0039kdo3cw.html</a></del></p>
-<p><del><a href="http://www.czjx8.com/" target="_blank" rel="noopener">http://www.czjx8.com/</a></del></p>
-<p><del><a href="http://jx.jqaaa.com/" target="_blank" rel="noopener">http://jx.jqaaa.com/</a></del></p>
-<p><del><a href="https://jsap.attakids.com/?url=https://v.qq.com/x/cover/mzc002004q0alpv/o003492r4oj.html" target="_blank" rel="noopener">https://jsap.attakids.com/?url=https://v.qq.com/x/cover/mzc002004q0alpv/o003492r4oj.html</a></del></p>
-<p><del><a href="https://nfxhd.com/jx/?url=http://v.youku.com/v_show/id_XMjI3MDQzMDky.html" target="_blank" rel="noopener">https://nfxhd.com/jx/?url=http://v.youku.com/v_show/id_XMjI3MDQzMDky.html</a></del></p>
-<p><del><a href="https://api.sigujx.com/?url=https://v.youku.com/v_show/id_XMjI3MDQzMDQw.html" target="_blank" rel="noopener">https://api.sigujx.com/?url=https://v.youku.com/v_show/id_XMjI3MDQzMDQw.html</a></del></p>
-<p><del><a href="http://api.dj6u.com/jx.php?url=http://v.youku.com/v_show/id_XMTY0NzM3Nzk4NA==.html" target="_blank" rel="noopener">http://api.dj6u.com/jx.php?url=http://v.youku.com/v_show/id_XMTY0NzM3Nzk4NA==.html</a></del></p>
-<p><del><a href="https://api.akuau.com/?v=https://v.qq.com/x/cover/vbb35hm6m6da1wc/z0031dzmw5j.html" target="_blank" rel="noopener">https://api.akuau.com/?v=https://v.qq.com/x/cover/vbb35hm6m6da1wc/z0031dzmw5j.html</a></del></p>
-<p><del><a href="http://pc.fuyaoqp.cn/?url=https://www.mgtv.com/b/156311/5669547.html" target="_blank" rel="noopener">http://pc.fuyaoqp.cn/?url=https://www.mgtv.com/b/156311/5669547.html</a></del></p>
-<p><del><a href="http://www.baores.com/demo/?url=https://v.qq.com/x/cover/vbb35hm6m6da1wc/z0031dzmw5j.html" target="_blank" rel="noopener">http://www.baores.com/demo/?url=https://v.qq.com/x/cover/vbb35hm6m6da1wc/z0031dzmw5j.html</a></del></p>
-<p><del><a href="https://api.isoyu.com/ckplayer/?url=https://v.qq.com/x/cover/nilk5fd4bkqdk3a.html" target="_blank" rel="noopener">https://api.isoyu.com/ckplayer/?url=https://v.qq.com/x/cover/nilk5fd4bkqdk3a.html</a></del></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vip</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/28/vip-parse-line/">展开全文 >></a>
         </p>
       
 
@@ -1346,11 +1346,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ejs</a>
+                <a href="javascript:void(0)" class="js-tag color2">dotnet.core</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">dotnet.core</a>
+                <a href="javascript:void(0)" class="js-tag color4">ejs</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1371,6 +1371,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">gradle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">guqin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">haproxy</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1414,15 +1422,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">guqin</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">selenium</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">haproxy</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1478,10 +1478,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">proxy</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sts</a>
               </li>
              
@@ -1491,6 +1487,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">validate.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vip</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1506,7 +1506,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vip</a>
+                <a href="javascript:void(0)" class="js-tag color1">proxy</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1626,15 +1626,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">spring-boot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">qrcode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">thymeleaf</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring-boot</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1775,6 +1775,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">kali</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">rocky</a>
               </li>
              
               <li class="article-tag-list-item">
