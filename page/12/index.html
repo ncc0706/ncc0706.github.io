@@ -241,6 +241,103 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-db/postgresql/04postgresql-schema" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/26/db/postgresql/04postgresql-schema/">postgresql schema</a>
+    </h1>
+  
+
+        
+        <a href="/2020/01/26/db/postgresql/04postgresql-schema/" class="archive-article-date">
+  	<time datetime="2020-01-26T17:05:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-26</time>
+  	更新：2025-07-19
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>schema的特点</strong></p>
+<ul>
+<li>schema概念像命名空间</li>
+<li>schema下不能再有schema嵌套</li>
+<li>各个对象如表、函数等存放在各个schema中</li>
+<li>同一个schema下不能存在重复的对象名字，不同的schema下可以重复</li>
+</ul>
+<p>请注意，缺省时每个人都在 public 模式上有 CREATE 和 USAGE 权限。这样就允许所有可以连接到指定数据库上的用户在这里创建对象.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">REVOKE</span> <span class="keyword">CREATE</span> <span class="keyword">ON</span> <span class="keyword">SCHEMA</span> <span class="keyword">public</span> <span class="keyword">FROM</span> <span class="keyword">PUBLIC</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 第一个"public"是模式，第二个"PUBLIC"意思是"所有用户"。第一句里它是个标识符，而第二句里是个关键字，所以有不同的大小写。</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 创建模式</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">schema</span> m1;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 删除模式</span></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">schema</span> m1;</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> m1.users(</span><br><span class="line">	<span class="keyword">id</span> <span class="built_in">serial</span>,</span><br><span class="line">    <span class="keyword">name</span> <span class="built_in">text</span>,</span><br><span class="line">    age int2, <span class="comment">-- java中的integer</span></span><br><span class="line">    salary <span class="built_in">decimal</span>(<span class="number">5</span>, <span class="number">2</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 删除模式及包含的对象</span></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">schema</span> m1 <span class="keyword">cascade</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">revoke</span> <span class="keyword">create</span> <span class="keyword">on</span> <span class="keyword">schema</span> <span class="keyword">public</span> <span class="keyword">from</span> pg;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">postgre</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/db//" class="article-tag-list-link color3">db</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/01/26/db/postgresql/04postgresql-schema/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-db/postgresql/03postgresql" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1058,96 +1155,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-ffmpeg/ffmpeg-encryption-m3u8" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/14/ffmpeg/ffmpeg-encryption-m3u8/">ffmpeg 加密 m3u8</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/14/ffmpeg/ffmpeg-encryption-m3u8/" class="archive-article-date">
-  	<time datetime="2019-12-14T20:32:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
-  	更新：2025-07-19
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>生成加密key<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl rand -base64 120 &gt; enc.key</span><br></pre></td></tr></table></figure></p>
-<p>生成iv</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl rand -hex 16</span><br></pre></td></tr></table></figure>
-<p>创建keyinfo文件，将上面的内容写进文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">https://pure-sea-19495.herokuapp.com/api/key</span><br><span class="line">enc.key</span><br><span class="line">57cf5c1e976898bd436da81ec8779539</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i output.mp4 -c copy -bsf:v h264_mp4toannexb -hls_time 600 -hls_key_info_file keyinfo -hls_segment_filename data/output%03d.ts data/playlist.m3u8</span><br></pre></td></tr></table></figure>
-<p>播放</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffplay -protocol_whitelist &quot;file,https,crypto,tcp,tls&quot;  playlist.m3u8</span><br></pre></td></tr></table></figure>
-<p>修改加密文件中的key为本地文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffplay -allowed_extensions ALL new.m3u8</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">-bsf:v h264_mp4toannexb </span><br><span class="line">参数的作用是将MP4中的H.264数据转换为常见于实时传输流的H.264 AnnexB标准的编码。</span><br><span class="line"></span><br><span class="line">-hls_time （单位秒）</span><br><span class="line">此参数的作用是设置转码切片的duration为10秒左右一片（从关键帧处开始切片）</span><br><span class="line"></span><br><span class="line">-hls_segment_filename</span><br><span class="line">设置HLS的TS分片前缀名</span><br><span class="line"></span><br><span class="line">-hls_base_url</span><br><span class="line">参数设置了每个TS文件的前置基本路径</span><br></pre></td></tr></table></figure>
-<p>解码暂时没测试通过…</p>
-<p>iv 不需要加 0x</p>
-<p>k 是16进制的值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">openssl aes-128-cbc -d -in output000.ts -out output000_d.ts -nosalt -iv 57cf5c1e976898bd436da81ec8779539 -K xx</span><br><span class="line"></span><br><span class="line">ffmpeg -allowed_extensions ALL -protocol_whitelist &quot;file,http,tcp,https,tls,crypto,httpproxy&quot; -i newplay.m3u8 -c copy s.ts</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ffmpeg</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/14/ffmpeg/ffmpeg-encryption-m3u8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/11/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/13/">Next &raquo;</a>
@@ -1343,6 +1350,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">guqin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">haproxy</a>
               </li>
              
@@ -1351,19 +1362,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">guqin</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">shortkey</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nacos</a>
+                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
+                <a href="javascript:void(0)" class="js-tag color1">nacos</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1411,6 +1418,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">原码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">反码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">补码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
               </li>
              
@@ -1447,18 +1466,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">原码</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">反码</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">补码</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">validate.js</a>
               </li>
              
@@ -1479,11 +1486,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">fiddler</a>
+                <a href="javascript:void(0)" class="js-tag color1">frida</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">frida</a>
+                <a href="javascript:void(0)" class="js-tag color3">fiddler</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1539,11 +1546,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">elk</a>
+                <a href="javascript:void(0)" class="js-tag color2">ffmpeg</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ffmpeg</a>
+                <a href="javascript:void(0)" class="js-tag color4">elk</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1655,15 +1662,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">manjaro</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">os</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vm</a>
               </li>
              
               <li class="article-tag-list-item">
