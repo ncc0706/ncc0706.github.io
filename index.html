@@ -247,6 +247,139 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-redis_ssl" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>生成根 CA 证书</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">openssl genrsa -out ca.key 4096</span><br><span class="line">openssl req -x509 -new -nodes -sha256 -key ca.key -days 3650 -subj &apos;/C=CN/ST=Beijing/L=Beijing/O=Arukas IO/OU=Redis Server/CN=redis.vim.io&apos; -out ca.crt</span><br></pre></td></tr></table></figure>
+<p><strong>生成服务端证书</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">openssl genrsa -out redis.key 4096</span><br><span class="line"></span><br><span class="line">-- 签发申请</span><br><span class="line">openssl req -new -sha256 -key redis.key -subj &apos;/C=CN/ST=Beijing/L=Beijing/O=Arukas IO/OU=Redis Server/CN=redis.vim.io&apos; -addext &quot;subjectAltName = IP:127.0.0.1&quot; -out server.csr</span><br><span class="line"></span><br><span class="line">openssl x509 -req -sha256 -in server.csr -CA ca.crt -CAkey ca.key -CAserial ca.txt -CAcreateserial -days 3650 -extfile &lt;(printf &quot;subjectAltName=IP:127.0.0.1&quot;) -out redis.crt</span><br><span class="line"></span><br><span class="line">#查看证书</span><br><span class="line">openssl x509 -in redis.crt -text -noout</span><br></pre></td></tr></table></figure>
+<p><strong>生成客户端证书</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">openssl genrsa -out client.key 4096</span><br><span class="line"></span><br><span class="line">-- 签发申请</span><br><span class="line">openssl req -new -key client.key -out client.csr</span><br><span class="line"></span><br><span class="line">openssl x509 -req -days 3650 -in client.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out client.crt</span><br></pre></td></tr></table></figure>
+<p><strong>其它</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl dhparam -out redis.dh 2048</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字段缩写</th>
+<th style="text-align:center">全称</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">示例值</th>
+<th style="text-align:center">是否必需</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>/C=</code></td>
+<td style="text-align:center">Country Name</td>
+<td style="text-align:center">国家代码（ISO 3166）</td>
+<td style="text-align:center"><code>/C=CN</code>（中国）</td>
+<td style="text-align:center">可选</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>/ST=</code></td>
+<td style="text-align:center">State or Province Name</td>
+<td style="text-align:center">州/省名称</td>
+<td style="text-align:center"><code>/ST=Beijing</code></td>
+<td style="text-align:center">可选</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>/L=</code></td>
+<td style="text-align:center">Locality Name</td>
+<td style="text-align:center">城市名称</td>
+<td style="text-align:center"><code>/L=Beijing</code></td>
+<td style="text-align:center">可选</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>/O=</code></td>
+<td style="text-align:center">Organization Name</td>
+<td style="text-align:center">组织/公司名称</td>
+<td style="text-align:center"><code>/O=Example Inc.</code></td>
+<td style="text-align:center"><strong>推荐</strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>/OU=</code></td>
+<td style="text-align:center">Organizational Unit Name</td>
+<td style="text-align:center">组织部门名称</td>
+<td style="text-align:center"><code>/OU=IT Department</code></td>
+<td style="text-align:center">可选</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>/CN=</code></td>
+<td style="text-align:center">Common Name</td>
+<td style="text-align:center"><strong>关键标识</strong></td>
+<td style="text-align:center"><code>/CN=www.example.com</code></td>
+<td style="text-align:center"><strong>必需</strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>/emailAddress=</code></td>
+<td style="text-align:center">Email Address</td>
+<td style="text-align:center">联系邮箱</td>
+<td style="text-align:center"><a href="mailto:`/emailAddress=admin@example.com" target="_blank" rel="noopener">`/emailAddress=admin@example.com</a>`</td>
+<td style="text-align:center">可选</td>
+</tr>
+</tbody>
+</table>
+<p><strong>不验证客户端证书的配置方式1</strong></p>
+<p>客户端可以不传自己的证书，只传CA证书（用于验证服务端）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-cli --tls --cacert ca.crt</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">port 0</span><br><span class="line"></span><br><span class="line">#启用 TLS 的监听端口</span><br><span class="line">tls-port 6379</span><br><span class="line"></span><br><span class="line">#服务端证书路径</span><br><span class="line">tls-cert-file redis.crt</span><br><span class="line">#服务端私钥路径</span><br><span class="line">tls-key-file redis.key</span><br><span class="line"></span><br><span class="line">#根 CA 证书路径，用于验证客户端证书</span><br><span class="line">tls-ca-cert-file ca.crt</span><br><span class="line">tls-auth-clients no</span><br></pre></td></tr></table></figure>
+<p><strong>不验证客户端证书的配置方式2</strong></p>
+<p>客户端证书可以不传，可以建立连接</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">redis-cli --tls --cacert ca.crt</span><br><span class="line">或</span><br><span class="line">redis-cli --tls --cacert ca.crt --cert redis.crt --key redis.key</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">port 0</span><br><span class="line">tls-port 6379</span><br><span class="line"></span><br><span class="line">tls-cert-file redis.crt</span><br><span class="line">tls-key-file redis.key</span><br><span class="line"></span><br><span class="line">tls-ca-cert-file ca.crt</span><br><span class="line">tls-auth-clients optional</span><br></pre></td></tr></table></figure>
+<p><strong>验证客户端的方式</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-cli --tls --cacert ca.crt --cert redis.crt --key redis.key</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">port 0</span><br><span class="line">tls-port 6379</span><br><span class="line"></span><br><span class="line">tls-cert-file redis.crt</span><br><span class="line">tls-key-file redis.key</span><br><span class="line"></span><br><span class="line">tls-ca-cert-file ca.crt</span><br><span class="line">tls-dh-params-file redis.dh</span><br><span class="line"></span><br><span class="line">#启用客户端证书验证（双向认证关键项）</span><br><span class="line">tls-auth-clients yes</span><br><span class="line">tls-replication yes</span><br><span class="line"></span><br><span class="line">#指定tls-replication yes才能将TLS用于到主服务器的对外连接，sentinel也需要同步设置。</span><br><span class="line">#tls-cluster yes</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 用哪个都可以作为 truststore.jks</span><br><span class="line">keytool -import -alias redis -file redis.crt -keystore truststore_redis.jks -storepass 123456 -noprompt</span><br><span class="line">keytool -import -alias redis -file ca.crt  -keystore truststore.jks -storepass 123456 -noprompt</span><br></pre></td></tr></table></figure>
+<p><strong>直接导入 jdk 中</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-- 需要将服务的的证书导入到jdk的认证证书</span><br><span class="line">keytool -import -alias redis-ca -file redis.crt -keystore %JAVA_HOME%/lib/security/cacerts -storepass 123456 -noprompt</span><br><span class="line"></span><br><span class="line">keytool -delete -alias redis-ca -file redis.crt -keystore %JAVA_HOME%/lib/security/cacerts -storepass 123456 -noprompt</span><br><span class="line"></span><br><span class="line">## 查看导入的证书</span><br><span class="line">keytool -list -keystore %JAVA_HOME%/lib/security/cacerts</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/08/09/redis_ssl/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-bin-oct-hex" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -261,7 +394,7 @@ var _hmt = _hmt || [];
         
         <a href="/2025/07/19/bin-oct-hex/" class="archive-article-date">
   	<time datetime="2025-07-19T16:55:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-19</time>
-  	更新：2025-07-19
+  	更新：2025-08-09
 </a>
         
       </header>
@@ -355,7 +488,7 @@ var _hmt = _hmt || [];
         
         <a href="/2025/07/19/os/rocky/rocky9.6/" class="archive-article-date">
   	<time datetime="2025-07-19T11:22:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-19</time>
-  	更新：2025-07-19
+  	更新：2025-08-09
 </a>
         
       </header>
@@ -1096,7 +1229,7 @@ var _hmt = _hmt || [];
         
         <a href="/2025/02/15/os/windows/" class="archive-article-date">
   	<time datetime="2025-02-15T10:12:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-02-15</time>
-  	更新：2025-07-19
+  	更新：2025-08-09
 </a>
         
       </header>
@@ -1228,84 +1361,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2025/01/17/db/mongodb/nodejs-mongoose/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-idea2024-lombok" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/01/14/idea2024-lombok/">IDEA 2024 lombok</a>
-    </h1>
-  
-
-        
-        <a href="/2025/01/14/idea2024-lombok/" class="archive-article-date">
-  	<time datetime="2025-01-14T22:01:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-01-14</time>
-  	更新：2025-01-14
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最简单的话，就勾选第一个 <code>Obtain processors from project classpath</code>就能解决了。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2025/01/01.png" alt="Annotation Processors"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">idea</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/01/14/idea2024-lombok/">展开全文 >></a>
         </p>
       
 
@@ -1469,19 +1524,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">was</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">ascii</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">area</a>
+                <a href="javascript:void(0)" class="js-tag color4">was</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">cors</a>
+                <a href="javascript:void(0)" class="js-tag color5">area</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1493,11 +1544,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+                <a href="javascript:void(0)" class="js-tag color5">cors</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">位移</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1529,11 +1584,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">guqin</a>
+                <a href="javascript:void(0)" class="js-tag color3">haproxy</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">haproxy</a>
+                <a href="javascript:void(0)" class="js-tag color1">guqin</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1549,11 +1604,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
+                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
+                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1581,15 +1636,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">music</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">nc</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nuget</a>
+                <a href="javascript:void(0)" class="js-tag color1">music</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1597,7 +1648,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
+                <a href="javascript:void(0)" class="js-tag color1">nuget</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1613,15 +1664,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">querydsl</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
+                <a href="javascript:void(0)" class="js-tag color4">sed</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">sed</a>
+                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1633,11 +1688,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">proxy</a>
+                <a href="javascript:void(0)" class="js-tag color4">sts</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">sts</a>
+                <a href="javascript:void(0)" class="js-tag color1">proxy</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1653,11 +1708,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
+                <a href="javascript:void(0)" class="js-tag color1">vsftp</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vsftp</a>
+                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1693,6 +1748,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">c</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">cpp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
@@ -1702,14 +1765,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">dart</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">c</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">cpp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1809,15 +1864,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">activemq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">mq</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">activemq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1865,11 +1920,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">requests</a>
+                <a href="javascript:void(0)" class="js-tag color1">regex</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">regex</a>
+                <a href="javascript:void(0)" class="js-tag color4">requests</a>
               </li>
              
               <li class="article-tag-list-item">

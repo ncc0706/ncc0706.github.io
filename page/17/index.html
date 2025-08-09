@@ -247,6 +247,88 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-alpine/alpine-dockerfile" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/09/alpine/alpine-dockerfile/">alpine 添加用户及用户组</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/09/alpine/alpine-dockerfile/" class="archive-article-date">
+  	<time datetime="2019-07-09T09:25:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-09</time>
+  	更新：2025-08-09
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><code>Dockerfile</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">FROM alpine:latest</span><br><span class="line"></span><br><span class="line">RUN addgroup -S me &amp;&amp; adduser -S me -G me -h /home/me</span><br><span class="line"></span><br><span class="line">USER me</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it --rm alpine/demo id</span><br></pre></td></tr></table></figure>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><blockquote>
+<p><a href="https://stackoverflow.com/questions/49955097/how-do-i-add-a-user-when-im-using-alpine-as-a-base-image" target="_blank" rel="noopener">https://stackoverflow.com/questions/49955097/how-do-i-add-a-user-when-im-using-alpine-as-a-base-image</a></p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">docker</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/09/alpine/alpine-dockerfile/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-php/php-pdo1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -261,7 +343,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/07/06/php/php-pdo1/" class="archive-article-date">
   	<time datetime="2019-07-06T06:38:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-06</time>
-  	更新：2025-07-19
+  	更新：2025-08-09
 </a>
         
       </header>
@@ -338,7 +420,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/07/05/lc58/" class="archive-article-date">
   	<time datetime="2019-07-05T17:27:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-05</time>
-  	更新：2025-07-19
+  	更新：2025-08-09
 </a>
         
       </header>
@@ -415,7 +497,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/07/04/db/mongodb/00mongodb/" class="archive-article-date">
   	<time datetime="2019-07-04T11:01:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-04</time>
-  	更新：2025-07-19
+  	更新：2025-08-09
 </a>
         
       </header>
@@ -520,7 +602,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/06/30/vs/" class="archive-article-date">
   	<time datetime="2019-06-30T14:29:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-30</time>
-  	更新：2025-07-19
+  	更新：2025-08-09
 </a>
         
       </header>
@@ -597,7 +679,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/06/27/java/keycloak/" class="archive-article-date">
   	<time datetime="2019-06-27T10:55:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-27</time>
-  	更新：2025-07-19
+  	更新：2025-08-09
 </a>
         
       </header>
@@ -679,7 +761,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/06/27/sso/keycloak6/" class="archive-article-date">
   	<time datetime="2019-06-27T10:55:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-27</time>
-  	更新：2025-07-19
+  	更新：2025-08-09
 </a>
         
       </header>
@@ -772,7 +854,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/06/23/ruby-http/" class="archive-article-date">
   	<time datetime="2019-06-23T15:24:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-23</time>
-  	更新：2025-07-19
+  	更新：2025-08-09
 </a>
         
       </header>
@@ -853,7 +935,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/06/17/ckplayer-cors/" class="archive-article-date">
   	<time datetime="2019-06-17T17:50:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-17</time>
-  	更新：2025-07-19
+  	更新：2025-08-09
 </a>
         
       </header>
@@ -931,7 +1013,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/06/04/regex/mobile/" class="archive-article-date">
   	<time datetime="2019-06-04T16:02:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-04</time>
-  	更新：2025-07-19
+  	更新：2025-08-09
 </a>
         
       </header>
@@ -991,98 +1073,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/06/04/regex/mobile/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-java/spring-boot/spring-boot-email-163" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/04/java/spring-boot/spring-boot-email-163/">Spring Boot Email 163</a>
-    </h1>
-  
-
-        
-        <a href="/2019/06/04/java/spring-boot/spring-boot-email-163/" class="archive-article-date">
-  	<time datetime="2019-06-04T09:43:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-04</time>
-  	更新：2025-07-19
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">org.springframework.mail.MailSendException: Failed messages: com.sun.mail.smtp.SMTPSendFailedException: <span class="number">554</span> DT:SPM <span class="number">163</span> smtp12,EMCowAAnARb0yvVczOMAAA--.<span class="number">171</span>S3 <span class="number">1559612148</span>,please see http:<span class="comment">//mail.163.com/help/help_spam_16.htm?ip=122.7.60.246&amp;hostid=smtp12&amp;time=1559612148</span></span><br><span class="line"></span><br><span class="line">	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:<span class="number">490</span>) ~[spring-context-support-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:<span class="number">322</span>) ~[spring-context-support-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:<span class="number">311</span>) ~[spring-context-support-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at com.maricon.service.MailServiceImpl.sendSimpleMail(MailServiceImpl.java:<span class="number">34</span>) ~[classes/:na]</span><br><span class="line">	at com.maricon.endpoint.EmailEndpoint.sendSimpleMail(EmailEndpoint.java:<span class="number">38</span>) ~[classes/:na]</span><br><span class="line">	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:<span class="number">1.8</span><span class="number">.0_181</span>]</span><br><span class="line">	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:<span class="number">62</span>) ~[na:<span class="number">1.8</span><span class="number">.0_181</span>]</span><br><span class="line">	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:<span class="number">43</span>) ~[na:<span class="number">1.8</span><span class="number">.0_181</span>]</span><br><span class="line">	at java.lang.reflect.Method.invoke(Method.java:<span class="number">498</span>) ~[na:<span class="number">1.8</span><span class="number">.0_181</span>]</span><br><span class="line">	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:<span class="number">190</span>) ~[spring-web-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:<span class="number">138</span>) ~[spring-web-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:<span class="number">104</span>) ~[spring-webmvc-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:<span class="number">892</span>) ~[spring-webmvc-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:<span class="number">797</span>) ~[spring-webmvc-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:<span class="number">87</span>) ~[spring-webmvc-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:<span class="number">1039</span>) ~[spring-webmvc-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:<span class="number">942</span>) ~[spring-webmvc-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:<span class="number">1005</span>) ~[spring-webmvc-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:<span class="number">897</span>) ~[spring-webmvc-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at javax.servlet.http.HttpServlet.service(HttpServlet.java:<span class="number">634</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:<span class="number">882</span>) ~[spring-webmvc-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at javax.servlet.http.HttpServlet.service(HttpServlet.java:<span class="number">741</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:<span class="number">231</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:<span class="number">166</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:<span class="number">53</span>) ~[tomcat-embed-websocket-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:<span class="number">193</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:<span class="number">166</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:<span class="number">99</span>) ~[spring-web-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:<span class="number">107</span>) ~[spring-web-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:<span class="number">193</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:<span class="number">166</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:<span class="number">92</span>) ~[spring-web-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:<span class="number">107</span>) ~[spring-web-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:<span class="number">193</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:<span class="number">166</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:<span class="number">93</span>) ~[spring-web-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:<span class="number">107</span>) ~[spring-web-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:<span class="number">193</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:<span class="number">166</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:<span class="number">200</span>) ~[spring-web-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:<span class="number">107</span>) ~[spring-web-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:<span class="number">193</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:<span class="number">166</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:<span class="number">200</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:<span class="number">96</span>) [tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:<span class="number">490</span>) [tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:<span class="number">139</span>) [tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:<span class="number">92</span>) [tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:<span class="number">74</span>) [tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:<span class="number">343</span>) [tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:<span class="number">408</span>) [tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:<span class="number">66</span>) [tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:<span class="number">836</span>) [tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:<span class="number">1747</span>) [tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:<span class="number">49</span>) [tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:<span class="number">1149</span>) [na:<span class="number">1.8</span><span class="number">.0_181</span>]</span><br><span class="line">	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:<span class="number">624</span>) [na:<span class="number">1.8</span><span class="number">.0_181</span>]</span><br><span class="line">	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:<span class="number">61</span>) [tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at java.lang.Thread.run(Thread.java:<span class="number">748</span>) [na:<span class="number">1.8</span><span class="number">.0_181</span>]</span><br></pre></td></tr></table></figure>
-<p>出现上面的错误，官方解析<code>发送的邮件内容包含了未被许可的信息，或被系统识别为垃圾邮件。请检查是否有用户发送病毒或者垃圾邮件；</code>,查阅了很多资料，经过验证是授权码的问题,当前申请的授权码不能使用</p>
-<p>还有一种方式就是抄送发送者一份。。。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">javax.mail.AuthenticationFailedException: <span class="number">535</span> Error: authentication failed</span><br></pre></td></tr></table></figure>
-<p>上面的错误是密码错误的原因，163邮箱需要注意使用授权码，好像申请后需要第二天才可以使用</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">email</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/java//" class="article-tag-list-link color5">java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/04/java/spring-boot/spring-boot-email-163/">展开全文 >></a>
         </p>
       
 
@@ -1246,19 +1236,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">was</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">ascii</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">area</a>
+                <a href="javascript:void(0)" class="js-tag color4">was</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">cors</a>
+                <a href="javascript:void(0)" class="js-tag color5">area</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1270,11 +1256,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+                <a href="javascript:void(0)" class="js-tag color5">cors</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">位移</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1306,11 +1296,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">guqin</a>
+                <a href="javascript:void(0)" class="js-tag color3">haproxy</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">haproxy</a>
+                <a href="javascript:void(0)" class="js-tag color1">guqin</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1326,11 +1316,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
+                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
+                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1358,15 +1348,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">music</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">nc</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nuget</a>
+                <a href="javascript:void(0)" class="js-tag color1">music</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1374,7 +1360,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
+                <a href="javascript:void(0)" class="js-tag color1">nuget</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1390,15 +1376,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">querydsl</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
+                <a href="javascript:void(0)" class="js-tag color4">sed</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">sed</a>
+                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1410,11 +1400,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">proxy</a>
+                <a href="javascript:void(0)" class="js-tag color4">sts</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">sts</a>
+                <a href="javascript:void(0)" class="js-tag color1">proxy</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1430,11 +1420,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
+                <a href="javascript:void(0)" class="js-tag color1">vsftp</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vsftp</a>
+                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1470,6 +1460,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">c</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">cpp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
@@ -1479,14 +1477,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">dart</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">c</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">cpp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1586,15 +1576,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">activemq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">mq</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">activemq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1642,11 +1632,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">requests</a>
+                <a href="javascript:void(0)" class="js-tag color1">regex</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">regex</a>
+                <a href="javascript:void(0)" class="js-tag color4">requests</a>
               </li>
              
               <li class="article-tag-list-item">
