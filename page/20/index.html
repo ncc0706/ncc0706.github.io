@@ -247,6 +247,168 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-php/php-enable-file-get-contents" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/19/php/php-enable-file-get-contents/">php开启file_get_contents</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/19/php/php-enable-file-get-contents/" class="archive-article-date">
+  	<time datetime="2019-04-19T14:44:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-19</time>
+  	更新：2025-08-29
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>要使用file_get_contents功能需要开启php的扩展功能，打开php.ini</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">allow_url_fopen = On</span><br><span class="line"></span><br><span class="line">;https请求</span><br><span class="line">extension=php_openssl.dll</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/19/php/php-enable-file-get-contents/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+    <article id="post-php/php-xdebug" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/19/php/php-xdebug/">php xdebug</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/19/php/php-xdebug/" class="archive-article-date">
+  	<time datetime="2019-04-19T14:40:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-19</time>
+  	更新：2025-08-29
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p><a href="https://xdebug.org/download.php" target="_blank" rel="noopener">https://xdebug.org/download.php</a></p>
+</blockquote>
+<p>下载dll时注意版本问题</p>
+<p><strong>php5</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">[XDebug]</span><br><span class="line">xdebug.profiler_output_dir=&quot;D:\phpStudy\PHPTutorial\tmp\xdebug&quot;</span><br><span class="line">xdebug.trace_output_dir=&quot;D:\phpStudy\PHPTutorial\tmp\xdebug&quot;</span><br><span class="line">zend_extension=&quot;D:\phpStudy\PHPTutorial\php\php-5.4.45\ext\php_xdebug.dll&quot;</span><br><span class="line"></span><br><span class="line">;是否允许Xdebug跟踪函数调用，跟踪信息以文件形式存储，默认值为0</span><br><span class="line">xdebug.auto_trace=1</span><br><span class="line">;是否允许Xdebug跟踪函数参数，默认值为0</span><br><span class="line">xdebug.collect_params=1</span><br><span class="line">;是否允许Xdebug跟踪函数返回值，默认值为0</span><br><span class="line">xdebug.collect_return=1</span><br><span class="line">;函数调用跟踪信息输出文件目录，默认值为/tmp</span><br><span class="line">xdebug.trace_output_dir =&quot;D:\phpStudy\tmp\xdebug&quot;</span><br><span class="line">;性能分析文件的存放位置，默认值为/tmp</span><br><span class="line">xdebug.profiler_output_dir =&quot;D:\phpStudy\tmp\xdebug&quot;</span><br><span class="line">;打开xdebug的性能分析器，以文件形式存储，这项配置是不能以ini_set()函数配置的，默认值为0</span><br><span class="line">xdebug.profiler_enable = 1</span><br><span class="line">;性能分析文件的命名规则，默认值为cachegrind.out.%p</span><br><span class="line">xdebug.profiler_output_name = &quot;cachegrind.out.%t.%p&quot;</span><br><span class="line">xdebug.remote_enable = 1</span><br><span class="line">;用于zend studio远程调试的应用层通信协议</span><br><span class="line">xdebug.remote_handler = &quot;dbgp&quot;</span><br><span class="line">xdebug.idekey = phpstorm</span><br><span class="line">xdebug.remote_host = &quot;vip.me&quot;</span><br><span class="line">xdebug.remote_port = 9000</span><br></pre></td></tr></table></figure>
+<p><strong>php7</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">[XDebug]</span><br><span class="line">xdebug.profiler_output_dir=&quot;D:\phpStudy\PHPTutorial\tmp\xdebug&quot;</span><br><span class="line">xdebug.trace_output_dir=&quot;D:\phpStudy\PHPTutorial\tmp\xdebug&quot;</span><br><span class="line">zend_extension=&quot;D:\phpStudy\PHPTutorial\php\php-7.2.1-nts\ext\php_xdebug-2.7.1-7.2-vc15-nts.dll&quot;</span><br><span class="line"></span><br><span class="line">;是否允许Xdebug跟踪函数调用，跟踪信息以文件形式存储，默认值为0</span><br><span class="line">xdebug.auto_trace=1</span><br><span class="line">;是否允许Xdebug跟踪函数参数，默认值为0</span><br><span class="line">xdebug.collect_params=1</span><br><span class="line">;是否允许Xdebug跟踪函数返回值，默认值为0</span><br><span class="line">xdebug.collect_return=1</span><br><span class="line">;函数调用跟踪信息输出文件目录，默认值为/tmp</span><br><span class="line">xdebug.trace_output_dir =&quot;D:\phpStudy\tmp\xdebug&quot;</span><br><span class="line">;性能分析文件的存放位置，默认值为/tmp</span><br><span class="line">xdebug.profiler_output_dir =&quot;D:\phpStudy\tmp\xdebug&quot;</span><br><span class="line">;打开xdebug的性能分析器，以文件形式存储，这项配置是不能以ini_set()函数配置的，默认值为0</span><br><span class="line">xdebug.profiler_enable = 1</span><br><span class="line">;性能分析文件的命名规则，默认值为cachegrind.out.%p</span><br><span class="line">xdebug.profiler_output_name = &quot;cachegrind.out.%t.%p&quot;</span><br><span class="line">xdebug.remote_enable = 1</span><br><span class="line">;用于zend studio远程调试的应用层通信协议</span><br><span class="line">xdebug.remote_handler = &quot;dbgp&quot;</span><br><span class="line">xdebug.idekey = phpstorm</span><br><span class="line">xdebug.remote_host = &quot;vip.me&quot;</span><br><span class="line">xdebug.remote_port = 9000</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/19/php/php-xdebug/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-archlinux/archlinux-install-vscode" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -261,7 +423,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/17/archlinux/archlinux-install-vscode/" class="archive-article-date">
   	<time datetime="2019-04-17T11:53:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-17</time>
-  	更新：2025-08-20
+  	更新：2025-08-29
 </a>
         
       </header>
@@ -338,7 +500,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/17/os/archlinux/archlinux-install-vscode/" class="archive-article-date">
   	<time datetime="2019-04-17T11:53:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-17</time>
-  	更新：2025-08-20
+  	更新：2025-08-29
 </a>
         
       </header>
@@ -415,7 +577,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/17/archlinux/archlinux-openssh/" class="archive-article-date">
   	<time datetime="2019-04-17T11:08:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-17</time>
-  	更新：2025-08-20
+  	更新：2025-08-29
 </a>
         
       </header>
@@ -493,7 +655,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/17/os/archlinux/archlinux-openssh/" class="archive-article-date">
   	<time datetime="2019-04-17T11:08:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-17</time>
-  	更新：2025-08-20
+  	更新：2025-08-29
 </a>
         
       </header>
@@ -571,7 +733,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/16/regex/dl-weishi-video/" class="archive-article-date">
   	<time datetime="2019-04-16T16:07:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-16</time>
-  	更新：2025-08-20
+  	更新：2025-08-29
 </a>
         
       </header>
@@ -652,7 +814,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/16/nodejs/install-nodejs-on-archlinux/" class="archive-article-date">
   	<time datetime="2019-04-16T09:01:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-16</time>
-  	更新：2025-08-20
+  	更新：2025-08-29
 </a>
         
       </header>
@@ -840,7 +1002,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/03/28/git/git-delete-commit-file-to-ignore/" class="archive-article-date">
   	<time datetime="2019-03-28T10:07:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-28</time>
-  	更新：2025-08-20
+  	更新：2025-08-29
 </a>
         
       </header>
@@ -876,170 +1038,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/03/28/git/git-delete-commit-file-to-ignore/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-git/git-multi-user-on-windows" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/22/git/git-multi-user-on-windows/">git多用户配置</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/22/git/git-multi-user-on-windows/" class="archive-article-date">
-  	<time datetime="2019-03-22T09:06:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-22</time>
-  	更新：2025-08-20
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2019/03/22/city-4057914_1920.jpg" alt="image"></p>
-<p><strong>1.新建自己的git用户的SSH Key</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh</span><br><span class="line">ssh-keygen -t rsa -C &quot;ncc0706@gmail.com&quot; #创建ssh key</span><br></pre></td></tr></table></figure>
-<p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2019/03/22/git-multi-user-on-windows/01.png" alt="image"></p>
-<p><strong>2.新建工作中用的SSH Key</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh</span><br><span class="line">ssh-keygen -t rsa -C &quot;work@gmail.com&quot; #创建ssh key</span><br></pre></td></tr></table></figure>
-<p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2019/03/22/git-multi-user-on-windows/02.png" alt="image"></p>
-        
-          <a class="article-more-a" href="/2019/03/22/git/git-multi-user-on-windows/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/22/git/git-multi-user-on-windows/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-git/git-tour" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/22/git/git-tour/">git 基本命令</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/22/git/git-tour/" class="archive-article-date">
-  	<time datetime="2019-03-22T09:05:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-22</time>
-  	更新：2025-08-20
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2019/03/22/dawn-3793717_1920.jpg" alt="image"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">#git 用户</span><br><span class="line">git config --global user.name &quot;ncc0706&quot;</span><br><span class="line">git config --global user.email &quot;ncc0706@gmail.com&quot;</span><br><span class="line"># 格式化提交时间</span><br><span class="line">git config --global log.date &quot;format:%Y-%m-%d %H:%M:%S&quot;</span><br><span class="line"></span><br><span class="line">git init 		# 初始化仓库</span><br><span class="line">git status 		# 仓库状态</span><br><span class="line">git add			# 添加到暂存区</span><br><span class="line">git log			#提交记录</span><br><span class="line">git commit -m &quot;输入提交注释&quot; # 提交文件</span><br><span class="line">git commit -am &quot;添加到暂存区并提交文件&quot;</span><br><span class="line"></span><br><span class="line">git branch		#查看分支</span><br><span class="line">git branch dev  #git创建分支</span><br><span class="line">git checkout dev #git切换分支</span><br><span class="line"></span><br><span class="line"># 修补错误 并创建分支</span><br><span class="line">git checkout -b iss88 # 创建iss88号分支并切换到iss88号分支</span><br><span class="line"></span><br><span class="line">git checkout master		#切换到master分支</span><br><span class="line">git merge iss53			#git合并分支</span><br><span class="line">git branch -d iss53		#删除分支</span><br><span class="line"></span><br><span class="line">git branch -a 			#查看所有分支， 如果颜色支持开启的话远程分支会用红色表示</span><br><span class="line">git branch -v			#看出来origin其实就是远程的git地址的一个别名</span><br><span class="line">origin  git@git.coding.net:ncc/angular.git (fetch)</span><br><span class="line">origin  git@git.coding.net:ncc/angular.git (push)</span><br></pre></td></tr></table></figure></p>
-        
-          <a class="article-more-a" href="/2019/03/22/git/git-tour/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/22/git/git-tour/">展开全文 >></a>
         </p>
       
 
@@ -1179,11 +1177,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
+                <a href="javascript:void(0)" class="js-tag color2">dynamics365</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">dynamics365</a>
+                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1199,11 +1197,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jrebel</a>
+                <a href="javascript:void(0)" class="js-tag color1">ascii</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ascii</a>
+                <a href="javascript:void(0)" class="js-tag color2">jrebel</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1211,11 +1209,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">area</a>
+                <a href="javascript:void(0)" class="js-tag color5">cors</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">cors</a>
+                <a href="javascript:void(0)" class="js-tag color5">area</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1255,11 +1253,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">gradle</a>
+                <a href="javascript:void(0)" class="js-tag color4">frp</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">frp</a>
+                <a href="javascript:void(0)" class="js-tag color2">gradle</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1267,15 +1265,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">haproxy</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">haproxy</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">shortkey</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">nacos</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1284,10 +1286,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nacos</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1311,7 +1309,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">music</a>
+                <a href="javascript:void(0)" class="js-tag color4">selenium</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1320,6 +1318,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nuget</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">music</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1347,15 +1349,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sed</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">sqlmap</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1395,10 +1397,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">selenium</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">frida</a>
               </li>
              
@@ -1435,11 +1433,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">d365</a>
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
+                <a href="javascript:void(0)" class="js-tag color5">d365</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1487,6 +1485,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">jpa</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hibernate</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">bigdecimal</a>
               </li>
              
@@ -1495,19 +1501,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hibernate</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">jdk</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jpa</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1567,15 +1565,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">centos7</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vm</a>
+                <a href="javascript:void(0)" class="js-tag color3">centos7</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1584,6 +1578,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">os</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1611,19 +1609,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ab</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">wget</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color3">ab</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1655,11 +1653,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">fedora</a>
+                <a href="javascript:void(0)" class="js-tag color2">debian</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">debian</a>
+                <a href="javascript:void(0)" class="js-tag color2">fedora</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -247,6 +247,189 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-flutter/flutter02-config-gradle" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/30/flutter/flutter02-config-gradle/">flutter 卡在 Download https://services.gradle.org/xxx 及 Initializing gradle</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/30/flutter/flutter02-config-gradle/" class="archive-article-date">
+  	<time datetime="2019-08-30T15:08:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-30</time>
+  	更新：2025-08-29
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flutter doctor -v</span><br><span class="line">flutter run -v</span><br></pre></td></tr></table></figure>
+<p><strong>flutter gradle配置</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 指定jdk</span></span><br><span class="line">flutter config --jdk-dir <span class="string">"D:\develop\Java\jdk1.8.0_202"</span></span><br><span class="line">flutter config --jdk-dir <span class="string">"D:\develop\Java\jdk-17.0.13+11"</span></span><br><span class="line"></span><br><span class="line">flutter doctor --android-licenses</span><br></pre></td></tr></table></figure>
+<p>打开 <strong>flutter SDK</strong> 中的 gradle 配置文件，例如：D:\develop\flutter\flutter\packages\flutter_tools\gradle\settings.gradle.kts(flutter 3.35.2)</p>
+<p>新增<code>maven(&quot;https://repo.huaweicloud.com/repository/maven/&quot;)</code></p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">dependencyResolutionManagement &#123;</span><br><span class="line">    <span class="comment">//repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)</span></span><br><span class="line">    repositories &#123;</span><br><span class="line">        maven(<span class="string">"https://repo.huaweicloud.com/repository/maven/"</span>)</span><br><span class="line">        google()</span><br><span class="line">        mavenCentral()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2019/08/30/flutter/flutter02-config-gradle/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">flutter</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/flutter//" class="article-tag-list-link color3">flutter</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/30/flutter/flutter02-config-gradle/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+    <article id="post-flutter/flutter01-android-not-install" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/30/flutter/flutter01-android-not-install/">Android Studio not installed</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/30/flutter/flutter01-android-not-install/" class="archive-article-date">
+  	<time datetime="2019-08-30T10:54:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-30</time>
+  	更新：2025-08-29
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter doctor -v</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[!] Android Studio (not installed)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[!] Android Studio</span><br><span class="line">    X Flutter plugin not installed; this adds Flutter specific functionality.</span><br><span class="line">    X Dart plugin not installed; this adds Dart specific functionality.</span><br></pre></td></tr></table></figure>
+<p>由于自定义了Android Studio的缓存目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#---------------------------------------------------------------------</span><br><span class="line"># Uncomment this option if you want to customize path to IDE config folder. Make sure you&apos;re using forward slashes.</span><br><span class="line">#---------------------------------------------------------------------</span><br><span class="line"># idea.config.path=$&#123;user.home&#125;/.AndroidStudio/config</span><br><span class="line">idea.config.path=D:/download/JetBrains/.AndroidStudio/config</span><br><span class="line"></span><br><span class="line">#---------------------------------------------------------------------</span><br><span class="line"># Uncomment this option if you want to customize path to IDE system folder. Make sure you&apos;re using forward slashes.</span><br><span class="line">#---------------------------------------------------------------------</span><br><span class="line"># idea.system.path=$&#123;user.home&#125;/.AndroidStudio/system</span><br><span class="line">idea.system.path=D:/download/JetBrains/.AndroidStudio/system</span><br><span class="line"></span><br><span class="line">#---------------------------------------------------------------------</span><br><span class="line"># Uncomment this option if you want to customize path to user installed plugins folder. Make sure you&apos;re using forward slashes.</span><br><span class="line">#---------------------------------------------------------------------</span><br><span class="line">idea.plugins.path=$&#123;idea.config.path&#125;/plugins</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flutter config --android-sdk=&quot;D:\download\android\sdk&quot;</span><br><span class="line">flutter config --android-studio-dir=&quot;C:\Android\Android Studio&quot;</span><br></pre></td></tr></table></figure>
+<p><code>Linux 设置环境变量</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 环境变量</span><br><span class="line">export PUB_HOSTED_URL=https://dart-pub.mirrors.sjtug.sjtu.edu.cn</span><br><span class="line">export FLUTTER_STORAGE_BASE_URL=https://mirrors.sjtug.sjtu.edu.cn</span><br><span class="line"></span><br><span class="line"># 另外还需要</span><br><span class="line"># Flutter SDK位置</span><br><span class="line">export PATH=/opt/flutter/bin:$PATH </span><br><span class="line"></span><br><span class="line"># Android SDK位置</span><br><span class="line">export ANDROID_HOME=/opt/android/sdk</span><br><span class="line">export PATH=$&#123;PATH&#125;:$&#123;ANDROID_HOME&#125;/tools</span><br><span class="line">export PATH=$&#123;PATH&#125;:$&#123;ANDROID_HOME&#125;/platform-tools</span><br></pre></td></tr></table></figure>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><blockquote>
+<p><a href="https://blog.csdn.net/tangxw1991/article/details/79773191" target="_blank" rel="noopener">https://blog.csdn.net/tangxw1991/article/details/79773191</a></p>
+<p><a href="https://www.cnblogs.com/lxlx1798/p/11049922.html" target="_blank" rel="noopener">flutter命令详解</a></p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">flutter</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/30/flutter/flutter01-android-not-install/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-ss-site" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -261,7 +444,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/28/ss-site/" class="archive-article-date">
   	<time datetime="2019-08-28T09:36:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-  	更新：2025-08-20
+  	更新：2025-08-29
 </a>
         
       </header>
@@ -338,7 +521,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/28/vip-parse-line/" class="archive-article-date">
   	<time datetime="2019-08-28T09:27:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-  	更新：2025-08-20
+  	更新：2025-08-29
 </a>
         
       </header>
@@ -428,7 +611,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/28/ejs-sample/" class="archive-article-date">
   	<time datetime="2019-08-28T09:10:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-  	更新：2025-08-20
+  	更新：2025-08-29
 </a>
         
       </header>
@@ -508,7 +691,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/28/java/tomcat-start-slow/" class="archive-article-date">
   	<time datetime="2019-08-28T09:06:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-  	更新：2025-08-20
+  	更新：2025-08-29
 </a>
         
       </header>
@@ -601,7 +784,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/28/vscode/" class="archive-article-date">
   	<time datetime="2019-08-28T09:00:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-  	更新：2025-08-20
+  	更新：2025-08-29
 </a>
         
       </header>
@@ -680,7 +863,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/28/colorlib-ng/" class="archive-article-date">
   	<time datetime="2019-08-28T08:41:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-  	更新：2025-08-20
+  	更新：2025-08-29
 </a>
         
       </header>
@@ -761,7 +944,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/28/archlinux/archlinux/" class="archive-article-date">
   	<time datetime="2019-08-28T08:41:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-  	更新：2025-08-20
+  	更新：2025-08-29
 </a>
         
       </header>
@@ -841,7 +1024,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/28/os/archlinux/archlinux/" class="archive-article-date">
   	<time datetime="2019-08-28T08:41:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-  	更新：2025-08-20
+  	更新：2025-08-29
 </a>
         
       </header>
@@ -878,167 +1061,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/08/28/os/archlinux/archlinux/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-java/qrcode-java" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/28/java/qrcode-java/">Java生成二维码工具类</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/28/java/qrcode-java/" class="archive-article-date">
-  	<time datetime="2019-08-28T08:31:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-  	更新：2025-08-20
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>二维码转base64</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String registerPage = lrProperties.getRegisterPage();</span><br><span class="line">ByteArrayOutputStream bout = <span class="keyword">new</span> ByteArrayOutputStream();</span><br><span class="line">QRCodeUtil.encode(registerPage + <span class="string">"?uid="</span> + uid, bout);</span><br><span class="line"><span class="keyword">byte</span>[] bytes = bout.toByteArray();</span><br><span class="line">String qrcodeStr = <span class="string">"data:image/png;base64,"</span> + Base64Utils.encodeToString(bytes);</span><br><span class="line">Map&lt;String, String&gt; result = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">result.put(<span class="string">"qrcode"</span>, qrcodeStr);</span><br></pre></td></tr></table></figure></p>
-        
-          <a class="article-more-a" href="/2019/08/28/java/qrcode-java/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">qrcode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/28/java/qrcode-java/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-ffmpeg/ffmpeg-dl-video" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/28/ffmpeg/ffmpeg-dl-video/">ffmpeg下载腾讯视频</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/28/ffmpeg/ffmpeg-dl-video/" class="archive-article-date">
-  	<time datetime="2019-08-28T08:26:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-  	更新：2025-08-20
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="ffmpeg-命令"><a href="#ffmpeg-命令" class="headerlink" title="ffmpeg 命令"></a>ffmpeg 命令</h2><p>ffmpeg -re -i 01.mp4 -vcodec libx264 -acodec aac -f flv rtmp://192.168.18.200/live/abc</p>
-<p><strong>权限认证</strong></p>
-<p>ffmpeg -re -i 02.mp4 -vcodec libx264 -acodec aac -f flv rtmp://admin:<a href="mailto:admin@192.168.18.200" target="_blank" rel="noopener">admin@192.168.18.200</a>/live/abc</p>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mp4 output.avi</span><br><span class="line"></span><br><span class="line"># 截取视频片段(10s的广告)</span><br><span class="line">ffmpeg -i https://apd-c8949b02f1a326aa5a3940a4825466c4.v.smtcdns.com/moviets.tc.qq.com/AVcM6tNF34wIequ-XF2Y3Sowf_00vFI9H9GzVXLO3c_c/uwMRJfz-r5jAYaQXGdGnC2_ppdhgmrDlPaRvaV7F2Ic/5fK36acBBYOIGYxakL9mMbA1__Q_jBTYTn_CrQ-Ubk5h9aPJolXQN1ENzt3tBnWQDBTPYvGkICGHWtOrYkS3OBMXZeXH2SDYhhHxRFSw5mjWH5bANVG7GIm32Ej1G2QcyyGUsoNdF6mtaUdRujLwgSioRWsYFIBT/c0029q2dzvv.321002.ts.m3u8?ver=4 -ss 00:01:00 -t 00:00:10 -vcodec copy -acodec copy cutad.mp4</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ffmpeg -i https://apd-c8949b02f1a326aa5a3940a4825466c4.v.smtcdns.com/moviets.tc.qq.com/AVcM6tNF34wIequ-XF2Y3Sowf_00vFI9H9GzVXLO3c_c/uwMRJfz-r5jAYaQXGdGnC2_ppdhgmrDlPaRvaV7F2Ic/5fK36acBBYOIGYxakL9mMbA1__Q_jBTYTn_CrQ-Ubk5h9aPJolXQN1ENzt3tBnWQDBTPYvGkICGHWtOrYkS3OBMXZeXH2SDYhhHxRFSw5mjWH5bANVG7GIm32Ej1G2QcyyGUsoNdF6mtaUdRujLwgSioRWsYFIBT/c0029q2dzvv.321002.ts.m3u8?ver=4 -vf trim=60:71 cutad2.mp4</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2019/08/28/ffmpeg/ffmpeg-dl-video/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ffmpeg</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/28/ffmpeg/ffmpeg-dl-video/">展开全文 >></a>
         </p>
       
 
@@ -1178,11 +1200,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
+                <a href="javascript:void(0)" class="js-tag color2">dynamics365</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">dynamics365</a>
+                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1198,11 +1220,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jrebel</a>
+                <a href="javascript:void(0)" class="js-tag color1">ascii</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ascii</a>
+                <a href="javascript:void(0)" class="js-tag color2">jrebel</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1210,11 +1232,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">area</a>
+                <a href="javascript:void(0)" class="js-tag color5">cors</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">cors</a>
+                <a href="javascript:void(0)" class="js-tag color5">area</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1254,11 +1276,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">gradle</a>
+                <a href="javascript:void(0)" class="js-tag color4">frp</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">frp</a>
+                <a href="javascript:void(0)" class="js-tag color2">gradle</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1266,15 +1288,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">haproxy</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">haproxy</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">shortkey</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">nacos</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1283,10 +1309,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nacos</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1310,7 +1332,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">music</a>
+                <a href="javascript:void(0)" class="js-tag color4">selenium</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1319,6 +1341,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nuget</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">music</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1346,15 +1372,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sed</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">sqlmap</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1394,10 +1420,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">selenium</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">frida</a>
               </li>
              
@@ -1434,11 +1456,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">d365</a>
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
+                <a href="javascript:void(0)" class="js-tag color5">d365</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1486,6 +1508,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">jpa</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hibernate</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">bigdecimal</a>
               </li>
              
@@ -1494,19 +1524,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hibernate</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">jdk</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jpa</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1566,15 +1588,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">centos7</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vm</a>
+                <a href="javascript:void(0)" class="js-tag color3">centos7</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1583,6 +1601,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">os</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1610,19 +1632,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ab</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">wget</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color3">ab</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1654,11 +1676,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">fedora</a>
+                <a href="javascript:void(0)" class="js-tag color2">debian</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">debian</a>
+                <a href="javascript:void(0)" class="js-tag color2">fedora</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -247,6 +247,173 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-displacement" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/11/displacement/">位移操作</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/11/displacement/" class="archive-article-date">
+  	<time datetime="2019-07-11T15:20:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-11</time>
+  	更新：2025-08-29
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>以Java为例讲解位移</p>
+<h2 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h2><p><strong>向左位移操作符&lt;&lt;</strong></p>
+<p>向左位移操作符会把一个数字向左位移，右边的位用0来补充。n &lt;&lt; s 的值是将n向左移动s位。相当于将操作数乘以2的s次幂。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(<span class="number">1</span> &lt;&lt; <span class="number">3</span>); <span class="comment">// 1 x 2^3</span></span><br><span class="line">System.out.println(<span class="number">2</span> &lt;&lt; <span class="number">1</span>); <span class="comment">// 2 x 2^1</span></span><br><span class="line">System.out.println(<span class="number">3</span> &lt;&lt; <span class="number">2</span>); <span class="comment">// 3 x 2^2</span></span><br><span class="line">System.out.println(<span class="number">4</span> &lt;&lt; <span class="number">4</span>); <span class="comment">// 4 x 4^2</span></span><br></pre></td></tr></table></figure>
+<p>例如，将一个值位1的int类型数字向左移动3个位置(1 &lt;&lt; 3),结果是8.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 将操作数转为二进制.</span><br><span class="line">0000 0000 0000 0000 0000 0000 0000 0001</span><br><span class="line">向左移动3位</span><br><span class="line">0000 0000 0000 0000 0000 0000 0000 1000</span><br><span class="line">结果等于 8 = 1 x 2^3</span><br></pre></td></tr></table></figure>
+<p>int类型操作数，只有位移距离的前5位会使用，位移的距离必须在0~31之间，如果传递的数字大于31，只有前5位会使用，也就是说如果int类型x&lt;&lt;32等同于 x &lt;&lt; 0; x &lt;&lt; 33 等同于 x &lt;&lt; 1;</p>
+<p>如果左操作数是long类型，位移距离中只有前6位会使用，实际位移距离的范围在0~63之间。</p>
+        
+          <a class="article-more-a" href="/2019/07/11/displacement/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">位移</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/11/displacement/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+    <article id="post-dotnet" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/10/dotnet/">dotnet</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/10/dotnet/" class="archive-article-date">
+  	<time datetime="2019-07-10T09:06:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-10</time>
+  	更新：2025-08-29
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>反编译工具</strong> <a href="https://github.com/icsharpcode/ILSpy" target="_blank" rel="noopener">https://github.com/icsharpcode/ILSpy</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">D:\&gt;dotnet --version</span><br><span class="line">2.1.604</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">D:\&gt;dotnet --info</span><br><span class="line">.NET Core SDK（反映任何 global.json）:</span><br><span class="line"> Version:   2.1.604</span><br><span class="line"> Commit:    c174d0ea92</span><br><span class="line"></span><br><span class="line">运行时环境:</span><br><span class="line"> OS Name:     Windows</span><br><span class="line"> OS Version:  10.0.17134</span><br><span class="line"> OS Platform: Windows</span><br><span class="line"> RID:         win10-x64</span><br><span class="line"> Base Path:   C:\Program Files\dotnet\sdk\2.1.604\</span><br><span class="line"></span><br><span class="line">Host (useful for support):</span><br><span class="line">  Version: 2.1.11</span><br><span class="line">  Commit:  d6a5616240</span><br><span class="line"></span><br><span class="line">.NET Core SDKs installed:</span><br><span class="line">  2.1.503 [C:\Program Files\dotnet\sdk]</span><br><span class="line">  2.1.602 [C:\Program Files\dotnet\sdk]</span><br><span class="line">  2.1.604 [C:\Program Files\dotnet\sdk]</span><br><span class="line"></span><br><span class="line">.NET Core runtimes installed:</span><br><span class="line">  Microsoft.AspNetCore.All 2.1.7 [C:\Program Files\dotnet\shared\Microsoft.AspNetCore.All]</span><br><span class="line">  Microsoft.AspNetCore.All 2.1.9 [C:\Program Files\dotnet\shared\Microsoft.AspNetCore.All]</span><br><span class="line">  Microsoft.AspNetCore.All 2.1.11 [C:\Program Files\dotnet\shared\Microsoft.AspNetCore.All]</span><br><span class="line">  Microsoft.AspNetCore.App 2.1.7 [C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App]</span><br><span class="line">  Microsoft.AspNetCore.App 2.1.9 [C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App]</span><br><span class="line">  Microsoft.AspNetCore.App 2.1.11 [C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App]</span><br><span class="line">  Microsoft.NETCore.App 2.1.7 [C:\Program Files\dotnet\shared\Microsoft.NETCore.App]</span><br><span class="line">  Microsoft.NETCore.App 2.1.9 [C:\Program Files\dotnet\shared\Microsoft.NETCore.App]</span><br><span class="line">  Microsoft.NETCore.App 2.1.11 [C:\Program Files\dotnet\shared\Microsoft.NETCore.App]</span><br><span class="line"></span><br><span class="line">To install additional .NET Core runtimes or SDKs:</span><br><span class="line">  https://aka.ms/dotnet-download</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2019/07/10/dotnet/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">dotnet.core</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/10/dotnet/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-alpine/alpine-dockerfile" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -261,7 +428,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/07/09/alpine/alpine-dockerfile/" class="archive-article-date">
   	<time datetime="2019-07-09T09:25:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-09</time>
-  	更新：2025-08-20
+  	更新：2025-08-29
 </a>
         
       </header>
@@ -343,7 +510,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/07/06/php/php-pdo1/" class="archive-article-date">
   	<time datetime="2019-07-06T06:38:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-06</time>
-  	更新：2025-08-20
+  	更新：2025-08-29
 </a>
         
       </header>
@@ -420,7 +587,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/07/05/lc58/" class="archive-article-date">
   	<time datetime="2019-07-05T17:27:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-05</time>
-  	更新：2025-08-20
+  	更新：2025-08-29
 </a>
         
       </header>
@@ -497,7 +664,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/07/04/db/mongodb/00mongodb/" class="archive-article-date">
   	<time datetime="2019-07-04T11:01:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-04</time>
-  	更新：2025-08-20
+  	更新：2025-08-29
 </a>
         
       </header>
@@ -602,7 +769,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/06/30/vs/" class="archive-article-date">
   	<time datetime="2019-06-30T14:29:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-30</time>
-  	更新：2025-08-20
+  	更新：2025-08-29
 </a>
         
       </header>
@@ -679,7 +846,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/06/27/java/keycloak/" class="archive-article-date">
   	<time datetime="2019-06-27T10:55:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-27</time>
-  	更新：2025-08-20
+  	更新：2025-08-29
 </a>
         
       </header>
@@ -761,7 +928,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/06/27/sso/keycloak6/" class="archive-article-date">
   	<time datetime="2019-06-27T10:55:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-27</time>
-  	更新：2025-08-20
+  	更新：2025-08-29
 </a>
         
       </header>
@@ -854,7 +1021,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/06/23/ruby-http/" class="archive-article-date">
   	<time datetime="2019-06-23T15:24:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-23</time>
-  	更新：2025-08-20
+  	更新：2025-08-29
 </a>
         
       </header>
@@ -893,186 +1060,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/06/23/ruby-http/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-ckplayer-cors" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/17/ckplayer-cors/">ckplayer跨域处理</a>
-    </h1>
-  
-
-        
-        <a href="/2019/06/17/ckplayer-cors/" class="archive-article-date">
-  	<time datetime="2019-06-17T17:50:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-17</time>
-  	更新：2025-08-20
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>ckpalyer播放优酷视频时，提示跨域，这里暂时使用nginx解决</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">upstream vip-parse &#123;</span><br><span class="line">    server 127.0.0.1:1337;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  y.me;</span><br><span class="line">    location / &#123;</span><br><span class="line"> 		proxy_pass http://vip-parse;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    #优酷视频</span><br><span class="line">    # http://y.me/youku/playlist/m3u8?vid=XNDIyNjgyMzAwOA&amp;type=mp4hd2v3&amp;ups_client_netip=7bab3602&amp;utid=YuTEE%2BJjUwMCAXxMObYVb8Eg&amp;ccode=0502&amp;psid=667ddf311a29de1942845a5d86cef583&amp;ups_userid=1705001125&amp;ups_ytid=1705001125&amp;duration=5067&amp;expire=18000&amp;drm_type=1&amp;drm_device=7&amp;ups_ts=1560749774&amp;onOff=0&amp;encr=0&amp;ups_key=874ab631f75bbe21beb8e9f0eae0efa4</span><br><span class="line">    </span><br><span class="line">    location ^~ /youku/playlist/m3u8 &#123;</span><br><span class="line">    	add_header &apos;Access-Control-Allow-Origin&apos; &apos;*&apos;;</span><br><span class="line">        add_header &apos;Access-Control-Allow-Credentials&apos; &apos;true&apos;;</span><br><span class="line">    	proxy_set_header host &apos;https://v.youku.com/&apos;;</span><br><span class="line">        proxy_set_header referer &apos;https://v.youku.com/&apos;;</span><br><span class="line">        proxy_pass http://pl-ali.youku.com/playlist/m3u8;</span><br><span class="line">    &#125;     </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">cors</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/17/ckplayer-cors/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-regex/mobile" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/04/regex/mobile/">验证手机号正则</a>
-    </h1>
-  
-
-        
-        <a href="/2019/06/04/regex/mobile/" class="archive-article-date">
-  	<time datetime="2019-06-04T16:02:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-04</time>
-  	更新：2025-08-20
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>移动号段：<br>134 135 136 137 138 139 144 147 148 150 151 152 157 158 159 172 178 182 183 184 187 188 198</p>
-<p>联通号段：<br>130 131 132 145 146 155 156 166 171 175 176 185 186</p>
-<p>电信号段：<br>133 141 149 153 170 173 174 177 179 180 181 189 199</p>
-<p><strong>移动号码验证</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isYdmobile</span>(<span class="params">s</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> yd = <span class="regexp">/1(3[4-9]|4[478]|5[012789]|7[28]|8[23478]|9[8])\d&#123;8&#125;/</span>; <span class="comment">//验证规则</span></span><br><span class="line">    <span class="keyword">var</span> flag = yd.test(s); <span class="comment">//true</span></span><br><span class="line">    <span class="keyword">return</span> flag;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>联通号码验证</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isLtmobile</span>(<span class="params">s</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> lt = <span class="regexp">/1(3[0-2]|4[56]|5[56]|6[6]|7[156]|8[56])\d&#123;8&#125;/</span>; <span class="comment">//验证规则</span></span><br><span class="line">    <span class="keyword">var</span> flag = lt.test(s); <span class="comment">//true</span></span><br><span class="line">    <span class="keyword">return</span> flag;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>电信号码验证</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isDxmobile</span>(<span class="params">s</span>)</span>&#123;</span><br><span class="line"> <span class="keyword">var</span> dx = <span class="regexp">/1(3[3]|4[19]|5[3]|7[03479]|8[019]|9[9])\d&#123;8&#125;/</span>; <span class="comment">//验证规则</span></span><br><span class="line"> <span class="keyword">var</span> flag = dx.test(s); <span class="comment">//true</span></span><br><span class="line"> <span class="keyword">return</span> flag;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
-<p><a href="https://blog.csdn.net/qq_43485006/article/details/88224335" target="_blank" rel="noopener">https://blog.csdn.net/qq_43485006/article/details/88224335</a></p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">regex</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/regex//" class="article-tag-list-link color1">regex</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/04/regex/mobile/">展开全文 >></a>
         </p>
       
 
@@ -1212,11 +1199,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
+                <a href="javascript:void(0)" class="js-tag color2">dynamics365</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">dynamics365</a>
+                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1232,11 +1219,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jrebel</a>
+                <a href="javascript:void(0)" class="js-tag color1">ascii</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ascii</a>
+                <a href="javascript:void(0)" class="js-tag color2">jrebel</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1244,11 +1231,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">area</a>
+                <a href="javascript:void(0)" class="js-tag color5">cors</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">cors</a>
+                <a href="javascript:void(0)" class="js-tag color5">area</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1288,11 +1275,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">gradle</a>
+                <a href="javascript:void(0)" class="js-tag color4">frp</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">frp</a>
+                <a href="javascript:void(0)" class="js-tag color2">gradle</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1300,15 +1287,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">haproxy</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">haproxy</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">shortkey</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">nacos</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1317,10 +1308,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nacos</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1344,7 +1331,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">music</a>
+                <a href="javascript:void(0)" class="js-tag color4">selenium</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1353,6 +1340,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nuget</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">music</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1380,15 +1371,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sed</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">sqlmap</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1428,10 +1419,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">selenium</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">frida</a>
               </li>
              
@@ -1468,11 +1455,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">d365</a>
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
+                <a href="javascript:void(0)" class="js-tag color5">d365</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1520,6 +1507,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">jpa</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hibernate</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">bigdecimal</a>
               </li>
              
@@ -1528,19 +1523,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hibernate</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">jdk</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jpa</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1600,15 +1587,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">centos7</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vm</a>
+                <a href="javascript:void(0)" class="js-tag color3">centos7</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1617,6 +1600,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">os</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1644,19 +1631,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ab</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">wget</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color3">ab</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1688,11 +1675,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">fedora</a>
+                <a href="javascript:void(0)" class="js-tag color2">debian</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">debian</a>
+                <a href="javascript:void(0)" class="js-tag color2">fedora</a>
               </li>
              
               <li class="article-tag-list-item">
