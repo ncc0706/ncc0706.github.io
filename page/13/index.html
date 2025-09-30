@@ -253,6 +253,98 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-heroku/heroku-deploy-spring-boot-docker" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/27/heroku/heroku-deploy-spring-boot-docker/">heroku 部署 Spring Boot Docker Image</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/27/heroku/heroku-deploy-spring-boot-docker/" class="archive-article-date">
+  	<time datetime="2019-12-27T21:42:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-27</time>
+  	更新：2025-09-30
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="准备Docker-Image"><a href="#准备Docker-Image" class="headerlink" title="准备Docker Image"></a>准备Docker Image</h2><p>修改之前创建的<code>Spring Boot</code> 项目, 添加 <code>Docker</code> 插件</p>
+<p><code>build.gradle</code></p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">plugins &#123;</span><br><span class="line">    id <span class="string">'org.springframework.boot'</span> version <span class="string">'2.2.2.RELEASE'</span></span><br><span class="line">    id <span class="string">'io.spring.dependency-management'</span> version <span class="string">'1.0.8.RELEASE'</span></span><br><span class="line">    id <span class="string">'java'</span></span><br><span class="line">    id <span class="string">'com.palantir.docker'</span> version <span class="string">'0.22.1'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">group = <span class="string">'io.arukas'</span></span><br><span class="line">version = <span class="string">'0.0.1-SNAPSHOT'</span></span><br><span class="line">sourceCompatibility = <span class="string">'1.8'</span></span><br><span class="line">targetCompatibility = <span class="string">'1.8'</span></span><br><span class="line"></span><br><span class="line">bootJar &#123;</span><br><span class="line">    baseName = <span class="string">'spring-boot-heroku-gradle'</span></span><br><span class="line">    version = <span class="string">'0.0.1'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">docker &#123;</span><br><span class="line">    dependsOn build</span><br><span class="line">    tags <span class="string">'latest'</span></span><br><span class="line">    dockerfile file(<span class="string">'Dockerfile'</span>)</span><br><span class="line">    name <span class="string">"ncc0706/$&#123;bootJar.baseName&#125;"</span></span><br><span class="line">    files bootJar.archivePath</span><br><span class="line">    buildArgs([<span class="string">'JAR_FILE'</span>: <span class="string">"$&#123;bootJar.archiveName&#125;"</span>])</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">repositories &#123;</span><br><span class="line">    mavenCentral()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">dependencies &#123;</span><br><span class="line">    implementation <span class="string">'org.springframework.boot:spring-boot-starter-web'</span></span><br><span class="line">    testImplementation(<span class="string">'org.springframework.boot:spring-boot-starter-test'</span>) &#123;</span><br><span class="line">        exclude <span class="string">group:</span> <span class="string">'org.junit.vintage'</span>, <span class="string">module:</span> <span class="string">'junit-vintage-engine'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test &#123;</span><br><span class="line">    useJUnitPlatform()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2019/12/27/heroku/heroku-deploy-spring-boot-docker/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">heroku</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/heroku//" class="article-tag-list-link color2">heroku</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/27/heroku/heroku-deploy-spring-boot-docker/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-heroku/heroku-deploy-spring-boot" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -267,7 +359,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/12/27/heroku/heroku-deploy-spring-boot/" class="archive-article-date">
   	<time datetime="2019-12-27T20:31:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-27</time>
-  	更新：2025-09-26
+  	更新：2025-09-30
 </a>
         
       </header>
@@ -358,7 +450,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/12/17/php/laravel/laravel-on-heroku/" class="archive-article-date">
   	<time datetime="2019-12-17T20:12:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-17</time>
-  	更新：2025-09-26
+  	更新：2025-09-30
 </a>
         
       </header>
@@ -449,7 +541,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/12/15/python/python-selenium/" class="archive-article-date">
   	<time datetime="2019-12-15T10:51:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-15</time>
-  	更新：2025-09-26
+  	更新：2025-09-30
 </a>
         
       </header>
@@ -539,7 +631,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/12/14/ffmpeg/ffmpeg-encryption-m3u8/" class="archive-article-date">
   	<time datetime="2019-12-14T20:32:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
-  	更新：2025-09-26
+  	更新：2025-09-30
 </a>
         
       </header>
@@ -629,7 +721,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/12/06/php/thinkphp/thinkphp/" class="archive-article-date">
   	<time datetime="2019-12-06T12:46:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-06</time>
-  	更新：2025-09-26
+  	更新：2025-09-30
 </a>
         
       </header>
@@ -694,7 +786,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/12/06/php/laravel/laravel/" class="archive-article-date">
   	<time datetime="2019-12-06T12:46:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-06</time>
-  	更新：2025-09-26
+  	更新：2025-09-30
 </a>
         
       </header>
@@ -798,7 +890,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/11/24/flutter/flutter03-MaterialApp-title/" class="archive-article-date">
   	<time datetime="2019-11-24T12:15:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-24</time>
-  	更新：2025-09-26
+  	更新：2025-09-30
 </a>
         
       </header>
@@ -1058,7 +1150,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/10/11/java/thymeleaf-tutorial-basic/" class="archive-article-date">
   	<time datetime="2019-10-11T10:15:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-11</time>
-  	更新：2025-09-26
+  	更新：2025-09-30
 </a>
         
       </header>
@@ -1103,89 +1195,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/10/11/java/thymeleaf-tutorial-basic/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-jna-sample" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/12/jna-sample/">jna简单使用</a>
-    </h1>
-  
-
-        
-        <a href="/2019/09/12/jna-sample/" class="archive-article-date">
-  	<time datetime="2019-09-12T11:27:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-12</time>
-  	更新：2025-09-26
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/assets/images/2019-09-12/girl-4440487_1920.jpg" alt="美女"></p>
-<p>新建Java项目，这里使用gradle构建项目，结构如下:</p>
-<p><img src="/assets/images/2019-09-12/01.png" alt="项目结构"></p>
-<p><code>引入jna依赖</code></p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">compile <span class="string">group:</span> <span class="string">'net.java.dev.jna'</span>, <span class="string">name:</span> <span class="string">'jna'</span>, <span class="string">version:</span> <span class="string">'5.4.0'</span></span><br><span class="line">compile <span class="string">group:</span> <span class="string">'net.java.dev.jna'</span>, <span class="string">name:</span> <span class="string">'jna-platform'</span>, <span class="string">version:</span> <span class="string">'5.4.0'</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2019/09/12/jna-sample/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jna</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/12/jna-sample/">展开全文 >></a>
         </p>
       
 
@@ -1353,11 +1362,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">was</a>
+                <a href="javascript:void(0)" class="js-tag color5">area</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">cors</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">was</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1370,10 +1383,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">位移</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">area</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1521,11 +1530,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tailwindcss</a>
+                <a href="javascript:void(0)" class="js-tag color4">sts</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">sts</a>
+                <a href="javascript:void(0)" class="js-tag color2">tailwindcss</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1537,11 +1546,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vsftp</a>
+                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
+                <a href="javascript:void(0)" class="js-tag color1">vsftp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1577,10 +1586,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">c</a>
               </li>
              
@@ -1589,15 +1594,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">d365</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">deno</a>
+                <a href="javascript:void(0)" class="js-tag color5">dart</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">dart</a>
+                <a href="javascript:void(0)" class="js-tag color5">deno</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1653,15 +1662,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">jdk</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">keycloak</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">spring-boot</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1673,7 +1686,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring-boot</a>
+                <a href="javascript:void(0)" class="js-tag color5">websocket</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1709,6 +1722,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">sails</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">nestjs</a>
               </li>
              
@@ -1733,10 +1750,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">sails</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">php</a>
               </li>
              
@@ -1749,11 +1762,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">requests</a>
+                <a href="javascript:void(0)" class="js-tag color1">regex</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">regex</a>
+                <a href="javascript:void(0)" class="js-tag color4">requests</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1813,11 +1826,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">rocky</a>
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
+                <a href="javascript:void(0)" class="js-tag color1">rocky</a>
               </li>
              
               <li class="article-tag-list-item">

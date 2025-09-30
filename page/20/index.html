@@ -253,6 +253,98 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-regex/regexp-sample-tencent" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/26/regex/regexp-sample-tencent/">正则匹配腾讯视频ID</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/26/regex/regexp-sample-tencent/" class="archive-article-date">
+  	<time datetime="2019-04-26T10:20:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-26</time>
+  	更新：2025-09-30
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> html = <span class="string">`</span></span><br><span class="line"><span class="string">&lt;script&gt;function getUrlParam(e,t)&#123;t=t||document.location.toString();var r=new RegExp("[?&amp;#]"+e+"=([^&amp;#]+)","i"),a=r.exec(t);return a&amp;&amp;a.length&gt;1?a[1]:""&#125;function getPtag()&#123;var e=getUrlParam("ptag")||getUrlParam("PTAG");return e?e+="#&#123;defaultTag&#125;#1":e=/https?:\/\/(.+?)(\/|$)/.test(document.referrer)?RegExp.$1+"#&#123;defaultTag&#125;#2":"v_qq_com#&#123;defaultTag&#125;#3",encodeURIComponent(e.replace("&#123;defaultTag&#125;","v.play.adaptor"))&#125;function appendSearch(e)&#123;var t,r,a=location.search||"",n=[],o=[];if(a.length&gt;0)for(a=a.substr(1),o=a.split("&amp;"),t=0,r=o.length;t&lt;r;t++)/^ptag=/i.test(o[t])||/^vid=/i.test(o[t])||n.push(o[t]);return n.length&gt;0&amp;&amp;(e=e+(-1==e.indexOf("?")?"?":"&amp;")+n.join("&amp;")),e&#125;var istablet=/android/i.test(navigator.userAgent)&amp;&amp;!/mobile/i.test(navigator.userAgent)&amp;&amp;!/youku/i.test(navigator.userAgent);if(!istablet&amp;&amp;!/ipad/i.test(navigator.userAgent)&amp;&amp;/(android)|(iphone)|(ipod)|(mqqbrowser)/i.test(navigator.userAgent)&amp;&amp;!/MI PAD/.test(navigator.userAgent)&amp;&amp;("string"!=typeof document.referrer||-1==document.referrer.indexOf("m.v.qq.com/")))try&#123;var ptag=getUrlParam("ptag")||getUrlParam("PTAG")||"v.play.adaptor",url='https://m.v.qq.com/play.html?cid=zvr5ohgsb72rnvd&amp;vid=z00300gtbcw&amp;ptag='+getPtag()+(document.referrer?"&amp;mreferrer="+encodeURIComponent(document.referrer):"");location.replace(appendSearch(url))&#125;catch(e)&#123;&#125;&lt;/script&gt;</span></span><br><span class="line"><span class="string">`</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">match方法匹配不到，返回null，</span></span><br><span class="line"><span class="comment">匹配到时</span></span><br><span class="line"><span class="comment">第0个元素返回匹配到的字符</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">index 返回匹配文本在目标字符中的起始位置</span></span><br><span class="line"><span class="comment">input 是对目标字符的引用</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">const</span> data = html.match(<span class="regexp">/cid=(?&lt;cid&gt;.*)&amp;vid=(?&lt;vid&gt;.*)&amp;ptag/</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(data)&#123;</span><br><span class="line">    <span class="comment">// ES6 解构赋值</span></span><br><span class="line">    <span class="keyword">const</span> &#123;cid, vid&#125; = data.groups</span><br><span class="line">    <span class="built_in">console</span>.log(cid, vid)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">regex</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/regex//" class="article-tag-list-link color1">regex</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/26/regex/regexp-sample-tencent/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-php/php-enable-file-get-contents" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -267,7 +359,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/19/php/php-enable-file-get-contents/" class="archive-article-date">
   	<time datetime="2019-04-19T14:44:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-19</time>
-  	更新：2025-09-26
+  	更新：2025-09-30
 </a>
         
       </header>
@@ -345,7 +437,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/19/php/php-xdebug/" class="archive-article-date">
   	<time datetime="2019-04-19T14:40:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-19</time>
-  	更新：2025-09-26
+  	更新：2025-09-30
 </a>
         
       </header>
@@ -429,7 +521,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/17/archlinux/archlinux-install-vscode/" class="archive-article-date">
   	<time datetime="2019-04-17T11:53:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-17</time>
-  	更新：2025-09-26
+  	更新：2025-09-30
 </a>
         
       </header>
@@ -506,7 +598,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/17/os/archlinux/archlinux-install-vscode/" class="archive-article-date">
   	<time datetime="2019-04-17T11:53:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-17</time>
-  	更新：2025-09-26
+  	更新：2025-09-30
 </a>
         
       </header>
@@ -583,7 +675,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/17/archlinux/archlinux-openssh/" class="archive-article-date">
   	<time datetime="2019-04-17T11:08:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-17</time>
-  	更新：2025-09-26
+  	更新：2025-09-30
 </a>
         
       </header>
@@ -661,7 +753,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/17/os/archlinux/archlinux-openssh/" class="archive-article-date">
   	<time datetime="2019-04-17T11:08:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-17</time>
-  	更新：2025-09-26
+  	更新：2025-09-30
 </a>
         
       </header>
@@ -739,7 +831,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/16/regex/dl-weishi-video/" class="archive-article-date">
   	<time datetime="2019-04-16T16:07:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-16</time>
-  	更新：2025-09-26
+  	更新：2025-09-30
 </a>
         
       </header>
@@ -820,7 +912,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/16/nodejs/install-nodejs-on-archlinux/" class="archive-article-date">
   	<time datetime="2019-04-16T09:01:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-16</time>
-  	更新：2025-09-26
+  	更新：2025-09-30
 </a>
         
       </header>
@@ -994,84 +1086,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-git/git-delete-commit-file-to-ignore" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/28/git/git-delete-commit-file-to-ignore/">Git删除已提交文件，并添加到.gitignore文件中</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/28/git/git-delete-commit-file-to-ignore/" class="archive-article-date">
-  	<time datetime="2019-03-28T10:07:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-28</time>
-  	更新：2025-09-26
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>不小心提交了，IDEA的配置文件，正确的删除方式如下：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git rm -r --cached demo/demo.iml</span><br><span class="line">git commit -m '删除demo.iml'</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 添加 *.iml 到.gitignore</span></span><br><span class="line">git commit -am '添加idea配置文件'</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/28/git/git-delete-commit-file-to-ignore/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/19/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="page-number" href="/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/page/21/">21</a><a class="page-number" href="/page/22/">22</a><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/21/">Next &raquo;</a>
@@ -1211,11 +1225,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">was</a>
+                <a href="javascript:void(0)" class="js-tag color5">area</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">cors</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">was</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1228,10 +1246,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">位移</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">area</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1379,11 +1393,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tailwindcss</a>
+                <a href="javascript:void(0)" class="js-tag color4">sts</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">sts</a>
+                <a href="javascript:void(0)" class="js-tag color2">tailwindcss</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1395,11 +1409,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vsftp</a>
+                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
+                <a href="javascript:void(0)" class="js-tag color1">vsftp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1435,10 +1449,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">c</a>
               </li>
              
@@ -1447,15 +1457,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">d365</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">deno</a>
+                <a href="javascript:void(0)" class="js-tag color5">dart</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">dart</a>
+                <a href="javascript:void(0)" class="js-tag color5">deno</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1511,15 +1525,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">jdk</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">keycloak</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">spring-boot</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1531,7 +1549,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring-boot</a>
+                <a href="javascript:void(0)" class="js-tag color5">websocket</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1567,6 +1585,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">sails</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">nestjs</a>
               </li>
              
@@ -1591,10 +1613,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">sails</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">php</a>
               </li>
              
@@ -1607,11 +1625,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">requests</a>
+                <a href="javascript:void(0)" class="js-tag color1">regex</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">regex</a>
+                <a href="javascript:void(0)" class="js-tag color4">requests</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1671,11 +1689,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">rocky</a>
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
+                <a href="javascript:void(0)" class="js-tag color1">rocky</a>
               </li>
              
               <li class="article-tag-list-item">
