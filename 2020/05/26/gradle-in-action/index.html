@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Gradle 基本操作 | Niu Yuxian&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安装官网下载后，解压即可使用，配置环境变量 123export GRADLE_HOME&#x3D;&#x2F;opt&#x2F;gradleexport GRADLE_USER_HOME&#x3D;~&#x2F;download&#x2F;gradleexport PATH&#x3D;$PATH:$GRADLE_HOME&#x2F;bin">
+  <meta name="description" content="安装https:&#x2F;&#x2F;gradle.org&#x2F;releases&#x2F; https:&#x2F;&#x2F;github.com&#x2F;livk-cloud&#x2F;spring-boot-extension https:&#x2F;&#x2F;docs.gradle.org&#x2F;current&#x2F;userguide&#x2F;build_environment.html#environment_variables_reference 官网下载后，解压即可使用，配置环境变量">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Gradle 基本操作">
 <meta property="og:url" content="http://yoursite.com/2020/05/26/gradle-in-action/index.html">
 <meta property="og:site_name" content="Niu Yuxian&#39;blog">
-<meta property="og:description" content="安装官网下载后，解压即可使用，配置环境变量 123export GRADLE_HOME&#x3D;&#x2F;opt&#x2F;gradleexport GRADLE_USER_HOME&#x3D;~&#x2F;download&#x2F;gradleexport PATH&#x3D;$PATH:$GRADLE_HOME&#x2F;bin">
+<meta property="og:description" content="安装https:&#x2F;&#x2F;gradle.org&#x2F;releases&#x2F; https:&#x2F;&#x2F;github.com&#x2F;livk-cloud&#x2F;spring-boot-extension https:&#x2F;&#x2F;docs.gradle.org&#x2F;current&#x2F;userguide&#x2F;build_environment.html#environment_variables_reference 官网下载后，解压即可使用，配置环境变量">
 <meta property="og:locale">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2020/05/26/elephant-254791_1920.jpg">
 <meta property="article:published_time" content="2020-05-26T19:30:13.000Z">
@@ -280,10 +280,25 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2020/05/26/elephant-254791_1920.jpg" alt="Gradle"></p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>官网下载后，解压即可使用，配置环境变量</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><a target="_blank" rel="noopener" href="https://gradle.org/releases/">https://gradle.org/releases/</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/livk-cloud/spring-boot-extension">https://github.com/livk-cloud/spring-boot-extension</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.gradle.org/current/userguide/build_environment.html#environment_variables_reference">https://docs.gradle.org/current/userguide/build_environment.html#environment_variables_reference</a></p>
+<p>官网下载后，解压即可使用，配置环境变量</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> GRADLE_HOME=/opt/gradle</span><br><span class="line"><span class="built_in">export</span> GRADLE_USER_HOME=~/download/gradle</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$GRADLE_HOME</span>/bin</span><br></pre></td></tr></table></figure>
 
+<p>windows也可以创建软链接</p>
+<p>必须通过cmd窗口，且目标文件&#x2F;文件夹不存在</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mklink /J D:\develop\gradle D:\develop\gradle-4.10.2</span><br><span class="line"></span><br><span class="line">mklink /J D:\develop\gradle D:\develop\gradle-5.5</span><br></pre></td></tr></table></figure>
+
 <span id="more"></span>
+
+<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">grade init 创建项目</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## 跳过测试</span></span><br><span class="line">gradle build -x <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">gradle init --dsl kotlin</span><br><span class="line"></span><br><span class="line">Select <span class="built_in">type</span> of project to generate:</span><br><span class="line">  1: basic</span><br><span class="line">  2: application</span><br><span class="line">  3: library</span><br><span class="line">  4: Gradle plugin</span><br><span class="line">Enter selection (default: basic) [1..4]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 依据构建名称排除</span><br><span class="line"></span><br><span class="line">exclude module: <span class="string">&#x27;oktokeep&#x27;</span></span><br><span class="line"></span><br><span class="line">// 依据组织名称排除</span><br><span class="line"></span><br><span class="line">exclude group: <span class="string">&#x27;org.test&#x27;</span></span><br><span class="line"></span><br><span class="line">// 依据组织名称+构件名称排除</span><br><span class="line"></span><br><span class="line">exclude group: <span class="string">&#x27;org.test&#x27;</span>, module: <span class="string">&#x27;oktokeep&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
 
 <h2 id="全局配置文件"><a href="#全局配置文件" class="headerlink" title="全局配置文件"></a>全局配置文件</h2><p>可以自己指定<code>GRADLE_USER_HOME</code>，默认为当前用户目录下面的<code>.gradle</code>目录</p>
 <p><code>init.gradle</code> 更换为国内镜像地址</p>
@@ -296,6 +311,17 @@ var _hmt = _hmt || [];
 
 <p><code>gradle.properties</code> 优化配置</p>
 <figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#开启线程守护，第一次编译时开线程，之后就不会再开了</span></span><br><span class="line"><span class="attr">org.gradle.daemon</span>=<span class="string">true</span></span><br><span class="line"><span class="comment">#配置编译时的虚拟机大小</span></span><br><span class="line"><span class="attr">org.gradle.jvmargs</span>=<span class="string">-Xmx2048m -XX:MaxPermSize=512m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8</span></span><br><span class="line"><span class="comment">#开启并行编译，相当于多条线程再走</span></span><br><span class="line"><span class="attr">org.gradle.parallel</span>=<span class="string">true</span></span><br><span class="line"><span class="comment">#启用新的孵化模式</span></span><br><span class="line"><span class="attr">org.gradle.configureondemand</span>=<span class="string">true</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="IDEA、Android-studio-有时会下载-src-包"><a href="#IDEA、Android-studio-有时会下载-src-包" class="headerlink" title="IDEA、Android studio 有时会下载 src 包"></a>IDEA、Android studio 有时会下载 src 包</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GRADLE_USER_HOME</span><br><span class="line">D:\download\gradle\caches\modules-2\files-2.1\gradle\gradle\8.14.5</span><br></pre></td></tr></table></figure>
+
+<h2 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h2><p><a target="_blank" rel="noopener" href="https://medium.com/agorapulse-stories/how-to-manage-versions-using-maven-bom-gradle-and-github-b3fd94301655">https://medium.com/agorapulse-stories/how-to-manage-versions-using-maven-bom-gradle-and-github-b3fd94301655</a></p>
+<p><a target="_blank" rel="noopener" href="https://tomgregory.com/gradle-implementation-vs-compile-dependencies/">https://tomgregory.com/gradle-implementation-vs-compile-dependencies/</a></p>
+<p>Gradle 的 platform 只会为 <code>implementation</code>、<code>api</code>、<code>compileOnly</code>、<code>testImplementation</code> 等依赖自动分配版本，<strong>不会自动为 annotationProcessor 赋值</strong>，所以必须手动加上版本号。</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">    <span class="comment">// platform</span></span><br><span class="line">    <span class="comment">// Load bill of materials (BOM) for Spring Boot.</span></span><br><span class="line">    <span class="comment">// The dependencies in the BOM will be</span></span><br><span class="line">    <span class="comment">// dependency constraints in our build.</span></span><br><span class="line">    implementation(platform(<span class="string">&quot;org.springframework.boot:spring-boot-dependencies:2.1.4.RELEASE&quot;</span>))</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// Use dependency defined in BOM.</span></span><br><span class="line">    <span class="comment">// Version is not needed, because the version</span></span><br><span class="line">    <span class="comment">// defined in the BOM is a dependency constraint</span></span><br><span class="line">    <span class="comment">// that is used.</span></span><br><span class="line">    implementation(<span class="string">&quot;commons-codec:commons-codec&quot;</span>)</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// Override version for dependency in the BOM.</span></span><br><span class="line">    <span class="comment">// Version in BOM is 1.23.</span></span><br><span class="line">    implementation(group = <span class="string">&quot;org.yaml&quot;</span>,</span><br><span class="line">                   name = <span class="string">&quot;snakeyaml&quot;</span>,</span><br><span class="line">                   version = <span class="string">&quot;1.24&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">    <span class="comment">// enforcedPlatform</span></span><br><span class="line">    <span class="comment">// Load bill of materials (BOM) for Spring Boot.</span></span><br><span class="line">    <span class="comment">// The dependencies in the BOM will be</span></span><br><span class="line">    <span class="comment">// dependency constraints in our build, but</span></span><br><span class="line">    <span class="comment">// the versions in the BOM are forced for</span></span><br><span class="line">    <span class="comment">// used dependencies.</span></span><br><span class="line">    implementation(enforcedPlatform(<span class="string">&quot;org.springframework.boot:spring-boot-dependencies:2.1.4.RELEASE&quot;</span>))</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// Use dependency defined in BOM.</span></span><br><span class="line">    <span class="comment">// Version is not needed, because the version</span></span><br><span class="line">    <span class="comment">// defined in the BOM is a dependency constraint</span></span><br><span class="line">    <span class="comment">// that is used.</span></span><br><span class="line">    implementation(<span class="string">&quot;commons-codec:commons-codec&quot;</span>)</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// Version in BOM is 1.23 and because</span></span><br><span class="line">    <span class="comment">// we use enforcedPlatform the version</span></span><br><span class="line">    <span class="comment">// will be 1.23 once the dependency is resolved,</span></span><br><span class="line">    <span class="comment">// even though we define a newer version explicitly.</span></span><br><span class="line">    implementation(group = <span class="string">&quot;org.yaml&quot;</span>,</span><br><span class="line">                   name = <span class="string">&quot;snakeyaml&quot;</span>,</span><br><span class="line">                   version = <span class="string">&quot;1.24&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="docker-多模块"><a href="#docker-多模块" class="headerlink" title="docker 多模块"></a>docker 多模块</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gradle clean build -x test :子模块名称:docker --info -Pdocker.repo=test -Pdocker.tag=1.0</span><br></pre></td></tr></table></figure>
 
 
       
@@ -638,15 +664,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">位移</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">dotnet.core</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ejs</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -714,6 +744,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">jna</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">selenium</a>
               </li>
              
@@ -758,7 +792,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jna</a>
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -798,10 +832,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
@@ -814,11 +844,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">android</a>
+                <a href="javascript:void(0)" class="js-tag color2">alpine</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">alpine</a>
+                <a href="javascript:void(0)" class="js-tag color3">android</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -850,15 +880,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">d365</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">dart</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -874,11 +904,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ffmpeg</a>
+                <a href="javascript:void(0)" class="js-tag color4">elk</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">elk</a>
+                <a href="javascript:void(0)" class="js-tag color2">ffmpeg</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -887,6 +917,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -922,11 +956,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">keycloak</a>
+                <a href="javascript:void(0)" class="js-tag color2">qrcode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -934,11 +964,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">thymeleaf</a>
+                <a href="javascript:void(0)" class="js-tag color4">keycloak</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">qrcode</a>
+                <a href="javascript:void(0)" class="js-tag color5">thymeleaf</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1050,23 +1080,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">postgres</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">postgre</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ejs</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mongo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">mongodb</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">postgres</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">postgre</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1086,6 +1112,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">rocky</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
@@ -1095,10 +1125,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">laravel</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">rocky</a>
               </li>
             
             <div class="clearfix"></div>
