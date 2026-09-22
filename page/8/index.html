@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Niu Yuxian&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -12,9 +12,9 @@
 <meta property="og:title" content="Niu Yuxian&#39;blog">
 <meta property="og:url" content="http://yoursite.com/page/8/index.html">
 <meta property="og:site_name" content="Niu Yuxian&#39;blog">
-<meta property="og:locale" content="default">
+<meta property="og:locale">
+<meta property="article:author" content="Niu Yuxian">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Niu Yuxian&#39;blog">
   
     <link rel="alternative" href="/atom.xml" title="Niu Yuxian&#39;blog" type="application/atom+xml">
   
@@ -53,8 +53,8 @@ var _hmt = _hmt || [];
 </script>
 
 
-</head>
-</html>
+<meta name="generator" content="Hexo 8.1.2"></head>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -67,7 +67,7 @@ var _hmt = _hmt || [];
 			<img src="/assets/images/logo.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Niu Yuxian</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
 		
 
@@ -151,7 +151,7 @@ var _hmt = _hmt || [];
 				<img src="/assets/images/logo.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Niu Yuxian</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
 			
 			
@@ -253,6 +253,96 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-desktop-shortcut" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/12/05/desktop-shortcut/">Windows 系统去掉桌面快捷图标（win8.1 ~ win10）</a>
+    </h1>
+  
+
+        
+        <a href="/2021/12/05/desktop-shortcut/" class="archive-article-date">
+  	<time datetime="2021-12-05T08:21:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-05</time>
+  	更新：2021-12-05
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>去掉win8.1的桌面快捷方式图标（必须以管理员运行）</p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">reg add &quot;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Icons&quot; /v <span class="number">29</span> /d &quot;<span class="variable">%systemroot%</span>\system32\imageres.dll,<span class="number">197</span>&quot; /t reg_sz /f</span><br><span class="line"><span class="built_in">taskkill</span> /f /im explorer.exe</span><br><span class="line"><span class="built_in">attrib</span> -s -r -h &quot;<span class="variable">%userprofile%</span>\AppData\Local\iconcache.db&quot;</span><br><span class="line"><span class="built_in">del</span> &quot;<span class="variable">%userprofile%</span>\AppData\Local\iconcache.db&quot; /f /q</span><br><span class="line"><span class="built_in">start</span> explorer</span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">windows</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/windows//" class="article-tag-list-link color3">windows</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/12/05/desktop-shortcut/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-k8s/k8s-kuboard" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -267,18 +357,22 @@ var _hmt = _hmt || [];
         
         <a href="/2021/12/04/k8s/k8s-kuboard/" class="archive-article-date">
   	<time datetime="2021-12-04T19:26:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-04</time>
-  	更新：2025-09-30
+  	更新：2021-12-04
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/firewalld/firewalld.conf</span><br><span class="line"></span><br><span class="line">## 改为 all</span><br><span class="line">LogDenied=all</span><br><span class="line"></span><br><span class="line">dmesg | grep -i reject</span><br></pre></td></tr></table></figure>
+        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/firewalld/firewalld.conf</span><br><span class="line"></span><br><span class="line">## 改为 all</span><br><span class="line">LogDenied=all</span><br><span class="line"></span><br><span class="line">dmesg | grep -i reject</span><br></pre></td></tr></table></figure>
+
 <p>开放端口 2381 端口是必须的</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">firewall-cmd --list-all</span><br><span class="line"></span><br><span class="line">firewall-cmd --permanent --add-port=30080/tcp</span><br><span class="line">firewall-cmd --permanent --add-port=30081/tcp</span><br><span class="line"></span><br><span class="line">## 所有节点</span><br><span class="line">firewall-cmd --permanent --add-port=30081/udp</span><br><span class="line"></span><br><span class="line">firewall-cmd --permanent --add-port=2381/tcp</span><br><span class="line"></span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">firewall-cmd --list-all</span><br><span class="line"></span><br><span class="line">firewall-cmd --permanent --add-port=30080/tcp</span><br><span class="line">firewall-cmd --permanent --add-port=30081/tcp</span><br><span class="line"></span><br><span class="line">## 所有节点</span><br><span class="line">firewall-cmd --permanent --add-port=30081/udp</span><br><span class="line"></span><br><span class="line">firewall-cmd --permanent --add-port=2381/tcp</span><br><span class="line"></span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl apply -f https://addons.kuboard.cn/kuboard/kuboard-v3.yaml</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl get pods -n kuboard -o wide</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl get pods -n kuboard -o wide</span><br></pre></td></tr></table></figure>
+
 <h3 id="访问-Kuboard"><a href="#访问-Kuboard" class="headerlink" title="访问 Kuboard"></a>访问 Kuboard</h3><ul>
 <li>在浏览器中打开链接 <code>http://your-node-ip-address:30080</code></li>
 <li>输入初始用户名和密码，并登录<ul>
@@ -287,8 +381,8 @@ var _hmt = _hmt || [];
 </ul>
 </li>
 </ul>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://kuboard.cn/install/v3/install-in-k8s.html" target="_blank" rel="noopener">https://kuboard.cn/install/v3/install-in-k8s.html</a></p>
-<p><a href="https://www.bbsmax.com/A/l1dy7EAgJe/" target="_blank" rel="noopener">https://www.bbsmax.com/A/l1dy7EAgJe/</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://kuboard.cn/install/v3/install-in-k8s.html">https://kuboard.cn/install/v3/install-in-k8s.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.bbsmax.com/A/l1dy7EAgJe/">https://www.bbsmax.com/A/l1dy7EAgJe/</a></p>
 
       
 
@@ -369,7 +463,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/11/26/nodejs/node-registry/" class="archive-article-date">
   	<time datetime="2021-11-26T21:59:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-26</time>
-  	更新：2025-09-30
+  	更新：2021-11-26
 </a>
         
       </header>
@@ -377,9 +471,10 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p>淘宝npm镜像站全新上线</p>
-<p>Web界面地址：<a href="https://npmmirror.com" target="_blank" rel="noopener">https://npmmirror.com</a></p>
-<p>npm 客户端使用地址：<a href="https://registry.npmmirror.com" target="_blank" rel="noopener">https://registry.npmmirror.com</a></p>
+<p>Web界面地址：<a target="_blank" rel="noopener" href="https://npmmirror.com/">https://npmmirror.com</a></p>
+<p>npm 客户端使用地址：<a target="_blank" rel="noopener" href="https://registry.npmmirror.com/">https://registry.npmmirror.com</a></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry https://registry.npmmirror.com/</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -460,23 +555,23 @@ var _hmt = _hmt || [];
         
         <a href="/2021/11/26/lua/vs2019-build-lua/" class="archive-article-date">
   	<time datetime="2021-11-26T18:59:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-26</time>
-  	更新：2025-09-30
+  	更新：2021-11-26
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="http://www.lua.org/versions.html" target="_blank" rel="noopener">http://www.lua.org/versions.html</a></p>
-<p> <a href="http://www.lua.org/download.html" target="_blank" rel="noopener">下载页面</a>，<a href="http://www.lua.org/ftp/lua-5.4.3.tar.gz" target="_blank" rel="noopener">下载地址</a></p>
-<p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/11/26/2021-11-26_191140.png" alt></p>
+        <p><a target="_blank" rel="noopener" href="http://www.lua.org/versions.html">http://www.lua.org/versions.html</a></p>
+<p> <a target="_blank" rel="noopener" href="http://www.lua.org/download.html">下载页面</a>，<a target="_blank" rel="noopener" href="http://www.lua.org/ftp/lua-5.4.3.tar.gz">下载地址</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/11/26/2021-11-26_191140.png"></p>
 <h2 id="生成-lua-静态库"><a href="#生成-lua-静态库" class="headerlink" title="生成 lua 静态库"></a>生成 lua 静态库</h2><ul>
-<li><p>使用 <code>Windows Desktop Wizard (Windows桌面向导)</code> 新建工程<br><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/11/26/2021-11-26_192104.png" alt></p>
+<li><p>使用 <code>Windows Desktop Wizard (Windows桌面向导)</code> 新建工程<br><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/11/26/2021-11-26_192104.png"></p>
 </li>
 <li><p>类型选择 <code>Static Library (静态库)</code> 空项目</p>
 </li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/11/26/2021-11-26_195606.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/11/26/2021-11-26_195606.png"></p>
         
           <a class="article-more-a" href="/2021/11/26/lua/vs2019-build-lua/#more">more >></a>
         
@@ -559,7 +654,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/11/14/nc/" class="archive-article-date">
   	<time datetime="2021-11-14T19:09:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-14</time>
-  	更新：2025-09-30
+  	更新：2021-11-14
 </a>
         
       </header>
@@ -567,9 +662,13 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p> TPC 端口</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">## 临时连接</span><br><span class="line">nc -l port</span><br><span class="line"></span><br><span class="line">## 保持多个连接</span><br><span class="line">nc -lk port</span><br><span class="line"></span><br><span class="line">## 测试端口</span><br><span class="line">nc -vz ip(127.0.01) port</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">## 临时连接</span><br><span class="line">nc -l port</span><br><span class="line"></span><br><span class="line">## 保持多个连接</span><br><span class="line">nc -lk port</span><br><span class="line"></span><br><span class="line">## 测试端口</span><br><span class="line">nc -vz ip(127.0.01) port</span><br></pre></td></tr></table></figure>
+
+
+
 <p>UDP  端口</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">## 临时监听</span><br><span class="line">nc -lu port</span><br><span class="line"></span><br><span class="line">## 保持多个连接</span><br><span class="line">nc -luk port</span><br><span class="line"></span><br><span class="line">## 测试端口</span><br><span class="line">nc -uvz ip(127.0.01) port</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">## 临时监听</span><br><span class="line">nc -lu port</span><br><span class="line"></span><br><span class="line">## 保持多个连接</span><br><span class="line">nc -luk port</span><br><span class="line"></span><br><span class="line">## 测试端口</span><br><span class="line">nc -uvz ip(127.0.01) port</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -650,35 +749,52 @@ var _hmt = _hmt || [];
         
         <a href="/2021/10/16/install-nfs/" class="archive-article-date">
   	<time datetime="2021-10-16T21:20:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-16</time>
-  	更新：2025-09-30
+  	更新：2021-10-16
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">yum install -y nfs-utils</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看 nfs 服务器状态</span></span><br><span class="line">systemctl status nfs</span><br><span class="line"></span><br><span class="line"><span class="comment"># 开机自启</span></span><br><span class="line">systemctl <span class="built_in">enable</span> nfs</span><br></pre></td></tr></table></figure>
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">yum install -y nfs-utils</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看 nfs 服务器状态</span></span><br><span class="line">systemctl status nfs</span><br><span class="line"></span><br><span class="line"><span class="comment"># 开机自启</span></span><br><span class="line">systemctl <span class="built_in">enable</span> nfs</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p><strong>配置共享目录</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /data/nfs</span><br><span class="line">chmod 777 -R /data/nfs</span><br><span class="line">chown nfsnobody /data/nfs/</span><br><span class="line"></span><br><span class="line">mkdir -p /data/nfs/k8s-app</span><br><span class="line">chmod 777 -R /data/nfs/k8s-app</span><br><span class="line">chown nfsnobody /data/nfs/k8s-app</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">编辑/etc/exports文件，此文件初始状态下什么內容都沒有，自己加吧。</span><br><span class="line">#rw:可读可写</span><br><span class="line">#sync:同步为内存和磁盘</span><br><span class="line">/var/ftp/pub 192.168.6.* (rw,sync,no_root_squash)</span><br><span class="line">/data/nfs *(rw,sync,no_root_squash)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /data/nfs</span><br><span class="line">chmod 777 -R /data/nfs</span><br><span class="line">chown nfsnobody /data/nfs/</span><br><span class="line"></span><br><span class="line">mkdir -p /data/nfs/k8s-app</span><br><span class="line">chmod 777 -R /data/nfs/k8s-app</span><br><span class="line">chown nfsnobody /data/nfs/k8s-app</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">编辑/etc/exports文件，此文件初始状态下什么內容都沒有，自己加吧。</span><br><span class="line">#rw:可读可写</span><br><span class="line">#sync:同步为内存和磁盘</span><br><span class="line">/var/ftp/pub 192.168.6.* (rw,sync,no_root_squash)</span><br><span class="line">/data/nfs *(rw,sync,no_root_squash)</span><br></pre></td></tr></table></figure>
+
 <p><strong>客户端安装</strong></p>
 <p>所有的 k8s node 节点都需安装 nfs 客户端</p>
 <p>测试客户端是否可用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir /test</span><br><span class="line"></span><br><span class="line">## 测试是否可用连接</span><br><span class="line">showmount -e hub.me.io</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir /test</span><br><span class="line"></span><br><span class="line">## 测试是否可用连接</span><br><span class="line">showmount -e hub.me.io</span><br></pre></td></tr></table></figure>
+
+
+
 <p><strong>开墙</strong></p>
 <p>查看端口开放情况</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rpcinfo -p</span><br><span class="line">rpcserver</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rpcinfo -p</span><br><span class="line">rpcserver</span><br></pre></td></tr></table></figure>
+
+
+
 <p>nfs、portmapper 端口是固定的</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">## nfs</span><br><span class="line">firewall-cmd --permanent --add-port=2049/tcp</span><br><span class="line">firewall-cmd --permanent --add-port=2049/udp</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## portmapper</span><br><span class="line">firewall-cmd --permanent --add-port=111/tcp</span><br><span class="line">firewall-cmd --permanent --add-port=111/udp</span><br><span class="line"></span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">## nfs</span><br><span class="line">firewall-cmd --permanent --add-port=2049/tcp</span><br><span class="line">firewall-cmd --permanent --add-port=2049/udp</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## portmapper</span><br><span class="line">firewall-cmd --permanent --add-port=111/tcp</span><br><span class="line">firewall-cmd --permanent --add-port=111/udp</span><br><span class="line"></span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+
 <p>mountd、nlockmgr、rquotad 设置固定的端口</p>
-<p>在 /etc/sysconfig/nfs 打开默认端口配置</p>
-<p>vim /etc/sysconfig/nfs</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">LOCKD_TCPPORT=32803</span><br><span class="line">LOCKD_UDPPORT=32769</span><br><span class="line"></span><br><span class="line">MOUNTD_PORT=892</span><br><span class="line">STATD_PORT=662</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## mountd</span><br><span class="line">firewall-cmd --permanent --add-port=892/tcp</span><br><span class="line">firewall-cmd --permanent --add-port=892/udp</span><br><span class="line"></span><br><span class="line">## nlockmgr</span><br><span class="line">firewall-cmd --permanent --add-port=32803/tcp</span><br><span class="line">firewall-cmd --permanent --add-port=32769/udp</span><br><span class="line"></span><br><span class="line"># STATD</span><br><span class="line">firewall-cmd --permanent --add-port=662/tcp</span><br><span class="line">firewall-cmd --permanent --add-port=662/udp</span><br><span class="line"></span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+<p>在 &#x2F;etc&#x2F;sysconfig&#x2F;nfs 打开默认端口配置</p>
+<p>vim &#x2F;etc&#x2F;sysconfig&#x2F;nfs</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">LOCKD_TCPPORT=32803</span><br><span class="line">LOCKD_UDPPORT=32769</span><br><span class="line"></span><br><span class="line">MOUNTD_PORT=892</span><br><span class="line">STATD_PORT=662</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## mountd</span><br><span class="line">firewall-cmd --permanent --add-port=892/tcp</span><br><span class="line">firewall-cmd --permanent --add-port=892/udp</span><br><span class="line"></span><br><span class="line">## nlockmgr</span><br><span class="line">firewall-cmd --permanent --add-port=32803/tcp</span><br><span class="line">firewall-cmd --permanent --add-port=32769/udp</span><br><span class="line"></span><br><span class="line"># STATD</span><br><span class="line">firewall-cmd --permanent --add-port=662/tcp</span><br><span class="line">firewall-cmd --permanent --add-port=662/udp</span><br><span class="line"></span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+
+
+
 <p><strong>开始使用</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mount -t nfs hub.me.io:/data/nfs /test</span><br><span class="line"></span><br><span class="line">## 一定要退出操作目录再 卸载</span><br><span class="line">umount /test</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mount -t nfs hub.me.io:/data/nfs /test</span><br><span class="line"></span><br><span class="line">## 一定要退出操作目录再 卸载</span><br><span class="line">umount /test</span><br></pre></td></tr></table></figure>
+
+
+
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><blockquote>
-<p><a href="https://www.cnblogs.com/powpoia/p/6553205.html" target="_blank" rel="noopener">https://www.cnblogs.com/powpoia/p/6553205.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/powpoia/p/6553205.html">https://www.cnblogs.com/powpoia/p/6553205.html</a></p>
 </blockquote>
 
       
@@ -760,16 +876,17 @@ var _hmt = _hmt || [];
         
         <a href="/2021/10/16/k8s/k8s-basic/" class="archive-article-date">
   	<time datetime="2021-10-16T10:12:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-16</time>
-  	更新：2025-09-30
+  	更新：2021-10-16
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看有哪些资源</span></span><br><span class="line">kubectl api-resources</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看 ConfigMap 参数解释</span></span><br><span class="line">kubectl explain cm</span><br><span class="line"></span><br><span class="line">vim .bashrc</span><br><span class="line">alias k='kubectl'</span><br></pre></td></tr></table></figure>
-<h3 id="ConfigMap"><a href="#ConfigMap" class="headerlink" title="ConfigMap"></a>ConfigMap</h3><p><a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/" target="_blank" rel="noopener">https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">## 编辑 ConfigMap</span><br><span class="line">kubectl edit cm k8s-app-cm -n spring-boot</span><br></pre></td></tr></table></figure>
+        <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看有哪些资源</span></span><br><span class="line">kubectl api-resources</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看 ConfigMap 参数解释</span></span><br><span class="line">kubectl explain cm</span><br><span class="line"></span><br><span class="line">vim .bashrc</span><br><span class="line">alias k=&#x27;kubectl&#x27;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="ConfigMap"><a href="#ConfigMap" class="headerlink" title="ConfigMap"></a>ConfigMap</h3><p><a target="_blank" rel="noopener" href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/">https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">## 编辑 ConfigMap</span><br><span class="line">kubectl edit cm k8s-app-cm -n spring-boot</span><br><span class="line"></span><br></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/2021/10/16/k8s/k8s-basic/#more">more >></a>
         
@@ -852,7 +969,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/09/25/docker-registry-01/" class="archive-article-date">
   	<time datetime="2021-09-25T16:37:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-25</time>
-  	更新：2025-09-30
+  	更新：2021-09-25
 </a>
         
       </header>
@@ -861,11 +978,15 @@ var _hmt = _hmt || [];
       
         <p>基于 harbor-offline-installer-v2.3.2.tgz 搭建私有镜像仓库。</p>
 <p>前置条件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. 安装docker</span><br><span class="line">2. 安装docker-compose</span><br><span class="line">curl -L &quot;https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose</span><br><span class="line"></span><br><span class="line">chmod +x /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. 安装docker</span><br><span class="line">2. 安装docker-compose</span><br><span class="line">curl -L &quot;https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose</span><br><span class="line"></span><br><span class="line">chmod +x /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
+
+
+
 <p>生成证书</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /data/cert &amp;&amp; chmod -R 777 /data/cert &amp;&amp; cd /data/cert</span><br><span class="line">openssl req -x509 -sha256 -nodes -days 3650 -newkey rsa:2048 -keyout harbor.key -out harbor.crt -subj &quot;/CN=hub.me.io&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /data/cert &amp;&amp; chmod -R 777 /data/cert &amp;&amp; cd /data/cert</span><br><span class="line">openssl req -x509 -sha256 -nodes -days 3650 -newkey rsa:2048 -keyout harbor.key -out harbor.crt -subj &quot;/CN=hub.me.io&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p>部署安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf harbor-offline-installer-v2.3.2.tgz</span><br><span class="line">harbor/harbor.v2.3.2.tar.gz</span><br><span class="line">harbor/prepare</span><br><span class="line">harbor/LICENSE</span><br><span class="line">harbor/install.sh</span><br><span class="line">harbor/common.sh</span><br><span class="line">harbor/harbor.yml.tmpl</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf harbor-offline-installer-v2.3.2.tgz</span><br><span class="line">harbor/harbor.v2.3.2.tar.gz</span><br><span class="line">harbor/prepare</span><br><span class="line">harbor/LICENSE</span><br><span class="line">harbor/install.sh</span><br><span class="line">harbor/common.sh</span><br><span class="line">harbor/harbor.yml.tmpl</span><br></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/2021/09/25/docker-registry-01/#more">more >></a>
         
@@ -948,7 +1069,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/09/17/vsftp/" class="archive-article-date">
   	<time datetime="2021-09-17T21:50:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-17</time>
-  	更新：2025-09-30
+  	更新：2021-09-17
 </a>
         
       </header>
@@ -956,8 +1077,12 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="网络工具"><a href="#网络工具" class="headerlink" title="网络工具"></a>网络工具</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## ifconfig netstat 等命令</span></span><br><span class="line"><span class="comment"># yum -y install net-tools</span></span><br><span class="line"><span class="comment"># netstat -ntpl</span></span><br></pre></td></tr></table></figure>
-<h4 id="tcpdump"><a href="#tcpdump" class="headerlink" title="tcpdump"></a>tcpdump</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">wget http://www.tcpdump.org/release/libpcap-1.10.1.tar.gz</span><br><span class="line"></span><br><span class="line">wget http://www.tcpdump.org/release/tcpdump-4.99.1.tar.gz</span><br><span class="line"></span><br><span class="line">tar -zxvf libpcap-1.10.1.tar.gz</span><br><span class="line">cd libpcap-1.10.1</span><br><span class="line">./configure</span><br><span class="line">make &amp; make install</span><br><span class="line"></span><br><span class="line">tar -zxvf tcpdump-4.99.1.tar.gz</span><br><span class="line">cd tcpdump-4.99.1</span><br><span class="line">./configure</span><br><span class="line">make &amp; make install</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">tcpdump --version</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tcpdump -i ens33 src 192.168.18.137</span><br><span class="line"></span><br><span class="line">## 抓取 21 号端口报文</span><br><span class="line">tcpdump tcp port 21</span><br></pre></td></tr></table></figure>
+
+<h4 id="tcpdump"><a href="#tcpdump" class="headerlink" title="tcpdump"></a>tcpdump</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">wget http://www.tcpdump.org/release/libpcap-1.10.1.tar.gz</span><br><span class="line"></span><br><span class="line">wget http://www.tcpdump.org/release/tcpdump-4.99.1.tar.gz</span><br><span class="line"></span><br><span class="line">tar -zxvf libpcap-1.10.1.tar.gz</span><br><span class="line">cd libpcap-1.10.1</span><br><span class="line">./configure</span><br><span class="line">make &amp; make install</span><br><span class="line"></span><br><span class="line">tar -zxvf tcpdump-4.99.1.tar.gz</span><br><span class="line">cd tcpdump-4.99.1</span><br><span class="line">./configure</span><br><span class="line">make &amp; make install</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">tcpdump --version</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tcpdump -i ens33 src 192.168.18.137</span><br><span class="line"></span><br><span class="line">## 抓取 21 号端口报文</span><br><span class="line">tcpdump tcp port 21</span><br></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/2021/09/17/vsftp/#more">more >></a>
         
@@ -1040,7 +1165,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/09/05/k8s/k8s-cluster-on-centos7/" class="archive-article-date">
   	<time datetime="2021-09-05T20:04:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-05</time>
-  	更新：2025-09-30
+  	更新：2021-09-05
 </a>
         
       </header>
@@ -1055,8 +1180,7 @@ var _hmt = _hmt || [];
 <th></th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>k8s-master</td>
 <td>192.168.18.160</td>
 <td></td>
@@ -1074,11 +1198,15 @@ var _hmt = _hmt || [];
 <tr>
 <td>k8s-node03</td>
 <td>192.168.18.163</td>
+<td></td>
 </tr>
-</tbody>
-</table>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h4 id="Step-2-设置国内源"><a href="#Step-2-设置国内源" class="headerlink" title="Step 2: 设置国内源"></a>Step 2: 设置国内源</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># yum -y install wget</span></span><br><span class="line"><span class="comment"># cp /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak</span></span><br><span class="line"><span class="comment"># wget -O /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo</span></span><br><span class="line"><span class="comment"># sed -i -e '/mirrors.cloud.aliyuncs.com/d' -e '/mirrors.aliyuncs.com/d' /etc/yum.repos.d/CentOS-Base.repo</span></span><br></pre></td></tr></table></figure>
+</tbody></table>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Step-2-设置国内源"><a href="#Step-2-设置国内源" class="headerlink" title="Step 2: 设置国内源"></a>Step 2: 设置国内源</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># yum -y install wget</span></span><br><span class="line"><span class="comment"># cp /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak</span></span><br><span class="line"><span class="comment"># wget -O /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo</span></span><br><span class="line"><span class="comment"># sed -i -e &#x27;/mirrors.cloud.aliyuncs.com/d&#x27; -e &#x27;/mirrors.aliyuncs.com/d&#x27; /etc/yum.repos.d/CentOS-Base.repo</span></span><br></pre></td></tr></table></figure>
+
 <p>安装依赖</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># yum install -y vim wget curl ntpdate ntp net-tools git \</span></span><br><span class="line">conntrack jq sysstat libseccomp</span><br></pre></td></tr></table></figure>
         
@@ -1149,104 +1277,9 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-nodejs/nodejs01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/08/14/nodejs/nodejs01/">修改npm全局安装模式的路径</a>
-    </h1>
-  
-
-        
-        <a href="/2021/08/14/nodejs/nodejs01/" class="archive-article-date">
-  	<time datetime="2021-08-14T09:46:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-14</time>
-  	更新：2025-09-30
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 全局安装 webpack</span></span><br><span class="line">npm i webpack -g</span><br><span class="line"></span><br><span class="line"><span class="comment">## 卸载全局 webpack</span></span><br><span class="line">npm r webpack -g</span><br><span class="line"></span><br><span class="line">i、r 都是命令参数的别名，可以通过下面的命令查看</span><br><span class="line">npm install -h</span><br></pre></td></tr></table></figure>
-<p><strong>全局模块默认安装</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\Administrator\AppData\Roaming\npm</span><br></pre></td></tr></table></figure>
-<p>通过命令查看默认配置，默认配置文件</p>
-<p>C:\Users\Administrator.npmrc</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config ls</span><br></pre></td></tr></table></figure>
-<p>修改默认配置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> prefix <span class="string">"D:\download\nodejs\npm_global"</span></span><br><span class="line"></span><br><span class="line">npm config <span class="built_in">set</span> cache <span class="string">"D:\download\nodejs\npm_cache"</span></span><br></pre></td></tr></table></figure></p>
-<p>修改后需要 prefix 对应的值加到环境变量中，新建用户环境变量，添加 D:\tmp\nodejs\npm_global 到 PATH 即可。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">nodejs</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/nodejs//" class="article-tag-list-link color2">nodejs</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/08/14/nodejs/nodejs01/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/7/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/9/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/7/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="extend next" rel="next" href="/page/9/">Next &raquo;</a>
     </nav>
   
 
@@ -1258,7 +1291,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2025 Niu Yuxian
+    		&copy; 2026 Niu Yuxian
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -1383,15 +1416,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">was</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">area</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">cors</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">was</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1419,10 +1452,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">c#</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Nord</a>
               </li>
              
@@ -1440,6 +1469,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">guqin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">c#</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1511,6 +1544,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">opencv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">原码</a>
               </li>
              
@@ -1531,10 +1568,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sed</a>
               </li>
              
@@ -1552,6 +1585,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1599,10 +1636,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">archlinux</a>
               </li>
              
@@ -1619,6 +1652,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">d365</a>
               </li>
              
@@ -1627,15 +1664,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">deno</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">docker alpine</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">razor</a>
+                <a href="javascript:void(0)" class="js-tag color5">deno</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1644,6 +1677,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ffmpeg</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">razor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1731,14 +1768,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
@@ -1756,6 +1785,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1783,15 +1820,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">regex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">requests</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">rust</a>
+                <a href="javascript:void(0)" class="js-tag color1">regex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1803,11 +1836,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color5">rust</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1816,6 +1849,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mongo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1847,15 +1884,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">rocky</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">

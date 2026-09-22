@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>heroku 部署 Spring Boot Docker Image | Niu Yuxian&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="准备Docker Image修改之前创建的Spring Boot 项目, 添加 Docker 插件 build.gradle 12345678910111213141516171819202122232425262728293031323334353637383940plugins &amp;#123;    id &apos;org.springframework.boot&apos; version &apos;2.2.2.REL">
-<meta name="keywords" content="heroku">
+  <meta name="description" content="准备Docker Image修改之前创建的Spring Boot 项目, 添加 Docker 插件 build.gradle 1234567891011121314151617181920212223242526272829303132333435363738394041plugins &#123;    id &#x27;org.springframework.boot&#x27; versio">
 <meta property="og:type" content="article">
 <meta property="og:title" content="heroku 部署 Spring Boot Docker Image">
 <meta property="og:url" content="http://yoursite.com/2019/12/27/heroku/heroku-deploy-spring-boot-docker/index.html">
 <meta property="og:site_name" content="Niu Yuxian&#39;blog">
-<meta property="og:description" content="准备Docker Image修改之前创建的Spring Boot 项目, 添加 Docker 插件 build.gradle 12345678910111213141516171819202122232425262728293031323334353637383940plugins &amp;#123;    id &apos;org.springframework.boot&apos; version &apos;2.2.2.REL">
-<meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2025-09-30T04:26:37.785Z">
+<meta property="og:description" content="准备Docker Image修改之前创建的Spring Boot 项目, 添加 Docker 插件 build.gradle 1234567891011121314151617181920212223242526272829303132333435363738394041plugins &#123;    id &#x27;org.springframework.boot&#x27; versio">
+<meta property="og:locale">
+<meta property="article:published_time" content="2019-12-27T21:42:19.000Z">
+<meta property="article:modified_time" content="2019-12-27T21:42:19.000Z">
+<meta property="article:author" content="Niu Yuxian">
+<meta property="article:tag" content="heroku">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="heroku 部署 Spring Boot Docker Image">
-<meta name="twitter:description" content="准备Docker Image修改之前创建的Spring Boot 项目, 添加 Docker 插件 build.gradle 12345678910111213141516171819202122232425262728293031323334353637383940plugins &amp;#123;    id &apos;org.springframework.boot&apos; version &apos;2.2.2.REL">
   
     <link rel="alternative" href="/atom.xml" title="Niu Yuxian&#39;blog" type="application/atom+xml">
   
@@ -58,8 +58,8 @@ var _hmt = _hmt || [];
 </script>
 
 
-</head>
-</html>
+<meta name="generator" content="Hexo 8.1.2"></head>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -72,7 +72,7 @@ var _hmt = _hmt || [];
 			<img src="/assets/images/logo.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Niu Yuxian</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
 		
 
@@ -156,7 +156,7 @@ var _hmt = _hmt || [];
 				<img src="/assets/images/logo.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Niu Yuxian</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
 			
 			
@@ -270,7 +270,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/12/27/heroku/heroku-deploy-spring-boot-docker/" class="archive-article-date">
   	<time datetime="2019-12-27T21:42:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-27</time>
-  	更新：2025-09-30
+  	更新：2019-12-27
 </a>
         
       </header>
@@ -279,36 +279,51 @@ var _hmt = _hmt || [];
       
         <h2 id="准备Docker-Image"><a href="#准备Docker-Image" class="headerlink" title="准备Docker Image"></a>准备Docker Image</h2><p>修改之前创建的<code>Spring Boot</code> 项目, 添加 <code>Docker</code> 插件</p>
 <p><code>build.gradle</code></p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">plugins &#123;</span><br><span class="line">    id <span class="string">'org.springframework.boot'</span> version <span class="string">'2.2.2.RELEASE'</span></span><br><span class="line">    id <span class="string">'io.spring.dependency-management'</span> version <span class="string">'1.0.8.RELEASE'</span></span><br><span class="line">    id <span class="string">'java'</span></span><br><span class="line">    id <span class="string">'com.palantir.docker'</span> version <span class="string">'0.22.1'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">group = <span class="string">'io.arukas'</span></span><br><span class="line">version = <span class="string">'0.0.1-SNAPSHOT'</span></span><br><span class="line">sourceCompatibility = <span class="string">'1.8'</span></span><br><span class="line">targetCompatibility = <span class="string">'1.8'</span></span><br><span class="line"></span><br><span class="line">bootJar &#123;</span><br><span class="line">    baseName = <span class="string">'spring-boot-heroku-gradle'</span></span><br><span class="line">    version = <span class="string">'0.0.1'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">docker &#123;</span><br><span class="line">    dependsOn build</span><br><span class="line">    tags <span class="string">'latest'</span></span><br><span class="line">    dockerfile file(<span class="string">'Dockerfile'</span>)</span><br><span class="line">    name <span class="string">"ncc0706/$&#123;bootJar.baseName&#125;"</span></span><br><span class="line">    files bootJar.archivePath</span><br><span class="line">    buildArgs([<span class="string">'JAR_FILE'</span>: <span class="string">"$&#123;bootJar.archiveName&#125;"</span>])</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">repositories &#123;</span><br><span class="line">    mavenCentral()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">dependencies &#123;</span><br><span class="line">    implementation <span class="string">'org.springframework.boot:spring-boot-starter-web'</span></span><br><span class="line">    testImplementation(<span class="string">'org.springframework.boot:spring-boot-starter-test'</span>) &#123;</span><br><span class="line">        exclude <span class="string">group:</span> <span class="string">'org.junit.vintage'</span>, <span class="string">module:</span> <span class="string">'junit-vintage-engine'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test &#123;</span><br><span class="line">    useJUnitPlatform()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">plugins &#123;</span><br><span class="line">    id <span class="string">&#x27;org.springframework.boot&#x27;</span> version <span class="string">&#x27;2.2.2.RELEASE&#x27;</span></span><br><span class="line">    id <span class="string">&#x27;io.spring.dependency-management&#x27;</span> version <span class="string">&#x27;1.0.8.RELEASE&#x27;</span></span><br><span class="line">    id <span class="string">&#x27;java&#x27;</span></span><br><span class="line">    id <span class="string">&#x27;com.palantir.docker&#x27;</span> version <span class="string">&#x27;0.22.1&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">group = <span class="string">&#x27;io.arukas&#x27;</span></span><br><span class="line">version = <span class="string">&#x27;0.0.1-SNAPSHOT&#x27;</span></span><br><span class="line">sourceCompatibility = <span class="string">&#x27;1.8&#x27;</span></span><br><span class="line">targetCompatibility = <span class="string">&#x27;1.8&#x27;</span></span><br><span class="line"></span><br><span class="line">bootJar &#123;</span><br><span class="line">    baseName = <span class="string">&#x27;spring-boot-heroku-gradle&#x27;</span></span><br><span class="line">    version = <span class="string">&#x27;0.0.1&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">docker &#123;</span><br><span class="line">    dependsOn build</span><br><span class="line">    tags <span class="string">&#x27;latest&#x27;</span></span><br><span class="line">    dockerfile file(<span class="string">&#x27;Dockerfile&#x27;</span>)</span><br><span class="line">    name <span class="string">&quot;ncc0706/$&#123;bootJar.baseName&#125;&quot;</span></span><br><span class="line">    files bootJar.archivePath</span><br><span class="line">    buildArgs([<span class="string">&#x27;JAR_FILE&#x27;</span>: <span class="string">&quot;$&#123;bootJar.archiveName&#125;&quot;</span>])</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">repositories &#123;</span><br><span class="line">    mavenCentral()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">dependencies &#123;</span><br><span class="line">    implementation <span class="string">&#x27;org.springframework.boot:spring-boot-starter-web&#x27;</span></span><br><span class="line">    testImplementation(<span class="string">&#x27;org.springframework.boot:spring-boot-starter-test&#x27;</span>) &#123;</span><br><span class="line">        exclude <span class="attr">group:</span> <span class="string">&#x27;org.junit.vintage&#x27;</span>, <span class="attr">module:</span> <span class="string">&#x27;junit-vintage-engine&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test &#123;</span><br><span class="line">    useJUnitPlatform()</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
 <p>新增<code>Dockerfile</code> 文件</p>
-<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> ncc0706/jdk:<span class="number">8</span>u131</span><br><span class="line"></span><br><span class="line"><span class="keyword">VOLUME</span><span class="bash"> /tmp</span></span><br><span class="line"><span class="keyword">ARG</span> JAR_FILE</span><br><span class="line"><span class="keyword">COPY</span><span class="bash"> <span class="variable">$&#123;JAR_FILE&#125;</span> /opt/application.jar</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">CMD</span><span class="bash"> [ <span class="string">"sh"</span>, <span class="string">"-c"</span>, <span class="string">"java -Dserver.port=<span class="variable">$PORT</span> -Xmx300m -Xss512k -Dfile.encoding=UTF-8 -Djava.security.egd=file:/dev/./urandom -jar /opt/application.jar"</span> ]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> ncc0706/jdk:<span class="number">8</span>u131</span><br><span class="line"></span><br><span class="line"><span class="keyword">VOLUME</span><span class="language-bash"> /tmp</span></span><br><span class="line"><span class="keyword">ARG</span> JAR_FILE</span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> <span class="variable">$&#123;JAR_FILE&#125;</span> /opt/application.jar</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">CMD</span><span class="language-bash"> [ <span class="string">&quot;sh&quot;</span>, <span class="string">&quot;-c&quot;</span>, <span class="string">&quot;java -Dserver.port=<span class="variable">$PORT</span> -Xmx300m -Xss512k -Dfile.encoding=UTF-8 -Djava.security.egd=file:/dev/./urandom -jar /opt/application.jar&quot;</span> ]</span></span><br></pre></td></tr></table></figure>
+
 <p><strong>构建本地镜像</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">➜  spring-boot-heroku-gradle-docker git:(master) gradle docker</span><br><span class="line">Starting a Gradle Daemon (subsequent builds will be faster)</span><br><span class="line">&gt; Task :compileJava</span><br><span class="line">&gt; Task :processResources</span><br><span class="line">&gt; Task :classes</span><br><span class="line">&gt; Task :bootJar</span><br><span class="line">&gt; Task :dockerfileZip</span><br><span class="line">&gt; Task :assemble</span><br><span class="line">&gt; Task :compileTestJava</span><br><span class="line">&gt; Task :processTestResources NO-SOURCE</span><br><span class="line">&gt; Task :testClasses</span><br><span class="line"></span><br><span class="line">&gt; Task :test</span><br><span class="line">2019-12-27 21:58:05.695  INFO 1782 --- [extShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService &apos;applicationTaskExecutor&apos;</span><br><span class="line"></span><br><span class="line">&gt; Task :check</span><br><span class="line">&gt; Task :build</span><br><span class="line">&gt; Task :dockerClean UP-TO-DATE</span><br><span class="line">&gt; Task :dockerPrepare</span><br><span class="line">&gt; Task :docker</span><br><span class="line"></span><br><span class="line">BUILD SUCCESSFUL in 26s</span><br><span class="line">9 actionable tasks: 8 executed, 1 up-to-date</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">➜  spring-boot-heroku-gradle-docker git:(master) gradle docker</span><br><span class="line">Starting a Gradle Daemon (subsequent builds will be faster)</span><br><span class="line">&gt; Task :compileJava</span><br><span class="line">&gt; Task :processResources</span><br><span class="line">&gt; Task :classes</span><br><span class="line">&gt; Task :bootJar</span><br><span class="line">&gt; Task :dockerfileZip</span><br><span class="line">&gt; Task :assemble</span><br><span class="line">&gt; Task :compileTestJava</span><br><span class="line">&gt; Task :processTestResources NO-SOURCE</span><br><span class="line">&gt; Task :testClasses</span><br><span class="line"></span><br><span class="line">&gt; Task :test</span><br><span class="line">2019-12-27 21:58:05.695  INFO 1782 --- [extShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService &#x27;applicationTaskExecutor&#x27;</span><br><span class="line"></span><br><span class="line">&gt; Task :check</span><br><span class="line">&gt; Task :build</span><br><span class="line">&gt; Task :dockerClean UP-TO-DATE</span><br><span class="line">&gt; Task :dockerPrepare</span><br><span class="line">&gt; Task :docker</span><br><span class="line"></span><br><span class="line">BUILD SUCCESSFUL in 26s</span><br><span class="line">9 actionable tasks: 8 executed, 1 up-to-date</span><br></pre></td></tr></table></figure>
+
 <p><strong>推送到 docker hub</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">➜  spring-boot-heroku-gradle-docker git:(master) gradle dockerPush</span><br><span class="line">&gt; Task :compileJava UP-TO-DATE</span><br><span class="line">&gt; Task :processResources UP-TO-DATE</span><br><span class="line">&gt; Task :classes UP-TO-DATE</span><br><span class="line">&gt; Task :bootJar UP-TO-DATE</span><br><span class="line">&gt; Task :dockerfileZip UP-TO-DATE</span><br><span class="line">&gt; Task :assemble UP-TO-DATE</span><br><span class="line">&gt; Task :compileTestJava UP-TO-DATE</span><br><span class="line">&gt; Task :processTestResources NO-SOURCE</span><br><span class="line">&gt; Task :testClasses UP-TO-DATE</span><br><span class="line">&gt; Task :test UP-TO-DATE</span><br><span class="line">&gt; Task :check UP-TO-DATE</span><br><span class="line">&gt; Task :build UP-TO-DATE</span><br><span class="line">&gt; Task :dockerClean</span><br><span class="line">&gt; Task :dockerPrepare</span><br><span class="line">&gt; Task :docker</span><br><span class="line">&gt; Task :dockerTagLatest</span><br><span class="line">&gt; Task :dockerTag</span><br><span class="line"></span><br><span class="line">&gt; Task :dockerPush</span><br><span class="line">The push refers to repository [docker.io/ncc0706/spring-boot-heroku-gradle]</span><br><span class="line">126d444a90fe: Preparing</span><br><span class="line">7b1b25aff4b3: Preparing</span><br><span class="line">75baf32179d0: Preparing</span><br><span class="line">7bff100f35cb: Preparing</span><br><span class="line">75baf32179d0: Mounted from ncc0706/heroku-me</span><br><span class="line">126d444a90fe: Pushed</span><br><span class="line">7b1b25aff4b3: Mounted from ncc0706/heroku-me</span><br><span class="line">7bff100f35cb: Mounted from ncc0706/heroku-me</span><br><span class="line">latest: digest: sha256:e4465a5bbd70b79c049e5f9c8e3a1afccb5f3a8019733cc70d4baa5b77c2cca8 size: 1163</span><br><span class="line"></span><br><span class="line">BUILD SUCCESSFUL in 50s</span><br><span class="line">11 actionable tasks: 5 executed, 6 up-to-date</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">➜  spring-boot-heroku-gradle-docker git:(master) gradle dockerPush</span><br><span class="line">&gt; Task :compileJava UP-TO-DATE</span><br><span class="line">&gt; Task :processResources UP-TO-DATE</span><br><span class="line">&gt; Task :classes UP-TO-DATE</span><br><span class="line">&gt; Task :bootJar UP-TO-DATE</span><br><span class="line">&gt; Task :dockerfileZip UP-TO-DATE</span><br><span class="line">&gt; Task :assemble UP-TO-DATE</span><br><span class="line">&gt; Task :compileTestJava UP-TO-DATE</span><br><span class="line">&gt; Task :processTestResources NO-SOURCE</span><br><span class="line">&gt; Task :testClasses UP-TO-DATE</span><br><span class="line">&gt; Task :test UP-TO-DATE</span><br><span class="line">&gt; Task :check UP-TO-DATE</span><br><span class="line">&gt; Task :build UP-TO-DATE</span><br><span class="line">&gt; Task :dockerClean</span><br><span class="line">&gt; Task :dockerPrepare</span><br><span class="line">&gt; Task :docker</span><br><span class="line">&gt; Task :dockerTagLatest</span><br><span class="line">&gt; Task :dockerTag</span><br><span class="line"></span><br><span class="line">&gt; Task :dockerPush</span><br><span class="line">The push refers to repository [docker.io/ncc0706/spring-boot-heroku-gradle]</span><br><span class="line">126d444a90fe: Preparing</span><br><span class="line">7b1b25aff4b3: Preparing</span><br><span class="line">75baf32179d0: Preparing</span><br><span class="line">7bff100f35cb: Preparing</span><br><span class="line">75baf32179d0: Mounted from ncc0706/heroku-me</span><br><span class="line">126d444a90fe: Pushed</span><br><span class="line">7b1b25aff4b3: Mounted from ncc0706/heroku-me</span><br><span class="line">7bff100f35cb: Mounted from ncc0706/heroku-me</span><br><span class="line">latest: digest: sha256:e4465a5bbd70b79c049e5f9c8e3a1afccb5f3a8019733cc70d4baa5b77c2cca8 size: 1163</span><br><span class="line"></span><br><span class="line">BUILD SUCCESSFUL in 50s</span><br><span class="line">11 actionable tasks: 5 executed, 6 up-to-date</span><br></pre></td></tr></table></figure>
+
 <p><strong>查看构建好的镜像</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">➜  spring-boot-heroku-gradle-docker git:(master) docker images</span><br><span class="line">REPOSITORY                                     TAG                 IMAGE ID            CREATED             SIZE</span><br><span class="line">ncc0706/spring-boot-heroku-gradle              latest              a7c43414abf5        2 minutes ago       187MB</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">➜  spring-boot-heroku-gradle-docker git:(master) docker images</span><br><span class="line">REPOSITORY                                     TAG                 IMAGE ID            CREATED             SIZE</span><br><span class="line">ncc0706/spring-boot-heroku-gradle              latest              a7c43414abf5        2 minutes ago       187MB</span><br></pre></td></tr></table></figure>
+
+
+
 <h2 id="进入正题开始部署-Docker-Image-到-heroku"><a href="#进入正题开始部署-Docker-Image-到-heroku" class="headerlink" title="进入正题开始部署 Docker Image 到 heroku"></a>进入正题开始部署 Docker Image 到 heroku</h2><p>随意创建一个目录，这里我用的 <code>deploy</code>, 创建2个文件如下</p>
 <p><strong>Dockerfile</strong></p>
 <p>这里的 <code>Dockerfile</code> 跟刚才创建的不一样哦，就是上面推送到 docker hub 的镜像名称</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FROM ncc0706/spring-boot-heroku-gradle</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FROM ncc0706/spring-boot-heroku-gradle</span><br></pre></td></tr></table></figure>
+
 <p><strong>heroku.yml</strong></p>
 <p>指定当前目录的 <code>Dockerfile</code> ，如果两个文件不在同一目录需指定相对路径</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">build:</span><br><span class="line">  docker:</span><br><span class="line">    web: Dockerfile</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">build:</span><br><span class="line">  docker:</span><br><span class="line">    web: Dockerfile</span><br></pre></td></tr></table></figure>
+
 <p><strong>初始化仓库</strong></p>
 <p>进入 <code>deploy</code> 目录就是上面创建的</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 初始化仓库</span><br><span class="line">$ git init</span><br><span class="line"></span><br><span class="line"># 添加文件到本地暂存区</span><br><span class="line">$ git add .</span><br><span class="line"></span><br><span class="line"># 提交到本地仓库</span><br><span class="line">$ git commit -am &quot;ready build&quot;</span><br><span class="line">[master (root-commit) 3a1cf00] ready build</span><br><span class="line"> 2 files changed, 4 insertions(+)</span><br><span class="line"> create mode 100644 Dockerfile</span><br><span class="line"> create mode 100644 heroku.yml</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 初始化仓库</span><br><span class="line">$ git init</span><br><span class="line"></span><br><span class="line"># 添加文件到本地暂存区</span><br><span class="line">$ git add .</span><br><span class="line"></span><br><span class="line"># 提交到本地仓库</span><br><span class="line">$ git commit -am &quot;ready build&quot;</span><br><span class="line">[master (root-commit) 3a1cf00] ready build</span><br><span class="line"> 2 files changed, 4 insertions(+)</span><br><span class="line"> create mode 100644 Dockerfile</span><br><span class="line"> create mode 100644 heroku.yml</span><br></pre></td></tr></table></figure>
+
 <p><strong>创建应用</strong> </p>
 <p>注意需要登录</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ heroku create spring-boot-heroku-gradle-docker</span><br><span class="line">Creating ⬢ spring-boot-heroku-gradle-docker... !</span><br><span class="line"> !    Name is too long (maximum is 30 characters)</span><br><span class="line"> </span><br><span class="line"> ## 上面提示名称太长了，再换个</span><br><span class="line"> $ heroku create spring-boot-gradle-docker</span><br><span class="line"> Creating ⬢ spring-boot-gradle-docker... done</span><br><span class="line">https://spring-boot-gradle-docker.herokuapp.com/ | https://git.heroku.com/spring-boot-gradle-docker.git</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ heroku create spring-boot-heroku-gradle-docker</span><br><span class="line">Creating ⬢ spring-boot-heroku-gradle-docker... !</span><br><span class="line"> !    Name is too long (maximum is 30 characters)</span><br><span class="line"> </span><br><span class="line"> ## 上面提示名称太长了，再换个</span><br><span class="line"> $ heroku create spring-boot-gradle-docker</span><br><span class="line"> Creating ⬢ spring-boot-gradle-docker... done</span><br><span class="line">https://spring-boot-gradle-docker.herokuapp.com/ | https://git.heroku.com/spring-boot-gradle-docker.git</span><br></pre></td></tr></table></figure>
+
 <p><strong>开始构建</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 容器技术部署</span><br><span class="line">$ heroku stack:set container</span><br><span class="line">Stack set. Next release on ⬢ spring-boot-gradle-docker will use container.</span><br><span class="line">Run git push heroku master to create a new release on ⬢ spring-boot-gradle-docker.</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">git push heroku master</span><br><span class="line">Enumerating objects: 4, done.</span><br><span class="line">Counting objects: 100% (4/4), done.</span><br><span class="line">Delta compression using up to 8 threads</span><br><span class="line">Compressing objects: 100% (2/2), done.</span><br><span class="line">Writing objects: 100% (4/4), 323 bytes | 323.00 KiB/s, done.</span><br><span class="line">Total 4 (delta 0), reused 0 (delta 0)</span><br><span class="line">remote: Compressing source files... done.</span><br><span class="line">remote: Building source:</span><br><span class="line">remote: === Fetching app code</span><br><span class="line">remote:</span><br><span class="line">remote: === Building web (Dockerfile)</span><br><span class="line">remote: Sending build context to Docker daemon  3.072kB</span><br><span class="line">remote: Step 1/1 : FROM ncc0706/spring-boot-heroku-gradle</span><br><span class="line">remote: latest: Pulling from ncc0706/spring-boot-heroku-gradle</span><br><span class="line">remote: cd784148e348: Pulling fs layer</span><br><span class="line">remote: 3651dac5ddfb: Pulling fs layer</span><br><span class="line">remote: 1d73d5612a08: Pulling fs layer</span><br><span class="line">remote: 21d15a920adf: Pulling fs layer</span><br><span class="line">remote: 21d15a920adf: Waiting</span><br><span class="line">remote: cd784148e348: Verifying Checksum</span><br><span class="line">remote: cd784148e348: Download complete</span><br><span class="line">remote: cd784148e348: Pull complete</span><br><span class="line">remote: 21d15a920adf: Verifying Checksum</span><br><span class="line">remote: 21d15a920adf: Download complete</span><br><span class="line">remote: 3651dac5ddfb: Verifying Checksum</span><br><span class="line">remote: 3651dac5ddfb: Download complete</span><br><span class="line">remote: 3651dac5ddfb: Pull complete</span><br><span class="line">remote: 1d73d5612a08: Verifying Checksum</span><br><span class="line">remote: 1d73d5612a08: Download complete</span><br><span class="line">remote: 1d73d5612a08: Pull complete</span><br><span class="line">remote: 21d15a920adf: Pull complete</span><br><span class="line">remote: Digest: sha256:e4465a5bbd70b79c049e5f9c8e3a1afccb5f3a8019733cc70d4baa5b77c2cca8</span><br><span class="line">remote: Status: Downloaded newer image for ncc0706/spring-boot-heroku-gradle:latest</span><br><span class="line">remote:  ---&gt; a7c43414abf5</span><br><span class="line">remote: Successfully built a7c43414abf5</span><br><span class="line">remote: Successfully tagged b70bfb6b84da29431508650a9923a60aba64ac27:latest</span><br><span class="line">remote:</span><br><span class="line">remote: === Pushing web (Dockerfile)</span><br><span class="line">remote: Tagged image &quot;b70bfb6b84da29431508650a9923a60aba64ac27&quot; as &quot;registry.heroku.com/spring-boot-gradle-docker/web&quot;</span><br><span class="line">remote: The push refers to repository [registry.heroku.com/spring-boot-gradle-docker/web]</span><br><span class="line">remote: 126d444a90fe: Preparing</span><br><span class="line">remote: 7b1b25aff4b3: Preparing</span><br><span class="line">remote: 75baf32179d0: Preparing</span><br><span class="line">remote: 7bff100f35cb: Preparing</span><br><span class="line">remote: 7bff100f35cb: Pushed</span><br><span class="line">remote: 126d444a90fe: Pushed</span><br><span class="line">remote: 75baf32179d0: Pushed</span><br><span class="line">remote: 7b1b25aff4b3: Pushed</span><br><span class="line">remote: latest: digest: sha256:e4465a5bbd70b79c049e5f9c8e3a1afccb5f3a8019733cc70d4baa5b77c2cca8 size: 1163</span><br><span class="line">remote:</span><br><span class="line">remote: Verifying deploy... done.</span><br><span class="line">To https://git.heroku.com/spring-boot-gradle-docker.git</span><br><span class="line"> * [new branch]      master -&gt; master</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 容器技术部署</span><br><span class="line">$ heroku stack:set container</span><br><span class="line">Stack set. Next release on ⬢ spring-boot-gradle-docker will use container.</span><br><span class="line">Run git push heroku master to create a new release on ⬢ spring-boot-gradle-docker.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">git push heroku master</span><br><span class="line">Enumerating objects: 4, done.</span><br><span class="line">Counting objects: 100% (4/4), done.</span><br><span class="line">Delta compression using up to 8 threads</span><br><span class="line">Compressing objects: 100% (2/2), done.</span><br><span class="line">Writing objects: 100% (4/4), 323 bytes | 323.00 KiB/s, done.</span><br><span class="line">Total 4 (delta 0), reused 0 (delta 0)</span><br><span class="line">remote: Compressing source files... done.</span><br><span class="line">remote: Building source:</span><br><span class="line">remote: === Fetching app code</span><br><span class="line">remote:</span><br><span class="line">remote: === Building web (Dockerfile)</span><br><span class="line">remote: Sending build context to Docker daemon  3.072kB</span><br><span class="line">remote: Step 1/1 : FROM ncc0706/spring-boot-heroku-gradle</span><br><span class="line">remote: latest: Pulling from ncc0706/spring-boot-heroku-gradle</span><br><span class="line">remote: cd784148e348: Pulling fs layer</span><br><span class="line">remote: 3651dac5ddfb: Pulling fs layer</span><br><span class="line">remote: 1d73d5612a08: Pulling fs layer</span><br><span class="line">remote: 21d15a920adf: Pulling fs layer</span><br><span class="line">remote: 21d15a920adf: Waiting</span><br><span class="line">remote: cd784148e348: Verifying Checksum</span><br><span class="line">remote: cd784148e348: Download complete</span><br><span class="line">remote: cd784148e348: Pull complete</span><br><span class="line">remote: 21d15a920adf: Verifying Checksum</span><br><span class="line">remote: 21d15a920adf: Download complete</span><br><span class="line">remote: 3651dac5ddfb: Verifying Checksum</span><br><span class="line">remote: 3651dac5ddfb: Download complete</span><br><span class="line">remote: 3651dac5ddfb: Pull complete</span><br><span class="line">remote: 1d73d5612a08: Verifying Checksum</span><br><span class="line">remote: 1d73d5612a08: Download complete</span><br><span class="line">remote: 1d73d5612a08: Pull complete</span><br><span class="line">remote: 21d15a920adf: Pull complete</span><br><span class="line">remote: Digest: sha256:e4465a5bbd70b79c049e5f9c8e3a1afccb5f3a8019733cc70d4baa5b77c2cca8</span><br><span class="line">remote: Status: Downloaded newer image for ncc0706/spring-boot-heroku-gradle:latest</span><br><span class="line">remote:  ---&gt; a7c43414abf5</span><br><span class="line">remote: Successfully built a7c43414abf5</span><br><span class="line">remote: Successfully tagged b70bfb6b84da29431508650a9923a60aba64ac27:latest</span><br><span class="line">remote:</span><br><span class="line">remote: === Pushing web (Dockerfile)</span><br><span class="line">remote: Tagged image &quot;b70bfb6b84da29431508650a9923a60aba64ac27&quot; as &quot;registry.heroku.com/spring-boot-gradle-docker/web&quot;</span><br><span class="line">remote: The push refers to repository [registry.heroku.com/spring-boot-gradle-docker/web]</span><br><span class="line">remote: 126d444a90fe: Preparing</span><br><span class="line">remote: 7b1b25aff4b3: Preparing</span><br><span class="line">remote: 75baf32179d0: Preparing</span><br><span class="line">remote: 7bff100f35cb: Preparing</span><br><span class="line">remote: 7bff100f35cb: Pushed</span><br><span class="line">remote: 126d444a90fe: Pushed</span><br><span class="line">remote: 75baf32179d0: Pushed</span><br><span class="line">remote: 7b1b25aff4b3: Pushed</span><br><span class="line">remote: latest: digest: sha256:e4465a5bbd70b79c049e5f9c8e3a1afccb5f3a8019733cc70d4baa5b77c2cca8 size: 1163</span><br><span class="line">remote:</span><br><span class="line">remote: Verifying deploy... done.</span><br><span class="line">To https://git.heroku.com/spring-boot-gradle-docker.git</span><br><span class="line"> * [new branch]      master -&gt; master</span><br></pre></td></tr></table></figure>
+
 <p><strong>查看启动日志</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">$ heroku logs --tail</span><br><span class="line">2019-12-27T14:17:40.177009+00:00 app[api]: Enable Logplex by user fdtomn@gmail.com</span><br><span class="line">2019-12-27T14:17:40.177009+00:00 app[api]: Release v2 created by user fdtomn@gmail.com</span><br><span class="line">2019-12-27T14:17:39.723167+00:00 app[api]: Initial release by user fdtomn@gmail.com</span><br><span class="line">2019-12-27T14:17:39.723167+00:00 app[api]: Release v1 created by user fdtomn@gmail.com</span><br><span class="line">2019-12-27T14:19:35.480563+00:00 app[api]: Release v3 created by user fdtomn@gmail.com</span><br><span class="line">2019-12-27T14:19:35.480563+00:00 app[api]: Upgrade stack to container by user fdtomn@gmail.com</span><br><span class="line">2019-12-27T14:19:35.467047+00:00 app[api]: Stack changed from heroku-18 to container by user fdtomn@gmail.com</span><br><span class="line">2019-12-27T14:20:03.000000+00:00 app[api]: Build started by user fdtomn@gmail.com</span><br><span class="line">2019-12-27T14:20:28.120580+00:00 app[api]: Release v4 created by user fdtomn@gmail.com</span><br><span class="line">2019-12-27T14:20:28.120580+00:00 app[api]: Deploy 3a1cf002 by user fdtomn@gmail.com</span><br><span class="line">2019-12-27T14:20:28.135935+00:00 app[api]: Scaled to web@1:Free by user fdtomn@gmail.com</span><br><span class="line">2019-12-27T14:20:28.000000+00:00 app[api]: Build succeeded</span><br><span class="line">2019-12-27T14:20:31.367067+00:00 heroku[web.1]: Starting process with command `sh -c java\ -Dserver.port\=\31283\ -Xmx300m\ -Xss512k\ -Dfile.encoding\=UTF-8\ -Djava.security.egd\=file:/dev/./urandom\ -jar\ /opt/application.jar`</span><br><span class="line">2019-12-27T14:20:34.684410+00:00 app[web.1]:</span><br><span class="line">2019-12-27T14:20:34.684615+00:00 app[web.1]: .   ____          _            __ _ _</span><br><span class="line">2019-12-27T14:20:34.684753+00:00 app[web.1]: /\\ / ___&apos;_ __ _ _(_)_ __  __ _ \ \ \ \</span><br><span class="line">2019-12-27T14:20:34.684891+00:00 app[web.1]: ( ( )\___ | &apos;_ | &apos;_| | &apos;_ \/ _` | \ \ \ \</span><br><span class="line">2019-12-27T14:20:34.684977+00:00 app[web.1]: \\/  ___)| |_)| | | | | || (_| |  ) ) ) )</span><br><span class="line">2019-12-27T14:20:34.685113+00:00 app[web.1]: &apos;  |____| .__|_| |_|_| |_\__, | / / / /</span><br><span class="line">2019-12-27T14:20:34.685178+00:00 app[web.1]: =========|_|==============|___/=/_/_/_/</span><br><span class="line">2019-12-27T14:20:34.686582+00:00 app[web.1]: :: Spring Boot ::        (v2.2.2.RELEASE)</span><br><span class="line">2019-12-27T14:20:34.686634+00:00 app[web.1]:</span><br><span class="line">2019-12-27T14:20:34.953867+00:00 app[web.1]: 2019-12-27 22:20:34.945  INFO 3 --- [           main] io.arukas.SpringBootHerokuApplication    : Starting SpringBootHerokuApplication on 626e4fdc-cb75-427b-a5b3-ebfce4331a1b with PID 3 (/opt/application.jar started by u27814 in /)</span><br><span class="line">2019-12-27T14:20:34.959825+00:00 app[web.1]: 2019-12-27 22:20:34.959  INFO 3 --- [           main] io.arukas.SpringBootHerokuApplication    : No active profile set, falling back to default profiles: default</span><br><span class="line">2019-12-27T14:20:37.154185+00:00 app[web.1]: 2019-12-27 22:20:37.153  INFO 3 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 31283 (http)</span><br><span class="line">2019-12-27T14:20:37.169525+00:00 app[web.1]: 2019-12-27 22:20:37.169  INFO 3 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]</span><br><span class="line">2019-12-27T14:20:37.169832+00:00 app[web.1]: 2019-12-27 22:20:37.169  INFO 3 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]</span><br><span class="line">2019-12-27T14:20:37.255854+00:00 app[web.1]: 2019-12-27 22:20:37.255  INFO 3 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext</span><br><span class="line">2019-12-27T14:20:37.255979+00:00 app[web.1]: 2019-12-27 22:20:37.255  INFO 3 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2050 ms</span><br><span class="line">2019-12-27T14:20:37.559123+00:00 app[web.1]: 2019-12-27 22:20:37.558  INFO 3 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService &apos;applicationTaskExecutor&apos;</span><br><span class="line">2019-12-27T14:20:37.869291+00:00 app[web.1]: 2019-12-27 22:20:37.869  INFO 3 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 31283 (http) with context path &apos;&apos;</span><br><span class="line">2019-12-27T14:20:37.875301+00:00 app[web.1]: 2019-12-27 22:20:37.874  INFO 3 --- [           main] io.arukas.SpringBootHerokuApplication    : Started SpringBootHerokuApplication in 3.876 seconds (JVM running for 4.667)</span><br><span class="line">2019-12-27T14:20:38.135299+00:00 heroku[web.1]: State changed from starting to up</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">$ heroku logs --tail</span><br><span class="line">2019-12-27T14:17:40.177009+00:00 app[api]: Enable Logplex by user fdtomn@gmail.com</span><br><span class="line">2019-12-27T14:17:40.177009+00:00 app[api]: Release v2 created by user fdtomn@gmail.com</span><br><span class="line">2019-12-27T14:17:39.723167+00:00 app[api]: Initial release by user fdtomn@gmail.com</span><br><span class="line">2019-12-27T14:17:39.723167+00:00 app[api]: Release v1 created by user fdtomn@gmail.com</span><br><span class="line">2019-12-27T14:19:35.480563+00:00 app[api]: Release v3 created by user fdtomn@gmail.com</span><br><span class="line">2019-12-27T14:19:35.480563+00:00 app[api]: Upgrade stack to container by user fdtomn@gmail.com</span><br><span class="line">2019-12-27T14:19:35.467047+00:00 app[api]: Stack changed from heroku-18 to container by user fdtomn@gmail.com</span><br><span class="line">2019-12-27T14:20:03.000000+00:00 app[api]: Build started by user fdtomn@gmail.com</span><br><span class="line">2019-12-27T14:20:28.120580+00:00 app[api]: Release v4 created by user fdtomn@gmail.com</span><br><span class="line">2019-12-27T14:20:28.120580+00:00 app[api]: Deploy 3a1cf002 by user fdtomn@gmail.com</span><br><span class="line">2019-12-27T14:20:28.135935+00:00 app[api]: Scaled to web@1:Free by user fdtomn@gmail.com</span><br><span class="line">2019-12-27T14:20:28.000000+00:00 app[api]: Build succeeded</span><br><span class="line">2019-12-27T14:20:31.367067+00:00 heroku[web.1]: Starting process with command `sh -c java\ -Dserver.port\=\31283\ -Xmx300m\ -Xss512k\ -Dfile.encoding\=UTF-8\ -Djava.security.egd\=file:/dev/./urandom\ -jar\ /opt/application.jar`</span><br><span class="line">2019-12-27T14:20:34.684410+00:00 app[web.1]:</span><br><span class="line">2019-12-27T14:20:34.684615+00:00 app[web.1]: .   ____          _            __ _ _</span><br><span class="line">2019-12-27T14:20:34.684753+00:00 app[web.1]: /\\ / ___&#x27;_ __ _ _(_)_ __  __ _ \ \ \ \</span><br><span class="line">2019-12-27T14:20:34.684891+00:00 app[web.1]: ( ( )\___ | &#x27;_ | &#x27;_| | &#x27;_ \/ _` | \ \ \ \</span><br><span class="line">2019-12-27T14:20:34.684977+00:00 app[web.1]: \\/  ___)| |_)| | | | | || (_| |  ) ) ) )</span><br><span class="line">2019-12-27T14:20:34.685113+00:00 app[web.1]: &#x27;  |____| .__|_| |_|_| |_\__, | / / / /</span><br><span class="line">2019-12-27T14:20:34.685178+00:00 app[web.1]: =========|_|==============|___/=/_/_/_/</span><br><span class="line">2019-12-27T14:20:34.686582+00:00 app[web.1]: :: Spring Boot ::        (v2.2.2.RELEASE)</span><br><span class="line">2019-12-27T14:20:34.686634+00:00 app[web.1]:</span><br><span class="line">2019-12-27T14:20:34.953867+00:00 app[web.1]: 2019-12-27 22:20:34.945  INFO 3 --- [           main] io.arukas.SpringBootHerokuApplication    : Starting SpringBootHerokuApplication on 626e4fdc-cb75-427b-a5b3-ebfce4331a1b with PID 3 (/opt/application.jar started by u27814 in /)</span><br><span class="line">2019-12-27T14:20:34.959825+00:00 app[web.1]: 2019-12-27 22:20:34.959  INFO 3 --- [           main] io.arukas.SpringBootHerokuApplication    : No active profile set, falling back to default profiles: default</span><br><span class="line">2019-12-27T14:20:37.154185+00:00 app[web.1]: 2019-12-27 22:20:37.153  INFO 3 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 31283 (http)</span><br><span class="line">2019-12-27T14:20:37.169525+00:00 app[web.1]: 2019-12-27 22:20:37.169  INFO 3 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]</span><br><span class="line">2019-12-27T14:20:37.169832+00:00 app[web.1]: 2019-12-27 22:20:37.169  INFO 3 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]</span><br><span class="line">2019-12-27T14:20:37.255854+00:00 app[web.1]: 2019-12-27 22:20:37.255  INFO 3 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext</span><br><span class="line">2019-12-27T14:20:37.255979+00:00 app[web.1]: 2019-12-27 22:20:37.255  INFO 3 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2050 ms</span><br><span class="line">2019-12-27T14:20:37.559123+00:00 app[web.1]: 2019-12-27 22:20:37.558  INFO 3 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService &#x27;applicationTaskExecutor&#x27;</span><br><span class="line">2019-12-27T14:20:37.869291+00:00 app[web.1]: 2019-12-27 22:20:37.869  INFO 3 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 31283 (http) with context path &#x27;&#x27;</span><br><span class="line">2019-12-27T14:20:37.875301+00:00 app[web.1]: 2019-12-27 22:20:37.874  INFO 3 --- [           main] io.arukas.SpringBootHerokuApplication    : Started SpringBootHerokuApplication in 3.876 seconds (JVM running for 4.667)</span><br><span class="line">2019-12-27T14:20:38.135299+00:00 heroku[web.1]: State changed from starting to up</span><br></pre></td></tr></table></figure>
+
 <p>从日志看我们已经用<code>Dockerfile</code> 成功部署 <code>Spring Boot</code> ,还是用浏览器看看效果吧，访问地址: <code>https://spring-boot-gradle-docker.herokuapp.com</code>.</p>
-<p>项目源码: <a href="https://github.com/heroku-sample/spring-boot-heroku-gradle-docker.git" target="_blank" rel="noopener">https://github.com/heroku-sample/spring-boot-heroku-gradle-docker.git</a></p>
+<p>项目源码: <a target="_blank" rel="noopener" href="https://github.com/heroku-sample/spring-boot-heroku-gradle-docker.git">https://github.com/heroku-sample/spring-boot-heroku-gradle-docker.git</a></p>
 
       
 
@@ -505,7 +520,7 @@ new Valine({
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2025 Niu Yuxian
+    		&copy; 2026 Niu Yuxian
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -630,15 +645,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">was</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">area</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">cors</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">was</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -666,10 +681,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">c#</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Nord</a>
               </li>
              
@@ -687,6 +698,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">guqin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">c#</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -758,6 +773,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">opencv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">原码</a>
               </li>
              
@@ -778,10 +797,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sed</a>
               </li>
              
@@ -799,6 +814,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -846,10 +865,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">archlinux</a>
               </li>
              
@@ -866,6 +881,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">d365</a>
               </li>
              
@@ -874,15 +893,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">deno</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">docker alpine</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">razor</a>
+                <a href="javascript:void(0)" class="js-tag color5">deno</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -891,6 +906,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ffmpeg</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">razor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -978,14 +997,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
@@ -1003,6 +1014,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1030,15 +1049,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">regex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">requests</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">rust</a>
+                <a href="javascript:void(0)" class="js-tag color1">regex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1050,11 +1065,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color5">rust</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1063,6 +1078,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mongo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1094,15 +1113,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">rocky</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">

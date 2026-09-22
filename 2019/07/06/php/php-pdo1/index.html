@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>php pdo连接mysql | Niu Yuxian&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="123456789101112131415161718192021&amp;lt;?php/** * PDO =&amp;gt; PHP Data Objects的缩写 */header(&apos;Content-Type:text/html;charset=utf-8&apos;);$config = [    &apos;host&apos; =&amp;gt; &apos;127.0.0.1&apos;,    &apos;username&apos; =&amp;gt; &apos;root&apos;,    &apos;p">
-<meta name="keywords" content="php">
+  <meta name="description" content="123456789101112131415161718192021&lt;?php&#x2F;** * PDO &#x3D;&gt; PHP Data Objects的缩写 *&#x2F;header(&#x27;Content-Type:text&#x2F;html;charset&#x3D;utf-8&#x27;);$config &#x3D; [    &#x27;host&#x27; &#x3D;&gt; &#x27;127.0.0.1&#x27;,">
 <meta property="og:type" content="article">
 <meta property="og:title" content="php pdo连接mysql">
 <meta property="og:url" content="http://yoursite.com/2019/07/06/php/php-pdo1/index.html">
 <meta property="og:site_name" content="Niu Yuxian&#39;blog">
-<meta property="og:description" content="123456789101112131415161718192021&amp;lt;?php/** * PDO =&amp;gt; PHP Data Objects的缩写 */header(&apos;Content-Type:text/html;charset=utf-8&apos;);$config = [    &apos;host&apos; =&amp;gt; &apos;127.0.0.1&apos;,    &apos;username&apos; =&amp;gt; &apos;root&apos;,    &apos;p">
-<meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2025-09-30T04:26:37.790Z">
+<meta property="og:description" content="123456789101112131415161718192021&lt;?php&#x2F;** * PDO &#x3D;&gt; PHP Data Objects的缩写 *&#x2F;header(&#x27;Content-Type:text&#x2F;html;charset&#x3D;utf-8&#x27;);$config &#x3D; [    &#x27;host&#x27; &#x3D;&gt; &#x27;127.0.0.1&#x27;,">
+<meta property="og:locale">
+<meta property="article:published_time" content="2019-07-06T06:38:33.000Z">
+<meta property="article:modified_time" content="2019-07-06T06:38:33.000Z">
+<meta property="article:author" content="Niu Yuxian">
+<meta property="article:tag" content="php">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="php pdo连接mysql">
-<meta name="twitter:description" content="123456789101112131415161718192021&amp;lt;?php/** * PDO =&amp;gt; PHP Data Objects的缩写 */header(&apos;Content-Type:text/html;charset=utf-8&apos;);$config = [    &apos;host&apos; =&amp;gt; &apos;127.0.0.1&apos;,    &apos;username&apos; =&amp;gt; &apos;root&apos;,    &apos;p">
   
     <link rel="alternative" href="/atom.xml" title="Niu Yuxian&#39;blog" type="application/atom+xml">
   
@@ -58,8 +58,8 @@ var _hmt = _hmt || [];
 </script>
 
 
-</head>
-</html>
+<meta name="generator" content="Hexo 8.1.2"></head>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -72,7 +72,7 @@ var _hmt = _hmt || [];
 			<img src="/assets/images/logo.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Niu Yuxian</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
 		
 
@@ -156,7 +156,7 @@ var _hmt = _hmt || [];
 				<img src="/assets/images/logo.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Niu Yuxian</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
 			
 			
@@ -270,14 +270,15 @@ var _hmt = _hmt || [];
         
         <a href="/2019/07/06/php/php-pdo1/" class="archive-article-date">
   	<time datetime="2019-07-06T06:38:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-06</time>
-  	更新：2025-09-30
+  	更新：2019-07-06
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * PDO =&gt; PHP Data Objects的缩写</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">header(<span class="string">'Content-Type:text/html;charset=utf-8'</span>);</span><br><span class="line">$config = [</span><br><span class="line">    <span class="string">'host'</span> =&gt; <span class="string">'127.0.0.1'</span>,</span><br><span class="line">    <span class="string">'username'</span> =&gt; <span class="string">'root'</span>,</span><br><span class="line">    <span class="string">'password'</span> =&gt; <span class="string">'root'</span>,</span><br><span class="line">    <span class="string">'database'</span> =&gt; <span class="string">'who'</span>,</span><br><span class="line">    <span class="string">'charset'</span> =&gt; <span class="string">'utf8'</span>,</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">$dsn = <span class="string">"mysql:host=&#123;$config['host']&#125;;dbname=&#123;$config['database']&#125;;charset=&#123;$config['charset']&#125;"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    $dbh = <span class="keyword">new</span> PDO($dsn, $config[<span class="string">'username'</span>], $config[<span class="string">'password'</span>]);</span><br><span class="line">    var_dump($dbh);</span><br><span class="line">&#125; <span class="keyword">catch</span> (PDOException $e) &#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">"DBERROR: &#123;$e-&gt;getMessage()&#125;"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * PDO =&gt; PHP Data Objects的缩写</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="title function_ invoke__">header</span>(<span class="string">&#x27;Content-Type:text/html;charset=utf-8&#x27;</span>);</span><br><span class="line"><span class="variable">$config</span> = [</span><br><span class="line">    <span class="string">&#x27;host&#x27;</span> =&gt; <span class="string">&#x27;127.0.0.1&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;username&#x27;</span> =&gt; <span class="string">&#x27;root&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;password&#x27;</span> =&gt; <span class="string">&#x27;root&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;database&#x27;</span> =&gt; <span class="string">&#x27;who&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;charset&#x27;</span> =&gt; <span class="string">&#x27;utf8&#x27;</span>,</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="variable">$dsn</span> = <span class="string">&quot;mysql:host=<span class="subst">&#123;$config[&#x27;host&#x27;]&#125;</span>;dbname=<span class="subst">&#123;$config[&#x27;database&#x27;]&#125;</span>;charset=<span class="subst">&#123;$config[&#x27;charset&#x27;]&#125;</span>&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="variable">$dbh</span> = <span class="keyword">new</span> <span class="title function_ invoke__">PDO</span>(<span class="variable">$dsn</span>, <span class="variable">$config</span>[<span class="string">&#x27;username&#x27;</span>], <span class="variable">$config</span>[<span class="string">&#x27;password&#x27;</span>]);</span><br><span class="line">    <span class="title function_ invoke__">var_dump</span>(<span class="variable">$dbh</span>);</span><br><span class="line">&#125; <span class="keyword">catch</span> (PDOException <span class="variable">$e</span>) &#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">&quot;DBERROR: <span class="subst">&#123;$e-&gt;getMessage()&#125;</span>&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -463,7 +464,7 @@ new Valine({
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2025 Niu Yuxian
+    		&copy; 2026 Niu Yuxian
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -588,15 +589,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">was</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">area</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">cors</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">was</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -624,10 +625,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">c#</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Nord</a>
               </li>
              
@@ -645,6 +642,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">guqin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">c#</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -716,6 +717,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">opencv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">原码</a>
               </li>
              
@@ -736,10 +741,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sed</a>
               </li>
              
@@ -757,6 +758,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -804,10 +809,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">archlinux</a>
               </li>
              
@@ -824,6 +825,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">d365</a>
               </li>
              
@@ -832,15 +837,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">deno</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">docker alpine</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">razor</a>
+                <a href="javascript:void(0)" class="js-tag color5">deno</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -849,6 +850,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ffmpeg</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">razor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -936,14 +941,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
@@ -961,6 +958,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -988,15 +993,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">regex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">requests</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">rust</a>
+                <a href="javascript:void(0)" class="js-tag color1">regex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1008,11 +1009,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color5">rust</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1021,6 +1022,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mongo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1052,15 +1057,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">rocky</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Niu Yuxian&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -12,9 +12,9 @@
 <meta property="og:title" content="Niu Yuxian&#39;blog">
 <meta property="og:url" content="http://yoursite.com/page/9/index.html">
 <meta property="og:site_name" content="Niu Yuxian&#39;blog">
-<meta property="og:locale" content="default">
+<meta property="og:locale">
+<meta property="article:author" content="Niu Yuxian">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Niu Yuxian&#39;blog">
   
     <link rel="alternative" href="/atom.xml" title="Niu Yuxian&#39;blog" type="application/atom+xml">
   
@@ -53,8 +53,8 @@ var _hmt = _hmt || [];
 </script>
 
 
-</head>
-</html>
+<meta name="generator" content="Hexo 8.1.2"></head>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -67,7 +67,7 @@ var _hmt = _hmt || [];
 			<img src="/assets/images/logo.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Niu Yuxian</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
 		
 
@@ -151,7 +151,7 @@ var _hmt = _hmt || [];
 				<img src="/assets/images/logo.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Niu Yuxian</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
 			
 			
@@ -253,6 +253,106 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-nodejs/nodejs01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/14/nodejs/nodejs01/">修改npm全局安装模式的路径</a>
+    </h1>
+  
+
+        
+        <a href="/2021/08/14/nodejs/nodejs01/" class="archive-article-date">
+  	<time datetime="2021-08-14T09:46:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-14</time>
+  	更新：2021-08-14
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 全局安装 webpack</span></span><br><span class="line">npm i webpack -g</span><br><span class="line"></span><br><span class="line"><span class="comment">## 卸载全局 webpack</span></span><br><span class="line">npm r webpack -g</span><br><span class="line"></span><br><span class="line">i、r 都是命令参数的别名，可以通过下面的命令查看</span><br><span class="line">npm install -h</span><br></pre></td></tr></table></figure>
+
+<p><strong>全局模块默认安装</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\Administrator\AppData\Roaming\npm</span><br></pre></td></tr></table></figure>
+
+<p>通过命令查看默认配置，默认配置文件</p>
+<p>C:\Users\Administrator.npmrc</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config <span class="built_in">ls</span></span><br></pre></td></tr></table></figure>
+
+<p>修改默认配置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> prefix <span class="string">&quot;D:\download\nodejs\npm_global&quot;</span></span><br><span class="line"></span><br><span class="line">npm config <span class="built_in">set</span> cache <span class="string">&quot;D:\download\nodejs\npm_cache&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>修改后需要 prefix 对应的值加到环境变量中，新建用户环境变量，添加 D:\tmp\nodejs\npm_global 到 PATH 即可。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">nodejs</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/nodejs//" class="article-tag-list-link color2">nodejs</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/08/14/nodejs/nodejs01/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-d365/merge-multiple-assemblies-into-one-dll" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -267,14 +367,14 @@ var _hmt = _hmt || [];
         
         <a href="/2021/07/29/d365/merge-multiple-assemblies-into-one-dll/" class="archive-article-date">
   	<time datetime="2021-07-29T21:12:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-29</time>
-  	更新：2025-09-30
+  	更新：2021-07-29
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="第一步-Install-MSBuild-ILMerge-Task-from-Nuget-package-manager"><a href="#第一步-Install-MSBuild-ILMerge-Task-from-Nuget-package-manager" class="headerlink" title="第一步  Install MSBuild.ILMerge.Task from Nuget package manager"></a>第一步  <strong>Install MSBuild.ILMerge.Task from Nuget package manager</strong></h2><p><a href="https://www.nuget.org/packages/MSBuild.ILMerge.Task/" target="_blank" rel="noopener">https://www.nuget.org/packages/MSBuild.ILMerge.Task/</a></p>
+        <h2 id="第一步-Install-MSBuild-ILMerge-Task-from-Nuget-package-manager"><a href="#第一步-Install-MSBuild-ILMerge-Task-from-Nuget-package-manager" class="headerlink" title="第一步  Install MSBuild.ILMerge.Task from Nuget package manager"></a>第一步  <strong>Install MSBuild.ILMerge.Task from Nuget package manager</strong></h2><p><a target="_blank" rel="noopener" href="https://www.nuget.org/packages/MSBuild.ILMerge.Task/">https://www.nuget.org/packages/MSBuild.ILMerge.Task/</a></p>
 <h2 id="第二步-需要合并的dll复制到本地为true"><a href="#第二步-需要合并的dll复制到本地为true" class="headerlink" title="第二步 需要合并的dll复制到本地为true"></a>第二步 需要合并的dll复制到本地为true</h2><p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/07/29/image-12.png" alt="需要合并的dll复制到本地为true"></p>
         
           <a class="article-more-a" href="/2021/07/29/d365/merge-multiple-assemblies-into-one-dll/#more">more >></a>
@@ -358,7 +458,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/07/24/d365/dynamic-365-add-button-in-entity-home-grid-command-bar/" class="archive-article-date">
   	<time datetime="2021-07-24T07:28:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-24</time>
-  	更新：2025-09-30
+  	更新：2021-07-24
 </a>
         
       </header>
@@ -368,7 +468,7 @@ var _hmt = _hmt || [];
         <p>先上效果图</p>
 <p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/07/24/2021-07-24_073033.png" alt="自定义按钮"></p>
 <p>将实体 Order 添加到我专门用来定制的解决方案 RibbonEditor，只需要添加实体的<strong>元数据</strong>即可，不需要添加所有资产，也就是保持【Include entity metadata】选中，而取消选中 【Add All Assets】. 点击【Finish】按钮。</p>
-<p>首先下载开发工具 <a href="[Develop 1 Ltd | Ribbon Workbench for Dynamics 365 &amp; Dynamics CRM](https://www.develop1.net/public/rwb/ribbonworkbench.aspx">RIBBON WORKBENCH</a>). 下载后是一个解决方案的压缩包。然后我们将这个解决方案导入到我们的CRM中。导入后如下图</p>
+<p>首先下载开发工具 [RIBBON WORKBENCH](<a target="_blank" rel="noopener" href="https://www.develop1.net/public/rwb/ribbonworkbench.aspx">Develop 1 Ltd | Ribbon Workbench for Dynamics 365 &amp; Dynamics CRM</a>). 下载后是一个解决方案的压缩包。然后我们将这个解决方案导入到我们的CRM中。导入后如下图</p>
 <p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/07/24/2021-07-24_074352.png" alt="RIBBON WORKBENCH"></p>
 <p>打开后会提示导入解决方案，所以操作前需要提前准备好解决方案。<br><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/07/24/2021-07-24_074646.png" alt="RIBBON WORKBENCH"></p>
 <p>选择后导入</p>
@@ -391,12 +491,13 @@ var _hmt = _hmt || [];
 <p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/07/24/2021-07-24_081943.png" alt="添加命令"></p>
 <p><strong>有参命令</strong></p>
 <p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/07/24/2021-07-24_105431.png" alt="添加命令"></p>
-<p><a href="https://docs.microsoft.com/en-us/powerapps/developer/model-driven-apps/pass-data-page-parameter-ribbon-actions" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/powerapps/developer/model-driven-apps/pass-data-page-parameter-ribbon-actions</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/powerapps/developer/model-driven-apps/pass-data-page-parameter-ribbon-actions">https://docs.microsoft.com/en-us/powerapps/developer/model-driven-apps/pass-data-page-parameter-ribbon-actions</a></p>
 <p><strong>测试权限</strong></p>
 <p>通过为按钮添加命令，再为命令添加规则，控制按钮是否显示。<br><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/07/24/2021-07-24_114136.png" alt="按钮-&gt;命令-&gt;规则"></p>
 <p>通过JS控制按钮是否显示，这里一般通过查询用户角色<br><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/07/24/2021-07-24_114300.png" alt="按钮-&gt;命令-&gt;规则"></p>
 <p>sfdhl_sample_hello.js</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//console.log('hello.js');</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 控制权限按钮是否显示</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">px</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> publisher = Xrm.Page.getAttribute(<span class="string">"sfdhl_publisher"</span>).getValue();</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'人民邮电出版社'</span> === publisher;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 列表页面按钮</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hello</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    alert(<span class="string">'click btn1'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">welcome</span>(<span class="params">formContext</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(formContext);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> bookName = formContext.getAttribute(<span class="string">"sfdhl_name"</span>).getValue();</span><br><span class="line">   </span><br><span class="line">    Xrm.Navigation.openAlertDialog(&#123; <span class="attr">text</span>: <span class="string">`<span class="subst">$&#123;bookName&#125;</span>`</span> &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 修改页面值</span></span><br><span class="line">    formContext.getAttribute(<span class="string">"sfdhl_description"</span>).setValue(<span class="string">"https://www.contoso.com"</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//dialog();</span></span><br><span class="line">    <span class="comment">//contextInfo();</span></span><br><span class="line">    <span class="comment">//pageData();</span></span><br><span class="line">    control();</span><br><span class="line">    format();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">format</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> x = Xrm.Page.getAttribute(<span class="string">'sfdhl_publication_time'</span>).getFormat();</span><br><span class="line">    <span class="built_in">console</span>.error(x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">control</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 禁用字段</span></span><br><span class="line">    Xrm.Page.getControl(<span class="string">"sfdhl_name"</span>).setDisabled(<span class="literal">true</span>);</span><br><span class="line">    Xrm.Page.getControl(<span class="string">"sfdhl_publisher"</span>).setDisabled(<span class="literal">true</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pageData</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> entity = Xrm.Page.data.entity;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 所有页面元素</span></span><br><span class="line">    <span class="built_in">console</span>.error(entity.attributes);</span><br><span class="line">    <span class="built_in">console</span>.error(entity.getEntityName);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//console.error(entity.getEntitySetName);</span></span><br><span class="line">    <span class="built_in">console</span>.error(entity.getId());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">contextInfo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> pageContext = Xrm.Page.context;</span><br><span class="line">    <span class="built_in">console</span>.error(pageContext.getUserId());</span><br><span class="line">    <span class="built_in">console</span>.error(pageContext.getUserName());</span><br><span class="line">    <span class="comment">//Array</span></span><br><span class="line">    <span class="built_in">console</span>.error(pageContext.getUserRoles());</span><br><span class="line">    <span class="comment">//console.log(pageContext.getUser());</span></span><br><span class="line">    <span class="built_in">console</span>.error(pageContext.getClientUrl());</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取用户当前语言代码</span></span><br><span class="line">    <span class="built_in">console</span>.error(pageContext.getUserLcid());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">dialog</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//var alertStrings = &#123; confirmButtonLabel: "Yes", text: "操作成功!", title: "提示" &#125;;</span></span><br><span class="line">    <span class="comment">//var alertOptions = &#123; height: 120, width: 260 &#125;;</span></span><br><span class="line">    <span class="comment">//Xrm.Navigation.openAlertDialog(alertStrings, alertOptions);</span></span><br><span class="line"></span><br><span class="line">    Xrm.Navigation.openErrorDialog(&#123; <span class="attr">message</span>: <span class="string">"操作失败！"</span>&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//console.log(&#x27;hello.js&#x27;);</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 控制权限按钮是否显示</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">px</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> publisher = <span class="title class_">Xrm</span>.<span class="property">Page</span>.<span class="title function_">getAttribute</span>(<span class="string">&quot;sfdhl_publisher&quot;</span>).<span class="title function_">getValue</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;人民邮电出版社&#x27;</span> === publisher;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 列表页面按钮</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">hello</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="title function_">alert</span>(<span class="string">&#x27;click btn1&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">welcome</span>(<span class="params">formContext</span>) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(formContext);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> bookName = formContext.<span class="title function_">getAttribute</span>(<span class="string">&quot;sfdhl_name&quot;</span>).<span class="title function_">getValue</span>();</span><br><span class="line">   </span><br><span class="line">    <span class="title class_">Xrm</span>.<span class="property">Navigation</span>.<span class="title function_">openAlertDialog</span>(&#123; <span class="attr">text</span>: <span class="string">`<span class="subst">$&#123;bookName&#125;</span>`</span> &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 修改页面值</span></span><br><span class="line">    formContext.<span class="title function_">getAttribute</span>(<span class="string">&quot;sfdhl_description&quot;</span>).<span class="title function_">setValue</span>(<span class="string">&quot;https://www.contoso.com&quot;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//dialog();</span></span><br><span class="line">    <span class="comment">//contextInfo();</span></span><br><span class="line">    <span class="comment">//pageData();</span></span><br><span class="line">    <span class="title function_">control</span>();</span><br><span class="line">    <span class="title function_">format</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">format</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> x = <span class="title class_">Xrm</span>.<span class="property">Page</span>.<span class="title function_">getAttribute</span>(<span class="string">&#x27;sfdhl_publication_time&#x27;</span>).<span class="title function_">getFormat</span>();</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">error</span>(x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">control</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// 禁用字段</span></span><br><span class="line">    <span class="title class_">Xrm</span>.<span class="property">Page</span>.<span class="title function_">getControl</span>(<span class="string">&quot;sfdhl_name&quot;</span>).<span class="title function_">setDisabled</span>(<span class="literal">true</span>);</span><br><span class="line">    <span class="title class_">Xrm</span>.<span class="property">Page</span>.<span class="title function_">getControl</span>(<span class="string">&quot;sfdhl_publisher&quot;</span>).<span class="title function_">setDisabled</span>(<span class="literal">true</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">pageData</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> entity = <span class="title class_">Xrm</span>.<span class="property">Page</span>.<span class="property">data</span>.<span class="property">entity</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 所有页面元素</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">error</span>(entity.<span class="property">attributes</span>);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">error</span>(entity.<span class="property">getEntityName</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//console.error(entity.getEntitySetName);</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">error</span>(entity.<span class="title function_">getId</span>());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">contextInfo</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> pageContext = <span class="title class_">Xrm</span>.<span class="property">Page</span>.<span class="property">context</span>;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">error</span>(pageContext.<span class="title function_">getUserId</span>());</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">error</span>(pageContext.<span class="title function_">getUserName</span>());</span><br><span class="line">    <span class="comment">//Array</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">error</span>(pageContext.<span class="title function_">getUserRoles</span>());</span><br><span class="line">    <span class="comment">//console.log(pageContext.getUser());</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">error</span>(pageContext.<span class="title function_">getClientUrl</span>());</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取用户当前语言代码</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">error</span>(pageContext.<span class="title function_">getUserLcid</span>());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">dialog</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">//var alertStrings = &#123; confirmButtonLabel: &quot;Yes&quot;, text: &quot;操作成功!&quot;, title: &quot;提示&quot; &#125;;</span></span><br><span class="line">    <span class="comment">//var alertOptions = &#123; height: 120, width: 260 &#125;;</span></span><br><span class="line">    <span class="comment">//Xrm.Navigation.openAlertDialog(alertStrings, alertOptions);</span></span><br><span class="line"></span><br><span class="line">    <span class="title class_">Xrm</span>.<span class="property">Navigation</span>.<span class="title function_">openErrorDialog</span>(&#123; <span class="attr">message</span>: <span class="string">&quot;操作失败！&quot;</span>&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -477,7 +578,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/06/27/os/linux-systemd/" class="archive-article-date">
   	<time datetime="2021-06-27T20:51:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-27</time>
-  	更新：2025-09-30
+  	更新：2021-06-27
 </a>
         
       </header>
@@ -485,8 +586,17 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="Centos7"><a href="#Centos7" class="headerlink" title="Centos7"></a>Centos7</h2><p>在 centos 中 systemctl  是设置系统服务的命令即 service  ,   它融合之前service和chkconfig的功能于一体。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">## 查看已安装的服务</span><br><span class="line">systemctl list-unit-files </span><br><span class="line"></span><br><span class="line">## 查看开机启动服务</span><br><span class="line">systemctl list-unit-files | grep enabled</span><br><span class="line"></span><br><span class="line">## 查看服务列表状态</span><br><span class="line">systemctl list-units --type=service</span><br><span class="line"></span><br><span class="line">## 查看启动失败的服务列表</span><br><span class="line">systemctl --failed</span><br><span class="line"></span><br><span class="line">## 查看是否开机启动 显示结果 enable、disable或static</span><br><span class="line">## 这里的 static 它是指对应的 Unit 文件中没有定义[Install]区域，因此无法配置为开机启动服务</span><br><span class="line">systemctl is-enabled sshd.service</span><br></pre></td></tr></table></figure>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.freedesktop.org/software/systemd/man/systemd.service.html" target="_blank" rel="noopener">官方手册</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">## 查看已安装的服务</span><br><span class="line">systemctl list-unit-files </span><br><span class="line"></span><br><span class="line">## 查看开机启动服务</span><br><span class="line">systemctl list-unit-files | grep enabled</span><br><span class="line"></span><br><span class="line">## 查看服务列表状态</span><br><span class="line">systemctl list-units --type=service</span><br><span class="line"></span><br><span class="line">## 查看启动失败的服务列表</span><br><span class="line">systemctl --failed</span><br><span class="line"></span><br><span class="line">## 查看是否开机启动 显示结果 enable、disable或static</span><br><span class="line">## 这里的 static 它是指对应的 Unit 文件中没有定义[Install]区域，因此无法配置为开机启动服务</span><br><span class="line">systemctl is-enabled sshd.service</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a target="_blank" rel="noopener" href="https://www.freedesktop.org/software/systemd/man/systemd.service.html">官方手册</a></p>
 
       
 
@@ -556,15 +666,16 @@ var _hmt = _hmt || [];
         
         <a href="/2021/04/23/db/postgresql/postgres-13.2/" class="archive-article-date">
   	<time datetime="2021-04-23T21:06:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-23</time>
-  	更新：2025-09-30
+  	更新：2021-04-23
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>下载地址<br><a href="https://ftp.postgresql.org/pub/source/v13.2/postgresql-13.2.tar.gz" target="_blank" rel="noopener">postgresql-13.2.tar.gz 官网</a><br><a href="https://repo.huaweicloud.com/postgresql/source/v13.2/postgresql-13.2.tar.gz" target="_blank" rel="noopener">postgresql-13.2.tar.gz 国内镜像</a></p>
+        <p>下载地址<br><a target="_blank" rel="noopener" href="https://ftp.postgresql.org/pub/source/v13.2/postgresql-13.2.tar.gz">postgresql-13.2.tar.gz 官网</a><br><a target="_blank" rel="noopener" href="https://repo.huaweicloud.com/postgresql/source/v13.2/postgresql-13.2.tar.gz">postgresql-13.2.tar.gz 国内镜像</a></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 解压到指定目录</span></span><br><span class="line">tar -zxvf postgresql-13.2.tar.gz -C /opt</span><br><span class="line"></span><br><span class="line"><span class="comment">### 方案 1</span></span><br><span class="line">./configure --prefix=/data/postgres/13.2</span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line"></span><br><span class="line"><span class="comment">### 方案 2</span></span><br><span class="line">./configure --prefix=/data/postgres/13.2 --with-uuid=ossp</span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> /opt/postgresql-13.2/contrib/uuid-ossp</span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line"></span><br><span class="line"><span class="comment">### 方案 3</span></span><br><span class="line"><span class="comment"># 如果你希望编译所有能编译的东西，包括文档（HTML和手册页）以及附加模块（contrib）</span></span><br><span class="line">./configure --prefix=/data/postgres/13.2 --with-uuid=ossp</span><br><span class="line">make world</span><br><span class="line">make install-world</span><br></pre></td></tr></table></figure>
+
 <p>segsize：段尺寸，操作系统对文件的大小限制，因此一个表的文件最大不能超过文件系统规定的大小。为解决这个问题，可以将大表的文件拆分为小文件，每个文件的大小即为段设置的大小，单位为G</p>
 <p>blocksize：块大小，数据库IO的最小单位</p>
 <p>wal-segsize：日志段大小，即日志的大小</p>
@@ -651,7 +762,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/04/10/sts/" class="archive-article-date">
   	<time datetime="2021-04-10T21:21:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-10</time>
-  	更新：2025-09-30
+  	更新：2021-04-10
 </a>
         
       </header>
@@ -661,9 +772,11 @@ var _hmt = _hmt || [];
         <p>安装 spring-tool-suite-4-4.10.0.RELEASE-e4.19.0-win32.win32.x86_64.self-extracting.jar</p>
 <p>双击即可解压到当前目录</p>
 <p>修改<code>SpringToolSuite4.ini</code>添加下面的配置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-Dfile.encoding=UTF8</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-Dfile.encoding=UTF8</span><br></pre></td></tr></table></figure>
+
 <p>安装 Activiti 设计器，使用离线安装吧</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://www.activiti.org/designer/update</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://www.activiti.org/designer/update </span><br></pre></td></tr></table></figure>
+
 <p>注意，设置里面保存生成图片</p>
 
       
@@ -745,7 +858,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/03/31/adb/adb-frida-server/" class="archive-article-date">
   	<time datetime="2021-03-31T08:23:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-31</time>
-  	更新：2025-09-30
+  	更新：2021-03-31
 </a>
         
       </header>
@@ -753,19 +866,36 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">kaime@kaime-vm:~|⇒  adb version</span><br><span class="line">Android Debug Bridge version 1.0.41</span><br><span class="line">Version 30.0.3-1</span><br><span class="line">Installed as /usr/bin/adb</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 默认只监听 127.0.0.1</span><br><span class="line"># 端口转发 注意防火墙放行</span><br><span class="line"># window 使用下面的命令，夜神模拟器第一个设备端口 62001 开始</span><br><span class="line">netsh interface portproxy add v4tov4 62001 127.0.0.1 62001</span><br><span class="line"></span><br><span class="line"># adb 连接远程模拟器</span><br><span class="line">adb connect 192.168.18.250:62001</span><br><span class="line"># 多个设备时进入shell</span><br><span class="line">adb -s 192.168.18.250:62002 shell</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 默认只监听 127.0.0.1</span><br><span class="line"># 端口转发 注意防火墙放行</span><br><span class="line"># window 使用下面的命令，夜神模拟器第一个设备端口 62001 开始</span><br><span class="line">netsh interface portproxy add v4tov4 62001 127.0.0.1 62001</span><br><span class="line"></span><br><span class="line"># adb 连接远程模拟器</span><br><span class="line">adb connect 192.168.18.250:62001</span><br><span class="line"># 多个设备时进入shell</span><br><span class="line">adb -s 192.168.18.250:62002 shell</span><br></pre></td></tr></table></figure>
+
 <h2 id="服务端安装"><a href="#服务端安装" class="headerlink" title="服务端安装"></a>服务端安装</h2><p>frida-server版本要和上面安装的<code>frida</code>版本对应</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">## 查看版本</span><br><span class="line"></span><br><span class="line">adb shell</span><br><span class="line"># getprop ro.product.cpu.abi</span><br><span class="line">x86_64</span><br><span class="line"></span><br><span class="line">下载对应版本 </span><br><span class="line">https://github.com/frida/frida/releases/download/16.4.1/frida-server-16.4.1-android-x86_64.xz</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 上传到手机</span><br><span class="line">adb push frida-server-16.4.1-android-x86_64 /data/local/tmp/frida-server</span><br><span class="line"></span><br><span class="line">## 赋予执行权限</span><br><span class="line">chmod 777 frida-server</span><br><span class="line"></span><br><span class="line">## 启动服务</span><br><span class="line">./frida-server</span><br><span class="line"></span><br><span class="line">## 开启端口转发 （客户端）</span><br><span class="line">adb forward tcp:27042 tcp:27042</span><br><span class="line">adb forward tcp:27043 tcp:27043</span><br></pre></td></tr></table></figure>
-<h2 id="客户端安装"><a href="#客户端安装" class="headerlink" title="客户端安装"></a>客户端安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">pip install frida==16.4.1</span><br><span class="line">或</span><br><span class="line">pip3 install frida==16.4.1</span><br><span class="line"></span><br><span class="line">pip3 install -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com frida==16.4.1</span><br><span class="line"></span><br><span class="line">pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple frida==16.4.1</span><br><span class="line">pip3 uninstall frida</span><br><span class="line"></span><br><span class="line">这个时候frida的大多命令还是不能用的,需要安装frida-tools</span><br><span class="line">pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple frida-tools==12.4.4</span><br><span class="line"></span><br><span class="line">## 查看版本</span><br><span class="line">C:\Users\node&gt;frida --version</span><br><span class="line">16.4.1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">## 查看版本</span><br><span class="line"></span><br><span class="line">adb shell</span><br><span class="line"># getprop ro.product.cpu.abi</span><br><span class="line">x86_64</span><br><span class="line"></span><br><span class="line">下载对应版本 </span><br><span class="line">https://github.com/frida/frida/releases/download/16.4.1/frida-server-16.4.1-android-x86_64.xz</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 上传到手机</span><br><span class="line">adb push frida-server-16.4.1-android-x86_64 /data/local/tmp/frida-server</span><br><span class="line"></span><br><span class="line">## 赋予执行权限</span><br><span class="line">chmod 777 frida-server</span><br><span class="line"></span><br><span class="line">## 启动服务</span><br><span class="line">./frida-server</span><br><span class="line"></span><br><span class="line">## 开启端口转发 （客户端）</span><br><span class="line">adb forward tcp:27042 tcp:27042</span><br><span class="line">adb forward tcp:27043 tcp:27043</span><br></pre></td></tr></table></figure>
+
+<h2 id="客户端安装"><a href="#客户端安装" class="headerlink" title="客户端安装"></a>客户端安装</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">pip install frida==16.4.1</span><br><span class="line">或</span><br><span class="line">pip3 install frida==16.4.1</span><br><span class="line"></span><br><span class="line">pip3 install -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com frida==16.4.1</span><br><span class="line"></span><br><span class="line">pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple frida==16.4.1</span><br><span class="line">pip3 uninstall frida</span><br><span class="line"></span><br><span class="line">这个时候frida的大多命令还是不能用的,需要安装frida-tools</span><br><span class="line">pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple frida-tools==12.4.4</span><br><span class="line"></span><br><span class="line">## 查看版本</span><br><span class="line">C:\Users\node&gt;frida --version</span><br><span class="line">16.4.1</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
 <h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><p><code>frida client</code> 有6个工具</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 连接到设备上的chrome应用进程上</span><br><span class="line">$ frida -U com.android.chrome</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">attach后名称以frida-ps -U命令中显示为准，不一定是包名，可能是应用名称。</span><br><span class="line"></span><br><span class="line">#列出设备上正在运行的进程</span><br><span class="line">frida-ps -U</span><br><span class="line"></span><br><span class="line"># 可以查看包名</span><br><span class="line">C:\Users\node&gt;frida-ps -Ua</span><br><span class="line"> PID  Name    Identifier</span><br><span class="line">----  ------  -------------------------------</span><br><span class="line">6798  泉通      com.uama.smartcommunityforjngxy</span><br><span class="line">5972  短信      com.android.messaging</span><br><span class="line">5430  设置      com.android.settings</span><br><span class="line">5912  通讯录     com.android.contacts</span><br><span class="line">5782  雷电游戏中心  com.android.flysilkworm</span><br></pre></td></tr></table></figure>
-<p>frida 连接的远程的设备，还需要做端口转发<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 默认只监听 127.0.0.1</span><br><span class="line"># 端口转发 注意防火墙放行</span><br><span class="line">netsh interface portproxy add v4tov4 62001 127.0.0.1 62001</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var cipher = Java.use(&apos;javax.crypto.Cipher&apos;);</span><br><span class="line">cipher.doFinal.overload(&quot;[B&quot;).implementation = function (x) &#123;</span><br><span class="line">    console.log(&quot;\n================ doFinal() ======================&quot;);</span><br><span class="line">    var ret = cipher.doFinal.overload(&quot;[B&quot;).call(this, x);</span><br><span class="line">    console.log(&quot;doFinal :: data to encrypt/decrypt - base64 :: &quot; + bytesToBase64(x));</span><br><span class="line">    console.log(&quot;doFinal :: data ro encrypt/decrypt - string :: &quot; + bytesToString(x));</span><br><span class="line"></span><br><span class="line">    console.log(&quot;doFinal :: data ro encrypt/decrypt - return value :: &quot; + ret);</span><br><span class="line">    return ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Frida与Frida-tools对应关系"><a href="#Frida与Frida-tools对应关系" class="headerlink" title="Frida与Frida-tools对应关系"></a>Frida与Frida-tools对应关系</h2><p><a href="https://github.com/frida/frida/releases" target="_blank" rel="noopener">https://github.com/frida/frida/releases</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 连接到设备上的chrome应用进程上</span><br><span class="line">$ frida -U com.android.chrome</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">attach后名称以frida-ps -U命令中显示为准，不一定是包名，可能是应用名称。</span><br><span class="line"></span><br><span class="line">#列出设备上正在运行的进程</span><br><span class="line">frida-ps -U</span><br><span class="line"></span><br><span class="line"># 可以查看包名</span><br><span class="line">C:\Users\node&gt;frida-ps -Ua</span><br><span class="line"> PID  Name    Identifier</span><br><span class="line">----  ------  -------------------------------</span><br><span class="line">6798  泉通      com.uama.smartcommunityforjngxy</span><br><span class="line">5972  短信      com.android.messaging</span><br><span class="line">5430  设置      com.android.settings</span><br><span class="line">5912  通讯录     com.android.contacts</span><br><span class="line">5782  雷电游戏中心  com.android.flysilkworm</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<p>frida 连接的远程的设备，还需要做端口转发</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 默认只监听 127.0.0.1</span><br><span class="line"># 端口转发 注意防火墙放行</span><br><span class="line">netsh interface portproxy add v4tov4 62001 127.0.0.1 62001</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var cipher = Java.use(&#x27;javax.crypto.Cipher&#x27;);</span><br><span class="line">cipher.doFinal.overload(&quot;[B&quot;).implementation = function (x) &#123;</span><br><span class="line">    console.log(&quot;\n================ doFinal() ======================&quot;);</span><br><span class="line">    var ret = cipher.doFinal.overload(&quot;[B&quot;).call(this, x);</span><br><span class="line">    console.log(&quot;doFinal :: data to encrypt/decrypt - base64 :: &quot; + bytesToBase64(x));</span><br><span class="line">    console.log(&quot;doFinal :: data ro encrypt/decrypt - string :: &quot; + bytesToString(x));</span><br><span class="line"></span><br><span class="line">    console.log(&quot;doFinal :: data ro encrypt/decrypt - return value :: &quot; + ret);</span><br><span class="line">    return ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Frida与Frida-tools对应关系"><a href="#Frida与Frida-tools对应关系" class="headerlink" title="Frida与Frida-tools对应关系"></a>Frida与Frida-tools对应关系</h2><p><a target="_blank" rel="noopener" href="https://github.com/frida/frida/releases">https://github.com/frida/frida/releases</a></p>
 <p>在对应版本Frida中查找Frida-tools版本即可，16后貌似没有了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line">frida-tools==1.0.0 ------ 12.0.0&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==1.1.0 ------ 12.0.0&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==1.2.0 ------ 12.1.0&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==1.2.1 ------ 12.1.0&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==1.2.2 ------ 12.1.0&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==1.2.3 ------ 12.1.0&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==1.3.0 ------ 12.3.0&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==1.3.1 ------ 12.3.0&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==1.3.2 ------ 12.4.0&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==2.0.0 ------ 12.5.3&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==2.0.1 ------ 12.5.9&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==2.0.2 ------ 12.5.9&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==2.1.0 ------ 12.5.9&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==2.1.1 ------ 12.5.9&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==2.2.0 ------ 12.5.9&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==3.0.0 ------ 12.6.17&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==3.0.1 ------ 12.6.17&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==4.0.0 ------ 12.6.21&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==4.0.1 ------ 12.6.21&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==4.0.2 ------ 12.6.21&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==4.1.0 ------ 12.6.21&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==5.0.0 ------ 12.6.21&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==5.0.1 ------ 12.7.3&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==5.1.0 ------ 12.7.3&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==5.2.0 ------ 12.7.3&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==5.3.0 ------ 12.7.3&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==5.4.0 ------ 12.7.3&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==6.0.0 ------ 12.8.5&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==6.0.1 ------ 12.8.5&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==7.0.0 ------ 12.8.12&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==7.0.1 ------ 12.8.12&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==7.0.2 ------ 12.8.12&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==7.1.0 ------ 12.8.12&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==7.2.0 ------ 12.8.12&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==7.2.1 ------ 12.8.12&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==7.2.2 ------ 12.8.12&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==8.0.0 ------ 12.10.4&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==8.0.1 ------ 12.10.4&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==8.1.0 ------ 12.10.4&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==8.1.1 ------ 12.10.4&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==8.1.2 ------ 12.10.4&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==8.1.3 ------ 12.10.4&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==8.2.0 ------ 12.10.4&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==9.0.0 ------ 14.0.0&lt;=frida&lt;15.0.0</span><br><span class="line">frida-tools==9.0.1 ------ 14.0.0&lt;=frida&lt;15.0.0</span><br><span class="line">frida-tools==9.1.0 ------ 14.2.0&lt;=frida&lt;15.0.0</span><br><span class="line">frida-tools==9.2.0 ------ 14.2.9&lt;=frida&lt;15.0.0</span><br><span class="line">frida-tools==9.2.1 ------ 14.2.9&lt;=frida&lt;15.0.0</span><br><span class="line">frida-tools==9.2.2 ------ 14.2.9&lt;=frida&lt;15.0.0</span><br><span class="line">frida-tools==9.2.3 ------ 14.2.9&lt;=frida&lt;15.0.0</span><br><span class="line">frida-tools==9.2.4 ------ 14.2.9&lt;=frida&lt;15.0.0</span><br><span class="line">frida-tools==9.2.5 ------ 14.2.9&lt;=frida&lt;15.0.0</span><br><span class="line">frida-tools==10.0.0 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.1.0 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.1.1 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.2.0 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.2.1 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.2.2 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.3.0 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.4.0 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.4.1 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.5.0 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.5.1 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.5.2 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.5.3 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.5.4 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.6.0 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.6.1 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.6.2 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.7.0 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.8.0 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==11.0.0 ------ 15.2.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==12.0.0 ------ 16.0.0&lt;=frida&lt;17.0.0</span><br><span class="line">frida-tools==12.0.1 ------ 16.0.0&lt;=frida&lt;17.0.0</span><br><span class="line">frida-tools==12.0.2 ------ 16.0.0&lt;=frida&lt;17.0.0</span><br><span class="line">frida-tools==12.0.3 ------ 16.0.0&lt;=frida&lt;17.0.0</span><br><span class="line">frida-tools==12.0.4 ------ 16.0.0&lt;=frida&lt;17.0.0</span><br><span class="line">frida-tools==12.1.0 ------ 16.0.0&lt;=frida&lt;17.0.0</span><br><span class="line">frida-tools==12.1.1 ------ 16.0.9&lt;=frida&lt;17.0.0</span><br><span class="line">frida-tools==12.1.2 ------ 16.0.9&lt;=frida&lt;17.0.0</span><br><span class="line">frida-tools==12.1.3 ------ 16.0.9&lt;=frida&lt;17.0.0</span><br><span class="line">frida-tools==12.2.0 ------ 16.0.9&lt;=frida&lt;17.0.0</span><br><span class="line">frida-tools==12.2.1 ------ 16.0.9&lt;=frida&lt;17.0.0</span><br><span class="line">frida-tools==12.3.0 ------ 16.0.9&lt;=frida&lt;17.0.0</span><br></pre></td></tr></table></figure>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://github.com/frida/frida/releases" target="_blank" rel="noopener">https://github.com/frida/frida/releases</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line">frida-tools==1.0.0 ------ 12.0.0&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==1.1.0 ------ 12.0.0&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==1.2.0 ------ 12.1.0&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==1.2.1 ------ 12.1.0&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==1.2.2 ------ 12.1.0&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==1.2.3 ------ 12.1.0&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==1.3.0 ------ 12.3.0&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==1.3.1 ------ 12.3.0&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==1.3.2 ------ 12.4.0&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==2.0.0 ------ 12.5.3&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==2.0.1 ------ 12.5.9&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==2.0.2 ------ 12.5.9&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==2.1.0 ------ 12.5.9&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==2.1.1 ------ 12.5.9&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==2.2.0 ------ 12.5.9&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==3.0.0 ------ 12.6.17&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==3.0.1 ------ 12.6.17&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==4.0.0 ------ 12.6.21&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==4.0.1 ------ 12.6.21&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==4.0.2 ------ 12.6.21&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==4.1.0 ------ 12.6.21&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==5.0.0 ------ 12.6.21&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==5.0.1 ------ 12.7.3&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==5.1.0 ------ 12.7.3&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==5.2.0 ------ 12.7.3&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==5.3.0 ------ 12.7.3&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==5.4.0 ------ 12.7.3&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==6.0.0 ------ 12.8.5&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==6.0.1 ------ 12.8.5&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==7.0.0 ------ 12.8.12&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==7.0.1 ------ 12.8.12&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==7.0.2 ------ 12.8.12&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==7.1.0 ------ 12.8.12&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==7.2.0 ------ 12.8.12&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==7.2.1 ------ 12.8.12&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==7.2.2 ------ 12.8.12&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==8.0.0 ------ 12.10.4&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==8.0.1 ------ 12.10.4&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==8.1.0 ------ 12.10.4&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==8.1.1 ------ 12.10.4&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==8.1.2 ------ 12.10.4&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==8.1.3 ------ 12.10.4&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==8.2.0 ------ 12.10.4&lt;=frida&lt;13.0.0</span><br><span class="line">frida-tools==9.0.0 ------ 14.0.0&lt;=frida&lt;15.0.0</span><br><span class="line">frida-tools==9.0.1 ------ 14.0.0&lt;=frida&lt;15.0.0</span><br><span class="line">frida-tools==9.1.0 ------ 14.2.0&lt;=frida&lt;15.0.0</span><br><span class="line">frida-tools==9.2.0 ------ 14.2.9&lt;=frida&lt;15.0.0</span><br><span class="line">frida-tools==9.2.1 ------ 14.2.9&lt;=frida&lt;15.0.0</span><br><span class="line">frida-tools==9.2.2 ------ 14.2.9&lt;=frida&lt;15.0.0</span><br><span class="line">frida-tools==9.2.3 ------ 14.2.9&lt;=frida&lt;15.0.0</span><br><span class="line">frida-tools==9.2.4 ------ 14.2.9&lt;=frida&lt;15.0.0</span><br><span class="line">frida-tools==9.2.5 ------ 14.2.9&lt;=frida&lt;15.0.0</span><br><span class="line">frida-tools==10.0.0 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.1.0 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.1.1 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.2.0 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.2.1 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.2.2 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.3.0 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.4.0 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.4.1 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.5.0 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.5.1 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.5.2 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.5.3 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.5.4 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.6.0 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.6.1 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.6.2 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.7.0 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==10.8.0 ------ 15.0.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==11.0.0 ------ 15.2.0&lt;=frida&lt;16.0.0</span><br><span class="line">frida-tools==12.0.0 ------ 16.0.0&lt;=frida&lt;17.0.0</span><br><span class="line">frida-tools==12.0.1 ------ 16.0.0&lt;=frida&lt;17.0.0</span><br><span class="line">frida-tools==12.0.2 ------ 16.0.0&lt;=frida&lt;17.0.0</span><br><span class="line">frida-tools==12.0.3 ------ 16.0.0&lt;=frida&lt;17.0.0</span><br><span class="line">frida-tools==12.0.4 ------ 16.0.0&lt;=frida&lt;17.0.0</span><br><span class="line">frida-tools==12.1.0 ------ 16.0.0&lt;=frida&lt;17.0.0</span><br><span class="line">frida-tools==12.1.1 ------ 16.0.9&lt;=frida&lt;17.0.0</span><br><span class="line">frida-tools==12.1.2 ------ 16.0.9&lt;=frida&lt;17.0.0</span><br><span class="line">frida-tools==12.1.3 ------ 16.0.9&lt;=frida&lt;17.0.0</span><br><span class="line">frida-tools==12.2.0 ------ 16.0.9&lt;=frida&lt;17.0.0</span><br><span class="line">frida-tools==12.2.1 ------ 16.0.9&lt;=frida&lt;17.0.0</span><br><span class="line">frida-tools==12.3.0 ------ 16.0.9&lt;=frida&lt;17.0.0</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://github.com/frida/frida/releases">https://github.com/frida/frida/releases</a></p>
 
       
 
@@ -846,7 +976,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/03/20/hexo-update/" class="archive-article-date">
   	<time datetime="2021-03-20T14:18:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-20</time>
-  	更新：2025-09-30
+  	更新：2021-03-20
 </a>
         
       </header>
@@ -854,9 +984,12 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post demo</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(node:18016) Warning: Accessing non-existent property &apos;lineno&apos; of module exports inside circular dependency</span><br><span class="line">(Use `node --trace-warnings ...` to show where the warning was created)</span><br><span class="line">(node:18016) Warning: Accessing non-existent property &apos;column&apos; of module exports inside circular dependency</span><br><span class="line">(node:18016) Warning: Accessing non-existent property &apos;filename&apos; of module exports inside circular dependency</span><br><span class="line">(node:18016) Warning: Accessing non-existent property &apos;lineno&apos; of module exports inside circular dependency</span><br><span class="line">(node:18016) Warning: Accessing non-existent property &apos;column&apos; of module exports inside circular dependency</span><br><span class="line">(node:18016) Warning: Accessing non-existent property &apos;filename&apos; of module exports inside circular dependency</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(node:18016) Warning: Accessing non-existent property &#x27;lineno&#x27; of module exports inside circular dependency</span><br><span class="line">(Use `node --trace-warnings ...` to show where the warning was created)</span><br><span class="line">(node:18016) Warning: Accessing non-existent property &#x27;column&#x27; of module exports inside circular dependency</span><br><span class="line">(node:18016) Warning: Accessing non-existent property &#x27;filename&#x27; of module exports inside circular dependency</span><br><span class="line">(node:18016) Warning: Accessing non-existent property &#x27;lineno&#x27; of module exports inside circular dependency</span><br><span class="line">(node:18016) Warning: Accessing non-existent property &#x27;column&#x27; of module exports inside circular dependency</span><br><span class="line">(node:18016) Warning: Accessing non-existent property &#x27;filename&#x27; of module exports inside circular dependency</span><br></pre></td></tr></table></figure>
+
 <p>经过一番搜索，是由于Node版本太高导致的，降低版本是不会的了，所以决定升级hexo</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 升级cli</span></span><br><span class="line">npm install hexo-cli -g</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看已经过期的安装包</span></span><br><span class="line">npm outdated</span><br><span class="line"></span><br><span class="line"><span class="comment"># npm升级插件</span></span><br><span class="line">npm install -g npm-check-updates</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看最新版本</span></span><br><span class="line">ncu</span><br><span class="line"></span><br><span class="line"><span class="comment"># 升级npm包文件</span></span><br><span class="line">ncu -u</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新安装依赖</span></span><br><span class="line">npm install</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看更新情况 </span></span><br><span class="line">git diff package.json</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -937,7 +1070,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/03/20/java-i18n/" class="archive-article-date">
   	<time datetime="2021-03-20T13:51:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-20</time>
-  	更新：2025-09-30
+  	更新：2021-03-20
 </a>
         
       </header>
@@ -946,14 +1079,16 @@ var _hmt = _hmt || [];
       
         <p>Java国际化开发时不明白为什么需要将本身就是utf-8格式的含中文的properties文件使用native2ascii工具转Unicode?</p>
 <p><code>message_zh_CN.properties</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">name=中国</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        Locale localeCN = <span class="keyword">new</span> Locale(<span class="string">"zh"</span>, <span class="string">"CN"</span>);</span><br><span class="line">        ResourceBundle bundle = ResourceBundle.getBundle(<span class="string">"message"</span>, localeCN);</span><br><span class="line"></span><br><span class="line">        String name = bundle.getString(<span class="string">"name"</span>);</span><br><span class="line">        System.out.println(name);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 低于Java9需要转换下</span></span><br><span class="line">        String uname = <span class="keyword">new</span> String(name.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);</span><br><span class="line">        System.out.println(uname);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name</span>=<span class="string">中国</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWorld</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="type">Locale</span> <span class="variable">localeCN</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Locale</span>(<span class="string">&quot;zh&quot;</span>, <span class="string">&quot;CN&quot;</span>);</span><br><span class="line">        <span class="type">ResourceBundle</span> <span class="variable">bundle</span> <span class="operator">=</span> ResourceBundle.getBundle(<span class="string">&quot;message&quot;</span>, localeCN);</span><br><span class="line"></span><br><span class="line">        <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> bundle.getString(<span class="string">&quot;name&quot;</span>);</span><br><span class="line">        System.out.println(name);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 低于Java9需要转换下</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">uname</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(name.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);</span><br><span class="line">        System.out.println(uname);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>Java中properties文件都是使用InputStream inStream 字节流加载的。而InputStream字节流默认使用ISO 8859-1字符编码集。所以需要使用native2ascii工具将utf-8文件进行转码操作。</p>
 <p>这是 Java 的一个缺陷，因为当初还没有 Unicode，所以才会这样，从 Java 9 开始，properties 文件已经改为缺省 utf8 编码了。</p>
-<p>转载 <a href="https://segmentfault.com/q/1010000013011825" target="_blank" rel="noopener">https://segmentfault.com/q/1010000013011825</a></p>
+<p>转载 <a target="_blank" rel="noopener" href="https://segmentfault.com/q/1010000013011825">https://segmentfault.com/q/1010000013011825</a></p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
-<p><a href="https://stackoverflow.com/questions/4659929/how-to-use-utf-8-in-resource-properties-with-resourcebundle" target="_blank" rel="noopener">https://stackoverflow.com/questions/4659929/how-to-use-utf-8-in-resource-properties-with-resourcebundle</a></p>
-<p><a href="https://docs.oracle.com/javase/9/intl/internationalization-enhancements-jdk-9" target="_blank" rel="noopener">https://docs.oracle.com/javase/9/intl/internationalization-enhancements-jdk-9</a></p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/4659929/how-to-use-utf-8-in-resource-properties-with-resourcebundle">https://stackoverflow.com/questions/4659929/how-to-use-utf-8-in-resource-properties-with-resourcebundle</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/9/intl/internationalization-enhancements-jdk-9">https://docs.oracle.com/javase/9/intl/internationalization-enhancements-jdk-9</a></p>
 </blockquote>
 
       
@@ -1035,15 +1170,15 @@ var _hmt = _hmt || [];
         
         <a href="/2021/01/08/install-tomcat-as-service-on-windows-server2012R2/" class="archive-article-date">
   	<time datetime="2021-01-08T15:07:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-08</time>
-  	更新：2025-09-30
+  	更新：2021-01-08
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/01/08/chapel-5878656_1920.jpg" alt></p>
-<p>下载<a href="https://tomcat.apache.org/download-90.cgi" target="_blank" rel="noopener">Tomcat9</a>,使用解压版即可 apache-tomcat-9.0.41-windows-x64.zip</p>
+        <p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/01/08/chapel-5878656_1920.jpg"></p>
+<p>下载<a target="_blank" rel="noopener" href="https://tomcat.apache.org/download-90.cgi">Tomcat9</a>,使用解压版即可 apache-tomcat-9.0.41-windows-x64.zip</p>
         
           <a class="article-more-a" href="/2021/01/08/install-tomcat-as-service-on-windows-server2012R2/#more">more >></a>
         
@@ -1101,81 +1236,9 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-math" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/05/math/">数学</a>
-    </h1>
-  
-
-        
-        <a href="/2020/11/05/math/" class="archive-article-date">
-  	<time datetime="2020-11-05T19:54:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-05</time>
-  	更新：2025-09-30
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p><a href="https://www.zhihu.com/question/46877027" target="_blank" rel="noopener">怎么理解虚数和复数？</a></p>
-<p><a href="https://zhuanlan.zhihu.com/p/48305950" target="_blank" rel="noopener">如何给文科生解释傅里叶变换？</a></p>
-</blockquote>
-<h3 id="数学家"><a href="#数学家" class="headerlink" title="数学家"></a>数学家</h3><blockquote>
-<p><a href="https://zh.wikipedia.org/wiki/%E5%90%89%E7%BD%97%E6%8B%89%E8%8E%AB%C2%B7%E5%8D%A1%E5%B0%94%E8%BE%BE%E8%AF%BA" target="_blank" rel="noopener">吉罗拉莫·卡尔达诺</a></p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/11/05/math/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/10/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="extend next" rel="next" href="/page/10/">Next &raquo;</a>
     </nav>
   
 
@@ -1187,7 +1250,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2025 Niu Yuxian
+    		&copy; 2026 Niu Yuxian
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -1312,15 +1375,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">was</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">area</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">cors</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">was</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1348,10 +1411,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">c#</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Nord</a>
               </li>
              
@@ -1369,6 +1428,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">guqin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">c#</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1440,6 +1503,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">opencv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">原码</a>
               </li>
              
@@ -1460,10 +1527,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sed</a>
               </li>
              
@@ -1481,6 +1544,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1528,10 +1595,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">archlinux</a>
               </li>
              
@@ -1548,6 +1611,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">d365</a>
               </li>
              
@@ -1556,15 +1623,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">deno</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">docker alpine</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">razor</a>
+                <a href="javascript:void(0)" class="js-tag color5">deno</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1573,6 +1636,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ffmpeg</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">razor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1660,14 +1727,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
@@ -1685,6 +1744,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1712,15 +1779,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">regex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">requests</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">rust</a>
+                <a href="javascript:void(0)" class="js-tag color1">regex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1732,11 +1795,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color5">rust</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1745,6 +1808,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mongo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1776,15 +1843,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">rocky</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">

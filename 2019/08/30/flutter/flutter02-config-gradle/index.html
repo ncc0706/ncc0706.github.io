@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>flutter 卡在 Download https://services.gradle.org/xxx 及 Initializing gradle | Niu Yuxian&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="12flutter doctor -vflutter run -v flutter gradle配置 12345# 指定jdkflutter config --jdk-dir &quot;D:\develop\Java\jdk1.8.0_202&quot;flutter config --jdk-dir &quot;D:\develop\Java\jdk-17.0.13+11&quot;flutter doctor --android-">
-<meta name="keywords" content="flutter">
+  <meta name="description" content="12flutter doctor -vflutter run -v    flutter gradle配置 12345# 指定jdkflutter config --jdk-dir &quot;D:\develop\Java\jdk1.8.0_202&quot;flutter config --jdk-dir &quot;D:\develop\Java\jdk-17.0.13+11&quot;fl">
 <meta property="og:type" content="article">
 <meta property="og:title" content="flutter 卡在 Download https:&#x2F;&#x2F;services.gradle.org&#x2F;xxx 及 Initializing gradle">
 <meta property="og:url" content="http://yoursite.com/2019/08/30/flutter/flutter02-config-gradle/index.html">
 <meta property="og:site_name" content="Niu Yuxian&#39;blog">
-<meta property="og:description" content="12flutter doctor -vflutter run -v flutter gradle配置 12345# 指定jdkflutter config --jdk-dir &quot;D:\develop\Java\jdk1.8.0_202&quot;flutter config --jdk-dir &quot;D:\develop\Java\jdk-17.0.13+11&quot;flutter doctor --android-">
-<meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2025-08-29T15:26:06.000Z">
+<meta property="og:description" content="12flutter doctor -vflutter run -v    flutter gradle配置 12345# 指定jdkflutter config --jdk-dir &quot;D:\develop\Java\jdk1.8.0_202&quot;flutter config --jdk-dir &quot;D:\develop\Java\jdk-17.0.13+11&quot;fl">
+<meta property="og:locale">
+<meta property="article:published_time" content="2019-08-30T15:08:32.000Z">
+<meta property="article:modified_time" content="2025-08-29T15:26:06.000Z">
+<meta property="article:author" content="Niu Yuxian">
+<meta property="article:tag" content="flutter">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="flutter 卡在 Download https:&#x2F;&#x2F;services.gradle.org&#x2F;xxx 及 Initializing gradle">
-<meta name="twitter:description" content="12flutter doctor -vflutter run -v flutter gradle配置 12345# 指定jdkflutter config --jdk-dir &quot;D:\develop\Java\jdk1.8.0_202&quot;flutter config --jdk-dir &quot;D:\develop\Java\jdk-17.0.13+11&quot;flutter doctor --android-">
   
     <link rel="alternative" href="/atom.xml" title="Niu Yuxian&#39;blog" type="application/atom+xml">
   
@@ -58,8 +58,8 @@ var _hmt = _hmt || [];
 </script>
 
 
-</head>
-</html>
+<meta name="generator" content="Hexo 8.1.2"></head>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -72,7 +72,7 @@ var _hmt = _hmt || [];
 			<img src="/assets/images/logo.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Niu Yuxian</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
 		
 
@@ -156,7 +156,7 @@ var _hmt = _hmt || [];
 				<img src="/assets/images/logo.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Niu Yuxian</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
 			
 			
@@ -278,23 +278,34 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flutter doctor -v</span><br><span class="line">flutter run -v</span><br></pre></td></tr></table></figure>
+
+
+
 <p><strong>flutter gradle配置</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 指定jdk</span></span><br><span class="line">flutter config --jdk-dir <span class="string">"D:\develop\Java\jdk1.8.0_202"</span></span><br><span class="line">flutter config --jdk-dir <span class="string">"D:\develop\Java\jdk-17.0.13+11"</span></span><br><span class="line"></span><br><span class="line">flutter doctor --android-licenses</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 指定jdk</span></span><br><span class="line">flutter config --jdk-dir <span class="string">&quot;D:\develop\Java\jdk1.8.0_202&quot;</span></span><br><span class="line">flutter config --jdk-dir <span class="string">&quot;D:\develop\Java\jdk-17.0.13+11&quot;</span></span><br><span class="line"></span><br><span class="line">flutter doctor --android-licenses</span><br></pre></td></tr></table></figure>
+
 <p>打开 <strong>flutter SDK</strong> 中的 gradle 配置文件，例如：D:\develop\flutter\flutter\packages\flutter_tools\gradle\settings.gradle.kts(flutter 3.35.2)</p>
 <p>新增<code>maven(&quot;https://repo.huaweicloud.com/repository/maven/&quot;)</code></p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">dependencyResolutionManagement &#123;</span><br><span class="line">    <span class="comment">//repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)</span></span><br><span class="line">    repositories &#123;</span><br><span class="line">        maven(<span class="string">"https://repo.huaweicloud.com/repository/maven/"</span>)</span><br><span class="line">        google()</span><br><span class="line">        mavenCentral()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">dependencyResolutionManagement &#123;</span><br><span class="line">    <span class="comment">//repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)</span></span><br><span class="line">    repositories &#123;</span><br><span class="line">        maven(<span class="string">&quot;https://repo.huaweicloud.com/repository/maven/&quot;</span>)</span><br><span class="line">        google()</span><br><span class="line">        mavenCentral()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
 <p><strong>项目gradle配置</strong></p>
 <p>项目目录E:\in-action\flutter-in-action\flutter_2025_0829\android</p>
 <p><code>wrapper</code></p>
 <p>E:\in-action\flutter-in-action\flutter_2025_0829\android\gradle\wrapper</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">distributionBase=GRADLE_USER_HOME</span><br><span class="line">distributionPath=wrapper/dists</span><br><span class="line">zipStoreBase=GRADLE_USER_HOME</span><br><span class="line">zipStorePath=wrapper/dists</span><br><span class="line">distributionUrl=https\://mirrors.huaweicloud.com/gradle/gradle-8.12-all.zip</span><br></pre></td></tr></table></figure>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">distributionBase</span>=<span class="string">GRADLE_USER_HOME</span></span><br><span class="line"><span class="attr">distributionPath</span>=<span class="string">wrapper/dists</span></span><br><span class="line"><span class="attr">zipStoreBase</span>=<span class="string">GRADLE_USER_HOME</span></span><br><span class="line"><span class="attr">zipStorePath</span>=<span class="string">wrapper/dists</span></span><br><span class="line"><span class="attr">distributionUrl</span>=<span class="string">https\://mirrors.huaweicloud.com/gradle/gradle-8.12-all.zip</span></span><br></pre></td></tr></table></figure>
+
 <p><code>build.gradle.kts</code></p>
-<p>添加 maven(“<a href="https://repo.huaweicloud.com/repository/maven&quot;" target="_blank" rel="noopener">https://repo.huaweicloud.com/repository/maven&quot;</a>)</p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">allprojects &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        maven(<span class="string">"https://repo.huaweicloud.com/repository/maven"</span>)</span><br><span class="line">        google()</span><br><span class="line">        mavenCentral()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">val <span class="string">newBuildDir:</span> Directory =</span><br><span class="line">    rootProject.layout.buildDirectory</span><br><span class="line">        .dir(<span class="string">"../../build"</span>)</span><br><span class="line">        .get()</span><br><span class="line">rootProject.layout.buildDirectory.value(newBuildDir)</span><br><span class="line"></span><br><span class="line">subprojects &#123;</span><br><span class="line">    val <span class="string">newSubprojectBuildDir:</span> Directory = newBuildDir.dir(project.name)</span><br><span class="line">    project.layout.buildDirectory.value(newSubprojectBuildDir)</span><br><span class="line">&#125;</span><br><span class="line">subprojects &#123;</span><br><span class="line">    project.evaluationDependsOn(<span class="string">":app"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">tasks.register&lt;Delete&gt;(<span class="string">"clean"</span>) &#123;</span><br><span class="line">    delete(rootProject.layout.buildDirectory)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>添加 maven(“<a target="_blank" rel="noopener" href="https://repo.huaweicloud.com/repository/maven">https://repo.huaweicloud.com/repository/maven</a>“)</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">allprojects &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        maven(<span class="string">&quot;https://repo.huaweicloud.com/repository/maven&quot;</span>)</span><br><span class="line">        google()</span><br><span class="line">        mavenCentral()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">val <span class="attr">newBuildDir:</span> Directory =</span><br><span class="line">    rootProject.layout.buildDirectory</span><br><span class="line">        .dir(<span class="string">&quot;../../build&quot;</span>)</span><br><span class="line">        .get()</span><br><span class="line">rootProject.layout.buildDirectory.value(newBuildDir)</span><br><span class="line"></span><br><span class="line">subprojects &#123;</span><br><span class="line">    val <span class="attr">newSubprojectBuildDir:</span> Directory = newBuildDir.dir(project.name)</span><br><span class="line">    project.layout.buildDirectory.value(newSubprojectBuildDir)</span><br><span class="line">&#125;</span><br><span class="line">subprojects &#123;</span><br><span class="line">    project.evaluationDependsOn(<span class="string">&quot;:app&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">tasks.register&lt;Delete&gt;(<span class="string">&quot;clean&quot;</span>) &#123;</span><br><span class="line">    delete(rootProject.layout.buildDirectory)</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p><code>settings.gradle.kts</code></p>
-<p>添加 maven(“<a href="https://repo.huaweicloud.com/repository/maven&quot;" target="_blank" rel="noopener">https://repo.huaweicloud.com/repository/maven&quot;</a>)</p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">pluginManagement &#123;</span><br><span class="line">    val flutterSdkPath =</span><br><span class="line">        run &#123;</span><br><span class="line">            val properties = java.util.Properties()</span><br><span class="line">            file(<span class="string">"local.properties"</span>).inputStream().use &#123; properties.load(it) &#125;</span><br><span class="line">            val flutterSdkPath = properties.getProperty(<span class="string">"flutter.sdk"</span>)</span><br><span class="line">            require(flutterSdkPath != <span class="literal">null</span>) &#123; <span class="string">"flutter.sdk not set in local.properties"</span> &#125;</span><br><span class="line">            flutterSdkPath</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    includeBuild(<span class="string">"$flutterSdkPath/packages/flutter_tools/gradle"</span>)</span><br><span class="line"></span><br><span class="line">    repositories &#123;</span><br><span class="line">        maven(<span class="string">"https://repo.huaweicloud.com/repository/maven"</span>)</span><br><span class="line">        google()</span><br><span class="line">        mavenCentral()</span><br><span class="line">        gradlePluginPortal()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">plugins &#123;</span><br><span class="line">    id(<span class="string">"dev.flutter.flutter-plugin-loader"</span>) version <span class="string">"1.0.0"</span></span><br><span class="line">    id(<span class="string">"com.android.application"</span>) version <span class="string">"8.9.1"</span> apply <span class="literal">false</span></span><br><span class="line">    id(<span class="string">"org.jetbrains.kotlin.android"</span>) version <span class="string">"2.1.0"</span> apply <span class="literal">false</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">include(<span class="string">":app"</span>)</span><br></pre></td></tr></table></figure>
+<p>添加 maven(“<a target="_blank" rel="noopener" href="https://repo.huaweicloud.com/repository/maven">https://repo.huaweicloud.com/repository/maven</a>“)</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">pluginManagement &#123;</span><br><span class="line">    val flutterSdkPath =</span><br><span class="line">        run &#123;</span><br><span class="line">            val properties = java.util.Properties()</span><br><span class="line">            file(<span class="string">&quot;local.properties&quot;</span>).inputStream().use &#123; properties.load(it) &#125;</span><br><span class="line">            val flutterSdkPath = properties.getProperty(<span class="string">&quot;flutter.sdk&quot;</span>)</span><br><span class="line">            require(flutterSdkPath != <span class="literal">null</span>) &#123; <span class="string">&quot;flutter.sdk not set in local.properties&quot;</span> &#125;</span><br><span class="line">            flutterSdkPath</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    includeBuild(<span class="string">&quot;$flutterSdkPath/packages/flutter_tools/gradle&quot;</span>)</span><br><span class="line"></span><br><span class="line">    repositories &#123;</span><br><span class="line">        maven(<span class="string">&quot;https://repo.huaweicloud.com/repository/maven&quot;</span>)</span><br><span class="line">        google()</span><br><span class="line">        mavenCentral()</span><br><span class="line">        gradlePluginPortal()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">plugins &#123;</span><br><span class="line">    id(<span class="string">&quot;dev.flutter.flutter-plugin-loader&quot;</span>) version <span class="string">&quot;1.0.0&quot;</span></span><br><span class="line">    id(<span class="string">&quot;com.android.application&quot;</span>) version <span class="string">&quot;8.9.1&quot;</span> apply <span class="literal">false</span></span><br><span class="line">    id(<span class="string">&quot;org.jetbrains.kotlin.android&quot;</span>) version <span class="string">&quot;2.1.0&quot;</span> apply <span class="literal">false</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">include(<span class="string">&quot;:app&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
 
       
 
@@ -491,7 +502,7 @@ new Valine({
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2025 Niu Yuxian
+    		&copy; 2026 Niu Yuxian
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -616,15 +627,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">was</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">area</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">cors</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">was</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -652,10 +663,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">c#</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Nord</a>
               </li>
              
@@ -673,6 +680,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">guqin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">c#</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -744,6 +755,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">opencv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">原码</a>
               </li>
              
@@ -764,10 +779,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sed</a>
               </li>
              
@@ -785,6 +796,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -832,10 +847,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">archlinux</a>
               </li>
              
@@ -852,6 +863,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">d365</a>
               </li>
              
@@ -860,15 +875,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">deno</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">docker alpine</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">razor</a>
+                <a href="javascript:void(0)" class="js-tag color5">deno</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -877,6 +888,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ffmpeg</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">razor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -964,14 +979,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
@@ -989,6 +996,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1016,15 +1031,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">regex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">requests</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">rust</a>
+                <a href="javascript:void(0)" class="js-tag color1">regex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1036,11 +1047,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color5">rust</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1049,6 +1060,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mongo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1080,15 +1095,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">rocky</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">

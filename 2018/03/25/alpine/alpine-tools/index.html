@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>alpine linux 常用软件 | Niu Yuxian&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="12345678910111213141516# 首先学习关机命令# reboot   #重启系统类似于shutdown -r now。# halt     #关机类似于shutdown -h now。# poweroff #关机# telnet➜  ~ which telnettelnet not found➜  ~ apk add busybox-extras(1/1) Installing">
-<meta name="keywords" content="alpine">
+  <meta name="description" content="12345678910111213141516# 首先学习关机命令# reboot   #重启系统类似于shutdown -r now。# halt     #关机类似于shutdown -h now。# poweroff #关机# telnet➜  ~ which telnettelnet not found➜  ~ apk add busybox-extras(1&#x2F;1) Installing">
 <meta property="og:type" content="article">
 <meta property="og:title" content="alpine linux 常用软件">
 <meta property="og:url" content="http://yoursite.com/2018/03/25/alpine/alpine-tools/index.html">
 <meta property="og:site_name" content="Niu Yuxian&#39;blog">
-<meta property="og:description" content="12345678910111213141516# 首先学习关机命令# reboot   #重启系统类似于shutdown -r now。# halt     #关机类似于shutdown -h now。# poweroff #关机# telnet➜  ~ which telnettelnet not found➜  ~ apk add busybox-extras(1/1) Installing">
-<meta property="og:locale" content="default">
+<meta property="og:description" content="12345678910111213141516# 首先学习关机命令# reboot   #重启系统类似于shutdown -r now。# halt     #关机类似于shutdown -h now。# poweroff #关机# telnet➜  ~ which telnettelnet not found➜  ~ apk add busybox-extras(1&#x2F;1) Installing">
+<meta property="og:locale">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2018/03/25/02.jpg">
-<meta property="og:updated_time" content="2025-09-30T04:26:37.781Z">
+<meta property="article:published_time" content="2018-03-25T20:53:02.000Z">
+<meta property="article:modified_time" content="2018-03-25T20:53:02.000Z">
+<meta property="article:author" content="Niu Yuxian">
+<meta property="article:tag" content="alpine">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="alpine linux 常用软件">
-<meta name="twitter:description" content="12345678910111213141516# 首先学习关机命令# reboot   #重启系统类似于shutdown -r now。# halt     #关机类似于shutdown -h now。# poweroff #关机# telnet➜  ~ which telnettelnet not found➜  ~ apk add busybox-extras(1/1) Installing">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2018/03/25/02.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Niu Yuxian&#39;blog" type="application/atom+xml">
@@ -60,8 +60,8 @@ var _hmt = _hmt || [];
 </script>
 
 
-</head>
-</html>
+<meta name="generator" content="Hexo 8.1.2"></head>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -74,7 +74,7 @@ var _hmt = _hmt || [];
 			<img src="/assets/images/logo.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Niu Yuxian</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
 		
 
@@ -158,7 +158,7 @@ var _hmt = _hmt || [];
 				<img src="/assets/images/logo.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Niu Yuxian</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
 			
 			
@@ -272,7 +272,7 @@ var _hmt = _hmt || [];
         
         <a href="/2018/03/25/alpine/alpine-tools/" class="archive-article-date">
   	<time datetime="2018-03-25T20:53:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-25</time>
-  	更新：2025-09-30
+  	更新：2018-03-25
 </a>
         
       </header>
@@ -280,11 +280,16 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2018/03/25/02.jpg" alt="常用工具"></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 首先学习关机命令</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> reboot   <span class="comment">#重启系统类似于shutdown -r now。</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> halt     <span class="comment">#关机类似于shutdown -h now。</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> poweroff <span class="comment">#关机</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> telnet</span></span><br><span class="line">➜  ~ which telnet</span><br><span class="line">telnet not found</span><br><span class="line">➜  ~ apk add busybox-extras</span><br><span class="line">(1/1) Installing busybox-extras (1.27.2-r8)</span><br><span class="line">Executing busybox-extras-1.27.2-r8.post-install</span><br><span class="line">Executing busybox-1.27.2-r8.trigger</span><br><span class="line">OK: 711 MiB in 66 packages</span><br><span class="line">➜  ~ which telnet</span><br><span class="line">/usr/bin/telnet</span><br><span class="line">➜  ~</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> ab 命令</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> apk add apache2-utils</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装service命令 </span></span><br><span class="line"><span class="meta">#</span><span class="bash"> service not found</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> apk add openrc</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 清除历史痕迹</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> rm -f <span class="variable">$HISTFILE</span> &amp;&amp; <span class="built_in">exit</span></span></span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> rc-update add docker boot <span class="comment">#增加一个服务</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> rc-update del docker boot <span class="comment">#删除一个服务</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> rc-status  <span class="comment">#检查默认运行级别的状态</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> rc-status -a <span class="comment">#检查所有运行级别的状态</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> rc-service sshd start <span class="comment">#启动一个服务。</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> rc-service sshd stop  <span class="comment">#停止一个服务。</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> rc-service sshd restart  <span class="comment">#重启一个服务。</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 或者下面的命令</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> service sshd status</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> apk add postgresql</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> rc-service postgresql status</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> rc-service postgresql start</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">首先学习关机命令</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">reboot   <span class="comment">#重启系统类似于shutdown -r now。</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">halt     <span class="comment">#关机类似于shutdown -h now。</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">poweroff <span class="comment">#关机</span></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">telnet</span></span><br><span class="line">➜  ~ which telnet</span><br><span class="line">telnet not found</span><br><span class="line">➜  ~ apk add busybox-extras</span><br><span class="line">(1/1) Installing busybox-extras (1.27.2-r8)</span><br><span class="line">Executing busybox-extras-1.27.2-r8.post-install</span><br><span class="line">Executing busybox-1.27.2-r8.trigger</span><br><span class="line">OK: 711 MiB in 66 packages</span><br><span class="line">➜  ~ which telnet</span><br><span class="line">/usr/bin/telnet</span><br><span class="line">➜  ~ </span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">ab 命令</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">apk add apache2-utils</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装service命令</span> </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">service not found</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">apk add openrc</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">清除历史痕迹</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="built_in">rm</span> -f <span class="variable">$HISTFILE</span> &amp;&amp; <span class="built_in">exit</span></span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">rc-update add docker boot <span class="comment">#增加一个服务</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">rc-update del docker boot <span class="comment">#删除一个服务</span></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">rc-status  <span class="comment">#检查默认运行级别的状态</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">rc-status -a <span class="comment">#检查所有运行级别的状态</span></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">rc-service sshd start <span class="comment">#启动一个服务。</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">rc-service sshd stop  <span class="comment">#停止一个服务。</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">rc-service sshd restart  <span class="comment">#重启一个服务。</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">或者下面的命令</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">service sshd status</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">apk add postgresql</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">rc-service postgresql status</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">rc-service postgresql start</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -470,7 +475,7 @@ new Valine({
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2025 Niu Yuxian
+    		&copy; 2026 Niu Yuxian
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -595,15 +600,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">was</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">area</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">cors</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">was</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -631,10 +636,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">c#</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Nord</a>
               </li>
              
@@ -652,6 +653,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">guqin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">c#</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -723,6 +728,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">opencv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">原码</a>
               </li>
              
@@ -743,10 +752,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sed</a>
               </li>
              
@@ -764,6 +769,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -811,10 +820,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">archlinux</a>
               </li>
              
@@ -831,6 +836,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">d365</a>
               </li>
              
@@ -839,15 +848,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">deno</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">docker alpine</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">razor</a>
+                <a href="javascript:void(0)" class="js-tag color5">deno</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -856,6 +861,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ffmpeg</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">razor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -943,14 +952,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
@@ -968,6 +969,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -995,15 +1004,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">regex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">requests</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">rust</a>
+                <a href="javascript:void(0)" class="js-tag color1">regex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1015,11 +1020,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color5">rust</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1028,6 +1033,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mongo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1059,15 +1068,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">rocky</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">

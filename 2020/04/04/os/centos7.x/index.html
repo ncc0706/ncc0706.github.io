@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Centos7基本配置 | Niu Yuxian&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="修改时区 1ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime 在 centos 中 systemctl  是设置系统服务的命令即 service  ,   它融合之前service和chkconfig的功能于一体。 12345678910111213141516171819202122232425262728293031323334##">
-<meta name="keywords" content="centos7">
+  <meta name="description" content="修改时区 1ln -sf &#x2F;usr&#x2F;share&#x2F;zoneinfo&#x2F;Asia&#x2F;Shanghai &#x2F;etc&#x2F;localtime  在 centos 中 systemctl  是设置系统服务的命令即 service  ,   它融合之前service和chkconfig的功能于一体。 123456789101112131415161718192021222324252627282930313233343">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Centos7基本配置">
 <meta property="og:url" content="http://yoursite.com/2020/04/04/os/centos7.x/index.html">
 <meta property="og:site_name" content="Niu Yuxian&#39;blog">
-<meta property="og:description" content="修改时区 1ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime 在 centos 中 systemctl  是设置系统服务的命令即 service  ,   它融合之前service和chkconfig的功能于一体。 12345678910111213141516171819202122232425262728293031323334##">
-<meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2025-09-30T04:26:37.789Z">
+<meta property="og:description" content="修改时区 1ln -sf &#x2F;usr&#x2F;share&#x2F;zoneinfo&#x2F;Asia&#x2F;Shanghai &#x2F;etc&#x2F;localtime  在 centos 中 systemctl  是设置系统服务的命令即 service  ,   它融合之前service和chkconfig的功能于一体。 123456789101112131415161718192021222324252627282930313233343">
+<meta property="og:locale">
+<meta property="article:published_time" content="2020-04-04T06:28:48.000Z">
+<meta property="article:modified_time" content="2020-04-04T06:28:48.000Z">
+<meta property="article:author" content="Niu Yuxian">
+<meta property="article:tag" content="centos7">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Centos7基本配置">
-<meta name="twitter:description" content="修改时区 1ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime 在 centos 中 systemctl  是设置系统服务的命令即 service  ,   它融合之前service和chkconfig的功能于一体。 12345678910111213141516171819202122232425262728293031323334##">
   
     <link rel="alternative" href="/atom.xml" title="Niu Yuxian&#39;blog" type="application/atom+xml">
   
@@ -58,8 +58,8 @@ var _hmt = _hmt || [];
 </script>
 
 
-</head>
-</html>
+<meta name="generator" content="Hexo 8.1.2"></head>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -72,7 +72,7 @@ var _hmt = _hmt || [];
 			<img src="/assets/images/logo.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Niu Yuxian</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
 		
 
@@ -156,7 +156,7 @@ var _hmt = _hmt || [];
 				<img src="/assets/images/logo.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Niu Yuxian</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
 			
 			
@@ -270,7 +270,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/04/04/os/centos7.x/" class="archive-article-date">
   	<time datetime="2020-04-04T06:28:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-04</time>
-  	更新：2025-09-30
+  	更新：2020-04-04
 </a>
         
       </header>
@@ -278,32 +278,50 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p><strong>修改时区</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ln</span> -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br></pre></td></tr></table></figure>
+
 <p>在 centos 中 systemctl  是设置系统服务的命令即 service  ,   它融合之前service和chkconfig的功能于一体。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">## 查看已安装的服务</span><br><span class="line">systemctl list-unit-files </span><br><span class="line"></span><br><span class="line">## 查看服务列表状态</span><br><span class="line">systemctl list-units --type=service</span><br><span class="line"></span><br><span class="line">## 查看启动失败的服务列表</span><br><span class="line">systemctl --failed</span><br><span class="line"></span><br><span class="line">## 查看是否开机启动 显示结果 enable、disable或static</span><br><span class="line">## 这里的 static 它是指对应的 Unit 文件中没有定义[Install]区域，因此无法配置为开机启动服务</span><br><span class="line">systemctl is-enabled sshd.service</span><br><span class="line"></span><br><span class="line">## 查看服务状态</span><br><span class="line">systemctl status sshd.service</span><br><span class="line"></span><br><span class="line">## 启动服务</span><br><span class="line">systemctl start sshd.service</span><br><span class="line"></span><br><span class="line">## 关闭服务</span><br><span class="line">systemctl stop sshd.service</span><br><span class="line"></span><br><span class="line">## 重启服务</span><br><span class="line">systemctl restart sshd.service</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## cd /etc/systemd/system/multi-user.target.wants</span><br><span class="line">## 建立 /usr/lib/systemd/system 里面对应服务配置文件的软链接</span><br><span class="line"></span><br><span class="line">## 开机启动服务【添加服务就是添加软连接】</span><br><span class="line">systemctl enable sshd.service</span><br><span class="line"></span><br><span class="line">## 开机禁用服务 【禁用服务就是删除此软链接】</span><br><span class="line">systemctl disable sshd.service</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">## 查看已安装的服务</span><br><span class="line">systemctl list-unit-files </span><br><span class="line"></span><br><span class="line">## 查看服务列表状态</span><br><span class="line">systemctl list-units --type=service</span><br><span class="line"></span><br><span class="line">## 查看启动失败的服务列表</span><br><span class="line">systemctl --failed</span><br><span class="line"></span><br><span class="line">## 查看是否开机启动 显示结果 enable、disable或static</span><br><span class="line">## 这里的 static 它是指对应的 Unit 文件中没有定义[Install]区域，因此无法配置为开机启动服务</span><br><span class="line">systemctl is-enabled sshd.service</span><br><span class="line"></span><br><span class="line">## 查看服务状态</span><br><span class="line">systemctl status sshd.service</span><br><span class="line"></span><br><span class="line">## 启动服务</span><br><span class="line">systemctl start sshd.service</span><br><span class="line"></span><br><span class="line">## 关闭服务</span><br><span class="line">systemctl stop sshd.service</span><br><span class="line"></span><br><span class="line">## 重启服务</span><br><span class="line">systemctl restart sshd.service</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## cd /etc/systemd/system/multi-user.target.wants</span><br><span class="line">## 建立 /usr/lib/systemd/system 里面对应服务配置文件的软链接</span><br><span class="line"></span><br><span class="line">## 开机启动服务【添加服务就是添加软连接】</span><br><span class="line">systemctl enable sshd.service</span><br><span class="line"></span><br><span class="line">## 开机禁用服务 【禁用服务就是删除此软链接】</span><br><span class="line">systemctl disable sshd.service</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p><strong>敏感命令不记录</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export HISTCONTROL=ignorespace</span><br><span class="line">#   service mysqld start  (注意这条命令的最前面是一个空格）</span><br><span class="line">然后我们来查看历史记录 service mysqld start 没有了</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export HISTCONTROL=ignorespace</span><br><span class="line">#   service mysqld start  (注意这条命令的最前面是一个空格）</span><br><span class="line">然后我们来查看历史记录 service mysqld start 没有了</span><br></pre></td></tr></table></figure>
+
+
+
+<span id="more"></span>
+
 <p><strong>网卡配置文件</strong></p>
 <p>网卡命名规则</p>
 <p>en： ethernet以太网卡<br>o：主板集成网卡<br>p：PCI独立网卡<br>s：热插拔网卡<br>nnn数字：MAC+主板信息（生产唯一序号）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 查看ip地址</span><br><span class="line">ip addr</span><br><span class="line"></span><br><span class="line">## 想使用 ifconfig 需要 anzhuang net-tools</span><br><span class="line">yum install -y net-tools</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 查看ip地址</span><br><span class="line">ip addr</span><br><span class="line"></span><br><span class="line">## 想使用 ifconfig 需要 anzhuang net-tools</span><br><span class="line">yum install -y net-tools</span><br></pre></td></tr></table></figure>
+
 <p>配置文件位置 <code>etc/sysconfig/network-scripts/ifcfg-ens33</code></p>
-<p>新安装的系统，需要设置网卡 onboot=yes</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">TYPE：接口类型 Ethernet（以太网卡） Bridge（网桥）</span><br><span class="line">BOOTPROTO：none（不指定类型，静态）dhcp（动态）static（静态）</span><br><span class="line">IPV4_FAILURE_FATAL：yes（ipv4配置失败后禁用设备）</span><br><span class="line">NAME：网卡名称</span><br><span class="line">UUID：唯一标示</span><br><span class="line">DEVICE：设备名称</span><br><span class="line">ONBOOT：启动网卡</span><br><span class="line">IPADDR：IP地址</span><br><span class="line">PREFIX：子网掩码</span><br><span class="line">GATEWAY：网关</span><br><span class="line">DNS1: DNS地址</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">TYPE=Ethernet</span><br><span class="line">PROXY_METHOD=none</span><br><span class="line">BROWSER_ONLY=no</span><br><span class="line">BOOTPROTO=dhcp</span><br><span class="line">DEFROUTE=yes</span><br><span class="line">IPV4_FAILURE_FATAL=no</span><br><span class="line">IPV6INIT=yes</span><br><span class="line">IPV6_AUTOCONF=yes</span><br><span class="line">IPV6_DEFROUTE=yes</span><br><span class="line">IPV6_FAILURE_FATAL=no</span><br><span class="line">IPV6_ADDR_GEN_MODE=stable-privacy</span><br><span class="line">NAME=ens33</span><br><span class="line">DEVICE=ens33</span><br><span class="line">ONBOOT=yes</span><br></pre></td></tr></table></figure>
+<p>新安装的系统，需要设置网卡 onboot&#x3D;yes</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">TYPE：接口类型 Ethernet（以太网卡） Bridge（网桥）</span><br><span class="line">BOOTPROTO：none（不指定类型，静态）dhcp（动态）static（静态）</span><br><span class="line">IPV4_FAILURE_FATAL：yes（ipv4配置失败后禁用设备）</span><br><span class="line">NAME：网卡名称</span><br><span class="line">UUID：唯一标示</span><br><span class="line">DEVICE：设备名称</span><br><span class="line">ONBOOT：启动网卡</span><br><span class="line">IPADDR：IP地址</span><br><span class="line">PREFIX：子网掩码</span><br><span class="line">GATEWAY：网关</span><br><span class="line">DNS1: DNS地址</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">TYPE=Ethernet</span><br><span class="line">PROXY_METHOD=none</span><br><span class="line">BROWSER_ONLY=no</span><br><span class="line">BOOTPROTO=dhcp</span><br><span class="line">DEFROUTE=yes</span><br><span class="line">IPV4_FAILURE_FATAL=no</span><br><span class="line">IPV6INIT=yes</span><br><span class="line">IPV6_AUTOCONF=yes</span><br><span class="line">IPV6_DEFROUTE=yes</span><br><span class="line">IPV6_FAILURE_FATAL=no</span><br><span class="line">IPV6_ADDR_GEN_MODE=stable-privacy</span><br><span class="line">NAME=ens33</span><br><span class="line">DEVICE=ens33</span><br><span class="line">ONBOOT=yes</span><br></pre></td></tr></table></figure>
+
 <p><code>静态IP</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">TYPE=Ethernet</span><br><span class="line">PROXY_METHOD=none</span><br><span class="line">BROWSER_ONLY=no</span><br><span class="line">BOOTPROTO=static</span><br><span class="line">DEFROUTE=yes</span><br><span class="line">IPV4_FAILURE_FATAL=no</span><br><span class="line">IPV6INIT=yes</span><br><span class="line">IPV6_AUTOCONF=yes</span><br><span class="line">IPV6_DEFROUTE=yes</span><br><span class="line">IPV6_FAILURE_FATAL=no</span><br><span class="line">IPV6_ADDR_GEN_MODE=stable-privacy</span><br><span class="line">NAME=ens33</span><br><span class="line">DEVICE=ens33</span><br><span class="line">ONBOOT=yes</span><br><span class="line">IPADDR=192.168.18.133</span><br><span class="line">GATEWAY=192.168.18.2</span><br><span class="line"># 可以跟网关设置的一样</span><br><span class="line">DNS1=192.168.18.2</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status network</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">TYPE=Ethernet</span><br><span class="line">PROXY_METHOD=none</span><br><span class="line">BROWSER_ONLY=no</span><br><span class="line">BOOTPROTO=static</span><br><span class="line">DEFROUTE=yes</span><br><span class="line">IPV4_FAILURE_FATAL=no</span><br><span class="line">IPV6INIT=yes</span><br><span class="line">IPV6_AUTOCONF=yes</span><br><span class="line">IPV6_DEFROUTE=yes</span><br><span class="line">IPV6_FAILURE_FATAL=no</span><br><span class="line">IPV6_ADDR_GEN_MODE=stable-privacy</span><br><span class="line">NAME=ens33</span><br><span class="line">DEVICE=ens33</span><br><span class="line">ONBOOT=yes</span><br><span class="line">IPADDR=192.168.18.133</span><br><span class="line">GATEWAY=192.168.18.2</span><br><span class="line"># 可以跟网关设置的一样</span><br><span class="line">DNS1=192.168.18.2</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status network</span><br></pre></td></tr></table></figure>
+
 <p>注： 克隆虚拟机时需要删除uuid，因为和母体机一样</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># DNS配置文件</span><br><span class="line">/etc/resolv.conf</span><br><span class="line"></span><br><span class="line"># 网络主机绑定IP地址：</span><br><span class="line">/etc/hosts</span><br><span class="line"></span><br><span class="line"># 主机名</span><br><span class="line">/etc/hostname</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># DNS配置文件</span><br><span class="line">/etc/resolv.conf</span><br><span class="line"></span><br><span class="line"># 网络主机绑定IP地址：</span><br><span class="line">/etc/hosts</span><br><span class="line"></span><br><span class="line"># 主机名</span><br><span class="line">/etc/hostname</span><br></pre></td></tr></table></figure>
+
 <h2 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h2><p>Centos 7使用firewalld代替了原来的iptables</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iptables 用于过滤数据包，属于网络层防火墙</span><br><span class="line">firewall 能够允许哪些服务可用，那些端口可用... 属于更高一层的防火墙</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">进程与状态相关</span></span><br><span class="line">systemctl start firewalld.service            #启动防火墙  </span><br><span class="line">systemctl stop firewalld.service             #停止防火墙</span><br><span class="line">systemctl status firewalld.service			 #防火墙状态</span><br><span class="line"></span><br><span class="line">systemctl enable firewalld.service			# 开机启动</span><br><span class="line">systemctl disable firewalld.service			# 开机禁止启动</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">firewall-cmd --state                         #查看防火墙状态     </span><br><span class="line">firewall-cmd --reload                        #重载防火墙规则  </span><br><span class="line">firewall-cmd --list-ports                    #查看所有打开的端口</span><br><span class="line">firewall-cmd --list-port					 #查询开放了哪些端口</span><br><span class="line">firewall-cmd --list-services                 #查看所有允许的服务  </span><br><span class="line">firewall-cmd --get-services                  #获取所有支持的服务  </span><br><span class="line">firewall-cmd --query-port=80/tcp			 #查询端口号是否开启</span><br><span class="line">firewall-cmd --list-all 					 #查看过滤的列表信息</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">区域相关</span></span><br><span class="line">firewall-cmd --list-all-zones                    #查看所有区域信息  </span><br><span class="line">firewall-cmd --get-active-zones                  #查看活动区域信息  </span><br><span class="line">firewall-cmd --set-default-zone=public           #设置public为默认区域  </span><br><span class="line">firewall-cmd --get-default-zone                  #查看默认区域信息  </span><br><span class="line">firewall-cmd --zone=public --add-interface=eth0  #将接口eth0加入区域public</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">接口相关</span></span><br><span class="line">firewall-cmd --zone=public --remove-interface=eth0       #从区域public中删除接口eth0  </span><br><span class="line">firewall-cmd --zone=default --change-interface=eth0      #修改接口eth0所属区域为default  </span><br><span class="line">firewall-cmd --get-zone-of-interface=eth0                #查看接口eth0所属区域  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">端口控制</span></span><br><span class="line">firewall-cmd --add-port=80/tcp --permanent               #永久添加80端口例外(全局)</span><br><span class="line">firewall-cmd --remove-port=80/tcp --permanent            #永久删除80端口例外(全局)</span><br><span class="line">firewall-cmd --add-port=65001-65010/tcp --permanent      #永久增加65001-65010例外(全局)  </span><br><span class="line"></span><br><span class="line">firewall-cmd  --zone=public --add-port=80/tcp --permanent       #永久添加80端口例外(public)</span><br><span class="line">firewall-cmd  --zone=public --remove-port=80/tcp --permanent    #永久删除80端口例外(public)</span><br><span class="line">firewall-cmd  --zone=public --add-port=65001-65010/tcp --permanent #永久增加65001-65010例外(public)</span><br><span class="line"></span><br><span class="line">--zone #作用域</span><br><span class="line">--add-port=80/tcp #添加端口，格式为：端口/通讯协议</span><br><span class="line">--permanent #永久生效，没有此参数重启后失效</span><br><span class="line">firewall中有Zone的概念，可以将具体的端口制定到具体的zone配置文件中,配置文件不存在会创建一个</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iptables 用于过滤数据包，属于网络层防火墙</span><br><span class="line">firewall 能够允许哪些服务可用，那些端口可用... 属于更高一层的防火墙</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">进程与状态相关</span></span><br><span class="line">systemctl start firewalld.service            #启动防火墙  </span><br><span class="line">systemctl stop firewalld.service             #停止防火墙</span><br><span class="line">systemctl status firewalld.service			 #防火墙状态</span><br><span class="line"></span><br><span class="line">systemctl enable firewalld.service			# 开机启动</span><br><span class="line">systemctl disable firewalld.service			# 开机禁止启动</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">firewall-cmd --state                         #查看防火墙状态     </span><br><span class="line">firewall-cmd --reload                        #重载防火墙规则  </span><br><span class="line">firewall-cmd --list-ports                    #查看所有打开的端口</span><br><span class="line">firewall-cmd --list-port					 #查询开放了哪些端口</span><br><span class="line">firewall-cmd --list-services                 #查看所有允许的服务  </span><br><span class="line">firewall-cmd --get-services                  #获取所有支持的服务  </span><br><span class="line">firewall-cmd --query-port=80/tcp			 #查询端口号是否开启</span><br><span class="line">firewall-cmd --list-all 					 #查看过滤的列表信息</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">区域相关</span></span><br><span class="line">firewall-cmd --list-all-zones                    #查看所有区域信息  </span><br><span class="line">firewall-cmd --get-active-zones                  #查看活动区域信息  </span><br><span class="line">firewall-cmd --set-default-zone=public           #设置public为默认区域  </span><br><span class="line">firewall-cmd --get-default-zone                  #查看默认区域信息  </span><br><span class="line">firewall-cmd --zone=public --add-interface=eth0  #将接口eth0加入区域public</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">接口相关</span></span><br><span class="line">firewall-cmd --zone=public --remove-interface=eth0       #从区域public中删除接口eth0  </span><br><span class="line">firewall-cmd --zone=default --change-interface=eth0      #修改接口eth0所属区域为default  </span><br><span class="line">firewall-cmd --get-zone-of-interface=eth0                #查看接口eth0所属区域  </span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">端口控制</span></span><br><span class="line">firewall-cmd --add-port=80/tcp --permanent               #永久添加80端口例外(全局)</span><br><span class="line">firewall-cmd --remove-port=80/tcp --permanent            #永久删除80端口例外(全局)</span><br><span class="line">firewall-cmd --add-port=65001-65010/tcp --permanent      #永久增加65001-65010例外(全局)  </span><br><span class="line"></span><br><span class="line">firewall-cmd  --zone=public --add-port=80/tcp --permanent       #永久添加80端口例外(public)</span><br><span class="line">firewall-cmd  --zone=public --remove-port=80/tcp --permanent    #永久删除80端口例外(public)</span><br><span class="line">firewall-cmd  --zone=public --add-port=65001-65010/tcp --permanent #永久增加65001-65010例外(public)</span><br><span class="line"></span><br><span class="line">--zone #作用域</span><br><span class="line">--add-port=80/tcp #添加端口，格式为：端口/通讯协议</span><br><span class="line">--permanent #永久生效，没有此参数重启后失效</span><br><span class="line">firewall中有Zone的概念，可以将具体的端口制定到具体的zone配置文件中,配置文件不存在会创建一个</span><br></pre></td></tr></table></figure>
+
 <p><code>/etc/firewalld/zones/public.xml</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;zone&gt;   </span><br><span class="line">&lt;short&gt;Public&lt;/short&gt;  </span><br><span class="line">&lt;description&gt;For use in public areas.&lt;/description&gt;   </span><br><span class="line"></span><br><span class="line">&lt;rule family=&quot;ipv4&quot;&gt;    </span><br><span class="line">    &lt;source address=&quot;122.10.70.234&quot;/&gt;     </span><br><span class="line">    &lt;port protocol=&quot;udp&quot; port=&quot;514&quot;/&gt;     </span><br><span class="line">    &lt;accept/&gt;   </span><br><span class="line">&lt;/rule&gt;   </span><br><span class="line"></span><br><span class="line">&lt;rule family=&quot;ipv4&quot;&gt;</span><br><span class="line">	&lt;!-- 放行 ip为123.60.255.14，端口10050-10051，协议tcp --&gt;</span><br><span class="line">    &lt;source address=&quot;123.60.255.14&quot;/&gt;     </span><br><span class="line">    &lt;port protocol=&quot;tcp&quot; port=&quot;10050-10051&quot;/&gt;     </span><br><span class="line">    &lt;accept/&gt;  </span><br><span class="line">&lt;/rule&gt;  </span><br><span class="line"></span><br><span class="line">&lt;rule family=&quot;ipv4&quot;&gt;     </span><br><span class="line">	&lt;!-- 放行指定ip，指定端口、协议 --&gt;</span><br><span class="line">    &lt;source address=&quot;192.249.87.114&quot;/&gt;   </span><br><span class="line">    &lt;port protocol=&quot;tcp&quot; port=&quot;80&quot;/&gt;     </span><br><span class="line">    &lt;accept/&gt;   </span><br><span class="line">&lt;/rule&gt;</span><br><span class="line"></span><br><span class="line">&lt;rule family=&quot;ipv4&quot;&gt;</span><br><span class="line">	&lt;!-- 放行任意ip访问服务器的9527端口 --&gt;</span><br><span class="line">    &lt;port protocol=&quot;tcp&quot; port=&quot;9527&quot;/&gt;     </span><br><span class="line">    &lt;accept/&gt;   </span><br><span class="line">&lt;/rule&gt;</span><br><span class="line"></span><br><span class="line">&lt;/zone&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;zone&gt;   </span><br><span class="line">&lt;short&gt;Public&lt;/short&gt;  </span><br><span class="line">&lt;description&gt;For use in public areas.&lt;/description&gt;   </span><br><span class="line"></span><br><span class="line">&lt;rule family=&quot;ipv4&quot;&gt;    </span><br><span class="line">    &lt;source address=&quot;122.10.70.234&quot;/&gt;     </span><br><span class="line">    &lt;port protocol=&quot;udp&quot; port=&quot;514&quot;/&gt;     </span><br><span class="line">    &lt;accept/&gt;   </span><br><span class="line">&lt;/rule&gt;   </span><br><span class="line"></span><br><span class="line">&lt;rule family=&quot;ipv4&quot;&gt;</span><br><span class="line">	&lt;!-- 放行 ip为123.60.255.14，端口10050-10051，协议tcp --&gt;</span><br><span class="line">    &lt;source address=&quot;123.60.255.14&quot;/&gt;     </span><br><span class="line">    &lt;port protocol=&quot;tcp&quot; port=&quot;10050-10051&quot;/&gt;     </span><br><span class="line">    &lt;accept/&gt;  </span><br><span class="line">&lt;/rule&gt;  </span><br><span class="line"></span><br><span class="line">&lt;rule family=&quot;ipv4&quot;&gt;     </span><br><span class="line">	&lt;!-- 放行指定ip，指定端口、协议 --&gt;</span><br><span class="line">    &lt;source address=&quot;192.249.87.114&quot;/&gt;   </span><br><span class="line">    &lt;port protocol=&quot;tcp&quot; port=&quot;80&quot;/&gt;     </span><br><span class="line">    &lt;accept/&gt;   </span><br><span class="line">&lt;/rule&gt;</span><br><span class="line"></span><br><span class="line">&lt;rule family=&quot;ipv4&quot;&gt;</span><br><span class="line">	&lt;!-- 放行任意ip访问服务器的9527端口 --&gt;</span><br><span class="line">    &lt;port protocol=&quot;tcp&quot; port=&quot;9527&quot;/&gt;     </span><br><span class="line">    &lt;accept/&gt;   </span><br><span class="line">&lt;/rule&gt;</span><br><span class="line"></span><br><span class="line">&lt;/zone&gt;</span><br></pre></td></tr></table></figure>
+
+
+
 <p><strong>查询大文件</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cd /</span></span><br><span class="line"><span class="comment"># du -h --max-depth=1 |grep G|sort -n</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 如清除mysql日志文件</span></span><br><span class="line"><span class="comment"># cat /dev/null &gt; general.log</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cd /</span></span><br><span class="line"><span class="comment"># du -h --max-depth=1 |grep G|sort -n</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 如清除mysql日志文件</span></span><br><span class="line"><span class="comment"># cat /dev/null &gt; general.log </span></span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -500,7 +518,7 @@ new Valine({
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2025 Niu Yuxian
+    		&copy; 2026 Niu Yuxian
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -625,15 +643,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">was</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">area</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">cors</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">was</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -661,10 +679,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">c#</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Nord</a>
               </li>
              
@@ -682,6 +696,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">guqin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">c#</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -753,6 +771,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">opencv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">原码</a>
               </li>
              
@@ -773,10 +795,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sed</a>
               </li>
              
@@ -794,6 +812,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -841,10 +863,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">archlinux</a>
               </li>
              
@@ -861,6 +879,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">d365</a>
               </li>
              
@@ -869,15 +891,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">deno</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">docker alpine</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">razor</a>
+                <a href="javascript:void(0)" class="js-tag color5">deno</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -886,6 +904,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ffmpeg</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">razor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -973,14 +995,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
@@ -998,6 +1012,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1025,15 +1047,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">regex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">requests</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">rust</a>
+                <a href="javascript:void(0)" class="js-tag color1">regex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1045,11 +1063,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color5">rust</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1058,6 +1076,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mongo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1089,15 +1111,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">rocky</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">

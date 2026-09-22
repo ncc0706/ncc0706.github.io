@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Github Actions | Niu Yuxian&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="弃坑 travis，开始收费了 https://docs.travis-ci.com/user/billing-overview/#usage---credits workflow 配置源码根目录创建 .github/workflows/deploy.yml 生成密钥ssh-keygen -t rsa -b 4096 -C “Hexo Deploy Key” -f github-deploy-ke">
-<meta name="keywords" content="github">
+  <meta name="description" content="弃坑 travis，开始收费了 https:&#x2F;&#x2F;docs.travis-ci.com&#x2F;user&#x2F;billing-overview&#x2F;#usage---credits workflow 配置源码根目录创建 .github&#x2F;workflows&#x2F;deploy.yml 生成密钥ssh-keygen -t rsa -b 4096 -C “Hexo Deploy Key” -f github-deploy-ke">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Github Actions">
 <meta property="og:url" content="http://yoursite.com/2023/07/29/github/github-actions/index.html">
 <meta property="og:site_name" content="Niu Yuxian&#39;blog">
-<meta property="og:description" content="弃坑 travis，开始收费了 https://docs.travis-ci.com/user/billing-overview/#usage---credits workflow 配置源码根目录创建 .github/workflows/deploy.yml 生成密钥ssh-keygen -t rsa -b 4096 -C “Hexo Deploy Key” -f github-deploy-ke">
-<meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2025-09-30T04:26:37.785Z">
+<meta property="og:description" content="弃坑 travis，开始收费了 https:&#x2F;&#x2F;docs.travis-ci.com&#x2F;user&#x2F;billing-overview&#x2F;#usage---credits workflow 配置源码根目录创建 .github&#x2F;workflows&#x2F;deploy.yml 生成密钥ssh-keygen -t rsa -b 4096 -C “Hexo Deploy Key” -f github-deploy-ke">
+<meta property="og:locale">
+<meta property="article:published_time" content="2023-07-29T21:11:10.000Z">
+<meta property="article:modified_time" content="2023-07-29T21:11:10.000Z">
+<meta property="article:author" content="Niu Yuxian">
+<meta property="article:tag" content="github">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Github Actions">
-<meta name="twitter:description" content="弃坑 travis，开始收费了 https://docs.travis-ci.com/user/billing-overview/#usage---credits workflow 配置源码根目录创建 .github/workflows/deploy.yml 生成密钥ssh-keygen -t rsa -b 4096 -C “Hexo Deploy Key” -f github-deploy-ke">
   
     <link rel="alternative" href="/atom.xml" title="Niu Yuxian&#39;blog" type="application/atom+xml">
   
@@ -58,8 +58,8 @@ var _hmt = _hmt || [];
 </script>
 
 
-</head>
-</html>
+<meta name="generator" content="Hexo 8.1.2"></head>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -72,7 +72,7 @@ var _hmt = _hmt || [];
 			<img src="/assets/images/logo.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Niu Yuxian</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
 		
 
@@ -156,7 +156,7 @@ var _hmt = _hmt || [];
 				<img src="/assets/images/logo.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Niu Yuxian</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
 			
 			
@@ -270,7 +270,7 @@ var _hmt = _hmt || [];
         
         <a href="/2023/07/29/github/github-actions/" class="archive-article-date">
   	<time datetime="2023-07-29T21:11:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-07-29</time>
-  	更新：2025-09-30
+  	更新：2023-07-29
 </a>
         
       </header>
@@ -278,14 +278,16 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p>弃坑 travis，开始收费了</p>
-<p><a href="https://docs.travis-ci.com/user/billing-overview/#usage---credits" target="_blank" rel="noopener">https://docs.travis-ci.com/user/billing-overview/#usage---credits</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.travis-ci.com/user/billing-overview/#usage---credits">https://docs.travis-ci.com/user/billing-overview/#usage---credits</a></p>
 <h2 id="workflow-配置"><a href="#workflow-配置" class="headerlink" title="workflow 配置"></a>workflow 配置</h2><p>源码根目录创建 <code>.github/workflows/deploy.yml</code></p>
-<h2 id="生成密钥"><a href="#生成密钥" class="headerlink" title="生成密钥"></a>生成密钥</h2><p>ssh-keygen -t rsa -b 4096 -C “Hexo Deploy Key” -f github-deploy-key -N “”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">github-deploy-key —— 私钥</span><br><span class="line">github-deploy-key.pub —— 公钥</span><br></pre></td></tr></table></figure></p>
+<h2 id="生成密钥"><a href="#生成密钥" class="headerlink" title="生成密钥"></a>生成密钥</h2><p>ssh-keygen -t rsa -b 4096 -C “Hexo Deploy Key” -f github-deploy-key -N “”</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">github-deploy-key —— 私钥</span><br><span class="line">github-deploy-key.pub —— 公钥</span><br></pre></td></tr></table></figure>
+
 <p>源码项目 配置私钥 Settings -&gt; Security -&gt; Actions</p>
 <p>目标项目 配置公钥 Settings -&gt; Security -&gt; Deploy keys </p>
 <p>一定要勾选 Allow write access 来打开写权限，否则无法写入会导致部署失败</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
-<p><a href="https://github.com/peaceiris/actions-gh-pages" target="_blank" rel="noopener">https://github.com/peaceiris/actions-gh-pages</a><br><a href="https://zhuanlan.zhihu.com/p/170563000" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/170563000</a><br><a href="https://www.cnblogs.com/xueyubao/p/13991935.html" target="_blank" rel="noopener">https://www.cnblogs.com/xueyubao/p/13991935.html</a><br><a href="https://cloud.tencent.com/developer/article/1953391" target="_blank" rel="noopener">https://cloud.tencent.com/developer/article/1953391</a><br><a href="https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions" target="_blank" rel="noopener">https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/peaceiris/actions-gh-pages">https://github.com/peaceiris/actions-gh-pages</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/170563000">https://zhuanlan.zhihu.com/p/170563000</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xueyubao/p/13991935.html">https://www.cnblogs.com/xueyubao/p/13991935.html</a><br><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1953391">https://cloud.tencent.com/developer/article/1953391</a><br><a target="_blank" rel="noopener" href="https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions">https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions</a></p>
 </blockquote>
 
       
@@ -483,7 +485,7 @@ new Valine({
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2025 Niu Yuxian
+    		&copy; 2026 Niu Yuxian
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -608,15 +610,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">was</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">area</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">cors</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">was</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -644,10 +646,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">c#</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Nord</a>
               </li>
              
@@ -665,6 +663,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">guqin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">c#</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -736,6 +738,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">opencv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">原码</a>
               </li>
              
@@ -756,10 +762,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sed</a>
               </li>
              
@@ -777,6 +779,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -824,10 +830,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">archlinux</a>
               </li>
              
@@ -844,6 +846,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">d365</a>
               </li>
              
@@ -852,15 +858,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">deno</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">docker alpine</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">razor</a>
+                <a href="javascript:void(0)" class="js-tag color5">deno</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -869,6 +871,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ffmpeg</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">razor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -956,14 +962,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
@@ -981,6 +979,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1008,15 +1014,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">regex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">requests</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">rust</a>
+                <a href="javascript:void(0)" class="js-tag color1">regex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1028,11 +1030,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color5">rust</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1041,6 +1043,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mongo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1072,15 +1078,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">rocky</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">

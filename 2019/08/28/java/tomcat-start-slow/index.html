@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>tomcat 启动慢 | Niu Yuxian&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JAVA_OPTS=”-Djava.security.egd=file:/dev/./urandom” 通常情况下，tomcat启动只要2~3秒钟，突然有一天，tomcat启动非常慢，要花5~6分钟，查了很久，终于在这篇文章找到了解决方案。 Tomcat 8启动很慢，且日志上无任何错误，在日志中查看到如下信息：1org.apache.catalina.util.SessionIdGenerator">
-<meta name="keywords" content="tomcat">
+  <meta name="description" content="JAVA_OPTS&#x3D;”-Djava.security.egd&#x3D;file:&#x2F;dev&#x2F;.&#x2F;urandom” 通常情况下，tomcat启动只要23秒钟，突然有一天，tomcat启动非常慢，要花56分钟，查了很久，终于在这篇文章找到了解决方案。 Tomcat 8启动很慢，且日志上无任何错误，在日志中查看到如下信息： 1org.apache.catalina">
 <meta property="og:type" content="article">
 <meta property="og:title" content="tomcat 启动慢">
 <meta property="og:url" content="http://yoursite.com/2019/08/28/java/tomcat-start-slow/index.html">
 <meta property="og:site_name" content="Niu Yuxian&#39;blog">
-<meta property="og:description" content="JAVA_OPTS=”-Djava.security.egd=file:/dev/./urandom” 通常情况下，tomcat启动只要2~3秒钟，突然有一天，tomcat启动非常慢，要花5~6分钟，查了很久，终于在这篇文章找到了解决方案。 Tomcat 8启动很慢，且日志上无任何错误，在日志中查看到如下信息：1org.apache.catalina.util.SessionIdGenerator">
-<meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2025-09-30T04:26:37.787Z">
+<meta property="og:description" content="JAVA_OPTS&#x3D;”-Djava.security.egd&#x3D;file:&#x2F;dev&#x2F;.&#x2F;urandom” 通常情况下，tomcat启动只要23秒钟，突然有一天，tomcat启动非常慢，要花56分钟，查了很久，终于在这篇文章找到了解决方案。 Tomcat 8启动很慢，且日志上无任何错误，在日志中查看到如下信息： 1org.apache.catalina">
+<meta property="og:locale">
+<meta property="article:published_time" content="2019-08-28T09:06:59.000Z">
+<meta property="article:modified_time" content="2019-08-28T09:06:59.000Z">
+<meta property="article:author" content="Niu Yuxian">
+<meta property="article:tag" content="tomcat">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tomcat 启动慢">
-<meta name="twitter:description" content="JAVA_OPTS=”-Djava.security.egd=file:/dev/./urandom” 通常情况下，tomcat启动只要2~3秒钟，突然有一天，tomcat启动非常慢，要花5~6分钟，查了很久，终于在这篇文章找到了解决方案。 Tomcat 8启动很慢，且日志上无任何错误，在日志中查看到如下信息：1org.apache.catalina.util.SessionIdGenerator">
   
     <link rel="alternative" href="/atom.xml" title="Niu Yuxian&#39;blog" type="application/atom+xml">
   
@@ -58,8 +58,8 @@ var _hmt = _hmt || [];
 </script>
 
 
-</head>
-</html>
+<meta name="generator" content="Hexo 8.1.2"></head>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -72,7 +72,7 @@ var _hmt = _hmt || [];
 			<img src="/assets/images/logo.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Niu Yuxian</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
 		
 
@@ -156,7 +156,7 @@ var _hmt = _hmt || [];
 				<img src="/assets/images/logo.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Niu Yuxian</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
 			
 			
@@ -270,33 +270,35 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/28/java/tomcat-start-slow/" class="archive-article-date">
   	<time datetime="2019-08-28T09:06:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-  	更新：2025-09-30
+  	更新：2019-08-28
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>JAVA_OPTS=”-Djava.security.egd=file:/dev/./urandom”</p>
-<p>通常情况下，tomcat启动只要2~3秒钟，突然有一天，tomcat启动非常慢，要花5~6分钟，查了很久，终于在这篇文章找到了解决方案。</p>
-<p>Tomcat 8启动很慢，且日志上无任何错误，在日志中查看到如下信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [423,538] milliseconds.</span><br></pre></td></tr></table></figure></p>
+        <p>JAVA_OPTS&#x3D;”-Djava.security.egd&#x3D;file:&#x2F;dev&#x2F;.&#x2F;urandom”</p>
+<p>通常情况下，tomcat启动只要2<del>3秒钟，突然有一天，tomcat启动非常慢，要花5</del>6分钟，查了很久，终于在这篇文章找到了解决方案。</p>
+<p>Tomcat 8启动很慢，且日志上无任何错误，在日志中查看到如下信息：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [423,538] milliseconds.</span><br></pre></td></tr></table></figure>
 <p>SHA1PRNG算法是基于SHA-1算法实现且保密性较强的伪随机数生成器。</p>
-<a id="more"></a>
+<span id="more"></span>
+
 <p>在SHA1PRNG中，有一个种子产生器，它根据配置执行各种操作。</p>
-<p>1）如果Java.security.egd 属性或securerandom.source属性指定的是”file:/dev/random”或”file:/dev/urandom”，那么JVM 会使用本地种子产生器NativeSeedGenerator，它会调用super()方法，即调用 SeedGenerator.URLSeedGenerator(/dev/random)方法进行初始化。</p>
+<p>1）如果Java.security.egd 属性或securerandom.source属性指定的是”file:&#x2F;dev&#x2F;random”或”file:&#x2F;dev&#x2F;urandom”，那么JVM 会使用本地种子产生器NativeSeedGenerator，它会调用super()方法，即调用 SeedGenerator.URLSeedGenerator(&#x2F;dev&#x2F;random)方法进行初始化。</p>
 <p>2）如果java.security.egd属性或securerandom.source属性指定的是其它已存在的URL，那么会调用SeedGenerator.URLSeedGenerator(url)方法进行初始化。</p>
-<p>这就是为什么我们设置值为”file:///dev/urandom”或者值为”file:/./dev/random”都会起作用的原因。</p>
+<p>这就是为什么我们设置值为”file:&#x2F;&#x2F;&#x2F;dev&#x2F;urandom”或者值为”file:&#x2F;.&#x2F;dev&#x2F;random”都会起作用的原因。</p>
 <p>解决<br>有两种解决办法：</p>
 <p>1）在Tomcat环境中解决</p>
 <p>可以通过配置JRE使用非阻塞的Entropy Source。</p>
-<p>在catalina.sh中加入这么一行：-Djava.security.egd=file:/dev/./urandom 即可。</p>
+<p>在catalina.sh中加入这么一行：-Djava.security.egd&#x3D;file:&#x2F;dev&#x2F;.&#x2F;urandom 即可。</p>
 <p>加入后再启动Tomcat，整个启动耗时下降到Server startup in 2912 ms。</p>
 <p>2）在JVM环境中解决</p>
-<p>打开$JAVA_PATH/jre/lib/security/java.security这个文件，找到下面的内容：</p>
-<p>securerandom.source=file:/dev/urandom<br>替换成</p>
-<p>securerandom.source=file:/dev/./urandom</p>
+<p>打开$JAVA_PATH&#x2F;jre&#x2F;lib&#x2F;security&#x2F;java.security这个文件，找到下面的内容：</p>
+<p>securerandom.source&#x3D;file:&#x2F;dev&#x2F;urandom<br>替换成</p>
+<p>securerandom.source&#x3D;file:&#x2F;dev&#x2F;.&#x2F;urandom</p>
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><blockquote>
-<p><a href="http://blog.csdn.net/chszs/article/details/49494701" target="_blank" rel="noopener">http://blog.csdn.net/chszs/article/details/49494701</a></p>
+<p><a target="_blank" rel="noopener" href="http://blog.csdn.net/chszs/article/details/49494701">http://blog.csdn.net/chszs/article/details/49494701</a></p>
 </blockquote>
 
       
@@ -494,7 +496,7 @@ new Valine({
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2025 Niu Yuxian
+    		&copy; 2026 Niu Yuxian
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -619,15 +621,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">was</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">area</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">cors</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">was</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -655,10 +657,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">c#</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Nord</a>
               </li>
              
@@ -676,6 +674,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">guqin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">c#</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -747,6 +749,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">opencv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">原码</a>
               </li>
              
@@ -767,10 +773,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sed</a>
               </li>
              
@@ -788,6 +790,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -835,10 +841,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">archlinux</a>
               </li>
              
@@ -855,6 +857,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">d365</a>
               </li>
              
@@ -863,15 +869,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">deno</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">docker alpine</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">razor</a>
+                <a href="javascript:void(0)" class="js-tag color5">deno</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -880,6 +882,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ffmpeg</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">razor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -967,14 +973,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
@@ -992,6 +990,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1019,15 +1025,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">regex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">requests</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">rust</a>
+                <a href="javascript:void(0)" class="js-tag color1">regex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1039,11 +1041,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color5">rust</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1052,6 +1054,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mongo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1083,15 +1089,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">rocky</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Niu Yuxian&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -12,9 +12,9 @@
 <meta property="og:title" content="Niu Yuxian&#39;blog">
 <meta property="og:url" content="http://yoursite.com/page/21/index.html">
 <meta property="og:site_name" content="Niu Yuxian&#39;blog">
-<meta property="og:locale" content="default">
+<meta property="og:locale">
+<meta property="article:author" content="Niu Yuxian">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Niu Yuxian&#39;blog">
   
     <link rel="alternative" href="/atom.xml" title="Niu Yuxian&#39;blog" type="application/atom+xml">
   
@@ -53,8 +53,8 @@ var _hmt = _hmt || [];
 </script>
 
 
-</head>
-</html>
+<meta name="generator" content="Hexo 8.1.2"></head>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -67,7 +67,7 @@ var _hmt = _hmt || [];
 			<img src="/assets/images/logo.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Niu Yuxian</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
 		
 
@@ -151,7 +151,7 @@ var _hmt = _hmt || [];
 				<img src="/assets/images/logo.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Niu Yuxian</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
 			
 			
@@ -253,6 +253,140 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ffmpeg/ffmpeg" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/03/ffmpeg/ffmpeg/">ffmpeg</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/03/ffmpeg/ffmpeg/" class="archive-article-date">
+  	<time datetime="2019-04-03T13:15:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-03</time>
+  	更新：2025-02-15
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="下载-ffmpeg"><a href="#下载-ffmpeg" class="headerlink" title="下载 ffmpeg"></a>下载 ffmpeg</h2><p><a target="_blank" rel="noopener" href="https://www.gyan.dev/ffmpeg/builds/">https://www.gyan.dev/ffmpeg/builds/</a></p>
+<p>历史版本下载</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/GyanD/codexffmpeg/releases">https://github.com/GyanD/codexffmpeg/releases</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/BtbN/FFmpeg-Builds/releases">https://github.com/BtbN/FFmpeg-Builds/releases</a></p>
+<p>这个全</p>
+<p><a target="_blank" rel="noopener" href="https://www.videohelp.com/software/ffmpeg/old-versions">https://www.videohelp.com/software/ffmpeg/old-versions</a></p>
+<h2 id="ffmpeg-GPU-加速"><a href="#ffmpeg-GPU-加速" class="headerlink" title="ffmpeg GPU 加速"></a>ffmpeg GPU 加速</h2><ul>
+<li>AV1 支持：–enable-libdav1d（解码）和 –enable-libaom（编码）</li>
+<li>NVENC：–enable-nvenc 用于 NVIDIA 的硬件加速</li>
+<li>VAAPI：–enable-vaapi 用于 Intel 和 AMD 的硬件加速</li>
+</ul>
+<p>首先在使用之前，你需要先检查下你的电脑是否支持cuda 加速</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -hwaccels</span><br><span class="line"></span><br><span class="line">ffmpeg -codecs | findstr <span class="string">&quot;h264&quot;</span></span><br><span class="line"></span><br><span class="line">从图中可以看到 decoders（解码器，对应 input 文件的编码）和 encoders （编码器，对应 output 文件的编码）。</span><br><span class="line">decoders 中 h264_qsv 是 Intel 核显/显卡专用的硬件加速解码器，h264_cuvid 是 N 卡专用的解码器。</span><br><span class="line">encoders 中 h264_amf 和 h264_mf 都是 A 卡专用的编码器，h264_qsv 对应 I 卡，h264_nvenc 对应 N 卡。</span><br></pre></td></tr></table></figure>
+
+<p>使用 -c:v 参数来指定视频的编解码器，这里 c 是 codec 的缩写，v 是指 video ，处理音频编码可以替换为 a ( audio )</p>
+<p><strong>ffmpeg删去视频指定区间内容</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -hwaccel cuvid -c:v h264_cuvid  -threads 5 -i &quot;01_720.mp4&quot;  -vf &quot;select=&#x27;not(between(t,0*60+1,0*60+16))&#x27;,setpts=N/(FRAME_RATE*TB)&quot; -af &quot;aselect=&#x27;not(between(t,0*60+2,0*60+14))&#x27;,asetpts=N/(SR*TB)&quot; -c:v h264_nvenc -c:a aac -strict -2 &quot;origin_edited.mp4&quot;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-i &quot;D:\Download\****.mp4&quot;：输入文件路径，其中 **** 是被脱敏的部分，表示输入的视频文件名。</span><br><span class="line">-vf &quot;select=&#x27;not(between(t,17*60+41,18*60+59))&#x27;,setpts=N/(FRAME_RATE*TB)&quot;：视频过滤器选项，其中 select 表示选择满足条件的帧，not(between(t,17*60+41,18*60+59)) 表示不选取时间在 17 分 41 秒至 18 分 59 秒之间的帧，setpts 表示修改视频帧的时间戳，N/(FRAME_RATE*TB) 表示将每个帧的时间戳除以帧率乘以时间基准得到新的时间戳。</span><br><span class="line">-af &quot;aselect=&#x27;not(between(t,17*60+41,18*60+59))&#x27;,asetpts=N/(SR*TB)&quot;：音频过滤器选项，其中 aselect 表示选择满足条件的音频样本，not(between(t,17*60+41,18*60+59)) 表示不选取时间在 17 分 41 秒至 18 分 59 秒之间的音频样本，asetpts 表示修改音频样本的时间戳，N/(SR*TB) 表示将每个样本的时间戳除以采样率乘以时间基准得到新的时间戳。</span><br><span class="line">-c:v libx264：视频编码器选项，使用 libx264 编码器将视频编码为 H.264 格式。</span><br><span class="line">-c:a aac：音频编码器选项，使用 aac 编码器将音频编码为 AAC 格式。</span><br><span class="line">-strict -2：音频编码器选项，表示使用宽松的 AAC 编码器设置。</span><br><span class="line">&quot;D:\Download\****_edited.mp4&quot;：输出文件路径，其中 **** 是被脱敏的部分，表示输出的视频文件名。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">有几个注意的地方就是在使用cuda加速的时候，你需要指定输入与输出视频的解码器与编码器(要注意的是：它和普通的解码和编码器不同你需要在后面加上后缀 “_cuvid”/&quot;_nvenc&quot;)，使用-c:v xxx来指定</span><br></pre></td></tr></table></figure>
+
+<p><strong>没有测试成功</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ ffmpeg -hwaccel vaapi \</span><br><span class="line">    -hwaccel_device /dev/dri/renderD129 \</span><br><span class="line">    -hwaccel_output_format vaapi \</span><br><span class="line">    -i gravity.mp4 \</span><br><span class="line">    -vf &quot;scale_vaapi=w=1024:h=428&quot; \</span><br><span class="line">    -c:v h264_vaapi \</span><br><span class="line">    -b:v 1M \</span><br><span class="line">    out.mp4</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="下载m3u8视频格式"><a href="#下载m3u8视频格式" class="headerlink" title="下载m3u8视频格式"></a>下载m3u8视频格式</h2><p>ffmpeg -i <a target="_blank" rel="noopener" href="https://zy.kubozy-youku-163-aiqi.com/20190330/3992_03a42fb7/1000k/hls/index.m3u8">https://zy.kubozy-youku-163-aiqi.com/20190330/3992_03a42fb7/1000k/hls/index.m3u8</a> output.mp4</p>
+<p>将mp4<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/yinggehai/article/details/81089257">https://blog.csdn.net/yinggehai/article/details/81089257</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"># 打水印</span><br><span class="line">ffmpeg -i sample.mp4 -i watermark.png -filter_complex &quot;overlay=10:10&quot; sample.watermark.mp4</span><br><span class="line"></span><br><span class="line">ffmpeg -i sample.mp4 -i logo.png -filter_complex overlay test1.mp4</span><br><span class="line"></span><br><span class="line">ffmpeg -i sample.mp4 -i logo.png -filter_complex overlay test1.mp4</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 去水印</span><br><span class="line">ffmpeg -i a.mp4 -b:v 548k -vf delogo=x=495:y=10:w=120:h=45:show=1 delogo.mp4</span><br><span class="line"></span><br><span class="line">在一些例子中，你并不会知道确切的分辨率，所以这里有一些变量，你可以更好的添加水印到你想要的任何位置：</span><br><span class="line"></span><br><span class="line">main_h – 传入的视频的高度</span><br><span class="line">main_w – 传入的视频的宽度</span><br><span class="line">overlay_h – 传入的覆盖水印的高度</span><br><span class="line">overlay_w – 传入的覆盖水印的宽度</span><br><span class="line">利用这些变量，我们可以灵活的添加水印：</span><br><span class="line"></span><br><span class="line">ffmpeg -i sample.mp4 -i watermark.png -filter_complex &quot;overlay=x=(main_w-overlay_w)/2:y=(main_h-overlay_h)/2&quot; sample.watermark2.mp4</span><br><span class="line"></span><br><span class="line"># 跑马灯广告</span><br><span class="line"></span><br><span class="line">## 从右往左滚</span><br><span class="line">ffmpeg -i sample.mp4 -vf &quot;drawtext=text=helloworld :fontfile=foo.ttf :y=h-line_h-10:x=w-(t-4.5)*w/5.5 :fontcolor=red: fontsize=40: shadowx=2: shadowy=2&quot; sample.rightToLeft.mp4</span><br><span class="line"></span><br><span class="line">## 从左往右滚</span><br><span class="line">ffmpeg -i sample.mp4 -vf &quot;drawtext=text=helloworld :expansion=normal :fontfile=foo.ttf: y=h-line_h-10:x=(mod(5*n\,w+tw)-tw): fontcolor=white: fontsize=40: shadowx=2: shadowy=2&quot; sample.leftToRight.mp4</span><br><span class="line"></span><br><span class="line">## 从右往左滚，单次滚动时长10秒，间隔30秒滚一次</span><br><span class="line">ffmpeg -i input.mp4 -filter:v drawtext=&quot;fontfile=Microsoft YaHei Mono.ttf :text=&#x27;Hello World&#x27; :fontcolor=white@1.0 :fontsize=36 :y=h-line_h-10 :x=w-tw-w/10*mod(t\,30) :enable=gt(mod(t\,20)\,10)&quot; -codec:v libx264 -codec:a copy -y sample.loop.mp4</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 指定时间段</span><br><span class="line">ffmpeg -i show2.mp4 -filter_complex &quot;drawtext=text=&#x27;Summer Video&#x27;:enable=&#x27;between(t,15,20)&#x27;,fade=t=in:start_time=15:d=0.5:alpha=1,fade=t=out:start_time=19.5:d=0.5:alpha=1[fg];[0][fg]overlay=format=auto,format=yuv420p&quot; -c:a copy output1.mp4</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 如何删除跑马灯</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ffmpeg -i sample.mp4 -filter_complex [0]drawtext=ft_load_flags=render:shadowcolor=0xaaaaaa66:shadowx=5:shadowy=2:fontcolor=white:fontsize=80:text=&#x27;A&#x27;:x=1033:y=77:enable=&#x27;between(t,5.1,8.0)&#x27;[aa];[aa]drawtext=ft_load_flags=render:shadowcolor=0xaaaaaa66:shadowx=5:shadowy=2:fontcolor=white:fontsize=80:text=&#x27;B&#x27;:x=1033:y=177:enable=&#x27;between(t,5.6,8.0)&#x27;[bb];[bb]drawtext=ft_load_flags=render:shadowcolor=0xaaaaaa66:shadowx=5:shadowy=2:fontcolor=white:fontsize=80:text=&#x27;c&#x27;:x=1033:y=277:enable=&#x27;between(t,6.0,8.0)&#x27;[cc];[cc]drawtext=ft_load_flags=render:shadowcolor=0xaaaaaa66:shadowx=5:shadowy=2:fontcolor=white:fontsize=80:text=&#x27;d&#x27;:x=1033:y=377:enable=&#x27;between(t,6.4,8.0)&#x27; -t 27 show2.mp4</span><br><span class="line"></span><br><span class="line">ffmpeg -i show2.mp4 -filter_complex [0]drawtext=ft_load_flags=render:shadowcolor=0xaaaaaa66:shadowx=5:shadowy=2:fontcolor=white:fontsize=80:text=&#x27;A&#x27;:x=1033:y=77:disable=&#x27;between(t,5.1,8.0)&#x27;[aa];[aa]drawtext=ft_load_flags=render:shadowcolor=0xaaaaaa66:shadowx=5:shadowy=2:fontcolor=white:fontsize=80:text=&#x27;B&#x27;:x=1033:y=177:enable=&#x27;between(t,5.6,8.0)&#x27;[bb];[bb]drawtext=ft_load_flags=render:shadowcolor=0xaaaaaa66:shadowx=5:shadowy=2:fontcolor=white:fontsize=80:text=&#x27;c&#x27;:x=1033:y=277:enable=&#x27;between(t,6.0,8.0)&#x27;[cc];[cc]drawtext=ft_load_flags=render:shadowcolor=0xaaaaaa66:shadowx=5:shadowy=2:fontcolor=white:fontsize=80:text=&#x27;d&#x27;:x=1033:y=377:enable=&#x27;between(t,6.4,8.0)&#x27; -t 27 show22.mp4</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="乐视视频"><a href="#乐视视频" class="headerlink" title="乐视视频"></a>乐视视频</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i &quot;http://play1.cp21.ott.cibntv.net/play.videocache.lecloud.com/274/51/42/letv-uts/14/ver_00_22-1123062873-avc-419370-aac-48000-2725000-163326911-236f2850068d35d35be5375b349bd06c-1554800696821.mp4?crypt=19aa7f2e179&amp;b=479&amp;nlh=4096&amp;nlt=60&amp;bf=30&amp;p2p=1&amp;video_type=mp4&amp;termid=0&amp;tss=no&amp;platid=1&amp;splatid=105&amp;its=0&amp;qos=3&amp;fcheck=0&amp;amltag=6&amp;mltag=6&amp;uid=1783973100.rp&amp;keyitem=GOw_33YJAAbXYE-cnQwpfLlv_b2zAkYctFVqe5bsXQpaGNn3T1-vhw..&amp;ntm=1555004400&amp;nkey=0fc82a59141b628fd1893219a993fe6a&amp;nkey2=5ab8ce1b8b9fa4945565e38090c5fd36&amp;auth_key=1555004400-1-0-1-105-ce4c71fe6298cc12e0edb87227512d22&amp;geo=CN-22-0-1&amp;mmsid=66945842&amp;tm=1554986073&amp;key=79c5e20d95fa6dcded49e1f46b85da38&amp;playid=0&amp;vtype=13&amp;cvid=1094686198805&amp;payff=0&amp;sign=letv&amp;uidx=0&amp;errc=0&amp;gn=50047&amp;ndtype=2&amp;vrtmcd=102&amp;buss=6&amp;cips=16.85.68.236&quot; -c output.mp4</span><br><span class="line"></span><br><span class="line">## 这个命令执行比较快，生成的mp4文件较小</span><br><span class="line">ffmpeg -i &quot;http://play1.cp21.ott.cibntv.net/play.videocache.lecloud.com/274/51/42/letv-uts/14/ver_00_22-1123062873-avc-419370-aac-48000-2725000-163326911-236f2850068d35d35be5375b349bd06c-1554800696821.mp4?crypt=19aa7f2e179&amp;b=479&amp;nlh=4096&amp;nlt=60&amp;bf=30&amp;p2p=1&amp;video_type=mp4&amp;termid=0&amp;tss=no&amp;platid=1&amp;splatid=105&amp;its=0&amp;qos=3&amp;fcheck=0&amp;amltag=6&amp;mltag=6&amp;uid=1783973100.rp&amp;keyitem=GOw_33YJAAbXYE-cnQwpfLlv_b2zAkYctFVqe5bsXQpaGNn3T1-vhw..&amp;ntm=1555004400&amp;nkey=0fc82a59141b628fd1893219a993fe6a&amp;nkey2=5ab8ce1b8b9fa4945565e38090c5fd36&amp;auth_key=1555004400-1-0-1-105-ce4c71fe6298cc12e0edb87227512d22&amp;geo=CN-22-0-1&amp;mmsid=66945842&amp;tm=1554986073&amp;key=79c5e20d95fa6dcded49e1f46b85da38&amp;playid=0&amp;vtype=13&amp;cvid=1094686198805&amp;payff=0&amp;sign=letv&amp;uidx=0&amp;errc=0&amp;gn=50047&amp;ndtype=2&amp;vrtmcd=102&amp;buss=6&amp;cips=16.85.68.236&quot; output.mp4</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### 切片</span><br><span class="line"></span><br><span class="line"># 本地文件切片</span><br><span class="line">ffmpeg -i output.mp4 -codec copy -vbsf h264_mp4toannexb -map 0 -f segment -segment_list out.m3u8 -segment_time 10 output%03d.ts</span><br><span class="line"></span><br><span class="line">## 网络文件切片</span><br><span class="line">ffmpeg -i &quot;http://play1.cp21.ott.cibntv.net/play.videocache.lecloud.com/274/51/42/letv-uts/14/ver_00_22-1123062873-avc-419370-aac-48000-2725000-163326911-236f2850068d35d35be5375b349bd06c-1554800696821.mp4?crypt=19aa7f2e179&amp;b=479&amp;nlh=4096&amp;nlt=60&amp;bf=30&amp;p2p=1&amp;video_type=mp4&amp;termid=0&amp;tss=no&amp;platid=1&amp;splatid=105&amp;its=0&amp;qos=3&amp;fcheck=0&amp;amltag=6&amp;mltag=6&amp;uid=1783973100.rp&amp;keyitem=GOw_33YJAAbXYE-cnQwpfLlv_b2zAkYctFVqe5bsXQpaGNn3T1-vhw..&amp;ntm=1555004400&amp;nkey=0fc82a59141b628fd1893219a993fe6a&amp;nkey2=5ab8ce1b8b9fa4945565e38090c5fd36&amp;auth_key=1555004400-1-0-1-105-ce4c71fe6298cc12e0edb87227512d22&amp;geo=CN-22-0-1&amp;mmsid=66945842&amp;tm=1554986073&amp;key=79c5e20d95fa6dcded49e1f46b85da38&amp;playid=0&amp;vtype=13&amp;cvid=1094686198805&amp;payff=0&amp;sign=letv&amp;uidx=0&amp;errc=0&amp;gn=50047&amp;ndtype=2&amp;vrtmcd=102&amp;buss=6&amp;cips=16.85.68.236&quot; -codec copy -vbsf h264_mp4toannexb -map 0 -f segment -segment_list out.m3u8 -segment_time 10 output%03d.ts</span><br></pre></td></tr></table></figure>
+
+<h3 id="解析源站地址"><a href="#解析源站地址" class="headerlink" title="解析源站地址"></a>解析源站地址</h3><p><a target="_blank" rel="noopener" href="http://www.le.com/ptv/vplay/31585088.html">篮球冠军 http://www.le.com/ptv/vplay/31585088.html</a></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">[</span><span class="punctuation">&#123;</span></span><br><span class="line">		<span class="attr">&quot;url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;http://play.g3proxy.lecloud.com/vod/v2/Mjc5LzMxLzE1L2xldHYtdXRzLzE0L3Zlcl8wMF8yMi0xMTIzMzQ3NzIyLWF2Yy0xOTg5NTYtYWFjLTQ4MDAwLTcwOTQyMDktMjI5NzQ4Mzc5LWVlOThjMGE5NmMyNTkyODY1OTQ2N2Q2NDg5Yjg1OWViLTE1NTc5ODI0MzkwMDMubXA0?b=259&amp;mmsid=66983100&amp;tm=1558329036&amp;key=e8d73975419ebd5efebf01634fcf6757&amp;platid=1&amp;splatid=105&amp;playid=0&amp;tss=no&amp;vtype=21&amp;cvid=760585452670&amp;payff=1&amp;pip=afa51e781174343ae427cddbb70b6e95&quot;</span><span class="punctuation">,</span></span><br><span class="line">		<span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;流畅&quot;</span><span class="punctuation">,</span></span><br><span class="line">		<span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;hls&quot;</span></span><br><span class="line">	<span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">	<span class="punctuation">&#123;</span></span><br><span class="line">		<span class="attr">&quot;url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;http://play.g3proxy.lecloud.com/vod/v2/Mjc1LzIyLzEwMi9sZXR2LXV0cy8xNC92ZXJfMDBfMjItMTEyMzM0NzcyOC1hdmMtNDE5Mzc5LWFhYy00ODAwMC03MDk0MjA5LTQyNTIyMTM2My0wNTQ0MjI2MWY5NmVkMTlhYzM0MmRjODZkNjYzODRjZC0xNTU3OTg1NDU3MjQyLm1wNA==?b=479&amp;mmsid=66983100&amp;tm=1558329036&amp;key=56ef8415019d8e29d919e73002d2c1f2&amp;platid=1&amp;splatid=105&amp;playid=0&amp;tss=no&amp;vtype=13&amp;cvid=760585452670&amp;payff=1&amp;pip=afa51e781174343ae427cddbb70b6e95&quot;</span><span class="punctuation">,</span></span><br><span class="line">		<span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;高清&quot;</span><span class="punctuation">,</span></span><br><span class="line">		<span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;hls&quot;</span></span><br><span class="line">	<span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">	<span class="punctuation">&#123;</span></span><br><span class="line">		<span class="attr">&quot;url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;http://play.g3proxy.lecloud.com/vod/v2/Mjc3LzEzLzk0L2xldHYtdXRzLzE0L3Zlcl8wMF8yMi0xMTIzMzQ3NzI0LWF2Yy0yOTkzNDUxLWFhYy0xMjgwMDAtNzA5NDIwOS0yNzc4ODkxMDEwLTI1MmFlYTExZDY0Njk4MzI3YWYyMjI2ZGVmZDc1NzgwLTE1NTgwMDY3MTY1OTkubXA0?b=3133&amp;mmsid=66983100&amp;tm=1558329036&amp;key=edfdcc914ef23da01432ab606787a6ab&amp;platid=1&amp;splatid=105&amp;playid=0&amp;tss=no&amp;vtype=52&amp;cvid=760585452670&amp;payff=1&amp;pip=afa51e781174343ae427cddbb70b6e95&quot;</span><span class="punctuation">,</span></span><br><span class="line">		<span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1080P&quot;</span><span class="punctuation">,</span></span><br><span class="line">		<span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;hls&quot;</span></span><br><span class="line">	<span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffplay -i &quot;http://play.g3proxy.lecloud.com/vod/v2/Mjc3LzEzLzk0L2xldHYtdXRzLzE0L3Zlcl8wMF8yMi0xMTIzMzQ3NzI0LWF2Yy0yOTkzNDUxLWFhYy0xMjgwMDAtNzA5NDIwOS0yNzc4ODkxMDEwLTI1MmFlYTExZDY0Njk4MzI3YWYyMjI2ZGVmZDc1NzgwLTE1NTgwMDY3MTY1OTkubXA0?b=3133&amp;mmsid=66983100&amp;tm=1558329036&amp;key=edfdcc914ef23da01432ab606787a6ab&amp;platid=1&amp;splatid=105&amp;playid=0&amp;tss=no&amp;vtype=52&amp;cvid=760585452670&amp;payff=1&amp;pip=afa51e781174343ae427cddbb70b6e95&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>在线转码</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">http://play.g3proxy.lecloud.com/vod/v2/Mjc0LzEyLzg3L2xldHYtdXRzLzE0L3Zlcl8wMF8yMi0xMTIzMjUyNDY3LWF2Yy0yOTk1NzAxLWFhYy0xMjgwMDAtNzUwMjk1OS0yOTQxMTQ0MjEwLWI4MDMyYTcyYzNjYmI1MzljZmZhMzZiM2IwNTE2NTVkLTE1NTY0NjUxMjI1ODYubXA0?b=3135&amp;mmsid=66969155&amp;tm=1558330264&amp;key=213a1e7d6e30009970e474d24cb8fee1&amp;platid=1&amp;splatid=105&amp;playid=0&amp;tss=no&amp;vtype=52&amp;cvid=760585452670&amp;payff=1&amp;pip=afa51e781174343ae427cddbb70b6e95</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ffmpeg -i &quot;http:\/\/play1.cp21.ott.cibntv.net\/play.videocache.lecloud.com\/274\/12\/87\/letv-uts\/14\/ver_00_22-1123252467-avc-2995701-aac-128000-7502959-2941144210-b8032a72c3cbb539cffa36b3b051655d-1556465122586.mp4?crypt=11aa7f2e1175&amp;b=3135&amp;nlh=4096&amp;nlt=60&amp;bf=30&amp;p2p=1&amp;video_type=mp4&amp;termid=0&amp;tss=no&amp;platid=1&amp;splatid=105&amp;its=12346168&amp;qos=3&amp;fcheck=0&amp;amltag=6&amp;mltag=6&amp;uid=2074815209.rp&amp;keyitem=GOw_33YJAAbXYE-cnQwpfLlv_b2zAkYctFVqe5bsXQpaGNn3T1-vhw..&amp;ntm=1558350600&amp;nkey=a23fe439ff072ff8f94dba877ffd3ebf&amp;nkey2=4117d4b2085522ca9c68abc83d068524&amp;auth_key=1558350600-1-0-1-105-26f27dab21a1308037aedf61391161c2&amp;geo=CN-15-187-1&amp;mmsid=66969155&amp;tm=1558330264&amp;key=213a1e7d6e30009970e474d24cb8fee1&amp;playid=0&amp;vtype=52&amp;cvid=760585452670&amp;payff=1&amp;sign=letv&amp;uidx=0&amp;errc=0&amp;gn=50047&amp;ndtype=2&amp;vrtmcd=102&amp;buss=6&amp;cips=123.171.42.233&quot; -acodec copy -vcodec copy output.mp4</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://play.g3proxy.lecloud.com/vod/v2/Mjc0LzEyLzg3L2xldHYtdXRzLzE0L3Zlcl8wMF8yMi0xMTIzMjUyNDY3LWF2Yy0yOTk1NzAxLWFhYy0xMjgwMDAtNzUwMjk1OS0yOTQxMTQ0MjEwLWI4MDMyYTcyYzNjYmI1MzljZmZhMzZiM2IwNTE2NTVkLTE1NTY0NjUxMjI1ODYubXA0?b=3135&amp;mmsid=66969155&amp;tm=1558330264&amp;key=213a1e7d6e30009970e474d24cb8fee1&amp;platid=1&amp;splatid=105&amp;playid=0&amp;tss=no&amp;vtype=52&amp;cvid=760585452670&amp;payff=1&amp;pip=afa51e781174343ae427cddbb70b6e95&amp;format=1&amp;expect=3&amp;sign=letv</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="header-参数"><a href="#header-参数" class="headerlink" title="header 参数"></a>header 参数</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -user_agent &quot;User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36&quot; -headers &quot;sec-ch-ua: &#x27;Chromium&#x27;;v=&#x27;88&#x27;, &#x27;Google Chrome&#x27;;v=&#x27;88&#x27;, &#x27;;Not A Brand&#x27;;v=&#x27;99&#x27;&quot;$&#x27;\r\n&#x27;&quot;sec-ch-ua-mobile: ?0&quot;$&quot;Upgrade-Insecure-Requests: 1&quot;  -i http://127.0.0.1:3000</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffplay -user_agent &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 11_1_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36&quot; -i &quot;https://chaxun.truechat365.com/playurl/m3u8?vid=36b1q4OEIrWrX4zC0v8fO5fgPuA3JQ8tI1SeuxCibapmWxX3bfJWbCeomfSg8nYLtiBD2073AaMk3Jv2WSP_matacBJvX2wzma-LYQ1kT8JVrOK06Q&amp;k=7452766b48312b337277504d32726d676b676c3062702f4c37464535346849794569596c32414c67416d733d&amp;s=444459453143694b7161774b53726652706c617150673d3d&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ffmpeg</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/03/ffmpeg/ffmpeg/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-git/git-delete-commit-file-to-ignore" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -267,7 +401,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/03/28/git/git-delete-commit-file-to-ignore/" class="archive-article-date">
   	<time datetime="2019-03-28T10:07:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-28</time>
-  	更新：2025-09-30
+  	更新：2019-03-28
 </a>
         
       </header>
@@ -275,7 +409,10 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p>不小心提交了，IDEA的配置文件，正确的删除方式如下：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git rm -r --cached demo/demo.iml</span><br><span class="line">git commit -m '删除demo.iml'</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 添加 *.iml 到.gitignore</span></span><br><span class="line">git commit -am '添加idea配置文件'</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git rm -r --cached demo/demo.iml</span><br><span class="line">git commit -m &#x27;删除demo.iml&#x27;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">添加 *.iml 到.gitignore</span></span><br><span class="line">git commit -am &#x27;添加idea配置文件&#x27;</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+
+
+
 
       
 
@@ -345,7 +482,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/03/22/git/git-multi-user-on-windows/" class="archive-article-date">
   	<time datetime="2019-03-22T09:06:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-22</time>
-  	更新：2025-09-30
+  	更新：2019-03-22
 </a>
         
       </header>
@@ -354,10 +491,10 @@ var _hmt = _hmt || [];
       
         <p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2019/03/22/city-4057914_1920.jpg" alt="image"></p>
 <p><strong>1.新建自己的git用户的SSH Key</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh</span><br><span class="line">ssh-keygen -t rsa -C &quot;ncc0706@gmail.com&quot; #创建ssh key</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh</span><br><span class="line">ssh-keygen -t rsa -C &quot;ncc0706@gmail.com&quot; #创建ssh key</span><br></pre></td></tr></table></figure>
 <p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2019/03/22/git-multi-user-on-windows/01.png" alt="image"></p>
 <p><strong>2.新建工作中用的SSH Key</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh</span><br><span class="line">ssh-keygen -t rsa -C &quot;work@gmail.com&quot; #创建ssh key</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh</span><br><span class="line">ssh-keygen -t rsa -C &quot;work@gmail.com&quot; #创建ssh key</span><br></pre></td></tr></table></figure>
 <p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2019/03/22/git-multi-user-on-windows/02.png" alt="image"></p>
         
           <a class="article-more-a" href="/2019/03/22/git/git-multi-user-on-windows/#more">more >></a>
@@ -430,14 +567,15 @@ var _hmt = _hmt || [];
         
         <a href="/2019/03/22/git/git-tour/" class="archive-article-date">
   	<time datetime="2019-03-22T09:05:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-22</time>
-  	更新：2025-09-30
+  	更新：2019-03-22
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2019/03/22/dawn-3793717_1920.jpg" alt="image"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">#git 用户</span><br><span class="line">git config --global user.name &quot;ncc0706&quot;</span><br><span class="line">git config --global user.email &quot;ncc0706@gmail.com&quot;</span><br><span class="line"># 格式化提交时间</span><br><span class="line">git config --global log.date &quot;format:%Y-%m-%d %H:%M:%S&quot;</span><br><span class="line"></span><br><span class="line">git init 		# 初始化仓库</span><br><span class="line">git status 		# 仓库状态</span><br><span class="line">git add			# 添加到暂存区</span><br><span class="line">git log			#提交记录</span><br><span class="line">git commit -m &quot;输入提交注释&quot; # 提交文件</span><br><span class="line">git commit -am &quot;添加到暂存区并提交文件&quot;</span><br><span class="line"></span><br><span class="line">git branch		#查看分支</span><br><span class="line">git branch dev  #git创建分支</span><br><span class="line">git checkout dev #git切换分支</span><br><span class="line"></span><br><span class="line"># 修补错误 并创建分支</span><br><span class="line">git checkout -b iss88 # 创建iss88号分支并切换到iss88号分支</span><br><span class="line"></span><br><span class="line">git checkout master		#切换到master分支</span><br><span class="line">git merge iss53			#git合并分支</span><br><span class="line">git branch -d iss53		#删除分支</span><br><span class="line"></span><br><span class="line">git branch -a 			#查看所有分支， 如果颜色支持开启的话远程分支会用红色表示</span><br><span class="line">git branch -v			#看出来origin其实就是远程的git地址的一个别名</span><br><span class="line">origin  git@git.coding.net:ncc/angular.git (fetch)</span><br><span class="line">origin  git@git.coding.net:ncc/angular.git (push)</span><br></pre></td></tr></table></figure></p>
+        <p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2019/03/22/dawn-3793717_1920.jpg" alt="image"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">#git 用户</span><br><span class="line">git config --global user.name &quot;ncc0706&quot;</span><br><span class="line">git config --global user.email &quot;ncc0706@gmail.com&quot;</span><br><span class="line"># 格式化提交时间</span><br><span class="line">git config --global log.date &quot;format:%Y-%m-%d %H:%M:%S&quot;</span><br><span class="line"></span><br><span class="line">git init 		# 初始化仓库</span><br><span class="line">git status 		# 仓库状态</span><br><span class="line">git add			# 添加到暂存区</span><br><span class="line">git log			#提交记录</span><br><span class="line">git commit -m &quot;输入提交注释&quot; # 提交文件</span><br><span class="line">git commit -am &quot;添加到暂存区并提交文件&quot;</span><br><span class="line"></span><br><span class="line">git branch		#查看分支</span><br><span class="line">git branch dev  #git创建分支</span><br><span class="line">git checkout dev #git切换分支</span><br><span class="line"></span><br><span class="line"># 修补错误 并创建分支</span><br><span class="line">git checkout -b iss88 # 创建iss88号分支并切换到iss88号分支</span><br><span class="line"></span><br><span class="line">git checkout master		#切换到master分支</span><br><span class="line">git merge iss53			#git合并分支</span><br><span class="line">git branch -d iss53		#删除分支</span><br><span class="line"></span><br><span class="line">git branch -a 			#查看所有分支， 如果颜色支持开启的话远程分支会用红色表示</span><br><span class="line">git branch -v			#看出来origin其实就是远程的git地址的一个别名</span><br><span class="line">origin  git@git.coding.net:ncc/angular.git (fetch)</span><br><span class="line">origin  git@git.coding.net:ncc/angular.git (push)</span><br></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/2019/03/22/git/git-tour/#more">more >></a>
         
@@ -509,7 +647,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/03/21/ssr-link/" class="archive-article-date">
   	<time datetime="2019-03-21T17:48:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-21</time>
-  	更新：2025-09-30
+  	更新：2019-03-21
 </a>
         
       </header>
@@ -517,7 +655,12 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p>分享几个代理地址网站,有的可能需要翻墙才能访问。。。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">http://www.live-socks.net/</span><br><span class="line"></span><br><span class="line">https://proxyscrape.com/free-proxy-list</span><br><span class="line"></span><br><span class="line">http://spys.one/</span><br><span class="line"></span><br><span class="line">https://socks-proxy.net/</span><br><span class="line"></span><br><span class="line">https://sockslist.net/</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">http://www.live-socks.net/</span><br><span class="line"></span><br><span class="line">https://proxyscrape.com/free-proxy-list</span><br><span class="line"></span><br><span class="line">http://spys.one/</span><br><span class="line"></span><br><span class="line">https://socks-proxy.net/</span><br><span class="line"></span><br><span class="line">https://sockslist.net/</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
 
       
 
@@ -587,7 +730,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/01/08/nginx/nginx-ssl/" class="archive-article-date">
   	<time datetime="2019-01-08T09:38:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-08</time>
-  	更新：2025-09-30
+  	更新：2019-01-08
 </a>
         
       </header>
@@ -595,7 +738,8 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p>默认配置</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">'3'</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">nginx:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">nginx:1.15-alpine</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">"80:80"</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">"443:443"</span></span><br><span class="line">  <span class="attr">certbot:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">certbot/certbot</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&#x27;3&#x27;</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">nginx:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">nginx:1.15-alpine</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;80:80&quot;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;443:443&quot;</span></span><br><span class="line">  <span class="attr">certbot:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">certbot/certbot</span></span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -665,7 +809,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/01/04/regex/dl-qq-video/" class="archive-article-date">
   	<time datetime="2019-01-04T15:41:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-04</time>
-  	更新：2025-09-30
+  	更新：2019-01-04
 </a>
         
       </header>
@@ -673,7 +817,7 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p><img src="/assets/images/2019-01-04/rum-3898745_1920.jpg" alt="good"></p>
-<h2 id="获取视频下载地址"><a href="#获取视频下载地址" class="headerlink" title="获取视频下载地址"></a>获取视频下载地址</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.keys <span class="keyword">import</span> Keys</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用插件过滤掉腾讯的广告</span></span><br><span class="line"><span class="comment"># https://chrome.google.com/webstore/detail/%E5%B9%BF%E5%91%8A%E5%87%80%E5%8C%96%E5%99%A8/cbiaicifbmeokbhollcjfeaoakmppfeh</span></span><br><span class="line">options = webdriver.ChromeOptions()</span><br><span class="line">options.add_extension(<span class="string">'cbiaicifbmeokbhollcjfeaoakmppfeh.crx'</span>)</span><br><span class="line"></span><br><span class="line">chrome = webdriver.Chrome(options=options)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 暂停10s,否则插件不起作用.</span></span><br><span class="line">time.sleep(<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># chrome.get('https://v.qq.com/x/cover/9z88hz9qwugb8p1/p0029xxmpeb.html');</span></span><br><span class="line">chrome.get(<span class="string">'https://v.qq.com/x/cover/l15riuh9dyowta6/j00279fnfu0.html'</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># chrome.set_window_size(480, 800)</span></span><br><span class="line">chrome.find_element_by_id(<span class="string">'keywords'</span>).send_keys(Keys.F12)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">playinfo</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> chrome.execute_script(<span class="string">"return localStorage.getItem('txp-playtime')"</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        data = playinfo()</span><br><span class="line">        <span class="keyword">if</span> data <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">            print(data)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    chrome.quit()</span><br></pre></td></tr></table></figure>
+<h2 id="获取视频下载地址"><a href="#获取视频下载地址" class="headerlink" title="获取视频下载地址"></a>获取视频下载地址</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.keys <span class="keyword">import</span> Keys</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用插件过滤掉腾讯的广告</span></span><br><span class="line"><span class="comment"># https://chrome.google.com/webstore/detail/%E5%B9%BF%E5%91%8A%E5%87%80%E5%8C%96%E5%99%A8/cbiaicifbmeokbhollcjfeaoakmppfeh</span></span><br><span class="line">options = webdriver.ChromeOptions()</span><br><span class="line">options.add_extension(<span class="string">&#x27;cbiaicifbmeokbhollcjfeaoakmppfeh.crx&#x27;</span>)</span><br><span class="line"></span><br><span class="line">chrome = webdriver.Chrome(options=options)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 暂停10s,否则插件不起作用.</span></span><br><span class="line">time.sleep(<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># chrome.get(&#x27;https://v.qq.com/x/cover/9z88hz9qwugb8p1/p0029xxmpeb.html&#x27;);</span></span><br><span class="line">chrome.get(<span class="string">&#x27;https://v.qq.com/x/cover/l15riuh9dyowta6/j00279fnfu0.html&#x27;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># chrome.set_window_size(480, 800)</span></span><br><span class="line">chrome.find_element_by_id(<span class="string">&#x27;keywords&#x27;</span>).send_keys(Keys.F12)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">playinfo</span>():</span><br><span class="line">    <span class="keyword">return</span> chrome.execute_script(<span class="string">&quot;return localStorage.getItem(&#x27;txp-playtime&#x27;)&quot;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        data = playinfo()</span><br><span class="line">        <span class="keyword">if</span> data <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="built_in">print</span>(data)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    chrome.quit()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/2019/01/04/regex/dl-qq-video/#more">more >></a>
         
@@ -753,7 +897,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/01/03/ffmpeg/install-ffmpeg-on-fedora29/" class="archive-article-date">
   	<time datetime="2019-01-03T14:46:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-03</time>
-  	更新：2025-09-30
+  	更新：2019-01-03
 </a>
         
       </header>
@@ -761,17 +905,33 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p>下载源码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/FFmpeg/FFmpeg.git --depth=1</span><br></pre></td></tr></table></figure>
-<p><img src="assets/images/2019-01-03/1546498166686.png" alt="img1"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/FFmpeg/FFmpeg.git --depth=1</span><br></pre></td></tr></table></figure>
+
+<p><img src="/assets/images/2019-01-03/1546498166686.png" alt="img1"></p>
 <p>分析：yasm是汇编编译器，ffmpeg为了提高效率使用了汇编指令，如MMX和SSE等。所以系统中未安装yasm时，就会报上面错误。</p>
 <p>解决：安装yasm编译器。安装方法如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dnf install yasm</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dnf install yasm</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
+
 <p>ffplay安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">wget http://www.libsdl.org/release/SDL2-2.0.9.tar.gz</span><br><span class="line">tar -zxvf SDL2-2.0.9.tar.gz</span><br><span class="line">./configure --enable-video-x11  --enable-x11-shared --enable-video-x11-vm</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br><span class="line"></span><br><span class="line"># 重新编译ffmpeg 查看 /usr/local/bin下面是否有ffplay</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">wget http://www.libsdl.org/release/SDL2-2.0.9.tar.gz</span><br><span class="line">tar -zxvf SDL2-2.0.9.tar.gz</span><br><span class="line">./configure --enable-video-x11  --enable-x11-shared --enable-video-x11-vm</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br><span class="line"></span><br><span class="line"># 重新编译ffmpeg 查看 /usr/local/bin下面是否有ffplay</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
 <p>ffplay  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">could not initialize sdl - no available video device (did you set the display variable )</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffplay -x (width) -y(height) xxxx</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">could not initialize sdl - no available video device (did you set the display variable )</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffplay -x (width) -y(height) xxxx</span><br></pre></td></tr></table></figure>
+
+
+
+
+
 
       
 
@@ -841,14 +1001,14 @@ var _hmt = _hmt || [];
         
         <a href="/2018/12/30/android/android-primer/" class="archive-article-date">
   	<time datetime="2018-12-30T17:34:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-30</time>
-  	更新：2025-09-30
+  	更新：2018-12-30
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h2><p><a href="https://developer.android.com/studio/" target="_blank" rel="noopener">https://developer.android.com/studio/</a></p>
+        <h2 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h2><p><a target="_blank" rel="noopener" href="https://developer.android.com/studio/">https://developer.android.com/studio/</a></p>
         
           <a class="article-more-a" href="/2018/12/30/android/android-primer/#more">more >></a>
         
@@ -920,7 +1080,7 @@ var _hmt = _hmt || [];
         
         <a href="/2018/12/28/os/fedora/fedora29/" class="archive-article-date">
   	<time datetime="2018-12-28T21:38:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-28</time>
-  	更新：2025-09-30
+  	更新：2018-12-28
 </a>
         
       </header>
@@ -928,11 +1088,12 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p><img src="/assets/images/2018-12-28/01.png" alt="最终效果"></p>
-<h2 id="ssh服务"><a href="#ssh服务" class="headerlink" title="ssh服务"></a>ssh服务</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 修改配置文件</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 默认是允许root远程登陆的</span></span><br><span class="line">sudo vi /etc/ssh/sshd_config</span><br><span class="line"><span class="meta">#</span><span class="bash"> 启动sshd服务</span></span><br><span class="line">sudo systemctl restart sshd</span><br><span class="line"><span class="meta">#</span><span class="bash">开机启动ssh服务</span></span><br><span class="line">sudo systemctl enable sshd</span><br></pre></td></tr></table></figure>
+<h2 id="ssh服务"><a href="#ssh服务" class="headerlink" title="ssh服务"></a>ssh服务</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">修改配置文件</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">默认是允许root远程登陆的</span></span><br><span class="line">sudo vi /etc/ssh/sshd_config</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">启动sshd服务</span></span><br><span class="line">sudo systemctl restart sshd</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">开机启动ssh服务</span></span><br><span class="line">sudo systemctl enable sshd</span><br></pre></td></tr></table></figure>
+
 <h2 id="国内镜像"><a href="#国内镜像" class="headerlink" title="国内镜像"></a>国内镜像</h2><blockquote>
-<p><a href="https://mirrors.tuna.tsinghua.edu.cn/help/fedora/" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/help/fedora/</a></p>
+<p><a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/fedora/">https://mirrors.tuna.tsinghua.edu.cn/help/fedora/</a></p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 备份原始镜像</span></span><br><span class="line">sudo cp /etc/yum.repos.d/fedora.repo /etc/yum.repos.d/fedora.repo.bak</span><br><span class="line">sudo cp /etc/yum.repos.d/fedora-updates.repo /etc/yum.repos.d/fedora-updates.repo.bak</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 恢复原始镜像</span></span><br><span class="line">sudo cp /etc/yum.repos.d/fedora.repo.bak /etc/yum.repos.d/fedora.repo</span><br><span class="line">sudo cp /etc/yum.repos.d/fedora-updates.repo.bak /etc/yum.repos.d/fedora-updates.repo</span><br><span class="line"><span class="meta">#</span><span class="bash"> 更新本地缓存</span></span><br><span class="line">sudo dnf makecache</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">备份原始镜像</span></span><br><span class="line">sudo cp /etc/yum.repos.d/fedora.repo /etc/yum.repos.d/fedora.repo.bak</span><br><span class="line">sudo cp /etc/yum.repos.d/fedora-updates.repo /etc/yum.repos.d/fedora-updates.repo.bak</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">恢复原始镜像</span></span><br><span class="line">sudo cp /etc/yum.repos.d/fedora.repo.bak /etc/yum.repos.d/fedora.repo</span><br><span class="line">sudo cp /etc/yum.repos.d/fedora-updates.repo.bak /etc/yum.repos.d/fedora-updates.repo</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">更新本地缓存</span></span><br><span class="line">sudo dnf makecache</span><br><span class="line"></span><br></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/2018/12/28/os/fedora/fedora29/#more">more >></a>
         
@@ -990,90 +1151,9 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-flutter/flutter00-env-on-windows" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/07/flutter/flutter00-env-on-windows/">flutter开发环境搭建</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/07/flutter/flutter00-env-on-windows/" class="archive-article-date">
-  	<time datetime="2018-11-07T15:26:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-07</time>
-  	更新：2025-09-30
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="基础环境"><a href="#基础环境" class="headerlink" title="基础环境"></a>基础环境</h2><p>1.下载flutter sdk</p>
-<p>2.解压zip包到想安装的路径，<strong>不要</strong>将flutter安装到需要一些高权限的路径</p>
-<p>3.设置环境变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">FLUTTER_HOME E:\fulter-in-action\flutter</span><br><span class="line">在Path后面追加 %FLUTTER_HOME%\bin</span><br><span class="line">export PUB_HOSTED_URL=https://pub.flutter-io.cn</span><br><span class="line">export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn</span><br></pre></td></tr></table></figure></p>
-        
-          <a class="article-more-a" href="/2018/11/07/flutter/flutter00-env-on-windows/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">flutter</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/07/flutter/flutter00-env-on-windows/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/20/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="page-number current">21</span><a class="page-number" href="/page/22/">22</a><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/22/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/20/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="page-number current">21</span><a class="page-number" href="/page/22/">22</a><a class="page-number" href="/page/23/">23</a><a class="page-number" href="/page/24/">24</a><a class="extend next" rel="next" href="/page/22/">Next &raquo;</a>
     </nav>
   
 
@@ -1085,7 +1165,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2025 Niu Yuxian
+    		&copy; 2026 Niu Yuxian
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -1210,15 +1290,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">was</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">area</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">cors</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">was</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1246,10 +1326,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">c#</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Nord</a>
               </li>
              
@@ -1267,6 +1343,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">guqin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">c#</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1338,6 +1418,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">opencv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">原码</a>
               </li>
              
@@ -1358,10 +1442,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sed</a>
               </li>
              
@@ -1379,6 +1459,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1426,10 +1510,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">archlinux</a>
               </li>
              
@@ -1446,6 +1526,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">d365</a>
               </li>
              
@@ -1454,15 +1538,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">deno</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">docker alpine</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">razor</a>
+                <a href="javascript:void(0)" class="js-tag color5">deno</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1471,6 +1551,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ffmpeg</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">razor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1558,14 +1642,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
@@ -1583,6 +1659,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1610,15 +1694,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">regex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">requests</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">rust</a>
+                <a href="javascript:void(0)" class="js-tag color1">regex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1630,11 +1710,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color5">rust</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1643,6 +1723,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mongo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1674,15 +1758,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">rocky</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">

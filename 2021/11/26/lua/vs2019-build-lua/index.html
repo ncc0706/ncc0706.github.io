@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>vs2019 源码构建 lua | Niu Yuxian&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="http://www.lua.org/versions.html  下载页面，下载地址  生成 lua 静态库 使用 Windows Desktop Wizard (Windows桌面向导) 新建工程  类型选择 Static Library (静态库) 空项目">
-<meta name="keywords" content="lua">
+  <meta name="description" content="http:&#x2F;&#x2F;www.lua.org&#x2F;versions.html  下载页面，下载地址  生成 lua 静态库 使用 Windows Desktop Wizard (Windows桌面向导) 新建工程  类型选择 Static Library (静态库) 空项目">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vs2019 源码构建 lua">
 <meta property="og:url" content="http://yoursite.com/2021/11/26/lua/vs2019-build-lua/index.html">
 <meta property="og:site_name" content="Niu Yuxian&#39;blog">
-<meta property="og:description" content="http://www.lua.org/versions.html  下载页面，下载地址  生成 lua 静态库 使用 Windows Desktop Wizard (Windows桌面向导) 新建工程  类型选择 Static Library (静态库) 空项目">
-<meta property="og:locale" content="default">
+<meta property="og:description" content="http:&#x2F;&#x2F;www.lua.org&#x2F;versions.html  下载页面，下载地址  生成 lua 静态库 使用 Windows Desktop Wizard (Windows桌面向导) 新建工程  类型选择 Static Library (静态库) 空项目">
+<meta property="og:locale">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/11/26/2021-11-26_191140.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/11/26/2021-11-26_192104.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/11/26/2021-11-26_195606.png">
@@ -28,10 +27,11 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/11/26/2021-11-26_201644.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/11/26/2021-11-26_201709.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/11/26/2021-11-26_204549.png">
-<meta property="og:updated_time" content="2025-09-30T04:26:37.788Z">
+<meta property="article:published_time" content="2021-11-26T18:59:52.000Z">
+<meta property="article:modified_time" content="2021-11-26T18:59:52.000Z">
+<meta property="article:author" content="Niu Yuxian">
+<meta property="article:tag" content="lua">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vs2019 源码构建 lua">
-<meta name="twitter:description" content="http://www.lua.org/versions.html  下载页面，下载地址  生成 lua 静态库 使用 Windows Desktop Wizard (Windows桌面向导) 新建工程  类型选择 Static Library (静态库) 空项目">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/11/26/2021-11-26_191140.png">
   
     <link rel="alternative" href="/atom.xml" title="Niu Yuxian&#39;blog" type="application/atom+xml">
@@ -71,8 +71,8 @@ var _hmt = _hmt || [];
 </script>
 
 
-</head>
-</html>
+<meta name="generator" content="Hexo 8.1.2"></head>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -85,7 +85,7 @@ var _hmt = _hmt || [];
 			<img src="/assets/images/logo.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Niu Yuxian</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
 		
 
@@ -169,7 +169,7 @@ var _hmt = _hmt || [];
 				<img src="/assets/images/logo.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Niu Yuxian</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
 			
 			
@@ -283,42 +283,43 @@ var _hmt = _hmt || [];
         
         <a href="/2021/11/26/lua/vs2019-build-lua/" class="archive-article-date">
   	<time datetime="2021-11-26T18:59:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-26</time>
-  	更新：2025-09-30
+  	更新：2021-11-26
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="http://www.lua.org/versions.html" target="_blank" rel="noopener">http://www.lua.org/versions.html</a></p>
-<p> <a href="http://www.lua.org/download.html" target="_blank" rel="noopener">下载页面</a>，<a href="http://www.lua.org/ftp/lua-5.4.3.tar.gz" target="_blank" rel="noopener">下载地址</a></p>
-<p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/11/26/2021-11-26_191140.png" alt></p>
+        <p><a target="_blank" rel="noopener" href="http://www.lua.org/versions.html">http://www.lua.org/versions.html</a></p>
+<p> <a target="_blank" rel="noopener" href="http://www.lua.org/download.html">下载页面</a>，<a target="_blank" rel="noopener" href="http://www.lua.org/ftp/lua-5.4.3.tar.gz">下载地址</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/11/26/2021-11-26_191140.png"></p>
 <h2 id="生成-lua-静态库"><a href="#生成-lua-静态库" class="headerlink" title="生成 lua 静态库"></a>生成 lua 静态库</h2><ul>
-<li><p>使用 <code>Windows Desktop Wizard (Windows桌面向导)</code> 新建工程<br><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/11/26/2021-11-26_192104.png" alt></p>
+<li><p>使用 <code>Windows Desktop Wizard (Windows桌面向导)</code> 新建工程<br><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/11/26/2021-11-26_192104.png"></p>
 </li>
 <li><p>类型选择 <code>Static Library (静态库)</code> 空项目</p>
 </li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/11/26/2021-11-26_195606.png" alt></p>
-<a id="more"></a>
+<p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/11/26/2021-11-26_195606.png"></p>
+<span id="more"></span>
+
 <ul>
 <li>将 lua 源代码文件拷贝进工程, 并加入工程 (除了 lua.c 以及 luac.c 两个文件)</li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/11/26/2021-11-26_195759.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/11/26/2021-11-26_195759.png"></p>
 <ul>
 <li>修改解决方案配置,改为 <code>Compile as C Code (编译为C代码)</code></li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/11/26/2021-11-26_195957.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/11/26/2021-11-26_195957.png"></p>
 <ul>
-<li>修改编译配置, 改为 Release,  点击 build 编译之后, 可以在 Release 目录中找到生成出来的 lib 文件<br><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/11/26/2021-11-26_195916.png" alt></li>
+<li>修改编译配置, 改为 Release,  点击 build 编译之后, 可以在 Release 目录中找到生成出来的 lib 文件<br><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/11/26/2021-11-26_195916.png"></li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/11/26/2021-11-26_200727.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/11/26/2021-11-26_200727.png"></p>
 <h2 id="生成-lua-动态库"><a href="#生成-lua-动态库" class="headerlink" title="生成 lua 动态库"></a>生成 lua 动态库</h2><p>修改 <code>Configuration Type(配置类型)</code>, 改为 dll,编译后如下图</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/11/26/2021-11-26_200109.png" alt></p>
-<p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/11/26/2021-11-26_200140.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/11/26/2021-11-26_200109.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/11/26/2021-11-26_200140.png"></p>
 <h2 id="生成-lua-解释器-lua-exe"><a href="#生成-lua-解释器-lua-exe" class="headerlink" title="生成 lua 解释器 lua.exe"></a>生成 lua 解释器 lua.exe</h2><ul>
 <li><p>新建 <code>Console App</code> 工程</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/11/26/2021-11-26_201644.png" alt><br><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/11/26/2021-11-26_201709.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/11/26/2021-11-26_201644.png"><br><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/11/26/2021-11-26_201709.png"></p>
 </li>
 <li><p>导入 lua 源代码 (这次需要包含 <code>lua.c</code> 以及 <code>luac.c</code>)</p>
 </li>
@@ -327,7 +328,7 @@ var _hmt = _hmt || [];
 <li><p>编译之后, 可以在 Release 目录中找到生成出来的 exe 文件</p>
 </li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/11/26/2021-11-26_204549.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/11/26/2021-11-26_204549.png"></p>
 <h2 id="生成-lua-编译器-luac-exe"><a href="#生成-lua-编译器-luac-exe" class="headerlink" title="生成 lua 编译器 luac.exe"></a>生成 lua 编译器 luac.exe</h2><ul>
 <li>新建 <code>Console App</code> 工程或者使用上面的工程(注意备份之前的lua.exe)</li>
 <li>导入 lua 源代码 (这次需要包含 <code>lua.c</code> 以及 <code>luac.c</code>)</li>
@@ -530,7 +531,7 @@ new Valine({
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2025 Niu Yuxian
+    		&copy; 2026 Niu Yuxian
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -655,15 +656,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">was</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">area</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">cors</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">was</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -691,10 +692,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">c#</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Nord</a>
               </li>
              
@@ -712,6 +709,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">guqin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">c#</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -783,6 +784,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">opencv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">原码</a>
               </li>
              
@@ -803,10 +808,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sed</a>
               </li>
              
@@ -824,6 +825,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -871,10 +876,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">archlinux</a>
               </li>
              
@@ -891,6 +892,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">d365</a>
               </li>
              
@@ -899,15 +904,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">deno</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">docker alpine</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">razor</a>
+                <a href="javascript:void(0)" class="js-tag color5">deno</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -916,6 +917,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ffmpeg</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">razor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1003,14 +1008,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
@@ -1028,6 +1025,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1055,15 +1060,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">regex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">requests</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">rust</a>
+                <a href="javascript:void(0)" class="js-tag color1">regex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1075,11 +1076,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color5">rust</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1088,6 +1089,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mongo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1119,15 +1124,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">rocky</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">

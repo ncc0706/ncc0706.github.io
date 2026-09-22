@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>nvm 安装 node on linux | Niu Yuxian&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="nvm 安装 git clone https://github.com/creationix/nvm.git cd nvm 执行 ./install.sh 安装之后输入nvm还是提示没有nvm这时候需要执行source ./nvm.sh">
-<meta name="keywords" content="nodejs">
+  <meta name="description" content="nvm 安装 git clone https:&#x2F;&#x2F;github.com&#x2F;creationix&#x2F;nvm.git cd nvm 执行 .&#x2F;install.sh 安装之后输入nvm还是提示没有nvm这时候需要执行source .&#x2F;nvm.sh">
 <meta property="og:type" content="article">
 <meta property="og:title" content="nvm 安装 node on linux">
 <meta property="og:url" content="http://yoursite.com/2018/02/09/nvm-install-node/index.html">
 <meta property="og:site_name" content="Niu Yuxian&#39;blog">
-<meta property="og:description" content="nvm 安装 git clone https://github.com/creationix/nvm.git cd nvm 执行 ./install.sh 安装之后输入nvm还是提示没有nvm这时候需要执行source ./nvm.sh">
-<meta property="og:locale" content="default">
+<meta property="og:description" content="nvm 安装 git clone https:&#x2F;&#x2F;github.com&#x2F;creationix&#x2F;nvm.git cd nvm 执行 .&#x2F;install.sh 安装之后输入nvm还是提示没有nvm这时候需要执行source .&#x2F;nvm.sh">
+<meta property="og:locale">
 <meta property="og:image" content="http://yoursite.com/assets/images/2018-02-09/travel-3136679_1920.jpg">
 <meta property="og:image" content="http://yoursite.com/assets/images/2018-03-24/01.png">
-<meta property="og:updated_time" content="2025-09-30T04:26:37.788Z">
+<meta property="article:published_time" content="2018-02-09T23:05:38.000Z">
+<meta property="article:modified_time" content="2018-02-09T23:05:38.000Z">
+<meta property="article:author" content="Niu Yuxian">
+<meta property="article:tag" content="nodejs">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="nvm 安装 node on linux">
-<meta name="twitter:description" content="nvm 安装 git clone https://github.com/creationix/nvm.git cd nvm 执行 ./install.sh 安装之后输入nvm还是提示没有nvm这时候需要执行source ./nvm.sh">
 <meta name="twitter:image" content="http://yoursite.com/assets/images/2018-02-09/travel-3136679_1920.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Niu Yuxian&#39;blog" type="application/atom+xml">
@@ -61,8 +61,8 @@ var _hmt = _hmt || [];
 </script>
 
 
-</head>
-</html>
+<meta name="generator" content="Hexo 8.1.2"></head>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -75,7 +75,7 @@ var _hmt = _hmt || [];
 			<img src="/assets/images/logo.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Niu Yuxian</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
 		
 
@@ -159,7 +159,7 @@ var _hmt = _hmt || [];
 				<img src="/assets/images/logo.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Niu Yuxian</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
 			
 			
@@ -273,45 +273,55 @@ var _hmt = _hmt || [];
         
         <a href="/2018/02/09/nvm-install-node/" class="archive-article-date">
   	<time datetime="2018-02-09T23:05:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-09</time>
-  	更新：2025-09-30
+  	更新：2018-02-09
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/assets/images/2018-02-09/travel-3136679_1920.jpg" alt></p>
+        <p><img src="/assets/images/2018-02-09/travel-3136679_1920.jpg"></p>
 <pre><code>nvm 安装
 git clone https://github.com/creationix/nvm.git
 cd nvm 执行 ./install.sh
 安装之后输入nvm还是提示没有nvm这时候需要执行source ./nvm.sh
-</code></pre><a id="more"></a>
+</code></pre>
+<span id="more"></span>
+
 <pre><code>nvm安装任意版本nodejs
 1、通过nvm ls查看当前已经安装的node或者iojs版本；
 2、通过nvm ls-remote查看当前可以安装的node或者iojs版本；
 3、通过nvm install v8.0.0安装制定版本的nodejs；
 4、通过nvm use v8.0.0切换使用的nodejs版本；
-</code></pre><p>上述完成后，就可以使用nvm管理node了，但是开启一个新的shell或重启机器后，会出现找不到node命令的情况。</p>
+</code></pre>
+<p>上述完成后，就可以使用nvm管理node了，但是开启一个新的shell或重启机器后，会出现找不到node命令的情况。</p>
 <pre><code>#设置默认的node
 $ nvm alias default v8.0.0
-</code></pre><p>nvm 默认是从 <a href="http://nodejs.org/dist/" target="_blank" rel="noopener">http://nodejs.org/dist/</a> 下载的, 国外服务器, 必然很慢,<br>好在 nvm 以及支持从镜像服务器下载包, 于是我们可以方便地从淘宝的 node dist 镜像下载:</p>
+</code></pre>
+<p>nvm 默认是从 <a target="_blank" rel="noopener" href="http://nodejs.org/dist/">http://nodejs.org/dist/</a> 下载的, 国外服务器, 必然很慢,<br>好在 nvm 以及支持从镜像服务器下载包, 于是我们可以方便地从淘宝的 node dist 镜像下载:</p>
 <pre><code>$ NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node nvm install v8.0.0
-</code></pre><p>于是你就会看到一段非常快速进度条:</p>
+</code></pre>
+<p>于是你就会看到一段非常快速进度条:</p>
 <pre><code>######################################################################## 100.0%
 Now using node v8.0.0
-</code></pre><p>如果你不想每次都输入环境变量 NVM_NODEJS_ORG_MIRROR, 那么我建议你加入到 .bashrc 文件中:</p>
+</code></pre>
+<p>如果你不想每次都输入环境变量 NVM_NODEJS_ORG_MIRROR, 那么我建议你加入到 .bashrc 文件中:</p>
 <pre><code># nvm
 export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node
 source ~/.zshrc
 
 echo $NVM_NODEJS_ORG_MIRROR
-</code></pre><p><img src="/assets/images/2018-03-24/01.png" alt></p>
+</code></pre>
+<p><img src="/assets/images/2018-03-24/01.png"></p>
 <p><strong>npm 设置为淘宝的源</strong></p>
-<p>同理 nvm , npm 默认是从国外的源获取和下载包信息, 不慢才奇怪.<br>可以通过简单的 —registry 参数, 使用国内的镜像 <a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a> :</p>
+<p>同理 nvm , npm 默认是从国外的源获取和下载包信息, 不慢才奇怪.<br>可以通过简单的 —registry 参数, 使用国内的镜像 <a target="_blank" rel="noopener" href="https://registry.npm.taobao.org/">https://registry.npm.taobao.org</a> :</p>
 <pre><code>$ npm --registry=https://registry.npm.taobao.org install koa
-</code></pre><p><strong>得到原本的镜像地址</strong><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">npm get registry </span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> https://registry.npmjs.org/</span></span><br><span class="line"><span class="meta">$</span><span class="bash"><span class="comment">#设成淘宝的</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm config <span class="built_in">set</span> registry http://registry.npm.taobao.org/</span></span><br></pre></td></tr></table></figure></p>
+</code></pre>
+<p><strong>得到原本的镜像地址</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$</span><span class="language-bash">npm get registry</span> </span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">https://registry.npmjs.org/</span></span><br><span class="line"><span class="meta prompt_">$</span><span class="language-bash"><span class="comment">#设成淘宝的</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">npm config <span class="built_in">set</span> registry http://registry.npm.taobao.org/</span></span><br></pre></td></tr></table></figure>
 <p><strong>换成原来的</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm config <span class="built_in">set</span> registry https://registry.npmjs.org/</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">npm config <span class="built_in">set</span> registry https://registry.npmjs.org/</span></span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -497,7 +507,7 @@ new Valine({
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2025 Niu Yuxian
+    		&copy; 2026 Niu Yuxian
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -622,15 +632,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">was</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">area</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">cors</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">was</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -658,10 +668,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">c#</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Nord</a>
               </li>
              
@@ -679,6 +685,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">guqin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">c#</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -750,6 +760,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">opencv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">原码</a>
               </li>
              
@@ -770,10 +784,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sed</a>
               </li>
              
@@ -791,6 +801,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -838,10 +852,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">archlinux</a>
               </li>
              
@@ -858,6 +868,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">d365</a>
               </li>
              
@@ -866,15 +880,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">deno</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">docker alpine</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">razor</a>
+                <a href="javascript:void(0)" class="js-tag color5">deno</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -883,6 +893,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ffmpeg</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">razor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -970,14 +984,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
@@ -995,6 +1001,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1022,15 +1036,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">regex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">requests</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">rust</a>
+                <a href="javascript:void(0)" class="js-tag color1">regex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1042,11 +1052,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color5">rust</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1055,6 +1065,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mongo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1086,15 +1100,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">rocky</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>源码安装vsftp服务 | Niu Yuxian&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="网络工具123## ifconfig netstat 等命令# yum -y install net-tools# netstat -ntpl tcpdump12345678910111213141516wget http://www.tcpdump.org/release/libpcap-1.10.1.tar.gzwget http://www.tcpdump.org/release/tcpdu">
-<meta name="keywords" content="vsftp">
+  <meta name="description" content="网络工具123## ifconfig netstat 等命令# yum -y install net-tools# netstat -ntpl  tcpdump12345678910111213141516wget http:&#x2F;&#x2F;www.tcpdump.org&#x2F;release&#x2F;libpcap-1.10.1.tar.gzwget http:&#x2F;&#x2F;www.tcpdump.org&#x2F;release&#x2F;tcpd">
 <meta property="og:type" content="article">
 <meta property="og:title" content="源码安装vsftp服务">
 <meta property="og:url" content="http://yoursite.com/2021/09/17/vsftp/index.html">
 <meta property="og:site_name" content="Niu Yuxian&#39;blog">
-<meta property="og:description" content="网络工具123## ifconfig netstat 等命令# yum -y install net-tools# netstat -ntpl tcpdump12345678910111213141516wget http://www.tcpdump.org/release/libpcap-1.10.1.tar.gzwget http://www.tcpdump.org/release/tcpdu">
-<meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2025-09-30T04:26:37.791Z">
+<meta property="og:description" content="网络工具123## ifconfig netstat 等命令# yum -y install net-tools# netstat -ntpl  tcpdump12345678910111213141516wget http:&#x2F;&#x2F;www.tcpdump.org&#x2F;release&#x2F;libpcap-1.10.1.tar.gzwget http:&#x2F;&#x2F;www.tcpdump.org&#x2F;release&#x2F;tcpd">
+<meta property="og:locale">
+<meta property="article:published_time" content="2021-09-17T21:50:17.000Z">
+<meta property="article:modified_time" content="2021-09-17T21:50:17.000Z">
+<meta property="article:author" content="Niu Yuxian">
+<meta property="article:tag" content="vsftp">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="源码安装vsftp服务">
-<meta name="twitter:description" content="网络工具123## ifconfig netstat 等命令# yum -y install net-tools# netstat -ntpl tcpdump12345678910111213141516wget http://www.tcpdump.org/release/libpcap-1.10.1.tar.gzwget http://www.tcpdump.org/release/tcpdu">
   
     <link rel="alternative" href="/atom.xml" title="Niu Yuxian&#39;blog" type="application/atom+xml">
   
@@ -58,8 +58,8 @@ var _hmt = _hmt || [];
 </script>
 
 
-</head>
-</html>
+<meta name="generator" content="Hexo 8.1.2"></head>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -72,7 +72,7 @@ var _hmt = _hmt || [];
 			<img src="/assets/images/logo.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Niu Yuxian</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
 		
 
@@ -156,7 +156,7 @@ var _hmt = _hmt || [];
 				<img src="/assets/images/logo.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Niu Yuxian</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
 			
 			
@@ -270,7 +270,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/09/17/vsftp/" class="archive-article-date">
   	<time datetime="2021-09-17T21:50:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-17</time>
-  	更新：2025-09-30
+  	更新：2021-09-17
 </a>
         
       </header>
@@ -278,64 +278,157 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="网络工具"><a href="#网络工具" class="headerlink" title="网络工具"></a>网络工具</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## ifconfig netstat 等命令</span></span><br><span class="line"><span class="comment"># yum -y install net-tools</span></span><br><span class="line"><span class="comment"># netstat -ntpl</span></span><br></pre></td></tr></table></figure>
-<h4 id="tcpdump"><a href="#tcpdump" class="headerlink" title="tcpdump"></a>tcpdump</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">wget http://www.tcpdump.org/release/libpcap-1.10.1.tar.gz</span><br><span class="line"></span><br><span class="line">wget http://www.tcpdump.org/release/tcpdump-4.99.1.tar.gz</span><br><span class="line"></span><br><span class="line">tar -zxvf libpcap-1.10.1.tar.gz</span><br><span class="line">cd libpcap-1.10.1</span><br><span class="line">./configure</span><br><span class="line">make &amp; make install</span><br><span class="line"></span><br><span class="line">tar -zxvf tcpdump-4.99.1.tar.gz</span><br><span class="line">cd tcpdump-4.99.1</span><br><span class="line">./configure</span><br><span class="line">make &amp; make install</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">tcpdump --version</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tcpdump -i ens33 src 192.168.18.137</span><br><span class="line"></span><br><span class="line">## 抓取 21 号端口报文</span><br><span class="line">tcpdump tcp port 21</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h3 id="vsftpd"><a href="#vsftpd" class="headerlink" title="vsftpd"></a>vsftpd</h3><h4 id="vsftpd-3-0-5"><a href="#vsftpd-3-0-5" class="headerlink" title="vsftpd-3.0.5"></a>vsftpd-3.0.5</h4><p><a href="https://security.appspot.com/downloads/vsftpd-3.0.5.tar.gz" target="_blank" rel="noopener">https://security.appspot.com/downloads/vsftpd-3.0.5.tar.gz</a></p>
-<p><a href="https://blog.csdn.net/dmlk31/article/details/111399858" target="_blank" rel="noopener">https://blog.csdn.net/dmlk31/article/details/111399858</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">https://security.appspot.com/vsftpd.html</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -r &quot;&#123;关键字&#125;&quot;  &#123;路径&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> VSF_BUILDDEFS_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> VSF_BUILDDEFS_H</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">undef</span> VSF_BUILD_TCPWRAPPERS</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> VSF_BUILD_PAM</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">undef</span> VSF_BUILD_SSL</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">/* VSF_BUILDDEFS_H */</span></span></span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim builddefs.h</span><br><span class="line">vim 替换所有</span><br><span class="line">:%s/undef/define/g</span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> VSF_BUILDDEFS_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> VSF_BUILDDEFS_H</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> VSF_BUILD_TCPWRAPPERS</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> VSF_BUILD_PAM</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> VSF_BUILD_SSL</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">/* VSF_BUILDDEFS_H */</span></span></span><br></pre></td></tr></table></figure>
-<p>*错误**</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tcpwrap.c:16:20: fatal error: tcpd.h: No such file or directory</span><br><span class="line">   #include &lt;tcpd.h&gt;</span><br><span class="line">                    ^</span><br><span class="line">compilation terminated.</span><br><span class="line">make: *** [tcpwrap.o] Error 1</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install tcp_wrappers tcp_wrappers-devel</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ssl.c:28:25: fatal error: openssl/err.h: No such file or directory</span><br><span class="line"> #include &lt;openssl/err.h&gt;</span><br><span class="line">                         ^</span><br><span class="line">compilation terminated.</span><br><span class="line">make: *** [ssl.o] Error 1</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ssl.c: In function ‘ssl_init’:</span><br><span class="line">ssl.c:98:18: error: ‘SSL_OP_NO_TLSv1_3’ undeclared (first use in this function)</span><br><span class="line">       options |= SSL_OP_NO_TLSv1_3;</span><br><span class="line">                  ^</span><br><span class="line">ssl.c:98:18: note: each undeclared identifier is reported only once for each function it appears in</span><br><span class="line">make: *** [ssl.o] Error 1</span><br></pre></td></tr></table></figure>
+
+<h4 id="tcpdump"><a href="#tcpdump" class="headerlink" title="tcpdump"></a>tcpdump</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">wget http://www.tcpdump.org/release/libpcap-1.10.1.tar.gz</span><br><span class="line"></span><br><span class="line">wget http://www.tcpdump.org/release/tcpdump-4.99.1.tar.gz</span><br><span class="line"></span><br><span class="line">tar -zxvf libpcap-1.10.1.tar.gz</span><br><span class="line">cd libpcap-1.10.1</span><br><span class="line">./configure</span><br><span class="line">make &amp; make install</span><br><span class="line"></span><br><span class="line">tar -zxvf tcpdump-4.99.1.tar.gz</span><br><span class="line">cd tcpdump-4.99.1</span><br><span class="line">./configure</span><br><span class="line">make &amp; make install</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">tcpdump --version</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tcpdump -i ens33 src 192.168.18.137</span><br><span class="line"></span><br><span class="line">## 抓取 21 号端口报文</span><br><span class="line">tcpdump tcp port 21</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+
+
+<h3 id="vsftpd"><a href="#vsftpd" class="headerlink" title="vsftpd"></a>vsftpd</h3><h4 id="vsftpd-3-0-5"><a href="#vsftpd-3-0-5" class="headerlink" title="vsftpd-3.0.5"></a>vsftpd-3.0.5</h4><p><a target="_blank" rel="noopener" href="https://security.appspot.com/downloads/vsftpd-3.0.5.tar.gz">https://security.appspot.com/downloads/vsftpd-3.0.5.tar.gz</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/dmlk31/article/details/111399858">https://blog.csdn.net/dmlk31/article/details/111399858</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">https://security.appspot.com/vsftpd.html</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -r &quot;&#123;关键字&#125;&quot;  &#123;路径&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifndef</span> VSF_BUILDDEFS_H</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> VSF_BUILDDEFS_H</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">undef</span> VSF_BUILD_TCPWRAPPERS</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> VSF_BUILD_PAM</span></span><br><span class="line"><span class="meta">#<span class="keyword">undef</span> VSF_BUILD_SSL</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span> <span class="comment">/* VSF_BUILDDEFS_H */</span></span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim builddefs.h</span><br><span class="line">vim 替换所有</span><br><span class="line">:%s/undef/define/g</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifndef</span> VSF_BUILDDEFS_H</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> VSF_BUILDDEFS_H</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> VSF_BUILD_TCPWRAPPERS</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> VSF_BUILD_PAM</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> VSF_BUILD_SSL</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span> <span class="comment">/* VSF_BUILDDEFS_H */</span></span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><em>错误</em>*</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tcpwrap.c:16:20: fatal error: tcpd.h: No such file or directory</span><br><span class="line">   #include &lt;tcpd.h&gt;</span><br><span class="line">                    ^</span><br><span class="line">compilation terminated.</span><br><span class="line">make: *** [tcpwrap.o] Error 1</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install tcp_wrappers tcp_wrappers-devel</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ssl.c:28:25: fatal error: openssl/err.h: No such file or directory</span><br><span class="line"> #include &lt;openssl/err.h&gt;</span><br><span class="line">                         ^</span><br><span class="line">compilation terminated.</span><br><span class="line">make: *** [ssl.o] Error 1</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ssl.c: In function ‘ssl_init’:</span><br><span class="line">ssl.c:98:18: error: ‘SSL_OP_NO_TLSv1_3’ undeclared (first use in this function)</span><br><span class="line">       options |= SSL_OP_NO_TLSv1_3;</span><br><span class="line">                  ^</span><br><span class="line">ssl.c:98:18: note: each undeclared identifier is reported only once for each function it appears in</span><br><span class="line">make: *** [ssl.o] Error 1</span><br></pre></td></tr></table></figure>
+
 <p>以上错误需要升级 openssl</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ld: cannot find -lcap</span><br><span class="line">collect2: error: ld returned 1 exit status</span><br><span class="line">make: *** [vsftpd] Error 1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ld: cannot find -lcap</span><br><span class="line">collect2: error: ld returned 1 exit status</span><br><span class="line">make: *** [vsftpd] Error 1</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install libcap libcap-devel</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># yum -y install tcp_wrappers tcp_wrappers-devel libcap libcap-devel pam-devel</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># yum -y install tcp_wrappers tcp_wrappers-devel libcap libcap-devel pam-devel</span><br></pre></td></tr></table></figure>
+
+
+
 <p><strong>如果是64位系统，需要替换lib目录的位置</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i &apos;s/lib\//lib64\//g&apos; vsf_findlibs.sh</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i &#x27;s/lib\//lib64\//g&#x27; vsf_findlibs.sh</span><br></pre></td></tr></table></figure>
+
+
+
 <p><strong>编译安装</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mkdir -p /usr/local/vsftpd/&#123;conf,conf/user,bin,lib,empty&#125;</span></span><br><span class="line"><span class="comment"># touch /usr/local/vsftpd/conf/chroot</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># mkdir -p /var/log/vsftpd</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#  make &amp;&amp; make install</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ln -sv /usr/local/sbin/vsftpd /usr/local/vsftpd/bin/vsftpd</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 查看编译的vsftpd二进制文件是否加载了 pam、ssl so</span></span><br><span class="line"><span class="comment"># [root@192 vsftpd-3.0.5]# ldd /usr/local/vsftpd/bin/vsftpd</span></span><br><span class="line">        linux-vdso.so.1 =&gt;  (0x00007ffc731a6000)</span><br><span class="line">        libpam.so.0 =&gt; /lib64/libpam.so.0 (0x00007ff7af83d000)</span><br><span class="line">        libdl.so.2 =&gt; /lib64/libdl.so.2 (0x00007ff7af639000)</span><br><span class="line">        libnsl.so.1 =&gt; /lib64/libnsl.so.1 (0x00007ff7af41f000)</span><br><span class="line">        libresolv.so.2 =&gt; /lib64/libresolv.so.2 (0x00007ff7af206000)</span><br><span class="line">        libutil.so.1 =&gt; /lib64/libutil.so.1 (0x00007ff7af003000)</span><br><span class="line">        libcap.so.2 =&gt; /lib64/libcap.so.2 (0x00007ff7aedfe000)</span><br><span class="line">        libc.so.6 =&gt; /lib64/libc.so.6 (0x00007ff7aea31000)</span><br><span class="line">        libaudit.so.1 =&gt; /lib64/libaudit.so.1 (0x00007ff7ae808000)</span><br><span class="line">        /lib64/ld-linux-x86-64.so.2 (0x00007ff7afc72000)</span><br><span class="line">        libattr.so.1 =&gt; /lib64/libattr.so.1 (0x00007ff7ae603000)</span><br><span class="line">        libcap-ng.so.0 =&gt; /lib64/libcap-ng.so.0 (0x00007ff7ae3fd000)</span><br><span class="line"><span class="comment">## 复制配置文件    </span></span><br><span class="line"><span class="comment"># cp /root/vsftpd-3.0.5/vsftpd.conf /usr/local/vsftpd/conf</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># vim /usr/local/vsftpd/conf/vsftpd.conf</span></span><br><span class="line"></span><br><span class="line">anonymous_enable=NO　　// 不允许匿名登录</span><br><span class="line">local_enable=YES　　// 允许本地用户登录</span><br><span class="line">write_enable=YES　　// 允许本地用户写的权限</span><br><span class="line">chroot_local_user=YES　　// 锁定用户根目录，不能切换到其他目录</span><br><span class="line">chroot_list_enable=YES</span><br><span class="line">chroot_list_file=/usr/<span class="built_in">local</span>/vsftpd/conf/chroot</span><br><span class="line">listen=YES</span><br><span class="line">guest_enable=YES　　// 启用虚拟用户</span><br><span class="line">guest_username=nginx　　// 虚拟用户映射的系统用户名为 nginx</span><br><span class="line">pam_service_name=vsftpd　　// 设置 PAM 认证服务的配置文件名称，该文件存放在 /ect/pam.d 目录下</span><br><span class="line">allow_writeable_chroot=YES　　// 从2.3.5之后，当锁定用户根目录后，如果发现根目录具有写权限则会报错</span><br><span class="line">virtual_use_local_privs=YES　　// YES 表示虚拟用户使用与本地用户相同的权限，NO 表示则与匿名用户相同的权限</span><br><span class="line">user_config_dir=/usr/<span class="built_in">local</span>/vsftpd/conf/user　　// 定义用户个人配置文件所在的目录</span><br><span class="line">secure_chroot_dir=/usr/<span class="built_in">local</span>/vsftpd/empty</span><br><span class="line">vsftpd_log_file=/var/<span class="built_in">log</span>/vsftpd/vsftpd.log</span><br><span class="line"></span><br><span class="line">listen_port=21</span><br><span class="line">ftp_data_port=20</span><br><span class="line"></span><br><span class="line">pasv_min_port=30000</span><br><span class="line">pasv_max_port=30999</span><br><span class="line"></span><br><span class="line"><span class="comment">### ---------------- 可以创建目录 结束------------</span></span><br><span class="line"><span class="comment">## 必须对父母录有写权限</span></span><br><span class="line"><span class="comment">## chmod o+w /var/ftp/pub/</span></span><br><span class="line"><span class="comment"># 可写权限</span></span><br><span class="line">write_enable=YES</span><br><span class="line"><span class="comment"># 是否允许匿名用户创建目录</span></span><br><span class="line">anon_mkdir_write_enable=YES</span><br><span class="line"><span class="comment">### ---------------- 可以创建目录 结束------------</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## delete and rename</span></span><br><span class="line">anon_other_write_enable=YES</span><br><span class="line"></span><br><span class="line"><span class="comment">## upload</span></span><br><span class="line">anon_upload_enable=YES</span><br><span class="line"></span><br><span class="line"><span class="comment">## 默认为YES,其它人必须有读权限才可以下载，所有设置为NO,ftp用户有读权限即可下载。</span></span><br><span class="line">anon_world_readable_only=NO</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">####### 关闭匿名访问 </span></span><br><span class="line">anonymous_enable=NO</span><br><span class="line"></span><br><span class="line"><span class="comment">## 本地用户可以登录</span></span><br><span class="line">local_enable=YES</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mkdir -p /usr/local/vsftpd/&#123;conf,conf/user,bin,lib,empty&#125;</span></span><br><span class="line"><span class="comment"># touch /usr/local/vsftpd/conf/chroot</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># mkdir -p /var/log/vsftpd</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#  make &amp;&amp; make install</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ln -sv /usr/local/sbin/vsftpd /usr/local/vsftpd/bin/vsftpd</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 查看编译的vsftpd二进制文件是否加载了 pam、ssl so</span></span><br><span class="line"><span class="comment"># [root@192 vsftpd-3.0.5]# ldd /usr/local/vsftpd/bin/vsftpd</span></span><br><span class="line">        linux-vdso.so.1 =&gt;  (0x00007ffc731a6000)</span><br><span class="line">        libpam.so.0 =&gt; /lib64/libpam.so.0 (0x00007ff7af83d000)</span><br><span class="line">        libdl.so.2 =&gt; /lib64/libdl.so.2 (0x00007ff7af639000)</span><br><span class="line">        libnsl.so.1 =&gt; /lib64/libnsl.so.1 (0x00007ff7af41f000)</span><br><span class="line">        libresolv.so.2 =&gt; /lib64/libresolv.so.2 (0x00007ff7af206000)</span><br><span class="line">        libutil.so.1 =&gt; /lib64/libutil.so.1 (0x00007ff7af003000)</span><br><span class="line">        libcap.so.2 =&gt; /lib64/libcap.so.2 (0x00007ff7aedfe000)</span><br><span class="line">        libc.so.6 =&gt; /lib64/libc.so.6 (0x00007ff7aea31000)</span><br><span class="line">        libaudit.so.1 =&gt; /lib64/libaudit.so.1 (0x00007ff7ae808000)</span><br><span class="line">        /lib64/ld-linux-x86-64.so.2 (0x00007ff7afc72000)</span><br><span class="line">        libattr.so.1 =&gt; /lib64/libattr.so.1 (0x00007ff7ae603000)</span><br><span class="line">        libcap-ng.so.0 =&gt; /lib64/libcap-ng.so.0 (0x00007ff7ae3fd000)</span><br><span class="line"><span class="comment">## 复制配置文件    </span></span><br><span class="line"><span class="comment"># cp /root/vsftpd-3.0.5/vsftpd.conf /usr/local/vsftpd/conf</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># vim /usr/local/vsftpd/conf/vsftpd.conf</span></span><br><span class="line"></span><br><span class="line">anonymous_enable=NO　　// 不允许匿名登录</span><br><span class="line">local_enable=YES　　// 允许本地用户登录</span><br><span class="line">write_enable=YES　　// 允许本地用户写的权限</span><br><span class="line">chroot_local_user=YES　　// 锁定用户根目录，不能切换到其他目录</span><br><span class="line">chroot_list_enable=YES</span><br><span class="line">chroot_list_file=/usr/local/vsftpd/conf/chroot</span><br><span class="line">listen=YES</span><br><span class="line">guest_enable=YES　　// 启用虚拟用户</span><br><span class="line">guest_username=nginx　　// 虚拟用户映射的系统用户名为 nginx</span><br><span class="line">pam_service_name=vsftpd　　// 设置 PAM 认证服务的配置文件名称，该文件存放在 /ect/pam.d 目录下</span><br><span class="line">allow_writeable_chroot=YES　　// 从2.3.5之后，当锁定用户根目录后，如果发现根目录具有写权限则会报错</span><br><span class="line">virtual_use_local_privs=YES　　// YES 表示虚拟用户使用与本地用户相同的权限，NO 表示则与匿名用户相同的权限</span><br><span class="line">user_config_dir=/usr/local/vsftpd/conf/user　　// 定义用户个人配置文件所在的目录</span><br><span class="line">secure_chroot_dir=/usr/local/vsftpd/empty</span><br><span class="line">vsftpd_log_file=/var/log/vsftpd/vsftpd.log</span><br><span class="line"></span><br><span class="line">listen_port=21</span><br><span class="line">ftp_data_port=20</span><br><span class="line"></span><br><span class="line">pasv_min_port=30000</span><br><span class="line">pasv_max_port=30999</span><br><span class="line"></span><br><span class="line"><span class="comment">### ---------------- 可以创建目录 结束------------</span></span><br><span class="line"><span class="comment">## 必须对父母录有写权限</span></span><br><span class="line"><span class="comment">## chmod o+w /var/ftp/pub/</span></span><br><span class="line"><span class="comment"># 可写权限</span></span><br><span class="line">write_enable=YES</span><br><span class="line"><span class="comment"># 是否允许匿名用户创建目录</span></span><br><span class="line">anon_mkdir_write_enable=YES</span><br><span class="line"><span class="comment">### ---------------- 可以创建目录 结束------------</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## delete and rename</span></span><br><span class="line">anon_other_write_enable=YES</span><br><span class="line"></span><br><span class="line"><span class="comment">## upload</span></span><br><span class="line">anon_upload_enable=YES</span><br><span class="line"></span><br><span class="line"><span class="comment">## 默认为YES,其它人必须有读权限才可以下载，所有设置为NO,ftp用户有读权限即可下载。</span></span><br><span class="line">anon_world_readable_only=NO</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">####### 关闭匿名访问 </span></span><br><span class="line">anonymous_enable=NO</span><br><span class="line"></span><br><span class="line"><span class="comment">## 本地用户可以登录</span></span><br><span class="line">local_enable=YES</span><br></pre></td></tr></table></figure>
+
+
+
 <p><strong>添加本地用户</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">useradd user1 -s /sbin/nologin</span><br><span class="line">passwd users</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">useradd user1 -s /sbin/nologin</span><br><span class="line">passwd users</span><br></pre></td></tr></table></figure>
+
+
+
 <p><strong>pam 认证模块</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 映射虚拟用户</span></span><br><span class="line"><span class="comment"># useradd -d /data/ftpdata -g ftp -s /sbin/nologin ftpuser</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">local_enable=YES                               #是否允许本地用户登入,默认是YES</span><br><span class="line">write_enable=YES                               #是否允许登陆用户有写权限</span><br><span class="line">local_umask=022                                #本地用户新增文件时的umask值,默认值为077</span><br><span class="line">xferlog_std_format=YES                         #日志文件将会写成xferlog的标准格式</span><br><span class="line">ascii_upload_enable=YES                        #是否启用ASCII模式上传数据,默认值为NO</span><br><span class="line">ascii_download_enable=YES                      #是否启用ASCII模式下载数据,默认值为NO</span><br><span class="line">pam_service_name=vsftpd                        #设置PAM使用的名称,默认值为/etc/pam.d/vsftpd</span><br><span class="line">userlist_enable=YES                            #是否启用user_list文件</span><br><span class="line">userlist_file=/usr/local/vsftpd/conf/chroot    #控制用户访问FTP的文件,里面写着用户名称</span><br><span class="line">tcp_wrappers=YES                               #是否与tcp wrapper相结合来进行主机的访问控制</span><br><span class="line">guest_enable=YES                               #启用虚拟用户,默认值为NO</span><br><span class="line">guest_username=ftpuser                         #映射虚拟用户,默认值为ftp</span><br><span class="line">user_config_dir=/usr/local/vsftpd/conf/user    #设置用户配置文件所在的目录</span><br><span class="line">allow_writeable_chroot=YES</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">是否启用 SSL,默认为no</span><br><span class="line"></span><br><span class="line">---------------------------------------</span><br><span class="line">anonymous_enable=NO</span><br><span class="line">#</span><br><span class="line"># Uncomment this to allow local users to log in.</span><br><span class="line">local_enable=YES</span><br><span class="line">write_enable=YES</span><br><span class="line">local_umask=022</span><br><span class="line">#xferlog_std_format=YES                         #日志文件将会写成xferlog的标准格式</span><br><span class="line">#ascii_upload_enable=YES                        #是否启用ASCII模式上传数据,默认值为NO</span><br><span class="line">#ascii_download_enable=YES                      #是否启用ASCII模式下载数据,默认值为NO</span><br><span class="line">pam_service_name=vsftpd                        #设置PAM使用的名称,默认值为/etc/pam.d/vsftpd</span><br><span class="line">#userlist_enable=YES                            #是否启用user_list文件</span><br><span class="line">#userlist_file=/usr/local/vsftpd/conf/chroot    #控制用户访问FTP的文件,里面写着用户名称</span><br><span class="line">#tcp_wrappers=YES                               #是否与tcp wrapper相结合来进行主机的访问控制</span><br><span class="line"></span><br><span class="line">guest_enable=YES</span><br><span class="line">guest_username=ftpuser</span><br><span class="line"></span><br><span class="line">chroot_local_user=YES</span><br><span class="line">chroot_list_enable=YES</span><br><span class="line">chroot_list_file=/usr/local/vsftpd/conf/chroot</span><br><span class="line"></span><br><span class="line">allow_writeable_chroot=YES</span><br><span class="line">virtual_use_local_privs=YES</span><br><span class="line">user_config_dir=/usr/local/vsftpd/conf/user</span><br><span class="line">secure_chroot_dir=/usr/local/vsftpd/empty</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/pam.d/vsftpd</span><br><span class="line"></span><br><span class="line">auth required pam_userdb.so db=/usr/local/vsftpd/conf/user/v_user_passwd</span><br><span class="line">account required pam_userdb.so db=/usr/local/vsftpd/conf/user/v_user_passwd</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">local_enable=YES                               #是否允许本地用户登入,默认是YES</span><br><span class="line">write_enable=YES                               #是否允许登陆用户有写权限</span><br><span class="line">local_umask=022                                #本地用户新增文件时的umask值,默认值为077</span><br><span class="line">xferlog_std_format=YES                         #日志文件将会写成xferlog的标准格式</span><br><span class="line">ascii_upload_enable=YES                        #是否启用ASCII模式上传数据,默认值为NO</span><br><span class="line">ascii_download_enable=YES                      #是否启用ASCII模式下载数据,默认值为NO</span><br><span class="line">pam_service_name=vsftpd                        #设置PAM使用的名称,默认值为/etc/pam.d/vsftpd</span><br><span class="line">userlist_enable=YES                            #是否启用user_list文件</span><br><span class="line">userlist_file=/usr/local/vsftpd/conf/chroot    #控制用户访问FTP的文件,里面写着用户名称</span><br><span class="line">tcp_wrappers=YES                               #是否与tcp wrapper相结合来进行主机的访问控制</span><br><span class="line">guest_enable=YES                               #启用虚拟用户,默认值为NO</span><br><span class="line">guest_username=ftpuser                         #映射虚拟用户,默认值为ftp</span><br><span class="line">user_config_dir=/usr/local/vsftpd/conf/user    #设置用户配置文件所在的目录</span><br><span class="line">allow_writeable_chroot=YES</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">是否启用 SSL,默认为no</span><br><span class="line"></span><br><span class="line">---------------------------------------</span><br><span class="line">anonymous_enable=NO</span><br><span class="line">#</span><br><span class="line"># Uncomment this to allow local users to log in.</span><br><span class="line">local_enable=YES</span><br><span class="line">write_enable=YES</span><br><span class="line">local_umask=022</span><br><span class="line">#xferlog_std_format=YES                         #日志文件将会写成xferlog的标准格式</span><br><span class="line">#ascii_upload_enable=YES                        #是否启用ASCII模式上传数据,默认值为NO</span><br><span class="line">#ascii_download_enable=YES                      #是否启用ASCII模式下载数据,默认值为NO</span><br><span class="line">pam_service_name=vsftpd                        #设置PAM使用的名称,默认值为/etc/pam.d/vsftpd</span><br><span class="line">#userlist_enable=YES                            #是否启用user_list文件</span><br><span class="line">#userlist_file=/usr/local/vsftpd/conf/chroot    #控制用户访问FTP的文件,里面写着用户名称</span><br><span class="line">#tcp_wrappers=YES                               #是否与tcp wrapper相结合来进行主机的访问控制</span><br><span class="line"></span><br><span class="line">guest_enable=YES</span><br><span class="line">guest_username=ftpuser</span><br><span class="line"></span><br><span class="line">chroot_local_user=YES</span><br><span class="line">chroot_list_enable=YES</span><br><span class="line">chroot_list_file=/usr/local/vsftpd/conf/chroot</span><br><span class="line"></span><br><span class="line">allow_writeable_chroot=YES</span><br><span class="line">virtual_use_local_privs=YES</span><br><span class="line">user_config_dir=/usr/local/vsftpd/conf/user</span><br><span class="line">secure_chroot_dir=/usr/local/vsftpd/empty</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/pam.d/vsftpd</span><br><span class="line"></span><br><span class="line">auth required pam_userdb.so db=/usr/local/vsftpd/conf/user/v_user_passwd</span><br><span class="line">account required pam_userdb.so db=/usr/local/vsftpd/conf/user/v_user_passwd</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p>创建用户名密码文本文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vim /usr/local/vsftpd/conf/user/v_user_passwd.txt</span><br><span class="line"></span><br><span class="line">添加如下内容（一行用户名一行密码）：</span><br><span class="line">tom</span><br><span class="line">u</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vim /usr/local/vsftpd/conf/user/v_user_passwd.txt</span><br><span class="line"></span><br><span class="line">添加如下内容（一行用户名一行密码）：</span><br><span class="line">tom</span><br><span class="line">u</span><br></pre></td></tr></table></figure>
+
 <p>用 db_load 生成用户数据库</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">db_load -T -t hash -f /usr/local/vsftpd/conf/user/v_user_passwd.txt /usr/local/vsftpd/conf/user/v_user_passwd.db</span><br><span class="line"></span><br><span class="line">chmod 600 /usr/local/vsftpd/conf/user/v_user_passwd.db</span><br><span class="line">chmod 600 /usr/local/vsftpd/conf/user/v_user_passwd.txt</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">db_load -T -t hash -f /usr/local/vsftpd/conf/user/v_user_passwd.txt /usr/local/vsftpd/conf/user/v_user_passwd.db</span><br><span class="line"></span><br><span class="line">chmod 600 /usr/local/vsftpd/conf/user/v_user_passwd.db</span><br><span class="line">chmod 600 /usr/local/vsftpd/conf/user/v_user_passwd.txt</span><br></pre></td></tr></table></figure>
+
 <p>配置虚拟用户自定义配置文件,tom用户</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vim /usr/local/vsftpd/conf/user/tom</span><br><span class="line"></span><br><span class="line">## 注意这里要修改 当前用户的属主.</span><br><span class="line">local_root=/data/ftpdata/tom</span><br><span class="line">local_umask=022</span><br><span class="line">write_enable=YES</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vim /usr/local/vsftpd/conf/user/tom</span><br><span class="line"></span><br><span class="line">## 注意这里要修改 当前用户的属主.</span><br><span class="line">local_root=/data/ftpdata/tom</span><br><span class="line">local_umask=022</span><br><span class="line">write_enable=YES</span><br></pre></td></tr></table></figure>
+
+
+
 <p><strong>ssl</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CN：姓名；OU：组织单位名称；O：组织名称；L：省/市/自治区名称；C：国家/地区代码</span><br><span class="line"></span><br><span class="line">mkdir /usr/local/vsftpd/ssl</span><br><span class="line"></span><br><span class="line">openssl req -newkey rsa:2048 -nodes -keyout /usr/local/vsftpd/ssl/vsftpd.key -x509 -days 365 -out /usr/local/vsftpd/ssl/vsftpd.pem -subj &quot;/C=CN/ST=ShanDong/L=JiNan/O=arukas/OU=arukas/CN=arukas.io/emailAddress=vsftp@arukas.io&quot;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">配置vsftpd服务支持SSL：# vim /usr/local/vsftpd/conf/vsftpd.conf</span><br><span class="line">ssl_enable=YES											#是否启用 SSL,默认为no</span><br><span class="line">allow_anon_ssl=NO										#匿名不支持SSL</span><br><span class="line">force_local_logins_ssl=YES：本地用户登录加密</span><br><span class="line">force_local_data_ssl=YES：本地用户数据传输加密</span><br><span class="line"></span><br><span class="line">ssl_tlsv1=YES</span><br><span class="line">ssl_sslv2=YES</span><br><span class="line">ssl_sslv3=YES</span><br><span class="line"></span><br><span class="line">在配置文件中添加这一行：</span><br><span class="line"># FileZilla Client 需要配置 ssl_ciphers=HIGH</span><br><span class="line">ssl_ciphers=HIGH</span><br><span class="line">rsa_cert_file=/usr/local/vsftpd/ssl/vsftpd.pem			#rsa证书的位置</span><br><span class="line">rsa_private_key_file=/usr/local/vsftpd/ssl/vsftpd.key</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CN：姓名；OU：组织单位名称；O：组织名称；L：省/市/自治区名称；C：国家/地区代码</span><br><span class="line"></span><br><span class="line">mkdir /usr/local/vsftpd/ssl</span><br><span class="line"></span><br><span class="line">openssl req -newkey rsa:2048 -nodes -keyout /usr/local/vsftpd/ssl/vsftpd.key -x509 -days 365 -out /usr/local/vsftpd/ssl/vsftpd.pem -subj &quot;/C=CN/ST=ShanDong/L=JiNan/O=arukas/OU=arukas/CN=arukas.io/emailAddress=vsftp@arukas.io&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">配置vsftpd服务支持SSL：# vim /usr/local/vsftpd/conf/vsftpd.conf</span><br><span class="line">ssl_enable=YES											#是否启用 SSL,默认为no</span><br><span class="line">allow_anon_ssl=NO										#匿名不支持SSL</span><br><span class="line">force_local_logins_ssl=YES：本地用户登录加密</span><br><span class="line">force_local_data_ssl=YES：本地用户数据传输加密</span><br><span class="line"></span><br><span class="line">ssl_tlsv1=YES</span><br><span class="line">ssl_sslv2=YES</span><br><span class="line">ssl_sslv3=YES</span><br><span class="line"></span><br><span class="line">在配置文件中添加这一行：</span><br><span class="line"># FileZilla Client 需要配置 ssl_ciphers=HIGH</span><br><span class="line">ssl_ciphers=HIGH</span><br><span class="line">rsa_cert_file=/usr/local/vsftpd/ssl/vsftpd.pem			#rsa证书的位置</span><br><span class="line">rsa_private_key_file=/usr/local/vsftpd/ssl/vsftpd.key</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
 <p><strong>开机自启</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># vim /usr/lib/systemd/system/vsftpd.service</span></span><br><span class="line"></span><br><span class="line">[Unit]</span><br><span class="line">Description=Vsftpd Service</span><br><span class="line">After=network.target syslog.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line"><span class="comment"># start main service</span></span><br><span class="line">ExecStart=/usr/<span class="built_in">local</span>/vsftpd/bin/vsftpd /usr/<span class="built_in">local</span>/vsftpd/conf/vsftpd.conf</span><br><span class="line"></span><br><span class="line"><span class="comment"># restart main service</span></span><br><span class="line">ExecReload=/bin/<span class="built_in">kill</span> -s HUP <span class="variable">$MAINPID</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># stop main service</span></span><br><span class="line">ExecStop=/bin/<span class="built_in">kill</span> -s QUIT <span class="variable">$MAINPID</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># use private tmp</span></span><br><span class="line">PrivateTmp=<span class="literal">true</span></span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br><span class="line"></span><br><span class="line"><span class="comment"># systemctl restart vsftpd</span></span><br><span class="line"><span class="comment"># systemctl enable vsftpd.service</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># vim /usr/lib/systemd/system/vsftpd.service</span></span><br><span class="line"></span><br><span class="line">[Unit]</span><br><span class="line">Description=Vsftpd Service</span><br><span class="line">After=network.target syslog.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line"><span class="comment"># start main service</span></span><br><span class="line">ExecStart=/usr/local/vsftpd/bin/vsftpd /usr/local/vsftpd/conf/vsftpd.conf</span><br><span class="line"></span><br><span class="line"><span class="comment"># restart main service</span></span><br><span class="line">ExecReload=/bin/kill -s HUP <span class="variable">$MAINPID</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># stop main service</span></span><br><span class="line">ExecStop=/bin/kill -s QUIT <span class="variable">$MAINPID</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># use private tmp</span></span><br><span class="line">PrivateTmp=<span class="literal">true</span></span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br><span class="line"></span><br><span class="line"><span class="comment"># systemctl restart vsftpd</span></span><br><span class="line"><span class="comment"># systemctl enable vsftpd.service</span></span><br></pre></td></tr></table></figure>
+
+
+
 <p><strong>开放端口</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># firewall-cmd --add-port=21/tcp --permanent </span></span><br><span class="line"><span class="comment">## 数据端口</span></span><br><span class="line"><span class="comment"># firewall-cmd --add-port=20/tcp --permanent</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># firewall-cmd --permanent --zone=public --add-port=30000-30999/tcp</span></span><br><span class="line"><span class="comment"># firewall-cmd --reload</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># firewall-cmd --zone=public --permanent --remove-port=20/tcp </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># cat /etc/firewalld/zones/public.xml</span></span><br></pre></td></tr></table></figure>
+
+
+
 <p>匿名用户只可以下载文件，</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 可写权限</span></span><br><span class="line"><span class="comment"># chmod o+w /var/ftp/pub/</span></span><br></pre></td></tr></table></figure>
-<h3 id="openssl"><a href="#openssl" class="headerlink" title="openssl"></a>openssl</h3><p><a href="https://www.openssl.org/source/" target="_blank" rel="noopener">https://www.openssl.org/source/</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 可写权限</span></span><br><span class="line"><span class="comment"># chmod o+w /var/ftp/pub/</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h3 id="openssl"><a href="#openssl" class="headerlink" title="openssl"></a>openssl</h3><p><a target="_blank" rel="noopener" href="https://www.openssl.org/source/">https://www.openssl.org/source/</a></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># openssl ciphers -v -tls1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ldconfig -v</span></span><br></pre></td></tr></table></figure>
-<h4 id="openssl1-1-11"><a href="#openssl1-1-11" class="headerlink" title="openssl1.1.11"></a>openssl1.1.11</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># wget https://www.openssl.org/source/openssl-1.1.1l.tar.gz</span></span><br><span class="line"><span class="comment"># tar -zxvf openssl-1.1.1l.tar.gz</span></span><br><span class="line"><span class="comment"># cd openssl-1.1.11</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ./config</span></span><br><span class="line"><span class="comment"># make -j2 &amp;&amp; make install</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ln -sv /usr/local/bin/openssl /usr/bin/openssl</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># echo "/usr/local/lib64" &gt; /etc/ld.so.conf.d/openssl.conf</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ldconfig</span></span><br><span class="line"></span><br><span class="line">[root@Docker ~]<span class="comment"># openssl version -a</span></span><br><span class="line">OpenSSL 1.1.1l  24 Aug 2021</span><br><span class="line">built on: Sun Sep 12 07:14:06 2021 UTC</span><br><span class="line">platform: linux-x86_64</span><br><span class="line">options:  bn(64,64) rc4(16x,int) des(int) idea(int) blowfish(ptr) </span><br><span class="line">compiler: gcc -fPIC -pthread -m64 -Wa,--noexecstack -Wall -O3 -DOPENSSL_USE_NODELETE -DL_ENDIAN -DOPENSSL_PIC -DOPENSSL_CPUID_OBJ -DOPENSSL_IA32_SSE2 -DOPENSSL_BN_ASM_MONT -DOPENSSL_BN_ASM_MONT5 -DOPENSSL_BN_ASM_GF2m -DSHA1_ASM -DSHA256_ASM -DSHA512_ASM -DKECCAK1600_ASM -DRC4_ASM -DMD5_ASM -DAESNI_ASM -DVPAES_ASM -DGHASH_ASM -DECP_NISTZ256_ASM -DX25519_ASM -DPOLY1305_ASM -DNDEBUG</span><br><span class="line">OPENSSLDIR: <span class="string">"/usr/local/ssl"</span></span><br><span class="line">ENGINESDIR: <span class="string">"/usr/local/lib64/engines-1.1"</span></span><br><span class="line">Seeding <span class="built_in">source</span>: os-specific</span><br></pre></td></tr></table></figure>
+
+<h4 id="openssl1-1-11"><a href="#openssl1-1-11" class="headerlink" title="openssl1.1.11"></a>openssl1.1.11</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># wget https://www.openssl.org/source/openssl-1.1.1l.tar.gz</span></span><br><span class="line"><span class="comment"># tar -zxvf openssl-1.1.1l.tar.gz</span></span><br><span class="line"><span class="comment"># cd openssl-1.1.11</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ./config</span></span><br><span class="line"><span class="comment"># make -j2 &amp;&amp; make install</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ln -sv /usr/local/bin/openssl /usr/bin/openssl</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># echo &quot;/usr/local/lib64&quot; &gt; /etc/ld.so.conf.d/openssl.conf</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ldconfig</span></span><br><span class="line"></span><br><span class="line">[root@Docker ~]# openssl version -a</span><br><span class="line">OpenSSL 1.1.1l  24 Aug 2021</span><br><span class="line">built on: Sun Sep 12 07:14:06 2021 UTC</span><br><span class="line">platform: linux-x86_64</span><br><span class="line">options:  bn(64,64) rc4(16x,int) des(int) idea(int) blowfish(ptr) </span><br><span class="line">compiler: gcc -fPIC -pthread -m64 -Wa,--noexecstack -Wall -O3 -DOPENSSL_USE_NODELETE -DL_ENDIAN -DOPENSSL_PIC -DOPENSSL_CPUID_OBJ -DOPENSSL_IA32_SSE2 -DOPENSSL_BN_ASM_MONT -DOPENSSL_BN_ASM_MONT5 -DOPENSSL_BN_ASM_GF2m -DSHA1_ASM -DSHA256_ASM -DSHA512_ASM -DKECCAK1600_ASM -DRC4_ASM -DMD5_ASM -DAESNI_ASM -DVPAES_ASM -DGHASH_ASM -DECP_NISTZ256_ASM -DX25519_ASM -DPOLY1305_ASM -DNDEBUG</span><br><span class="line">OPENSSLDIR: <span class="string">&quot;/usr/local/ssl&quot;</span></span><br><span class="line">ENGINESDIR: <span class="string">&quot;/usr/local/lib64/engines-1.1&quot;</span></span><br><span class="line">Seeding <span class="built_in">source</span>: os-specific</span><br></pre></td></tr></table></figure>
+
+
+
 <h4 id="openssl3-0"><a href="#openssl3-0" class="headerlink" title="openssl3.0"></a>openssl3.0</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># wget https://www.openssl.org/source/openssl-3.0.0.tar.gz</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Can&apos;t locate IPC/Cmd.pm in @INC (@INC contains: /root/openssl-3.0.0/util/perl /usr/local/lib64/perl5 /usr/local/share/perl5 /usr/lib64/perl5/vendor_perl /usr/share/perl5/vendor_perl /usr/lib64/perl5 /usr/share/perl5 . /root/openssl-3.0.0/external/perl/Text-Template-1.56/lib) at /root/openssl-3.0.0/util/perl/OpenSSL/config.pm line 18.</span><br><span class="line">BEGIN failed--compilation aborted at /root/openssl-3.0.0/util/perl/OpenSSL/config.pm line 18.</span><br><span class="line">Compilation failed in require at /root/openssl-3.0.0/Configure line 23.</span><br><span class="line">BEGIN failed--compilation aborted at /root/openssl-3.0.0/Configure line 23.</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Can&#x27;t locate IPC/Cmd.pm in @INC (@INC contains: /root/openssl-3.0.0/util/perl /usr/local/lib64/perl5 /usr/local/share/perl5 /usr/lib64/perl5/vendor_perl /usr/share/perl5/vendor_perl /usr/lib64/perl5 /usr/share/perl5 . /root/openssl-3.0.0/external/perl/Text-Template-1.56/lib) at /root/openssl-3.0.0/util/perl/OpenSSL/config.pm line 18.</span><br><span class="line">BEGIN failed--compilation aborted at /root/openssl-3.0.0/util/perl/OpenSSL/config.pm line 18.</span><br><span class="line">Compilation failed in require at /root/openssl-3.0.0/Configure line 23.</span><br><span class="line">BEGIN failed--compilation aborted at /root/openssl-3.0.0/Configure line 23.</span><br></pre></td></tr></table></figure>
+
 <p>需要执行：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># yum install perl-IPC-Cmd</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ./config --prefix=/usr/local/ssl --openssldir=/usr/local/ssl shared zlib</span></span><br><span class="line"><span class="comment"># make</span></span><br><span class="line"><span class="comment"># make test</span></span><br><span class="line"><span class="comment"># make install</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ln -sv /usr/local/bin/openssl /usr/bin/openssl</span></span><br></pre></td></tr></table></figure>
+
 <p>make test 会失败，忽略即可。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@Docker bin]# openssl version</span><br><span class="line">openssl: error while loading shared libraries: libssl.so.3: cannot open shared object file: No such file or directory</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@Docker bin]# openssl version</span><br><span class="line">openssl: error while loading shared libraries: libssl.so.3: cannot open shared object file: No such file or directory</span><br></pre></td></tr></table></figure>
+
 <p>解决方案如下：</p>
 <p>With your original version of OpenSSL it knew how to find the shared libs because <code>/usr/lib64</code> is included in the linker’s search path. When you downloaded and compiled a “local” copy of OpenSSL, the shared libs were placed in <code>/usr/local/lib64</code> by default. So you probably just need to add this directory to the search path of the linker, like this (as root):</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># echo "/usr/local/lib64" &gt; /etc/ld.so.conf.d/openssl.conf</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ldconfig</span></span><br><span class="line"></span><br><span class="line">[root@Docker ~]<span class="comment"># openssl version -a</span></span><br><span class="line">OpenSSL 3.0.0 7 sep 2021 (Library: OpenSSL 3.0.0 7 sep 2021)</span><br><span class="line">built on: Sun Sep 12 06:26:39 2021 UTC</span><br><span class="line">platform: linux-x86_64</span><br><span class="line">options:  bn(64,64)</span><br><span class="line">compiler: gcc -fPIC -pthread -m64 -Wa,--noexecstack -Wall -O3 -DOPENSSL_USE_NODELETE -DL_ENDIAN -DOPENSSL_PIC -DOPENSSL_BUILDING_OPENSSL -DNDEBUG</span><br><span class="line">OPENSSLDIR: <span class="string">"/usr/local/ssl"</span></span><br><span class="line">ENGINESDIR: <span class="string">"/usr/local/lib64/engines-3"</span></span><br><span class="line">MODULESDIR: <span class="string">"/usr/local/lib64/ossl-modules"</span></span><br><span class="line">Seeding <span class="built_in">source</span>: os-specific</span><br><span class="line">CPUINFO: OPENSSL_ia32cap=0xfffa32034f8bffff:0x9c67ab</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># echo &quot;/usr/local/lib64&quot; &gt; /etc/ld.so.conf.d/openssl.conf</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ldconfig</span></span><br><span class="line"></span><br><span class="line">[root@Docker ~]# openssl version -a</span><br><span class="line">OpenSSL 3.0.0 7 sep 2021 (Library: OpenSSL 3.0.0 7 sep 2021)</span><br><span class="line">built on: Sun Sep 12 06:26:39 2021 UTC</span><br><span class="line">platform: linux-x86_64</span><br><span class="line">options:  bn(64,64)</span><br><span class="line">compiler: gcc -fPIC -pthread -m64 -Wa,--noexecstack -Wall -O3 -DOPENSSL_USE_NODELETE -DL_ENDIAN -DOPENSSL_PIC -DOPENSSL_BUILDING_OPENSSL -DNDEBUG</span><br><span class="line">OPENSSLDIR: <span class="string">&quot;/usr/local/ssl&quot;</span></span><br><span class="line">ENGINESDIR: <span class="string">&quot;/usr/local/lib64/engines-3&quot;</span></span><br><span class="line">MODULESDIR: <span class="string">&quot;/usr/local/lib64/ossl-modules&quot;</span></span><br><span class="line">Seeding <span class="built_in">source</span>: os-specific</span><br><span class="line">CPUINFO: OPENSSL_ia32cap=0xfffa32034f8bffff:0x9c67ab</span><br></pre></td></tr></table></figure>
+
+
+
+
+
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><blockquote>
-<p><a href="https://www.sysit.cn/blog/post/sysit/vsftp%E6%94%AF%E6%8C%81TLS%E5%8A%A0%E5%AF%86%E4%BC%A0%E8%BE%93%E7%9A%84%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E" target="_blank" rel="noopener"><a href="https://www.sysit.cn/blog/post/sysit/vsftp支持TLS加密传输的配置说明" target="_blank" rel="noopener">vsftp支持TLS加密传输的配置说明</a></a></p>
+<p><a target="_blank" rel="noopener" href="https://www.sysit.cn/blog/post/sysit/vsftp%E6%94%AF%E6%8C%81TLS%E5%8A%A0%E5%AF%86%E4%BC%A0%E8%BE%93%E7%9A%84%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E"><a target="_blank" rel="noopener" href="https://www.sysit.cn/blog/post/sysit/vsftp%E6%94%AF%E6%8C%81TLS%E5%8A%A0%E5%AF%86%E4%BC%A0%E8%BE%93%E7%9A%84%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E">vsftp支持TLS加密传输的配置说明</a></a></p>
 </blockquote>
 
       
@@ -533,7 +626,7 @@ new Valine({
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2025 Niu Yuxian
+    		&copy; 2026 Niu Yuxian
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -658,15 +751,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">was</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">area</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">cors</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">was</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -694,10 +787,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">c#</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Nord</a>
               </li>
              
@@ -715,6 +804,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">guqin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">c#</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -786,6 +879,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">opencv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">原码</a>
               </li>
              
@@ -806,10 +903,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sed</a>
               </li>
              
@@ -827,6 +920,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -874,10 +971,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">archlinux</a>
               </li>
              
@@ -894,6 +987,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">d365</a>
               </li>
              
@@ -902,15 +999,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">deno</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">docker alpine</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">razor</a>
+                <a href="javascript:void(0)" class="js-tag color5">deno</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -919,6 +1012,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ffmpeg</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">razor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1006,14 +1103,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
@@ -1031,6 +1120,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1058,15 +1155,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">regex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">requests</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">rust</a>
+                <a href="javascript:void(0)" class="js-tag color1">regex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1078,11 +1171,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color5">rust</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1091,6 +1184,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mongo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1122,15 +1219,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">rocky</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">

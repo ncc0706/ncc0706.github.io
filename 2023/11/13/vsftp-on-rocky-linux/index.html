@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Rocky Linux 源码安装 vsftp | Niu Yuxian&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1yum install gcc gcc-c++ libcap libcap-devel pam-devel tcp_wrappers tcp_wrappers-devel 下载 vsftpd-3.0.5 https://fossies.org/linux/misc/vsftpd-3.0.5.tar.gz/ 1234567mkdir -p /usr/local/vsftpd/&amp;#123;conf,">
-<meta name="keywords" content="vsftp">
+  <meta name="description" content="1yum install gcc gcc-c++ libcap libcap-devel pam-devel tcp_wrappers tcp_wrappers-devel    下载 vsftpd-3.0.5 https:&#x2F;&#x2F;fossies.org&#x2F;linux&#x2F;misc&#x2F;vsftpd-3.0.5.tar.gz&#x2F; 1234567mkdir -p &#x2F;usr&#x2F;local&#x2F;vsftpd&#x2F;&#123;co">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Rocky Linux 源码安装 vsftp">
 <meta property="og:url" content="http://yoursite.com/2023/11/13/vsftp-on-rocky-linux/index.html">
 <meta property="og:site_name" content="Niu Yuxian&#39;blog">
-<meta property="og:description" content="1yum install gcc gcc-c++ libcap libcap-devel pam-devel tcp_wrappers tcp_wrappers-devel 下载 vsftpd-3.0.5 https://fossies.org/linux/misc/vsftpd-3.0.5.tar.gz/ 1234567mkdir -p /usr/local/vsftpd/&amp;#123;conf,">
-<meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2025-09-30T04:26:37.791Z">
+<meta property="og:description" content="1yum install gcc gcc-c++ libcap libcap-devel pam-devel tcp_wrappers tcp_wrappers-devel    下载 vsftpd-3.0.5 https:&#x2F;&#x2F;fossies.org&#x2F;linux&#x2F;misc&#x2F;vsftpd-3.0.5.tar.gz&#x2F; 1234567mkdir -p &#x2F;usr&#x2F;local&#x2F;vsftpd&#x2F;&#123;co">
+<meta property="og:locale">
+<meta property="article:published_time" content="2023-11-13T16:33:36.000Z">
+<meta property="article:modified_time" content="2023-11-13T16:33:36.000Z">
+<meta property="article:author" content="Niu Yuxian">
+<meta property="article:tag" content="vsftp">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Rocky Linux 源码安装 vsftp">
-<meta name="twitter:description" content="1yum install gcc gcc-c++ libcap libcap-devel pam-devel tcp_wrappers tcp_wrappers-devel 下载 vsftpd-3.0.5 https://fossies.org/linux/misc/vsftpd-3.0.5.tar.gz/ 1234567mkdir -p /usr/local/vsftpd/&amp;#123;conf,">
   
     <link rel="alternative" href="/atom.xml" title="Niu Yuxian&#39;blog" type="application/atom+xml">
   
@@ -58,8 +58,8 @@ var _hmt = _hmt || [];
 </script>
 
 
-</head>
-</html>
+<meta name="generator" content="Hexo 8.1.2"></head>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -72,7 +72,7 @@ var _hmt = _hmt || [];
 			<img src="/assets/images/logo.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Niu Yuxian</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
 		
 
@@ -156,7 +156,7 @@ var _hmt = _hmt || [];
 				<img src="/assets/images/logo.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Niu Yuxian</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
 			
 			
@@ -270,7 +270,7 @@ var _hmt = _hmt || [];
         
         <a href="/2023/11/13/vsftp-on-rocky-linux/" class="archive-article-date">
   	<time datetime="2023-11-13T16:33:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-11-13</time>
-  	更新：2025-09-30
+  	更新：2023-11-13
 </a>
         
       </header>
@@ -278,39 +278,78 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install gcc gcc-c++ libcap libcap-devel pam-devel tcp_wrappers tcp_wrappers-devel</span><br></pre></td></tr></table></figure>
+
+
+
 <p>下载 vsftpd-3.0.5</p>
-<p><a href="https://fossies.org/linux/misc/vsftpd-3.0.5.tar.gz/" target="_blank" rel="noopener">https://fossies.org/linux/misc/vsftpd-3.0.5.tar.gz/</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /usr/local/vsftpd/&#123;conf,conf/user,bin,lib,empty&#125;</span><br><span class="line"></span><br><span class="line">touch /usr/local/vsftpd/conf/chroot</span><br><span class="line"></span><br><span class="line">mkdir -p /var/log/vsftpd</span><br><span class="line"></span><br><span class="line">tar -zxvf vsftpd-3.0.5.tar.gz</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">make </span><br><span class="line"></span><br><span class="line"><span class="comment"># 复制到指定位置</span></span><br><span class="line">cp /root/vsftpd-3.0.5/vsftpd /usr/<span class="built_in">local</span>/vsftpd/bin</span><br><span class="line">cp /root/vsftpd-3.0.5/vsftpd.conf /usr/<span class="built_in">local</span>/vsftpd/conf</span><br><span class="line"></span><br><span class="line"><span class="comment"># 默认端口 21</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># vim /usr/lib/systemd/system/vsftpd.service</span></span><br><span class="line"></span><br><span class="line">[Unit]</span><br><span class="line">Description=Vsftpd Service</span><br><span class="line">After=network.target syslog.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line"><span class="comment"># start main service</span></span><br><span class="line">ExecStart=/usr/<span class="built_in">local</span>/vsftpd/bin/vsftpd /usr/<span class="built_in">local</span>/vsftpd/conf/vsftpd.conf</span><br><span class="line"></span><br><span class="line"><span class="comment"># restart main service</span></span><br><span class="line">ExecReload=/bin/<span class="built_in">kill</span> -s HUP <span class="variable">$MAINPID</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># stop main service</span></span><br><span class="line">ExecStop=/bin/<span class="built_in">kill</span> -s QUIT <span class="variable">$MAINPID</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># use private tmp</span></span><br><span class="line">PrivateTmp=<span class="literal">true</span></span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br><span class="line"></span><br><span class="line">systemctl <span class="built_in">enable</span> vsftpd.service --now</span><br></pre></td></tr></table></figure>
-<p><strong>配置 vsftpd.conf </strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 去掉所有的注释行及空行</span></span><br><span class="line">grep -v <span class="string">"^#"</span> vsftpd.conf &gt; vsftpd.conf</span><br></pre></td></tr></table></figure>
-<p>vim /usr/local/vsftpd/conf/vsftpd.conf</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">anonymous_enable=YES</span><br><span class="line">dirmessage_enable=YES</span><br><span class="line">xferlog_enable=YES</span><br><span class="line">connect_from_port_20=YES</span><br><span class="line">#开启IPv4监听</span><br><span class="line">listen=YES</span><br><span class="line">#关闭IPV6监听</span><br><span class="line">listen_ipv6=NO</span><br><span class="line"># 如果使用/etc/pam.d/vsftpd没有改文件名，就不修改</span><br><span class="line">pam_service_name=vsftpd</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#设定Vsftpd的登陆标语。</span><br><span class="line">ftpd_banner=This Vsftp server supports virtual users ^_^</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#匿名用户根目录</span><br><span class="line">anon_root=/var/ftp/pub</span><br><span class="line">write_enable=YES</span><br><span class="line">#是否允许匿名用户上传文件</span><br><span class="line">anon_upload_enable=YES</span><br><span class="line">#是否允许匿名用户创建目录</span><br><span class="line">anon_mkdir_write_enable=YES</span><br><span class="line">#是否允许匿名用户删除、重命名等</span><br><span class="line">anon_other_write_enable=YES</span><br><span class="line">#权限掩码,匿名用户上传文档时预设的权限掩码；文件夹权限为</span><br><span class="line">anon_umask=022</span><br><span class="line">#日志路径</span><br><span class="line">vsftpd_log_file=/var/log/vsftpd/vsftpd.log</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 锁定用户根目录，不能切换到其他目录</span><br><span class="line">chroot_local_user=YES</span><br><span class="line">chroot_list_enable=YES</span><br><span class="line">chroot_list_file=/usr/local/vsftpd/conf/chroot</span><br><span class="line">local_enable=YES</span><br><span class="line">#开启虚拟用户</span><br><span class="line">guest_enable=YES</span><br><span class="line">#指定虚拟用户的宿主用户</span><br><span class="line">guest_username=ftpuser</span><br><span class="line"># YES 表示虚拟用户使用与本地用户相同的权限，NO 表示则与匿名用户相同的权限</span><br><span class="line">virtual_use_local_privs=YES</span><br><span class="line">##指定虚拟用户配置文件</span><br><span class="line">user_config_dir=/usr/local/vsftpd/conf/user</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pasv_enable=YES                                #开启被动模式</span><br><span class="line">pasv_min_port=30100                            #被动模式最小端口，本示例设置为30100</span><br><span class="line">pasv_max_port=30200                            #被动模式最大端口，本示例设置为30200</span><br><span class="line">pasv_address=X.X.X.X                           #被动模式的IP地址，VPC环境下需要设置为服务器公网地址</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://fossies.org/linux/misc/vsftpd-3.0.5.tar.gz/">https://fossies.org/linux/misc/vsftpd-3.0.5.tar.gz/</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /usr/local/vsftpd/&#123;conf,conf/user,bin,lib,empty&#125;</span><br><span class="line"></span><br><span class="line">touch /usr/local/vsftpd/conf/chroot</span><br><span class="line"></span><br><span class="line">mkdir -p /var/log/vsftpd</span><br><span class="line"></span><br><span class="line">tar -zxvf vsftpd-3.0.5.tar.gz</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">make </span><br><span class="line"></span><br><span class="line"><span class="comment"># 复制到指定位置</span></span><br><span class="line"><span class="built_in">cp</span> /root/vsftpd-3.0.5/vsftpd /usr/local/vsftpd/bin</span><br><span class="line"><span class="built_in">cp</span> /root/vsftpd-3.0.5/vsftpd.conf /usr/local/vsftpd/conf</span><br><span class="line"></span><br><span class="line"><span class="comment"># 默认端口 21</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># vim /usr/lib/systemd/system/vsftpd.service</span></span><br><span class="line"></span><br><span class="line">[Unit]</span><br><span class="line">Description=Vsftpd Service</span><br><span class="line">After=network.target syslog.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line"><span class="comment"># start main service</span></span><br><span class="line">ExecStart=/usr/local/vsftpd/bin/vsftpd /usr/local/vsftpd/conf/vsftpd.conf</span><br><span class="line"></span><br><span class="line"><span class="comment"># restart main service</span></span><br><span class="line">ExecReload=/bin/kill -s HUP <span class="variable">$MAINPID</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># stop main service</span></span><br><span class="line">ExecStop=/bin/kill -s QUIT <span class="variable">$MAINPID</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># use private tmp</span></span><br><span class="line">PrivateTmp=<span class="literal">true</span></span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br><span class="line"></span><br><span class="line">systemctl <span class="built_in">enable</span> vsftpd.service --now</span><br></pre></td></tr></table></figure>
+
+<p>**配置 vsftpd.conf **</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 去掉所有的注释行及空行</span></span><br><span class="line">grep -v <span class="string">&quot;^#&quot;</span> vsftpd.conf &gt; vsftpd.conf</span><br></pre></td></tr></table></figure>
+
+
+
+<p>vim &#x2F;usr&#x2F;local&#x2F;vsftpd&#x2F;conf&#x2F;vsftpd.conf</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">anonymous_enable</span>=<span class="string">YES</span></span><br><span class="line"><span class="attr">dirmessage_enable</span>=<span class="string">YES</span></span><br><span class="line"><span class="attr">xferlog_enable</span>=<span class="string">YES</span></span><br><span class="line"><span class="attr">connect_from_port_20</span>=<span class="string">YES</span></span><br><span class="line"><span class="comment">#开启IPv4监听</span></span><br><span class="line"><span class="attr">listen</span>=<span class="string">YES</span></span><br><span class="line"><span class="comment">#关闭IPV6监听</span></span><br><span class="line"><span class="attr">listen_ipv6</span>=<span class="string">NO</span></span><br><span class="line"><span class="comment"># 如果使用/etc/pam.d/vsftpd没有改文件名，就不修改</span></span><br><span class="line"><span class="attr">pam_service_name</span>=<span class="string">vsftpd</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">#设定Vsftpd的登陆标语。</span></span><br><span class="line"><span class="attr">ftpd_banner</span>=<span class="string">This Vsftp server supports virtual users ^_^</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#匿名用户根目录</span></span><br><span class="line"><span class="attr">anon_root</span>=<span class="string">/var/ftp/pub</span></span><br><span class="line"><span class="attr">write_enable</span>=<span class="string">YES</span></span><br><span class="line"><span class="comment">#是否允许匿名用户上传文件</span></span><br><span class="line"><span class="attr">anon_upload_enable</span>=<span class="string">YES</span></span><br><span class="line"><span class="comment">#是否允许匿名用户创建目录</span></span><br><span class="line"><span class="attr">anon_mkdir_write_enable</span>=<span class="string">YES</span></span><br><span class="line"><span class="comment">#是否允许匿名用户删除、重命名等</span></span><br><span class="line"><span class="attr">anon_other_write_enable</span>=<span class="string">YES</span></span><br><span class="line"><span class="comment">#权限掩码,匿名用户上传文档时预设的权限掩码；文件夹权限为</span></span><br><span class="line"><span class="attr">anon_umask</span>=<span class="string">022</span></span><br><span class="line"><span class="comment">#日志路径</span></span><br><span class="line"><span class="attr">vsftpd_log_file</span>=<span class="string">/var/log/vsftpd/vsftpd.log</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 锁定用户根目录，不能切换到其他目录</span></span><br><span class="line"><span class="attr">chroot_local_user</span>=<span class="string">YES</span></span><br><span class="line"><span class="attr">chroot_list_enable</span>=<span class="string">YES</span></span><br><span class="line"><span class="attr">chroot_list_file</span>=<span class="string">/usr/local/vsftpd/conf/chroot</span></span><br><span class="line"><span class="attr">local_enable</span>=<span class="string">YES</span></span><br><span class="line"><span class="comment">#开启虚拟用户</span></span><br><span class="line"><span class="attr">guest_enable</span>=<span class="string">YES</span></span><br><span class="line"><span class="comment">#指定虚拟用户的宿主用户</span></span><br><span class="line"><span class="attr">guest_username</span>=<span class="string">ftpuser</span></span><br><span class="line"><span class="comment"># YES 表示虚拟用户使用与本地用户相同的权限，NO 表示则与匿名用户相同的权限</span></span><br><span class="line"><span class="attr">virtual_use_local_privs</span>=<span class="string">YES</span></span><br><span class="line"><span class="comment">##指定虚拟用户配置文件</span></span><br><span class="line"><span class="attr">user_config_dir</span>=<span class="string">/usr/local/vsftpd/conf/user</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">pasv_enable</span>=<span class="string">YES                                #开启被动模式</span></span><br><span class="line"><span class="attr">pasv_min_port</span>=<span class="string">30100                            #被动模式最小端口，本示例设置为30100</span></span><br><span class="line"><span class="attr">pasv_max_port</span>=<span class="string">30200                            #被动模式最大端口，本示例设置为30200</span></span><br><span class="line"><span class="attr">pasv_address</span>=<span class="string">X.X.X.X                           #被动模式的IP地址，VPC环境下需要设置为服务器公网地址</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
 <p><strong>目录权限</strong></p>
 <p>ftp服务器的根目录必须是755，不能是777权限，权限太大，而且用户属主必须是 root</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod 755 /var/ftp</span><br><span class="line">chown root:root /var/ftp</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> 755 /var/ftp</span><br><span class="line"><span class="built_in">chown</span> root:root /var/ftp</span><br></pre></td></tr></table></figure>
+
 <p>匿名用户可以操作的目录，需要在 ftp 根目录下创建一个上传目录</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir /var/ftp/pub</span><br><span class="line">chmod 777 /var/ftp/pub</span><br><span class="line">chown ftp:ftp /var/ftp/pub</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> /var/ftp/pub</span><br><span class="line"><span class="built_in">chmod</span> 777 /var/ftp/pub</span><br><span class="line"><span class="built_in">chown</span> ftp:ftp /var/ftp/pub</span><br></pre></td></tr></table></figure>
+
+
+
+
+
 <p><strong>认证</strong></p>
 <p>登录 FTP 有三种方式</p>
 <p>匿名登录：在登录FTP时使用默认的用户名，一般是ftp或anonymous</p>
-<p>本地用户登录：使用系统用户登录，/etc/passwd 中的用户。</p>
+<p>本地用户登录：使用系统用户登录，&#x2F;etc&#x2F;passwd 中的用户。</p>
 <p>虚拟用户登录：FTP 专有用户，两种方式实现虚拟用，本地数据文件和数据库服务器</p>
 <p><strong>本地数据文件</strong></p>
 <p>一行用户名，一行密码。奇数行为用户名，偶数行为密码。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dnf install -y libdb-utils</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">cat &gt;&gt; ftp_user.txt&lt;&lt;EOF</span><br><span class="line">tom</span><br><span class="line">tom123</span><br><span class="line">jack</span><br><span class="line">jack123</span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line">db_load -T -t hash -f /usr/local/vsftpd/conf/user/ftp_user.txt /usr/local/vsftpd/conf/user/ftp_login.db</span><br><span class="line"></span><br><span class="line">chmod 600 /usr/local/vsftpd/conf/user/ftp_login.db</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/pam.d/vsftpd</span><br><span class="line"></span><br><span class="line">auth required pam_userdb.so db=/usr/local/vsftpd/conf/user/ftp_login</span><br><span class="line">account required pam_userdb.so db=/usr/local/vsftpd/conf/user/ftp_login</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ftp]<span class="comment"># ldd /usr/local/vsftpd/bin/vsftpd</span></span><br><span class="line">        linux-vdso.so.1 (0x00007ffe64bbd000)</span><br><span class="line">        libpam.so.0 =&gt; /lib64/libpam.so.0 (0x00007f0fee72d000)</span><br><span class="line">        libcap.so.2 =&gt; /lib64/libcap.so.2 (0x00007f0fee723000)</span><br><span class="line">        libc.so.6 =&gt; /lib64/libc.so.6 (0x00007f0fee400000)</span><br><span class="line">        libaudit.so.1 =&gt; /lib64/libaudit.so.1 (0x00007f0fee6f5000)</span><br><span class="line">        libeconf.so.0 =&gt; /lib64/libeconf.so.0 (0x00007f0fee6ea000)</span><br><span class="line">        libm.so.6 =&gt; /lib64/libm.so.6 (0x00007f0fee60f000)</span><br><span class="line">        /lib64/ld-linux-x86-64.so.2 (0x00007f0fee76d000)</span><br><span class="line">        libcap-ng.so.0 =&gt; /lib64/libcap-ng.so.0 (0x00007f0fee3f7000)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 看到libpam.so.0 =&gt; /lib/libpam.so.0表示已成功加载pam认证模块</span></span><br><span class="line"><span class="comment"># 若没有,请安装 pam-devel : #yum install pam-devel</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">cat &gt;&gt; ftp_user.txt&lt;&lt;EOF</span><br><span class="line">tom</span><br><span class="line">tom123</span><br><span class="line">jack</span><br><span class="line">jack123</span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line">db_load -T -t hash -f /usr/local/vsftpd/conf/user/ftp_user.txt /usr/local/vsftpd/conf/user/ftp_login.db</span><br><span class="line"></span><br><span class="line">chmod 600 /usr/local/vsftpd/conf/user/ftp_login.db</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/pam.d/vsftpd</span><br><span class="line"></span><br><span class="line">auth required pam_userdb.so db=/usr/local/vsftpd/conf/user/ftp_login</span><br><span class="line">account required pam_userdb.so db=/usr/local/vsftpd/conf/user/ftp_login</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ftp]# ldd /usr/local/vsftpd/bin/vsftpd</span><br><span class="line">        linux-vdso.so.1 (0x00007ffe64bbd000)</span><br><span class="line">        libpam.so.0 =&gt; /lib64/libpam.so.0 (0x00007f0fee72d000)</span><br><span class="line">        libcap.so.2 =&gt; /lib64/libcap.so.2 (0x00007f0fee723000)</span><br><span class="line">        libc.so.6 =&gt; /lib64/libc.so.6 (0x00007f0fee400000)</span><br><span class="line">        libaudit.so.1 =&gt; /lib64/libaudit.so.1 (0x00007f0fee6f5000)</span><br><span class="line">        libeconf.so.0 =&gt; /lib64/libeconf.so.0 (0x00007f0fee6ea000)</span><br><span class="line">        libm.so.6 =&gt; /lib64/libm.so.6 (0x00007f0fee60f000)</span><br><span class="line">        /lib64/ld-linux-x86-64.so.2 (0x00007f0fee76d000)</span><br><span class="line">        libcap-ng.so.0 =&gt; /lib64/libcap-ng.so.0 (0x00007f0fee3f7000)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 看到libpam.so.0 =&gt; /lib/libpam.so.0表示已成功加载pam认证模块</span></span><br><span class="line"><span class="comment"># 若没有,请安装 pam-devel : #yum install pam-devel</span></span><br></pre></td></tr></table></figure>
+
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 映射虚拟用户</span></span><br><span class="line"><span class="comment"># useradd -d /data/ftpdata -g ftp -s /sbin/nologin ftpuser</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"># 注意文件属主</span><br><span class="line">chown -R ftpuser:ftp /data/ftpdata</span><br><span class="line"></span><br><span class="line">mkdir -p /data/ftpdata/tom</span><br><span class="line"></span><br><span class="line"># 如果设置了500，需要单独处理权限问题</span><br><span class="line">chmod 500 /data/ftpdata/tom</span><br><span class="line"></span><br><span class="line">## user tom</span><br><span class="line">vim /usr/local/vsftpd/conf/user/tom</span><br><span class="line"></span><br><span class="line">write_enable=YES</span><br><span class="line">anon_world_readable_only=NO</span><br><span class="line">anon_upload_enable=YES</span><br><span class="line">anon_mkdir_write_enable=YES</span><br><span class="line">anon_other_write_enable=YES</span><br><span class="line">local_root=/data/ftpdata/tom</span><br><span class="line"></span><br><span class="line">## user jack</span><br><span class="line">vim /usr/local/vsftpd/conf/user/jack</span><br><span class="line"></span><br><span class="line">write_enable=YES</span><br><span class="line">anon_world_readable_only=NO</span><br><span class="line">anon_upload_enable=YES</span><br><span class="line">anon_mkdir_write_enable=YES</span><br><span class="line">anon_other_write_enable=YES</span><br><span class="line">local_root=/data/ftpdata/jack</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 注意文件属主</span></span><br><span class="line"><span class="attr">chown</span> <span class="string">-R ftpuser:ftp /data/ftpdata</span></span><br><span class="line"></span><br><span class="line"><span class="attr">mkdir</span> <span class="string">-p /data/ftpdata/tom</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># 如果设置了500，需要单独处理权限问题</span></span><br><span class="line"><span class="attr">chmod</span> <span class="string">500 /data/ftpdata/tom</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">## user tom</span></span><br><span class="line"><span class="attr">vim</span> <span class="string">/usr/local/vsftpd/conf/user/tom</span></span><br><span class="line"></span><br><span class="line"><span class="attr">write_enable</span>=<span class="string">YES</span></span><br><span class="line"><span class="attr">anon_world_readable_only</span>=<span class="string">NO</span></span><br><span class="line"><span class="attr">anon_upload_enable</span>=<span class="string">YES</span></span><br><span class="line"><span class="attr">anon_mkdir_write_enable</span>=<span class="string">YES</span></span><br><span class="line"><span class="attr">anon_other_write_enable</span>=<span class="string">YES</span></span><br><span class="line"><span class="attr">local_root</span>=<span class="string">/data/ftpdata/tom</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">## user jack</span></span><br><span class="line"><span class="attr">vim</span> <span class="string">/usr/local/vsftpd/conf/user/jack</span></span><br><span class="line"></span><br><span class="line"><span class="attr">write_enable</span>=<span class="string">YES</span></span><br><span class="line"><span class="attr">anon_world_readable_only</span>=<span class="string">NO</span></span><br><span class="line"><span class="attr">anon_upload_enable</span>=<span class="string">YES</span></span><br><span class="line"><span class="attr">anon_mkdir_write_enable</span>=<span class="string">YES</span></span><br><span class="line"><span class="attr">anon_other_write_enable</span>=<span class="string">YES</span></span><br><span class="line"><span class="attr">local_root</span>=<span class="string">/data/ftpdata/jack</span></span><br></pre></td></tr></table></figure>
+
+
+
 <p><strong>配置文件</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /usr/<span class="built_in">local</span>/vsftpd/conf/vsftpd.conf</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">anonymous_enable=YES</span><br><span class="line">anon_root=/var/ftp</span><br><span class="line">allow_writeable_chroot=YES</span><br><span class="line">write_enable=YES</span><br><span class="line">anon_upload_enable=YES</span><br><span class="line">anon_mkdir_write_enable=YES</span><br><span class="line">anon_other_write_enable=YES</span><br><span class="line">anon_umask=022</span><br><span class="line">dirmessage_enable=YES</span><br><span class="line">xferlog_enable=YES</span><br><span class="line">vsftpd_log_file=/var/log/vsftpd/vsftpd.log</span><br><span class="line">connect_from_port_20=YES</span><br><span class="line">listen=YES</span><br><span class="line"></span><br><span class="line">chroot_local_user=YES</span><br><span class="line">chroot_list_enable=YES</span><br><span class="line">chroot_list_file=/usr/local/vsftpd/conf/chroot</span><br><span class="line">pam_service_name=vsftpd</span><br><span class="line">ftpd_banner=This Vsftp server supports virtual users ^_^</span><br><span class="line">local_enable=YES</span><br><span class="line">guest_enable=YES</span><br><span class="line">guest_username=ftpuser</span><br><span class="line">virtual_use_local_privs=YES</span><br><span class="line">user_config_dir=/usr/local/vsftpd/conf/user</span><br><span class="line">secure_chroot_dir=/usr/local/vsftpd/empty</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /usr/local/vsftpd/conf/vsftpd.conf</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">anonymous_enable</span>=<span class="string">YES</span></span><br><span class="line"><span class="attr">anon_root</span>=<span class="string">/var/ftp</span></span><br><span class="line"><span class="attr">allow_writeable_chroot</span>=<span class="string">YES</span></span><br><span class="line"><span class="attr">write_enable</span>=<span class="string">YES</span></span><br><span class="line"><span class="attr">anon_upload_enable</span>=<span class="string">YES</span></span><br><span class="line"><span class="attr">anon_mkdir_write_enable</span>=<span class="string">YES</span></span><br><span class="line"><span class="attr">anon_other_write_enable</span>=<span class="string">YES</span></span><br><span class="line"><span class="attr">anon_umask</span>=<span class="string">022</span></span><br><span class="line"><span class="attr">dirmessage_enable</span>=<span class="string">YES</span></span><br><span class="line"><span class="attr">xferlog_enable</span>=<span class="string">YES</span></span><br><span class="line"><span class="attr">vsftpd_log_file</span>=<span class="string">/var/log/vsftpd/vsftpd.log</span></span><br><span class="line"><span class="attr">connect_from_port_20</span>=<span class="string">YES</span></span><br><span class="line"><span class="attr">listen</span>=<span class="string">YES</span></span><br><span class="line"></span><br><span class="line"><span class="attr">chroot_local_user</span>=<span class="string">YES</span></span><br><span class="line"><span class="attr">chroot_list_enable</span>=<span class="string">YES</span></span><br><span class="line"><span class="attr">chroot_list_file</span>=<span class="string">/usr/local/vsftpd/conf/chroot</span></span><br><span class="line"><span class="attr">pam_service_name</span>=<span class="string">vsftpd</span></span><br><span class="line"><span class="attr">ftpd_banner</span>=<span class="string">This Vsftp server supports virtual users ^_^</span></span><br><span class="line"><span class="attr">local_enable</span>=<span class="string">YES</span></span><br><span class="line"><span class="attr">guest_enable</span>=<span class="string">YES</span></span><br><span class="line"><span class="attr">guest_username</span>=<span class="string">ftpuser</span></span><br><span class="line"><span class="attr">virtual_use_local_privs</span>=<span class="string">YES</span></span><br><span class="line"><span class="attr">user_config_dir</span>=<span class="string">/usr/local/vsftpd/conf/user</span></span><br><span class="line"><span class="attr">secure_chroot_dir</span>=<span class="string">/usr/local/vsftpd/empty</span></span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -507,7 +546,7 @@ new Valine({
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2025 Niu Yuxian
+    		&copy; 2026 Niu Yuxian
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -632,15 +671,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">was</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">area</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">cors</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">was</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -668,10 +707,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">c#</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Nord</a>
               </li>
              
@@ -689,6 +724,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">guqin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">c#</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -760,6 +799,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">opencv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">原码</a>
               </li>
              
@@ -780,10 +823,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sed</a>
               </li>
              
@@ -801,6 +840,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -848,10 +891,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">archlinux</a>
               </li>
              
@@ -868,6 +907,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">d365</a>
               </li>
              
@@ -876,15 +919,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">deno</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">docker alpine</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">razor</a>
+                <a href="javascript:void(0)" class="js-tag color5">deno</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -893,6 +932,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ffmpeg</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">razor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -980,14 +1023,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
@@ -1005,6 +1040,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1032,15 +1075,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">regex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">requests</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">rust</a>
+                <a href="javascript:void(0)" class="js-tag color1">regex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1052,11 +1091,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color5">rust</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1065,6 +1104,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mongo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1096,15 +1139,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">rocky</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">

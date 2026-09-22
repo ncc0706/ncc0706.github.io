@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Niu Yuxian&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -12,9 +12,9 @@
 <meta property="og:title" content="Niu Yuxian&#39;blog">
 <meta property="og:url" content="http://yoursite.com/page/4/index.html">
 <meta property="og:site_name" content="Niu Yuxian&#39;blog">
-<meta property="og:locale" content="default">
+<meta property="og:locale">
+<meta property="article:author" content="Niu Yuxian">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Niu Yuxian&#39;blog">
   
     <link rel="alternative" href="/atom.xml" title="Niu Yuxian&#39;blog" type="application/atom+xml">
   
@@ -53,8 +53,8 @@ var _hmt = _hmt || [];
 </script>
 
 
-</head>
-</html>
+<meta name="generator" content="Hexo 8.1.2"></head>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -67,7 +67,7 @@ var _hmt = _hmt || [];
 			<img src="/assets/images/logo.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Niu Yuxian</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
 		
 
@@ -151,7 +151,7 @@ var _hmt = _hmt || [];
 				<img src="/assets/images/logo.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Niu Yuxian</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
 			
 			
@@ -253,6 +253,149 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-k8s/k8s-cluster-on-rocky9" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/09/24/k8s/k8s-cluster-on-rocky9/">Rocky9 安装 Kubernetes 集群</a>
+    </h1>
+  
+
+        
+        <a href="/2023/09/24/k8s/k8s-cluster-on-rocky9/" class="archive-article-date">
+  	<time datetime="2023-09-24T09:16:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-24</time>
+  	更新：2023-09-24
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>kubernetes1.20.+ 默认容器采用的是containerd，不是docker</p>
+<table>
+<thead>
+<tr>
+<th>hostname</th>
+<th>ip</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>k8s-master</td>
+<td>192.168.18.90</td>
+<td></td>
+</tr>
+<tr>
+<td>k8s-node01</td>
+<td>192.168.18.91</td>
+<td></td>
+</tr>
+<tr>
+<td>k8s-node02</td>
+<td>192.168.18.92</td>
+<td></td>
+</tr>
+<tr>
+<td>k8s-node03</td>
+<td>192.168.18.93</td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[WARNING Firewalld]: firewalld is active, please ensure ports [6443 10250] are open or your cluster may not function correctly</span><br><span class="line">[WARNING Firewalld]: firewalld is active, please ensure ports [6443 10250] are open or your cluster may not function correctly</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h4 id="网卡配置"><a href="#网卡配置" class="headerlink" title="网卡配置"></a>网卡配置</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/NetworkManager/system-connections/ens33.nmconnection</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">[connection]</span><br><span class="line">id=ens33</span><br><span class="line">uuid=55cb18ca-e9e2-318b-b50c-f844d9a96a56</span><br><span class="line">type=ethernet</span><br><span class="line">autoconnect-priority=-999</span><br><span class="line">interface-name=ens33</span><br><span class="line">timestamp=1695503455</span><br><span class="line"></span><br><span class="line">[ethernet]</span><br><span class="line"></span><br><span class="line">[ipv4]</span><br><span class="line">method=manual							# auto dhcp、manual static</span><br><span class="line">address1=192.168.18.40/24,192.168.18.2	# ip地址/子网掩码，网关地址</span><br><span class="line">dns=192.168.18.2;114.114.114.114;		# dns</span><br><span class="line">may-fail=false</span><br><span class="line"></span><br><span class="line">[ipv6]</span><br><span class="line">addr-gen-mode=eui64</span><br><span class="line">method=auto</span><br><span class="line"></span><br><span class="line">[proxy]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># connection 简写为 c</span><br><span class="line"># reload r</span><br><span class="line"># down d</span><br><span class="line"># up u</span><br><span class="line"># load l</span><br><span class="line"></span><br><span class="line">nmcli connection reload</span><br><span class="line">nmcli connection down ens33</span><br><span class="line">nmcli connection up ens33</span><br><span class="line"></span><br><span class="line"># load 后面需要跟完整的路径</span><br><span class="line">nmcli connection load  /etc/NetworkManager/system-connections/ens33.nmconnection </span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart NetworkManager</span><br><span class="line"></span><br><span class="line">## 查看是否生成配置</span><br><span class="line">cat /etc/resolv.conf </span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h4 id="设置国内源"><a href="#设置国内源" class="headerlink" title="设置国内源"></a>设置国内源</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sed -e <span class="string">&#x27;s|^mirrorlist=|#mirrorlist=|g&#x27;</span> \</span><br><span class="line">    -e <span class="string">&#x27;s|^#baseurl=http://dl.rockylinux.org/$contentdir|baseurl=https://mirrors.ustc.edu.cn/rocky|g&#x27;</span> \</span><br><span class="line">    -i.bak \</span><br><span class="line">    /etc/yum.repos.d/rocky-extras.repo \</span><br><span class="line">    /etc/yum.repos.d/rocky.repo</span><br></pre></td></tr></table></figure>
+
+<p>安装依赖</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dnf install -y vim wget curl ntpdate ntp net-tools git \</span></span><br><span class="line">conntrack jq sysstat libseccomp</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2023/09/24/k8s/k8s-cluster-on-rocky9/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">k8s</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/k8s//" class="article-tag-list-link color4">k8s</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/09/24/k8s/k8s-cluster-on-rocky9/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-os/archlinux/archlinux2023" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -267,16 +410,16 @@ var _hmt = _hmt || [];
         
         <a href="/2023/09/18/os/archlinux/archlinux2023/" class="archive-article-date">
   	<time datetime="2023-09-18T12:33:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-18</time>
-  	更新：2025-09-30
+  	更新：2023-09-18
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/10/31/boot-uefi.png" alt></p>
+        <p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/10/31/boot-uefi.png"></p>
 <p><strong>是否连接到网络</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ip link</span><br><span class="line">ping www.baidu.com</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ip <span class="built_in">link</span></span><br><span class="line">ping www.baidu.com</span><br></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/2023/09/18/os/archlinux/archlinux2023/#more">more >></a>
         
@@ -359,7 +502,7 @@ var _hmt = _hmt || [];
         
         <a href="/2023/08/16/ipp/" class="archive-article-date">
   	<time datetime="2023-08-16T09:00:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-08-16</time>
-  	更新：2025-09-30
+  	更新：2023-08-16
 </a>
         
       </header>
@@ -368,11 +511,11 @@ var _hmt = _hmt || [];
       
         <h3 id="IPP"><a href="#IPP" class="headerlink" title="IPP"></a>IPP</h3><p>互联网打印协议（IPP；Internet Printing Protocol）是一个在互联网上打印的标准网络协议，它容许用户可以透过互联网作遥距打印及管理打印工作等工作。用户可以透过相关界面来控制打印品所使用的纸张种类、分辨率等各种参数。</p>
 <p>与其他基于互联网的协议一样，IPP可以用于内联网及互联网等基于IP协议的网络上。不过，与一般IP协议不同的是：IPP亦同时支援安全连结。所以，用户可以透过网络进行存取控制、认证及加密，使打印过程更安全。</p>
-<p><a href="https://datatracker.ietf.org/doc/search/?name=Internet+Printing+Protocol&amp;activedrafts=on&amp;rfcs=on" target="_blank" rel="noopener">协议规范 https://datatracker.ietf.org/doc/search/?name=Internet+Printing+Protocol&amp;activedrafts=on&amp;rfcs=on</a></p>
+<p><a target="_blank" rel="noopener" href="https://datatracker.ietf.org/doc/search/?name=Internet+Printing+Protocol&activedrafts=on&rfcs=on">协议规范 https://datatracker.ietf.org/doc/search/?name=Internet+Printing+Protocol&amp;activedrafts=on&amp;rfcs=on</a></p>
 <p>打印机目前遇到三种协议，ipp，printer-job-language，lpd三种协议。他们的默认端口分别是631，9100和515.</p>
 <p>9100端口的printer-job-language，又称为RAW协议。目前遇到的问题是，此端口发送数据，打印机直接打印，除非发送正确的printer-job-language协议内容。</p>
 <p>631端口的ipp协议，更多的是用来获取打印机属性的GET_PRINTER_ATTRIBUTES。</p>
-<p>515端口的lpd（Line Printer Daemon Protocol).它使用TCP/IP协议共享服务器上的打印机资源。服务器以Daemon的方式运行一个进程，客户机通过lp,lpr,lpd,lprm等命令实现添加打印，查询及删除打印队列等操作。（目前激光打印机除了极少数型号以外都不支持LPD协议）</p>
+<p>515端口的lpd（Line Printer Daemon Protocol).它使用TCP&#x2F;IP协议共享服务器上的打印机资源。服务器以Daemon的方式运行一个进程，客户机通过lp,lpr,lpd,lprm等命令实现添加打印，查询及删除打印队列等操作。（目前激光打印机除了极少数型号以外都不支持LPD协议）</p>
         
           <a class="article-more-a" href="/2023/08/16/ipp/#more">more >></a>
         
@@ -455,7 +598,7 @@ var _hmt = _hmt || [];
         
         <a href="/2023/08/11/ascii-code/" class="archive-article-date">
   	<time datetime="2023-08-11T13:05:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-08-11</time>
-  	更新：2025-09-30
+  	更新：2023-08-11
 </a>
         
       </header>
@@ -469,12 +612,11 @@ var _hmt = _hmt || [];
 <th>Oct(八进制)</th>
 <th>Dec(十进制)</th>
 <th>Hex(十六进制)</th>
-<th>缩写/字符</th>
+<th>缩写&#x2F;字符</th>
 <th>解释</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>0000 0000</td>
 <td>00</td>
 <td>0</td>
@@ -840,7 +982,7 @@ var _hmt = _hmt || [];
 <td>45</td>
 <td>0x2D</td>
 <td>-</td>
-<td>减号/破折号</td>
+<td>减号&#x2F;破折号</td>
 </tr>
 <tr>
 <td>0010 1110</td>
@@ -855,7 +997,7 @@ var _hmt = _hmt || [];
 <td>057</td>
 <td>47</td>
 <td>0x2F</td>
-<td>/</td>
+<td>&#x2F;</td>
 <td>斜杠</td>
 </tr>
 <tr>
@@ -967,7 +1109,7 @@ var _hmt = _hmt || [];
 <td>075</td>
 <td>61</td>
 <td>0x3D</td>
-<td>=</td>
+<td>&#x3D;</td>
 <td>等号</td>
 </tr>
 <tr>
@@ -1247,7 +1389,7 @@ var _hmt = _hmt || [];
 <td>0140</td>
 <td>96</td>
 <td>0x60</td>
-<td>`</td>
+<td>&#96;</td>
 <td>开单引号</td>
 </tr>
 <tr>
@@ -1471,8 +1613,7 @@ var _hmt = _hmt || [];
 <td>0174</td>
 <td>124</td>
 <td>0x7C</td>
-<td>\</td>
-<td></td>
+<td>|</td>
 <td>垂线</td>
 </tr>
 <tr>
@@ -1499,8 +1640,7 @@ var _hmt = _hmt || [];
 <td>DEL (delete)</td>
 <td>删除</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 
       
 
@@ -1581,7 +1721,7 @@ var _hmt = _hmt || [];
         
         <a href="/2023/08/09/clion/clion-multi-project/" class="archive-article-date">
   	<time datetime="2023-08-09T16:05:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-08-09</time>
-  	更新：2025-09-30
+  	更新：2023-08-09
 </a>
         
       </header>
@@ -1591,8 +1731,10 @@ var _hmt = _hmt || [];
         <p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/07/11/2021-07-11_161406.png" alt="效果图"></p>
 <p><strong>(BV1fZ4y1F7Vt)项目</strong></p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## cmake 最低版本</span></span><br><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.17</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 项目名称</span></span><br><span class="line"><span class="keyword">project</span>(BV1fZ4y1F7Vt)</span><br><span class="line"></span><br><span class="line"><span class="comment">## c++ 标准</span></span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_STANDARD <span class="number">14</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 主项目根据实际情况要不要加</span></span><br><span class="line"><span class="keyword">add_executable</span>(BV1fZ4y1F7Vt main.c)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 子项目</span></span><br><span class="line"><span class="comment">## 注意子项目暴露出来的 文件名不能重复</span></span><br><span class="line"><span class="keyword">add_subdirectory</span>(chapter01 hello.c)</span><br><span class="line"><span class="keyword">add_subdirectory</span>(chapter02 main.c)</span><br></pre></td></tr></table></figure>
+
 <p><strong>(chapter01)项目</strong></p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将该子项目下包含的内容反馈回主项目中</span></span><br><span class="line"><span class="keyword">include_directories</span>(.)</span><br><span class="line"></span><br><span class="line"><span class="keyword">add_executable</span>(chapter01 hello.c user.c user.h)</span><br></pre></td></tr></table></figure>
+
 <p><strong>(chapter02)项目</strong></p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将该子项目下包含的内容反馈回主项目中</span></span><br><span class="line"><span class="keyword">include_directories</span>(.)</span><br><span class="line"></span><br><span class="line"><span class="keyword">add_executable</span>(chapter02 main.c)</span><br></pre></td></tr></table></figure>
         
@@ -1681,7 +1823,7 @@ var _hmt = _hmt || [];
         
         <a href="/2023/08/08/os/archlinux/archlinux-rolling-release/" class="archive-article-date">
   	<time datetime="2023-08-08T20:25:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-08-08</time>
-  	更新：2025-09-30
+  	更新：2023-08-08
 </a>
         
       </header>
@@ -1690,7 +1832,10 @@ var _hmt = _hmt || [];
       
         <p>长期不升级会出现签名错误</p>
 <p>修复 Arch Linux 中的 invalid or corrupted package (PGP signature) 错误</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S archlinux-keyring</span><br><span class="line"></span><br><span class="line">sudo pacman -Syu</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S archlinux-keyring</span><br><span class="line"></span><br><span class="line"><span class="built_in">sudo</span> pacman -Syu</span><br></pre></td></tr></table></figure>
+
+
+
 
       
 
@@ -1771,7 +1916,7 @@ var _hmt = _hmt || [];
         
         <a href="/2023/08/07/db/mysql/mysql-order-by/" class="archive-article-date">
   	<time datetime="2023-08-07T17:52:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-08-07</time>
-  	更新：2025-09-30
+  	更新：2023-08-07
 </a>
         
       </header>
@@ -1864,7 +2009,7 @@ var _hmt = _hmt || [];
         
         <a href="/2023/08/07/number-format/" class="archive-article-date">
   	<time datetime="2023-08-07T16:28:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-08-07</time>
-  	更新：2025-09-30
+  	更新：2023-08-07
 </a>
         
       </header>
@@ -1872,8 +2017,10 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p>如果数值为 100.00或 100.00100 ，为了显示好看，展示为 100 或 100.001，舍弃最后的面的1个0或多个0.</p>
-<h2 id="mysql-去掉多余的零"><a href="#mysql-去掉多余的零" class="headerlink" title="mysql 去掉多余的零"></a>mysql 去掉多余的零</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT 0+CAST( 1.20900 as char) as num1,  0+CAST( 1.209001 as char) as num2, 0+ CAST(200 as char) as num3;</span><br></pre></td></tr></table></figure>
-<h2 id="Java-去掉多余的零"><a href="#Java-去掉多余的零" class="headerlink" title="Java 去掉多余的零"></a>Java 去掉多余的零</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    BigDecimal bigDecimal = <span class="keyword">new</span> BigDecimal(<span class="string">"1.11100E3"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 有必要时使用科学计算法(1.11E3),没有小数时</span></span><br><span class="line">    System.out.println(bigDecimal.toString());</span><br><span class="line"></span><br><span class="line">    <span class="comment">//不使用任何指数。</span></span><br><span class="line">    System.out.println(bigDecimal.toPlainString());</span><br><span class="line"></span><br><span class="line">    <span class="comment">// stripTrailingZeros()去除末尾无用的零</span></span><br><span class="line">    System.out.println(bigDecimal.stripTrailingZeros().toPlainString());</span><br><span class="line"></span><br><span class="line">    <span class="comment">//有必要时使用工程计数法。工程记数法是一种工程计算中经常使用的记录数字的方法，与科学计数法类似，但要求10的幂必须是3的倍数。</span></span><br><span class="line">    System.out.println(bigDecimal.stripTrailingZeros().toEngineeringString());</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> i = bigDecimal.stripTrailingZeros().compareTo(bigDecimal);</span><br><span class="line">    System.out.println(i);</span><br><span class="line"></span><br><span class="line">    BigDecimal ze = <span class="keyword">new</span> BigDecimal(<span class="string">"0.00"</span>);</span><br><span class="line">    System.out.println(ze.stripTrailingZeros().compareTo(BigDecimal.ZERO));</span><br><span class="line">    System.out.println(ze.compareTo(BigDecimal.ZERO)); <span class="comment">// compare 相等</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="mysql-去掉多余的零"><a href="#mysql-去掉多余的零" class="headerlink" title="mysql 去掉多余的零"></a>mysql 去掉多余的零</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT 0+CAST( 1.20900 as char) as num1,  0+CAST( 1.209001 as char) as num2, 0+ CAST(200 as char) as num3;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Java-去掉多余的零"><a href="#Java-去掉多余的零" class="headerlink" title="Java 去掉多余的零"></a>Java 去掉多余的零</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    <span class="type">BigDecimal</span> <span class="variable">bigDecimal</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BigDecimal</span>(<span class="string">&quot;1.11100E3&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 有必要时使用科学计算法(1.11E3),没有小数时</span></span><br><span class="line">    System.out.println(bigDecimal.toString());</span><br><span class="line"></span><br><span class="line">    <span class="comment">//不使用任何指数。</span></span><br><span class="line">    System.out.println(bigDecimal.toPlainString());</span><br><span class="line"></span><br><span class="line">    <span class="comment">// stripTrailingZeros()去除末尾无用的零</span></span><br><span class="line">    System.out.println(bigDecimal.stripTrailingZeros().toPlainString());</span><br><span class="line"></span><br><span class="line">    <span class="comment">//有必要时使用工程计数法。工程记数法是一种工程计算中经常使用的记录数字的方法，与科学计数法类似，但要求10的幂必须是3的倍数。</span></span><br><span class="line">    System.out.println(bigDecimal.stripTrailingZeros().toEngineeringString());</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> bigDecimal.stripTrailingZeros().compareTo(bigDecimal);</span><br><span class="line">    System.out.println(i);</span><br><span class="line"></span><br><span class="line">    <span class="type">BigDecimal</span> <span class="variable">ze</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BigDecimal</span>(<span class="string">&quot;0.00&quot;</span>);</span><br><span class="line">    System.out.println(ze.stripTrailingZeros().compareTo(BigDecimal.ZERO));</span><br><span class="line">    System.out.println(ze.compareTo(BigDecimal.ZERO)); <span class="comment">// compare 相等</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -1958,7 +2105,7 @@ var _hmt = _hmt || [];
         
         <a href="/2023/07/29/github/github-actions/" class="archive-article-date">
   	<time datetime="2023-07-29T21:11:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-07-29</time>
-  	更新：2025-09-30
+  	更新：2023-07-29
 </a>
         
       </header>
@@ -1966,14 +2113,16 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p>弃坑 travis，开始收费了</p>
-<p><a href="https://docs.travis-ci.com/user/billing-overview/#usage---credits" target="_blank" rel="noopener">https://docs.travis-ci.com/user/billing-overview/#usage---credits</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.travis-ci.com/user/billing-overview/#usage---credits">https://docs.travis-ci.com/user/billing-overview/#usage---credits</a></p>
 <h2 id="workflow-配置"><a href="#workflow-配置" class="headerlink" title="workflow 配置"></a>workflow 配置</h2><p>源码根目录创建 <code>.github/workflows/deploy.yml</code></p>
-<h2 id="生成密钥"><a href="#生成密钥" class="headerlink" title="生成密钥"></a>生成密钥</h2><p>ssh-keygen -t rsa -b 4096 -C “Hexo Deploy Key” -f github-deploy-key -N “”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">github-deploy-key —— 私钥</span><br><span class="line">github-deploy-key.pub —— 公钥</span><br></pre></td></tr></table></figure></p>
+<h2 id="生成密钥"><a href="#生成密钥" class="headerlink" title="生成密钥"></a>生成密钥</h2><p>ssh-keygen -t rsa -b 4096 -C “Hexo Deploy Key” -f github-deploy-key -N “”</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">github-deploy-key —— 私钥</span><br><span class="line">github-deploy-key.pub —— 公钥</span><br></pre></td></tr></table></figure>
+
 <p>源码项目 配置私钥 Settings -&gt; Security -&gt; Actions</p>
 <p>目标项目 配置公钥 Settings -&gt; Security -&gt; Deploy keys </p>
 <p>一定要勾选 Allow write access 来打开写权限，否则无法写入会导致部署失败</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
-<p><a href="https://github.com/peaceiris/actions-gh-pages" target="_blank" rel="noopener">https://github.com/peaceiris/actions-gh-pages</a><br><a href="https://zhuanlan.zhihu.com/p/170563000" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/170563000</a><br><a href="https://www.cnblogs.com/xueyubao/p/13991935.html" target="_blank" rel="noopener">https://www.cnblogs.com/xueyubao/p/13991935.html</a><br><a href="https://cloud.tencent.com/developer/article/1953391" target="_blank" rel="noopener">https://cloud.tencent.com/developer/article/1953391</a><br><a href="https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions" target="_blank" rel="noopener">https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/peaceiris/actions-gh-pages">https://github.com/peaceiris/actions-gh-pages</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/170563000">https://zhuanlan.zhihu.com/p/170563000</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xueyubao/p/13991935.html">https://www.cnblogs.com/xueyubao/p/13991935.html</a><br><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1953391">https://cloud.tencent.com/developer/article/1953391</a><br><a target="_blank" rel="noopener" href="https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions">https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions</a></p>
 </blockquote>
 
       
@@ -2055,7 +2204,7 @@ var _hmt = _hmt || [];
         
         <a href="/2023/07/29/dotnetmvc/razor-encoding/" class="archive-article-date">
   	<time datetime="2023-07-29T13:12:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-07-29</time>
-  	更新：2025-09-30
+  	更新：2023-07-29
 </a>
         
       </header>
@@ -2064,12 +2213,9 @@ var _hmt = _hmt || [];
       
         <p>Razor 视图中文乱码，需注意3点内容</p>
 <ol>
-<li><p>Web.config 中设置 UTF-8  </p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">	...</span><br><span class="line">  <span class="tag">&lt;<span class="name">system.web</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">compilation</span> <span class="attr">debug</span>=<span class="string">"true"</span> <span class="attr">targetFramework</span>=<span class="string">"4.8"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">httpRuntime</span> <span class="attr">targetFramework</span>=<span class="string">"4.8"</span>/&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--中文乱码--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">globalization</span> <span class="attr">fileEncoding</span>=<span class="string">"utf-8"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">system.web</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>HTML网页 meta 标签  </p>
-</li>
-<li>文件编码 </li>
+<li>Web.config 中设置 UTF-8  <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">	...</span><br><span class="line">  <span class="tag">&lt;<span class="name">system.web</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">compilation</span> <span class="attr">debug</span>=<span class="string">&quot;true&quot;</span> <span class="attr">targetFramework</span>=<span class="string">&quot;4.8&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">httpRuntime</span> <span class="attr">targetFramework</span>=<span class="string">&quot;4.8&quot;</span>/&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--中文乱码--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">globalization</span> <span class="attr">fileEncoding</span>=<span class="string">&quot;utf-8&quot;</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">system.web</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span>    </span><br></pre></td></tr></table></figure></li>
+<li>HTML网页 meta 标签  </li>
+<li>文件编码</li>
 </ol>
 
       
@@ -2137,108 +2283,9 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-db/mysql/mysql-left-join" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/01/14/db/mysql/mysql-left-join/">Mysql Left join 中 where 和 on 条件的区别</a>
-    </h1>
-  
-
-        
-        <a href="/2023/01/14/db/mysql/mysql-left-join/" class="archive-article-date">
-  	<time datetime="2023-01-14T16:41:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-14</time>
-  	更新：2025-09-30
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>left join中关于where和on条件的几个知识点：</p>
-<ol>
-<li>多表left join是会生成一张临时表，并返回给用户</li>
-<li>where条件是针对最后生成的这张临时表进行过滤，过滤掉不符合where条件的记录，是真正的不符合就过滤掉。</li>
-<li>on条件是对left join的右表进行条件过滤，但依然返回左表的所有行，右表中没有的补为NULL</li>
-<li>on条件中如果有对左表的限制条件，无论条件真假，依然返回左表的所有行,但是会影响右表的匹配值。也就是说on中左表的限制条件只影响右表的匹配内容，不影响返回行数。</li>
-</ol>
-<p>结论：</p>
-<ol>
-<li>where条件中对左表限制，不能放到on后面</li>
-<li>where条件中对右表限制，放到on后面，会有数据行数差异，比原来行数要多</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/db//" class="article-tag-list-link color3">db</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/01/14/db/mysql/mysql-left-join/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
     </nav>
   
 
@@ -2250,7 +2297,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2025 Niu Yuxian
+    		&copy; 2026 Niu Yuxian
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -2375,15 +2422,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">was</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">area</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">cors</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">was</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2411,10 +2458,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">c#</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Nord</a>
               </li>
              
@@ -2432,6 +2475,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">guqin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">c#</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2503,6 +2550,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">opencv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">原码</a>
               </li>
              
@@ -2523,10 +2574,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sed</a>
               </li>
              
@@ -2544,6 +2591,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2591,10 +2642,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">archlinux</a>
               </li>
              
@@ -2611,6 +2658,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">d365</a>
               </li>
              
@@ -2619,15 +2670,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">deno</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">docker alpine</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">razor</a>
+                <a href="javascript:void(0)" class="js-tag color5">deno</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2636,6 +2683,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ffmpeg</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">razor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2723,14 +2774,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
@@ -2748,6 +2791,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2775,15 +2826,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">regex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">requests</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">rust</a>
+                <a href="javascript:void(0)" class="js-tag color1">regex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2795,11 +2842,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color5">rust</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2808,6 +2855,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mongo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2839,15 +2890,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">rocky</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">

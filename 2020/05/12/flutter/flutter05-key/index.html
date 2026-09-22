@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>flutter中获取子组件Widget调用方法及访问属性 | Niu Yuxian&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="flutter可以通过key来实现。每个Widget都是唯一标识的。此唯一标识对应于可选的Key参数。如果省略，Flutter将为您生成一个。key主要分为四种：GlobalKey，LocalKey，UniqueKey或ObjectKey.">
-<meta name="keywords" content="flutter">
 <meta property="og:type" content="article">
 <meta property="og:title" content="flutter中获取子组件Widget调用方法及访问属性">
 <meta property="og:url" content="http://yoursite.com/2020/05/12/flutter/flutter05-key/index.html">
 <meta property="og:site_name" content="Niu Yuxian&#39;blog">
 <meta property="og:description" content="flutter可以通过key来实现。每个Widget都是唯一标识的。此唯一标识对应于可选的Key参数。如果省略，Flutter将为您生成一个。key主要分为四种：GlobalKey，LocalKey，UniqueKey或ObjectKey.">
-<meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2025-09-30T04:26:37.784Z">
+<meta property="og:locale">
+<meta property="article:published_time" content="2020-05-12T18:31:09.000Z">
+<meta property="article:modified_time" content="2020-05-12T18:31:09.000Z">
+<meta property="article:author" content="Niu Yuxian">
+<meta property="article:tag" content="flutter">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="flutter中获取子组件Widget调用方法及访问属性">
-<meta name="twitter:description" content="flutter可以通过key来实现。每个Widget都是唯一标识的。此唯一标识对应于可选的Key参数。如果省略，Flutter将为您生成一个。key主要分为四种：GlobalKey，LocalKey，UniqueKey或ObjectKey.">
   
     <link rel="alternative" href="/atom.xml" title="Niu Yuxian&#39;blog" type="application/atom+xml">
   
@@ -58,8 +58,8 @@ var _hmt = _hmt || [];
 </script>
 
 
-</head>
-</html>
+<meta name="generator" content="Hexo 8.1.2"></head>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -72,7 +72,7 @@ var _hmt = _hmt || [];
 			<img src="/assets/images/logo.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Niu Yuxian</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
 		
 
@@ -156,7 +156,7 @@ var _hmt = _hmt || [];
 				<img src="/assets/images/logo.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Niu Yuxian</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
 			
 			
@@ -270,7 +270,7 @@ var _hmt = _hmt || [];
         
         <a href="/2020/05/12/flutter/flutter05-key/" class="archive-article-date">
   	<time datetime="2020-05-12T18:31:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-12</time>
-  	更新：2025-09-30
+  	更新：2020-05-12
 </a>
         
       </header>
@@ -278,10 +278,18 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p>flutter可以通过key来实现。每个Widget都是唯一标识的。此唯一标识对应于可选的Key参数。如果省略，Flutter将为您生成一个。key主要分为四种：GlobalKey，LocalKey，UniqueKey或ObjectKey.</p>
-<a id="more"></a>
-<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'package:english_words/english_words.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter/material.dart'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">StartDemo</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="comment">// 定义一个全局key</span></span><br><span class="line">    GlobalKey&lt;_RandomWordsStateState&gt; _childKey =</span><br><span class="line">        <span class="keyword">new</span> GlobalKey&lt;_RandomWordsStateState&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">void</span> _pushSaved() &#123;</span><br><span class="line">      <span class="comment">// 调用子组件方法</span></span><br><span class="line">      _childKey.currentState.hello();</span><br><span class="line"></span><br><span class="line">      Navigator.of(context).push(MaterialPageRoute(builder: (context) &#123;</span><br><span class="line">        <span class="keyword">final</span> titles = _childKey.currentState.saved.map((pair) &#123;</span><br><span class="line">          <span class="keyword">return</span> ListTile(</span><br><span class="line">            title: Text(</span><br><span class="line">              pair.asString,</span><br><span class="line">              style: TextStyle(fontSize: <span class="number">18.0</span>),</span><br><span class="line">            ),</span><br><span class="line">          );</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">final</span> divided =</span><br><span class="line">            ListTile.divideTiles(tiles: titles, context: context).toList();</span><br><span class="line">        <span class="keyword">return</span> Scaffold(</span><br><span class="line">          appBar: AppBar(</span><br><span class="line">            title: Text(<span class="string">'Saved Suggestions'</span>),</span><br><span class="line">          ),</span><br><span class="line">          body: ListView(</span><br><span class="line">            children: divided,</span><br><span class="line">          ),</span><br><span class="line">        );</span><br><span class="line">      &#125;));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> Scaffold(</span><br><span class="line">      appBar: AppBar(</span><br><span class="line">        title: Text(<span class="string">'welcome to flutter'</span>),</span><br><span class="line">        actions: &lt;Widget&gt;[</span><br><span class="line">          IconButton(</span><br><span class="line">            icon: Icon(Icons.list),</span><br><span class="line">            onPressed: _pushSaved,</span><br><span class="line">          )</span><br><span class="line">        ],</span><br><span class="line">      ),</span><br><span class="line">      body: RandomWordsState(key: _childKey),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RandomWordsState</span> <span class="keyword">extends</span> <span class="title">StatefulWidget</span> </span>&#123;</span><br><span class="line">  RandomWordsState(&#123;Key key&#125;) : <span class="keyword">super</span>(key: key);</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  _RandomWordsStateState createState() =&gt; _RandomWordsStateState();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_RandomWordsStateState</span> <span class="keyword">extends</span> <span class="title">State</span>&lt;<span class="title">RandomWordsState</span>&gt; </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> _buildSuggestions();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">void</span> hello() &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'hello flutter.'</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 下划线开头是私有变量</span></span><br><span class="line">  <span class="keyword">final</span> _suggestions = &lt;WordPair&gt;[];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">final</span> saved = <span class="keyword">new</span> <span class="built_in">Set</span>&lt;WordPair&gt;();</span><br><span class="line"></span><br><span class="line">  Widget _buildSuggestions() &#123;</span><br><span class="line">    <span class="keyword">return</span> ListView.builder(</span><br><span class="line">      itemBuilder: (context, i) &#123;</span><br><span class="line">        <span class="comment">// 分割线</span></span><br><span class="line">        <span class="keyword">if</span> (i.isOdd) &#123;</span><br><span class="line">          <span class="keyword">return</span> Divider();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">final</span> index = i ~/ <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (index &gt;= _suggestions.length) &#123;</span><br><span class="line">          _suggestions.addAll(generateWordPairs().take(<span class="number">10</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> _buildRow(_suggestions[index]);</span><br><span class="line">      &#125;,</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">final</span> _biggerFont = <span class="keyword">const</span> TextStyle(fontSize: <span class="number">18.0</span>);</span><br><span class="line"></span><br><span class="line">  Widget _buildRow(WordPair pair) &#123;</span><br><span class="line">    <span class="comment">// 是否已收藏</span></span><br><span class="line">    <span class="keyword">final</span> alreadySaved = saved.contains(pair);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> ListTile(</span><br><span class="line">      title: Text(</span><br><span class="line">        pair.asLowerCase,</span><br><span class="line">        style: _biggerFont,</span><br><span class="line">      ),</span><br><span class="line">      trailing: Icon(alreadySaved ? Icons.favorite : Icons.favorite_border,</span><br><span class="line">          color: alreadySaved ? Colors.red : <span class="keyword">null</span>),</span><br><span class="line">      onTap: () &#123;</span><br><span class="line">        setState(() &#123;</span><br><span class="line">          <span class="keyword">if</span> (alreadySaved) &#123;</span><br><span class="line">            saved.remove(pair);</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            saved.add(pair);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;,</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&#x27;package:english_words/english_words.dart&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;package:flutter/material.dart&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">StartDemo</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="title class_">Widget</span> <span class="title function_">build</span>(<span class="title class_">BuildContext</span> context) &#123;</span><br><span class="line">    <span class="comment">// 定义一个全局key</span></span><br><span class="line">    <span class="title class_">GlobalKey</span>&lt;<span class="title class_">_RandomWordsStateState</span>&gt; _childKey =</span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">GlobalKey</span>&lt;<span class="title class_">_RandomWordsStateState</span>&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">_pushSaved</span>() &#123;</span><br><span class="line">      <span class="comment">// 调用子组件方法</span></span><br><span class="line">      _childKey.currentState.<span class="title function_">hello</span>();</span><br><span class="line"></span><br><span class="line">      <span class="title class_">Navigator</span>.<span class="title function_">of</span>(context).<span class="title function_">push</span>(<span class="title class_">MaterialPageRoute</span>(builder: (context) &#123;</span><br><span class="line">        <span class="keyword">final</span> titles = _childKey.currentState.saved.<span class="title function_">map</span>((pair) &#123;</span><br><span class="line">          <span class="keyword">return</span> <span class="title class_">ListTile</span>(</span><br><span class="line">            title: <span class="title class_">Text</span>(</span><br><span class="line">              pair.asString,</span><br><span class="line">              style: <span class="title class_">TextStyle</span>(fontSize: <span class="number">18.0</span>),</span><br><span class="line">            ),</span><br><span class="line">          );</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">final</span> divided =</span><br><span class="line">            <span class="title class_">ListTile</span>.<span class="title function_">divideTiles</span>(tiles: titles, context: context).<span class="title function_">toList</span>();</span><br><span class="line">        <span class="keyword">return</span> <span class="title class_">Scaffold</span>(</span><br><span class="line">          appBar: <span class="title class_">AppBar</span>(</span><br><span class="line">            title: <span class="title class_">Text</span>(<span class="string">&#x27;Saved Suggestions&#x27;</span>),</span><br><span class="line">          ),</span><br><span class="line">          body: <span class="title class_">ListView</span>(</span><br><span class="line">            children: divided,</span><br><span class="line">          ),</span><br><span class="line">        );</span><br><span class="line">      &#125;));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="title class_">Scaffold</span>(</span><br><span class="line">      appBar: <span class="title class_">AppBar</span>(</span><br><span class="line">        title: <span class="title class_">Text</span>(<span class="string">&#x27;welcome to flutter&#x27;</span>),</span><br><span class="line">        actions: &lt;<span class="title class_">Widget</span>&gt;[</span><br><span class="line">          <span class="title class_">IconButton</span>(</span><br><span class="line">            icon: <span class="title class_">Icon</span>(<span class="title class_">Icons</span>.list),</span><br><span class="line">            onPressed: _pushSaved,</span><br><span class="line">          )</span><br><span class="line">        ],</span><br><span class="line">      ),</span><br><span class="line">      body: <span class="title class_">RandomWordsState</span>(key: _childKey),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RandomWordsState</span> <span class="keyword">extends</span> <span class="title">StatefulWidget</span> </span>&#123;</span><br><span class="line">  <span class="title class_">RandomWordsState</span>(&#123;<span class="title class_">Key</span> key&#125;) : <span class="title function_">super</span>(key: key);</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="title class_">_RandomWordsStateState</span> <span class="title function_">createState</span>() =&gt; <span class="title class_">_RandomWordsStateState</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_RandomWordsStateState</span> <span class="keyword">extends</span> <span class="title">State</span>&lt;<span class="title">RandomWordsState</span>&gt; </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="title class_">Widget</span> <span class="title function_">build</span>(<span class="title class_">BuildContext</span> context) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">_buildSuggestions</span>();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">void</span> <span class="title function_">hello</span>() &#123;</span><br><span class="line">    <span class="title function_">print</span>(<span class="string">&#x27;hello flutter.&#x27;</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 下划线开头是私有变量</span></span><br><span class="line">  <span class="keyword">final</span> _suggestions = &lt;<span class="title class_">WordPair</span>&gt;[];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">final</span> saved = <span class="keyword">new</span> <span class="title class_">Set</span>&lt;<span class="title class_">WordPair</span>&gt;();</span><br><span class="line"></span><br><span class="line">  <span class="title class_">Widget</span> <span class="title function_">_buildSuggestions</span>() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title class_">ListView</span>.<span class="title function_">builder</span>(</span><br><span class="line">      itemBuilder: (context, i) &#123;</span><br><span class="line">        <span class="comment">// 分割线</span></span><br><span class="line">        <span class="keyword">if</span> (i.isOdd) &#123;</span><br><span class="line">          <span class="keyword">return</span> <span class="title class_">Divider</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">final</span> index = i ~/ <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (index &gt;= _suggestions.length) &#123;</span><br><span class="line">          _suggestions.<span class="title function_">addAll</span>(<span class="title function_">generateWordPairs</span>().<span class="title function_">take</span>(<span class="number">10</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="title function_">_buildRow</span>(_suggestions[index]);</span><br><span class="line">      &#125;,</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">final</span> _biggerFont = <span class="keyword">const</span> <span class="title class_">TextStyle</span>(fontSize: <span class="number">18.0</span>);</span><br><span class="line"></span><br><span class="line">  <span class="title class_">Widget</span> <span class="title function_">_buildRow</span>(<span class="title class_">WordPair</span> pair) &#123;</span><br><span class="line">    <span class="comment">// 是否已收藏</span></span><br><span class="line">    <span class="keyword">final</span> alreadySaved = saved.<span class="title function_">contains</span>(pair);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="title class_">ListTile</span>(</span><br><span class="line">      title: <span class="title class_">Text</span>(</span><br><span class="line">        pair.asLowerCase,</span><br><span class="line">        style: _biggerFont,</span><br><span class="line">      ),</span><br><span class="line">      trailing: <span class="title class_">Icon</span>(alreadySaved ? <span class="title class_">Icons</span>.favorite : <span class="title class_">Icons</span>.favorite_border,</span><br><span class="line">          color: alreadySaved ? <span class="title class_">Colors</span>.red : <span class="keyword">null</span>),</span><br><span class="line">      onTap: () &#123;</span><br><span class="line">        <span class="title function_">setState</span>(() &#123;</span><br><span class="line">          <span class="keyword">if</span> (alreadySaved) &#123;</span><br><span class="line">            saved.<span class="title function_">remove</span>(pair);</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            saved.<span class="title function_">add</span>(pair);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;,</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><blockquote>
-<p><a href="https://www.jianshu.com/p/b16f70dd692c" target="_blank" rel="noopener">https://www.jianshu.com/p/b16f70dd692c</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/b16f70dd692c">https://www.jianshu.com/p/b16f70dd692c</a></p>
 </blockquote>
 
       
@@ -479,7 +487,7 @@ new Valine({
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2025 Niu Yuxian
+    		&copy; 2026 Niu Yuxian
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -604,15 +612,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">was</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">area</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">cors</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">was</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -640,10 +648,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">c#</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Nord</a>
               </li>
              
@@ -661,6 +665,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">guqin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">c#</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -732,6 +740,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">opencv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">原码</a>
               </li>
              
@@ -752,10 +764,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sed</a>
               </li>
              
@@ -773,6 +781,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -820,10 +832,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">archlinux</a>
               </li>
              
@@ -840,6 +848,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">d365</a>
               </li>
              
@@ -848,15 +860,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">deno</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">docker alpine</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">razor</a>
+                <a href="javascript:void(0)" class="js-tag color5">deno</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -865,6 +873,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ffmpeg</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">razor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -952,14 +964,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
@@ -977,6 +981,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1004,15 +1016,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">regex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">requests</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">rust</a>
+                <a href="javascript:void(0)" class="js-tag color1">regex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1024,11 +1032,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color5">rust</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1037,6 +1045,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mongo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1068,15 +1080,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">rocky</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">

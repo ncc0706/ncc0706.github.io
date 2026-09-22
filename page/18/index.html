@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Niu Yuxian&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -12,9 +12,9 @@
 <meta property="og:title" content="Niu Yuxian&#39;blog">
 <meta property="og:url" content="http://yoursite.com/page/18/index.html">
 <meta property="og:site_name" content="Niu Yuxian&#39;blog">
-<meta property="og:locale" content="default">
+<meta property="og:locale">
+<meta property="article:author" content="Niu Yuxian">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Niu Yuxian&#39;blog">
   
     <link rel="alternative" href="/atom.xml" title="Niu Yuxian&#39;blog" type="application/atom+xml">
   
@@ -53,8 +53,8 @@ var _hmt = _hmt || [];
 </script>
 
 
-</head>
-</html>
+<meta name="generator" content="Hexo 8.1.2"></head>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -67,7 +67,7 @@ var _hmt = _hmt || [];
 			<img src="/assets/images/logo.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Niu Yuxian</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
 		
 
@@ -151,7 +151,7 @@ var _hmt = _hmt || [];
 				<img src="/assets/images/logo.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Niu Yuxian</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
 			
 			
@@ -253,6 +253,104 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-sso/keycloak6" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/27/sso/keycloak6/">Docker部署keycloak6.0.0</a>
+    </h1>
+  
+
+        
+        <a href="/2019/06/27/sso/keycloak6/" class="archive-article-date">
+  	<time datetime="2019-06-27T10:55:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-27</time>
+  	更新：2019-06-27
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>Dockerfile</strong></p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> jboss/keycloak:<span class="number">6.0</span>.<span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">USER</span> root</span><br><span class="line"></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> <span class="built_in">ln</span> -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \</span></span><br><span class="line"><span class="language-bash">    &amp;&amp; <span class="built_in">echo</span> <span class="string">&#x27;Asia/Shanghai&#x27;</span> &gt;/etc/timezone</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">USER</span> <span class="number">1000</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 构建本地镜像</span></span><br><span class="line">docker build -t registry.cn-qingdao.aliyuncs.com/goober/keycloak:6.0.0 .</span><br><span class="line"><span class="comment"># 推送到阿里云</span></span><br><span class="line">docker push registry.cn-qingdao.aliyuncs.com/goober/keycloak:6.0.0</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建mysql用户及数据库</span></span><br><span class="line">create database keycloak6;</span><br><span class="line">CREATE USER <span class="string">&#x27;keycloak&#x27;</span>@<span class="string">&#x27;%&#x27;</span> IDENTIFIED BY <span class="string">&#x27;keycloak&#x27;</span>;</span><br><span class="line">GRANT all ON keycloak6.* TO <span class="string">&#x27;keycloak&#x27;</span>@<span class="string">&#x27;%&#x27;</span>;</span><br><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启动docker容器</span></span><br><span class="line">docker run -d --restart=always -p 8000:8080 --name keycloak6 \</span><br><span class="line">-e KEYCLOAK_USER=admin \</span><br><span class="line">-e KEYCLOAK_PASSWORD=admin \</span><br><span class="line">-e DB_VENDOR=mysql \</span><br><span class="line">-e DB_USER=keycloak \</span><br><span class="line">-e DB_PASSWORD=keycloak \</span><br><span class="line">-e DB_DATABASE=keycloak6 \</span><br><span class="line">-e DB_ADDR=192.168.18.79 \</span><br><span class="line">-e DB_PORT=33306 \</span><br><span class="line">-e JDBC_PARAMS=<span class="string">&#x27;connectTimeout=3000&#x27;</span> \</span><br><span class="line">registry.cn-qingdao.aliyuncs.com/goober/keycloak:6.0.0</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 访问宿主机8000端口服务</span><br><span class="line">http://192.168.18.88:8000</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">keycloak</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/sso//" class="article-tag-list-link color4">sso</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/06/27/sso/keycloak6/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-ruby-http" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -267,7 +365,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/06/23/ruby-http/" class="archive-article-date">
   	<time datetime="2019-06-23T15:24:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-23</time>
-  	更新：2025-09-30
+  	更新：2019-06-23
 </a>
         
       </header>
@@ -275,9 +373,10 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="Ruby-发送HTTP请求"><a href="#Ruby-发送HTTP请求" class="headerlink" title="Ruby 发送HTTP请求"></a>Ruby 发送HTTP请求</h2><p><strong>GET</strong></p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">require</span> <span class="string">'net/http'</span></span><br><span class="line"></span><br><span class="line">puts URI(<span class="string">'https://www.mgtv.com'</span>).host</span><br><span class="line">puts URI(<span class="string">'https://www.mgtv.com'</span>).scheme</span><br><span class="line"></span><br><span class="line">puts Net::HTTP.get_response(URI(<span class="string">'https://www.mgtv.com'</span>)).body</span><br><span class="line"></span><br><span class="line">res = Net::HTTP.get_response(URI(<span class="string">'https://www.mgtv.com'</span>))</span><br><span class="line">puts res.code</span><br><span class="line">puts res.message</span><br><span class="line">puts res.body</span><br></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">require</span> <span class="string">&#x27;net/http&#x27;</span></span><br><span class="line"></span><br><span class="line">puts <span class="variable constant_">URI</span>(<span class="string">&#x27;https://www.mgtv.com&#x27;</span>).host</span><br><span class="line">puts <span class="variable constant_">URI</span>(<span class="string">&#x27;https://www.mgtv.com&#x27;</span>).scheme</span><br><span class="line"></span><br><span class="line">puts <span class="title class_">Net</span>::<span class="variable constant_">HTTP</span>.get_response(<span class="variable constant_">URI</span>(<span class="string">&#x27;https://www.mgtv.com&#x27;</span>)).body</span><br><span class="line"></span><br><span class="line">res = <span class="title class_">Net</span>::<span class="variable constant_">HTTP</span>.get_response(<span class="variable constant_">URI</span>(<span class="string">&#x27;https://www.mgtv.com&#x27;</span>))</span><br><span class="line">puts res.code</span><br><span class="line">puts res.message</span><br><span class="line">puts res.body</span><br></pre></td></tr></table></figure>
+
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><blockquote>
-<p><a href="https://docs.ruby-lang.org/en/2.6.0/Net/HTTP.html" target="_blank" rel="noopener">https://docs.ruby-lang.org/en/2.6.0/Net/HTTP.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.ruby-lang.org/en/2.6.0/Net/HTTP.html">https://docs.ruby-lang.org/en/2.6.0/Net/HTTP.html</a></p>
 </blockquote>
 
       
@@ -348,7 +447,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/06/17/ckplayer-cors/" class="archive-article-date">
   	<time datetime="2019-06-17T17:50:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-17</time>
-  	更新：2025-09-30
+  	更新：2019-06-17
 </a>
         
       </header>
@@ -356,7 +455,8 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p>ckpalyer播放优酷视频时，提示跨域，这里暂时使用nginx解决</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">upstream vip-parse &#123;</span><br><span class="line">    server 127.0.0.1:1337;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  y.me;</span><br><span class="line">    location / &#123;</span><br><span class="line"> 		proxy_pass http://vip-parse;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    #优酷视频</span><br><span class="line">    # http://y.me/youku/playlist/m3u8?vid=XNDIyNjgyMzAwOA&amp;type=mp4hd2v3&amp;ups_client_netip=7bab3602&amp;utid=YuTEE%2BJjUwMCAXxMObYVb8Eg&amp;ccode=0502&amp;psid=667ddf311a29de1942845a5d86cef583&amp;ups_userid=1705001125&amp;ups_ytid=1705001125&amp;duration=5067&amp;expire=18000&amp;drm_type=1&amp;drm_device=7&amp;ups_ts=1560749774&amp;onOff=0&amp;encr=0&amp;ups_key=874ab631f75bbe21beb8e9f0eae0efa4</span><br><span class="line">    </span><br><span class="line">    location ^~ /youku/playlist/m3u8 &#123;</span><br><span class="line">    	add_header &apos;Access-Control-Allow-Origin&apos; &apos;*&apos;;</span><br><span class="line">        add_header &apos;Access-Control-Allow-Credentials&apos; &apos;true&apos;;</span><br><span class="line">    	proxy_set_header host &apos;https://v.youku.com/&apos;;</span><br><span class="line">        proxy_set_header referer &apos;https://v.youku.com/&apos;;</span><br><span class="line">        proxy_pass http://pl-ali.youku.com/playlist/m3u8;</span><br><span class="line">    &#125;     </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">upstream vip-parse &#123;</span><br><span class="line">    server 127.0.0.1:1337;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  y.me;</span><br><span class="line">    location / &#123;</span><br><span class="line"> 		proxy_pass http://vip-parse;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    #优酷视频</span><br><span class="line">    # http://y.me/youku/playlist/m3u8?vid=XNDIyNjgyMzAwOA&amp;type=mp4hd2v3&amp;ups_client_netip=7bab3602&amp;utid=YuTEE%2BJjUwMCAXxMObYVb8Eg&amp;ccode=0502&amp;psid=667ddf311a29de1942845a5d86cef583&amp;ups_userid=1705001125&amp;ups_ytid=1705001125&amp;duration=5067&amp;expire=18000&amp;drm_type=1&amp;drm_device=7&amp;ups_ts=1560749774&amp;onOff=0&amp;encr=0&amp;ups_key=874ab631f75bbe21beb8e9f0eae0efa4</span><br><span class="line">    </span><br><span class="line">    location ^~ /youku/playlist/m3u8 &#123;</span><br><span class="line">    	add_header &#x27;Access-Control-Allow-Origin&#x27; &#x27;*&#x27;;</span><br><span class="line">        add_header &#x27;Access-Control-Allow-Credentials&#x27; &#x27;true&#x27;;</span><br><span class="line">    	proxy_set_header host &#x27;https://v.youku.com/&#x27;;</span><br><span class="line">        proxy_set_header referer &#x27;https://v.youku.com/&#x27;;</span><br><span class="line">        proxy_pass http://pl-ali.youku.com/playlist/m3u8;</span><br><span class="line">    &#125;     </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -426,7 +526,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/06/04/regex/mobile/" class="archive-article-date">
   	<time datetime="2019-06-04T16:02:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-04</time>
-  	更新：2025-09-30
+  	更新：2019-06-04
 </a>
         
       </header>
@@ -436,13 +536,16 @@ var _hmt = _hmt || [];
         <p>移动号段：<br>134 135 136 137 138 139 144 147 148 150 151 152 157 158 159 172 178 182 183 184 187 188 198</p>
 <p>联通号段：<br>130 131 132 145 146 155 156 166 171 175 176 185 186</p>
 <p>电信号段：<br>133 141 149 153 170 173 174 177 179 180 181 189 199</p>
-<p><strong>移动号码验证</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isYdmobile</span>(<span class="params">s</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> yd = <span class="regexp">/1(3[4-9]|4[478]|5[012789]|7[28]|8[23478]|9[8])\d&#123;8&#125;/</span>; <span class="comment">//验证规则</span></span><br><span class="line">    <span class="keyword">var</span> flag = yd.test(s); <span class="comment">//true</span></span><br><span class="line">    <span class="keyword">return</span> flag;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>移动号码验证</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">isYdmobile</span>(<span class="params">s</span>)&#123;</span><br><span class="line">	<span class="keyword">var</span> yd = <span class="regexp">/1(3[4-9]|4[478]|5[012789]|7[28]|8[23478]|9[8])\d&#123;8&#125;/</span>; <span class="comment">//验证规则</span></span><br><span class="line">    <span class="keyword">var</span> flag = yd.<span class="title function_">test</span>(s); <span class="comment">//true</span></span><br><span class="line">    <span class="keyword">return</span> flag;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>联通号码验证</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isLtmobile</span>(<span class="params">s</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> lt = <span class="regexp">/1(3[0-2]|4[56]|5[56]|6[6]|7[156]|8[56])\d&#123;8&#125;/</span>; <span class="comment">//验证规则</span></span><br><span class="line">    <span class="keyword">var</span> flag = lt.test(s); <span class="comment">//true</span></span><br><span class="line">    <span class="keyword">return</span> flag;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">isLtmobile</span>(<span class="params">s</span>)&#123;</span><br><span class="line">	<span class="keyword">var</span> lt = <span class="regexp">/1(3[0-2]|4[56]|5[56]|6[6]|7[156]|8[56])\d&#123;8&#125;/</span>; <span class="comment">//验证规则</span></span><br><span class="line">    <span class="keyword">var</span> flag = lt.<span class="title function_">test</span>(s); <span class="comment">//true</span></span><br><span class="line">    <span class="keyword">return</span> flag;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p><strong>电信号码验证</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isDxmobile</span>(<span class="params">s</span>)</span>&#123;</span><br><span class="line"> <span class="keyword">var</span> dx = <span class="regexp">/1(3[3]|4[19]|5[3]|7[03479]|8[019]|9[9])\d&#123;8&#125;/</span>; <span class="comment">//验证规则</span></span><br><span class="line"> <span class="keyword">var</span> flag = dx.test(s); <span class="comment">//true</span></span><br><span class="line"> <span class="keyword">return</span> flag;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">isDxmobile</span>(<span class="params">s</span>)&#123;</span><br><span class="line"> <span class="keyword">var</span> dx = <span class="regexp">/1(3[3]|4[19]|5[3]|7[03479]|8[019]|9[9])\d&#123;8&#125;/</span>; <span class="comment">//验证规则</span></span><br><span class="line"> <span class="keyword">var</span> flag = dx.<span class="title function_">test</span>(s); <span class="comment">//true</span></span><br><span class="line"> <span class="keyword">return</span> flag;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
-<p><a href="https://blog.csdn.net/qq_43485006/article/details/88224335" target="_blank" rel="noopener">https://blog.csdn.net/qq_43485006/article/details/88224335</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43485006/article/details/88224335">https://blog.csdn.net/qq_43485006/article/details/88224335</a></p>
 </blockquote>
 
       
@@ -528,17 +631,19 @@ var _hmt = _hmt || [];
         
         <a href="/2019/06/04/java/spring-boot/spring-boot-email-163/" class="archive-article-date">
   	<time datetime="2019-06-04T09:43:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-04</time>
-  	更新：2025-09-30
+  	更新：2019-06-04
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">org.springframework.mail.MailSendException: Failed messages: com.sun.mail.smtp.SMTPSendFailedException: <span class="number">554</span> DT:SPM <span class="number">163</span> smtp12,EMCowAAnARb0yvVczOMAAA--.<span class="number">171</span>S3 <span class="number">1559612148</span>,please see http:<span class="comment">//mail.163.com/help/help_spam_16.htm?ip=122.7.60.246&amp;hostid=smtp12&amp;time=1559612148</span></span><br><span class="line"></span><br><span class="line">	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:<span class="number">490</span>) ~[spring-context-support-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:<span class="number">322</span>) ~[spring-context-support-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:<span class="number">311</span>) ~[spring-context-support-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at com.maricon.service.MailServiceImpl.sendSimpleMail(MailServiceImpl.java:<span class="number">34</span>) ~[classes/:na]</span><br><span class="line">	at com.maricon.endpoint.EmailEndpoint.sendSimpleMail(EmailEndpoint.java:<span class="number">38</span>) ~[classes/:na]</span><br><span class="line">	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:<span class="number">1.8</span><span class="number">.0_181</span>]</span><br><span class="line">	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:<span class="number">62</span>) ~[na:<span class="number">1.8</span><span class="number">.0_181</span>]</span><br><span class="line">	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:<span class="number">43</span>) ~[na:<span class="number">1.8</span><span class="number">.0_181</span>]</span><br><span class="line">	at java.lang.reflect.Method.invoke(Method.java:<span class="number">498</span>) ~[na:<span class="number">1.8</span><span class="number">.0_181</span>]</span><br><span class="line">	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:<span class="number">190</span>) ~[spring-web-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:<span class="number">138</span>) ~[spring-web-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:<span class="number">104</span>) ~[spring-webmvc-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:<span class="number">892</span>) ~[spring-webmvc-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:<span class="number">797</span>) ~[spring-webmvc-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:<span class="number">87</span>) ~[spring-webmvc-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:<span class="number">1039</span>) ~[spring-webmvc-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:<span class="number">942</span>) ~[spring-webmvc-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:<span class="number">1005</span>) ~[spring-webmvc-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:<span class="number">897</span>) ~[spring-webmvc-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at javax.servlet.http.HttpServlet.service(HttpServlet.java:<span class="number">634</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:<span class="number">882</span>) ~[spring-webmvc-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at javax.servlet.http.HttpServlet.service(HttpServlet.java:<span class="number">741</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:<span class="number">231</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:<span class="number">166</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:<span class="number">53</span>) ~[tomcat-embed-websocket-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:<span class="number">193</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:<span class="number">166</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:<span class="number">99</span>) ~[spring-web-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:<span class="number">107</span>) ~[spring-web-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:<span class="number">193</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:<span class="number">166</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:<span class="number">92</span>) ~[spring-web-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:<span class="number">107</span>) ~[spring-web-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:<span class="number">193</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:<span class="number">166</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:<span class="number">93</span>) ~[spring-web-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:<span class="number">107</span>) ~[spring-web-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:<span class="number">193</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:<span class="number">166</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:<span class="number">200</span>) ~[spring-web-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:<span class="number">107</span>) ~[spring-web-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:<span class="number">193</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:<span class="number">166</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:<span class="number">200</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:<span class="number">96</span>) [tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:<span class="number">490</span>) [tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:<span class="number">139</span>) [tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:<span class="number">92</span>) [tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:<span class="number">74</span>) [tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:<span class="number">343</span>) [tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:<span class="number">408</span>) [tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:<span class="number">66</span>) [tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:<span class="number">836</span>) [tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:<span class="number">1747</span>) [tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:<span class="number">49</span>) [tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:<span class="number">1149</span>) [na:<span class="number">1.8</span><span class="number">.0_181</span>]</span><br><span class="line">	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:<span class="number">624</span>) [na:<span class="number">1.8</span><span class="number">.0_181</span>]</span><br><span class="line">	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:<span class="number">61</span>) [tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at java.lang.Thread.run(Thread.java:<span class="number">748</span>) [na:<span class="number">1.8</span><span class="number">.0_181</span>]</span><br></pre></td></tr></table></figure>
+        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">org.springframework.mail.MailSendException: Failed messages: com.sun.mail.smtp.SMTPSendFailedException: <span class="number">554</span> DT:SPM <span class="number">163</span> smtp12,EMCowAAnARb0yvVczOMAAA--.171S3 <span class="number">1559612148</span>,please see http:<span class="comment">//mail.163.com/help/help_spam_16.htm?ip=122.7.60.246&amp;hostid=smtp12&amp;time=1559612148</span></span><br><span class="line"></span><br><span class="line">	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:<span class="number">490</span>) ~[spring-context-support-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:<span class="number">322</span>) ~[spring-context-support-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:<span class="number">311</span>) ~[spring-context-support-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at com.maricon.service.MailServiceImpl.sendSimpleMail(MailServiceImpl.java:<span class="number">34</span>) ~[classes/:na]</span><br><span class="line">	at com.maricon.endpoint.EmailEndpoint.sendSimpleMail(EmailEndpoint.java:<span class="number">38</span>) ~[classes/:na]</span><br><span class="line">	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:<span class="number">1.8</span><span class="number">.0_181</span>]</span><br><span class="line">	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:<span class="number">62</span>) ~[na:<span class="number">1.8</span><span class="number">.0_181</span>]</span><br><span class="line">	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:<span class="number">43</span>) ~[na:<span class="number">1.8</span><span class="number">.0_181</span>]</span><br><span class="line">	at java.lang.reflect.Method.invoke(Method.java:<span class="number">498</span>) ~[na:<span class="number">1.8</span><span class="number">.0_181</span>]</span><br><span class="line">	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:<span class="number">190</span>) ~[spring-web-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:<span class="number">138</span>) ~[spring-web-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:<span class="number">104</span>) ~[spring-webmvc-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:<span class="number">892</span>) ~[spring-webmvc-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:<span class="number">797</span>) ~[spring-webmvc-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:<span class="number">87</span>) ~[spring-webmvc-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:<span class="number">1039</span>) ~[spring-webmvc-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:<span class="number">942</span>) ~[spring-webmvc-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:<span class="number">1005</span>) ~[spring-webmvc-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:<span class="number">897</span>) ~[spring-webmvc-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at javax.servlet.http.HttpServlet.service(HttpServlet.java:<span class="number">634</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:<span class="number">882</span>) ~[spring-webmvc-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at javax.servlet.http.HttpServlet.service(HttpServlet.java:<span class="number">741</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:<span class="number">231</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:<span class="number">166</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:<span class="number">53</span>) ~[tomcat-embed-websocket-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:<span class="number">193</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:<span class="number">166</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:<span class="number">99</span>) ~[spring-web-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:<span class="number">107</span>) ~[spring-web-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:<span class="number">193</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:<span class="number">166</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:<span class="number">92</span>) ~[spring-web-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:<span class="number">107</span>) ~[spring-web-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:<span class="number">193</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:<span class="number">166</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:<span class="number">93</span>) ~[spring-web-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:<span class="number">107</span>) ~[spring-web-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:<span class="number">193</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:<span class="number">166</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:<span class="number">200</span>) ~[spring-web-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:<span class="number">107</span>) ~[spring-web-<span class="number">5.1</span><span class="number">.7</span>.RELEASE.jar:<span class="number">5.1</span><span class="number">.7</span>.RELEASE]</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:<span class="number">193</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:<span class="number">166</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:<span class="number">200</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:<span class="number">96</span>) [tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:<span class="number">490</span>) [tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:<span class="number">139</span>) [tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:<span class="number">92</span>) [tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:<span class="number">74</span>) [tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:<span class="number">343</span>) [tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:<span class="number">408</span>) [tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:<span class="number">66</span>) [tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:<span class="number">836</span>) [tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:<span class="number">1747</span>) [tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:<span class="number">49</span>) [tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:<span class="number">1149</span>) [na:<span class="number">1.8</span><span class="number">.0_181</span>]</span><br><span class="line">	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:<span class="number">624</span>) [na:<span class="number">1.8</span><span class="number">.0_181</span>]</span><br><span class="line">	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:<span class="number">61</span>) [tomcat-embed-core-<span class="number">9.0</span><span class="number">.19</span>.jar:<span class="number">9.0</span><span class="number">.19</span>]</span><br><span class="line">	at java.lang.Thread.run(Thread.java:<span class="number">748</span>) [na:<span class="number">1.8</span><span class="number">.0_181</span>]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p>出现上面的错误，官方解析<code>发送的邮件内容包含了未被许可的信息，或被系统识别为垃圾邮件。请检查是否有用户发送病毒或者垃圾邮件；</code>,查阅了很多资料，经过验证是授权码的问题,当前申请的授权码不能使用</p>
 <p>还有一种方式就是抄送发送者一份。。。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">javax.mail.AuthenticationFailedException: <span class="number">535</span> Error: authentication failed</span><br></pre></td></tr></table></figure>
+
 <p>上面的错误是密码错误的原因，163邮箱需要注意使用授权码，好像申请后需要第二天才可以使用</p>
 
       
@@ -620,7 +725,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/05/28/haproxy/" class="archive-article-date">
   	<time datetime="2019-05-28T17:50:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-28</time>
-  	更新：2025-09-30
+  	更新：2019-05-28
 </a>
         
       </header>
@@ -628,6 +733,7 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/haproxy/haproxy.cfg</span><br><span class="line">service haproxy restart</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -697,15 +803,17 @@ var _hmt = _hmt || [];
         
         <a href="/2019/05/28/docker/docker-run-s/" class="archive-article-date">
   	<time datetime="2019-05-28T17:39:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-28</time>
-  	更新：2025-09-30
+  	更新：2019-05-28
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --restart unless-stopped --name ss -p 6443:6443 -p 6500:6500/udp mritd/shadowsocks -m "ss-server" -s "-s 0.0.0.0 -p 6443 -m chacha20 -k test123 --fast-open" -x -e "kcpserver" -k "-t 127.0.0.1:6443 -l :6500 -mode fast2"</span><br><span class="line"></span><br><span class="line">firewall-cmd --zone=public --add-port=6443/tcp --permanent</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
-<h2 id="arukas"><a href="#arukas" class="headerlink" title="arukas"></a>arukas</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">image: mritd/shadowsocks:3.2.3-20190123</span><br><span class="line">port: 6443</span><br><span class="line"></span><br><span class="line">ENV:</span><br><span class="line">SS_CONFIG = -s 0.0.0.0 -p 6443 -m chacha20 -k test123 --fast-open</span><br></pre></td></tr></table></figure>
+        <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --restart unless-stopped --name ss -p 6443:6443 -p 6500:6500/udp mritd/shadowsocks -m &quot;ss-server&quot; -s &quot;-s 0.0.0.0 -p 6443 -m chacha20 -k test123 --fast-open&quot; -x -e &quot;kcpserver&quot; -k &quot;-t 127.0.0.1:6443 -l :6500 -mode fast2&quot;</span><br><span class="line"></span><br><span class="line">firewall-cmd --zone=public --add-port=6443/tcp --permanent</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+
+<h2 id="arukas"><a href="#arukas" class="headerlink" title="arukas"></a>arukas</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">image: mritd/shadowsocks:3.2.3-20190123</span><br><span class="line">port: 6443</span><br><span class="line"></span><br><span class="line">ENV:</span><br><span class="line">SS_CONFIG = -s 0.0.0.0 -p 6443 -m chacha20 -k test123 --fast-open</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -775,7 +883,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/05/22/wechat/wechat-notify-response-data/" class="archive-article-date">
   	<time datetime="2019-05-22T22:07:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-  	更新：2025-09-30
+  	更新：2019-05-22
 </a>
         
       </header>
@@ -783,6 +891,7 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">xml</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">appid</span>&gt;</span>&lt;![CDATA[wxcf7334fe4dfad3a6]]&gt;<span class="tag">&lt;/<span class="name">appid</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">bank_type</span>&gt;</span>&lt;![CDATA[CFT]]&gt;<span class="tag">&lt;/<span class="name">bank_type</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">cash_fee</span>&gt;</span>&lt;![CDATA[1]]&gt;<span class="tag">&lt;/<span class="name">cash_fee</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">fee_type</span>&gt;</span>&lt;![CDATA[CNY]]&gt;<span class="tag">&lt;/<span class="name">fee_type</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">is_subscribe</span>&gt;</span>&lt;![CDATA[N]]&gt;<span class="tag">&lt;/<span class="name">is_subscribe</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">mch_id</span>&gt;</span>&lt;![CDATA[1498818762]]&gt;<span class="tag">&lt;/<span class="name">mch_id</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">nonce_str</span>&gt;</span>&lt;![CDATA[8bc8d3a0e7e14006a3034c47bf2463bb]]&gt;<span class="tag">&lt;/<span class="name">nonce_str</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">openid</span>&gt;</span>&lt;![CDATA[oxYQl0u5oeE89XHRiSo1p6fmAKSE]]&gt;<span class="tag">&lt;/<span class="name">openid</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">out_trade_no</span>&gt;</span>&lt;![CDATA[201903273306376000000768052228]]&gt;<span class="tag">&lt;/<span class="name">out_trade_no</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">result_code</span>&gt;</span>&lt;![CDATA[SUCCESS]]&gt;<span class="tag">&lt;/<span class="name">result_code</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">return_code</span>&gt;</span>&lt;![CDATA[SUCCESS]]&gt;<span class="tag">&lt;/<span class="name">return_code</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">sign</span>&gt;</span>&lt;![CDATA[57B2DF15528D27BFB55CE0B2EFE3B6C9]]&gt;<span class="tag">&lt;/<span class="name">sign</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">time_end</span>&gt;</span>&lt;![CDATA[20190327094450]]&gt;<span class="tag">&lt;/<span class="name">time_end</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">total_fee</span>&gt;</span>1<span class="tag">&lt;/<span class="name">total_fee</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">trade_type</span>&gt;</span>&lt;![CDATA[MWEB]]&gt;<span class="tag">&lt;/<span class="name">trade_type</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">transaction_id</span>&gt;</span>&lt;![CDATA[4200000305201903279277371199]]&gt;<span class="tag">&lt;/<span class="name">transaction_id</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">xml</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -852,14 +961,15 @@ var _hmt = _hmt || [];
         
         <a href="/2019/05/22/java/UriComponentsBuilder/" class="archive-article-date">
   	<time datetime="2019-05-22T22:04:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-  	更新：2025-09-30
+  	更新：2019-05-22
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> io.arukas;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.web.util.UriComponentsBuilder;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Created by IntelliJ IDEA. &lt;br/&gt;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: 2019/3/11 11:48 &lt;br/&gt;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Email</span>: ncc0706@gmail.com &lt;br/&gt;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UriComponentsBuilderSample</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String url = <span class="string">"https://test.com/solarSystem/planets/&#123;planet&#125;/moons/&#123;moon&#125;"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// URI (URL) parameters</span></span><br><span class="line">        Map&lt;String, String&gt; uriParams = <span class="keyword">new</span> HashMap&lt;String, String&gt;();</span><br><span class="line">        uriParams.put(<span class="string">"planet"</span>, <span class="string">"Mars"</span>);</span><br><span class="line">        uriParams.put(<span class="string">"moon"</span>, <span class="string">"Phobos"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Query parameters</span></span><br><span class="line">        org.springframework.web.util.UriComponentsBuilder builder = org.springframework.web.util.UriComponentsBuilder.fromHttpUrl(url)</span><br><span class="line"><span class="comment">//        UriComponentsBuilderSample builder = UriComponentsBuilderSample.fromUriString(url);</span></span><br><span class="line">                <span class="comment">// Add query parameter</span></span><br><span class="line">                .queryParam(<span class="string">"firstName"</span>, <span class="string">"Mark"</span>)</span><br><span class="line">                .queryParam(<span class="string">"lastName"</span>, <span class="string">"Watney"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(builder.buildAndExpand(uriParams).toUri());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> io.arukas;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.web.util.UriComponentsBuilder;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Created by IntelliJ IDEA. &lt;br/&gt;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: 2019/3/11 11:48 &lt;br/&gt;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Email</span>: ncc0706@gmail.com &lt;br/&gt;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UriComponentsBuilderSample</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">url</span> <span class="operator">=</span> <span class="string">&quot;https://test.com/solarSystem/planets/&#123;planet&#125;/moons/&#123;moon&#125;&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// URI (URL) parameters</span></span><br><span class="line">        <span class="type">Map</span>&lt;String, String&gt; <span class="variable">uriParams</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;String, String&gt;();</span><br><span class="line">        uriParams.put(<span class="string">&quot;planet&quot;</span>, <span class="string">&quot;Mars&quot;</span>);</span><br><span class="line">        uriParams.put(<span class="string">&quot;moon&quot;</span>, <span class="string">&quot;Phobos&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Query parameters</span></span><br><span class="line">        org.springframework.web.util.<span class="type">UriComponentsBuilder</span> <span class="variable">builder</span> <span class="operator">=</span> org.springframework.web.util.UriComponentsBuilder.fromHttpUrl(url)</span><br><span class="line"><span class="comment">//        UriComponentsBuilderSample builder = UriComponentsBuilderSample.fromUriString(url);</span></span><br><span class="line">                <span class="comment">// Add query parameter</span></span><br><span class="line">                .queryParam(<span class="string">&quot;firstName&quot;</span>, <span class="string">&quot;Mark&quot;</span>)</span><br><span class="line">                .queryParam(<span class="string">&quot;lastName&quot;</span>, <span class="string">&quot;Watney&quot;</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(builder.buildAndExpand(uriParams).toUri());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -929,14 +1039,15 @@ var _hmt = _hmt || [];
         
         <a href="/2019/05/22/java/encryption-configuration-parameters/" class="archive-article-date">
   	<time datetime="2019-05-22T22:01:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-  	更新：2025-09-30
+  	更新：2019-05-22
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//PBEWithMD5AndDES</span></span><br><span class="line">    BasicTextEncryptor encryptor = <span class="keyword">new</span> BasicTextEncryptor();</span><br><span class="line">    encryptor.setPassword(<span class="string">"J3l9oryQmwYk60H1h28VdzceDqbCZ5sifPAnkOLuSUvKWBTCag47M"</span>);</span><br><span class="line">    String encrypted = encryptor.encrypt(<span class="string">"guojin"</span>);</span><br><span class="line">    System.out.println(encrypted);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//加密工具</span></span><br><span class="line">    StandardPBEStringEncryptor encryptor2 = <span class="keyword">new</span> StandardPBEStringEncryptor();</span><br><span class="line">    <span class="comment">//加密配置</span></span><br><span class="line">    EnvironmentStringPBEConfig config = <span class="keyword">new</span> EnvironmentStringPBEConfig();</span><br><span class="line">    config.setAlgorithm(<span class="string">"PBEWithMD5AndDES"</span>);</span><br><span class="line">    <span class="comment">//自己在用的时候更改此密码</span></span><br><span class="line">    config.setPassword(<span class="string">"apdplat"</span>);</span><br><span class="line">    <span class="comment">//应用配置</span></span><br><span class="line">    encryptor2.setConfig(config);</span><br><span class="line">    String ciphertext = <span class="string">"azL9Cyp9H62r3eUgZ+TESw=="</span>;</span><br><span class="line">    <span class="comment">//解密</span></span><br><span class="line">    String plaintext = encryptor2.decrypt(ciphertext);</span><br><span class="line">    System.out.println(ciphertext + <span class="string">" : "</span> + plaintext);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    <span class="comment">//PBEWithMD5AndDES</span></span><br><span class="line">    <span class="type">BasicTextEncryptor</span> <span class="variable">encryptor</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BasicTextEncryptor</span>();</span><br><span class="line">    encryptor.setPassword(<span class="string">&quot;J3l9oryQmwYk60H1h28VdzceDqbCZ5sifPAnkOLuSUvKWBTCag47M&quot;</span>);</span><br><span class="line">    <span class="type">String</span> <span class="variable">encrypted</span> <span class="operator">=</span> encryptor.encrypt(<span class="string">&quot;guojin&quot;</span>);</span><br><span class="line">    System.out.println(encrypted);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//加密工具</span></span><br><span class="line">    <span class="type">StandardPBEStringEncryptor</span> <span class="variable">encryptor2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StandardPBEStringEncryptor</span>();</span><br><span class="line">    <span class="comment">//加密配置</span></span><br><span class="line">    <span class="type">EnvironmentStringPBEConfig</span> <span class="variable">config</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">EnvironmentStringPBEConfig</span>();</span><br><span class="line">    config.setAlgorithm(<span class="string">&quot;PBEWithMD5AndDES&quot;</span>);</span><br><span class="line">    <span class="comment">//自己在用的时候更改此密码</span></span><br><span class="line">    config.setPassword(<span class="string">&quot;apdplat&quot;</span>);</span><br><span class="line">    <span class="comment">//应用配置</span></span><br><span class="line">    encryptor2.setConfig(config);</span><br><span class="line">    <span class="type">String</span> <span class="variable">ciphertext</span> <span class="operator">=</span> <span class="string">&quot;azL9Cyp9H62r3eUgZ+TESw==&quot;</span>;</span><br><span class="line">    <span class="comment">//解密</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">plaintext</span> <span class="operator">=</span> encryptor2.decrypt(ciphertext);</span><br><span class="line">    System.out.println(ciphertext + <span class="string">&quot; : &quot;</span> + plaintext);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -1003,86 +1114,9 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-tools/wget-download-site" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/21/tools/wget-download-site/">快速扒站</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/21/tools/wget-download-site/" class="archive-article-date">
-  	<time datetime="2019-05-21T20:48:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-21</time>
-  	更新：2025-09-30
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -r -p -np -k https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/html/ltr/vertical-modern-menu-template/index.html</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">wget</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/21/tools/wget-download-site/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/17/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/19/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/17/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="extend next" rel="next" href="/page/19/">Next &raquo;</a>
     </nav>
   
 
@@ -1094,7 +1128,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2025 Niu Yuxian
+    		&copy; 2026 Niu Yuxian
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -1219,15 +1253,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">was</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">area</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">cors</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">was</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1255,10 +1289,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">c#</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Nord</a>
               </li>
              
@@ -1276,6 +1306,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">guqin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">c#</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1347,6 +1381,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">opencv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">原码</a>
               </li>
              
@@ -1367,10 +1405,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sed</a>
               </li>
              
@@ -1388,6 +1422,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1435,10 +1473,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">archlinux</a>
               </li>
              
@@ -1455,6 +1489,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">d365</a>
               </li>
              
@@ -1463,15 +1501,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">deno</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">docker alpine</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">razor</a>
+                <a href="javascript:void(0)" class="js-tag color5">deno</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1480,6 +1514,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ffmpeg</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">razor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1567,14 +1605,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
@@ -1592,6 +1622,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1619,15 +1657,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">regex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">requests</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">rust</a>
+                <a href="javascript:void(0)" class="js-tag color1">regex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1639,11 +1673,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color5">rust</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1652,6 +1686,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mongo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1683,15 +1721,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">rocky</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">

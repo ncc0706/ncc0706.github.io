@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>ArchLinux 安装 | Niu Yuxian&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="开启远程ssh服务12345678910# systemctl enable sshd.service     开机启动# systemctl start sshd.service      立即启动# systemctl restart sshd.service    立即重启开启root远程登录PermitRootLogin yes开启密码认证登录PasswordAuthentication">
-<meta name="keywords" content="archlinux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ArchLinux 安装">
 <meta property="og:url" content="http://yoursite.com/2019/08/28/os/archlinux/archlinux/index.html">
 <meta property="og:site_name" content="Niu Yuxian&#39;blog">
 <meta property="og:description" content="开启远程ssh服务12345678910# systemctl enable sshd.service     开机启动# systemctl start sshd.service      立即启动# systemctl restart sshd.service    立即重启开启root远程登录PermitRootLogin yes开启密码认证登录PasswordAuthentication">
-<meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2025-09-30T04:26:37.789Z">
+<meta property="og:locale">
+<meta property="article:published_time" content="2019-08-28T08:41:34.000Z">
+<meta property="article:modified_time" content="2019-08-28T08:41:34.000Z">
+<meta property="article:author" content="Niu Yuxian">
+<meta property="article:tag" content="archlinux">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ArchLinux 安装">
-<meta name="twitter:description" content="开启远程ssh服务12345678910# systemctl enable sshd.service     开机启动# systemctl start sshd.service      立即启动# systemctl restart sshd.service    立即重启开启root远程登录PermitRootLogin yes开启密码认证登录PasswordAuthentication">
   
     <link rel="alternative" href="/atom.xml" title="Niu Yuxian&#39;blog" type="application/atom+xml">
   
@@ -58,8 +58,8 @@ var _hmt = _hmt || [];
 </script>
 
 
-</head>
-</html>
+<meta name="generator" content="Hexo 8.1.2"></head>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -72,7 +72,7 @@ var _hmt = _hmt || [];
 			<img src="/assets/images/logo.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Niu Yuxian</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
 		
 
@@ -156,7 +156,7 @@ var _hmt = _hmt || [];
 				<img src="/assets/images/logo.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Niu Yuxian</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
 			
 			
@@ -270,41 +270,53 @@ var _hmt = _hmt || [];
         
         <a href="/2019/08/28/os/archlinux/archlinux/" class="archive-article-date">
   	<time datetime="2019-08-28T08:41:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-  	更新：2025-09-30
+  	更新：2019-08-28
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="开启远程ssh服务"><a href="#开启远程ssh服务" class="headerlink" title="开启远程ssh服务"></a>开启远程ssh服务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># systemctl enable sshd.service     开机启动</span><br><span class="line"># systemctl start sshd.service      立即启动</span><br><span class="line"># systemctl restart sshd.service    立即重启</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">开启root远程登录</span><br><span class="line">PermitRootLogin yes</span><br><span class="line"></span><br><span class="line">开启密码认证登录</span><br><span class="line">PasswordAuthentication yes</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h2 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h2><p>lsblk 查看系统分区(fdisk -l)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">NAME  MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT</span><br><span class="line">loop0   7:0    0 489.5M  1 loop /run/archiso/sfs/airootfs</span><br><span class="line">sda     8:0    0    60G  0 disk</span><br><span class="line">sr0    11:0    1   602M  0 rom  /run/archiso/bootmnt</span><br></pre></td></tr></table></figure></p>
+        <h2 id="开启远程ssh服务"><a href="#开启远程ssh服务" class="headerlink" title="开启远程ssh服务"></a>开启远程ssh服务</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># systemctl enable sshd.service     开机启动</span><br><span class="line"># systemctl start sshd.service      立即启动</span><br><span class="line"># systemctl restart sshd.service    立即重启</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">开启root远程登录</span><br><span class="line">PermitRootLogin yes</span><br><span class="line"></span><br><span class="line">开启密码认证登录</span><br><span class="line">PasswordAuthentication yes</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+
+<h2 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h2><p>lsblk 查看系统分区(fdisk -l)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">NAME  MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT</span><br><span class="line">loop0   7:0    0 489.5M  1 loop /run/archiso/sfs/airootfs</span><br><span class="line">sda     8:0    0    60G  0 disk</span><br><span class="line">sr0    11:0    1   602M  0 rom  /run/archiso/bootmnt</span><br></pre></td></tr></table></figure>
+
 <p> 对于一个选定的硬盘，有一些分区是必须要有的：</p>
 <ol>
-<li>一个根分区（挂载在根目录）/</li>
+<li>一个根分区（挂载在根目录）&#x2F;</li>
 <li>如果 UEFI 模式被启用，你还需要一个 EFI 系统分区</li>
 <li>Swap 可以在一个独立的分区上设置，也可以直接建立 交换文件。</li>
 </ol>
 <p>因为我前面设置的是EFI引导，因此需要在此处需分一个EFI分区（EFI分区推荐大小为512MB）。使用cfdisk分区命令后进入分区界面</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Device               Start             End                    Sectors       Size Type</span><br><span class="line">/dev/sda1            2048              1050623                1048576       512M EFI System</span><br><span class="line">/dev/sda2            1050624           121612287              120561664     57.5G Linux filesystem</span><br><span class="line">/dev/sda3            121612288         125829086              4216799       2G Linux swap</span><br></pre></td></tr></table></figure>
-<p><strong>格式化分区</strong><br>分区完成后，需要对分区做格式化处理，由于这里使用了EFI分区，因为EFI分区需要FAT32文件格式（如果是在真机上已安装有Windows的情况下安装Linux成双系统，且以EFI引导系统，则EFI分区不需要再次格式化），所以需要将其格式化为FAT32格式；根分区格式化为ext4格式；设置并开启Swap分区：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkfs.fat -F32 /dev/sda1</span><br><span class="line">mkfs.ext4 /dev/sda2</span><br><span class="line">mkswap /dev/sda3 -L Swap</span><br><span class="line">swapon /dev/sda3</span><br></pre></td></tr></table></figure></p>
-<p><strong>挂载分区</strong><br>格式话完成后，需要将分区挂载到 /mnt ，先挂载根分区（这里是/dev/sda2）；再挂载EFI分区（这里是/dev/sda1），挂载EFI分区时，需要在/mnt上先创建 boot/EFI  目录，然后将EFI分区挂载到/mnt/boot/EFI上；Sawp分区不需要挂载：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/sda2 /mnt</span><br><span class="line"></span><br><span class="line">mkdir -p /mnt/boot/efi</span><br><span class="line">mount /dev/sda1 /mnt/boot/efi</span><br></pre></td></tr></table></figure></p>
-<h2 id="国内源"><a href="#国内源" class="headerlink" title="国内源"></a>国内源</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">echo &apos;## China\nServer = http://mirrors.aliyun.com/archlinux/$repo/os/$arch&apos; &gt; mrlist</span><br><span class="line">grep -A 1 &apos;China&apos; /etc/pacman.d/mirrorlist|grep -v &apos;\-\-&apos; &gt;&gt; mrlist</span><br><span class="line">cat /etc/pacman.d/mirrorlist &gt;&gt; mrlist</span><br><span class="line">cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak</span><br><span class="line">mv mrlist /etc/pacman.d/mirrorlist</span><br></pre></td></tr></table></figure>
-<h2 id="开始安装基本操作系统"><a href="#开始安装基本操作系统" class="headerlink" title="开始安装基本操作系统"></a>开始安装基本操作系统</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">pacstrap -i /mnt base base-devel vim</span><br><span class="line">genfstab -U -p /mnt &gt;&gt; /mnt/etc/fstab</span><br><span class="line">cat /mnt/etc/fstab</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">配置基础系统</span><br><span class="line">切换到新系统</span><br><span class="line">arch-chroot /mnt /bin/bash</span><br><span class="line"></span><br><span class="line">## 本地语言设置</span><br><span class="line">vim /etc/locale.gen</span><br><span class="line">反注释（删掉前面的#） </span><br><span class="line">en_US.UTF-8 UTF-8 </span><br><span class="line">zh_CN.UTF-8 UTF-8 </span><br><span class="line">这两个，退出保存 </span><br><span class="line"></span><br><span class="line">locale-gen</span><br><span class="line"></span><br><span class="line">echo LANG=en_US.UTF-8 &gt; /etc/locale.conf</span><br><span class="line"></span><br><span class="line">ln -sf /usr/share/zoneinfo/Asia/Beijing /etc/localtime</span><br><span class="line"></span><br><span class="line">设置硬件时间</span><br><span class="line">hwclock --systohc --utc</span><br><span class="line"></span><br><span class="line">echo archlinux &gt; /etc/hostname</span><br><span class="line">vim /etc/hosts    # 将主机名填入</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cat /etc/hosts</span><br><span class="line">127.0.0.1 localhost.localdomain localhost &lt;主机名&gt;</span><br><span class="line">::1   localhost.localdomain localhost &lt;主机名&gt;</span><br><span class="line"></span><br><span class="line">systemctl start dhcpcd.service</span><br><span class="line">systemctl enable dhcpcd.service</span><br><span class="line"></span><br><span class="line"># 安装网络工具</span><br><span class="line">pacman -S net-tools，dnsutils，inetutils，iproute2</span><br><span class="line"></span><br><span class="line"># 设置root密码</span><br><span class="line">passwd</span><br><span class="line"></span><br><span class="line"># 安装grub</span><br><span class="line">pacman -S grub efibootmgr</span><br><span class="line">grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB --recheck</span><br><span class="line">grub-mkconfig -o /boot/grub/grub.cfg</span><br><span class="line"></span><br><span class="line">reboot</span><br><span class="line"></span><br><span class="line">安装xorg框架</span><br><span class="line">pacman -S xorg xorg-xinit xorg-server</span><br><span class="line"></span><br><span class="line">显卡驱动</span><br><span class="line">#pacman -S xf86-video-ati      AMD显卡</span><br><span class="line">#pacman -S xf86-video-nouveau  N卡</span><br><span class="line">#pacman -S xf86-video-vesa     通用显卡</span><br><span class="line">pacman -S xf86-video-vmware   vmware虚拟机的显卡</span><br><span class="line"></span><br><span class="line">pacman -S xf86-input-keyboard  图形界面的键盘驱动</span><br><span class="line">pacman -S xf86-input-mouse     鼠标的驱动</span><br><span class="line">## gnome</span><br><span class="line">pacman -S gnome gnome-extra</span><br><span class="line"></span><br><span class="line">登录器</span><br><span class="line">pacman -S gdm</span><br><span class="line">systemctl enable gdm    开机启动</span><br><span class="line"></span><br><span class="line">中文字体</span><br><span class="line">pacman -S ttf-dejavu wqy-zenhei wqy-microhei</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">pacman -S open-vm-tools</span><br><span class="line">systemctl start vmtoolsd</span><br><span class="line">cat /proc/version &gt; /etc/arch-release        ----将版本信息写入 open-vm-tools将读取的文档</span><br></pre></td></tr></table></figure>
-<h2 id="时区-使用北京（默认只提供北京、新疆）"><a href="#时区-使用北京（默认只提供北京、新疆）" class="headerlink" title="时区 使用北京（默认只提供北京、新疆）"></a>时区 使用北京（默认只提供北京、新疆）</h2><p>ln -sf /usr/share/zoneinfo/Asia/Beijing /etc/localtime</p>
-<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>efivar-tester<br>ls /sys/firmware/efi/ #查看是否支持uefi</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Device               Start             End                    Sectors       Size Type</span><br><span class="line">/dev/sda1            2048              1050623                1048576       512M EFI System</span><br><span class="line">/dev/sda2            1050624           121612287              120561664     57.5G Linux filesystem</span><br><span class="line">/dev/sda3            121612288         125829086              4216799       2G Linux swap</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>格式化分区</strong><br>分区完成后，需要对分区做格式化处理，由于这里使用了EFI分区，因为EFI分区需要FAT32文件格式（如果是在真机上已安装有Windows的情况下安装Linux成双系统，且以EFI引导系统，则EFI分区不需要再次格式化），所以需要将其格式化为FAT32格式；根分区格式化为ext4格式；设置并开启Swap分区：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkfs.fat -F32 /dev/sda1</span><br><span class="line">mkfs.ext4 /dev/sda2</span><br><span class="line">mkswap /dev/sda3 -L Swap</span><br><span class="line">swapon /dev/sda3</span><br></pre></td></tr></table></figure>
+<p><strong>挂载分区</strong><br>格式话完成后，需要将分区挂载到 &#x2F;mnt ，先挂载根分区（这里是&#x2F;dev&#x2F;sda2）；再挂载EFI分区（这里是&#x2F;dev&#x2F;sda1），挂载EFI分区时，需要在&#x2F;mnt上先创建 boot&#x2F;EFI  目录，然后将EFI分区挂载到&#x2F;mnt&#x2F;boot&#x2F;EFI上；Sawp分区不需要挂载：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/sda2 /mnt</span><br><span class="line"></span><br><span class="line">mkdir -p /mnt/boot/efi</span><br><span class="line">mount /dev/sda1 /mnt/boot/efi</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="国内源"><a href="#国内源" class="headerlink" title="国内源"></a>国内源</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">echo &#x27;## China\nServer = http://mirrors.aliyun.com/archlinux/$repo/os/$arch&#x27; &gt; mrlist</span><br><span class="line">grep -A 1 &#x27;China&#x27; /etc/pacman.d/mirrorlist|grep -v &#x27;\-\-&#x27; &gt;&gt; mrlist</span><br><span class="line">cat /etc/pacman.d/mirrorlist &gt;&gt; mrlist</span><br><span class="line">cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak</span><br><span class="line">mv mrlist /etc/pacman.d/mirrorlist</span><br></pre></td></tr></table></figure>
+
+<h2 id="开始安装基本操作系统"><a href="#开始安装基本操作系统" class="headerlink" title="开始安装基本操作系统"></a>开始安装基本操作系统</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">pacstrap -i /mnt base base-devel vim</span><br><span class="line">genfstab -U -p /mnt &gt;&gt; /mnt/etc/fstab</span><br><span class="line">cat /mnt/etc/fstab</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">配置基础系统</span><br><span class="line">切换到新系统</span><br><span class="line">arch-chroot /mnt /bin/bash</span><br><span class="line"></span><br><span class="line">## 本地语言设置</span><br><span class="line">vim /etc/locale.gen</span><br><span class="line">反注释（删掉前面的#） </span><br><span class="line">en_US.UTF-8 UTF-8 </span><br><span class="line">zh_CN.UTF-8 UTF-8 </span><br><span class="line">这两个，退出保存 </span><br><span class="line"></span><br><span class="line">locale-gen</span><br><span class="line"></span><br><span class="line">echo LANG=en_US.UTF-8 &gt; /etc/locale.conf</span><br><span class="line"></span><br><span class="line">ln -sf /usr/share/zoneinfo/Asia/Beijing /etc/localtime</span><br><span class="line"></span><br><span class="line">设置硬件时间</span><br><span class="line">hwclock --systohc --utc</span><br><span class="line"></span><br><span class="line">echo archlinux &gt; /etc/hostname</span><br><span class="line">vim /etc/hosts    # 将主机名填入</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cat /etc/hosts</span><br><span class="line">127.0.0.1 localhost.localdomain localhost &lt;主机名&gt;</span><br><span class="line">::1   localhost.localdomain localhost &lt;主机名&gt;</span><br><span class="line"></span><br><span class="line">systemctl start dhcpcd.service</span><br><span class="line">systemctl enable dhcpcd.service</span><br><span class="line"></span><br><span class="line"># 安装网络工具</span><br><span class="line">pacman -S net-tools，dnsutils，inetutils，iproute2</span><br><span class="line"></span><br><span class="line"># 设置root密码</span><br><span class="line">passwd</span><br><span class="line"></span><br><span class="line"># 安装grub</span><br><span class="line">pacman -S grub efibootmgr</span><br><span class="line">grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB --recheck</span><br><span class="line">grub-mkconfig -o /boot/grub/grub.cfg</span><br><span class="line"></span><br><span class="line">reboot</span><br><span class="line"></span><br><span class="line">安装xorg框架</span><br><span class="line">pacman -S xorg xorg-xinit xorg-server</span><br><span class="line"></span><br><span class="line">显卡驱动</span><br><span class="line">#pacman -S xf86-video-ati      AMD显卡</span><br><span class="line">#pacman -S xf86-video-nouveau  N卡</span><br><span class="line">#pacman -S xf86-video-vesa     通用显卡</span><br><span class="line">pacman -S xf86-video-vmware   vmware虚拟机的显卡</span><br><span class="line"></span><br><span class="line">pacman -S xf86-input-keyboard  图形界面的键盘驱动</span><br><span class="line">pacman -S xf86-input-mouse     鼠标的驱动</span><br><span class="line">## gnome</span><br><span class="line">pacman -S gnome gnome-extra</span><br><span class="line"></span><br><span class="line">登录器</span><br><span class="line">pacman -S gdm</span><br><span class="line">systemctl enable gdm    开机启动</span><br><span class="line"></span><br><span class="line">中文字体</span><br><span class="line">pacman -S ttf-dejavu wqy-zenhei wqy-microhei</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">pacman -S open-vm-tools</span><br><span class="line">systemctl start vmtoolsd</span><br><span class="line">cat /proc/version &gt; /etc/arch-release        ----将版本信息写入 open-vm-tools将读取的文档</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="时区-使用北京（默认只提供北京、新疆）"><a href="#时区-使用北京（默认只提供北京、新疆）" class="headerlink" title="时区 使用北京（默认只提供北京、新疆）"></a>时区 使用北京（默认只提供北京、新疆）</h2><p>ln -sf &#x2F;usr&#x2F;share&#x2F;zoneinfo&#x2F;Asia&#x2F;Beijing &#x2F;etc&#x2F;localtime</p>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>efivar-tester<br>ls &#x2F;sys&#x2F;firmware&#x2F;efi&#x2F; #查看是否支持uefi</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>最近换了电脑，以前的老电脑使用的是旧BIOS架构启动，新电脑都变成了新的BIOS架构即UEFI启动（UEFI是新BIOS架构，自从UEFI出来之后，老的BIOS架构便被称为legacy），在安装grub时比之前稍微麻烦了一点</p>
 <p>先简单知道几个必要的名词：</p>
-<p>UEFI: Unified Extensible Firmware Interface，统一可扩展固件界面，提供了启动操作系统的标准环境。<br>ESP： EFI System Partition，EFI分区。<br>GPT： GUID Partition Table，GUID分区表，是UEFI标准的一部分，使用GUID/UUID来标识分区等。<br>在磁盘上安装grub，就是将此磁盘作为启动盘。想使用EFI启动，一定要在这一块磁盘上有EFI的系统分区（EFI System Partition, 即ESP）。因此，找到这个分区就是其中的关键。</p>
-<p>grub-install –target=x86_64-efi –efi-directory=/boot/efi –bootloader-id=GRUB –recheck</p>
-<p><a href="https://blog.csdn.net/u013531940/article/details/79471408" target="_blank" rel="noopener">https://blog.csdn.net/u013531940/article/details/79471408</a><br>注意点<br>开机启动引导项选择 UEFI CD 启动…</p>
-<p>安装完后发现这篇博文介绍的不错…<br><a href="https://blog.csdn.net/qq_20536625/article/details/82014591" target="_blank" rel="noopener">https://blog.csdn.net/qq_20536625/article/details/82014591</a></p>
-<p><a href="https://www.cnblogs.com/GhostGuest/p/9903646.html" target="_blank" rel="noopener">https://www.cnblogs.com/GhostGuest/p/9903646.html</a></p>
-<p><a href="https://www.cnblogs.com/JMLiu/p/10205946.html（解决窗口自适应）" target="_blank" rel="noopener">https://www.cnblogs.com/JMLiu/p/10205946.html（解决窗口自适应）</a></p>
-<p><a href="https://blog.csdn.net/weixin_41570565/article/details/83933927" target="_blank" rel="noopener">https://blog.csdn.net/weixin_41570565/article/details/83933927</a></p>
+<p>UEFI: Unified Extensible Firmware Interface，统一可扩展固件界面，提供了启动操作系统的标准环境。<br>ESP： EFI System Partition，EFI分区。<br>GPT： GUID Partition Table，GUID分区表，是UEFI标准的一部分，使用GUID&#x2F;UUID来标识分区等。<br>在磁盘上安装grub，就是将此磁盘作为启动盘。想使用EFI启动，一定要在这一块磁盘上有EFI的系统分区（EFI System Partition, 即ESP）。因此，找到这个分区就是其中的关键。</p>
+<p>grub-install –target&#x3D;x86_64-efi –efi-directory&#x3D;&#x2F;boot&#x2F;efi –bootloader-id&#x3D;GRUB –recheck</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u013531940/article/details/79471408">https://blog.csdn.net/u013531940/article/details/79471408</a><br>注意点<br>开机启动引导项选择 UEFI CD 启动…</p>
+<p>安装完后发现这篇博文介绍的不错…<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_20536625/article/details/82014591">https://blog.csdn.net/qq_20536625/article/details/82014591</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/GhostGuest/p/9903646.html">https://www.cnblogs.com/GhostGuest/p/9903646.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/JMLiu/p/10205946.html%EF%BC%88%E8%A7%A3%E5%86%B3%E7%AA%97%E5%8F%A3%E8%87%AA%E9%80%82%E5%BA%94%EF%BC%89">https://www.cnblogs.com/JMLiu/p/10205946.html（解决窗口自适应）</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41570565/article/details/83933927">https://blog.csdn.net/weixin_41570565/article/details/83933927</a></p>
 <h2 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h2><p>开机启动dhcp服务<br>systemctl enable dhcpcd</p>
-<h2 id="ssh服务"><a href="#ssh服务" class="headerlink" title="ssh服务"></a>ssh服务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># pacman -S openssh 安装服务</span><br><span class="line"></span><br><span class="line"># systemctl enable sshd.service     开机启动</span><br><span class="line"># systemctl start sshd.service      立即启动</span><br><span class="line"># systemctl restart sshd.service    立即重启</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">开启root远程登录</span><br><span class="line">PermitRootLogin yes</span><br><span class="line"></span><br><span class="line">开启密码认证登录</span><br><span class="line">PasswordAuthentication yes</span><br></pre></td></tr></table></figure>
+<h2 id="ssh服务"><a href="#ssh服务" class="headerlink" title="ssh服务"></a>ssh服务</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># pacman -S openssh 安装服务</span><br><span class="line"></span><br><span class="line"># systemctl enable sshd.service     开机启动</span><br><span class="line"># systemctl start sshd.service      立即启动</span><br><span class="line"># systemctl restart sshd.service    立即重启</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">开启root远程登录</span><br><span class="line">PermitRootLogin yes</span><br><span class="line"></span><br><span class="line">开启密码认证登录</span><br><span class="line">PasswordAuthentication yes</span><br></pre></td></tr></table></figure>
+
+
 <h2 id="图形界面"><a href="#图形界面" class="headerlink" title="图形界面"></a>图形界面</h2><p>pacman -S xorg-server xorg-xinit</p>
 <p>pacman -S xf86-video-vesa</p>
 <p>pacman -S gnome gnome-extra</p>
@@ -315,31 +327,35 @@ var _hmt = _hmt || [];
 <p>不要使用下面的这个软件，应当使用系统软件中的Dash to Dock</p>
 <p>pacman -S docky</p>
 <p>pacman -R docky</p>
-<h2 id="安装yaourt"><a href="#安装yaourt" class="headerlink" title="安装yaourt"></a>安装yaourt</h2><p>最简单安装Yaourt的方式是添加Yaourt源至您的 /etc/pacman.conf:</p>
-<p>vim /etc/pacman.conf</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">#The Chinese Arch Linux communities packages.</span><br><span class="line">SigLevel = Optional TrustAll</span><br><span class="line">Server   = https://mirrors.ustc.edu.cn/archlinuxcn/$arch</span><br></pre></td></tr></table></figure>
+<h2 id="安装yaourt"><a href="#安装yaourt" class="headerlink" title="安装yaourt"></a>安装yaourt</h2><p>最简单安装Yaourt的方式是添加Yaourt源至您的 &#x2F;etc&#x2F;pacman.conf:</p>
+<p>vim &#x2F;etc&#x2F;pacman.conf</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">#The Chinese Arch Linux communities packages.</span><br><span class="line">SigLevel = Optional TrustAll</span><br><span class="line">Server   = https://mirrors.ustc.edu.cn/archlinuxcn/$arch</span><br></pre></td></tr></table></figure>
 <p>pacman -Syu yaourt</p>
 <p>pacman -S gnome-tweak-tool<br>yaourt -S gnome-shell-extension-dash-to-dock</p>
 <h2 id="常用软件"><a href="#常用软件" class="headerlink" title="常用软件"></a>常用软件</h2><p>yaourt -S google-chrome</p>
 <p>该死的</p>
-<p>whereis google-chrome-stable<br>google-chrome-stable: /usr/bin/google-chrome-stable /usr/share/man/man1/google-chrome-stable.1.gz</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vim /usr/bin/google-chrome-stable</span><br><span class="line">添加--no-sandbox</span><br><span class="line"># Launch</span><br><span class="line">exec /opt/google/chrome/google-chrome $CHROME_USER_FLAGS &quot;$@&quot; --no-sandbox</span><br></pre></td></tr></table></figure>
+<p>whereis google-chrome-stable<br>google-chrome-stable: &#x2F;usr&#x2F;bin&#x2F;google-chrome-stable &#x2F;usr&#x2F;share&#x2F;man&#x2F;man1&#x2F;google-chrome-stable.1.gz</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vim /usr/bin/google-chrome-stable</span><br><span class="line">添加--no-sandbox</span><br><span class="line"># Launch</span><br><span class="line">exec /opt/google/chrome/google-chrome $CHROME_USER_FLAGS &quot;$@&quot; --no-sandbox</span><br></pre></td></tr></table></figure>
+
+
+
 <p>pacman -S neofetch</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yaourt -S screenfetch</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yaourt -S screenfetch</span><br></pre></td></tr></table></figure>
+
 <p>pacman -S networkmanager</p>
 <p>同步源</p>
 <p>pacman -Syy</p>
 <p>安装中文字体</p>
 <p>pacman -S wqy-microhei ttf-dejavu</p>
 <h2 id="Vmware"><a href="#Vmware" class="headerlink" title="Vmware"></a>Vmware</h2><p><del>pacman -S open-vm-tools xf86-input-vmmouse xf86-video-vmware</del></p>
-<p><a href="https://wiki.archlinux.org/index.php/VMware/Installing_Arch_as_a_guest_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#VMware_Tools_%E4%B8%8E_Open-VM-Tools_%E6%96%B9%E6%A1%88%E5%AF%B9%E6%AF%94" target="_blank" rel="noopener">https://wiki.archlinux.org/index.php/VMware/Installing_Arch_as_a_guest_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#VMware_Tools_%E4%B8%8E_Open-VM-Tools_%E6%96%B9%E6%A1%88%E5%AF%B9%E6%AF%94</a></p>
+<p><a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/VMware/Installing_Arch_as_a_guest_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#VMware_Tools_%E4%B8%8E_Open-VM-Tools_%E6%96%B9%E6%A1%88%E5%AF%B9%E6%AF%94">https://wiki.archlinux.org/index.php/VMware/Installing_Arch_as_a_guest_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#VMware_Tools_%E4%B8%8E_Open-VM-Tools_%E6%96%B9%E6%A1%88%E5%AF%B9%E6%AF%94</a></p>
 <p>pacman -S xorg-xrandr</p>
-<h2 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h2><p><a href="https://www.mivm.cn/archlinux-vmware/" target="_blank" rel="noopener">https://www.mivm.cn/archlinux-vmware/</a></p>
-<p>tar -zxvf grub2-theme-breeze-5.13.1.tar.gz -C /boot/grub/themes</p>
-<p>mv breeze/ ../</p>
-<p>vim /etc/default/grub</p>
+<h2 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h2><p><a target="_blank" rel="noopener" href="https://www.mivm.cn/archlinux-vmware/">https://www.mivm.cn/archlinux-vmware/</a></p>
+<p>tar -zxvf grub2-theme-breeze-5.13.1.tar.gz -C &#x2F;boot&#x2F;grub&#x2F;themes</p>
+<p>mv breeze&#x2F; ..&#x2F;</p>
+<p>vim &#x2F;etc&#x2F;default&#x2F;grub</p>
 <p>将<code>#GRUB_THEME=&quot;/path/to/gfxtheme&quot;</code>改为<code>GRUB_THEME=&quot;/boot/grub/themes/breeze/theme.txt&quot;</code></p>
-<p>重建 GRUB 配置文件sudo grub-mkconfig -o /boot/grub/grub.cfg</p>
+<p>重建 GRUB 配置文件sudo grub-mkconfig -o &#x2F;boot&#x2F;grub&#x2F;grub.cfg</p>
 <p>重启系统，就可以看到效果啦。</p>
 <h2 id="时间同步"><a href="#时间同步" class="headerlink" title="时间同步"></a>时间同步</h2><p>安装openNTPD：sudo pacman -S openntpd</p>
 <p>重启openNTPD：systemctl restart openntpd</p>
@@ -348,12 +364,20 @@ var _hmt = _hmt || [];
 <p>（1）安装open-vm-tools包，启动vmtoolsd服务</p>
 <p>（2）安装xf86-video-vmware。这个包一定要安装，不知道怎么回事，<strong>官方的指导就是不提这个</strong>，所以很多人安装好了open-vm-tools，服务也启动了，并且可以实现宿主机和虚拟机之间的拖拽和复制粘贴，可就是不能自适应窗口，要逼疯掉。其实原因在于，虚拟机是虚拟的显卡，所以没有显卡的支持，自适应分辨率就无从谈起，只要安装这个xf86-video-vmware，一切问题就迎刃而解了。</p>
 <p>（3）顺便把 xf86-input-vmmouse,libdnet,uriparser，libsigc++，libmspack这几个报也安转了吧，我也没生就是干啥的，但是看安装manjaro的到vmware的时候，它自己安装了这些包，不得不说，manjaro真的是做了好多工作啊，连你的系统安装在虚拟机里面它都能检测到，并帮你安装你要的包，连open-vm-tools都帮你安装好了</p>
-<h2 id="登录壁纸"><a href="#登录壁纸" class="headerlink" title="登录壁纸"></a>登录壁纸</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">curl -L -O http://archibold.io/sh/archibold</span><br><span class="line">chmod +x archibold</span><br><span class="line">mv archibold /usr/bin</span><br><span class="line"></span><br><span class="line">## 指定登录背景</span><br><span class="line">archibold login-background /root/Pictures/01.jpg</span><br></pre></td></tr></table></figure>
-<h2 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">pacman -S git zsh</span><br><span class="line"></span><br><span class="line">sh -c &quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;</span><br><span class="line"></span><br><span class="line">pygmalion</span><br></pre></td></tr></table></figure>
-<h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><h3 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf jdk-8u141-linux-x64.tar.gz -C /opt</span><br><span class="line">ln -s /opt/jdk1.8.0_141 /opt/java8</span><br><span class="line"></span><br><span class="line">vim /etc/profile</span><br><span class="line"></span><br><span class="line">export JAVA_HOME=/opt/java8</span><br><span class="line"></span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/jre/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</span><br><span class="line">export PATH=$PATH:$HOME/bin:$JAVA_HOME/bin:$MVN_HOME/bin:$SCALA_HOME/bin:</span><br></pre></td></tr></table></figure>
-<h3 id="Gradle"><a href="#Gradle" class="headerlink" title="Gradle"></a>Gradle</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">export GRADLE_HOME=/opt/gradle</span><br><span class="line">export PATH=$PATH:$GRADLE_HOME/bin:</span><br><span class="line"></span><br><span class="line">验证gradle</span><br><span class="line">gradle -v</span><br></pre></td></tr></table></figure>
-<h3 id="VSCode"><a href="#VSCode" class="headerlink" title="VSCode"></a>VSCode</h3><p><a href="https://www.cnblogs.com/colourstar/p/7872282.html" target="_blank" rel="noopener">https://www.cnblogs.com/colourstar/p/7872282.html</a></p>
-<h3 id="ffmpeg"><a href="#ffmpeg" class="headerlink" title="ffmpeg"></a>ffmpeg</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S ffmpeg</span><br></pre></td></tr></table></figure>
+<h2 id="登录壁纸"><a href="#登录壁纸" class="headerlink" title="登录壁纸"></a>登录壁纸</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">curl -L -O http://archibold.io/sh/archibold</span><br><span class="line">chmod +x archibold</span><br><span class="line">mv archibold /usr/bin</span><br><span class="line"></span><br><span class="line">## 指定登录背景</span><br><span class="line">archibold login-background /root/Pictures/01.jpg </span><br></pre></td></tr></table></figure>
+
+<h2 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pacman -S git zsh</span><br><span class="line"></span><br><span class="line">sh -c &quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;</span><br><span class="line"></span><br><span class="line">pygmalion</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><h3 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf jdk-8u141-linux-x64.tar.gz -C /opt</span><br><span class="line">ln -s /opt/jdk1.8.0_141 /opt/java8</span><br><span class="line"></span><br><span class="line">vim /etc/profile</span><br><span class="line"></span><br><span class="line">export JAVA_HOME=/opt/java8</span><br><span class="line"></span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/jre/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</span><br><span class="line">export PATH=$PATH:$HOME/bin:$JAVA_HOME/bin:$MVN_HOME/bin:$SCALA_HOME/bin:</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="Gradle"><a href="#Gradle" class="headerlink" title="Gradle"></a>Gradle</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">export GRADLE_HOME=/opt/gradle</span><br><span class="line">export PATH=$PATH:$GRADLE_HOME/bin:</span><br><span class="line"></span><br><span class="line">验证gradle</span><br><span class="line">gradle -v</span><br></pre></td></tr></table></figure>
+
+<h3 id="VSCode"><a href="#VSCode" class="headerlink" title="VSCode"></a>VSCode</h3><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/colourstar/p/7872282.html">https://www.cnblogs.com/colourstar/p/7872282.html</a></p>
+<h3 id="ffmpeg"><a href="#ffmpeg" class="headerlink" title="ffmpeg"></a>ffmpeg</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S ffmpeg</span><br></pre></td></tr></table></figure>
+
+
+
+
 
       
 
@@ -539,7 +563,7 @@ new Valine({
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2025 Niu Yuxian
+    		&copy; 2026 Niu Yuxian
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -664,15 +688,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">was</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">area</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">cors</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">was</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -700,10 +724,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">c#</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Nord</a>
               </li>
              
@@ -721,6 +741,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">guqin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">c#</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -792,6 +816,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">opencv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">原码</a>
               </li>
              
@@ -812,10 +840,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sed</a>
               </li>
              
@@ -833,6 +857,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -880,10 +908,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">archlinux</a>
               </li>
              
@@ -900,6 +924,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">d365</a>
               </li>
              
@@ -908,15 +936,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">deno</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">docker alpine</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">razor</a>
+                <a href="javascript:void(0)" class="js-tag color5">deno</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -925,6 +949,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ffmpeg</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">razor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1012,14 +1040,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
@@ -1037,6 +1057,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1064,15 +1092,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">regex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">requests</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">rust</a>
+                <a href="javascript:void(0)" class="js-tag color1">regex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1084,11 +1108,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color5">rust</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1097,6 +1121,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mongo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1128,15 +1156,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">rocky</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">

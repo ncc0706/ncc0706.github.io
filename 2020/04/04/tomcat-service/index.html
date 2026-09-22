@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>添加Tomcat到系统服务中 | Niu Yuxian&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="下载地址: https://downloads.apache.org/tomcat/tomcat-9/v9.0.33/bin/apache-tomcat-9.0.33.tar.gz 解压到指定目录 1tar -zxvf apache-tomcat-8.5.53.tar.gz -C /opt/ 创建软连接 1ln -s /opt/apache-tomcat-8.5.53/ /opt/tomcat8">
-<meta name="keywords" content="tomcat">
+  <meta name="description" content="下载地址: https:&#x2F;&#x2F;downloads.apache.org&#x2F;tomcat&#x2F;tomcat-9&#x2F;v9.0.33&#x2F;bin&#x2F;apache-tomcat-9.0.33.tar.gz 解压到指定目录 1tar -zxvf apache-tomcat-8.5.53.tar.gz -C &#x2F;opt&#x2F;  创建软连接 1ln -s &#x2F;opt&#x2F;apache-tomcat-8.5.53&#x2F; &#x2F;opt&#x2F;tomcat8">
 <meta property="og:type" content="article">
 <meta property="og:title" content="添加Tomcat到系统服务中">
 <meta property="og:url" content="http://yoursite.com/2020/04/04/tomcat-service/index.html">
 <meta property="og:site_name" content="Niu Yuxian&#39;blog">
-<meta property="og:description" content="下载地址: https://downloads.apache.org/tomcat/tomcat-9/v9.0.33/bin/apache-tomcat-9.0.33.tar.gz 解压到指定目录 1tar -zxvf apache-tomcat-8.5.53.tar.gz -C /opt/ 创建软连接 1ln -s /opt/apache-tomcat-8.5.53/ /opt/tomcat8">
-<meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2025-09-30T04:26:37.791Z">
+<meta property="og:description" content="下载地址: https:&#x2F;&#x2F;downloads.apache.org&#x2F;tomcat&#x2F;tomcat-9&#x2F;v9.0.33&#x2F;bin&#x2F;apache-tomcat-9.0.33.tar.gz 解压到指定目录 1tar -zxvf apache-tomcat-8.5.53.tar.gz -C &#x2F;opt&#x2F;  创建软连接 1ln -s &#x2F;opt&#x2F;apache-tomcat-8.5.53&#x2F; &#x2F;opt&#x2F;tomcat8">
+<meta property="og:locale">
+<meta property="article:published_time" content="2020-04-04T07:32:05.000Z">
+<meta property="article:modified_time" content="2020-04-04T07:32:05.000Z">
+<meta property="article:author" content="Niu Yuxian">
+<meta property="article:tag" content="tomcat">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="添加Tomcat到系统服务中">
-<meta name="twitter:description" content="下载地址: https://downloads.apache.org/tomcat/tomcat-9/v9.0.33/bin/apache-tomcat-9.0.33.tar.gz 解压到指定目录 1tar -zxvf apache-tomcat-8.5.53.tar.gz -C /opt/ 创建软连接 1ln -s /opt/apache-tomcat-8.5.53/ /opt/tomcat8">
   
     <link rel="alternative" href="/atom.xml" title="Niu Yuxian&#39;blog" type="application/atom+xml">
   
@@ -58,8 +58,8 @@ var _hmt = _hmt || [];
 </script>
 
 
-</head>
-</html>
+<meta name="generator" content="Hexo 8.1.2"></head>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -72,7 +72,7 @@ var _hmt = _hmt || [];
 			<img src="/assets/images/logo.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Niu Yuxian</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
 		
 
@@ -156,7 +156,7 @@ var _hmt = _hmt || [];
 				<img src="/assets/images/logo.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Niu Yuxian</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
 			
 			
@@ -270,31 +270,43 @@ var _hmt = _hmt || [];
         
         <a href="/2020/04/04/tomcat-service/" class="archive-article-date">
   	<time datetime="2020-04-04T07:32:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-04</time>
-  	更新：2025-09-30
+  	更新：2020-04-04
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>下载地址: <a href="https://downloads.apache.org/tomcat/tomcat-9/v9.0.33/bin/apache-tomcat-9.0.33.tar.gz" target="_blank" rel="noopener">https://downloads.apache.org/tomcat/tomcat-9/v9.0.33/bin/apache-tomcat-9.0.33.tar.gz</a></p>
+        <p>下载地址: <a target="_blank" rel="noopener" href="https://downloads.apache.org/tomcat/tomcat-9/v9.0.33/bin/apache-tomcat-9.0.33.tar.gz">https://downloads.apache.org/tomcat/tomcat-9/v9.0.33/bin/apache-tomcat-9.0.33.tar.gz</a></p>
 <p>解压到指定目录</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf apache-tomcat-8.5.53.tar.gz -C /opt/</span><br></pre></td></tr></table></figure>
+
 <p>创建软连接</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /opt/apache-tomcat-8.5.53/ /opt/tomcat8</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /opt/apache-tomcat-8.5.53/ /opt/tomcat8</span><br></pre></td></tr></table></figure>
+
 <p>设置环境变量</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vim catalina.sh</span><br><span class="line">export JAVA_HOME=/opt/Java8</span><br><span class="line"># 设置pid</span><br><span class="line">CATALINA_PID=&quot;$CATALINA_BASE/tomcat.pid&quot;</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vim catalina.sh</span><br><span class="line">export JAVA_HOME=/opt/Java8</span><br><span class="line"># 设置pid</span><br><span class="line">CATALINA_PID=&quot;$CATALINA_BASE/tomcat.pid&quot;</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
 <p>服务配置文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">vim /usr/lib/systemd/system/tomcat.service</span><br><span class="line"></span><br><span class="line">[Unit]</span><br><span class="line">Description=Tomcat8.5.33</span><br><span class="line">After=network.target</span><br><span class="line">  </span><br><span class="line">[Service]</span><br><span class="line">## Environment=&quot;ServiceName=8801&quot;</span><br><span class="line">Environment=&quot;JAVA_HOME=opt/Java8&quot;</span><br><span class="line">Environment=&quot;CATALINA_HOME=/opt/tomcat8&quot;</span><br><span class="line">Environment=&apos;CATALINA_OPTS=-Xms512M -Xmx1024M -server -XX:+UseParallelGC&apos;</span><br><span class="line">Environment=&apos;JAVA_OPTS=-Djava.awt.headless=true -Djava.security.egd=file:/dev/./urandom&apos;</span><br><span class="line"></span><br><span class="line">Type=forking</span><br><span class="line">## PIDFile=/opt/tomcat8/tomcat.pid</span><br><span class="line">ExecStart=/opt/tomcat8/bin/startup.sh</span><br><span class="line">ExecStop=/opt/tomcat8/bin/shutdown.sh</span><br><span class="line">ExecReload=/bin/kill -s HUP $MAINPID</span><br><span class="line">PrivateTmp=true</span><br><span class="line">RestartSec=10</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">vim /usr/lib/systemd/system/tomcat.service</span><br><span class="line"></span><br><span class="line">[Unit]</span><br><span class="line">Description=Tomcat8.5.33</span><br><span class="line">After=network.target</span><br><span class="line">  </span><br><span class="line">[Service]</span><br><span class="line">## Environment=&quot;ServiceName=8801&quot;</span><br><span class="line">Environment=&quot;JAVA_HOME=opt/Java8&quot;</span><br><span class="line">Environment=&quot;CATALINA_HOME=/opt/tomcat8&quot;</span><br><span class="line">Environment=&#x27;CATALINA_OPTS=-Xms512M -Xmx1024M -server -XX:+UseParallelGC&#x27;</span><br><span class="line">Environment=&#x27;JAVA_OPTS=-Djava.awt.headless=true -Djava.security.egd=file:/dev/./urandom&#x27;</span><br><span class="line"></span><br><span class="line">Type=forking</span><br><span class="line">## PIDFile=/opt/tomcat8/tomcat.pid</span><br><span class="line">ExecStart=/opt/tomcat8/bin/startup.sh</span><br><span class="line">ExecStop=/opt/tomcat8/bin/shutdown.sh</span><br><span class="line">ExecReload=/bin/kill -s HUP $MAINPID</span><br><span class="line">PrivateTmp=true</span><br><span class="line">RestartSec=10</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+
 <p>添加可执行权限</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 754 /usr/lib/systemd/system/tomcat.service</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 754 /usr/lib/systemd/system/tomcat.service</span><br></pre></td></tr></table></figure>
+
 <p>设置为系统服务</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable tomcat.service</span><br><span class="line">systemctl disable tomcat.service</span><br><span class="line"></span><br><span class="line">ls /etc/systemd/system/multi-user.target.wants</span><br><span class="line"></span><br><span class="line">systemctl status tomcat.service</span><br><span class="line">systemctl start tomcat.service</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"># Systemd unit file for tomcat 7.x</span><br><span class="line">[Unit]</span><br><span class="line">Description=Apache Tomcat 7.x Web Application Container</span><br><span class="line">Wants=syslog.target network.target</span><br><span class="line">After=syslog.target network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=forking</span><br><span class="line"></span><br><span class="line">Environment=JAVA_HOME=/usr/java/latest</span><br><span class="line">Environment=CATALINA_PID=/run/tomcat.pid</span><br><span class="line">Environment=CATALINA_HOME=/home/tomcat/tomcat</span><br><span class="line">Environment=CATALINA_BASE=/home/tomcat/tomcat</span><br><span class="line">Environment=&apos;CATALINA_OPTS=-Xms1G -Xmx1G -Djava.net.preferIPv4Stack=true&apos;</span><br><span class="line">Environment=&apos;JAVA_OPTS=-Djava.awt.headless=true&apos;</span><br><span class="line"></span><br><span class="line">ExecStart=/home/tomcat/tomcat/bin/startup.sh</span><br><span class="line">ExecStop=/bin/kill -15 $MAINPID</span><br><span class="line">PIDFile=/run/tomcat.pid</span><br><span class="line">SuccessExitStatus=143</span><br><span class="line"></span><br><span class="line">User=tomcat</span><br><span class="line">Group=tomcat</span><br><span class="line">UMask=0007</span><br><span class="line">RestartSec=10</span><br><span class="line">Restart=always</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable tomcat.service</span><br><span class="line">systemctl disable tomcat.service</span><br><span class="line"></span><br><span class="line">ls /etc/systemd/system/multi-user.target.wants</span><br><span class="line"></span><br><span class="line">systemctl status tomcat.service</span><br><span class="line">systemctl start tomcat.service</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"># Systemd unit file for tomcat 7.x</span><br><span class="line">[Unit]</span><br><span class="line">Description=Apache Tomcat 7.x Web Application Container</span><br><span class="line">Wants=syslog.target network.target</span><br><span class="line">After=syslog.target network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=forking</span><br><span class="line"></span><br><span class="line">Environment=JAVA_HOME=/usr/java/latest</span><br><span class="line">Environment=CATALINA_PID=/run/tomcat.pid</span><br><span class="line">Environment=CATALINA_HOME=/home/tomcat/tomcat</span><br><span class="line">Environment=CATALINA_BASE=/home/tomcat/tomcat</span><br><span class="line">Environment=&#x27;CATALINA_OPTS=-Xms1G -Xmx1G -Djava.net.preferIPv4Stack=true&#x27;</span><br><span class="line">Environment=&#x27;JAVA_OPTS=-Djava.awt.headless=true&#x27;</span><br><span class="line"></span><br><span class="line">ExecStart=/home/tomcat/tomcat/bin/startup.sh</span><br><span class="line">ExecStop=/bin/kill -15 $MAINPID</span><br><span class="line">PIDFile=/run/tomcat.pid</span><br><span class="line">SuccessExitStatus=143</span><br><span class="line"></span><br><span class="line">User=tomcat</span><br><span class="line">Group=tomcat</span><br><span class="line">UMask=0007</span><br><span class="line">RestartSec=10</span><br><span class="line">Restart=always</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+
+
+
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
-<p><a href="https://www.cnblogs.com/ethanw97m/p/11328268.html" target="_blank" rel="noopener">https://www.cnblogs.com/ethanw97m/p/11328268.html</a></p>
-<p><a href="https://gist.github.com/obatiuk/15c84fb25826d4f39a303a454087e85a" target="_blank" rel="noopener">https://gist.github.com/obatiuk/15c84fb25826d4f39a303a454087e85a</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/ethanw97m/p/11328268.html">https://www.cnblogs.com/ethanw97m/p/11328268.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://gist.github.com/obatiuk/15c84fb25826d4f39a303a454087e85a">https://gist.github.com/obatiuk/15c84fb25826d4f39a303a454087e85a</a></p>
 </blockquote>
 
       
@@ -492,7 +504,7 @@ new Valine({
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2025 Niu Yuxian
+    		&copy; 2026 Niu Yuxian
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -617,15 +629,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">was</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">area</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">cors</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">was</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -653,10 +665,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">c#</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Nord</a>
               </li>
              
@@ -674,6 +682,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">guqin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">c#</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -745,6 +757,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">opencv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">原码</a>
               </li>
              
@@ -765,10 +781,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sed</a>
               </li>
              
@@ -786,6 +798,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -833,10 +849,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">archlinux</a>
               </li>
              
@@ -853,6 +865,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">d365</a>
               </li>
              
@@ -861,15 +877,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">deno</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">docker alpine</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">razor</a>
+                <a href="javascript:void(0)" class="js-tag color5">deno</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -878,6 +890,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ffmpeg</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">razor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -965,14 +981,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
@@ -990,6 +998,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1017,15 +1033,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">regex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">requests</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">rust</a>
+                <a href="javascript:void(0)" class="js-tag color1">regex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1037,11 +1049,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color5">rust</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1050,6 +1062,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mongo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1081,15 +1097,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">rocky</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>php7-fpm | Niu Yuxian&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="123456789101112131415FROM php:7.2.10-fpm-alpine3.8LABEL maintainer=&amp;quot;niuyuxian &amp;lt;ncc0706@gmail.com&amp;gt;&amp;quot;ENV TZ=Asia/Shanghai \    LANG=zh_CN.UTF-8# update-ca-certificatesRUN echo -e &amp;quot;ht">
-<meta name="keywords" content="php">
+  <meta name="description" content="123456789101112131415FROM php:7.2.10-fpm-alpine3.8LABEL maintainer&#x3D;&quot;niuyuxian &lt;ncc0706@gmail.com&gt;&quot;ENV TZ&#x3D;Asia&#x2F;Shanghai \    LANG&#x3D;zh_CN.UTF-8# update-ca-certificatesRUN echo -e &quot;ht">
 <meta property="og:type" content="article">
 <meta property="og:title" content="php7-fpm">
 <meta property="og:url" content="http://yoursite.com/2019/04/30/php/php7-fpm/index.html">
 <meta property="og:site_name" content="Niu Yuxian&#39;blog">
-<meta property="og:description" content="123456789101112131415FROM php:7.2.10-fpm-alpine3.8LABEL maintainer=&amp;quot;niuyuxian &amp;lt;ncc0706@gmail.com&amp;gt;&amp;quot;ENV TZ=Asia/Shanghai \    LANG=zh_CN.UTF-8# update-ca-certificatesRUN echo -e &amp;quot;ht">
-<meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2025-09-30T04:26:37.790Z">
+<meta property="og:description" content="123456789101112131415FROM php:7.2.10-fpm-alpine3.8LABEL maintainer&#x3D;&quot;niuyuxian &lt;ncc0706@gmail.com&gt;&quot;ENV TZ&#x3D;Asia&#x2F;Shanghai \    LANG&#x3D;zh_CN.UTF-8# update-ca-certificatesRUN echo -e &quot;ht">
+<meta property="og:locale">
+<meta property="article:published_time" content="2019-04-30T21:39:43.000Z">
+<meta property="article:modified_time" content="2019-04-30T21:39:43.000Z">
+<meta property="article:author" content="Niu Yuxian">
+<meta property="article:tag" content="php">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="php7-fpm">
-<meta name="twitter:description" content="123456789101112131415FROM php:7.2.10-fpm-alpine3.8LABEL maintainer=&amp;quot;niuyuxian &amp;lt;ncc0706@gmail.com&amp;gt;&amp;quot;ENV TZ=Asia/Shanghai \    LANG=zh_CN.UTF-8# update-ca-certificatesRUN echo -e &amp;quot;ht">
   
     <link rel="alternative" href="/atom.xml" title="Niu Yuxian&#39;blog" type="application/atom+xml">
   
@@ -58,8 +58,8 @@ var _hmt = _hmt || [];
 </script>
 
 
-</head>
-</html>
+<meta name="generator" content="Hexo 8.1.2"></head>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -72,7 +72,7 @@ var _hmt = _hmt || [];
 			<img src="/assets/images/logo.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Niu Yuxian</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
 		
 
@@ -156,7 +156,7 @@ var _hmt = _hmt || [];
 				<img src="/assets/images/logo.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Niu Yuxian</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
 			
 			
@@ -270,18 +270,23 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/30/php/php7-fpm/" class="archive-article-date">
   	<time datetime="2019-04-30T21:39:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-30</time>
-  	更新：2025-09-30
+  	更新：2019-04-30
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">FROM php:7.2.10-fpm-alpine3.8</span><br><span class="line"></span><br><span class="line">LABEL maintainer=&quot;niuyuxian &lt;ncc0706@gmail.com&gt;&quot;</span><br><span class="line"></span><br><span class="line">ENV TZ=Asia/Shanghai \</span><br><span class="line">    LANG=zh_CN.UTF-8</span><br><span class="line"></span><br><span class="line"># update-ca-certificates</span><br><span class="line">RUN echo -e &quot;https://mirror.tuna.tsinghua.edu.cn/alpine/v$(head -c3 /etc/alpine-release)/main\nhttps://mirror.tuna.tsinghua.edu.cn/alpine/v$(head -c3 /etc/alpine-release)/community&quot; &gt; /etc/apk/repositories \</span><br><span class="line">    &amp;&amp; apk update \</span><br><span class="line">    &amp;&amp; apk add --no-cache wget tzdata ca-certificates \</span><br><span class="line">    &amp;&amp; cp /usr/share/zoneinfo/$TZ /etc/localtime &amp;&amp; echo $TZ &gt; /etc/timezone \</span><br><span class="line">    &amp;&amp; docker-php-ext-install mysqli pdo_mysql</span><br><span class="line"></span><br><span class="line">CMD [&quot;/usr/bin/supervisord&quot;]</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker build -t registry.cn-hangzhou.aliyuncs.com/985/php:7.2.10 .</span><br><span class="line"></span><br><span class="line">docker push registry.cn-hangzhou.aliyuncs.com/985/php:7.2.10</span><br><span class="line"></span><br><span class="line">docker run -d -p 9001:9000 --name php7.2 -v /data/php/app1:/app -w /app registry.cn-hangzhou.aliyuncs.com/985/php:7.2.10 php -S 0.0.0.0:9000 -t /app</span><br></pre></td></tr></table></figure>
+        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">FROM php:7.2.10-fpm-alpine3.8</span><br><span class="line"></span><br><span class="line">LABEL maintainer=&quot;niuyuxian &lt;ncc0706@gmail.com&gt;&quot;</span><br><span class="line"></span><br><span class="line">ENV TZ=Asia/Shanghai \</span><br><span class="line">    LANG=zh_CN.UTF-8</span><br><span class="line"></span><br><span class="line"># update-ca-certificates</span><br><span class="line">RUN echo -e &quot;https://mirror.tuna.tsinghua.edu.cn/alpine/v$(head -c3 /etc/alpine-release)/main\nhttps://mirror.tuna.tsinghua.edu.cn/alpine/v$(head -c3 /etc/alpine-release)/community&quot; &gt; /etc/apk/repositories \</span><br><span class="line">    &amp;&amp; apk update \</span><br><span class="line">    &amp;&amp; apk add --no-cache wget tzdata ca-certificates \</span><br><span class="line">    &amp;&amp; cp /usr/share/zoneinfo/$TZ /etc/localtime &amp;&amp; echo $TZ &gt; /etc/timezone \</span><br><span class="line">    &amp;&amp; docker-php-ext-install mysqli pdo_mysql</span><br><span class="line"></span><br><span class="line">CMD [&quot;/usr/bin/supervisord&quot;]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker build -t registry.cn-hangzhou.aliyuncs.com/985/php:7.2.10 .</span><br><span class="line"></span><br><span class="line">docker push registry.cn-hangzhou.aliyuncs.com/985/php:7.2.10</span><br><span class="line"></span><br><span class="line">docker run -d -p 9001:9000 --name php7.2 -v /data/php/app1:/app -w /app registry.cn-hangzhou.aliyuncs.com/985/php:7.2.10 php -S 0.0.0.0:9000 -t /app</span><br></pre></td></tr></table></figure>
+
 <p><strong>配置文件</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/etc/php # ls -al</span><br><span class="line">total 156</span><br><span class="line">drwxr-xr-x    1 root     root          4096 Sep 15  2018 .</span><br><span class="line">drwxr-xr-x    1 root     root          4096 Sep 15  2018 ..</span><br><span class="line">drwxr-xr-x    1 root     root          4096 Apr 30 09:53 conf.d</span><br><span class="line">-rw-r--r--    1 root     root         70297 Sep 15  2018 php.ini-development</span><br><span class="line">-rw-r--r--    1 root     root         70569 Sep 15  2018 php.ini-production</span><br><span class="line">/usr/local/etc/php #</span><br></pre></td></tr></table></figure>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://qiita.com/garcons/items/0ad18319aa8cbc1676ce#dockerfilephp-fpm" target="_blank" rel="noopener">https://qiita.com/garcons/items/0ad18319aa8cbc1676ce#dockerfilephp-fpm</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/etc/php # ls -al</span><br><span class="line">total 156</span><br><span class="line">drwxr-xr-x    1 root     root          4096 Sep 15  2018 .</span><br><span class="line">drwxr-xr-x    1 root     root          4096 Sep 15  2018 ..</span><br><span class="line">drwxr-xr-x    1 root     root          4096 Apr 30 09:53 conf.d</span><br><span class="line">-rw-r--r--    1 root     root         70297 Sep 15  2018 php.ini-development</span><br><span class="line">-rw-r--r--    1 root     root         70569 Sep 15  2018 php.ini-production</span><br><span class="line">/usr/local/etc/php # </span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://qiita.com/garcons/items/0ad18319aa8cbc1676ce#dockerfilephp-fpm">https://qiita.com/garcons/items/0ad18319aa8cbc1676ce#dockerfilephp-fpm</a></p>
 
       
 
@@ -467,7 +472,7 @@ new Valine({
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2025 Niu Yuxian
+    		&copy; 2026 Niu Yuxian
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -592,15 +597,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">was</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">area</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">cors</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">was</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -628,10 +633,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">c#</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Nord</a>
               </li>
              
@@ -649,6 +650,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">guqin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">c#</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -720,6 +725,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">opencv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">原码</a>
               </li>
              
@@ -740,10 +749,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sed</a>
               </li>
              
@@ -761,6 +766,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -808,10 +817,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">archlinux</a>
               </li>
              
@@ -828,6 +833,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">d365</a>
               </li>
              
@@ -836,15 +845,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">deno</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">docker alpine</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">razor</a>
+                <a href="javascript:void(0)" class="js-tag color5">deno</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -853,6 +858,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ffmpeg</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">razor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -940,14 +949,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
@@ -965,6 +966,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -992,15 +1001,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">regex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">requests</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">rust</a>
+                <a href="javascript:void(0)" class="js-tag color1">regex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1012,11 +1017,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color5">rust</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1025,6 +1030,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mongo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1056,15 +1065,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">rocky</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">

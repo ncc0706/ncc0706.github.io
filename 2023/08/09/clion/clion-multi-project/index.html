@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Clion 中创建多项目解决方案 | Niu Yuxian&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="(BV1fZ4y1F7Vt)项目 12345678910111213141516## cmake 最低版本cmake_minimum_required(VERSION 3.17)## 项目名称project(BV1fZ4y1F7Vt)## c++ 标准set(CMAKE_CXX_STANDARD 14)## 主项目根据实际情况要不要加add_executable(BV1fZ4y1F7Vt mai">
-<meta name="keywords" content="c,cpp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Clion 中创建多项目解决方案">
 <meta property="og:url" content="http://yoursite.com/2023/08/09/clion/clion-multi-project/index.html">
 <meta property="og:site_name" content="Niu Yuxian&#39;blog">
 <meta property="og:description" content="(BV1fZ4y1F7Vt)项目 12345678910111213141516## cmake 最低版本cmake_minimum_required(VERSION 3.17)## 项目名称project(BV1fZ4y1F7Vt)## c++ 标准set(CMAKE_CXX_STANDARD 14)## 主项目根据实际情况要不要加add_executable(BV1fZ4y1F7Vt mai">
-<meta property="og:locale" content="default">
+<meta property="og:locale">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/07/11/2021-07-11_161406.png">
-<meta property="og:updated_time" content="2025-09-30T04:26:37.782Z">
+<meta property="article:published_time" content="2023-08-09T16:05:46.000Z">
+<meta property="article:modified_time" content="2023-08-09T16:05:46.000Z">
+<meta property="article:author" content="Niu Yuxian">
+<meta property="article:tag" content="c">
+<meta property="article:tag" content="cpp">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Clion 中创建多项目解决方案">
-<meta name="twitter:description" content="(BV1fZ4y1F7Vt)项目 12345678910111213141516## cmake 最低版本cmake_minimum_required(VERSION 3.17)## 项目名称project(BV1fZ4y1F7Vt)## c++ 标准set(CMAKE_CXX_STANDARD 14)## 主项目根据实际情况要不要加add_executable(BV1fZ4y1F7Vt mai">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/07/11/2021-07-11_161406.png">
   
     <link rel="alternative" href="/atom.xml" title="Niu Yuxian&#39;blog" type="application/atom+xml">
@@ -60,8 +61,8 @@ var _hmt = _hmt || [];
 </script>
 
 
-</head>
-</html>
+<meta name="generator" content="Hexo 8.1.2"></head>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -74,7 +75,7 @@ var _hmt = _hmt || [];
 			<img src="/assets/images/logo.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Niu Yuxian</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
 		
 
@@ -158,7 +159,7 @@ var _hmt = _hmt || [];
 				<img src="/assets/images/logo.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Niu Yuxian</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
 			
 			
@@ -272,7 +273,7 @@ var _hmt = _hmt || [];
         
         <a href="/2023/08/09/clion/clion-multi-project/" class="archive-article-date">
   	<time datetime="2023-08-09T16:05:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-08-09</time>
-  	更新：2025-09-30
+  	更新：2023-08-09
 </a>
         
       </header>
@@ -282,18 +283,22 @@ var _hmt = _hmt || [];
         <p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2021/07/11/2021-07-11_161406.png" alt="效果图"></p>
 <p><strong>(BV1fZ4y1F7Vt)项目</strong></p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## cmake 最低版本</span></span><br><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.17</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 项目名称</span></span><br><span class="line"><span class="keyword">project</span>(BV1fZ4y1F7Vt)</span><br><span class="line"></span><br><span class="line"><span class="comment">## c++ 标准</span></span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_STANDARD <span class="number">14</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 主项目根据实际情况要不要加</span></span><br><span class="line"><span class="keyword">add_executable</span>(BV1fZ4y1F7Vt main.c)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 子项目</span></span><br><span class="line"><span class="comment">## 注意子项目暴露出来的 文件名不能重复</span></span><br><span class="line"><span class="keyword">add_subdirectory</span>(chapter01 hello.c)</span><br><span class="line"><span class="keyword">add_subdirectory</span>(chapter02 main.c)</span><br></pre></td></tr></table></figure>
+
 <p><strong>(chapter01)项目</strong></p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将该子项目下包含的内容反馈回主项目中</span></span><br><span class="line"><span class="keyword">include_directories</span>(.)</span><br><span class="line"></span><br><span class="line"><span class="keyword">add_executable</span>(chapter01 hello.c user.c user.h)</span><br></pre></td></tr></table></figure>
+
 <p><strong>(chapter02)项目</strong></p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将该子项目下包含的内容反馈回主项目中</span></span><br><span class="line"><span class="keyword">include_directories</span>(.)</span><br><span class="line"></span><br><span class="line"><span class="keyword">add_executable</span>(chapter02 main.c)</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
+
+<span id="more"></span>
+
 <p><strong>中文乱码</strong></p>
 <p>双击Shift，在弹出的搜索栏中，输入“Registry”，点击“Registry…”进入软件注册表界面，去掉“run.processes.with.pty”中默认的对勾</p>
-<p><strong>C/C++ printf() before scanf() issue</strong></p>
+<p><strong>C&#x2F;C++ printf() before scanf() issue</strong></p>
 <p>有4种方式</p>
 <ol>
 <li><p>explicit flush</p>
-<p><code>fflush</code> after each write to profit from the buffer and still enforce the desiredbehavior/display explicitly.</p>
+<p><code>fflush</code> after each write to profit from the buffer and still enforce the desiredbehavior&#x2F;display explicitly.</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fflush(<span class="built_in">stdout</span>);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>have the buffer only buffer lines-wise</p>
@@ -307,7 +312,7 @@ var _hmt = _hmt || [];
 </li>
 </ol>
 <blockquote>
-<p><a href="https://stackoverflow.com/questions/16877264/c-c-printf-before-scanf-issue" target="_blank" rel="noopener">https://stackoverflow.com/questions/16877264/c-c-printf-before-scanf-issue</a></p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/16877264/c-c-printf-before-scanf-issue">https://stackoverflow.com/questions/16877264/c-c-printf-before-scanf-issue</a></p>
 </blockquote>
 
       
@@ -509,7 +514,7 @@ new Valine({
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2025 Niu Yuxian
+    		&copy; 2026 Niu Yuxian
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -634,15 +639,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">was</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">area</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">cors</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">was</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -670,10 +675,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">c#</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Nord</a>
               </li>
              
@@ -691,6 +692,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">guqin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">c#</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -762,6 +767,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">opencv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">原码</a>
               </li>
              
@@ -782,10 +791,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sed</a>
               </li>
              
@@ -803,6 +808,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -850,10 +859,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">archlinux</a>
               </li>
              
@@ -870,6 +875,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">d365</a>
               </li>
              
@@ -878,15 +887,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">deno</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">docker alpine</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">razor</a>
+                <a href="javascript:void(0)" class="js-tag color5">deno</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -895,6 +900,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ffmpeg</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">razor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -982,14 +991,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
@@ -1007,6 +1008,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1034,15 +1043,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">regex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">requests</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">rust</a>
+                <a href="javascript:void(0)" class="js-tag color1">regex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1054,11 +1059,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color5">rust</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1067,6 +1072,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mongo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1098,15 +1107,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">rocky</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">

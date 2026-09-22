@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Niu Yuxian&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -12,9 +12,9 @@
 <meta property="og:title" content="Niu Yuxian&#39;blog">
 <meta property="og:url" content="http://yoursite.com/page/20/index.html">
 <meta property="og:site_name" content="Niu Yuxian&#39;blog">
-<meta property="og:locale" content="default">
+<meta property="og:locale">
+<meta property="article:author" content="Niu Yuxian">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Niu Yuxian&#39;blog">
   
     <link rel="alternative" href="/atom.xml" title="Niu Yuxian&#39;blog" type="application/atom+xml">
   
@@ -53,8 +53,8 @@ var _hmt = _hmt || [];
 </script>
 
 
-</head>
-</html>
+<meta name="generator" content="Hexo 8.1.2"></head>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -67,7 +67,7 @@ var _hmt = _hmt || [];
 			<img src="/assets/images/logo.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Niu Yuxian</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
 		
 
@@ -151,7 +151,7 @@ var _hmt = _hmt || [];
 				<img src="/assets/images/logo.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Niu Yuxian</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
 			
 			
@@ -253,6 +253,99 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-regex/regexp-sample-iqiyi" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/26/regex/regexp-sample-iqiyi/">正则匹配爱奇艺视频ID</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/26/regex/regexp-sample-iqiyi/" class="archive-article-date">
+  	<time datetime="2019-04-26T14:27:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-26</time>
+  	更新：2019-04-26
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> html = <span class="string">`</span></span><br><span class="line"><span class="string">&lt;script type=&quot;text/javascript&quot;&gt;</span></span><br><span class="line"><span class="string">    window.__qlt = &#123;&#125;;</span></span><br><span class="line"><span class="string">    window.__qlt.statisticsStart = +new Date;</span></span><br><span class="line"><span class="string">    window.__qlt.pgtype = &#x27;play&#x27;;</span></span><br><span class="line"><span class="string">    window.__qlt.cid = &#x27;1&#x27;;</span></span><br><span class="line"><span class="string">    var param = &#123;&#125;;</span></span><br><span class="line"><span class="string">    param[&#x27;parentId&#x27;] = &#x27;flashbox&#x27;;</span></span><br><span class="line"><span class="string">    param[&#x27;albumid&#x27;] = &quot;226174401&quot;;</span></span><br><span class="line"><span class="string">    param[&#x27;tvid&#x27;] = &quot;2163824100&quot;;</span></span><br><span class="line"><span class="string">    param[&#x27;vid&#x27;] = &quot;ce7a5be85951032bb173fd58d8ce74ac&quot;;</span></span><br><span class="line"><span class="string">    param[&#x27;albumId&#x27;] = &quot;226174401&quot;;</span></span><br><span class="line"><span class="string">    param[&#x27;channelID&#x27;] = &quot;2&quot;;</span></span><br><span class="line"><span class="string">    param[&#x27;isMember&#x27;] = false;</span></span><br><span class="line"><span class="string">    param[&#x27;qiyiProduced&#x27;] = &quot;1&quot;;</span></span><br><span class="line"><span class="string">    param[&#x27;exclusive&#x27;] = &quot;1&quot;;</span></span><br><span class="line"><span class="string">    param[&#x27;origin&#x27;] = &quot;flash&quot;;</span></span><br><span class="line"><span class="string">    param[&#x27;collectionID&#x27;] = &quot;&quot;;</span></span><br><span class="line"><span class="string">    param[&#x27;share_sTime&#x27;] = &quot;&quot;;</span></span><br><span class="line"><span class="string">    param[&#x27;share_eTime&#x27;] = &quot;&quot;;</span></span><br><span class="line"><span class="string">    param[&#x27;showPcaItem&#x27;] = true;</span></span><br><span class="line"><span class="string">    param[&#x27;autoplay&#x27;] = true;</span></span><br><span class="line"><span class="string">    param[&#x27;cyclePlay&#x27;] = false;</span></span><br><span class="line"><span class="string">    param[&#x27;pgct&#x27;] = window.__qlt.statisticsStart;</span></span><br><span class="line"><span class="string">    param[&#x27;usevr&#x27;] = &quot;false&quot;;</span></span><br><span class="line"><span class="string">    param[&#x27;ppt&#x27;]  = 0;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    window.uniqy = window.uniqy || &#123;&#125;;</span></span><br><span class="line"><span class="string">    window.uniqy.curVideoInfo = param;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&lt;/script</span></span><br><span class="line"><span class="string">`</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> data = html.<span class="title function_">match</span>(<span class="regexp">/param\[&#x27;tvid&#x27;\] = &quot;(?&lt;tvid&gt;.*)&quot;;\s+param\[&#x27;vid&#x27;\] = &quot;(?&lt;vid&gt;.*)&quot;;([\s\S]*)param\[&#x27;isMember&#x27;\] = (?&lt;isMember&gt;.*);/</span>)</span><br><span class="line"><span class="keyword">if</span>(data)&#123;</span><br><span class="line">    <span class="keyword">const</span> &#123;tvid, vid, isMember&#125; = data.<span class="property">groups</span></span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(tvid, vid, isMember)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">regex</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/regex//" class="article-tag-list-link color1">regex</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/26/regex/regexp-sample-iqiyi/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-regex/regexp-sample-tencent" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -267,14 +360,15 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/26/regex/regexp-sample-tencent/" class="archive-article-date">
   	<time datetime="2019-04-26T10:20:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-26</time>
-  	更新：2025-09-30
+  	更新：2019-04-26
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> html = <span class="string">`</span></span><br><span class="line"><span class="string">&lt;script&gt;function getUrlParam(e,t)&#123;t=t||document.location.toString();var r=new RegExp("[?&amp;#]"+e+"=([^&amp;#]+)","i"),a=r.exec(t);return a&amp;&amp;a.length&gt;1?a[1]:""&#125;function getPtag()&#123;var e=getUrlParam("ptag")||getUrlParam("PTAG");return e?e+="#&#123;defaultTag&#125;#1":e=/https?:\/\/(.+?)(\/|$)/.test(document.referrer)?RegExp.$1+"#&#123;defaultTag&#125;#2":"v_qq_com#&#123;defaultTag&#125;#3",encodeURIComponent(e.replace("&#123;defaultTag&#125;","v.play.adaptor"))&#125;function appendSearch(e)&#123;var t,r,a=location.search||"",n=[],o=[];if(a.length&gt;0)for(a=a.substr(1),o=a.split("&amp;"),t=0,r=o.length;t&lt;r;t++)/^ptag=/i.test(o[t])||/^vid=/i.test(o[t])||n.push(o[t]);return n.length&gt;0&amp;&amp;(e=e+(-1==e.indexOf("?")?"?":"&amp;")+n.join("&amp;")),e&#125;var istablet=/android/i.test(navigator.userAgent)&amp;&amp;!/mobile/i.test(navigator.userAgent)&amp;&amp;!/youku/i.test(navigator.userAgent);if(!istablet&amp;&amp;!/ipad/i.test(navigator.userAgent)&amp;&amp;/(android)|(iphone)|(ipod)|(mqqbrowser)/i.test(navigator.userAgent)&amp;&amp;!/MI PAD/.test(navigator.userAgent)&amp;&amp;("string"!=typeof document.referrer||-1==document.referrer.indexOf("m.v.qq.com/")))try&#123;var ptag=getUrlParam("ptag")||getUrlParam("PTAG")||"v.play.adaptor",url='https://m.v.qq.com/play.html?cid=zvr5ohgsb72rnvd&amp;vid=z00300gtbcw&amp;ptag='+getPtag()+(document.referrer?"&amp;mreferrer="+encodeURIComponent(document.referrer):"");location.replace(appendSearch(url))&#125;catch(e)&#123;&#125;&lt;/script&gt;</span></span><br><span class="line"><span class="string">`</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">match方法匹配不到，返回null，</span></span><br><span class="line"><span class="comment">匹配到时</span></span><br><span class="line"><span class="comment">第0个元素返回匹配到的字符</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">index 返回匹配文本在目标字符中的起始位置</span></span><br><span class="line"><span class="comment">input 是对目标字符的引用</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">const</span> data = html.match(<span class="regexp">/cid=(?&lt;cid&gt;.*)&amp;vid=(?&lt;vid&gt;.*)&amp;ptag/</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(data)&#123;</span><br><span class="line">    <span class="comment">// ES6 解构赋值</span></span><br><span class="line">    <span class="keyword">const</span> &#123;cid, vid&#125; = data.groups</span><br><span class="line">    <span class="built_in">console</span>.log(cid, vid)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> html = <span class="string">`</span></span><br><span class="line"><span class="string">&lt;script&gt;function getUrlParam(e,t)&#123;t=t||document.location.toString();var r=new RegExp(&quot;[?&amp;#]&quot;+e+&quot;=([^&amp;#]+)&quot;,&quot;i&quot;),a=r.exec(t);return a&amp;&amp;a.length&gt;1?a[1]:&quot;&quot;&#125;function getPtag()&#123;var e=getUrlParam(&quot;ptag&quot;)||getUrlParam(&quot;PTAG&quot;);return e?e+=&quot;#&#123;defaultTag&#125;#1&quot;:e=/https?:\/\/(.+?)(\/|$)/.test(document.referrer)?RegExp.$1+&quot;#&#123;defaultTag&#125;#2&quot;:&quot;v_qq_com#&#123;defaultTag&#125;#3&quot;,encodeURIComponent(e.replace(&quot;&#123;defaultTag&#125;&quot;,&quot;v.play.adaptor&quot;))&#125;function appendSearch(e)&#123;var t,r,a=location.search||&quot;&quot;,n=[],o=[];if(a.length&gt;0)for(a=a.substr(1),o=a.split(&quot;&amp;&quot;),t=0,r=o.length;t&lt;r;t++)/^ptag=/i.test(o[t])||/^vid=/i.test(o[t])||n.push(o[t]);return n.length&gt;0&amp;&amp;(e=e+(-1==e.indexOf(&quot;?&quot;)?&quot;?&quot;:&quot;&amp;&quot;)+n.join(&quot;&amp;&quot;)),e&#125;var istablet=/android/i.test(navigator.userAgent)&amp;&amp;!/mobile/i.test(navigator.userAgent)&amp;&amp;!/youku/i.test(navigator.userAgent);if(!istablet&amp;&amp;!/ipad/i.test(navigator.userAgent)&amp;&amp;/(android)|(iphone)|(ipod)|(mqqbrowser)/i.test(navigator.userAgent)&amp;&amp;!/MI PAD/.test(navigator.userAgent)&amp;&amp;(&quot;string&quot;!=typeof document.referrer||-1==document.referrer.indexOf(&quot;m.v.qq.com/&quot;)))try&#123;var ptag=getUrlParam(&quot;ptag&quot;)||getUrlParam(&quot;PTAG&quot;)||&quot;v.play.adaptor&quot;,url=&#x27;https://m.v.qq.com/play.html?cid=zvr5ohgsb72rnvd&amp;vid=z00300gtbcw&amp;ptag=&#x27;+getPtag()+(document.referrer?&quot;&amp;mreferrer=&quot;+encodeURIComponent(document.referrer):&quot;&quot;);location.replace(appendSearch(url))&#125;catch(e)&#123;&#125;&lt;/script&gt;</span></span><br><span class="line"><span class="string">`</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">match方法匹配不到，返回null，</span></span><br><span class="line"><span class="comment">匹配到时</span></span><br><span class="line"><span class="comment">第0个元素返回匹配到的字符</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">index 返回匹配文本在目标字符中的起始位置</span></span><br><span class="line"><span class="comment">input 是对目标字符的引用</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">const</span> data = html.<span class="title function_">match</span>(<span class="regexp">/cid=(?&lt;cid&gt;.*)&amp;vid=(?&lt;vid&gt;.*)&amp;ptag/</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(data)&#123;</span><br><span class="line">    <span class="comment">// ES6 解构赋值</span></span><br><span class="line">    <span class="keyword">const</span> &#123;cid, vid&#125; = data.<span class="property">groups</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(cid, vid)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -359,7 +453,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/19/php/php-enable-file-get-contents/" class="archive-article-date">
   	<time datetime="2019-04-19T14:44:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-19</time>
-  	更新：2025-09-30
+  	更新：2019-04-19
 </a>
         
       </header>
@@ -367,7 +461,8 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p>要使用file_get_contents功能需要开启php的扩展功能，打开php.ini</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">allow_url_fopen = On</span><br><span class="line"></span><br><span class="line">;https请求</span><br><span class="line">extension=php_openssl.dll</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">allow_url_fopen = On</span><br><span class="line"></span><br><span class="line">;https请求</span><br><span class="line">extension=php_openssl.dll</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -437,7 +532,7 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/19/php/php-xdebug/" class="archive-article-date">
   	<time datetime="2019-04-19T14:40:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-19</time>
-  	更新：2025-09-30
+  	更新：2019-04-19
 </a>
         
       </header>
@@ -445,13 +540,15 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p><a href="https://xdebug.org/download.php" target="_blank" rel="noopener">https://xdebug.org/download.php</a></p>
+<p><a target="_blank" rel="noopener" href="https://xdebug.org/download.php">https://xdebug.org/download.php</a></p>
 </blockquote>
 <p>下载dll时注意版本问题</p>
 <p><strong>php5</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">[XDebug]</span><br><span class="line">xdebug.profiler_output_dir=&quot;D:\phpStudy\PHPTutorial\tmp\xdebug&quot;</span><br><span class="line">xdebug.trace_output_dir=&quot;D:\phpStudy\PHPTutorial\tmp\xdebug&quot;</span><br><span class="line">zend_extension=&quot;D:\phpStudy\PHPTutorial\php\php-5.4.45\ext\php_xdebug.dll&quot;</span><br><span class="line"></span><br><span class="line">;是否允许Xdebug跟踪函数调用，跟踪信息以文件形式存储，默认值为0</span><br><span class="line">xdebug.auto_trace=1</span><br><span class="line">;是否允许Xdebug跟踪函数参数，默认值为0</span><br><span class="line">xdebug.collect_params=1</span><br><span class="line">;是否允许Xdebug跟踪函数返回值，默认值为0</span><br><span class="line">xdebug.collect_return=1</span><br><span class="line">;函数调用跟踪信息输出文件目录，默认值为/tmp</span><br><span class="line">xdebug.trace_output_dir =&quot;D:\phpStudy\tmp\xdebug&quot;</span><br><span class="line">;性能分析文件的存放位置，默认值为/tmp</span><br><span class="line">xdebug.profiler_output_dir =&quot;D:\phpStudy\tmp\xdebug&quot;</span><br><span class="line">;打开xdebug的性能分析器，以文件形式存储，这项配置是不能以ini_set()函数配置的，默认值为0</span><br><span class="line">xdebug.profiler_enable = 1</span><br><span class="line">;性能分析文件的命名规则，默认值为cachegrind.out.%p</span><br><span class="line">xdebug.profiler_output_name = &quot;cachegrind.out.%t.%p&quot;</span><br><span class="line">xdebug.remote_enable = 1</span><br><span class="line">;用于zend studio远程调试的应用层通信协议</span><br><span class="line">xdebug.remote_handler = &quot;dbgp&quot;</span><br><span class="line">xdebug.idekey = phpstorm</span><br><span class="line">xdebug.remote_host = &quot;vip.me&quot;</span><br><span class="line">xdebug.remote_port = 9000</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">[XDebug]</span><br><span class="line">xdebug.profiler_output_dir=&quot;D:\phpStudy\PHPTutorial\tmp\xdebug&quot;</span><br><span class="line">xdebug.trace_output_dir=&quot;D:\phpStudy\PHPTutorial\tmp\xdebug&quot;</span><br><span class="line">zend_extension=&quot;D:\phpStudy\PHPTutorial\php\php-5.4.45\ext\php_xdebug.dll&quot;</span><br><span class="line"></span><br><span class="line">;是否允许Xdebug跟踪函数调用，跟踪信息以文件形式存储，默认值为0</span><br><span class="line">xdebug.auto_trace=1</span><br><span class="line">;是否允许Xdebug跟踪函数参数，默认值为0</span><br><span class="line">xdebug.collect_params=1</span><br><span class="line">;是否允许Xdebug跟踪函数返回值，默认值为0</span><br><span class="line">xdebug.collect_return=1</span><br><span class="line">;函数调用跟踪信息输出文件目录，默认值为/tmp</span><br><span class="line">xdebug.trace_output_dir =&quot;D:\phpStudy\tmp\xdebug&quot;</span><br><span class="line">;性能分析文件的存放位置，默认值为/tmp</span><br><span class="line">xdebug.profiler_output_dir =&quot;D:\phpStudy\tmp\xdebug&quot;</span><br><span class="line">;打开xdebug的性能分析器，以文件形式存储，这项配置是不能以ini_set()函数配置的，默认值为0</span><br><span class="line">xdebug.profiler_enable = 1</span><br><span class="line">;性能分析文件的命名规则，默认值为cachegrind.out.%p</span><br><span class="line">xdebug.profiler_output_name = &quot;cachegrind.out.%t.%p&quot;</span><br><span class="line">xdebug.remote_enable = 1</span><br><span class="line">;用于zend studio远程调试的应用层通信协议</span><br><span class="line">xdebug.remote_handler = &quot;dbgp&quot;</span><br><span class="line">xdebug.idekey = phpstorm</span><br><span class="line">xdebug.remote_host = &quot;vip.me&quot;</span><br><span class="line">xdebug.remote_port = 9000</span><br></pre></td></tr></table></figure>
+
 <p><strong>php7</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">[XDebug]</span><br><span class="line">xdebug.profiler_output_dir=&quot;D:\phpStudy\PHPTutorial\tmp\xdebug&quot;</span><br><span class="line">xdebug.trace_output_dir=&quot;D:\phpStudy\PHPTutorial\tmp\xdebug&quot;</span><br><span class="line">zend_extension=&quot;D:\phpStudy\PHPTutorial\php\php-7.2.1-nts\ext\php_xdebug-2.7.1-7.2-vc15-nts.dll&quot;</span><br><span class="line"></span><br><span class="line">;是否允许Xdebug跟踪函数调用，跟踪信息以文件形式存储，默认值为0</span><br><span class="line">xdebug.auto_trace=1</span><br><span class="line">;是否允许Xdebug跟踪函数参数，默认值为0</span><br><span class="line">xdebug.collect_params=1</span><br><span class="line">;是否允许Xdebug跟踪函数返回值，默认值为0</span><br><span class="line">xdebug.collect_return=1</span><br><span class="line">;函数调用跟踪信息输出文件目录，默认值为/tmp</span><br><span class="line">xdebug.trace_output_dir =&quot;D:\phpStudy\tmp\xdebug&quot;</span><br><span class="line">;性能分析文件的存放位置，默认值为/tmp</span><br><span class="line">xdebug.profiler_output_dir =&quot;D:\phpStudy\tmp\xdebug&quot;</span><br><span class="line">;打开xdebug的性能分析器，以文件形式存储，这项配置是不能以ini_set()函数配置的，默认值为0</span><br><span class="line">xdebug.profiler_enable = 1</span><br><span class="line">;性能分析文件的命名规则，默认值为cachegrind.out.%p</span><br><span class="line">xdebug.profiler_output_name = &quot;cachegrind.out.%t.%p&quot;</span><br><span class="line">xdebug.remote_enable = 1</span><br><span class="line">;用于zend studio远程调试的应用层通信协议</span><br><span class="line">xdebug.remote_handler = &quot;dbgp&quot;</span><br><span class="line">xdebug.idekey = phpstorm</span><br><span class="line">xdebug.remote_host = &quot;vip.me&quot;</span><br><span class="line">xdebug.remote_port = 9000</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">[XDebug]</span><br><span class="line">xdebug.profiler_output_dir=&quot;D:\phpStudy\PHPTutorial\tmp\xdebug&quot;</span><br><span class="line">xdebug.trace_output_dir=&quot;D:\phpStudy\PHPTutorial\tmp\xdebug&quot;</span><br><span class="line">zend_extension=&quot;D:\phpStudy\PHPTutorial\php\php-7.2.1-nts\ext\php_xdebug-2.7.1-7.2-vc15-nts.dll&quot;</span><br><span class="line"></span><br><span class="line">;是否允许Xdebug跟踪函数调用，跟踪信息以文件形式存储，默认值为0</span><br><span class="line">xdebug.auto_trace=1</span><br><span class="line">;是否允许Xdebug跟踪函数参数，默认值为0</span><br><span class="line">xdebug.collect_params=1</span><br><span class="line">;是否允许Xdebug跟踪函数返回值，默认值为0</span><br><span class="line">xdebug.collect_return=1</span><br><span class="line">;函数调用跟踪信息输出文件目录，默认值为/tmp</span><br><span class="line">xdebug.trace_output_dir =&quot;D:\phpStudy\tmp\xdebug&quot;</span><br><span class="line">;性能分析文件的存放位置，默认值为/tmp</span><br><span class="line">xdebug.profiler_output_dir =&quot;D:\phpStudy\tmp\xdebug&quot;</span><br><span class="line">;打开xdebug的性能分析器，以文件形式存储，这项配置是不能以ini_set()函数配置的，默认值为0</span><br><span class="line">xdebug.profiler_enable = 1</span><br><span class="line">;性能分析文件的命名规则，默认值为cachegrind.out.%p</span><br><span class="line">xdebug.profiler_output_name = &quot;cachegrind.out.%t.%p&quot;</span><br><span class="line">xdebug.remote_enable = 1</span><br><span class="line">;用于zend studio远程调试的应用层通信协议</span><br><span class="line">xdebug.remote_handler = &quot;dbgp&quot;</span><br><span class="line">xdebug.idekey = phpstorm</span><br><span class="line">xdebug.remote_host = &quot;vip.me&quot;</span><br><span class="line">xdebug.remote_port = 9000</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -521,14 +618,16 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/17/archlinux/archlinux-install-vscode/" class="archive-article-date">
   	<time datetime="2019-04-17T11:53:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-17</time>
-  	更新：2025-09-30
+  	更新：2019-04-17
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 下载安装包</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> tar -zxvf code-stable-1554971043.tar.gz -C /opt/vscode</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 加入环境变量</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> ln -s /opt/vscode/code /usr/<span class="built_in">local</span>/bin/code</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建快捷图标</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> vim /usr/share/applications/vscode.desktop</span></span><br><span class="line"></span><br><span class="line">[Desktop Entry]</span><br><span class="line"></span><br><span class="line">Name=Visual Studio Code</span><br><span class="line">Comment=Multi-platform code editor for Linux</span><br><span class="line">Exec=/opt/vscode/code</span><br><span class="line">Icon=/opt/vscode/resources/app/resources/linux/code.png</span><br><span class="line">Type=Application</span><br><span class="line">StartupNotify=true</span><br><span class="line">Categories=TextEditor;Development;Utility;</span><br><span class="line">MimeType=text/plain;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">下载安装包</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">tar -zxvf code-stable-1554971043.tar.gz -C /opt/vscode</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">加入环境变量</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="built_in">ln</span> -s /opt/vscode/code /usr/local/bin/code</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建快捷图标</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">vim /usr/share/applications/vscode.desktop</span></span><br><span class="line"></span><br><span class="line">[Desktop Entry]</span><br><span class="line"></span><br><span class="line">Name=Visual Studio Code</span><br><span class="line">Comment=Multi-platform code editor for Linux</span><br><span class="line">Exec=/opt/vscode/code</span><br><span class="line">Icon=/opt/vscode/resources/app/resources/linux/code.png</span><br><span class="line">Type=Application</span><br><span class="line">StartupNotify=true</span><br><span class="line">Categories=TextEditor;Development;Utility;</span><br><span class="line">MimeType=text/plain;</span><br></pre></td></tr></table></figure>
+
+
 
       
 
@@ -598,14 +697,16 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/17/os/archlinux/archlinux-install-vscode/" class="archive-article-date">
   	<time datetime="2019-04-17T11:53:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-17</time>
-  	更新：2025-09-30
+  	更新：2019-04-17
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 下载安装包</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> tar -zxvf code-stable-1554971043.tar.gz -C /opt/vscode</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 加入环境变量</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> ln -s /opt/vscode/code /usr/<span class="built_in">local</span>/bin/code</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建快捷图标</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> vim /usr/share/applications/vscode.desktop</span></span><br><span class="line"></span><br><span class="line">[Desktop Entry]</span><br><span class="line"></span><br><span class="line">Name=Visual Studio Code</span><br><span class="line">Comment=Multi-platform code editor for Linux</span><br><span class="line">Exec=/opt/vscode/code</span><br><span class="line">Icon=/opt/vscode/resources/app/resources/linux/code.png</span><br><span class="line">Type=Application</span><br><span class="line">StartupNotify=true</span><br><span class="line">Categories=TextEditor;Development;Utility;</span><br><span class="line">MimeType=text/plain;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">下载安装包</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">tar -zxvf code-stable-1554971043.tar.gz -C /opt/vscode</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">加入环境变量</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="built_in">ln</span> -s /opt/vscode/code /usr/local/bin/code</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建快捷图标</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">vim /usr/share/applications/vscode.desktop</span></span><br><span class="line"></span><br><span class="line">[Desktop Entry]</span><br><span class="line"></span><br><span class="line">Name=Visual Studio Code</span><br><span class="line">Comment=Multi-platform code editor for Linux</span><br><span class="line">Exec=/opt/vscode/code</span><br><span class="line">Icon=/opt/vscode/resources/app/resources/linux/code.png</span><br><span class="line">Type=Application</span><br><span class="line">StartupNotify=true</span><br><span class="line">Categories=TextEditor;Development;Utility;</span><br><span class="line">MimeType=text/plain;</span><br></pre></td></tr></table></figure>
+
+
 
       
 
@@ -675,15 +776,16 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/17/archlinux/archlinux-openssh/" class="archive-article-date">
   	<time datetime="2019-04-17T11:08:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-17</time>
-  	更新：2025-09-30
+  	更新：2019-04-17
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><code>注意这个问题</code>只在ArchLinux出现，解决方案在/etc/ssh/ssh_config配置文件中添加 IPQoS lowdelay throughput</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">## 错误</span><br><span class="line">$ ssh -T git@github.com</span><br><span class="line">$ packet_write_wait: Connection to 67.218.143.160 port 22: Broken pipe</span><br><span class="line"></span><br><span class="line">## 解决方案</span><br><span class="line">$ vim /etc/ssh/ssh_config</span><br><span class="line"># 新增</span><br><span class="line">IPQoS lowdelay throughput</span><br></pre></td></tr></table></figure>
+        <p><code>注意这个问题</code>只在ArchLinux出现，解决方案在&#x2F;etc&#x2F;ssh&#x2F;ssh_config配置文件中添加 IPQoS lowdelay throughput</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">## 错误</span><br><span class="line">$ ssh -T git@github.com</span><br><span class="line">$ packet_write_wait: Connection to 67.218.143.160 port 22: Broken pipe</span><br><span class="line"></span><br><span class="line">## 解决方案</span><br><span class="line">$ vim /etc/ssh/ssh_config</span><br><span class="line"># 新增</span><br><span class="line">IPQoS lowdelay throughput</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -753,15 +855,16 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/17/os/archlinux/archlinux-openssh/" class="archive-article-date">
   	<time datetime="2019-04-17T11:08:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-17</time>
-  	更新：2025-09-30
+  	更新：2019-04-17
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><code>注意这个问题</code>只在ArchLinux出现，解决方案在/etc/ssh/ssh_config配置文件中添加 IPQoS lowdelay throughput</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">## 错误</span><br><span class="line">$ ssh -T git@github.com</span><br><span class="line">$ packet_write_wait: Connection to 67.218.143.160 port 22: Broken pipe</span><br><span class="line"></span><br><span class="line">## 解决方案</span><br><span class="line">$ vim /etc/ssh/ssh_config</span><br><span class="line"># 新增</span><br><span class="line">IPQoS lowdelay throughput</span><br></pre></td></tr></table></figure>
+        <p><code>注意这个问题</code>只在ArchLinux出现，解决方案在&#x2F;etc&#x2F;ssh&#x2F;ssh_config配置文件中添加 IPQoS lowdelay throughput</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">## 错误</span><br><span class="line">$ ssh -T git@github.com</span><br><span class="line">$ packet_write_wait: Connection to 67.218.143.160 port 22: Broken pipe</span><br><span class="line"></span><br><span class="line">## 解决方案</span><br><span class="line">$ vim /etc/ssh/ssh_config</span><br><span class="line"># 新增</span><br><span class="line">IPQoS lowdelay throughput</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -831,14 +934,15 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/16/regex/dl-weishi-video/" class="archive-article-date">
   	<time datetime="2019-04-16T16:07:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-16</time>
-  	更新：2025-09-30
+  	更新：2019-04-16
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> parse</span><br><span class="line"></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">https://h5.weishi.qq.com/weishi/feed/71yYpleeM1HghTttk/wsfeed?_proxy=1&amp;_wv=1&amp;wxplay=1&amp;id=71yYpleeM1HghTttk&amp;spid=1555397841340472&amp;reqseq=250827838&amp;cover=http%3A%2F%2Fpic640.weishi.qq.com%2F2984899cb2ec445ab029fbdcbfc9cover.jpg&amp;bgSize=cover&amp;image=84899cb2ec445ab029fbdcbfc9cover.&amp;xflag=2130706433a156250141b1555397849</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">https://h5.weishi.qq.com/webapp/json/weishi/WSH5GetPlayPage?t=0.7532600494918984&amp;g_tk=&amp;feedid=71yYpleeM1HghTttk&amp;recommendtype=0&amp;datalvl=&amp;qua=&amp;uin=&amp;format=json&amp;inCharset=utf-8&amp;outCharset=utf-8</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line">url = <span class="string">'https://h5.weishi.qq.com/weishi/feed/71yYpleeM1HghTttk/wsfeed?_proxy=1&amp;_wv=1&amp;wxplay=1&amp;id=71yYpleeM1HghTttk&amp;spid=1555397841340472&amp;reqseq=250827838&amp;cover=http%3A%2F%2Fpic640.weishi.qq.com%2F2984899cb2ec445ab029fbdcbfc9cover.jpg&amp;bgSize=cover&amp;image=84899cb2ec445ab029fbdcbfc9cover.&amp;xflag=2130706433a156250141b1555397849'</span></span><br><span class="line"></span><br><span class="line">result = parse.urlparse(url)</span><br><span class="line"></span><br><span class="line">q_dict = parse.parse_qs(result.query)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 视频ID</span></span><br><span class="line">vid = q_dict[<span class="string">'id'</span>][<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">player_url = <span class="string">'https://h5.weishi.qq.com/webapp/json/weishi/WSH5GetPlayPage?t=0.7532600494918984&amp;g_tk=&amp;feedid=&#123;&#125;&amp;recommendtype=0&amp;datalvl=&amp;qua=&amp;uin=&amp;format=json&amp;inCharset=utf-8&amp;outCharset=utf-8'</span>.format(</span><br><span class="line">    vid)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取返回的JSON信息</span></span><br><span class="line">content = requests.get(player_url).text</span><br><span class="line">r = json.loads(content)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 视频信息</span></span><br><span class="line">video_info = r[<span class="string">'data'</span>][<span class="string">'feeds'</span>][<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 标题</span></span><br><span class="line">title = video_info[<span class="string">'feed_desc'</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 视频地址</span></span><br><span class="line">video = video_info[<span class="string">'video_url'</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 封面</span></span><br><span class="line">cover = video_info[<span class="string">'material_thumburl'</span>]</span><br><span class="line"></span><br><span class="line">print(title, cover, video)</span><br></pre></td></tr></table></figure>
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> parse</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">https://h5.weishi.qq.com/weishi/feed/71yYpleeM1HghTttk/wsfeed?_proxy=1&amp;_wv=1&amp;wxplay=1&amp;id=71yYpleeM1HghTttk&amp;spid=1555397841340472&amp;reqseq=250827838&amp;cover=http%3A%2F%2Fpic640.weishi.qq.com%2F2984899cb2ec445ab029fbdcbfc9cover.jpg&amp;bgSize=cover&amp;image=84899cb2ec445ab029fbdcbfc9cover.&amp;xflag=2130706433a156250141b1555397849</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">https://h5.weishi.qq.com/webapp/json/weishi/WSH5GetPlayPage?t=0.7532600494918984&amp;g_tk=&amp;feedid=71yYpleeM1HghTttk&amp;recommendtype=0&amp;datalvl=&amp;qua=&amp;uin=&amp;format=json&amp;inCharset=utf-8&amp;outCharset=utf-8</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">url = <span class="string">&#x27;https://h5.weishi.qq.com/weishi/feed/71yYpleeM1HghTttk/wsfeed?_proxy=1&amp;_wv=1&amp;wxplay=1&amp;id=71yYpleeM1HghTttk&amp;spid=1555397841340472&amp;reqseq=250827838&amp;cover=http%3A%2F%2Fpic640.weishi.qq.com%2F2984899cb2ec445ab029fbdcbfc9cover.jpg&amp;bgSize=cover&amp;image=84899cb2ec445ab029fbdcbfc9cover.&amp;xflag=2130706433a156250141b1555397849&#x27;</span></span><br><span class="line"></span><br><span class="line">result = parse.urlparse(url)</span><br><span class="line"></span><br><span class="line">q_dict = parse.parse_qs(result.query)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 视频ID</span></span><br><span class="line">vid = q_dict[<span class="string">&#x27;id&#x27;</span>][<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">player_url = <span class="string">&#x27;https://h5.weishi.qq.com/webapp/json/weishi/WSH5GetPlayPage?t=0.7532600494918984&amp;g_tk=&amp;feedid=&#123;&#125;&amp;recommendtype=0&amp;datalvl=&amp;qua=&amp;uin=&amp;format=json&amp;inCharset=utf-8&amp;outCharset=utf-8&#x27;</span>.<span class="built_in">format</span>(</span><br><span class="line">    vid)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取返回的JSON信息</span></span><br><span class="line">content = requests.get(player_url).text</span><br><span class="line">r = json.loads(content)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 视频信息</span></span><br><span class="line">video_info = r[<span class="string">&#x27;data&#x27;</span>][<span class="string">&#x27;feeds&#x27;</span>][<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 标题</span></span><br><span class="line">title = video_info[<span class="string">&#x27;feed_desc&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 视频地址</span></span><br><span class="line">video = video_info[<span class="string">&#x27;video_url&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 封面</span></span><br><span class="line">cover = video_info[<span class="string">&#x27;material_thumburl&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(title, cover, video)</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -912,15 +1016,17 @@ var _hmt = _hmt || [];
         
         <a href="/2019/04/16/nodejs/install-nodejs-on-archlinux/" class="archive-article-date">
   	<time datetime="2019-04-16T09:01:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-16</time>
-  	更新：2025-09-30
+  	更新：2019-04-16
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/assets/images/2019-04-16/animals-4101126_1920.jpg" alt><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S nvm</span><br><span class="line"></span><br><span class="line">You need to source nvm before you can use it. Do one of the following</span><br><span class="line">or similar depending on your shell (and then restart your shell):</span><br><span class="line"></span><br><span class="line">  echo &apos;source /usr/share/nvm/init-nvm.sh&apos; &gt;&gt; ~/.bashrc</span><br><span class="line">  echo &apos;source /usr/share/nvm/init-nvm.sh&apos; &gt;&gt; ~/.zshrc</span><br></pre></td></tr></table></figure></p>
-<h2 id="nvm"><a href="#nvm" class="headerlink" title="nvm"></a>nvm</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">nvm list --显示已安装的nodejs版本</span><br><span class="line">nvm use version --使用指定版本的nodejs</span><br><span class="line">nvm ls --查看当前已经安装的node或者iojs版本；</span><br><span class="line">nvm ls-remote --查看当前可以安装的node或者iojs版本；</span><br><span class="line">nvm install v8.0.0 --安装制定版本的nodejs；</span><br><span class="line">nvm use v8.0.0 --切换使用的nodejs版本；</span><br><span class="line"></span><br><span class="line"># 环境变量 nvm指向国内镜像源</span><br><span class="line">export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node</span><br><span class="line"></span><br><span class="line">## usage</span><br><span class="line">nvm install v10.15.3 --安装指定的nodejs版本</span><br><span class="line">## 验证是否安装成功</span><br><span class="line">root@archlinux:~|⇒  node -v</span><br><span class="line">v10.15.3</span><br><span class="line">root@archlinux:~|⇒  npm -v</span><br><span class="line">6.4.1</span><br></pre></td></tr></table></figure>
+        <p><img src="/assets/images/2019-04-16/animals-4101126_1920.jpg"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S nvm</span><br><span class="line"></span><br><span class="line">You need to source nvm before you can use it. Do one of the following</span><br><span class="line">or similar depending on your shell (and then restart your shell):</span><br><span class="line"></span><br><span class="line">  echo &#x27;source /usr/share/nvm/init-nvm.sh&#x27; &gt;&gt; ~/.bashrc</span><br><span class="line">  echo &#x27;source /usr/share/nvm/init-nvm.sh&#x27; &gt;&gt; ~/.zshrc</span><br></pre></td></tr></table></figure>
+
+<h2 id="nvm"><a href="#nvm" class="headerlink" title="nvm"></a>nvm</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">nvm list --显示已安装的nodejs版本</span><br><span class="line">nvm use version --使用指定版本的nodejs</span><br><span class="line">nvm ls --查看当前已经安装的node或者iojs版本；</span><br><span class="line">nvm ls-remote --查看当前可以安装的node或者iojs版本；</span><br><span class="line">nvm install v8.0.0 --安装制定版本的nodejs；</span><br><span class="line">nvm use v8.0.0 --切换使用的nodejs版本；</span><br><span class="line"></span><br><span class="line"># 环境变量 nvm指向国内镜像源</span><br><span class="line">export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node</span><br><span class="line"></span><br><span class="line">## usage</span><br><span class="line">nvm install v10.15.3 --安装指定的nodejs版本</span><br><span class="line">## 验证是否安装成功</span><br><span class="line">root@archlinux:~|⇒  node -v</span><br><span class="line">v10.15.3</span><br><span class="line">root@archlinux:~|⇒  npm -v</span><br><span class="line">6.4.1</span><br></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/2019/04/16/nodejs/install-nodejs-on-archlinux/#more">more >></a>
         
@@ -978,117 +1084,9 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-ffmpeg/ffmpeg" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/03/ffmpeg/ffmpeg/">ffmpeg</a>
-    </h1>
-  
-
-        
-        <a href="/2019/04/03/ffmpeg/ffmpeg/" class="archive-article-date">
-  	<time datetime="2019-04-03T13:15:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-03</time>
-  	更新：2025-02-15
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="下载-ffmpeg"><a href="#下载-ffmpeg" class="headerlink" title="下载 ffmpeg"></a>下载 ffmpeg</h2><p><a href="https://www.gyan.dev/ffmpeg/builds/" target="_blank" rel="noopener">https://www.gyan.dev/ffmpeg/builds/</a></p>
-<p>历史版本下载</p>
-<p><a href="https://github.com/GyanD/codexffmpeg/releases" target="_blank" rel="noopener">https://github.com/GyanD/codexffmpeg/releases</a></p>
-<p><a href="https://github.com/BtbN/FFmpeg-Builds/releases" target="_blank" rel="noopener">https://github.com/BtbN/FFmpeg-Builds/releases</a></p>
-<p>这个全</p>
-<p><a href="https://www.videohelp.com/software/ffmpeg/old-versions" target="_blank" rel="noopener">https://www.videohelp.com/software/ffmpeg/old-versions</a></p>
-<h2 id="ffmpeg-GPU-加速"><a href="#ffmpeg-GPU-加速" class="headerlink" title="ffmpeg GPU 加速"></a>ffmpeg GPU 加速</h2><ul>
-<li>AV1 支持：–enable-libdav1d（解码）和 –enable-libaom（编码）</li>
-<li>NVENC：–enable-nvenc 用于 NVIDIA 的硬件加速</li>
-<li>VAAPI：–enable-vaapi 用于 Intel 和 AMD 的硬件加速</li>
-</ul>
-<p>首先在使用之前，你需要先检查下你的电脑是否支持cuda 加速</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -hwaccels</span><br><span class="line"></span><br><span class="line">ffmpeg -codecs | findstr <span class="string">"h264"</span></span><br><span class="line"></span><br><span class="line">从图中可以看到 decoders（解码器，对应 input 文件的编码）和 encoders （编码器，对应 output 文件的编码）。</span><br><span class="line">decoders 中 h264_qsv 是 Intel 核显/显卡专用的硬件加速解码器，h264_cuvid 是 N 卡专用的解码器。</span><br><span class="line">encoders 中 h264_amf 和 h264_mf 都是 A 卡专用的编码器，h264_qsv 对应 I 卡，h264_nvenc 对应 N 卡。</span><br></pre></td></tr></table></figure>
-<p>使用 -c:v 参数来指定视频的编解码器，这里 c 是 codec 的缩写，v 是指 video ，处理音频编码可以替换为 a ( audio )</p>
-<p><strong>ffmpeg删去视频指定区间内容</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -hwaccel cuvid -c:v h264_cuvid  -threads 5 -i &quot;01_720.mp4&quot;  -vf &quot;select=&apos;not(between(t,0*60+1,0*60+16))&apos;,setpts=N/(FRAME_RATE*TB)&quot; -af &quot;aselect=&apos;not(between(t,0*60+2,0*60+14))&apos;,asetpts=N/(SR*TB)&quot; -c:v h264_nvenc -c:a aac -strict -2 &quot;origin_edited.mp4&quot;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-i &quot;D:\Download\****.mp4&quot;：输入文件路径，其中 **** 是被脱敏的部分，表示输入的视频文件名。</span><br><span class="line">-vf &quot;select=&apos;not(between(t,17*60+41,18*60+59))&apos;,setpts=N/(FRAME_RATE*TB)&quot;：视频过滤器选项，其中 select 表示选择满足条件的帧，not(between(t,17*60+41,18*60+59)) 表示不选取时间在 17 分 41 秒至 18 分 59 秒之间的帧，setpts 表示修改视频帧的时间戳，N/(FRAME_RATE*TB) 表示将每个帧的时间戳除以帧率乘以时间基准得到新的时间戳。</span><br><span class="line">-af &quot;aselect=&apos;not(between(t,17*60+41,18*60+59))&apos;,asetpts=N/(SR*TB)&quot;：音频过滤器选项，其中 aselect 表示选择满足条件的音频样本，not(between(t,17*60+41,18*60+59)) 表示不选取时间在 17 分 41 秒至 18 分 59 秒之间的音频样本，asetpts 表示修改音频样本的时间戳，N/(SR*TB) 表示将每个样本的时间戳除以采样率乘以时间基准得到新的时间戳。</span><br><span class="line">-c:v libx264：视频编码器选项，使用 libx264 编码器将视频编码为 H.264 格式。</span><br><span class="line">-c:a aac：音频编码器选项，使用 aac 编码器将音频编码为 AAC 格式。</span><br><span class="line">-strict -2：音频编码器选项，表示使用宽松的 AAC 编码器设置。</span><br><span class="line">&quot;D:\Download\****_edited.mp4&quot;：输出文件路径，其中 **** 是被脱敏的部分，表示输出的视频文件名。</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">有几个注意的地方就是在使用cuda加速的时候，你需要指定输入与输出视频的解码器与编码器(要注意的是：它和普通的解码和编码器不同你需要在后面加上后缀 “_cuvid”/&quot;_nvenc&quot;)，使用-c:v xxx来指定</span><br></pre></td></tr></table></figure>
-<p><strong>没有测试成功</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ ffmpeg -hwaccel vaapi \</span><br><span class="line">    -hwaccel_device /dev/dri/renderD129 \</span><br><span class="line">    -hwaccel_output_format vaapi \</span><br><span class="line">    -i gravity.mp4 \</span><br><span class="line">    -vf &quot;scale_vaapi=w=1024:h=428&quot; \</span><br><span class="line">    -c:v h264_vaapi \</span><br><span class="line">    -b:v 1M \</span><br><span class="line">    out.mp4</span><br></pre></td></tr></table></figure>
-<h2 id="下载m3u8视频格式"><a href="#下载m3u8视频格式" class="headerlink" title="下载m3u8视频格式"></a>下载m3u8视频格式</h2><p>ffmpeg -i <a href="https://zy.kubozy-youku-163-aiqi.com/20190330/3992_03a42fb7/1000k/hls/index.m3u8" target="_blank" rel="noopener">https://zy.kubozy-youku-163-aiqi.com/20190330/3992_03a42fb7/1000k/hls/index.m3u8</a> output.mp4</p>
-<p>将mp4<br><a href="https://blog.csdn.net/yinggehai/article/details/81089257" target="_blank" rel="noopener">https://blog.csdn.net/yinggehai/article/details/81089257</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"># 打水印</span><br><span class="line">ffmpeg -i sample.mp4 -i watermark.png -filter_complex &quot;overlay=10:10&quot; sample.watermark.mp4</span><br><span class="line"></span><br><span class="line">ffmpeg -i sample.mp4 -i logo.png -filter_complex overlay test1.mp4</span><br><span class="line"></span><br><span class="line">ffmpeg -i sample.mp4 -i logo.png -filter_complex overlay test1.mp4</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 去水印</span><br><span class="line">ffmpeg -i a.mp4 -b:v 548k -vf delogo=x=495:y=10:w=120:h=45:show=1 delogo.mp4</span><br><span class="line"></span><br><span class="line">在一些例子中，你并不会知道确切的分辨率，所以这里有一些变量，你可以更好的添加水印到你想要的任何位置：</span><br><span class="line"></span><br><span class="line">main_h – 传入的视频的高度</span><br><span class="line">main_w – 传入的视频的宽度</span><br><span class="line">overlay_h – 传入的覆盖水印的高度</span><br><span class="line">overlay_w – 传入的覆盖水印的宽度</span><br><span class="line">利用这些变量，我们可以灵活的添加水印：</span><br><span class="line"></span><br><span class="line">ffmpeg -i sample.mp4 -i watermark.png -filter_complex &quot;overlay=x=(main_w-overlay_w)/2:y=(main_h-overlay_h)/2&quot; sample.watermark2.mp4</span><br><span class="line"></span><br><span class="line"># 跑马灯广告</span><br><span class="line"></span><br><span class="line">## 从右往左滚</span><br><span class="line">ffmpeg -i sample.mp4 -vf &quot;drawtext=text=helloworld :fontfile=foo.ttf :y=h-line_h-10:x=w-(t-4.5)*w/5.5 :fontcolor=red: fontsize=40: shadowx=2: shadowy=2&quot; sample.rightToLeft.mp4</span><br><span class="line"></span><br><span class="line">## 从左往右滚</span><br><span class="line">ffmpeg -i sample.mp4 -vf &quot;drawtext=text=helloworld :expansion=normal :fontfile=foo.ttf: y=h-line_h-10:x=(mod(5*n\,w+tw)-tw): fontcolor=white: fontsize=40: shadowx=2: shadowy=2&quot; sample.leftToRight.mp4</span><br><span class="line"></span><br><span class="line">## 从右往左滚，单次滚动时长10秒，间隔30秒滚一次</span><br><span class="line">ffmpeg -i input.mp4 -filter:v drawtext=&quot;fontfile=Microsoft YaHei Mono.ttf :text=&apos;Hello World&apos; :fontcolor=white@1.0 :fontsize=36 :y=h-line_h-10 :x=w-tw-w/10*mod(t\,30) :enable=gt(mod(t\,20)\,10)&quot; -codec:v libx264 -codec:a copy -y sample.loop.mp4</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 指定时间段</span><br><span class="line">ffmpeg -i show2.mp4 -filter_complex &quot;drawtext=text=&apos;Summer Video&apos;:enable=&apos;between(t,15,20)&apos;,fade=t=in:start_time=15:d=0.5:alpha=1,fade=t=out:start_time=19.5:d=0.5:alpha=1[fg];[0][fg]overlay=format=auto,format=yuv420p&quot; -c:a copy output1.mp4</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 如何删除跑马灯</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ffmpeg -i sample.mp4 -filter_complex [0]drawtext=ft_load_flags=render:shadowcolor=0xaaaaaa66:shadowx=5:shadowy=2:fontcolor=white:fontsize=80:text=&apos;A&apos;:x=1033:y=77:enable=&apos;between(t,5.1,8.0)&apos;[aa];[aa]drawtext=ft_load_flags=render:shadowcolor=0xaaaaaa66:shadowx=5:shadowy=2:fontcolor=white:fontsize=80:text=&apos;B&apos;:x=1033:y=177:enable=&apos;between(t,5.6,8.0)&apos;[bb];[bb]drawtext=ft_load_flags=render:shadowcolor=0xaaaaaa66:shadowx=5:shadowy=2:fontcolor=white:fontsize=80:text=&apos;c&apos;:x=1033:y=277:enable=&apos;between(t,6.0,8.0)&apos;[cc];[cc]drawtext=ft_load_flags=render:shadowcolor=0xaaaaaa66:shadowx=5:shadowy=2:fontcolor=white:fontsize=80:text=&apos;d&apos;:x=1033:y=377:enable=&apos;between(t,6.4,8.0)&apos; -t 27 show2.mp4</span><br><span class="line"></span><br><span class="line">ffmpeg -i show2.mp4 -filter_complex [0]drawtext=ft_load_flags=render:shadowcolor=0xaaaaaa66:shadowx=5:shadowy=2:fontcolor=white:fontsize=80:text=&apos;A&apos;:x=1033:y=77:disable=&apos;between(t,5.1,8.0)&apos;[aa];[aa]drawtext=ft_load_flags=render:shadowcolor=0xaaaaaa66:shadowx=5:shadowy=2:fontcolor=white:fontsize=80:text=&apos;B&apos;:x=1033:y=177:enable=&apos;between(t,5.6,8.0)&apos;[bb];[bb]drawtext=ft_load_flags=render:shadowcolor=0xaaaaaa66:shadowx=5:shadowy=2:fontcolor=white:fontsize=80:text=&apos;c&apos;:x=1033:y=277:enable=&apos;between(t,6.0,8.0)&apos;[cc];[cc]drawtext=ft_load_flags=render:shadowcolor=0xaaaaaa66:shadowx=5:shadowy=2:fontcolor=white:fontsize=80:text=&apos;d&apos;:x=1033:y=377:enable=&apos;between(t,6.4,8.0)&apos; -t 27 show22.mp4</span><br></pre></td></tr></table></figure>
-<h2 id="乐视视频"><a href="#乐视视频" class="headerlink" title="乐视视频"></a>乐视视频</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i &quot;http://play1.cp21.ott.cibntv.net/play.videocache.lecloud.com/274/51/42/letv-uts/14/ver_00_22-1123062873-avc-419370-aac-48000-2725000-163326911-236f2850068d35d35be5375b349bd06c-1554800696821.mp4?crypt=19aa7f2e179&amp;b=479&amp;nlh=4096&amp;nlt=60&amp;bf=30&amp;p2p=1&amp;video_type=mp4&amp;termid=0&amp;tss=no&amp;platid=1&amp;splatid=105&amp;its=0&amp;qos=3&amp;fcheck=0&amp;amltag=6&amp;mltag=6&amp;uid=1783973100.rp&amp;keyitem=GOw_33YJAAbXYE-cnQwpfLlv_b2zAkYctFVqe5bsXQpaGNn3T1-vhw..&amp;ntm=1555004400&amp;nkey=0fc82a59141b628fd1893219a993fe6a&amp;nkey2=5ab8ce1b8b9fa4945565e38090c5fd36&amp;auth_key=1555004400-1-0-1-105-ce4c71fe6298cc12e0edb87227512d22&amp;geo=CN-22-0-1&amp;mmsid=66945842&amp;tm=1554986073&amp;key=79c5e20d95fa6dcded49e1f46b85da38&amp;playid=0&amp;vtype=13&amp;cvid=1094686198805&amp;payff=0&amp;sign=letv&amp;uidx=0&amp;errc=0&amp;gn=50047&amp;ndtype=2&amp;vrtmcd=102&amp;buss=6&amp;cips=16.85.68.236&quot; -c output.mp4</span><br><span class="line"></span><br><span class="line">## 这个命令执行比较快，生成的mp4文件较小</span><br><span class="line">ffmpeg -i &quot;http://play1.cp21.ott.cibntv.net/play.videocache.lecloud.com/274/51/42/letv-uts/14/ver_00_22-1123062873-avc-419370-aac-48000-2725000-163326911-236f2850068d35d35be5375b349bd06c-1554800696821.mp4?crypt=19aa7f2e179&amp;b=479&amp;nlh=4096&amp;nlt=60&amp;bf=30&amp;p2p=1&amp;video_type=mp4&amp;termid=0&amp;tss=no&amp;platid=1&amp;splatid=105&amp;its=0&amp;qos=3&amp;fcheck=0&amp;amltag=6&amp;mltag=6&amp;uid=1783973100.rp&amp;keyitem=GOw_33YJAAbXYE-cnQwpfLlv_b2zAkYctFVqe5bsXQpaGNn3T1-vhw..&amp;ntm=1555004400&amp;nkey=0fc82a59141b628fd1893219a993fe6a&amp;nkey2=5ab8ce1b8b9fa4945565e38090c5fd36&amp;auth_key=1555004400-1-0-1-105-ce4c71fe6298cc12e0edb87227512d22&amp;geo=CN-22-0-1&amp;mmsid=66945842&amp;tm=1554986073&amp;key=79c5e20d95fa6dcded49e1f46b85da38&amp;playid=0&amp;vtype=13&amp;cvid=1094686198805&amp;payff=0&amp;sign=letv&amp;uidx=0&amp;errc=0&amp;gn=50047&amp;ndtype=2&amp;vrtmcd=102&amp;buss=6&amp;cips=16.85.68.236&quot; output.mp4</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### 切片</span><br><span class="line"></span><br><span class="line"># 本地文件切片</span><br><span class="line">ffmpeg -i output.mp4 -codec copy -vbsf h264_mp4toannexb -map 0 -f segment -segment_list out.m3u8 -segment_time 10 output%03d.ts</span><br><span class="line"></span><br><span class="line">## 网络文件切片</span><br><span class="line">ffmpeg -i &quot;http://play1.cp21.ott.cibntv.net/play.videocache.lecloud.com/274/51/42/letv-uts/14/ver_00_22-1123062873-avc-419370-aac-48000-2725000-163326911-236f2850068d35d35be5375b349bd06c-1554800696821.mp4?crypt=19aa7f2e179&amp;b=479&amp;nlh=4096&amp;nlt=60&amp;bf=30&amp;p2p=1&amp;video_type=mp4&amp;termid=0&amp;tss=no&amp;platid=1&amp;splatid=105&amp;its=0&amp;qos=3&amp;fcheck=0&amp;amltag=6&amp;mltag=6&amp;uid=1783973100.rp&amp;keyitem=GOw_33YJAAbXYE-cnQwpfLlv_b2zAkYctFVqe5bsXQpaGNn3T1-vhw..&amp;ntm=1555004400&amp;nkey=0fc82a59141b628fd1893219a993fe6a&amp;nkey2=5ab8ce1b8b9fa4945565e38090c5fd36&amp;auth_key=1555004400-1-0-1-105-ce4c71fe6298cc12e0edb87227512d22&amp;geo=CN-22-0-1&amp;mmsid=66945842&amp;tm=1554986073&amp;key=79c5e20d95fa6dcded49e1f46b85da38&amp;playid=0&amp;vtype=13&amp;cvid=1094686198805&amp;payff=0&amp;sign=letv&amp;uidx=0&amp;errc=0&amp;gn=50047&amp;ndtype=2&amp;vrtmcd=102&amp;buss=6&amp;cips=16.85.68.236&quot; -codec copy -vbsf h264_mp4toannexb -map 0 -f segment -segment_list out.m3u8 -segment_time 10 output%03d.ts</span><br></pre></td></tr></table></figure>
-<h3 id="解析源站地址"><a href="#解析源站地址" class="headerlink" title="解析源站地址"></a>解析源站地址</h3><p><a href="http://www.le.com/ptv/vplay/31585088.html" target="_blank" rel="noopener">篮球冠军 http://www.le.com/ptv/vplay/31585088.html</a></p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[&#123;</span><br><span class="line">		<span class="attr">"url"</span>: <span class="string">"http://play.g3proxy.lecloud.com/vod/v2/Mjc5LzMxLzE1L2xldHYtdXRzLzE0L3Zlcl8wMF8yMi0xMTIzMzQ3NzIyLWF2Yy0xOTg5NTYtYWFjLTQ4MDAwLTcwOTQyMDktMjI5NzQ4Mzc5LWVlOThjMGE5NmMyNTkyODY1OTQ2N2Q2NDg5Yjg1OWViLTE1NTc5ODI0MzkwMDMubXA0?b=259&amp;mmsid=66983100&amp;tm=1558329036&amp;key=e8d73975419ebd5efebf01634fcf6757&amp;platid=1&amp;splatid=105&amp;playid=0&amp;tss=no&amp;vtype=21&amp;cvid=760585452670&amp;payff=1&amp;pip=afa51e781174343ae427cddbb70b6e95"</span>,</span><br><span class="line">		<span class="attr">"name"</span>: <span class="string">"流畅"</span>,</span><br><span class="line">		<span class="attr">"type"</span>: <span class="string">"hls"</span></span><br><span class="line">	&#125;,</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="attr">"url"</span>: <span class="string">"http://play.g3proxy.lecloud.com/vod/v2/Mjc1LzIyLzEwMi9sZXR2LXV0cy8xNC92ZXJfMDBfMjItMTEyMzM0NzcyOC1hdmMtNDE5Mzc5LWFhYy00ODAwMC03MDk0MjA5LTQyNTIyMTM2My0wNTQ0MjI2MWY5NmVkMTlhYzM0MmRjODZkNjYzODRjZC0xNTU3OTg1NDU3MjQyLm1wNA==?b=479&amp;mmsid=66983100&amp;tm=1558329036&amp;key=56ef8415019d8e29d919e73002d2c1f2&amp;platid=1&amp;splatid=105&amp;playid=0&amp;tss=no&amp;vtype=13&amp;cvid=760585452670&amp;payff=1&amp;pip=afa51e781174343ae427cddbb70b6e95"</span>,</span><br><span class="line">		<span class="attr">"name"</span>: <span class="string">"高清"</span>,</span><br><span class="line">		<span class="attr">"type"</span>: <span class="string">"hls"</span></span><br><span class="line">	&#125;,</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="attr">"url"</span>: <span class="string">"http://play.g3proxy.lecloud.com/vod/v2/Mjc3LzEzLzk0L2xldHYtdXRzLzE0L3Zlcl8wMF8yMi0xMTIzMzQ3NzI0LWF2Yy0yOTkzNDUxLWFhYy0xMjgwMDAtNzA5NDIwOS0yNzc4ODkxMDEwLTI1MmFlYTExZDY0Njk4MzI3YWYyMjI2ZGVmZDc1NzgwLTE1NTgwMDY3MTY1OTkubXA0?b=3133&amp;mmsid=66983100&amp;tm=1558329036&amp;key=edfdcc914ef23da01432ab606787a6ab&amp;platid=1&amp;splatid=105&amp;playid=0&amp;tss=no&amp;vtype=52&amp;cvid=760585452670&amp;payff=1&amp;pip=afa51e781174343ae427cddbb70b6e95"</span>,</span><br><span class="line">		<span class="attr">"name"</span>: <span class="string">"1080P"</span>,</span><br><span class="line">		<span class="attr">"type"</span>: <span class="string">"hls"</span></span><br><span class="line">	&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffplay -i &quot;http://play.g3proxy.lecloud.com/vod/v2/Mjc3LzEzLzk0L2xldHYtdXRzLzE0L3Zlcl8wMF8yMi0xMTIzMzQ3NzI0LWF2Yy0yOTkzNDUxLWFhYy0xMjgwMDAtNzA5NDIwOS0yNzc4ODkxMDEwLTI1MmFlYTExZDY0Njk4MzI3YWYyMjI2ZGVmZDc1NzgwLTE1NTgwMDY3MTY1OTkubXA0?b=3133&amp;mmsid=66983100&amp;tm=1558329036&amp;key=edfdcc914ef23da01432ab606787a6ab&amp;platid=1&amp;splatid=105&amp;playid=0&amp;tss=no&amp;vtype=52&amp;cvid=760585452670&amp;payff=1&amp;pip=afa51e781174343ae427cddbb70b6e95&quot;</span><br></pre></td></tr></table></figure>
-<p><strong>在线转码</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">http://play.g3proxy.lecloud.com/vod/v2/Mjc0LzEyLzg3L2xldHYtdXRzLzE0L3Zlcl8wMF8yMi0xMTIzMjUyNDY3LWF2Yy0yOTk1NzAxLWFhYy0xMjgwMDAtNzUwMjk1OS0yOTQxMTQ0MjEwLWI4MDMyYTcyYzNjYmI1MzljZmZhMzZiM2IwNTE2NTVkLTE1NTY0NjUxMjI1ODYubXA0?b=3135&amp;mmsid=66969155&amp;tm=1558330264&amp;key=213a1e7d6e30009970e474d24cb8fee1&amp;platid=1&amp;splatid=105&amp;playid=0&amp;tss=no&amp;vtype=52&amp;cvid=760585452670&amp;payff=1&amp;pip=afa51e781174343ae427cddbb70b6e95</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ffmpeg -i &quot;http:\/\/play1.cp21.ott.cibntv.net\/play.videocache.lecloud.com\/274\/12\/87\/letv-uts\/14\/ver_00_22-1123252467-avc-2995701-aac-128000-7502959-2941144210-b8032a72c3cbb539cffa36b3b051655d-1556465122586.mp4?crypt=11aa7f2e1175&amp;b=3135&amp;nlh=4096&amp;nlt=60&amp;bf=30&amp;p2p=1&amp;video_type=mp4&amp;termid=0&amp;tss=no&amp;platid=1&amp;splatid=105&amp;its=12346168&amp;qos=3&amp;fcheck=0&amp;amltag=6&amp;mltag=6&amp;uid=2074815209.rp&amp;keyitem=GOw_33YJAAbXYE-cnQwpfLlv_b2zAkYctFVqe5bsXQpaGNn3T1-vhw..&amp;ntm=1558350600&amp;nkey=a23fe439ff072ff8f94dba877ffd3ebf&amp;nkey2=4117d4b2085522ca9c68abc83d068524&amp;auth_key=1558350600-1-0-1-105-26f27dab21a1308037aedf61391161c2&amp;geo=CN-15-187-1&amp;mmsid=66969155&amp;tm=1558330264&amp;key=213a1e7d6e30009970e474d24cb8fee1&amp;playid=0&amp;vtype=52&amp;cvid=760585452670&amp;payff=1&amp;sign=letv&amp;uidx=0&amp;errc=0&amp;gn=50047&amp;ndtype=2&amp;vrtmcd=102&amp;buss=6&amp;cips=123.171.42.233&quot; -acodec copy -vcodec copy output.mp4</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://play.g3proxy.lecloud.com/vod/v2/Mjc0LzEyLzg3L2xldHYtdXRzLzE0L3Zlcl8wMF8yMi0xMTIzMjUyNDY3LWF2Yy0yOTk1NzAxLWFhYy0xMjgwMDAtNzUwMjk1OS0yOTQxMTQ0MjEwLWI4MDMyYTcyYzNjYmI1MzljZmZhMzZiM2IwNTE2NTVkLTE1NTY0NjUxMjI1ODYubXA0?b=3135&amp;mmsid=66969155&amp;tm=1558330264&amp;key=213a1e7d6e30009970e474d24cb8fee1&amp;platid=1&amp;splatid=105&amp;playid=0&amp;tss=no&amp;vtype=52&amp;cvid=760585452670&amp;payff=1&amp;pip=afa51e781174343ae427cddbb70b6e95&amp;format=1&amp;expect=3&amp;sign=letv</span><br></pre></td></tr></table></figure>
-<h2 id="header-参数"><a href="#header-参数" class="headerlink" title="header 参数"></a>header 参数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -user_agent &quot;User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36&quot; -headers &quot;sec-ch-ua: &apos;Chromium&apos;;v=&apos;88&apos;, &apos;Google Chrome&apos;;v=&apos;88&apos;, &apos;;Not A Brand&apos;;v=&apos;99&apos;&quot;$&apos;\r\n&apos;&quot;sec-ch-ua-mobile: ?0&quot;$&quot;Upgrade-Insecure-Requests: 1&quot;  -i http://127.0.0.1:3000</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffplay -user_agent &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 11_1_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36&quot; -i &quot;https://chaxun.truechat365.com/playurl/m3u8?vid=36b1q4OEIrWrX4zC0v8fO5fgPuA3JQ8tI1SeuxCibapmWxX3bfJWbCeomfSg8nYLtiBD2073AaMk3Jv2WSP_matacBJvX2wzma-LYQ1kT8JVrOK06Q&amp;k=7452766b48312b337277504d32726d676b676c3062702f4c37464535346849794569596c32414c67416d733d&amp;s=444459453143694b7161774b53726652706c617150673d3d&quot;</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ffmpeg</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/03/ffmpeg/ffmpeg/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/19/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="page-number" href="/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/page/21/">21</a><a class="page-number" href="/page/22/">22</a><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/21/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/19/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="page-number" href="/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/page/21/">21</a><a class="page-number" href="/page/22/">22</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="extend next" rel="next" href="/page/21/">Next &raquo;</a>
     </nav>
   
 
@@ -1100,7 +1098,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2025 Niu Yuxian
+    		&copy; 2026 Niu Yuxian
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -1225,15 +1223,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">was</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">area</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">cors</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">was</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1261,10 +1259,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">c#</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Nord</a>
               </li>
              
@@ -1282,6 +1276,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">guqin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">c#</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1353,6 +1351,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">opencv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">原码</a>
               </li>
              
@@ -1373,10 +1375,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sed</a>
               </li>
              
@@ -1394,6 +1392,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1441,10 +1443,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">archlinux</a>
               </li>
              
@@ -1461,6 +1459,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">d365</a>
               </li>
              
@@ -1469,15 +1471,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">deno</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">docker alpine</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">razor</a>
+                <a href="javascript:void(0)" class="js-tag color5">deno</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1486,6 +1484,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ffmpeg</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">razor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1573,14 +1575,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
@@ -1598,6 +1592,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1625,15 +1627,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">regex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">requests</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">rust</a>
+                <a href="javascript:void(0)" class="js-tag color1">regex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1645,11 +1643,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color5">rust</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1658,6 +1656,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mongo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1689,15 +1691,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">rocky</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">

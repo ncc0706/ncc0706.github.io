@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Redis ssl | Niu Yuxian&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="生成根 CA 证书 12openssl genrsa -out ca.key 4096openssl req -x509 -new -nodes -sha256 -key ca.key -days 3650 -subj &amp;apos;/C=CN/ST=Beijing/L=Beijing/O=Arukas IO/OU=Redis Server/CN=redis.vim.io&amp;apos; -out ca">
-<meta name="keywords" content="ssl,redis">
+  <meta name="description" content="生成根 CA 证书 12openssl genrsa -out ca.key 4096openssl req -x509 -new -nodes -sha256 -key ca.key -days 3650 -subj &#x27;&#x2F;C&#x3D;CN&#x2F;ST&#x3D;Beijing&#x2F;L&#x3D;Beijing&#x2F;O&#x3D;Arukas IO&#x2F;OU&#x3D;Redis Server&#x2F;CN&#x3D;redis.vim.io&#x27; -out ca">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Redis ssl">
 <meta property="og:url" content="http://yoursite.com/2025/06/21/redis_ssl/index.html">
 <meta property="og:site_name" content="Niu Yuxian&#39;blog">
-<meta property="og:description" content="生成根 CA 证书 12openssl genrsa -out ca.key 4096openssl req -x509 -new -nodes -sha256 -key ca.key -days 3650 -subj &amp;apos;/C=CN/ST=Beijing/L=Beijing/O=Arukas IO/OU=Redis Server/CN=redis.vim.io&amp;apos; -out ca">
-<meta property="og:locale" content="default">
+<meta property="og:description" content="生成根 CA 证书 12openssl genrsa -out ca.key 4096openssl req -x509 -new -nodes -sha256 -key ca.key -days 3650 -subj &#x27;&#x2F;C&#x3D;CN&#x2F;ST&#x3D;Beijing&#x2F;L&#x3D;Beijing&#x2F;O&#x3D;Arukas IO&#x2F;OU&#x3D;Redis Server&#x2F;CN&#x3D;redis.vim.io&#x27; -out ca">
+<meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/ncc0706/assets/master/2025/08/SSL_%E8%AE%A4%E8%AF%81.png">
-<meta property="og:updated_time" content="2025-06-21T22:01:07.000Z">
+<meta property="article:published_time" content="2025-06-21T22:01:07.000Z">
+<meta property="article:modified_time" content="2025-06-21T22:01:07.000Z">
+<meta property="article:author" content="Niu Yuxian">
+<meta property="article:tag" content="redis">
+<meta property="article:tag" content="ssl">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Redis ssl">
-<meta name="twitter:description" content="生成根 CA 证书 12openssl genrsa -out ca.key 4096openssl req -x509 -new -nodes -sha256 -key ca.key -days 3650 -subj &amp;apos;/C=CN/ST=Beijing/L=Beijing/O=Arukas IO/OU=Redis Server/CN=redis.vim.io&amp;apos; -out ca">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/ncc0706/assets/master/2025/08/SSL_%E8%AE%A4%E8%AF%81.png">
   
     <link rel="alternative" href="/atom.xml" title="Niu Yuxian&#39;blog" type="application/atom+xml">
@@ -60,8 +61,8 @@ var _hmt = _hmt || [];
 </script>
 
 
-</head>
-</html>
+<meta name="generator" content="Hexo 8.1.2"></head>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -74,7 +75,7 @@ var _hmt = _hmt || [];
 			<img src="/assets/images/logo.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Niu Yuxian</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
 		
 
@@ -158,7 +159,7 @@ var _hmt = _hmt || [];
 				<img src="/assets/images/logo.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Niu Yuxian</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
 			
 			
@@ -280,91 +281,112 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p><strong>生成根 CA 证书</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">openssl genrsa -out ca.key 4096</span><br><span class="line">openssl req -x509 -new -nodes -sha256 -key ca.key -days 3650 -subj &apos;/C=CN/ST=Beijing/L=Beijing/O=Arukas IO/OU=Redis Server/CN=redis.vim.io&apos; -out ca.crt</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">openssl genrsa -out ca.key 4096</span><br><span class="line">openssl req -x509 -new -nodes -sha256 -key ca.key -days 3650 -subj &#x27;/C=CN/ST=Beijing/L=Beijing/O=Arukas IO/OU=Redis Server/CN=redis.vim.io&#x27; -out ca.crt</span><br></pre></td></tr></table></figure>
+
 <p><strong>生成服务端证书</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">openssl genrsa -out redis.key 4096</span><br><span class="line"></span><br><span class="line">-- 签发申请</span><br><span class="line">openssl req -new -sha256 -key redis.key -subj &apos;/C=CN/ST=Beijing/L=Beijing/O=Arukas IO/OU=Redis Server/CN=redis.vim.io&apos; -addext &quot;subjectAltName = IP:127.0.0.1&quot; -out server.csr</span><br><span class="line"></span><br><span class="line">openssl x509 -req -sha256 -in server.csr -CA ca.crt -CAkey ca.key -CAserial ca.txt -CAcreateserial -days 3650 -extfile &lt;(printf &quot;subjectAltName=IP:127.0.0.1&quot;) -out redis.crt</span><br><span class="line"></span><br><span class="line">#查看证书</span><br><span class="line">openssl x509 -in redis.crt -text -noout</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">openssl genrsa -out redis.key 4096</span><br><span class="line"></span><br><span class="line">-- 签发申请</span><br><span class="line">openssl req -new -sha256 -key redis.key -subj &#x27;/C=CN/ST=Beijing/L=Beijing/O=Arukas IO/OU=Redis Server/CN=redis.vim.io&#x27; -addext &quot;subjectAltName = IP:127.0.0.1&quot; -out server.csr</span><br><span class="line"></span><br><span class="line">openssl x509 -req -sha256 -in server.csr -CA ca.crt -CAkey ca.key -CAserial ca.txt -CAcreateserial -days 3650 -extfile &lt;(printf &quot;subjectAltName=IP:127.0.0.1&quot;) -out redis.crt</span><br><span class="line"></span><br><span class="line">#查看证书</span><br><span class="line">openssl x509 -in redis.crt -text -noout</span><br></pre></td></tr></table></figure>
+
+
+
 <p><strong>生成客户端证书</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">openssl genrsa -out client.key 4096</span><br><span class="line"></span><br><span class="line">-- 签发申请</span><br><span class="line">openssl req -new -key client.key -out client.csr</span><br><span class="line"></span><br><span class="line">openssl x509 -req -days 3650 -in client.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out client.crt</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">openssl genrsa -out client.key 4096</span><br><span class="line"></span><br><span class="line">-- 签发申请</span><br><span class="line">openssl req -new -key client.key -out client.csr</span><br><span class="line"></span><br><span class="line">openssl x509 -req -days 3650 -in client.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out client.crt</span><br></pre></td></tr></table></figure>
+
 <p><strong>其它</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl dhparam -out redis.dh 2048</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl dhparam -out redis.dh 2048</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
 <p><img src="https://raw.githubusercontent.com/ncc0706/assets/master/2025/08/SSL_%E8%AE%A4%E8%AF%81.png" alt="SSL_认证"></p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">字段缩写</th>
-<th style="text-align:center">全称</th>
-<th style="text-align:center">描述</th>
-<th style="text-align:center">示例值</th>
-<th style="text-align:center">是否必需</th>
+<th align="center">字段缩写</th>
+<th align="center">全称</th>
+<th align="center">描述</th>
+<th align="center">示例值</th>
+<th align="center">是否必需</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center"><code>/C=</code></td>
-<td style="text-align:center">Country Name</td>
-<td style="text-align:center">国家代码（ISO 3166）</td>
-<td style="text-align:center"><code>/C=CN</code>（中国）</td>
-<td style="text-align:center">可选</td>
+<tbody><tr>
+<td align="center"><code>/C=</code></td>
+<td align="center">Country Name</td>
+<td align="center">国家代码（ISO 3166）</td>
+<td align="center"><code>/C=CN</code>（中国）</td>
+<td align="center">可选</td>
 </tr>
 <tr>
-<td style="text-align:center"><code>/ST=</code></td>
-<td style="text-align:center">State or Province Name</td>
-<td style="text-align:center">州/省名称</td>
-<td style="text-align:center"><code>/ST=Beijing</code></td>
-<td style="text-align:center">可选</td>
+<td align="center"><code>/ST=</code></td>
+<td align="center">State or Province Name</td>
+<td align="center">州&#x2F;省名称</td>
+<td align="center"><code>/ST=Beijing</code></td>
+<td align="center">可选</td>
 </tr>
 <tr>
-<td style="text-align:center"><code>/L=</code></td>
-<td style="text-align:center">Locality Name</td>
-<td style="text-align:center">城市名称</td>
-<td style="text-align:center"><code>/L=Beijing</code></td>
-<td style="text-align:center">可选</td>
+<td align="center"><code>/L=</code></td>
+<td align="center">Locality Name</td>
+<td align="center">城市名称</td>
+<td align="center"><code>/L=Beijing</code></td>
+<td align="center">可选</td>
 </tr>
 <tr>
-<td style="text-align:center"><code>/O=</code></td>
-<td style="text-align:center">Organization Name</td>
-<td style="text-align:center">组织/公司名称</td>
-<td style="text-align:center"><code>/O=Example Inc.</code></td>
-<td style="text-align:center"><strong>推荐</strong></td>
+<td align="center"><code>/O=</code></td>
+<td align="center">Organization Name</td>
+<td align="center">组织&#x2F;公司名称</td>
+<td align="center"><code>/O=Example Inc.</code></td>
+<td align="center"><strong>推荐</strong></td>
 </tr>
 <tr>
-<td style="text-align:center"><code>/OU=</code></td>
-<td style="text-align:center">Organizational Unit Name</td>
-<td style="text-align:center">组织部门名称</td>
-<td style="text-align:center"><code>/OU=IT Department</code></td>
-<td style="text-align:center">可选</td>
+<td align="center"><code>/OU=</code></td>
+<td align="center">Organizational Unit Name</td>
+<td align="center">组织部门名称</td>
+<td align="center"><code>/OU=IT Department</code></td>
+<td align="center">可选</td>
 </tr>
 <tr>
-<td style="text-align:center"><code>/CN=</code></td>
-<td style="text-align:center">Common Name</td>
-<td style="text-align:center"><strong>关键标识</strong></td>
-<td style="text-align:center"><code>/CN=www.example.com</code></td>
-<td style="text-align:center"><strong>必需</strong></td>
+<td align="center"><code>/CN=</code></td>
+<td align="center">Common Name</td>
+<td align="center"><strong>关键标识</strong></td>
+<td align="center"><code>/CN=www.example.com</code></td>
+<td align="center"><strong>必需</strong></td>
 </tr>
 <tr>
-<td style="text-align:center"><code>/emailAddress=</code></td>
-<td style="text-align:center">Email Address</td>
-<td style="text-align:center">联系邮箱</td>
-<td style="text-align:center"><a href="mailto:`/emailAddress=admin@example.com" target="_blank" rel="noopener">`/emailAddress=admin@example.com</a>`</td>
-<td style="text-align:center">可选</td>
+<td align="center"><code>/emailAddress=</code></td>
+<td align="center">Email Address</td>
+<td align="center">联系邮箱</td>
+<td align="center"><code>/emailAddress=admin@example.com</code></td>
+<td align="center">可选</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p><strong>不验证客户端证书的配置方式1</strong></p>
 <p>客户端可以不传自己的证书，只传CA证书（用于验证服务端）。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-cli --tls --cacert ca.crt</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">port 0</span><br><span class="line"></span><br><span class="line">#启用 TLS 的监听端口</span><br><span class="line">tls-port 6379</span><br><span class="line"></span><br><span class="line">#服务端证书路径</span><br><span class="line">tls-cert-file redis.crt</span><br><span class="line">#服务端私钥路径</span><br><span class="line">tls-key-file redis.key</span><br><span class="line"></span><br><span class="line">#根 CA 证书路径，用于验证客户端证书</span><br><span class="line">tls-ca-cert-file ca.crt</span><br><span class="line">tls-auth-clients no</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-cli --tls --cacert ca.crt</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">port 0</span><br><span class="line"></span><br><span class="line">#启用 TLS 的监听端口</span><br><span class="line">tls-port 6379</span><br><span class="line"></span><br><span class="line">#服务端证书路径</span><br><span class="line">tls-cert-file redis.crt</span><br><span class="line">#服务端私钥路径</span><br><span class="line">tls-key-file redis.key</span><br><span class="line"></span><br><span class="line">#根 CA 证书路径，用于验证客户端证书</span><br><span class="line">tls-ca-cert-file ca.crt</span><br><span class="line">tls-auth-clients no</span><br></pre></td></tr></table></figure>
+
 <p><strong>不验证客户端证书的配置方式2</strong></p>
 <p>客户端证书可以不传，可以建立连接</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">redis-cli --tls --cacert ca.crt</span><br><span class="line">或</span><br><span class="line">redis-cli --tls --cacert ca.crt --cert redis.crt --key redis.key</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">port 0</span><br><span class="line">tls-port 6379</span><br><span class="line"></span><br><span class="line">tls-cert-file redis.crt</span><br><span class="line">tls-key-file redis.key</span><br><span class="line"></span><br><span class="line">tls-ca-cert-file ca.crt</span><br><span class="line">tls-auth-clients optional</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">redis-cli --tls --cacert ca.crt</span><br><span class="line">或</span><br><span class="line">redis-cli --tls --cacert ca.crt --cert redis.crt --key redis.key</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">port 0</span><br><span class="line">tls-port 6379</span><br><span class="line"></span><br><span class="line">tls-cert-file redis.crt</span><br><span class="line">tls-key-file redis.key</span><br><span class="line"></span><br><span class="line">tls-ca-cert-file ca.crt</span><br><span class="line">tls-auth-clients optional</span><br></pre></td></tr></table></figure>
+
 <p><strong>验证客户端的方式</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-cli --tls --cacert ca.crt --cert redis.crt --key redis.key</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">port 0</span><br><span class="line">tls-port 6379</span><br><span class="line"></span><br><span class="line">tls-cert-file redis.crt</span><br><span class="line">tls-key-file redis.key</span><br><span class="line"></span><br><span class="line">tls-ca-cert-file ca.crt</span><br><span class="line">tls-dh-params-file redis.dh</span><br><span class="line"></span><br><span class="line">#启用客户端证书验证（双向认证关键项）</span><br><span class="line">tls-auth-clients yes</span><br><span class="line">tls-replication yes</span><br><span class="line"></span><br><span class="line">#指定tls-replication yes才能将TLS用于到主服务器的对外连接，sentinel也需要同步设置。</span><br><span class="line">#tls-cluster yes</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 用哪个都可以作为 truststore.jks</span><br><span class="line">keytool -import -alias redis -file redis.crt -keystore truststore_redis.jks -storepass 123456 -noprompt</span><br><span class="line">keytool -import -alias redis -file ca.crt  -keystore truststore.jks -storepass 123456 -noprompt</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-cli --tls --cacert ca.crt --cert redis.crt --key redis.key</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">port 0</span><br><span class="line">tls-port 6379</span><br><span class="line"></span><br><span class="line">tls-cert-file redis.crt</span><br><span class="line">tls-key-file redis.key</span><br><span class="line"></span><br><span class="line">tls-ca-cert-file ca.crt</span><br><span class="line">tls-dh-params-file redis.dh</span><br><span class="line"></span><br><span class="line">#启用客户端证书验证（双向认证关键项）</span><br><span class="line">tls-auth-clients yes</span><br><span class="line">tls-replication yes</span><br><span class="line"></span><br><span class="line">#指定tls-replication yes才能将TLS用于到主服务器的对外连接，sentinel也需要同步设置。</span><br><span class="line">#tls-cluster yes</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 用哪个都可以作为 truststore.jks</span><br><span class="line">keytool -import -alias redis -file redis.crt -keystore truststore_redis.jks -storepass 123456 -noprompt</span><br><span class="line">keytool -import -alias redis -file ca.crt  -keystore truststore.jks -storepass 123456 -noprompt</span><br></pre></td></tr></table></figure>
+
+
+
 <p><strong>直接导入 jdk 中</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-- 需要将服务的的证书导入到jdk的认证证书</span><br><span class="line">keytool -import -alias redis-ca -file redis.crt -keystore %JAVA_HOME%/lib/security/cacerts -storepass 123456 -noprompt</span><br><span class="line"></span><br><span class="line">keytool -delete -alias redis-ca -file redis.crt -keystore %JAVA_HOME%/lib/security/cacerts -storepass 123456 -noprompt</span><br><span class="line"></span><br><span class="line">## 查看导入的证书</span><br><span class="line">keytool -list -keystore %JAVA_HOME%/lib/security/cacerts</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-- 需要将服务的的证书导入到jdk的认证证书</span><br><span class="line">keytool -import -alias redis-ca -file redis.crt -keystore %JAVA_HOME%/lib/security/cacerts -storepass 123456 -noprompt</span><br><span class="line"></span><br><span class="line">keytool -delete -alias redis-ca -file redis.crt -keystore %JAVA_HOME%/lib/security/cacerts -storepass 123456 -noprompt</span><br><span class="line"></span><br><span class="line">## 查看导入的证书</span><br><span class="line">keytool -list -keystore %JAVA_HOME%/lib/security/cacerts</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -565,7 +587,7 @@ new Valine({
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2025 Niu Yuxian
+    		&copy; 2026 Niu Yuxian
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -690,15 +712,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">was</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">area</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">cors</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">was</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -726,10 +748,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">c#</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Nord</a>
               </li>
              
@@ -747,6 +765,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">guqin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">c#</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -818,6 +840,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">opencv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">原码</a>
               </li>
              
@@ -838,10 +864,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sed</a>
               </li>
              
@@ -859,6 +881,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -906,10 +932,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">archlinux</a>
               </li>
              
@@ -926,6 +948,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">d365</a>
               </li>
              
@@ -934,15 +960,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">deno</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">docker alpine</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">razor</a>
+                <a href="javascript:void(0)" class="js-tag color5">deno</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -951,6 +973,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ffmpeg</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">razor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1038,14 +1064,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
@@ -1063,6 +1081,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1090,15 +1116,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">regex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">requests</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">rust</a>
+                <a href="javascript:void(0)" class="js-tag color1">regex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1110,11 +1132,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color5">rust</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1123,6 +1145,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mongo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1154,15 +1180,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">rocky</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">

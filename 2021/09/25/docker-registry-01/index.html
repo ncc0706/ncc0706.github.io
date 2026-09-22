@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Docker Registry (1) | Niu Yuxian&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="基于 harbor-offline-installer-v2.3.2.tgz 搭建私有镜像仓库。 前置条件 123451. 安装docker2. 安装docker-composecurl -L &amp;quot;https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)">
-<meta name="keywords" content="docker">
+  <meta name="description" content="基于 harbor-offline-installer-v2.3.2.tgz 搭建私有镜像仓库。 前置条件 123451. 安装docker2. 安装docker-composecurl -L &quot;https:&#x2F;&#x2F;github.com&#x2F;docker&#x2F;compose&#x2F;releases&#x2F;download&#x2F;1.29.2&#x2F;docker-compose-$(uname -s)-$(uname -m)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker Registry (1)">
 <meta property="og:url" content="http://yoursite.com/2021/09/25/docker-registry-01/index.html">
 <meta property="og:site_name" content="Niu Yuxian&#39;blog">
-<meta property="og:description" content="基于 harbor-offline-installer-v2.3.2.tgz 搭建私有镜像仓库。 前置条件 123451. 安装docker2. 安装docker-composecurl -L &amp;quot;https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)">
-<meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2025-09-30T04:26:37.783Z">
+<meta property="og:description" content="基于 harbor-offline-installer-v2.3.2.tgz 搭建私有镜像仓库。 前置条件 123451. 安装docker2. 安装docker-composecurl -L &quot;https:&#x2F;&#x2F;github.com&#x2F;docker&#x2F;compose&#x2F;releases&#x2F;download&#x2F;1.29.2&#x2F;docker-compose-$(uname -s)-$(uname -m)">
+<meta property="og:locale">
+<meta property="article:published_time" content="2021-09-25T16:37:31.000Z">
+<meta property="article:modified_time" content="2021-09-25T16:37:31.000Z">
+<meta property="article:author" content="Niu Yuxian">
+<meta property="article:tag" content="docker">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Docker Registry (1)">
-<meta name="twitter:description" content="基于 harbor-offline-installer-v2.3.2.tgz 搭建私有镜像仓库。 前置条件 123451. 安装docker2. 安装docker-composecurl -L &amp;quot;https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)">
   
     <link rel="alternative" href="/atom.xml" title="Niu Yuxian&#39;blog" type="application/atom+xml">
   
@@ -58,8 +58,8 @@ var _hmt = _hmt || [];
 </script>
 
 
-</head>
-</html>
+<meta name="generator" content="Hexo 8.1.2"></head>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -72,7 +72,7 @@ var _hmt = _hmt || [];
 			<img src="/assets/images/logo.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Niu Yuxian</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
 		
 
@@ -156,7 +156,7 @@ var _hmt = _hmt || [];
 				<img src="/assets/images/logo.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Niu Yuxian</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
 			
 			
@@ -270,7 +270,7 @@ var _hmt = _hmt || [];
         
         <a href="/2021/09/25/docker-registry-01/" class="archive-article-date">
   	<time datetime="2021-09-25T16:37:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-25</time>
-  	更新：2025-09-30
+  	更新：2021-09-25
 </a>
         
       </header>
@@ -279,39 +279,56 @@ var _hmt = _hmt || [];
       
         <p>基于 harbor-offline-installer-v2.3.2.tgz 搭建私有镜像仓库。</p>
 <p>前置条件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. 安装docker</span><br><span class="line">2. 安装docker-compose</span><br><span class="line">curl -L &quot;https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose</span><br><span class="line"></span><br><span class="line">chmod +x /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. 安装docker</span><br><span class="line">2. 安装docker-compose</span><br><span class="line">curl -L &quot;https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose</span><br><span class="line"></span><br><span class="line">chmod +x /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
+
+
+
 <p>生成证书</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /data/cert &amp;&amp; chmod -R 777 /data/cert &amp;&amp; cd /data/cert</span><br><span class="line">openssl req -x509 -sha256 -nodes -days 3650 -newkey rsa:2048 -keyout harbor.key -out harbor.crt -subj &quot;/CN=hub.me.io&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /data/cert &amp;&amp; chmod -R 777 /data/cert &amp;&amp; cd /data/cert</span><br><span class="line">openssl req -x509 -sha256 -nodes -days 3650 -newkey rsa:2048 -keyout harbor.key -out harbor.crt -subj &quot;/CN=hub.me.io&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p>部署安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf harbor-offline-installer-v2.3.2.tgz</span><br><span class="line">harbor/harbor.v2.3.2.tar.gz</span><br><span class="line">harbor/prepare</span><br><span class="line">harbor/LICENSE</span><br><span class="line">harbor/install.sh</span><br><span class="line">harbor/common.sh</span><br><span class="line">harbor/harbor.yml.tmpl</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf harbor-offline-installer-v2.3.2.tgz</span><br><span class="line">harbor/harbor.v2.3.2.tar.gz</span><br><span class="line">harbor/prepare</span><br><span class="line">harbor/LICENSE</span><br><span class="line">harbor/install.sh</span><br><span class="line">harbor/common.sh</span><br><span class="line">harbor/harbor.yml.tmpl</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
 <p>编辑harbor.yml，修改hostname、https证书路径、admin密码</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">hostname:</span> <span class="string">hub.me.io</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># http related config</span></span><br><span class="line"><span class="attr">http:</span></span><br><span class="line">  <span class="comment"># port for http, default is 80. If https enabled, this port will redirect to https port</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">80</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># https related config</span></span><br><span class="line"><span class="attr">https:</span></span><br><span class="line">  <span class="comment"># https port for harbor, default is 443</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">443</span></span><br><span class="line">  <span class="comment"># The path of cert and key files for nginx</span></span><br><span class="line">  <span class="attr">certificate:</span> <span class="string">/data/cert/harbor.crt</span></span><br><span class="line">  <span class="attr">private_key:</span> <span class="string">/data/cert/harbor.key</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># # Uncomment following will enable tls communication between all harbor components</span></span><br><span class="line"><span class="comment"># internal_tls:</span></span><br><span class="line"><span class="comment">#   # set enabled to true means internal tls is enabled</span></span><br><span class="line"><span class="comment">#   enabled: true</span></span><br><span class="line"><span class="comment">#   # put your cert and key files on dir</span></span><br><span class="line"><span class="comment">#   dir: /etc/harbor/tls/internal</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Uncomment external_url if you want to enable external proxy</span></span><br><span class="line"><span class="comment"># And when it enabled the hostname will no longer used</span></span><br><span class="line"><span class="comment"># external_url: https://reg.mydomain.com:8433</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># The initial password of Harbor admin</span></span><br><span class="line"><span class="comment"># It only works in first time to install harbor</span></span><br><span class="line"><span class="comment"># Remember Change the admin password from UI after launching Harbor.</span></span><br><span class="line"><span class="attr">harbor_admin_password:</span> <span class="string">admin</span></span><br></pre></td></tr></table></figure>
+
 <p>运行install.sh即可（可带参数–with-notary启用镜像签名，–with-clair启用漏洞扫描）</p>
-<p><strong>流程：</strong>检查环境 -&gt; 导入镜像 -&gt; 准备环境 -&gt; 准备配置（含移除旧版本）-&gt; 开始启动</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[root@docker-registry harbor] ./install.sh --with-notary --with-clair</span><br><span class="line">✖ Clair is deprecated please remove it from installation arguments !!!</span><br><span class="line">[root@docker-registry harbor]# </span><br><span class="line"></span><br><span class="line">[root@docker-registry harbor]# ./install.sh</span><br><span class="line"></span><br><span class="line">[Step 0]: checking if docker is installed ...</span><br><span class="line"></span><br><span class="line">Note: docker version: 20.10.8</span><br><span class="line"></span><br><span class="line">[Step 1]: checking docker-compose is installed ...</span><br><span class="line"></span><br><span class="line">Note: docker-compose version: 1.29.2</span><br><span class="line"></span><br><span class="line">[Step 2]: loading Harbor images ...</span><br></pre></td></tr></table></figure>
+<p>**流程：**检查环境 -&gt; 导入镜像 -&gt; 准备环境 -&gt; 准备配置（含移除旧版本）-&gt; 开始启动</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[root@docker-registry harbor] ./install.sh --with-notary --with-clair</span><br><span class="line">✖ Clair is deprecated please remove it from installation arguments !!!</span><br><span class="line">[root@docker-registry harbor]# </span><br><span class="line"></span><br><span class="line">[root@docker-registry harbor]# ./install.sh</span><br><span class="line"></span><br><span class="line">[Step 0]: checking if docker is installed ...</span><br><span class="line"></span><br><span class="line">Note: docker version: 20.10.8</span><br><span class="line"></span><br><span class="line">[Step 1]: checking docker-compose is installed ...</span><br><span class="line"></span><br><span class="line">Note: docker-compose version: 1.29.2</span><br><span class="line"></span><br><span class="line">[Step 2]: loading Harbor images ...</span><br></pre></td></tr></table></figure>
+
+
+
 <p>访问80端口即可</p>
 <p>开机启动</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">vim /usr/lib/systemd/system/harbor.service</span><br><span class="line"></span><br><span class="line">[Unit]</span><br><span class="line">Description=Harbor</span><br><span class="line">After=docker.service systemd-networkd.service systemd-resolved.service</span><br><span class="line">Requires=docker.service</span><br><span class="line">Documentation=http://github.com/vmware/harbor</span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">Restart=on-failure</span><br><span class="line">RestartSec=5</span><br><span class="line">ExecStart=/usr/local/bin/docker-compose -f /root/harbor/docker-compose.yml up</span><br><span class="line">ExecStop=/usr/local/bin/docker-compose -f /root/harbor/docker-compose.yml down</span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable harbor.service</span><br></pre></td></tr></table></figure>
-<p>数据挂载到 /data 目录下面</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">vim /usr/lib/systemd/system/harbor.service</span><br><span class="line"></span><br><span class="line">[Unit]</span><br><span class="line">Description=Harbor</span><br><span class="line">After=docker.service systemd-networkd.service systemd-resolved.service</span><br><span class="line">Requires=docker.service</span><br><span class="line">Documentation=http://github.com/vmware/harbor</span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">Restart=on-failure</span><br><span class="line">RestartSec=5</span><br><span class="line">ExecStart=/usr/local/bin/docker-compose -f /root/harbor/docker-compose.yml up</span><br><span class="line">ExecStop=/usr/local/bin/docker-compose -f /root/harbor/docker-compose.yml down</span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable harbor.service</span><br></pre></td></tr></table></figure>
+
+
+
+<p>数据挂载到 &#x2F;data 目录下面</p>
 <p>配置镜像加速地址</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cat &gt; /etc/docker/daemon.json &lt;&lt;EOF</span><br><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [&quot;https://jc3y13r3.mirror.aliyuncs.com&quot;]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line">systemctl daemon-reload &amp;&amp; systemctl restart docker</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cat &gt; /etc/docker/daemon.json &lt;&lt;EOF</span><br><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [&quot;https://jc3y13r3.mirror.aliyuncs.com&quot;]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line">systemctl daemon-reload &amp;&amp; systemctl restart docker</span><br></pre></td></tr></table></figure>
+
+
+
 <h2 id="其它机器如何使用私服"><a href="#其它机器如何使用私服" class="headerlink" title="其它机器如何使用私服"></a>其它机器如何使用私服</h2><ol>
 <li><p>修改配置 ,新增下面的配置</p>
-<p>vim /etc/docker/daemon.json</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;insecure-registries&quot;: [&quot;192.168.18.120&quot;]</span><br></pre></td></tr></table></figure>
+<p>vim &#x2F;etc&#x2F;docker&#x2F;daemon.json</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;insecure-registries&quot;: [&quot;192.168.18.120&quot;]</span><br></pre></td></tr></table></figure>
+
 <p>完整配置</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"exec-opts"</span>: [</span><br><span class="line">    <span class="string">"native.cgroupdriver=systemd"</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">"log-driver"</span>: <span class="string">"json-file"</span>,</span><br><span class="line">  <span class="attr">"insecure-registries"</span>: [<span class="string">"192.168.18.120"</span>],</span><br><span class="line">  <span class="attr">"log-opts"</span>: &#123;</span><br><span class="line">    <span class="attr">"max-size"</span>: <span class="string">"100m"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;exec-opts&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="string">&quot;native.cgroupdriver=systemd&quot;</span></span><br><span class="line">  <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;log-driver&quot;</span><span class="punctuation">:</span> <span class="string">&quot;json-file&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;insecure-registries&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;192.168.18.120&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;log-opts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;max-size&quot;</span><span class="punctuation">:</span> <span class="string">&quot;100m&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+
 </li>
-</ol>
-<ol start="2">
 <li><p>重启docker</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>验证是否成功 docker info</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> Insecure Registries:</span><br><span class="line">192.168.18.120</span><br><span class="line">127.0.0.0/8</span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> Insecure Registries:</span><br><span class="line">192.168.18.120</span><br><span class="line">127.0.0.0/8</span><br></pre></td></tr></table></figure></li>
 </ol>
 
       
@@ -509,7 +526,7 @@ new Valine({
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2025 Niu Yuxian
+    		&copy; 2026 Niu Yuxian
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -634,15 +651,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">was</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">area</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">cors</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">was</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -670,10 +687,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">c#</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Nord</a>
               </li>
              
@@ -691,6 +704,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">guqin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">c#</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -762,6 +779,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">opencv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">原码</a>
               </li>
              
@@ -782,10 +803,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sed</a>
               </li>
              
@@ -803,6 +820,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -850,10 +871,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">archlinux</a>
               </li>
              
@@ -870,6 +887,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">d365</a>
               </li>
              
@@ -878,15 +899,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">deno</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">docker alpine</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">razor</a>
+                <a href="javascript:void(0)" class="js-tag color5">deno</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -895,6 +912,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ffmpeg</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">razor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -982,14 +1003,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
@@ -1007,6 +1020,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1034,15 +1055,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">regex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">requests</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">rust</a>
+                <a href="javascript:void(0)" class="js-tag color1">regex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1054,11 +1071,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color5">rust</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1067,6 +1084,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mongo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1098,15 +1119,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">rocky</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>安装Alpine Linux | Niu Yuxian&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="下载iso 下载地址，创建vmware虚拟机，挂载下载的image.启动就进入登录界面了。用户名root，密码是空。（默认的）,根据提示">
-<meta name="keywords" content="alpine">
 <meta property="og:type" content="article">
 <meta property="og:title" content="安装Alpine Linux">
 <meta property="og:url" content="http://yoursite.com/2018/02/08/alpine/install-alpine-linux/index.html">
 <meta property="og:site_name" content="Niu Yuxian&#39;blog">
 <meta property="og:description" content="下载iso 下载地址，创建vmware虚拟机，挂载下载的image.启动就进入登录界面了。用户名root，密码是空。（默认的）,根据提示">
-<meta property="og:locale" content="default">
+<meta property="og:locale">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2018/02/08/201501172300446668.jpg">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2018/02/08/install/setup-alpine.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2018/02/08/install/keyboard-layout.png">
@@ -26,10 +25,11 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2018/02/08/install/format.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2018/02/08/install/default-ssh.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2018/02/08/install/root-ssh.png">
-<meta property="og:updated_time" content="2025-09-30T04:26:37.781Z">
+<meta property="article:published_time" content="2018-02-08T15:58:17.000Z">
+<meta property="article:modified_time" content="2018-02-08T15:58:17.000Z">
+<meta property="article:author" content="Niu Yuxian">
+<meta property="article:tag" content="alpine">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="安装Alpine Linux">
-<meta name="twitter:description" content="下载iso 下载地址，创建vmware虚拟机，挂载下载的image.启动就进入登录界面了。用户名root，密码是空。（默认的）,根据提示">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2018/02/08/201501172300446668.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Niu Yuxian&#39;blog" type="application/atom+xml">
@@ -69,8 +69,8 @@ var _hmt = _hmt || [];
 </script>
 
 
-</head>
-</html>
+<meta name="generator" content="Hexo 8.1.2"></head>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -83,7 +83,7 @@ var _hmt = _hmt || [];
 			<img src="/assets/images/logo.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Niu Yuxian</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
 		
 
@@ -167,7 +167,7 @@ var _hmt = _hmt || [];
 				<img src="/assets/images/logo.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Niu Yuxian</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
 			
 			
@@ -281,17 +281,18 @@ var _hmt = _hmt || [];
         
         <a href="/2018/02/08/alpine/install-alpine-linux/" class="archive-article-date">
   	<time datetime="2018-02-08T15:58:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-08</time>
-  	更新：2025-09-30
+  	更新：2018-02-08
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2018/02/08/201501172300446668.jpg" alt></p>
+        <p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2018/02/08/201501172300446668.jpg"></p>
 <p><strong>下载iso</strong></p>
-<p><a href="https://alpinelinux.org/downloads/" target="_blank" rel="noopener">下载地址</a>，创建vmware虚拟机，挂载下载的image.启动就进入登录界面了。用户名root，密码是空。（默认的）,根据提示</p>
-<a id="more"></a>
+<p><a target="_blank" rel="noopener" href="https://alpinelinux.org/downloads/">下载地址</a>，创建vmware虚拟机，挂载下载的image.启动就进入登录界面了。用户名root，密码是空。（默认的）,根据提示</p>
+<span id="more"></span>
+
 <p><strong>setup-alpine</strong></p>
 <p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2018/02/08/install/setup-alpine.png" alt="setup-alpine"></p>
 <p><strong>键盘布局</strong></p>
@@ -302,13 +303,15 @@ var _hmt = _hmt || [];
 <p>默认既可以</p>
 <p><strong>ip地址配置</strong></p>
 <p>可以使用dhcp，我这里使用static</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">ip: 192.168.163.200</span><br><span class="line">netmask: 255.255.255.0</span><br><span class="line">gateway: 192.168.163.2</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 也可以安装完后手动修改</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> vim /etc/network/interfaces</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> like this</span></span><br><span class="line"></span><br><span class="line">auto lo</span><br><span class="line">iface lo inet loopback</span><br><span class="line"></span><br><span class="line">auto eth0</span><br><span class="line">iface eth0 inet static</span><br><span class="line">        address 192.168.163.200</span><br><span class="line">        netmask 255.255.255.0</span><br><span class="line">        gateway 192.168.163.2</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 也可以通过setup设置</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> https://wiki.alpinelinux.org/wiki/Alpine_setup_scripts</span></span><br><span class="line">alpine:/bin# setup-</span><br><span class="line">setup-acf              setup-bootable         setup-hostname         setup-mta              setup-timezone</span><br><span class="line">setup-alpine           setup-disk             setup-interfaces       setup-ntp              setup-xen-dom0</span><br><span class="line">setup-apkcache         setup-dns              setup-keymap           setup-proxy            setup-xorg-base</span><br><span class="line">setup-apkrepos         setup-gparted-desktop  setup-lbu              setup-sshd</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">ip: 192.168.163.200</span><br><span class="line">netmask: 255.255.255.0</span><br><span class="line">gateway: 192.168.163.2</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 也可以安装完后手动修改</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">vim /etc/network/interfaces</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">like this</span></span><br><span class="line"></span><br><span class="line">auto lo</span><br><span class="line">iface lo inet loopback</span><br><span class="line"></span><br><span class="line">auto eth0</span><br><span class="line">iface eth0 inet static</span><br><span class="line">        address 192.168.163.200</span><br><span class="line">        netmask 255.255.255.0</span><br><span class="line">        gateway 192.168.163.2</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">也可以通过setup设置</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">https://wiki.alpinelinux.org/wiki/Alpine_setup_scripts</span></span><br><span class="line">alpine:/bin# setup-</span><br><span class="line">setup-acf              setup-bootable         setup-hostname         setup-mta              setup-timezone</span><br><span class="line">setup-alpine           setup-disk             setup-interfaces       setup-ntp              setup-xen-dom0</span><br><span class="line">setup-apkcache         setup-dns              setup-keymap           setup-proxy            setup-xorg-base</span><br><span class="line">setup-apkrepos         setup-gparted-desktop  setup-lbu              setup-sshd</span><br></pre></td></tr></table></figure>
+
 <p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2018/02/08/install/ip-config.png" alt="ip-config"></p>
 <p><strong>配置dns、root密码</strong></p>
 <p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2018/02/08/install/dns.png" alt="dns"></p>
 <p>如果这里没有配置，可以通过修改配置文件<code>/etc/resolv.conf</code>手动添加</p>
 <p>设置成网关也是可以联网的</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nameserver 192.168.18.2</span><br><span class="line">nameserver 114.114.114.114</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nameserver 192.168.18.2</span><br><span class="line">nameserver 114.114.114.114</span><br></pre></td></tr></table></figure>
+
 <p><strong>时区配置</strong></p>
 <p><code>Asia/Shanghai</code></p>
 <p><strong>选择image</strong></p>
@@ -317,7 +320,8 @@ var _hmt = _hmt || [];
 <p>e: 手动修改配置文件</p>
 <p>也可以在系统安装完后修改</p>
 <p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2018/02/08/install/mirror.png" alt="mirror"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># vi /etc/apk/repositories</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># vi /etc/apk/repositories</span><br></pre></td></tr></table></figure>
+
 <p><strong>ssh server</strong></p>
 <p>服务器一般会选择安装的，默认即可</p>
 <p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2018/02/08/install/sshserver.png" alt="sshserver"></p>
@@ -325,23 +329,32 @@ var _hmt = _hmt || [];
 <p><strong>格式化硬盘</strong></p>
 <p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2018/02/08/install/format.png" alt="format"></p>
 <p><strong>重启alpine linux</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> reboot</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">reboot</span></span><br></pre></td></tr></table></figure>
+
 <p><strong>开启root远程登陆</strong></p>
 <p>默认配置</p>
 <p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2018/02/08/install/default-ssh.png" alt="default-ssh"></p>
 <p>修改后配置</p>
 <p><img src="https://cdn.jsdelivr.net/gh/ncc0706/assets@latest/2018/02/08/install/root-ssh.png" alt="root-ssh"></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> service sshd restart</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> ssh localhost</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">service sshd restart</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">ssh localhost</span></span><br></pre></td></tr></table></figure>
 <p><strong>安装telnet</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apk add busybox-extras</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apk add busybox-extras</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
 <p><strong>国内镜像配置</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> vi /etc/apk/repositories</span></span><br><span class="line"><span class="meta">#</span><span class="bash">/media/cdrom/apks</span></span><br><span class="line"><span class="meta">#</span><span class="bash">http://dl-cdn.alpinelinux.org/alpine/v3.7/main</span></span><br><span class="line"><span class="meta">#</span><span class="bash">http://dl-cdn.alpinelinux.org/alpine/v3.7/community</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">http://dl-cdn.alpinelinux.org/alpine/edge/main</span></span><br><span class="line"><span class="meta">#</span><span class="bash">http://dl-cdn.alpinelinux.org/alpine/edge/community</span></span><br><span class="line"><span class="meta">#</span><span class="bash">http://dl-cdn.alpinelinux.org/alpine/edge/testing</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 清华mirror</span></span><br><span class="line">https://mirror.tuna.tsinghua.edu.cn/alpine/v3.7/main</span><br><span class="line">https://mirror.tuna.tsinghua.edu.cn/alpine/v3.7/community</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 更新源信息</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> apk add --update</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 防火墙的配置</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> /etc/init.d/iptables save</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">vi /etc/apk/repositories</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">/media/cdrom/apks</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">http://dl-cdn.alpinelinux.org/alpine/v3.7/main</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">http://dl-cdn.alpinelinux.org/alpine/v3.7/community</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">http://dl-cdn.alpinelinux.org/alpine/edge/main</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">http://dl-cdn.alpinelinux.org/alpine/edge/community</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">http://dl-cdn.alpinelinux.org/alpine/edge/testing</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">清华mirror</span></span><br><span class="line">https://mirror.tuna.tsinghua.edu.cn/alpine/v3.7/main</span><br><span class="line">https://mirror.tuna.tsinghua.edu.cn/alpine/v3.7/community</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">更新源信息</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">apk add --update</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">防火墙的配置</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">/etc/init.d/iptables save</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
 <blockquote>
-<p><a href="https://wiki.alpinelinux.org/wiki/Main_Page" target="_blank" rel="noopener">https://wiki.alpinelinux.org/wiki/Main_Page</a></p>
-<p><a href="https://wiki.alpinelinux.org/wiki/Alpine_setup_scripts" target="_blank" rel="noopener">https://wiki.alpinelinux.org/wiki/Alpine_setup_scripts</a></p>
-<p><a href="https://www.youtube.com/watch?v=1G4nmUUk2kI" target="_blank" rel="noopener">https://www.youtube.com/watch?v=1G4nmUUk2kI</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzI2MDY5Mzc0Ng==&amp;mid=2247483953&amp;idx=1&amp;sn=c0790b2d73bcd047f8a84d604fc24a8a&amp;chksm=ea6489acdd1300ba092c85b54ccecb417e3c28127ec9a7c280325af4b8737b74c29888c2081a#rd" target="_blank" rel="noopener">https://mp.weixin.qq.com/s?__biz=MzI2MDY5Mzc0Ng==&amp;mid=2247483953&amp;idx=1&amp;sn=c0790b2d73bcd047f8a84d604fc24a8a&amp;chksm=ea6489acdd1300ba092c85b54ccecb417e3c28127ec9a7c280325af4b8737b74c29888c2081a#rd</a></p>
+<p><a target="_blank" rel="noopener" href="https://wiki.alpinelinux.org/wiki/Main_Page">https://wiki.alpinelinux.org/wiki/Main_Page</a></p>
+<p><a target="_blank" rel="noopener" href="https://wiki.alpinelinux.org/wiki/Alpine_setup_scripts">https://wiki.alpinelinux.org/wiki/Alpine_setup_scripts</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=1G4nmUUk2kI">https://www.youtube.com/watch?v=1G4nmUUk2kI</a></p>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzI2MDY5Mzc0Ng==&mid=2247483953&idx=1&sn=c0790b2d73bcd047f8a84d604fc24a8a&chksm=ea6489acdd1300ba092c85b54ccecb417e3c28127ec9a7c280325af4b8737b74c29888c2081a#rd">https://mp.weixin.qq.com/s?__biz=MzI2MDY5Mzc0Ng==&amp;mid=2247483953&amp;idx=1&amp;sn=c0790b2d73bcd047f8a84d604fc24a8a&amp;chksm=ea6489acdd1300ba092c85b54ccecb417e3c28127ec9a7c280325af4b8737b74c29888c2081a#rd</a></p>
 </blockquote>
 
       
@@ -528,7 +541,7 @@ new Valine({
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2025 Niu Yuxian
+    		&copy; 2026 Niu Yuxian
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -653,15 +666,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">was</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">area</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">cors</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">was</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -689,10 +702,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">c#</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Nord</a>
               </li>
              
@@ -710,6 +719,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">guqin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">c#</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -781,6 +794,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">opencv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">原码</a>
               </li>
              
@@ -801,10 +818,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sed</a>
               </li>
              
@@ -822,6 +835,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -869,10 +886,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">archlinux</a>
               </li>
              
@@ -889,6 +902,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">d365</a>
               </li>
              
@@ -897,15 +914,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">deno</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">docker alpine</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">razor</a>
+                <a href="javascript:void(0)" class="js-tag color5">deno</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -914,6 +927,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ffmpeg</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">razor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1001,14 +1018,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
@@ -1026,6 +1035,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1053,15 +1070,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">regex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">requests</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">rust</a>
+                <a href="javascript:void(0)" class="js-tag color1">regex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1073,11 +1086,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color5">rust</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1086,6 +1099,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mongo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1117,15 +1134,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">rocky</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">

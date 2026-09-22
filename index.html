@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Niu Yuxian&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -12,9 +12,9 @@
 <meta property="og:title" content="Niu Yuxian&#39;blog">
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="Niu Yuxian&#39;blog">
-<meta property="og:locale" content="default">
+<meta property="og:locale">
+<meta property="article:author" content="Niu Yuxian">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Niu Yuxian&#39;blog">
   
     <link rel="alternative" href="/atom.xml" title="Niu Yuxian&#39;blog" type="application/atom+xml">
   
@@ -53,8 +53,8 @@ var _hmt = _hmt || [];
 </script>
 
 
-</head>
-</html>
+<meta name="generator" content="Hexo 8.1.2"></head>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -67,7 +67,7 @@ var _hmt = _hmt || [];
 			<img src="/assets/images/logo.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Niu Yuxian</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
 		
 
@@ -151,7 +151,7 @@ var _hmt = _hmt || [];
 				<img src="/assets/images/logo.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Niu Yuxian</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
 			
 			
@@ -253,6 +253,115 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-opencv-cpp-480" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/10/12/opencv-cpp-480/">opencv_cpp_480</a>
+    </h1>
+  
+
+        
+        <a href="/2025/10/12/opencv-cpp-480/" class="archive-article-date">
+  	<time datetime="2025-10-12T09:19:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-10-12</time>
+  	更新：2025-10-12
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="https://opencv.org/releases/">下载地址</a> <a target="_blank" rel="noopener" href="https://github.com/opencv/opencv/releases/download/4.8.0/opencv-4.8.0-windows.exe">opencv-4.8.0-windows.exe</a></p>
+<p>解压 <code>opencv-4.8.0-windows.exe</code> 到指定的位置 <code>D:\develop\opencv</code></p>
+<p>VS 配置 opencv 环境 （Release X64）</p>
+<p>vs2022 属性管理器 没有 Microsoft.cpp.x64.user,可以直接点击 Release| x64 是一样的。</p>
+<ol>
+<li><p>配置包含目录</p>
+<p><strong>“公共包含目录”</strong> 是<strong>属性表 (.props)</strong> 级别的设置，影响所有<em>使用该属性表</em>的项目。</p>
+<p><strong>“包含目录”</strong> 是<strong>项目 (.vcxproj)</strong> 级别的设置，只影响当前项目。</p>
+<p>VC++ 目录 -&gt; 常规 -&gt; 库目录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">D:\develop\opencv\build\include</span><br><span class="line">D:\develop\opencv\build\include\opencv2</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置库目录</p>
+<p>VC++ 目录 -&gt; 常规 -&gt; 库目录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\develop\opencv\build\x64\vc16\lib</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置链接器</p>
+<p>链接器-&gt;输入-&gt;附加依赖项</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">opencv_world480.lib</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置环境变量(系统path中)、重启VS</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\develop\opencv\build\x64\vc16\bin</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">opencv</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+        |阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/opencv//" class="article-tag-list-link color2">opencv</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2025/10/12/opencv-cpp-480/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-java/websocket" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -275,9 +384,13 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p>方式1、方式2可以混用，否则会出现握手无响应（是因为有个 <code>checkStartsWith</code> 参数需要设置为 true）</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandshakeHandler#channelRead</span><br><span class="line">    </span><br><span class="line">io.netty.handler.codec.http.websocketx.WebSocketServerHandshaker13#newHandshakeResponse</span><br></pre></td></tr></table></figure>
-<h3 id="方式1-基于-url-参数方式"><a href="#方式1-基于-url-参数方式" class="headerlink" title="方式1 基于 url 参数方式"></a>方式1 基于 url 参数方式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> socket = <span class="keyword">new</span> WebSocket(<span class="string">'ws://127.0.0.1:8080/ws?token=xxx'</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">initChannel</span><span class="params">(SocketChannel socketChannel)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        ChannelPipeline pipeline = socketChannel.pipeline();</span><br><span class="line"><span class="comment">//        pipeline.addLast(new LoggingHandler(LogLevel.INFO));</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 因为使用 HTTP 协议，所以需要 HTTP编码器，解码器</span></span><br><span class="line">        <span class="comment">// WebSocket 握手完成后，HTTP 相关的 handler（如 HttpServerCodec）会被移除，后续通信直接使用 WebSocket 帧</span></span><br><span class="line">        pipeline.addLast(<span class="keyword">new</span> HttpServerCodec());</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 以块方式，添加 chunkedWriter 处理器</span></span><br><span class="line">        pipeline.addLast(<span class="keyword">new</span> ChunkedWriteHandler());</span><br><span class="line"></span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">         * 1. http数据在传输中是分段的，HttpObjectAggregator 可以把多个段聚合起来</span></span><br><span class="line"><span class="comment">         * 2. 这就是为什么当浏览器发送大量数据时，就会发出多次 http请求的原因</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        pipeline.addLast(<span class="keyword">new</span> HttpObjectAggregator(<span class="number">1024</span> * <span class="number">512</span>));</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 添加WebSocket消息压缩处理器</span></span><br><span class="line">        <span class="comment">// 会报错</span></span><br><span class="line">        <span class="comment">//  RSV != 0 and no extension negotiated, RSV:4</span></span><br><span class="line"><span class="comment">//        pipeline.addLast(new WebSocketServerCompressionHandler());</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 保存用户ip</span></span><br><span class="line">        <span class="comment">// pipeline.addLast(new HttpHeadersHandler());</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//        pipeline.addLast(new LifeCyCleHandler());</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//设置一个空闲状态处理程序（心跳机制），读空闲，写空闲，读写空闲</span></span><br><span class="line">        pipeline.addLast(<span class="keyword">new</span> IdleStateHandler(<span class="number">120</span>, <span class="number">0</span>, <span class="number">0</span>));</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 自定义参数处理器，必须放在 new WebSocketServerProtocolHandler() 处理器之前</span></span><br><span class="line">        pipeline.addLast(<span class="string">"auth"</span>, authUrlHandler);</span><br><span class="line">        <span class="comment">// WebSocket协议处理器，关键配置</span></span><br><span class="line">        pipeline.addLast(<span class="keyword">new</span> WebSocketServerProtocolHandler(</span><br><span class="line">                <span class="string">"/ws"</span>,  <span class="comment">// WebSocket路径</span></span><br><span class="line">                <span class="keyword">null</span>,   <span class="comment">// 子协议，不指定</span></span><br><span class="line">                <span class="keyword">true</span>,   <span class="comment">// 允许扩展</span></span><br><span class="line">                <span class="number">65536</span>,  <span class="comment">// 最大帧大小</span></span><br><span class="line">                <span class="keyword">false</span>,  <span class="comment">// 不允许掩码</span></span><br><span class="line">                <span class="keyword">true</span>    <span class="comment">// 握手超时后关闭连接</span></span><br><span class="line">        ));</span><br><span class="line">        pipeline.addLast(<span class="keyword">new</span> WebSocketHandshakeCompleteHandler());</span><br><span class="line">        pipeline.addLast(<span class="keyword">new</span> NettyChatHandler());  <span class="comment">//添加自定义handler</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandshakeHandler#channelRead</span><br><span class="line">    </span><br><span class="line">io.netty.handler.codec.http.websocketx.WebSocketServerHandshaker13#newHandshakeResponse    </span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="方式1-基于-url-参数方式"><a href="#方式1-基于-url-参数方式" class="headerlink" title="方式1 基于 url 参数方式"></a>方式1 基于 url 参数方式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> socket = <span class="keyword">new</span> <span class="title class_">WebSocket</span>(<span class="string">&#x27;ws://127.0.0.1:8080/ws?token=xxx&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="type">void</span> <span class="title function_">initChannel</span><span class="params">(SocketChannel socketChannel)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="type">ChannelPipeline</span> <span class="variable">pipeline</span> <span class="operator">=</span> socketChannel.pipeline();</span><br><span class="line"><span class="comment">//        pipeline.addLast(new LoggingHandler(LogLevel.INFO));</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 因为使用 HTTP 协议，所以需要 HTTP编码器，解码器</span></span><br><span class="line">        <span class="comment">// WebSocket 握手完成后，HTTP 相关的 handler（如 HttpServerCodec）会被移除，后续通信直接使用 WebSocket 帧</span></span><br><span class="line">        pipeline.addLast(<span class="keyword">new</span> <span class="title class_">HttpServerCodec</span>());</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 以块方式，添加 chunkedWriter 处理器</span></span><br><span class="line">        pipeline.addLast(<span class="keyword">new</span> <span class="title class_">ChunkedWriteHandler</span>());</span><br><span class="line"></span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">         * 1. http数据在传输中是分段的，HttpObjectAggregator 可以把多个段聚合起来</span></span><br><span class="line"><span class="comment">         * 2. 这就是为什么当浏览器发送大量数据时，就会发出多次 http请求的原因</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        pipeline.addLast(<span class="keyword">new</span> <span class="title class_">HttpObjectAggregator</span>(<span class="number">1024</span> * <span class="number">512</span>));</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 添加WebSocket消息压缩处理器</span></span><br><span class="line">        <span class="comment">// 会报错</span></span><br><span class="line">        <span class="comment">//  RSV != 0 and no extension negotiated, RSV:4</span></span><br><span class="line"><span class="comment">//        pipeline.addLast(new WebSocketServerCompressionHandler());</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 保存用户ip</span></span><br><span class="line">        <span class="comment">// pipeline.addLast(new HttpHeadersHandler());</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//        pipeline.addLast(new LifeCyCleHandler());</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//设置一个空闲状态处理程序（心跳机制），读空闲，写空闲，读写空闲</span></span><br><span class="line">        pipeline.addLast(<span class="keyword">new</span> <span class="title class_">IdleStateHandler</span>(<span class="number">120</span>, <span class="number">0</span>, <span class="number">0</span>));</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 自定义参数处理器，必须放在 new WebSocketServerProtocolHandler() 处理器之前</span></span><br><span class="line">        pipeline.addLast(<span class="string">&quot;auth&quot;</span>, authUrlHandler);</span><br><span class="line">        <span class="comment">// WebSocket协议处理器，关键配置</span></span><br><span class="line">        pipeline.addLast(<span class="keyword">new</span> <span class="title class_">WebSocketServerProtocolHandler</span>(</span><br><span class="line">                <span class="string">&quot;/ws&quot;</span>,  <span class="comment">// WebSocket路径</span></span><br><span class="line">                <span class="literal">null</span>,   <span class="comment">// 子协议，不指定</span></span><br><span class="line">                <span class="literal">true</span>,   <span class="comment">// 允许扩展</span></span><br><span class="line">                <span class="number">65536</span>,  <span class="comment">// 最大帧大小</span></span><br><span class="line">                <span class="literal">false</span>,  <span class="comment">// 不允许掩码</span></span><br><span class="line">                <span class="literal">true</span>    <span class="comment">// 握手超时后关闭连接</span></span><br><span class="line">        ));</span><br><span class="line">        pipeline.addLast(<span class="keyword">new</span> <span class="title class_">WebSocketHandshakeCompleteHandler</span>());</span><br><span class="line">        pipeline.addLast(<span class="keyword">new</span> <span class="title class_">NettyChatHandler</span>());  <span class="comment">//添加自定义handler</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/2025/09/29/java/websocket/#more">more >></a>
         
@@ -374,10 +487,13 @@ var _hmt = _hmt || [];
         <h2 id="二进制转八进制"><a href="#二进制转八进制" class="headerlink" title="二进制转八进制"></a>二进制转八进制</h2><p>3个二进制位1组，不够前面补0</p>
 <p>4 2 1 组合</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 0111 = 0x07 </span></span><br><span class="line"><span class="comment">// 000 0 0 + 0 + 0 = 0</span></span><br><span class="line"><span class="comment">// 001 1 0 + 0 + 1 = 1</span></span><br><span class="line"><span class="comment">// 010 2 0 + 2 + 0 = 2</span></span><br><span class="line"><span class="comment">// 011 3 0 + 2 + 1 = 3</span></span><br><span class="line"><span class="comment">// 100 4 4 + 0 + 0 = 4</span></span><br><span class="line"><span class="comment">// 101 5 4 + 0 + 1 = 5</span></span><br><span class="line"><span class="comment">// 110 6 4 + 2 + 0 = 6</span></span><br><span class="line"><span class="comment">// 111 7 4 + 2 + 1 = 7</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="二进制转十六进制"><a href="#二进制转十六进制" class="headerlink" title="二进制转十六进制"></a>二进制转十六进制</h2><p>4个二进制位1组，不够前面补0</p>
 <p>8 4 2 1 组合</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1111 = 0x0f </span></span><br><span class="line"><span class="comment">// 0000 00 0 + 0 + 0 + 0 = 0</span></span><br><span class="line"><span class="comment">// 0001 01 0 + 0 + 0 + 1 = 1</span></span><br><span class="line"><span class="comment">// 0010 02 0 + 0 + 2 + 0 = 2</span></span><br><span class="line"><span class="comment">// 0011 03 0 + 0 + 2 + 1 = 3</span></span><br><span class="line"><span class="comment">// 0100 04 0 + 4 + 0 + 0 = 4</span></span><br><span class="line"><span class="comment">// 0101 05 0 + 4 + 0 + 1 = 5</span></span><br><span class="line"><span class="comment">// 0110 06 0 + 4 + 2 + 0 = 6</span></span><br><span class="line"><span class="comment">// 0111 07 0 + 4 + 2 + 1 = 7</span></span><br><span class="line"><span class="comment">// 1000 08 8 + 0 + 0 + 0 = 8</span></span><br><span class="line"><span class="comment">// 1001 09 8 + 0 + 0 + 1 = 9</span></span><br><span class="line"><span class="comment">// 1010 0a 8 + 0 + 2 + 0 = 10</span></span><br><span class="line"><span class="comment">// 1011 0b 8 + 0 + 2 + 1 = 11</span></span><br><span class="line"><span class="comment">// 1100 0c 8 + 4 + 0 + 0 = 12</span></span><br><span class="line"><span class="comment">// 1101 0d 8 + 4 + 0 + 1 = 13</span></span><br><span class="line"><span class="comment">// 1110 0e 8 + 4 + 2 + 0 = 14</span></span><br><span class="line"><span class="comment">// 1111 0f 8 + 4 + 2 + 1 = 15</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="二进制转十进制"><a href="#二进制转十进制" class="headerlink" title="二进制转十进制"></a>二进制转十进制</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 128, 64, 32, 16, 8, 4, 2, 1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 0001 0000 =&gt; 0x10</span></span><br><span class="line"><span class="comment">// 0001 0000 =&gt; 16(10)</span></span><br><span class="line"><span class="comment">// 16 + 0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 0111 1111 =&gt; 0x7f</span></span><br><span class="line"><span class="comment">// 0111 1111 =&gt; 127(10)</span></span><br><span class="line"><span class="comment">// 64+32+16 15 =&gt; 127</span></span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -458,15 +574,15 @@ var _hmt = _hmt || [];
         
         <a href="/2025/07/19/os/rocky/rocky9.6/" class="archive-article-date">
   	<time datetime="2025-07-19T11:22:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-19</time>
-  	更新：2025-09-30
+  	更新：2025-07-19
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="配置静态IP、dns-跟gateway一样即可，不然没法上外网"><a href="#配置静态IP、dns-跟gateway一样即可，不然没法上外网" class="headerlink" title="配置静态IP、dns 跟gateway一样即可，不然没法上外网"></a>配置静态IP、dns 跟gateway一样即可，不然没法上外网</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/NetworkManager/system-connections</span><br><span class="line"></span><br><span class="line">[root@localhost system-connections]<span class="comment"># cat ens33.nmconnection </span></span><br><span class="line">[connection]</span><br><span class="line">id=ens33</span><br><span class="line">uuid=4d6ca82b-eb68-34f6-a6c8-bad245dc86d0</span><br><span class="line"><span class="built_in">type</span>=ethernet</span><br><span class="line">autoconnect-priority=-999</span><br><span class="line">interface-name=ens33</span><br><span class="line">timestamp=1752923027</span><br><span class="line"></span><br><span class="line">[ethernet]</span><br><span class="line"></span><br><span class="line">[ipv4]</span><br><span class="line">address1=192.168.18.96/24</span><br><span class="line">gateway=192.168.18.2</span><br><span class="line">dns=192.168.18.2</span><br><span class="line">method=manual</span><br><span class="line"></span><br><span class="line">[ipv6]</span><br><span class="line">addr-gen-mode=eui64</span><br><span class="line">method=auto</span><br><span class="line"></span><br><span class="line">[proxy]</span><br><span class="line"></span><br><span class="line"><span class="comment">## 方式1 重启网络</span></span><br><span class="line">nmcli connection reload         <span class="comment"># 重新加载配置文件（确保修改生效）</span></span><br><span class="line">nmcli connection down ens33     <span class="comment"># 关闭连接</span></span><br><span class="line">nmcli connection up ens33       <span class="comment"># 重新启用连接</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 方式1 远程连接推荐这个</span></span><br><span class="line">systemctl restart NetworkManager  <span class="comment"># 重启服务（所有连接会短暂断开）</span></span><br></pre></td></tr></table></figure>
-<h4 id="开启-root-远程连接"><a href="#开启-root-远程连接" class="headerlink" title="开启 root 远程连接"></a>开启 root 远程连接</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看ssh状态</span></span><br><span class="line">systemctl status sshd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改配置文件</span></span><br><span class="line">vi /etc/ssh/sshd_config</span><br><span class="line"><span class="comment"># 这里去掉注释 改为 yes</span></span><br><span class="line">PermitRootLoin yes</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启服务</span></span><br><span class="line">systemctl restart sshd</span><br></pre></td></tr></table></figure>
+        <h4 id="配置静态IP、dns-跟gateway一样即可，不然没法上外网"><a href="#配置静态IP、dns-跟gateway一样即可，不然没法上外网" class="headerlink" title="配置静态IP、dns 跟gateway一样即可，不然没法上外网"></a>配置静态IP、dns 跟gateway一样即可，不然没法上外网</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/NetworkManager/system-connections</span><br><span class="line"></span><br><span class="line">[root@localhost system-connections]# <span class="built_in">cat</span> ens33.nmconnection </span><br><span class="line">[connection]</span><br><span class="line"><span class="built_in">id</span>=ens33</span><br><span class="line">uuid=4d6ca82b-eb68-34f6-a6c8-bad245dc86d0</span><br><span class="line"><span class="built_in">type</span>=ethernet</span><br><span class="line">autoconnect-priority=-999</span><br><span class="line">interface-name=ens33</span><br><span class="line">timestamp=1752923027</span><br><span class="line"></span><br><span class="line">[ethernet]</span><br><span class="line"></span><br><span class="line">[ipv4]</span><br><span class="line">address1=192.168.18.96/24</span><br><span class="line">gateway=192.168.18.2</span><br><span class="line">dns=192.168.18.2</span><br><span class="line">method=manual</span><br><span class="line"></span><br><span class="line">[ipv6]</span><br><span class="line">addr-gen-mode=eui64</span><br><span class="line">method=auto</span><br><span class="line"></span><br><span class="line">[proxy]</span><br><span class="line"></span><br><span class="line"><span class="comment">## 方式1 重启网络</span></span><br><span class="line">nmcli connection reload         <span class="comment"># 重新加载配置文件（确保修改生效）</span></span><br><span class="line">nmcli connection down ens33     <span class="comment"># 关闭连接</span></span><br><span class="line">nmcli connection up ens33       <span class="comment"># 重新启用连接</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 方式1 远程连接推荐这个</span></span><br><span class="line">systemctl restart NetworkManager  <span class="comment"># 重启服务（所有连接会短暂断开）</span></span><br></pre></td></tr></table></figure>
+<h4 id="开启-root-远程连接"><a href="#开启-root-远程连接" class="headerlink" title="开启 root 远程连接"></a>开启 root 远程连接</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看ssh状态</span></span><br><span class="line">systemctl status sshd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改配置文件</span></span><br><span class="line">vi /etc/ssh/sshd_config</span><br><span class="line"><span class="comment"># 这里去掉注释 改为 yes</span></span><br><span class="line">PermitRootLoin <span class="built_in">yes</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启服务</span></span><br><span class="line">systemctl restart sshd</span><br></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/2025/07/19/os/rocky/rocky9.6/#more">more >></a>
         
@@ -556,181 +672,179 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="https://docs.spring.io/spring-framework/reference/integration/rest-clients.html" target="_blank" rel="noopener">https://docs.spring.io/spring-framework/reference/integration/rest-clients.html</a></p>
+        <p><a target="_blank" rel="noopener" href="https://docs.spring.io/spring-framework/reference/integration/rest-clients.html">https://docs.spring.io/spring-framework/reference/integration/rest-clients.html</a></p>
 <table>
 <thead>
 <tr>
-<th style="text-align:left"><code>RestTemplate</code> method</th>
-<th style="text-align:left"><code>RestClient</code> equivalent</th>
+<th align="left"><code>RestTemplate</code> method</th>
+<th align="left"><code>RestClient</code> equivalent</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left"><code>getForObject(String, Class, Object…)</code></td>
-<td style="text-align:left"><code>get() .uri(String, Object…) .retrieve() .body(Class)</code></td>
+<tbody><tr>
+<td align="left"><code>getForObject(String, Class, Object…)</code></td>
+<td align="left"><code>get() .uri(String, Object…) .retrieve() .body(Class)</code></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>getForObject(String, Class, Map)</code></td>
-<td style="text-align:left"><code>get() .uri(String, Map) .retrieve() .body(Class)</code></td>
+<td align="left"><code>getForObject(String, Class, Map)</code></td>
+<td align="left"><code>get() .uri(String, Map) .retrieve() .body(Class)</code></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>getForObject(URI, Class)</code></td>
-<td style="text-align:left"><code>get() .uri(URI) .retrieve() .body(Class)</code></td>
+<td align="left"><code>getForObject(URI, Class)</code></td>
+<td align="left"><code>get() .uri(URI) .retrieve() .body(Class)</code></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>getForEntity(String, Class, Object…)</code></td>
-<td style="text-align:left"><code>get() .uri(String, Object…) .retrieve() .toEntity(Class)</code></td>
+<td align="left"><code>getForEntity(String, Class, Object…)</code></td>
+<td align="left"><code>get() .uri(String, Object…) .retrieve() .toEntity(Class)</code></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>getForEntity(String, Class, Map)</code></td>
-<td style="text-align:left"><code>get() .uri(String, Map) .retrieve() .toEntity(Class)</code></td>
+<td align="left"><code>getForEntity(String, Class, Map)</code></td>
+<td align="left"><code>get() .uri(String, Map) .retrieve() .toEntity(Class)</code></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>getForEntity(URI, Class)</code></td>
-<td style="text-align:left"><code>get() .uri(URI) .retrieve() .toEntity(Class)</code></td>
+<td align="left"><code>getForEntity(URI, Class)</code></td>
+<td align="left"><code>get() .uri(URI) .retrieve() .toEntity(Class)</code></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>headForHeaders(String, Object…)</code></td>
-<td style="text-align:left"><code>head() .uri(String, Object…) .retrieve() .toBodilessEntity() .getHeaders()</code></td>
+<td align="left"><code>headForHeaders(String, Object…)</code></td>
+<td align="left"><code>head() .uri(String, Object…) .retrieve() .toBodilessEntity() .getHeaders()</code></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>headForHeaders(String, Map)</code></td>
-<td style="text-align:left"><code>head() .uri(String, Map) .retrieve() .toBodilessEntity() .getHeaders()</code></td>
+<td align="left"><code>headForHeaders(String, Map)</code></td>
+<td align="left"><code>head() .uri(String, Map) .retrieve() .toBodilessEntity() .getHeaders()</code></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>headForHeaders(URI)</code></td>
-<td style="text-align:left"><code>head() .uri(URI) .retrieve() .toBodilessEntity() .getHeaders()</code></td>
+<td align="left"><code>headForHeaders(URI)</code></td>
+<td align="left"><code>head() .uri(URI) .retrieve() .toBodilessEntity() .getHeaders()</code></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>postForLocation(String, Object, Object…)</code></td>
-<td style="text-align:left"><code>post() .uri(String, Object…) .body(Object).retrieve() .toBodilessEntity() .getLocation()</code></td>
+<td align="left"><code>postForLocation(String, Object, Object…)</code></td>
+<td align="left"><code>post() .uri(String, Object…) .body(Object).retrieve() .toBodilessEntity() .getLocation()</code></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>postForLocation(String, Object, Map)</code></td>
-<td style="text-align:left"><code>post() .uri(String, Map) .body(Object) .retrieve() .toBodilessEntity() .getLocation()</code></td>
+<td align="left"><code>postForLocation(String, Object, Map)</code></td>
+<td align="left"><code>post() .uri(String, Map) .body(Object) .retrieve() .toBodilessEntity() .getLocation()</code></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>postForLocation(URI, Object)</code></td>
-<td style="text-align:left"><code>post() .uri(URI) .body(Object) .retrieve() .toBodilessEntity() .getLocation()</code></td>
+<td align="left"><code>postForLocation(URI, Object)</code></td>
+<td align="left"><code>post() .uri(URI) .body(Object) .retrieve() .toBodilessEntity() .getLocation()</code></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>postForObject(String, Object, Class, Object…)</code></td>
-<td style="text-align:left"><code>post() .uri(String, Object…) .body(Object) .retrieve() .body(Class)</code></td>
+<td align="left"><code>postForObject(String, Object, Class, Object…)</code></td>
+<td align="left"><code>post() .uri(String, Object…) .body(Object) .retrieve() .body(Class)</code></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>postForObject(String, Object, Class, Map)</code></td>
-<td style="text-align:left"><code>post() .uri(String, Map) .body(Object) .retrieve() .body(Class)</code></td>
+<td align="left"><code>postForObject(String, Object, Class, Map)</code></td>
+<td align="left"><code>post() .uri(String, Map) .body(Object) .retrieve() .body(Class)</code></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>postForObject(URI, Object, Class)</code></td>
-<td style="text-align:left"><code>post() .uri(URI) .body(Object) .retrieve() .body(Class)</code></td>
+<td align="left"><code>postForObject(URI, Object, Class)</code></td>
+<td align="left"><code>post() .uri(URI) .body(Object) .retrieve() .body(Class)</code></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>postForEntity(String, Object, Class, Object…)</code></td>
-<td style="text-align:left"><code>post() .uri(String, Object…) .body(Object) .retrieve() .toEntity(Class)</code></td>
+<td align="left"><code>postForEntity(String, Object, Class, Object…)</code></td>
+<td align="left"><code>post() .uri(String, Object…) .body(Object) .retrieve() .toEntity(Class)</code></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>postForEntity(String, Object, Class, Map)</code></td>
-<td style="text-align:left"><code>post() .uri(String, Map) .body(Object) .retrieve() .toEntity(Class)</code></td>
+<td align="left"><code>postForEntity(String, Object, Class, Map)</code></td>
+<td align="left"><code>post() .uri(String, Map) .body(Object) .retrieve() .toEntity(Class)</code></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>postForEntity(URI, Object, Class)</code></td>
-<td style="text-align:left"><code>post() .uri(URI) .body(Object) .retrieve() .toEntity(Class)</code></td>
+<td align="left"><code>postForEntity(URI, Object, Class)</code></td>
+<td align="left"><code>post() .uri(URI) .body(Object) .retrieve() .toEntity(Class)</code></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>put(String, Object, Object…)</code></td>
-<td style="text-align:left"><code>put() .uri(String, Object…) .body(Object) .retrieve() .toBodilessEntity()</code></td>
+<td align="left"><code>put(String, Object, Object…)</code></td>
+<td align="left"><code>put() .uri(String, Object…) .body(Object) .retrieve() .toBodilessEntity()</code></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>put(String, Object, Map)</code></td>
-<td style="text-align:left"><code>put() .uri(String, Map) .body(Object) .retrieve() .toBodilessEntity()</code></td>
+<td align="left"><code>put(String, Object, Map)</code></td>
+<td align="left"><code>put() .uri(String, Map) .body(Object) .retrieve() .toBodilessEntity()</code></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>put(URI, Object)</code></td>
-<td style="text-align:left"><code>put() .uri(URI) .body(Object) .retrieve() .toBodilessEntity()</code></td>
+<td align="left"><code>put(URI, Object)</code></td>
+<td align="left"><code>put() .uri(URI) .body(Object) .retrieve() .toBodilessEntity()</code></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>patchForObject(String, Object, Class, Object…)</code></td>
-<td style="text-align:left"><code>patch() .uri(String, Object…) .body(Object) .retrieve() .body(Class)</code></td>
+<td align="left"><code>patchForObject(String, Object, Class, Object…)</code></td>
+<td align="left"><code>patch() .uri(String, Object…) .body(Object) .retrieve() .body(Class)</code></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>patchForObject(String, Object, Class, Map)</code></td>
-<td style="text-align:left"><code>patch() .uri(String, Map) .body(Object) .retrieve() .body(Class)</code></td>
+<td align="left"><code>patchForObject(String, Object, Class, Map)</code></td>
+<td align="left"><code>patch() .uri(String, Map) .body(Object) .retrieve() .body(Class)</code></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>patchForObject(URI, Object, Class)</code></td>
-<td style="text-align:left"><code>patch() .uri(URI) .body(Object) .retrieve() .body(Class)</code></td>
+<td align="left"><code>patchForObject(URI, Object, Class)</code></td>
+<td align="left"><code>patch() .uri(URI) .body(Object) .retrieve() .body(Class)</code></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>delete(String, Object…)</code></td>
-<td style="text-align:left"><code>delete() .uri(String, Object…) .retrieve() .toBodilessEntity()</code></td>
+<td align="left"><code>delete(String, Object…)</code></td>
+<td align="left"><code>delete() .uri(String, Object…) .retrieve() .toBodilessEntity()</code></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>delete(String, Map)</code></td>
-<td style="text-align:left"><code>delete() .uri(String, Map) .retrieve() .toBodilessEntity()</code></td>
+<td align="left"><code>delete(String, Map)</code></td>
+<td align="left"><code>delete() .uri(String, Map) .retrieve() .toBodilessEntity()</code></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>delete(URI)</code></td>
-<td style="text-align:left"><code>delete() .uri(URI) .retrieve() .toBodilessEntity()</code></td>
+<td align="left"><code>delete(URI)</code></td>
+<td align="left"><code>delete() .uri(URI) .retrieve() .toBodilessEntity()</code></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>optionsForAllow(String, Object…)</code></td>
-<td style="text-align:left"><code>options() .uri(String, Object…) .retrieve() .toBodilessEntity() .getAllow()</code></td>
+<td align="left"><code>optionsForAllow(String, Object…)</code></td>
+<td align="left"><code>options() .uri(String, Object…) .retrieve() .toBodilessEntity() .getAllow()</code></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>optionsForAllow(String, Map)</code></td>
-<td style="text-align:left"><code>options() .uri(String, Map) .retrieve() .toBodilessEntity() .getAllow()</code></td>
+<td align="left"><code>optionsForAllow(String, Map)</code></td>
+<td align="left"><code>options() .uri(String, Map) .retrieve() .toBodilessEntity() .getAllow()</code></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>optionsForAllow(URI)</code></td>
-<td style="text-align:left"><code>options() .uri(URI) .retrieve() .toBodilessEntity() .getAllow()</code></td>
+<td align="left"><code>optionsForAllow(URI)</code></td>
+<td align="left"><code>options() .uri(URI) .retrieve() .toBodilessEntity() .getAllow()</code></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>exchange(String, HttpMethod, HttpEntity, Class, Object…)</code></td>
-<td style="text-align:left"><code>method(HttpMethod) .uri(String, Object…) .headers(Consumer&lt;HttpHeaders&gt;) .body(Object) .retrieve() .toEntity(Class)</code> [<a href="https://docs.spring.io/spring-framework/reference/integration/rest-clients.html#_footnotedef_1" target="_blank" rel="noopener">1</a>]</td>
+<td align="left"><code>exchange(String, HttpMethod, HttpEntity, Class, Object…)</code></td>
+<td align="left"><code>method(HttpMethod) .uri(String, Object…) .headers(Consumer&lt;HttpHeaders&gt;) .body(Object) .retrieve() .toEntity(Class)</code> [<a target="_blank" rel="noopener" href="https://docs.spring.io/spring-framework/reference/integration/rest-clients.html#_footnotedef_1">1</a>]</td>
 </tr>
 <tr>
-<td style="text-align:left"><code>exchange(String, HttpMethod, HttpEntity, Class, Map)</code></td>
-<td style="text-align:left"><code>method(HttpMethod) .uri(String, Map) .headers(Consumer&lt;HttpHeaders&gt;) .body(Object) .retrieve() .toEntity(Class)</code> [<a href="https://docs.spring.io/spring-framework/reference/integration/rest-clients.html#_footnotedef_1" target="_blank" rel="noopener">1</a>]</td>
+<td align="left"><code>exchange(String, HttpMethod, HttpEntity, Class, Map)</code></td>
+<td align="left"><code>method(HttpMethod) .uri(String, Map) .headers(Consumer&lt;HttpHeaders&gt;) .body(Object) .retrieve() .toEntity(Class)</code> [<a target="_blank" rel="noopener" href="https://docs.spring.io/spring-framework/reference/integration/rest-clients.html#_footnotedef_1">1</a>]</td>
 </tr>
 <tr>
-<td style="text-align:left"><code>exchange(URI, HttpMethod, HttpEntity, Class)</code></td>
-<td style="text-align:left"><code>method(HttpMethod) .uri(URI) .headers(Consumer&lt;HttpHeaders&gt;) .body(Object) .retrieve() .toEntity(Class)</code> [<a href="https://docs.spring.io/spring-framework/reference/integration/rest-clients.html#_footnotedef_1" target="_blank" rel="noopener">1</a>]</td>
+<td align="left"><code>exchange(URI, HttpMethod, HttpEntity, Class)</code></td>
+<td align="left"><code>method(HttpMethod) .uri(URI) .headers(Consumer&lt;HttpHeaders&gt;) .body(Object) .retrieve() .toEntity(Class)</code> [<a target="_blank" rel="noopener" href="https://docs.spring.io/spring-framework/reference/integration/rest-clients.html#_footnotedef_1">1</a>]</td>
 </tr>
 <tr>
-<td style="text-align:left"><code>exchange(String, HttpMethod, HttpEntity, ParameterizedTypeReference, Object…)</code></td>
-<td style="text-align:left"><code>method(HttpMethod) .uri(String, Object…) .headers(Consumer&lt;HttpHeaders&gt;) .body(Object) .retrieve() .toEntity(ParameterizedTypeReference)</code> [<a href="https://docs.spring.io/spring-framework/reference/integration/rest-clients.html#_footnotedef_1" target="_blank" rel="noopener">1</a>]</td>
+<td align="left"><code>exchange(String, HttpMethod, HttpEntity, ParameterizedTypeReference, Object…)</code></td>
+<td align="left"><code>method(HttpMethod) .uri(String, Object…) .headers(Consumer&lt;HttpHeaders&gt;) .body(Object) .retrieve() .toEntity(ParameterizedTypeReference)</code> [<a target="_blank" rel="noopener" href="https://docs.spring.io/spring-framework/reference/integration/rest-clients.html#_footnotedef_1">1</a>]</td>
 </tr>
 <tr>
-<td style="text-align:left"><code>exchange(String, HttpMethod, HttpEntity, ParameterizedTypeReference, Map)</code></td>
-<td style="text-align:left"><code>method(HttpMethod) .uri(String, Map) .headers(Consumer&lt;HttpHeaders&gt;) .body(Object) .retrieve() .toEntity(ParameterizedTypeReference)</code> [<a href="https://docs.spring.io/spring-framework/reference/integration/rest-clients.html#_footnotedef_1" target="_blank" rel="noopener">1</a>]</td>
+<td align="left"><code>exchange(String, HttpMethod, HttpEntity, ParameterizedTypeReference, Map)</code></td>
+<td align="left"><code>method(HttpMethod) .uri(String, Map) .headers(Consumer&lt;HttpHeaders&gt;) .body(Object) .retrieve() .toEntity(ParameterizedTypeReference)</code> [<a target="_blank" rel="noopener" href="https://docs.spring.io/spring-framework/reference/integration/rest-clients.html#_footnotedef_1">1</a>]</td>
 </tr>
 <tr>
-<td style="text-align:left"><code>exchange(URI, HttpMethod, HttpEntity, ParameterizedTypeReference)</code></td>
-<td style="text-align:left"><code>method(HttpMethod) .uri(URI) .headers(Consumer&lt;HttpHeaders&gt;) .body(Object) .retrieve() .toEntity(ParameterizedTypeReference)</code> [<a href="https://docs.spring.io/spring-framework/reference/integration/rest-clients.html#_footnotedef_1" target="_blank" rel="noopener">1</a>]</td>
+<td align="left"><code>exchange(URI, HttpMethod, HttpEntity, ParameterizedTypeReference)</code></td>
+<td align="left"><code>method(HttpMethod) .uri(URI) .headers(Consumer&lt;HttpHeaders&gt;) .body(Object) .retrieve() .toEntity(ParameterizedTypeReference)</code> [<a target="_blank" rel="noopener" href="https://docs.spring.io/spring-framework/reference/integration/rest-clients.html#_footnotedef_1">1</a>]</td>
 </tr>
 <tr>
-<td style="text-align:left"><code>exchange(RequestEntity, Class)</code></td>
-<td style="text-align:left"><code>method(HttpMethod) .uri(URI) .headers(Consumer&lt;HttpHeaders&gt;) .body(Object) .retrieve() .toEntity(Class)</code> [<a href="https://docs.spring.io/spring-framework/reference/integration/rest-clients.html#_footnotedef_2" target="_blank" rel="noopener">2</a>]</td>
+<td align="left"><code>exchange(RequestEntity, Class)</code></td>
+<td align="left"><code>method(HttpMethod) .uri(URI) .headers(Consumer&lt;HttpHeaders&gt;) .body(Object) .retrieve() .toEntity(Class)</code> [<a target="_blank" rel="noopener" href="https://docs.spring.io/spring-framework/reference/integration/rest-clients.html#_footnotedef_2">2</a>]</td>
 </tr>
 <tr>
-<td style="text-align:left"><code>exchange(RequestEntity, ParameterizedTypeReference)</code></td>
-<td style="text-align:left"><code>method(HttpMethod) .uri(URI) .headers(Consumer&lt;HttpHeaders&gt;) .body(Object) .retrieve() .toEntity(ParameterizedTypeReference)</code> [<a href="https://docs.spring.io/spring-framework/reference/integration/rest-clients.html#_footnotedef_2" target="_blank" rel="noopener">2</a>]</td>
+<td align="left"><code>exchange(RequestEntity, ParameterizedTypeReference)</code></td>
+<td align="left"><code>method(HttpMethod) .uri(URI) .headers(Consumer&lt;HttpHeaders&gt;) .body(Object) .retrieve() .toEntity(ParameterizedTypeReference)</code> [<a target="_blank" rel="noopener" href="https://docs.spring.io/spring-framework/reference/integration/rest-clients.html#_footnotedef_2">2</a>]</td>
 </tr>
 <tr>
-<td style="text-align:left"><code>execute(String, HttpMethod, RequestCallback, ResponseExtractor, Object…)</code></td>
-<td style="text-align:left"><code>method(HttpMethod) .uri(String, Object…) .exchange(ExchangeFunction)</code></td>
+<td align="left"><code>execute(String, HttpMethod, RequestCallback, ResponseExtractor, Object…)</code></td>
+<td align="left"><code>method(HttpMethod) .uri(String, Object…) .exchange(ExchangeFunction)</code></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>execute(String, HttpMethod, RequestCallback, ResponseExtractor, Map)</code></td>
-<td style="text-align:left"><code>method(HttpMethod) .uri(String, Map) .exchange(ExchangeFunction)</code></td>
+<td align="left"><code>execute(String, HttpMethod, RequestCallback, ResponseExtractor, Map)</code></td>
+<td align="left"><code>method(HttpMethod) .uri(String, Map) .exchange(ExchangeFunction)</code></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>execute(URI, HttpMethod, RequestCallback, ResponseExtractor)</code></td>
-<td style="text-align:left"><code>method(HttpMethod) .uri(URI) .exchange(ExchangeFunction)</code></td>
+<td align="left"><code>execute(URI, HttpMethod, RequestCallback, ResponseExtractor)</code></td>
+<td align="left"><code>method(HttpMethod) .uri(URI) .exchange(ExchangeFunction)</code></td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 
       
 
@@ -827,13 +941,18 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p><strong>生成根 CA 证书</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">openssl genrsa -out ca.key 4096</span><br><span class="line">openssl req -x509 -new -nodes -sha256 -key ca.key -days 3650 -subj &apos;/C=CN/ST=Beijing/L=Beijing/O=Arukas IO/OU=Redis Server/CN=redis.vim.io&apos; -out ca.crt</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">openssl genrsa -out ca.key 4096</span><br><span class="line">openssl req -x509 -new -nodes -sha256 -key ca.key -days 3650 -subj &#x27;/C=CN/ST=Beijing/L=Beijing/O=Arukas IO/OU=Redis Server/CN=redis.vim.io&#x27; -out ca.crt</span><br></pre></td></tr></table></figure>
+
 <p><strong>生成服务端证书</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">openssl genrsa -out redis.key 4096</span><br><span class="line"></span><br><span class="line">-- 签发申请</span><br><span class="line">openssl req -new -sha256 -key redis.key -subj &apos;/C=CN/ST=Beijing/L=Beijing/O=Arukas IO/OU=Redis Server/CN=redis.vim.io&apos; -addext &quot;subjectAltName = IP:127.0.0.1&quot; -out server.csr</span><br><span class="line"></span><br><span class="line">openssl x509 -req -sha256 -in server.csr -CA ca.crt -CAkey ca.key -CAserial ca.txt -CAcreateserial -days 3650 -extfile &lt;(printf &quot;subjectAltName=IP:127.0.0.1&quot;) -out redis.crt</span><br><span class="line"></span><br><span class="line">#查看证书</span><br><span class="line">openssl x509 -in redis.crt -text -noout</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">openssl genrsa -out redis.key 4096</span><br><span class="line"></span><br><span class="line">-- 签发申请</span><br><span class="line">openssl req -new -sha256 -key redis.key -subj &#x27;/C=CN/ST=Beijing/L=Beijing/O=Arukas IO/OU=Redis Server/CN=redis.vim.io&#x27; -addext &quot;subjectAltName = IP:127.0.0.1&quot; -out server.csr</span><br><span class="line"></span><br><span class="line">openssl x509 -req -sha256 -in server.csr -CA ca.crt -CAkey ca.key -CAserial ca.txt -CAcreateserial -days 3650 -extfile &lt;(printf &quot;subjectAltName=IP:127.0.0.1&quot;) -out redis.crt</span><br><span class="line"></span><br><span class="line">#查看证书</span><br><span class="line">openssl x509 -in redis.crt -text -noout</span><br></pre></td></tr></table></figure>
+
+
+
 <p><strong>生成客户端证书</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">openssl genrsa -out client.key 4096</span><br><span class="line"></span><br><span class="line">-- 签发申请</span><br><span class="line">openssl req -new -key client.key -out client.csr</span><br><span class="line"></span><br><span class="line">openssl x509 -req -days 3650 -in client.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out client.crt</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">openssl genrsa -out client.key 4096</span><br><span class="line"></span><br><span class="line">-- 签发申请</span><br><span class="line">openssl req -new -key client.key -out client.csr</span><br><span class="line"></span><br><span class="line">openssl x509 -req -days 3650 -in client.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out client.crt</span><br></pre></td></tr></table></figure>
+
 <p><strong>其它</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl dhparam -out redis.dh 2048</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl dhparam -out redis.dh 2048</span><br></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/2025/06/21/redis_ssl/#more">more >></a>
         
@@ -927,14 +1046,15 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h2><p><a href="https://github.com/pyenv-win/pyenv-win" target="_blank" rel="noopener">https://github.com/pyenv-win/pyenv-win</a></p>
-<p><a href="https://github.com/pyenv-win/pyenv-win/archive/master.zip" target="_blank" rel="noopener">https://github.com/pyenv-win/pyenv-win/archive/master.zip</a></p>
+        <h2 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h2><p><a target="_blank" rel="noopener" href="https://github.com/pyenv-win/pyenv-win">https://github.com/pyenv-win/pyenv-win</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/pyenv-win/pyenv-win/archive/master.zip">https://github.com/pyenv-win/pyenv-win/archive/master.zip</a></p>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>解压源码包到  D:\download\pyenv</p>
 <p>注意不要移动目录，移动后会有问题</p>
 <p>配置环境变量</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">PYENV=D:\download\pyenv\pyenv-win</span><br><span class="line">PATH环境变量</span><br><span class="line">%PYENV%\bin</span><br><span class="line">%PYENV%\shims</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">PYENV=D:\download\pyenv\pyenv-win</span><br><span class="line">PATH环境变量</span><br><span class="line">%PYENV%\bin</span><br><span class="line">%PYENV%\shims</span><br></pre></td></tr></table></figure>
+
 <p>测试版本</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyenv --version</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyenv --version</span><br></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/2025/05/30/python/pyenv/#more">more >></a>
         
@@ -1030,9 +1150,17 @@ var _hmt = _hmt || [];
       
         <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>环境变量添加<br>%CARGO_HOME%\bin</p>
 <p>方式1</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">set CARGO_HOME=D:\develop\rust\.cargo</span><br><span class="line">set RUSTUP_HOME=D:\develop\rust\.rustup</span><br><span class="line"></span><br><span class="line">或者环境变量设置好也可以</span><br><span class="line"></span><br><span class="line">rustup-init.exe</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">set CARGO_HOME=D:\develop\rust\.cargo</span><br><span class="line">set RUSTUP_HOME=D:\develop\rust\.rustup</span><br><span class="line"></span><br><span class="line">或者环境变量设置好也可以</span><br><span class="line"></span><br><span class="line">rustup-init.exe</span><br></pre></td></tr></table></figure>
+
 <p>方式2</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">rustup-init.exe</span><br><span class="line">默认会安装到 %USERPROFILE%\.cargo 和 %USERPROFILE%\.rustup</span><br><span class="line"></span><br><span class="line">将 .cargo 和 .rustup 文件夹移动到目标位置(如 D:\Rust\)</span><br><span class="line"></span><br><span class="line">CARGO_HOME = D:\develop\rust\.cargo</span><br><span class="line">RUSTUP_HOME = D:\develop\rust\.rustup</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">rustup-init.exe</span><br><span class="line">默认会安装到 %USERPROFILE%\.cargo 和 %USERPROFILE%\.rustup</span><br><span class="line"></span><br><span class="line">将 .cargo 和 .rustup 文件夹移动到目标位置(如 D:\Rust\)</span><br><span class="line"></span><br><span class="line">CARGO_HOME = D:\develop\rust\.cargo</span><br><span class="line">RUSTUP_HOME = D:\develop\rust\.rustup</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
 
       
 
@@ -1120,14 +1248,21 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h2><p><a href="https://zookeeper.apache.org/releases.html" target="_blank" rel="noopener">https://zookeeper.apache.org/releases.html</a></p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>修改 zoo.cfg 里面的 dataDir = dataDir=D:\develop\apache\apache-zookeeper-3.8.4-bin\data</p>
+        <h2 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h2><p><a target="_blank" rel="noopener" href="https://zookeeper.apache.org/releases.html">https://zookeeper.apache.org/releases.html</a></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>修改 zoo.cfg 里面的 dataDir &#x3D; dataDir&#x3D;D:\develop\apache\apache-zookeeper-3.8.4-bin\data</p>
 <p>启动</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zkServer.cmd</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zkServer.cmd</span><br></pre></td></tr></table></figure>
+
 <p>客户端</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zkCli.cmd</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zkCli.cmd</span><br></pre></td></tr></table></figure>
+
 <p>查看版本、注意不同 zookeeper 版本是有区别的，尽量使用高版本的zk</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 默认本机服务</span><br><span class="line">zkCli.cmd version</span><br><span class="line"></span><br><span class="line">zkCli.cmd -server 127.0.0.1:2181 version</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 默认本机服务</span><br><span class="line">zkCli.cmd version</span><br><span class="line"></span><br><span class="line">zkCli.cmd -server 127.0.0.1:2181 version</span><br></pre></td></tr></table></figure>
+
+
+
+
+
 
       
 
@@ -1215,9 +1350,9 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="https://activemq.apache.org/components/classic/download/" target="_blank" rel="noopener">https://activemq.apache.org/components/classic/download/</a></p>
+        <p><a target="_blank" rel="noopener" href="https://activemq.apache.org/components/classic/download/">https://activemq.apache.org/components/classic/download/</a></p>
 <p>国内下载源</p>
-<p><a href="https://mirrors.aliyun.com/apache/activemq/5.18.6/" target="_blank" rel="noopener">https://mirrors.aliyun.com/apache/activemq/5.18.6/</a></p>
+<p><a target="_blank" rel="noopener" href="https://mirrors.aliyun.com/apache/activemq/5.18.6/">https://mirrors.aliyun.com/apache/activemq/5.18.6/</a></p>
         
           <a class="article-more-a" href="/2025/03/08/mq/activemq_01/#more">more >></a>
         
@@ -1286,103 +1421,9 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-os/windows" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/02/15/os/windows/">windows 系统</a>
-    </h1>
-  
-
-        
-        <a href="/2025/02/15/os/windows/" class="archive-article-date">
-  	<time datetime="2025-02-15T10:12:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-02-15</time>
-  	更新：2025-09-30
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">JAVA_HOME=D:\develop\Java\jdk<span class="literal">-21</span>.<span class="number">0.4</span>+<span class="number">7</span></span><br><span class="line"></span><br><span class="line">set JAVA_HOME=D:\develop\Java\jdk<span class="literal">-21</span>.<span class="number">0.4</span>+<span class="number">7</span></span><br><span class="line">set JAVA_HOME=D:\develop\Java\jdk<span class="literal">-11</span>.<span class="number">0.25</span>+<span class="number">9</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 这样修改java的版本</span></span><br><span class="line">set PATH=%JAVA_HOME%\bin;%PATH%</span><br></pre></td></tr></table></figure>
-<h4 id="解决windows安装-rust-慢的问题"><a href="#解决windows安装-rust-慢的问题" class="headerlink" title="解决windows安装 rust 慢的问题"></a>解决windows安装 rust 慢的问题</h4><blockquote>
-<p><a href="https://blog.csdn.net/qq_46506007/article/details/129801570" target="_blank" rel="noopener">https://blog.csdn.net/qq_46506007/article/details/129801570</a></p>
-</blockquote>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust<span class="literal">-static</span></span><br><span class="line">set RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust<span class="literal">-static</span>/rustup</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2025/02/15/os/windows/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">windows</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/windows//" class="article-tag-list-link color3">windows</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/02/15/os/windows/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -1394,7 +1435,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2025 Niu Yuxian
+    		&copy; 2026 Niu Yuxian
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -1519,15 +1560,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">was</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">area</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">cors</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">was</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1555,10 +1596,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">c#</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Nord</a>
               </li>
              
@@ -1576,6 +1613,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">guqin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">c#</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1647,6 +1688,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">opencv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">原码</a>
               </li>
              
@@ -1667,10 +1712,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sed</a>
               </li>
              
@@ -1688,6 +1729,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ruby</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1735,10 +1780,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">archlinux</a>
               </li>
              
@@ -1755,6 +1796,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">d365</a>
               </li>
              
@@ -1763,15 +1808,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">deno</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">docker alpine</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">razor</a>
+                <a href="javascript:void(0)" class="js-tag color5">deno</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1780,6 +1821,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ffmpeg</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">razor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1867,14 +1912,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
@@ -1892,6 +1929,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rocketmq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1919,15 +1964,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">regex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">requests</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">rust</a>
+                <a href="javascript:void(0)" class="js-tag color1">regex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1939,11 +1980,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
+                <a href="javascript:void(0)" class="js-tag color5">rust</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
+                <a href="javascript:void(0)" class="js-tag color2">wechat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1952,6 +1993,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mongo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">微信支付</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1983,15 +2028,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">rocky</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">
